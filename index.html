@@ -539,8 +539,8 @@
     </style>
 </head>
 <body>
-    <!-- Password Protection -->
-    <div id="passwordOverlay">
+    <!-- Password Protection (Temporarily Disabled) -->
+    <div id="passwordOverlay" style="display: none;">
         <div class="password-box">
             <h2>Access CVL-CDSAML Project</h2>
             <p>Please enter the access password</p>
@@ -1463,16 +1463,23 @@
             const input = document.getElementById('passwordInput').value;
             if (PASSWORDS.includes(input)) {
                 document.getElementById('passwordOverlay').style.display = 'none';
-                localStorage.setItem('cvl-authenticated', 'true');
+                sessionStorage.setItem('cvl-authenticated', 'true');
             } else {
                 alert('Incorrect password. Please contact nlavidas@phil.uoa.gr for access.');
             }
         }
         
         // Check if already authenticated
-        if (localStorage.getItem('cvl-authenticated') === 'true') {
+        if (sessionStorage.getItem('cvl-authenticated') === 'true') {
             document.getElementById('passwordOverlay').style.display = 'none';
         }
+        
+        // Allow Enter key to submit password
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
         
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
