@@ -115,8 +115,6 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            display: flex;
-            align-items: center;
         }
         
         .nav-links {
@@ -171,7 +169,7 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 900px;
         }
         
         .hero h1 {
@@ -188,26 +186,24 @@
             animation: fadeInUp 1s ease 0.2s both;
         }
         
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
+        .hero-focus {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
             animation: fadeInUp 1s ease 0.4s both;
         }
         
-        .stat {
-            text-align: center;
+        .focus-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .focus-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
         
         @keyframes fadeInUp {
@@ -249,21 +245,20 @@
             border-radius: 2px;
         }
         
-        /* About Cards */
+        /* About Grid */
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
         
         .about-card {
             background: white;
-            padding: 2rem;
             border-radius: 15px;
+            overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s;
-            text-align: center;
         }
         
         .about-card:hover {
@@ -271,23 +266,18 @@
         }
         
         .about-card img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1rem;
-            object-fit: contain;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .about-card-content {
+            padding: 2rem;
         }
         
         .about-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-        }
-        
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
         }
         
         /* Team Grid */
@@ -300,7 +290,7 @@
         .team-member {
             background: white;
             border-radius: 15px;
-            overflow: hidden;
+            padding: 2rem;
             box-shadow: var(--shadow);
             transition: transform 0.3s;
         }
@@ -309,16 +299,7 @@
             transform: translateY(-5px);
         }
         
-        .member-header {
-            height: 80px;
-            background: var(--gradient);
-        }
-        
-        .member-info {
-            padding: 2rem;
-        }
-        
-        .member-info h3 {
+        .team-member h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
@@ -338,7 +319,7 @@
         /* Partners */
         .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -356,13 +337,14 @@
             transform: translateY(-5px);
         }
         
-        /* Research Phases */
-        .wp-timeline {
-            background: var(--light-bg);
-            padding: 5rem 2rem;
+        .partner-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
         
-        .wp-item {
+        /* Research Timeline */
+        .timeline-item {
             background: white;
             padding: 2rem;
             margin-bottom: 2rem;
@@ -371,24 +353,19 @@
             border-left: 5px solid var(--primary);
         }
         
-        .wp-header {
+        .timeline-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
         }
         
-        .wp-number {
+        .phase-number {
             background: var(--gradient);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-weight: 600;
-        }
-        
-        .wp-duration {
-            color: var(--secondary);
-            font-weight: 500;
         }
         
         /* Resources */
@@ -468,18 +445,6 @@
             object-fit: contain;
         }
         
-        .success-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #2e7d32;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            z-index: 999;
-        }
-        
         /* Visual Breaks */
         .visual-break {
             height: 400px;
@@ -498,23 +463,20 @@
             position: relative;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
+        /* Image Gallery Simple */
+        .simple-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .simple-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
         }
         
         /* Modal Styles */
@@ -567,6 +529,39 @@
             object-fit: cover;
             border-radius: 10px;
         }
+        
+        /* Success Banner */
+        .success-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #2e7d32;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            z-index: 999;
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -587,40 +582,43 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="nav-brand">
-                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=40" 
-                     style="width: 30px; height: 30px; border-radius: 50%; vertical-align: middle; margin-right: 10px; display: inline-block;">
-                CVL-CDSAML
-            </div>
+            <div class="nav-brand">CVL-CDSAML</div>
             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#objectives">Objectives</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#research-phases">Research</a></li>
-                <li><a href="#educational">Education</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#resources">Resources</a></li>
+                <li><a href="#events">Events</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
     
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1>CVL-CDSAML</h1>
             <p class="subtitle">A Corpus-based Valency Lexicon for Contrastive and Diachronic Study of Ancient & Medieval Languages</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Language Families</div>
+            <div class="hero-focus">
+                <div class="focus-item">
+                    <h3>Greek</h3>
+                    <p>From Homer to Byzantine</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">3000+</div>
-                    <div class="stat-label">Years of Language Data</div>
+                <div class="focus-item">
+                    <h3>Indo-European</h3>
+                    <p>Comparative Analysis</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">1M+</div>
-                    <div class="stat-label">Annotated Tokens</div>
+                <div class="focus-item">
+                    <h3>Computational</h3>
+                    <p>Digital Methods</p>
+                </div>
+                <div class="focus-item">
+                    <h3>Diachronic</h3>
+                    <p>Historical Linguistics</p>
                 </div>
             </div>
         </div>
@@ -633,139 +631,42 @@
             
             <div class="about-grid">
                 <div class="about-card">
-                    <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=80" alt="Ancient texts">
-                    <h3>Ancient Greek</h3>
-                    <p>Comprehensive analysis of Greek texts from Homer to Byzantine period, tracking valency changes across 3,000 years.</p>
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800" alt="Historical manuscripts">
+                    <div class="about-card-content">
+                        <h3>Diachronic Corpus Development</h3>
+                        <p>Building comprehensive annotated corpora spanning three millennia of linguistic data, from ancient texts to medieval manuscripts.</p>
+                    </div>
                 </div>
                 
                 <div class="about-card">
-                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=80" alt="Romance manuscripts">
-                    <h3>Romance Languages</h3>
-                    <p>Exploring the evolution of argument structures from Latin to modern Romance languages including Italian, Spanish, and French.</p>
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800" alt="Computational analysis">
+                    <div class="about-card-content">
+                        <h3>Computational Linguistics Methods</h3>
+                        <p>Applying state-of-the-art NLP techniques to historical texts, including dependency parsing, semantic analysis, and machine learning.</p>
+                    </div>
                 </div>
                 
                 <div class="about-card">
-                    <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=80" alt="Germanic texts">
-                    <h3>Germanic Languages</h3>
-                    <p>Investigating valency patterns in Gothic, Old English, Old High German and their modern descendants.</p>
-                </div>
-            </div>
-            
-            <p style="text-align: center; margin-bottom: 3rem; color: #666;">Computational linguistics and diachronic analysis in action</p>
-            
-            <!-- First Gallery Row -->
-            <div class="image-gallery">
-                <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 20px;">
-                        <h4>Digital Text Analysis</h4>
-                        <p style="font-size: 0.9rem;">Processing ancient manuscripts with modern tools</p>
-                    </div>
-                </div>
-                
-                <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 20px;">
-                        <h4>Language Networks</h4>
-                        <p style="font-size: 0.9rem;">Visualizing linguistic relationships</p>
-                    </div>
-                </div>
-                
-                <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 20px;">
-                        <h4>Data Visualization</h4>
-                        <p style="font-size: 0.9rem;">Interactive charts of diachronic changes</p>
-                    </div>
-                </div>
-                
-                <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 20px;">
-                        <h4>Corpus Analytics</h4>
-                        <p style="font-size: 0.9rem;">Advanced computational analysis</p>
-                    </div>
-                </div>
-                
-                <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 20px;">
-                        <h4>AI & Machine Learning</h4>
-                        <p style="font-size: 0.9rem;">Neural networks for diachronic analysis</p>
-                    </div>
-                </div>
-                
-                <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 20px;">
-                        <h4>Research Collaboration</h4>
-                        <p style="font-size: 0.9rem;">International team working together</p>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Data visualization">
+                    <div class="about-card-content">
+                        <h3>Valency Pattern Analysis</h3>
+                        <p>Systematic investigation of argument structure changes across Indo-European languages, tracking evolutionary patterns.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Computational Linguistics Toolkit -->
-            <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);">Computational Linguistics Toolkit</h3>
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);">Computational Tools for Historical Linguistics</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Neural Language Models</h3>
-                        <p>Deep learning approaches to modeling diachronic semantic change and syntactic evolution.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Corpus Annotation Tools</h3>
-                        <p>Advanced XML/TEI encoding for historical texts with linguistic annotation layers.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Dependency Parsing</h3>
-                        <p>Automatic syntactic analysis of ancient texts using Universal Dependencies framework.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Word Embeddings</h3>
-                        <p>Diachronic word embeddings to track semantic shifts across centuries of language use.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Statistical Analysis</h3>
-                        <p>R and Python libraries for quantitative analysis of linguistic variation and change.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Visualization Platform</h3>
-                        <p>Interactive D3.js visualizations for exploring diachronic patterns and relationships.</p>
-                    </div>
-                </div>
+            <div class="simple-gallery">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Text processing">
+                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" alt="Network analysis">
+                <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800" alt="Corpus tools">
+                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" alt="Machine learning">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800" alt="Code development">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800" alt="AI applications">
             </div>
         </div>
     </section>
-    
-    <!-- Visual Break 1 -->
-    <div class="visual-break" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=1920') center/cover fixed;">
-        <div class="visual-break-content">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Bridging Ancient Wisdom & Modern Technology</h2>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Computational Analysis of 3,000 Years of Language Evolution</p>
-        </div>
-    </div>
     
     <!-- Objectives Section -->
     <section class="section" style="background: var(--light-bg);" id="objectives">
@@ -800,395 +701,246 @@
             
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Nikolaos Lavidas</h3>
-                        <p class="role">Principal Investigator</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Specializing in historical syntax, language change, and corpus linguistics.</p>
-                    </div>
+                    <h3>Assoc. Prof. Nikolaos Lavidas</h3>
+                    <p class="role">Principal Investigator</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Theodoros Michalareas</h3>
-                        <p class="role">Post-Doctoral Researcher</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Specializing in corpus linguistics and computational approaches to historical texts.</p>
-                    </div>
+                    <h3>Katerina Nikiforidou</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Vassiliki Geka</h3>
-                        <p class="role">Research Team Member</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Focus on historical morpho-syntax and language variation in diachronic corpora.</p>
-                    </div>
+                    <h3>Theodoros Michalareas</h3>
+                    <p class="role">Post-Doctoral Researcher</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Vassilios Symeonidis</h3>
-                        <p class="role">Research Team Member</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Expert in medieval texts and historical linguistic analysis.</p>
-                    </div>
+                    <h3>Vassiliki Geka</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Sofia Chionidi</h3>
-                        <p class="role">Research Team Member</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Working on valency patterns in ancient Greek and Byzantine texts.</p>
-                    </div>
+                    <h3>Vassilios Symeonidis</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Anastasia Tsiropina</h3>
-                        <p class="role">Research Team Member</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Computational linguistics and digital humanities approaches to historical texts.</p>
-                    </div>
+                    <h3>Sofia Chionidi</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
-                    </div>
-                    <div class="member-info">
-                        <h3>Eleni Plakoutsi</h3>
-                        <p class="role">Research Team Member</p>
-                        <p class="affiliation">National and Kapodistrian University of Athens</p>
-                        <p>Focus on Romance languages and comparative historical linguistics.</p>
-                    </div>
+                    <h3>Anastasia Tsiropina</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
-            </div>
-            
-            <!-- Partners Section -->
-            <div style="margin-top: 4rem;">
-                <h3 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">International Partners</h3>
-                <div class="partners-grid">
-                    <div class="partner-card">
-                        <h3>University of Oslo</h3>
-                        <p>Department of Literature, Area Studies and European Languages</p>
-                        <p style="color: var(--secondary); font-weight: bold;">Prof. Dag Haug</p>
-                    </div>
-                    
-                    <div class="partner-card">
-                        <h3>PROIEL Treebank</h3>
-                        <p>Pragmatic Resources in Old Indo-European Languages</p>
-                        <p style="color: var(--secondary); font-weight: bold;">Infrastructure Partner</p>
-                    </div>
-                    
-                    <div class="partner-card">
-                        <h3>Center for Hellenic Studies</h3>
-                        <p>Harvard University</p>
-                        <p style="color: var(--secondary); font-weight: bold;">Digital Classics Collaboration</p>
-                    </div>
+                
+                <div class="team-member">
+                    <h3>Eleni Plakoutsi</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Visual Break 2 -->
-    <div class="visual-break" style="background: linear-gradient(rgba(92,107,192,0.9), rgba(142,153,243,0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920') center/cover fixed;">
-        <div class="visual-break-content">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Computational Linguistics Tools</h2>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Advanced NLP Methods for Historical Text Analysis</p>
+    <!-- Partners Section -->
+    <section class="section" style="background: var(--light-bg);" id="partners">
+        <div class="container">
+            <h2 class="section-title">International Partners</h2>
+            
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <h3>University of Oslo</h3>
+                    <p style="color: var(--secondary); font-weight: bold; margin-top: 1rem;">Prof. Dag Haug</p>
+                    <p style="margin-top: 0.5rem;">Leading expert in historical linguistics and PROIEL treebank development</p>
+                </div>
+                
+                <div class="partner-card">
+                    <h3 style="font-size: 1.5rem;">Center for Hellenic Studies</h3>
+                    <p style="font-weight: bold; margin-top: 0.5rem;">Harvard University</p>
+                    <p style="color: var(--secondary); font-weight: bold; margin-top: 1rem;">Digital Classics Collaboration</p>
+                    <a href="https://chs.harvard.edu" class="btn" style="margin-top: 1rem; font-size: 0.9rem;">Visit CHS</a>
+                </div>
+                
+                <div class="partner-card">
+                    <h3>PROIEL Treebank</h3>
+                    <p>Pragmatic Resources in Old Indo-European Languages</p>
+                    <p style="color: var(--secondary); font-weight: bold; margin-top: 1rem;">Infrastructure Partner</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
     
-    <!-- Research Phases Section -->
-    <section class="wp-timeline" id="research-phases">
+    <!-- Research Timeline -->
+    <section class="section" id="timeline">
         <div class="container">
             <h2 class="section-title">Research Timeline</h2>
             
-            <div class="wp-item">
-                <div class="wp-header">
-                    <span class="wp-number">Phase 1</span>
-                    <span class="wp-duration">Initial Stage</span>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="phase-number">Phase 1</span>
+                    <span style="color: var(--secondary); font-weight: 500;">Project Setup</span>
                 </div>
-                <h3>Project Management</h3>
-                <p>Establishment of project infrastructure, team coordination, and research protocols.</p>
-                <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 10px;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Key Activities:</h4>
-                    <ul>
-                        <li>Set up computational infrastructure and servers</li>
-                        <li>Establish data management protocols</li>
-                        <li>Create project website and documentation</li>
-                        <li>Initialize corpus collection procedures</li>
-                    </ul>
-                </div>
+                <h3>Infrastructure Development</h3>
+                <p>Establishing computational infrastructure, team coordination protocols, and initial corpus collection procedures.</p>
             </div>
             
-            <div class="wp-item">
-                <div class="wp-header">
-                    <span class="wp-number">Phase 2</span>
-                    <span class="wp-duration">Corpus Development</span>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="phase-number">Phase 2</span>
+                    <span style="color: var(--secondary); font-weight: 500;">Corpus Building</span>
                 </div>
-                <h3>Diachronic Corpus Compilation</h3>
-                <p>Collection and digitization of texts across three millennia in Greek, Romance, and Germanic languages.</p>
-                <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 10px;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Corpus Targets:</h4>
-                    <ul>
-                        <li>Ancient Greek: Homer to Byzantine texts (500,000+ tokens)</li>
-                        <li>Romance: Latin to modern varieties (300,000+ tokens)</li>
-                        <li>Germanic: Gothic to modern languages (200,000+ tokens)</li>
-                        <li>XML/TEI encoding for all texts</li>
-                    </ul>
-                </div>
+                <h3>Text Collection & Digitization</h3>
+                <p>Gathering texts from Greek (Homer to Byzantine), Romance (Latin to modern), and Germanic traditions. Target: 1+ million tokens.</p>
             </div>
             
-            <div class="wp-item">
-                <div class="wp-header">
-                    <span class="wp-number">Phase 3</span>
-                    <span class="wp-duration">Annotation Process</span>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="phase-number">Phase 3</span>
+                    <span style="color: var(--secondary); font-weight: 500;">Annotation</span>
                 </div>
                 <h3>Linguistic Annotation</h3>
-                <p>Comprehensive annotation of valency patterns, argument structures, and syntactic features.</p>
-                <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 10px;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Annotation Layers:</h4>
-                    <ul>
-                        <li>Morphological tagging (part-of-speech, case, number)</li>
-                        <li>Syntactic dependencies (Universal Dependencies framework)</li>
-                        <li>Semantic roles (agent, patient, experiencer)</li>
-                        <li>Valency frames and alternations</li>
-                    </ul>
-                </div>
+                <p>Comprehensive annotation including morphology, syntax (Universal Dependencies), semantic roles, and valency frames.</p>
             </div>
             
-            <div class="wp-item">
-                <div class="wp-header">
-                    <span class="wp-number">Phase 4</span>
-                    <span class="wp-duration">Tool Development</span>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="phase-number">Phase 4</span>
+                    <span style="color: var(--secondary); font-weight: 500;">Tool Development</span>
                 </div>
-                <h3>Computational Tool Creation</h3>
-                <p>Development of specialized software for diachronic linguistic analysis.</p>
-                <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 10px;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Tools & Platforms:</h4>
-                    <ul>
-                        <li>Web-based corpus query interface</li>
-                        <li>Valency pattern visualization tools</li>
-                        <li>Machine learning models for change prediction</li>
-                        <li>API for computational access</li>
-                    </ul>
-                </div>
+                <h3>Software Creation</h3>
+                <p>Building web interfaces, query tools, visualization platforms, and machine learning models for pattern detection.</p>
             </div>
             
-            <div class="wp-item">
-                <div class="wp-header">
-                    <span class="wp-number">Phase 5</span>
-                    <span class="wp-duration">Analysis Stage</span>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="phase-number">Phase 5</span>
+                    <span style="color: var(--secondary); font-weight: 500;">Analysis</span>
                 </div>
-                <h3>Statistical and Contrastive Analysis</h3>
-                <p>In-depth analysis of diachronic patterns and cross-linguistic comparisons.</p>
-                <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 10px;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Research Focus:</h4>
-                    <ul>
-                        <li>Quantitative analysis of valency changes</li>
-                        <li>Cross-family pattern comparison</li>
-                        <li>Contact-induced vs. inherited changes</li>
-                        <li>Theoretical model development</li>
-                    </ul>
-                </div>
+                <h3>Comparative Analysis</h3>
+                <p>Statistical analysis of diachronic patterns, cross-linguistic comparisons, and theoretical model development.</p>
             </div>
             
-            <div class="wp-item">
-                <div class="wp-header">
-                    <span class="wp-number">Phase 6</span>
-                    <span class="wp-duration">Dissemination</span>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="phase-number">Phase 6</span>
+                    <span style="color: var(--secondary); font-weight: 500;">Dissemination</span>
                 </div>
-                <h3>Publication and Outreach</h3>
-                <p>Sharing results through publications, conferences, and educational initiatives.</p>
-                <div style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 10px;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Outputs:</h4>
-                    <ul>
-                        <li>Open-access valency lexicon database</li>
-                        <li>Peer-reviewed publications in major journals</li>
-                        <li>International conference presentations</li>
-                        <li>Educational workshops and summer schools</li>
-                    </ul>
-                </div>
+                <h3>Publication & Outreach</h3>
+                <p>Open-access database release, journal publications, conference presentations, and educational workshops.</p>
             </div>
         </div>
     </section>
     
-    <!-- Educational Programs Section -->
-    <section class="section" id="educational">
+    <!-- Publications Section -->
+    <section class="section" style="background: var(--light-bg);" id="publications">
         <div class="container">
-            <h2 class="section-title">Educational Initiatives</h2>
+            <h2 class="section-title">Publications & Outputs</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Naxos Diachronic Linguistic School</h3>
-                    <p>Annual summer school on the island of Naxos focusing on computational methods in historical linguistics. Participants learn corpus annotation, statistical analysis, and visualization techniques.</p>
-                    <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
-                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                    </div>
-                </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Forthcoming Publications</h3>
+                <ul style="line-height: 2;">
+                    <li>"A Corpus-based Valency Lexicon for Ancient Greek: Methodology and First Results"</li>
+                    <li>"Computational Approaches to Diachronic Valency Change in Indo-European"</li>
+                    <li>"Machine Learning Models for Predicting Argument Structure Evolution"</li>
+                    <li>"The CVL-CDSAML Database: Architecture and Applications"</li>
+                </ul>
                 
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">GlossaContact Lab</h3>
-                    <p>Research laboratory focusing on language contact phenomena and their computational modeling. State-of-the-art facilities for corpus analysis and experimental linguistics.</p>
-                    <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
-                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">CIVIS BIP Course</h3>
-                    <p>"Diachronic Linguistics in the 21st Century" - Intensive course for European students combining traditional philology with cutting-edge computational methods.</p>
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
-                        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">MA Program</h3>
-                    <p>Master's in English, Linguistics and Translation (Director: Prof. Lavidas). Specialized track in computational historical linguistics with hands-on corpus work.</p>
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                        <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=400" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PhD Dissertations -->
-            <div style="margin-top: 3rem; background: var(--light-bg); padding: 2rem; border-radius: 15px;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">PhD Dissertations in Progress</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div>
-                        <h4 style="color: var(--secondary);">Maria Episkopou</h4>
-                        <p>Valency patterns in Byzantine Greek legal texts: A corpus-based approach to argument structure change</p>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary);">Georgia Stavrianopoulou</h4>
-                        <p>Computational modeling of causative alternations in the diachrony of Romance languages</p>
-                    </div>
-                </div>
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Conference Presentations</h3>
+                <ul style="line-height: 2;">
+                    <li>International Conference on Historical Linguistics (ICHL 2025)</li>
+                    <li>Digital Humanities Conference (DH 2025)</li>
+                    <li>Workshop on Computational Historical Linguistics</li>
+                </ul>
             </div>
         </div>
     </section>
-    
-    <!-- Visual Break 3 -->
-    <div class="visual-break" style="background: linear-gradient(rgba(255,107,107,0.9), rgba(255,154,139,0.9)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920') center/cover fixed;">
-        <div class="visual-break-content">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Building Tomorrow's Linguistic Infrastructure</h2>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Open Science for Historical Language Research</p>
-        </div>
-    </div>
     
     <!-- Resources Section -->
-    <section class="section" style="background: var(--light-bg);" id="resources">
+    <section class="section" id="resources">
         <div class="container">
             <h2 class="section-title">Resources & Tools</h2>
-            <p style="text-align: center; margin-bottom: 3rem; color: #666;">Access our computational linguistics toolkit and research outputs</p>
+            <p style="text-align: center; margin-bottom: 3rem; color: #666;">Access our computational linguistics toolkit</p>
             
             <div class="resources-grid">
                 <div class="resource-item" onclick="openModal('lexicon')">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" style="width: 60px; height: 60px; margin-bottom: 1rem;">
                     <h4>Valency Lexicon</h4>
-                    <p>Interactive database of 5,000+ verbs with diachronic valency patterns</p>
+                    <p>Interactive database of 5,000+ verbs with diachronic patterns</p>
                     <button class="btn" style="margin-top: 1rem;">View Details</button>
                 </div>
                 
                 <div class="resource-item" onclick="openModal('corpus')">
-                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    <h4>Corpus Query Tool</h4>
-                    <p>Search annotated historical texts with advanced linguistic filters</p>
+                    <h4>Corpus Query</h4>
+                    <p>Search annotated texts with linguistic filters</p>
                     <button class="btn" style="margin-top: 1rem;">View Details</button>
                 </div>
                 
                 <div class="resource-item">
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    <h4>GitHub Repository</h4>
-                    <p>Open-source code for corpus processing and analysis</p>
+                    <h4>GitHub</h4>
+                    <p>Open-source code and documentation</p>
                     <a href="https://github.com/AthensDiaCorpus" class="btn" style="margin-top: 1rem;">View Code</a>
                 </div>
                 
-                <div class="resource-item" onclick="openModal('publications')">
-                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=100" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    <h4>Publications</h4>
-                    <p>Research papers and technical documentation</p>
-                    <button class="btn" style="margin-top: 1rem;">View Papers</button>
-                </div>
-                
-                <div class="resource-item" onclick="openModal('workshops')">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=100" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    <h4>Workshops</h4>
-                    <p>Training materials and video tutorials</p>
+                <div class="resource-item" onclick="openModal('tutorials')">
+                    <h4>Tutorials</h4>
+                    <p>Training materials and guides</p>
                     <button class="btn" style="margin-top: 1rem;">Learn More</button>
                 </div>
-                
-                <div class="resource-item" onclick="openModal('api')">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    <h4>API Access</h4>
-                    <p>Programmatic access to linguistic data</p>
-                    <button class="btn" style="margin-top: 1rem;">Documentation</button>
-                </div>
-            </div>
-            
-            <!-- Jekyll Note -->
-            <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: var(--shadow);">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Technical Infrastructure</h3>
-                <p>This website is hosted on GitHub Pages with minimal Jekyll usage - primarily for automatic builds and deployment. The site is built with standard HTML, CSS, and JavaScript for maximum control and customization. All our computational tools prioritize open science principles and accessibility.</p>
             </div>
         </div>
     </section>
     
-    <!-- Computational Linguistics Gallery -->
-    <section class="section" style="background: white;">
+    <!-- Events Section -->
+    <section class="section" style="background: var(--light-bg);" id="events">
         <div class="container">
-            <h2 class="section-title">Computational Linguistics in Action</h2>
-            <p style="text-align: center; margin-bottom: 3rem; color: #666;">Visualizing language change through advanced computational methods</p>
+            <h2 class="section-title">Educational Programs & Events</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 3rem;">
-                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Time series analysis">
-                <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Corpus tools">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Data visualization">
-                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Network graphs">
-                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Neural networks">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Language models">
-                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Word embeddings">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Statistical analysis">
-                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Research collaboration">
-                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Code development">
-                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="AI linguistics">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" alt="Text processing">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Naxos Diachronic Linguistic School</h3>
+                    <p>Annual summer school focusing on computational methods in historical linguistics.</p>
+                    <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">GlossaContact Lab</h3>
+                    <p>Research laboratory for language contact phenomena and computational modeling.</p>
+                    <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">CIVIS BIP Course</h3>
+                    <p>"Diachronic Linguistics in the 21st Century" - Intensive European course.</p>
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">MA Program in English, Linguistics and Translation</h3>
+                    <p>Featuring courses: "Historical Linguistics and Diachronic Corpora" and "Translation and Language Variation" by Assoc. Prof. Lavidas</p>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
+                </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
-                <div>
-                    <h3 style="color: var(--primary);">3D Visualizations</h3>
-                    <p>Interactive 3D plots showing semantic drift across centuries</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--primary);">Network Analysis</h3>
-                    <p>Graph-based representations of syntactic dependencies</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--primary);">Time Series</h3>
-                    <p>Temporal patterns in language change phenomena</p>
+            <!-- PhD Dissertations -->
+            <div style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 15px;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">PhD Dissertations in Progress</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--secondary);">Maria Episkopou</h4>
+                        <p>Valency patterns in Byzantine Greek legal texts</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary);">Georgia Stavrianopoulou</h4>
+                        <p>Computational modeling of causative alternations in Romance</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1197,32 +949,22 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact & Collaboration</h2>
+            <h2 class="section-title">Contact</h2>
             
             <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                    <strong>Interested in our research?</strong><br>
-                    Want to collaborate or access our resources?
-                </p>
-                
                 <div style="background: var(--light-bg); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
                     <h3 style="color: var(--primary); margin-bottom: 1rem;">Principal Investigator</h3>
-                    <p><strong>Prof. Nikolaos Lavidas</strong><br>
+                    <p><strong>Assoc. Prof. Nikolaos Lavidas</strong><br>
+                    Division of Language-Linguistics<br>
+                    Department of English Language and Literature<br>
+                    School of Philosophy<br>
                     National and Kapodistrian University of Athens<br>
-                    Faculty of Philology<br>
                     Email: nlavidas@phil.uoa.gr</p>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <a href="mailto:nlavidas@phil.uoa.gr" class="btn" style="width: 100%;">
-                        Email Us
-                    </a>
-                    <a href="#" class="btn" style="width: 100%; background: var(--accent);">
-                        Follow Updates
-                    </a>
-                    <a href="https://github.com/AthensDiaCorpus" class="btn" style="width: 100%; background: var(--success);">
-                        GitHub
-                    </a>
+                    <a href="mailto:nlavidas@phil.uoa.gr" class="btn" style="width: 100%;">Email</a>
+                    <a href="https://github.com/AthensDiaCorpus" class="btn" style="width: 100%; background: var(--success);">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1237,22 +979,24 @@
             <div class="footer-logos" style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px;">
                 <div style="text-align: center;">
                     <img src="1.png" 
-                         alt="HRFI/ELIDEK" 
-                         style="height: 80px; max-width: 200px; object-fit: contain;"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'text-align:center;\'><div style=\'color:#e53935; font-weight:bold; font-size:1.5rem;\'>ΕΛΙΔΕΚ</div><div style=\'color:#1a237e; font-size:1.2rem; font-weight:bold;\'>H.F.R.I.</div><div style=\'color:#fff; font-size:0.9rem; opacity:0.8;\'>Hellenic Foundation for<br>Research & Innovation</div></div>'">
+                         alt="HFRI/ELIDEK Logo" 
+                         style="height: 80px; max-width: 200px; object-fit: contain;">
                 </div>
                 
                 <div style="text-align: center;">
                     <img src="2.png" 
-                         alt="Greece 2.0" 
-                         style="height: 80px; max-width: 200px; object-fit: contain;"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'text-align:center;\'><div style=\'color:#fff; font-weight:bold; font-size:1.5rem;\'>GREECE 2.0</div><div style=\'color:#4285f4; font-size:1rem;\'>National Recovery<br>and Resilience Plan</div></div>'">
+                         alt="Greece 2.0 Logo" 
+                         style="height: 80px; max-width: 200px; object-fit: contain;">
                 </div>
             </div>
             
-            <div style="text-align: center; color: #999; font-size: 0.9rem;">
+            <div style="text-align: center; color: #999; font-size: 0.9rem; margin-top: 2rem;">
                 <p>© 2024 CVL-CDSAML Project | HFRI Grant #16177</p>
-                <p>National and Kapodistrian University of Athens</p>
+                <p>Assoc. Prof. Nikolaos Lavidas<br>
+                Division of Language-Linguistics<br>
+                Department of English Language and Literature<br>
+                School of Philosophy<br>
+                National and Kapodistrian University of Athens</p>
             </div>
         </div>
     </footer>
@@ -1262,7 +1006,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('lexicon')">&times;</span>
             <h2 style="color: var(--primary); margin-bottom: 2rem;">Valency Lexicon Database</h2>
-            <p>Our comprehensive valency lexicon covers over 5,000 verbs across Ancient Greek, Romance, and Germanic languages, tracking argument structure changes over 3,000 years.</p>
+            <p>Comprehensive database covering over 5,000 verbs across Greek, Romance, and Germanic languages.</p>
             
             <div class="modal-gallery">
                 <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800" alt="Database visualization">
@@ -1279,7 +1023,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('corpus')">&times;</span>
             <h2 style="color: var(--primary); margin-bottom: 2rem;">Corpus Query Interface</h2>
-            <p>Advanced search capabilities for annotated historical texts with morphological, syntactic, and semantic filters.</p>
+            <p>Advanced search capabilities for annotated historical texts.</p>
             
             <div class="modal-gallery">
                 <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=800" alt="Text analysis">
@@ -1292,53 +1036,19 @@
         </div>
     </div>
     
-    <div id="publicationsModal" class="modal">
+    <div id="tutorialsModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('publications')">&times;</span>
-            <h2 style="color: var(--primary); margin-bottom: 2rem;">Research Publications</h2>
-            <p>Peer-reviewed papers on computational diachronic linguistics, valency theory, and language change.</p>
+            <span class="close" onclick="closeModal('tutorials')">&times;</span>
+            <h2 style="color: var(--primary); margin-bottom: 2rem;">Training Materials</h2>
+            <p>Comprehensive guides for using our computational tools and databases.</p>
             
             <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="Research papers">
-                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800" alt="Academic writing">
-                <img src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800" alt="Documentation">
-                <img src="https://images.unsplash.com/photo-1444927714506-8492d94b4e3d?w=800" alt="Research notes">
-                <img src="https://images.unsplash.com/photo-1553729784-e91953dec042?w=800" alt="Data visualization">
-                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800" alt="AI linguistics">
-            </div>
-        </div>
-    </div>
-    
-    <div id="workshopsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('workshops')">&times;</span>
-            <h2 style="color: var(--primary); margin-bottom: 2rem;">Training Workshops</h2>
-            <p>Hands-on training in corpus annotation, computational analysis, and diachronic linguistics methods.</p>
-            
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800" alt="Workshop session">
-                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800" alt="Collaborative learning">
+                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800" alt="Tutorial session">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="Team training">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800" alt="Presentation">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800" alt="Tech workshop">
-                <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800" alt="Online training">
-            </div>
-        </div>
-    </div>
-    
-    <div id="apiModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('api')">&times;</span>
-            <h2 style="color: var(--primary); margin-bottom: 2rem;">API Documentation</h2>
-            <p>RESTful API for programmatic access to linguistic data, enabling integration with computational research workflows.</p>
-            
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800" alt="API development">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800" alt="Code interface">
-                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800" alt="Programming">
-                <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800" alt="Data structures">
-                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800" alt="Development tools">
-                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800" alt="Team coding">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800" alt="Workshop">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800" alt="Coding tutorial">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800" alt="Development">
+                <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800" alt="Online learning">
             </div>
         </div>
     </div>
@@ -1379,17 +1089,14 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-        
-        // Log site info
-        console.log('CVL-CDSAML Project Website');
-        console.log('Version: 1.0');
-        console.log('Powered by: GitHub Pages + Jekyll');
-        console.log('Principal Investigator: Nikolaos Lavidas');
         
         // Modal functions
         function openModal(type) {
@@ -1412,6 +1119,12 @@
                 }
             }
         }
+        
+        // Log site info
+        console.log('CVL-CDSAML Project Website');
+        console.log('Version: 1.0');
+        console.log('Powered by: GitHub Pages with minimal Jekyll');
+        console.log('Principal Investigator: Nikolaos Lavidas');
     </script>
 </body>
 </html>
