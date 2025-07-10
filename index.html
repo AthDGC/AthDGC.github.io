@@ -539,14 +539,17 @@
     </style>
 </head>
 <body>
-    <!-- Password Protection (Temporarily Disabled) -->
-    <div id="passwordOverlay" style="display: none;">
+    <!-- Password Protection -->
+    <div id="passwordOverlay">
         <div class="password-box">
-            <h2>Access CVL-CDSAML Project</h2>
-            <p>Please enter the access password</p>
-            <input type="password" id="passwordInput" placeholder="Enter password">
+            <h2>🔒 CVL-CDSAML Project</h2>
+            <p style="color: #666; margin-bottom: 1.5rem;">This site is under development.<br>Authorized access only.</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
             <button onclick="checkPassword()">Enter</button>
-            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Contact nlavidas@phil.uoa.gr for access</p>
+            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                For access, contact: nlavidas@phil.uoa.gr<br>
+                <small style="opacity: 0.7;">Protected content - ΕΛΙΔΕΚ/HFRI Project</small>
+            </p>
         </div>
     </div>
     
