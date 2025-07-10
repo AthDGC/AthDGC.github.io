@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CVL-CDSAML: A Corpus-based Valency Lexicon for Contrastive and Diachronic Study of Ancient & Medieval Languages - ELIDEK Funded Research Project">
+    <meta name="keywords" content="valency lexicon, diachronic linguistics, ancient languages, medieval languages, corpus linguistics, ELIDEK, digital humanities">
+    <meta name="author" content="Nikolaos Lavidas">
+    
+    <title>CVL-CDSAML - Corpus-based Valency Lexicon Project</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a237e;
+            --secondary: #3949ab;
+            --accent: #5c6bc0;
+            --text: #333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --success: #4caf50;
+            --gradient: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .lang-switch {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .hero-meta-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .about-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .about-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .about-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        
+        .member-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+        }
+        
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-info .role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .member-info .affiliation {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        /* Work Packages */
+        .wp-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .wp-item {
+            background: var(--white);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .wp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .wp-number {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .wp-duration {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        /* Milestones */
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .milestone-card {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--success);
+        }
+        
+        .milestone-number {
+            background: var(--success);
+            color: white;
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Resources Section */
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .resource-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logos img {
+            height: 60px;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* OSF Banner */
+        .osf-banner {
+            background: #2e7d32;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999;
+            display: none;
+        }
+        
+        .show-banner {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">CVL-CDSAML</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#objectives">Objectives</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#workpackages">Work Packages</a></li>
+                <li><a href="#milestones">Milestones</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="lang-switch" onclick="toggleLanguage()">ΕΛ/EN</button></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>CVL-CDSAML</h1>
+        <p class="subtitle">A Corpus-based Valency Lexicon for Contrastive and Diachronic Study<br>of Ancient & Medieval Languages</p>
+        
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <strong>ΕΛΙΔΕΚ/ELIDEK Funded</strong><br>
+                Greece 2.0 Basic Research
+            </div>
+            <div class="hero-meta-item">
+                <strong>€300,000</strong><br>
+                Total Budget
+            </div>
+            <div class="hero-meta-item">
+                <strong>24 Months</strong><br>
+                Project Duration
+            </div>
+            <div class="hero-meta-item">
+                <strong>3 Institutions</strong><br>
+                International Collaboration
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About the Project</h2>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="icon">🔬</div>
+                <h3>Digital Humanities Innovation</h3>
+                <p>Creating an electronic database with information on argument structure of selected verbs across different periods and language families, combining corpus-driven methods with genealogical and contact linguistics.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="icon">🌐</div>
+                <h3>Cross-Linguistic Approach</h3>
+                <p>Focusing on early Greek, Romance, and Germanic dialects to investigate the complementary role of linguistic genealogy and language contact in the history of languages.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="icon">📊</div>
+                <h3>Diachronic Perspective</h3>
+                <p>Adding the temporal dimension to valency studies by collecting evidence from languages with well-documented histories, approaching valency and valency-changing categories across time.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Objectives Section -->
+    <section class="section" style="background: var(--light-bg);" id="objectives">
+        <h2 class="section-title">Project Objectives</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Main Research Questions</h3>
+            <ol style="line-height: 2;">
+                <li><strong>Linguistic Genealogy vs. Contact:</strong> How do genealogical characteristics and contact-induced changes interact in valency patterns?</li>
+                <li><strong>Diachronic Analysis:</strong> What are the major diachronic features of valency categories across different language families?</li>
+                <li><strong>Methodological Innovation:</strong> How can we create a unified resource combining dictionaries, corpora, and typological databases?</li>
+            </ol>
+            
+            <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Expected Outcomes</h3>
+            <ul style="line-height: 2;">
+                <li>✓ A comprehensive diachronic contrastive Valency Lexicon</li>
+                <li>✓ Annotated corpus samples from different historical periods</li>
+                <li>✓ Automatic extraction tools for valency features</li>
+                <li>✓ Statistical analyses of valency patterns and changes</li>
+                <li>✓ Open-access web interface for researchers worldwide</li>
+                <li>✓ Publications in top-tier journals and conference proceedings</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="section" id="team">
+        <h2 class="section-title">Research Team</h2>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-header">
+                    <h2>NL</h2>
+                </div>
+                <div class="member-info">
+                    <h3>Nikolaos Lavidas</h3>
+                    <div class="role">Principal Investigator</div>
+                    <div class="affiliation">National and Kapodistrian University of Athens</div>
+                    <p>Associate Professor of Diachronic Linguistics. Expertise in historical linguistics, language contact, and valency patterns in ancient languages.</p>
+                    <p><strong>Email:</strong> nlavidas@enl.uoa.gr</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-header">
+                    <h2>DH</h2>
+                </div>
+                <div class="member-info">
+                    <h3>Dag Haug</h3>
+                    <div class="role">International Partner</div>
+                    <div class="affiliation">University of Oslo</div>
+                    <p>Professor of Greek and Latin. Expertise in historical corpora (PROIEL), computational linguistics, and ancient Indo-European languages.</p>
+                    <p><strong>Email:</strong> daghaug@uio.no</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-header">
+                    <h2>LK</h2>
+                </div>
+                <div class="member-info">
+                    <h3>Leonid Kulikov</h3>
+                    <div class="role">International Partner</div>
+                    <div class="affiliation">Ghent University</div>
+                    <p>Specialist in Diachronic Typology, philological study of ancient and medieval languages, and examination of language change.</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-header">
+                    <h2>KN</h2>
+                </div>
+                <div class="member-info">
+                    <h3>Kiki Nikiforidou</h3>
+                    <div class="role">Research Team Member</div>
+                    <div class="affiliation">National and Kapodistrian University of Athens</div>
+                    <p>Expertise in Theoretical Linguistics and Lexicography. Focus on valency patterns analysis and grammatical approaches to genre.</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-header">
+                    <h2>PD</h2>
+                </div>
+                <div class="member-info">
+                    <h3>Post-Doc Researcher</h3>
+                    <div class="role">To Be Recruited</div>
+                    <div class="affiliation">Host Institution</div>
+                    <p>Specialization in Germanic/Greek/Romance Historical Morpho-syntax. Will develop teaching material and participate in all project activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work Packages Section -->
+    <section class="section" style="background: var(--light-bg);" id="workpackages">
+        <h2 class="section-title">Work Packages</h2>
+        
+        <div class="wp-timeline">
+            <div class="wp-item">
+                <div class="wp-header">
+                    <span class="wp-number">WP1 - Project Management</span>
+                    <span class="wp-duration">Months 1-24</span>
+                </div>
+                <h3>Coordination and Administration</h3>
+                <p>Overall project coordination, financial management, quality assurance, and dissemination activities.</p>
+            </div>
+            
+            <div class="wp-item">
+                <div class="wp-header">
+                    <span class="wp-number">WP2 - Text Selection & Analysis</span>
+                    <span class="wp-duration">Months 1-3</span>
+                </div>
+                <h3>Corpus Design and Sample Selection</h3>
+                <p>Selection of texts from different periods, creation of annotation schemes, cross-linguistic analysis of valency patterns.</p>
+                <ul style="margin-top: 1rem;">
+                    <li>Ancient Greek texts (Homer to Byzantine)</li>
+                    <li>Latin and Romance texts</li>
+                    <li>Germanic historical texts</li>
+                </ul>
+            </div>
+            
+            <div class="wp-item">
+                <div class="wp-header">
+                    <span class="wp-number">WP3 - Annotation</span>
+                    <span class="wp-duration">Months 4-15</span>
+                </div>
+                <h3>Valency Features Annotation</h3>
+                <p>Systematic annotation of valency features in selected texts, with emphasis on loanwords (contact) and native words (genealogy).</p>
+                <p><strong>Person Months:</strong> 38 PMs</p>
+            </div>
+            
+            <div class="wp-item">
+                <div class="wp-header">
+                    <span class="wp-number">WP4 - Automatic Extraction</span>
+                    <span class="wp-duration">Months 12-17</span>
+                </div>
+                <h3>Information Extraction System</h3>
+                <p>Development of codes and formalisms for automatic extraction of valency information. Modification of PROIEL codes for project needs.</p>
+                <p><strong>Person Months:</strong> 17 PMs</p>
+            </div>
+            
+            <div class="wp-item">
+                <div class="wp-header">
+                    <span class="wp-number">WP5 - Statistical Analysis</span>
+                    <span class="wp-duration">Months 15-18</span>
+                </div>
+                <h3>Diachronic and Contrastive Analysis</h3>
+                <p>Statistical analyses of valency patterns, genealogical aspects, and contact-induced changes.</p>
+            </div>
+            
+            <div class="wp-item">
+                <div class="wp-header">
+                    <span class="wp-number">WP6 - Dissemination</span>
+                    <span class="wp-duration">Months 19-24</span>
+                </div>
+                <h3>Results Presentation and Future Planning</h3>
+                <p>Final Valency Lexicon creation, workshops, publications, and evaluation for future expansions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Milestones Section -->
+    <section class="section" id="milestones">
+        <h2 class="section-title">Project Milestones</h2>
+        
+        <div class="milestone-grid">
+            <div class="milestone-card">
+                <span class="milestone-number">M1 - Month 2</span>
+                <h4>Final Text Sample List</h4>
+                <p>Completion of final list of text samples for annotation.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M2 - Month 2</span>
+                <h4>Pilot Annotation Scheme</h4>
+                <p>Development and testing of annotation methodology.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M3 - Month 9</span>
+                <h4>Annotation Evaluation</h4>
+                <p>Assessment of annotation process and quality control.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M4 - Month 14</span>
+                <h4>Annotation Workshop</h4>
+                <p>Workshop on annotating valency features in diachronic perspective.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M5 - Month 15</span>
+                <h4>Automatic Extraction Complete</h4>
+                <p>Pilot automatic extraction of valency features.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M6 - Month 16</span>
+                <h4>First Lexicon Version</h4>
+                <p>Release of first version of the Valency Lexicon.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M7 - Month 17</span>
+                <h4>Statistical Analysis</h4>
+                <p>Completion of statistical analyses and workshop presentation.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M8 - Month 22</span>
+                <h4>Final Lexicon Version</h4>
+                <p>Final deliverable of the Valency Lexicon available online.</p>
+            </div>
+            
+            <div class="milestone-card">
+                <span class="milestone-number">M9 - Month 24</span>
+                <h4>Project Evaluation</h4>
+                <p>Final workshop and future planning for lexicon expansion.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resources Section -->
+    <section class="section" style="background: var(--light-bg);" id="resources">
+        <h2 class="section-title">Resources & Access</h2>
+        
+        <div class="resource-cards">
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <h3>Valency Lexicon</h3>
+                <p>Access the online corpus-based valency lexicon with search and visualization tools.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">💾</div>
+                <h3>Annotated Corpora</h3>
+                <p>Download annotated text samples with valency features from all project languages.</p>
+                <a href="#" class="btn">View Samples</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🔧</div>
+                <h3>Extraction Tools</h3>
+                <p>Access our automatic valency extraction tools and annotation guidelines.</p>
+                <a href="#" class="btn">Documentation</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📊</div>
+                <h3>Statistical Data</h3>
+                <p>Explore statistical analyses of valency patterns and diachronic changes.</p>
+                <a href="#" class="btn">View Analytics</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📝</div>
+                <h3>Publications</h3>
+                <p>Read project publications, conference papers, and workshop proceedings.</p>
+                <a href="#" class="btn">Publications List</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🗄️</div>
+                <h3>OSF Repository</h3>
+                <p>Access our Open Science Framework repository for data and preprints.</p>
+                <a href="#" class="btn" onclick="showOSFInfo()">OSF Access</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact Information</h2>
+        
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Principal Investigator</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                <strong>Nikolaos Lavidas</strong><br>
+                Associate Professor of Diachronic Linguistics<br>
+                National and Kapodistrian University of Athens<br>
+                <a href="mailto:nlavidas@enl.uoa.gr" style="color: var(--secondary);">nlavidas@enl.uoa.gr</a>
+            </p>
+            
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Host Institution</h3>
+            <p>
+                Department of Language-Linguistics<br>
+                Faculty of English Language and Literature<br>
+                School of Philosophy<br>
+                National and Kapodistrian University of Athens<br>
+                Panepistimioupoli, 15784 Athens, Greece
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>CVL-CDSAML Project</h3>
+            <p>A Corpus-based Valency Lexicon for Contrastive and Diachronic Study of Ancient & Medieval Languages</p>
+            
+            <div class="footer-logos">
+                <div>
+                    <strong>ΕΛΙΔΕΚ/ELIDEK</strong><br>
+                    Hellenic Foundation for<br>Research and Innovation
+                </div>
+                <div>
+                    <strong>Greece 2.0</strong><br>
+                    Basic Research<br>Financing Action
+                </div>
+                <div>
+                    <strong>€300,000</strong><br>
+                    Total Project<br>Funding
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                © 2024 CVL-CDSAML Project. All content licensed under CC-BY 4.0.<br>
+                Website archived and preserved through OSF (Open Science Framework)
+            </p>
+        </div>
+    </footer>
+    
+    <!-- OSF Preservation Banner -->
+    <div class="osf-banner" id="osfBanner">
+        <strong>📁 OSF Preservation Active:</strong> This website and all project data are permanently archived at OSF.io
+        <button onclick="this.parentElement.style.display='none'" style="margin-left: 1rem; background: white; color: #2e7d32; border: none; padding: 0.3rem 1rem; border-radius: 15px; cursor: pointer;">Got it</button>
+    </div>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Show OSF banner after 5 seconds
+        setTimeout(() => {
+            document.getElementById('osfBanner').classList.add('show-banner');
+        }, 5000);
+        
+        // Language toggle (placeholder)
+        function toggleLanguage() {
+            alert('Greek version coming soon! Ελληνική έκδοση σύντομα διαθέσιμη!');
+        }
+        
+        // OSF info
+        function showOSFInfo() {
+            alert(`🗄️ OSF (Open Science Framework) Preservation
+
+This project uses OSF for permanent archival:
+
+✓ All project data backed up
+✓ DOI assignment for citation
+✓ Version control for updates
+✓ Public access guaranteed
+✓ Long-term preservation
+
+OSF ensures this website and all research outputs remain accessible even after project completion.
+
+Visit: osf.io/[project-id] (coming soon)`);
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+        
+        // Add fade-in animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
