@@ -351,32 +351,7 @@
             font-weight: 600;
         }
         
-        /* Milestones */
-        .milestone-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .milestone-card {
-            background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--success);
-        }
-        
-        .milestone-number {
-            background: var(--success);
-            color: white;
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Resources Section */
+        /* Work Packages */
         .resource-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -564,8 +539,10 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#objectives">Objectives</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#research-phases">Research Phases</a></li>
+                <li><a href="#research-phases">Research</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#resources">Resources</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -594,7 +571,7 @@
                     <p>From antiquity to medieval</p>
                 </div>
                 <div class="hero-feature">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=80" style="width: 50px; height: 50px; border-radius: 10px; margin-bottom: 1rem;">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=80" style="width: 50px; height: 50px; border-radius: 10px; margin-bottom: 1rem;">
                     <h3>Open Science</h3>
                     <p>All data freely available</p>
                 </div>
@@ -647,10 +624,13 @@
         </div>
     </section>
     
-    <!-- Image Gallery Section -->
-    <section class="section" style="background: var(--light-bg);">
+    <!-- Gallery & Tools Section -->
+    <section class="section" style="background: var(--light-bg);" id="gallery">
         <div class="container">
-            <h2 class="section-title">Research in Action</h2>
+            <h2 class="section-title">Research Gallery & Tools</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: #666;">Computational linguistics and diachronic analysis in action</p>
+            
+            <!-- First Gallery Row -->
             <div class="image-gallery">
                 <div style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
                     <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" style="width: 100%; height: 250px; object-fit: cover;">
@@ -700,6 +680,59 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Computational Linguistics Toolkit -->
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);">Computational Linguistics Toolkit</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Neural Language Models</h3>
+                        <p>Deep learning approaches to modeling diachronic semantic change and syntactic evolution.</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Corpus Annotation Tools</h3>
+                        <p>Advanced XML/TEI encoding for historical texts with linguistic annotation layers.</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Dependency Parsing</h3>
+                        <p>Automatic syntactic analysis of ancient texts using Universal Dependencies framework.</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Word Embeddings</h3>
+                        <p>Diachronic word embeddings to track semantic shifts across centuries of language use.</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Statistical Analysis</h3>
+                        <p>R and Python libraries for quantitative analysis of linguistic variation and change.</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Visualization Platform</h3>
+                        <p>Interactive D3.js visualizations for exploring diachronic patterns and relationships.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -744,8 +777,7 @@
             
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Nikolaos Lavidas</h3>
@@ -756,8 +788,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Dag Haug</h3>
@@ -768,8 +799,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Kiki Nikiforidou</h3>
@@ -780,8 +810,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Theodoros Michalareas</h3>
@@ -792,8 +821,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Vassiliki Geka</h3>
@@ -804,8 +832,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Vassilios Symeonidis</h3>
@@ -816,8 +843,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Sofia Chionidi</h3>
@@ -828,8 +854,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Anastasia Tsiropina</h3>
@@ -840,8 +865,7 @@
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-header">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <div class="member-header" style="background: var(--gradient); padding: 1.5rem;">
                     </div>
                     <div class="member-info">
                         <h3>Eleni Plakoutsi</h3>
@@ -860,24 +884,17 @@
             <h2 class="section-title">Partners & Collaborators</h2>
             <div class="partners-grid">
                 <div class="partner-card">
-                    <img src="https://images.unsplash.com/photo-1569163139394-de4798a9c2b6?w=200" 
-                         style="height: 80px; border-radius: 10px; object-fit: cover;">
                     <h3>University of Oslo</h3>
-                    <p>Department of Linguistics and Scandinavian Studies</p>
                     <p style="color: var(--secondary); font-weight: bold;">Prof. Dag Haug</p>
                 </div>
                 
                 <div class="partner-card">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=200" 
-                         style="height: 80px; border-radius: 10px; object-fit: cover;">
                     <h3>PROIEL Treebank</h3>
                     <p>Pragmatic Resources in Old Indo-European Languages</p>
                     <p style="color: var(--secondary); font-weight: bold;">Infrastructure Partner</p>
                 </div>
                 
                 <div class="partner-card">
-                    <img src="https://images.unsplash.com/photo-1592478411245-d485888b479f?w=200" 
-                         style="height: 80px; border-radius: 10px; object-fit: cover;">
                     <h3>Center for Hellenic Studies</h3>
                     <p>Harvard University</p>
                     <p style="color: var(--secondary); font-weight: bold;">Digital Classics Collaboration</p>
@@ -897,7 +914,7 @@
     <!-- Research Phases Section -->
     <section class="wp-timeline" id="research-phases">
         <div class="container">
-            <h2 class="section-title">Research Phases</h2>
+            <h2 class="section-title">Research Timeline</h2>
             
             <div class="wp-item">
                 <div class="wp-header">
@@ -1052,47 +1069,32 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                 <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
-                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=50" style="width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
-                        Naxos Diachronic Linguistic School
-                    </h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Naxos Diachronic Linguistic School</h3>
                     <p>Annual summer school focusing on historical linguistics and language change, featuring hands-on workshops with our corpus tools.</p>
                     <a href="#" onclick="alert('Naxos Summer School information coming soon!'); return false;" style="color: var(--secondary); text-decoration: none; font-weight: bold;">Learn More →</a>
                 </div>
                 
                 <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=50" style="width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
-                        GlossaContact Lab
-                    </h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">GlossaContact Lab</h3>
                     <p>Research laboratory dedicated to language contact phenomena, providing infrastructure for corpus-based contact studies.</p>
                     <a href="#" onclick="alert('GlossaContact Lab details coming soon!'); return false;" style="color: var(--secondary); text-decoration: none; font-weight: bold;">Visit Lab →</a>
                 </div>
                 
                 <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=50" style="width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
-                        CIVIS BIP Course
-                    </h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">CIVIS BIP Course</h3>
                     <p>"Diachronic Linguistic in the 21st Century" - intensive program offered through the CIVIS European university alliance.</p>
                     <a href="#" onclick="alert('CIVIS BIP course information coming soon!'); return false;" style="color: var(--secondary); text-decoration: none; font-weight: bold;">Course Info →</a>
                 </div>
                 
                 <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
-                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=50" style="width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
-                        MA Program
-                    </h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">MA Program</h3>
                     <p>English, Linguistics and Translation MA program (Director: N. Lavidas) incorporating computational historical linguistics modules.</p>
                     <a href="#" onclick="alert('MA Program details coming soon!'); return false;" style="color: var(--secondary); text-decoration: none; font-weight: bold;">Program Details →</a>
                 </div>
             </div>
             
             <div style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50" style="width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
-                    PhD Dissertations in Progress
-                </h3>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">PhD Dissertations in Progress</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
                     <div style="padding: 1rem; background: #f9f9f9; border-left: 4px solid var(--secondary); border-radius: 5px;">
                         <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Maria Episkopou</h4>
@@ -1153,69 +1155,12 @@
     </section>
     
     <!-- Visual Break 3 -->
-    <div class="visual-break" style="background: linear-gradient(rgba(46,125,50,0.9), rgba(76,175,80,0.9)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920') center/cover fixed;">
+    <div class="visual-break" style="background: linear-gradient(rgba(46,125,50,0.9), rgba(76,175,80,0.9)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920') center/cover fixed;">
         <div class="visual-break-content">
             <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Open Science Initiative</h2>
             <p style="font-size: 1.2rem; opacity: 0.9;">All Data, Tools & Research Freely Available</p>
         </div>
     </div>
-    
-    <!-- Computational Tools Showcase -->
-    <section class="section" style="background: var(--light-bg);">
-        <div class="container">
-            <h2 class="section-title">Computational Linguistics Toolkit</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Neural Language Models</h3>
-                        <p>Deep learning approaches to modeling diachronic semantic change and syntactic evolution.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Corpus Annotation Tools</h3>
-                        <p>Advanced XML/TEI encoding for historical texts with linguistic annotation layers.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Dependency Parsing</h3>
-                        <p>Automatic syntactic analysis of ancient texts using Universal Dependencies framework.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Word Embeddings</h3>
-                        <p>Diachronic word embeddings to track semantic shifts across centuries of language use.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Statistical Analysis</h3>
-                        <p>R and Python libraries for quantitative analysis of linguistic variation and change.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--primary); margin-bottom: 10px;">Visualization Platform</h3>
-                        <p>Interactive D3.js visualizations for exploring diachronic patterns and relationships.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Resources Section -->
     <section class="section" id="resources">
@@ -1234,7 +1179,7 @@
                         - Export in multiple formats<br>
                         - API access available
                     </div>
-                    <a href="#" onclick="showCorpusPage(); return false;" class="btn">Access Corpus</a>
+                    <a href="#" onclick="alert('Corpus access coming soon!'); return false;" class="btn">Access Corpus</a>
                 </div>
                 
                 <div class="resource-card">
@@ -1248,7 +1193,7 @@
                         - Diachronic Comparator<br>
                         - Statistical Analyzer
                     </div>
-                    <a href="#" onclick="showToolsPage(); return false;" class="btn">GitHub Repository</a>
+                    <a href="#" onclick="alert('Tools repository coming soon!'); return false;" class="btn">GitHub Repository</a>
                 </div>
                 
                 <div class="resource-card">
@@ -1262,7 +1207,7 @@
                         - Cross-linguistic links<br>
                         - Semantic classifications
                     </div>
-                    <a href="#" onclick="showLexiconPage(); return false;" class="btn">Explore Lexicon</a>
+                    <a href="#" onclick="alert('Lexicon coming soon!'); return false;" class="btn">Explore Lexicon</a>
                 </div>
                 
                 <div class="resource-card">
@@ -1276,7 +1221,7 @@
                         - Technical reports<br>
                         - Dataset descriptions
                     </div>
-                    <a href="#" onclick="showPublicationsPage(); return false;" class="btn">View Publications</a>
+                    <a href="#" onclick="alert('Publications list coming soon!'); return false;" class="btn">View Publications</a>
                 </div>
                 
                 <div class="resource-card">
@@ -1290,7 +1235,7 @@
                         - Exercise sets<br>
                         - Reading lists
                     </div>
-                    <a href="#" onclick="showEducationPage(); return false;" class="btn">Access Materials</a>
+                    <a href="#" onclick="alert('Educational materials coming soon!'); return false;" class="btn">Access Materials</a>
                 </div>
                 
                 <div class="resource-card">
@@ -1304,7 +1249,7 @@
                         - Python backend<br>
                         - React visualizations
                     </div>
-                    <a href="#" onclick="showTechnicalPage(); return false;" class="btn">Documentation</a>
+                    <a href="#" onclick="alert('Documentation coming soon!'); return false;" class="btn">Documentation</a>
                 </div>
             </div>
         </div>
@@ -1486,284 +1431,6 @@
         console.log('Version: 1.0');
         console.log('Powered by: GitHub Pages + Jekyll');
         console.log('Principal Investigator: Nikolaos Lavidas');
-        
-        // Page display functions
-        function showCorpusPage() {
-            const content = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10000; overflow-y: auto;">
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h1 style="color: var(--primary);">Digital Corpus Access</h1>
-                            <button onclick="closePage()" style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Ancient Manuscripts</h3>
-                                    <p>Digital editions of historical texts with linguistic annotations</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Treebank Structures</h3>
-                                    <p>Syntactically parsed texts with dependency relations</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Annotation Tools</h3>
-                                    <p>WebAnno interface for collaborative annotation</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Data Visualization</h3>
-                                    <p>Interactive charts showing linguistic patterns</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Search Interface</h3>
-                                    <p>Advanced query system for linguistic patterns</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Statistical Analysis</h3>
-                                    <p>Quantitative analysis of valency patterns</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', content);
-        }
-        
-        function showToolsPage() {
-            const content = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10000; overflow-y: auto;">
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h1 style="color: var(--primary);">Computational Tools</h1>
-                            <button onclick="closePage()" style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Python Scripts</h3>
-                                    <p>Valency extraction and analysis pipelines</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Code Repository</h3>
-                                    <p>Open source tools for historical linguistics</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>API Documentation</h3>
-                                    <p>REST API for corpus queries</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Machine Learning</h3>
-                                    <p>Neural models for diachronic analysis</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', content);
-        }
-        
-        function showLexiconPage() {
-            const content = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10000; overflow-y: auto;">
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h1 style="color: var(--primary);">Valency Lexicon</h1>
-                            <button onclick="closePage()" style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Lexicon Interface</h3>
-                                    <p>Browse valency patterns across languages</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Historical Comparison</h3>
-                                    <p>Track changes through time periods</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Semantic Networks</h3>
-                                    <p>Visualize semantic relationships</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', content);
-        }
-        
-        function showPublicationsPage() {
-            const content = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10000; overflow-y: auto;">
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h1 style="color: var(--primary);">Publications</h1>
-                            <button onclick="closePage()" style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Journal Articles</h3>
-                                    <p>Peer-reviewed publications in leading journals</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Conference Papers</h3>
-                                    <p>Presentations at international conferences</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Technical Reports</h3>
-                                    <p>Detailed methodology and results</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', content);
-        }
-        
-        function showEducationPage() {
-            const content = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10000; overflow-y: auto;">
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h1 style="color: var(--primary);">Educational Materials</h1>
-                            <button onclick="closePage()" style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Course Materials</h3>
-                                    <p>Slides and handouts for university courses</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Summer School</h3>
-                                    <p>Naxos Diachronic Linguistics materials</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Tutorials</h3>
-                                    <p>Step-by-step guides for corpus tools</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', content);
-        }
-        
-        function showTechnicalPage() {
-            const content = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 10000; overflow-y: auto;">
-                    <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h1 style="color: var(--primary);">Technical Documentation</h1>
-                            <button onclick="closePage()" style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>System Architecture</h3>
-                                    <p>Technical infrastructure overview</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>Database Schema</h3>
-                                    <p>Data structure and relationships</p>
-                                </div>
-                            </div>
-                            
-                            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800" style="width: 100%; height: 250px; object-fit: cover;">
-                                <div style="padding: 1.5rem;">
-                                    <h3>API Reference</h3>
-                                    <p>Complete API documentation</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', content);
-        }
-        
-        function closePage() {
-            const pages = document.querySelectorAll('div[style*="position: fixed"]');
-            pages.forEach(page => page.remove());
-        }
     </script>
 </body>
 </html>
