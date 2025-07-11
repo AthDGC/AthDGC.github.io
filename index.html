@@ -1,55 +1,3 @@
-<!-- Additional SEO Meta Tags to add to your index.html <head> section -->
-
-<!-- Language and Region -->
-<meta name="language" content="English">
-<meta name="geo.region" content="GR">
-<meta name="geo.placename" content="Athens">
-
-<!-- Dublin Core Metadata for Academic SEO -->
-<meta name="DC.title" content="CVL-CDSAML: Corpus-based Valency Lexicon">
-<meta name="DC.creator" content="Lavidas, Nikolaos">
-<meta name="DC.subject" content="computational linguistics; historical linguistics; corpus linguistics; valency; diachronic">
-<meta name="DC.description" content="Open access corpus-based valency lexicon for diachronic study from Homer to today">
-<meta name="DC.publisher" content="National and Kapodistrian University of Athens">
-<meta name="DC.contributor" content="HFRI/ELIDEK">
-<meta name="DC.type" content="Dataset">
-<meta name="DC.format" content="text/html">
-<meta name="DC.identifier" content="https://nlavidas.github.io/cvl-cdsaml/">
-<meta name="DC.language" content="en">
-<meta name="DC.coverage" content="Ancient Greek to Modern Greek">
-<meta name="DC.rights" content="Creative Commons Attribution 4.0 International">
-
-<!-- Academic/Research Specific -->
-<meta name="citation_title" content="CVL-CDSAML: A Corpus-based Valency Lexicon for Contrastive and Diachronic Study">
-<meta name="citation_author" content="Lavidas, Nikolaos">
-<meta name="citation_publication_date" content="2024">
-<meta name="citation_journal_title" content="CVL-CDSAML Project">
-<meta name="citation_public_url" content="https://nlavidas.github.io/cvl-cdsaml/">
-
-<!-- Additional Open Graph -->
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Nikolaos Lavidas">
-<meta property="article:publisher" content="University of Athens">
-
-<!-- Twitter Additional -->
-<meta name="twitter:site" content="@cvlcdsaml">
-<meta name="twitter:creator" content="@nlavidas">
-
-<!-- Verification Tags (replace with your actual codes when you get them) -->
-<!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE"> -->
-<!-- <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE"> -->
-<!-- <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE"> -->
-
-<!-- Preconnect to External Resources for Speed -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://www.youtube.com">
-
-<!-- Favicon (create and add these files) -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- CVL-CDSAML Project Website 
@@ -118,6 +66,63 @@
     </script>
     
     <style>
+        /* Password Protection Styles */
+        #passwordModal {
+            display: block;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .password-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .password-content h2 {
+            color: #1B5E20;
+            margin-bottom: 2rem;
+        }
+        
+        .password-content input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .password-content button {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .password-content button:hover {
+            background: #1B5E20;
+        }
+        
+        .password-error {
+            color: red;
+            margin-top: 1rem;
+            display: none;
+        }
+        
         /* CSS Variables */
         :root {
             --primary: #1B5E20;
@@ -692,6 +697,16 @@
     </style>
 </head>
 <body>
+    <!-- Password Protection Modal -->
+    <div id="passwordModal">
+        <div class="password-content">
+            <h2>CVL-CDSAML Project Access</h2>
+            <p>This site is password protected during development</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPassword()">
+            <button onclick="checkPassword()">Access Site</button>
+            <div class="password-error" id="passwordError">Incorrect password. Please try again.</div>
+        </div>
+    </div>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -1150,8 +1165,8 @@
             <p style="margin-bottom: 3rem;">A Corpus-based Valency Lexicon for Contrastive and Diachronic Study<br>Languages from Antiquity to Today</p>
             
             <div class="footer-logos">
-                <img src="1.png" alt="HFRI/ELIDEK" style="height: 100px;">
-                <img src="2.png" alt="Greece 2.0" style="height: 100px;">
+                <img src="1.png" alt="HFRI/ELIDEK" style="height: 150px;">
+                <img src="2.png" alt="Greece 2.0" style="height: 150px;">
             </div>
             
             <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.8;">
@@ -1163,7 +1178,9 @@
     
     <!-- Open Access Banner -->
     <div class="open-access-banner">
-        <strong>OPEN ACCESS PROJECT</strong> - All data, tools, and publications freely available to researchers worldwide
+        <strong>OPEN ACCESS PROJECT</strong> - All data, tools, and publications freely available | 
+        <a href="#" style="color: inherit;">GitHub: ...tba</a> | 
+        <a href="#" style="color: inherit;">OSF: ...tba</a>
     </div>
     
     <!-- Modals -->
@@ -1227,6 +1244,24 @@
     </div>
     
     <script>
+        // Password Protection
+        const PASSWORDS = ['cvl2024', 'athens2024', 'lavidas2024', 'hfri2024', 'cdsaml2024'];
+        
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            if (PASSWORDS.includes(input)) {
+                sessionStorage.setItem('authenticated', 'true');
+                document.getElementById('passwordModal').style.display = 'none';
+            } else {
+                document.getElementById('passwordError').style.display = 'block';
+            }
+        }
+        
+        // Check if already authenticated
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            document.getElementById('passwordModal').style.display = 'none';
+        }
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
