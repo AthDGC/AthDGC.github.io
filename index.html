@@ -8,22 +8,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CVL-CDSAML | Corpus-based Valency Lexicon</title>
+    <title>CVL-CDSAML | Corpus-based Valency Lexicon | University of Athens</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CVL-CDSAML: A Corpus-based Valency Lexicon for Contrastive and Diachronic Study of Languages from Antiquity to Today. HFRI/ELIDEK funded open access project led by Assoc. Prof. Nikolaos Lavidas at the University of Athens.">
+    <meta name="keywords" content="CVL-CDSAML, computational linguistics, diachronic corpus, valency lexicon, historical linguistics, open access research, Nikolaos Lavidas, University of Athens, HFRI, ELIDEK, PROIEL, Penn-Helsinki, corpus linguistics, language evolution">
+    <meta name="author" content="Nikolaos Lavidas, National and Kapodistrian University of Athens">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="CVL-CDSAML | Open Access Corpus-based Valency Lexicon">
+    <meta property="og:description" content="A comprehensive open access corpus-based valency lexicon for diachronic study of languages from antiquity to today">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nlavidas.github.io/cvl-cdsaml/">
+    <meta property="og:site_name" content="CVL-CDSAML Open Access Project">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CVL-CDSAML | Open Access Corpus-based Valency Lexicon">
+    <meta name="twitter:description" content="HFRI-funded open access project on diachronic linguistic analysis at University of Athens">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nlavidas.github.io/cvl-cdsaml/">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ResearchProject",
+        "name": "CVL-CDSAML",
+        "alternateName": "Corpus-based Valency Lexicon for Contrastive and Diachronic Study of Languages from Antiquity to Today",
+        "url": "https://nlavidas.github.io/cvl-cdsaml/",
+        "description": "A comprehensive open access corpus-based valency lexicon project studying language evolution from antiquity to today",
+        "funder": {
+            "@type": "Organization",
+            "name": "Hellenic Foundation for Research and Innovation (HFRI/ELIDEK)",
+            "sameAs": "https://www.elidek.gr/"
+        },
+        "sponsor": {
+            "@type": "GovernmentOrganization",
+            "name": "Greece 2.0 National Recovery and Resilience Plan"
+        },
+        "memberOf": {
+            "@type": "EducationalOrganization",
+            "name": "National and Kapodistrian University of Athens",
+            "department": "Department of English Language and Literature",
+            "sameAs": "https://en.uoa.gr/"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Nikolaos Lavidas",
+            "sameAs": "https://scholar.google.com/citations?user=YOUR_ID"
+        }
+    }
+    </script>
+    
     <style>
         /* CSS Variables */
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF6B6B;
-            --accent: #4ECDC4;
-            --dark: #2D3436;
-            --light: #F8F9FA;
-            --light-bg: #f5f7fa;
-            --gradient: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
-            --success: #1B5E20;
+            --primary: #1B5E20;
+            --secondary: #4CAF50;
+            --accent: #8BC34A;
+            --light-bg: #F1F8E9;
+            --text: #212121;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #1B5E20 0%, #4CAF50 100%);
         }
         
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -32,79 +87,20 @@
         
         body {
             font-family: 'Inter', sans-serif;
+            color: var(--text);
             line-height: 1.6;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-        
-        /* Password Protection Overlay */
-        #passwordOverlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-        }
-        
-        .password-box {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-        
-        .password-box h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .password-box input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .password-box input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .password-box button {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-            width: 100%;
-        }
-        
-        .password-box button:hover {
-            transform: translateY(-2px);
+            background: var(--white);
         }
         
         /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            box-shadow: var(--shadow);
             z-index: 1000;
+            transition: all 0.3s ease;
         }
         
         .nav-container {
@@ -116,40 +112,44 @@
             align-items: center;
         }
         
-        .nav-brand {
+        .logo {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--dark);
             text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
         
-        .nav-links a:hover {
-            color: var(--primary);
+        .nav-menu a:hover {
+            color: var(--secondary);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(76, 175, 80, 0.9)), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920') center/cover;
             min-height: 100vh;
+            background: var(--gradient);
+            background-image: linear-gradient(rgba(27,94,32,0.9), rgba(76,175,80,0.9)), 
+                              url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920') center/cover;
+            color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            padding: 4rem 2rem;
-            margin-top: 60px;
+            padding: 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -157,34 +157,32 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: move 20s linear infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
         }
         
-        @keyframes move {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+        @keyframes float {
+            to { transform: translateY(-100px); }
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 900px;
+            max-width: 800px;
         }
         
-        .hero h1 {
+        .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
         }
         
-        .hero .subtitle {
+        .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 2rem;
             opacity: 0.9;
@@ -296,6 +294,7 @@
             background: white;
             border-radius: 15px;
             padding: 2rem;
+            text-align: center;
             box-shadow: var(--shadow);
             transition: transform 0.3s;
         }
@@ -309,31 +308,30 @@
             margin-bottom: 0.5rem;
         }
         
-        .role {
+        .team-member .role {
             color: var(--secondary);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
         
-        .affiliation {
-            color: #666;
+        .team-member .affiliation {
             font-size: 0.9rem;
+            color: #666;
             margin-bottom: 1rem;
         }
         
-        /* Partners */
+        /* Partners Grid */
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 3rem;
         }
         
         .partner-card {
-            background: white;
+            background: var(--light-bg);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: var(--shadow);
             text-align: center;
             transition: transform 0.3s;
         }
@@ -344,87 +342,219 @@
         
         .partner-card h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-        
-        /* Research Timeline */
-        .timeline-item {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            border-left: 5px solid var(--primary);
-        }
-        
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 1rem;
         }
         
-        .phase-number {
-            background: var(--gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
         }
         
-        /* Resources */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 400px;
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 50%;
+            margin-left: 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            margin-right: 2rem;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+        }
+        
+        /* Resources Grid */
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 2rem;
         }
         
-        .resource-item {
-            background: white;
+        .resource-card {
+            background: var(--gradient);
+            color: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: var(--shadow);
             text-align: center;
-            transition: all 0.3s;
             cursor: pointer;
+            transition: transform 0.3s;
         }
         
-        .resource-item:hover {
+        .resource-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
-        .resource-item h4 {
-            color: var(--primary);
+        .resource-card h3 {
             margin-bottom: 1rem;
         }
         
-        /* Button */
-        .btn {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
         }
         
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        /* Videos */
+        .video-container {
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        
+        .video-card h4 {
+            padding: 1rem;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        /* Educational Programs */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .edu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .edu-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .edu-card-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .edu-card-content {
+            padding: 1.5rem;
         }
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--primary);
             color: white;
-            padding: 4rem 2rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
         
@@ -438,361 +568,119 @@
             justify-content: center;
             align-items: center;
             gap: 3rem;
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-        }
-        
-        .footer-logos img {
-            height: 120px;
-            max-width: 300px;
-            object-fit: contain;
-        }
-        
-        /* Visual Breaks */
-        .visual-break {
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .visual-break-content {
-            text-align: center;
-            color: white;
-            z-index: 2;
-            position: relative;
-        }
-        
-        /* Image Gallery Simple */
-        .simple-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
             margin: 2rem 0;
         }
         
-        .simple-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+        .footer-logos img {
+            height: 80px;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
         }
         
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 10001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1000px;
-            border-radius: 15px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: #000;
-        }
-        
-        .modal-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .modal-gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        
-        /* Success Banner */
-        .success-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #2e7d32;
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--secondary);
             color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background: var(--primary);
+        }
+        
+        /* Open Access Banner */
+        .open-access-banner {
+            background: var(--accent);
+            color: var(--primary);
             padding: 1rem;
             text-align: center;
+            font-weight: 600;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             z-index: 999;
-            display: none;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-menu {
                 display: none;
             }
             
-            .hero h1 {
-                font-size: 2rem;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .hero .subtitle {
-                font-size: 1.2rem;
+            .timeline::before {
+                left: 30px;
             }
             
-            .section-title {
-                font-size: 2rem;
+            .timeline-item {
+                justify-content: flex-start;
             }
-        }
-        
-        /* Video Styling */
-        video {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background: #000;
-        }
-        
-        video:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-        
-        /* Demo Video Animations */
-        .demo-video-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: #000;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .demo-video {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, #1B5E20, #2E7D32, #4CAF50);
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .demo-content {
-            text-align: center;
-            color: white;
-            z-index: 2;
-            padding: 2rem;
-        }
-        
-        .demo-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            animation: fadeInScale 2s ease infinite;
-        }
-        
-        @keyframes fadeInScale {
-            0%, 100% { opacity: 0.8; transform: scale(0.95); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-        
-        .demo-text {
-            font-size: 1.2rem;
-            opacity: 0;
-            animation: textSlide 2s ease forwards;
-            animation-delay: 0.5s;
-        }
-        
-        @keyframes textSlide {
-            to { opacity: 1; transform: translateY(0); }
-            from { opacity: 0; transform: translateY(20px); }
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 3;
-        }
-        
-        .demo-video-container:hover .play-button {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-        
-        .demo-video-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        
-        .play-button::after {
-            content: '▶';
-            color: #2E7D32;
-            font-size: 2rem;
-            margin-left: 5px;
-        }
-        
-        .demo-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255,255,255,0.5);
-            border-radius: 50%;
-            animation: float 10s infinite linear;
-            box-shadow: 0 0 10px rgba(255,255,255,0.5);
-        }
-        
-        .particle:nth-child(odd) {
-            width: 6px;
-            height: 6px;
-            background: rgba(76, 175, 80, 0.8);
-            animation-duration: 12s;
-        }
-        
-        .particle:nth-child(even) {
-            background: rgba(255, 255, 255, 0.7);
-            animation-duration: 8s;
-        }
-        
-        @keyframes float {
-            from { transform: translateY(100vh) translateX(0); }
-            to { transform: translateY(-10vh) translateX(100px); }
-        }
-        
-        .audio-note {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .audio-note::before {
-            content: '♪';
-            font-size: 1rem;
+            
+            .timeline-content {
+                margin-left: 60px !important;
+                margin-right: 2rem !important;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Password Protection -->
-    <div id="passwordOverlay">
-        <div class="password-box">
-            <h2>CVL-CDSAML Project</h2>
-            <p style="color: #666; margin-bottom: 1.5rem;">This site is under development.<br>Authorized access only.</p>
-            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
-            <button onclick="checkPassword()">Enter</button>
-            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                For access, contact: nlavidas@enl.uoa.gr<br>
-                <small style="opacity: 0.7;">Protected content - ΕΛΙΔΕΚ/HFRI Project</small>
-            </p>
-        </div>
-    </div>
-    
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="nav-brand">CVL-CDSAML</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+            <a href="#" class="logo">CVL-CDSAML</a>
+            <ul class="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#objectives">Objectives</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#partners">Partners</a></li>
                 <li><a href="#timeline">Timeline</a></li>
-                <li><a href="#publications">Publications</a></li>
                 <li><a href="#resources">Resources</a></li>
-                <li><a href="#events">Events</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#videos">Videos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
     
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <h1>CVL-CDSAML</h1>
-            <p class="subtitle">A Corpus-based Valency Lexicon for Contrastive and Diachronic Study<br>of Languages from Antiquity to Today</p>
+            <h1 class="hero-title">CVL-CDSAML</h1>
+            <p class="hero-subtitle">Corpus-based Valency Lexicon for Contrastive and Diachronic Study<br>Languages from Antiquity to Today</p>
+            
             <div class="hero-focus">
                 <div class="focus-item">
-                    <h3>Historical Texts</h3>
+                    <h3>Open Access Research</h3>
+                    <p>All data and tools freely available</p>
+                </div>
+                <div class="focus-item">
+                    <h3>3,000 Years</h3>
                     <p>From Homer to today</p>
                 </div>
                 <div class="focus-item">
-                    <h3>Comparative</h3>
-                    <p>Cross-linguistic Analysis</p>
+                    <h3>Computational Tools</h3>
+                    <p>Penn-Helsinki & PROIEL standards</p>
                 </div>
                 <div class="focus-item">
-                    <h3>Computational</h3>
-                    <p>Digital Methods</p>
-                </div>
-                <div class="focus-item">
-                    <h3>Diachronic</h3>
-                    <p>Historical Linguistics</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem; text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 15px;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">More Educational Resources</h3>
-                <p style="margin-bottom: 1.5rem;">Explore additional open access linguistics videos:</p>
-                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="btn" style="font-size: 0.9rem;">TED-Ed Language</a>
-                    <a href="https://www.youtube.com/user/LinguisticsMarburg" target="_blank" class="btn" style="font-size: 0.9rem;">Virtual Linguistics Campus</a>
-                    <a href="https://www.youtube.com/channel/UCdZcGRaBV-VRRyU4t6Ur0mw" target="_blank" class="btn" style="font-size: 0.9rem;">The Ling Space</a>
+                    <h3>Diachronic Analysis</h3>
+                    <p>Language evolution patterns</p>
                 </div>
             </div>
         </div>
@@ -801,14 +689,23 @@
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">About the Project</h2>
+            <h2 class="section-title">About CVL-CDSAML</h2>
+            
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    <strong>CVL-CDSAML is an open access research project</strong> developing a comprehensive corpus-based valency lexicon 
+                    for the contrastive and diachronic study of languages from antiquity to today. 
+                    Funded by HFRI/ELIDEK, we employ Penn-Helsinki parsing standards and PROIEL treebank architecture 
+                    to track valency patterns across 3,000 years of linguistic evolution.
+                </p>
+            </div>
             
             <div class="about-grid">
                 <div class="about-card">
-                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800" alt="Historical manuscripts">
+                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800" alt="Ancient manuscripts">
                     <div class="about-card-content">
-                        <h3>Diachronic Corpus Development</h3>
-                        <p>Building comprehensive annotated corpora spanning three millennia of linguistic data. Open access resources including diachronic retranslations.</p>
+                        <h3>Historical Corpus Development</h3>
+                        <p>Building annotated corpora from Homer to contemporary texts. Open access resources including diachronic retranslations.</p>
                     </div>
                 </div>
                 
@@ -829,62 +726,36 @@
                 </div>
             </div>
             
-            <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);">Computational Tools for Historical Linguistics</h3>
-            
-            <div class="simple-gallery">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Text processing">
-                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" alt="Network analysis">
-                <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800" alt="Corpus tools">
-                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" alt="Machine learning">
-                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800" alt="Code development">
-                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800" alt="AI applications">
-            </div>
-            
-            <div style="margin-top: 3rem; background: var(--light-bg); padding: 2rem; border-radius: 15px;">
-                <h3 style="color: var(--primary); margin-bottom: 1.5rem; text-align: center;">Open Access Video Resources</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
-                        <div class="demo-video-container" style="height: 250px;" onclick="playMiniDemo(this)">
-                            <div class="demo-video" style="background: linear-gradient(90deg, #1B5E20, #4CAF50, #1B5E20); background-size: 200% 100%; animation: gradientSlide 4s linear infinite;">
-                                <div class="demo-content">
-                                    <h4 style="font-size: 1.5rem;">Diachronic Analysis</h4>
-                                    <p style="font-size: 1rem; margin-top: 0.5rem;">AI-Powered Tools</p>
-                                </div>
-                            </div>
-                            <div class="play-button" style="width: 60px; height: 60px; font-size: 1.5rem;"></div>
-                        </div>
-                        <p style="font-weight: 600; margin-top: 0.5rem;">Introduction to Diachronic Corpus Analysis</p>
-                        <p style="font-size: 0.9rem; color: #666;">Learn the basics of computational historical linguistics</p>
+            <!-- Open Access Video Resources -->
+            <div style="margin-top: 4rem; background: var(--light-bg); padding: 3rem; border-radius: 20px;">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Open Access Educational Videos</h3>
+                
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/iWDKsHm6gTA" allowfullscreen></iframe>
+                        <h4>How Languages Evolve - TED-Ed</h4>
                     </div>
-                    <div style="text-align: center;">
-                        <video controls style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
-                            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-weight: 600;">PROIEL Treebank Tutorial</p>
-                        <p style="font-size: 0.9rem; color: #666;">How to use dependency parsing for ancient texts</p>
+                    
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/SqK7XXvfiXs" allowfullscreen></iframe>
+                        <h4>The Indo-European Connection</h4>
                     </div>
                 </div>
-                
-                <style>
-                    @keyframes gradientSlide {
-                        0% { background-position: 0% 50%; }
-                        100% { background-position: 100% 50%; }
-                    }
-                </style>
             </div>
         </div>
     </section>
     
     <!-- Objectives Section -->
-    <section class="section" style="background: var(--light-bg);" id="objectives">
+    <section class="section" id="objectives" style="background-color: var(--light-bg);">
         <div class="container">
-            <h2 class="section-title">Project Objectives</h2>
+            <h2 class="section-title">Research Objectives</h2>
             
-            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Main Research Questions</h3>
-                <ol style="line-height: 2;">
-                    <li><strong>Linguistic Genealogy vs. Contact:</strong> How do we distinguish between inherited valency patterns and those resulting from language contact?</li>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Primary Research Questions</h3>
+                <ol style="line-height: 2; margin-bottom: 2rem;">
+                    <li><strong>Diachronic Evolution:</strong> How do valency patterns change from antiquity to today?</li>
+                    <li><strong>Cross-linguistic Variation:</strong> What are the systematic differences in argument realization across language families?</li>
+                    <li><strong>Language Contact:</strong> How do we distinguish between inherited valency patterns and those resulting from language contact?</li>
                     <li><strong>Diachronic Pathways:</strong> What are the typical trajectories of valency change across different language families?</li>
                     <li><strong>Computational Modeling:</strong> Can we predict valency changes using machine learning models trained on historical data?</li>
                     <li><strong>Cross-linguistic Patterns:</strong> Are there universal tendencies in how argument structures evolve over time?</li>
@@ -940,46 +811,54 @@
                 
                 <div class="team-member">
                     <h3>Vassiliki Geka</h3>
-                    <p class="role">Research Team Member</p>
+                    <p class="role">Post-Doctoral Researcher</p>
                     <p class="affiliation">National and Kapodistrian University of Athens</p>
                     <p>Focus on historical morpho-syntax and language variation in diachronic corpora.</p>
                 </div>
                 
                 <div class="team-member">
-                    <h3>Vassilios Symeonidis</h3>
-                    <p class="role">Research Team Member</p>
+                    <h3>Vassileios Symeonidis</h3>
+                    <p class="role">Post-Doctoral Researcher</p>
                     <p class="affiliation">National and Kapodistrian University of Athens</p>
-                    <p>Expert in medieval texts and historical linguistic analysis.</p>
+                    <p>Expert in digital humanities and computational text analysis.</p>
                 </div>
                 
                 <div class="team-member">
-                    <h3>Sofia Chionidi</h3>
+                    <h3>Stavroula Chionidi</h3>
                     <p class="role">Research Team Member</p>
                     <p class="affiliation">National and Kapodistrian University of Athens</p>
-                    <p>Working on valency patterns in ancient Greek texts through modern Greek.</p>
-                </div>
-                
-                <div class="team-member">
-                    <h3>Anastasia Tsiropina</h3>
-                    <p class="role">Research Team Member</p>
-                    <p class="affiliation">National and Kapodistrian University of Athens</p>
-                    <p>Computational linguistics and digital humanities approaches.</p>
+                    <p>Working on corpus annotation and linguistic data processing.</p>
                 </div>
                 
                 <div class="team-member">
                     <h3>Eleni Plakoutsi</h3>
                     <p class="role">Research Team Member</p>
                     <p class="affiliation">National and Kapodistrian University of Athens</p>
-                    <p>Focus on comparative historical linguistics and contact phenomena.</p>
+                    <p>Specializing in comparative historical linguistics and genealogical analysis.</p>
                 </div>
+                
+                <div class="team-member">
+                    <h3>Anastasia Tsiropina</h3>
+                    <p class="role">Research Team Member</p>
+                    <p class="affiliation">National and Kapodistrian University of Athens</p>
+                    <p>Focus on valency patterns and argument structure in historical texts.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: var(--light-bg); border-radius: 15px;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">PhD Dissertations in Progress</h3>
+                <ul style="line-height: 2;">
+                    <li><strong>Maria Episkopou:</strong> Diachronic retranslations and influential texts</li>
+                    <li><strong>Georgia Stavrianopoulou:</strong> Diachronic retellings and influential narratives</li>
+                </ul>
             </div>
         </div>
     </section>
     
     <!-- Partners Section -->
-    <section class="section" style="background: var(--light-bg);" id="partners">
+    <section class="section" id="partners" style="background-color: var(--light-bg);">
         <div class="container">
-            <h2 class="section-title">International Partners</h2>
+            <h2 class="section-title">Partners & Collaborators</h2>
             
             <div class="partners-grid">
                 <div class="partner-card">
@@ -1018,77 +897,123 @@
         <div class="container">
             <h2 class="section-title">Research Timeline</h2>
             
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span class="phase-number">Phase 1</span>
-                    <span style="color: var(--secondary); font-weight: 500;">Project Setup</span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary);">Phase 1: Corpus Development</h3>
+                        <p><strong>Months 1-12</strong></p>
+                        <p>Text collection and initial annotation of historical corpora from Homer to today.</p>
+                    </div>
                 </div>
-                <h3>Infrastructure Development</h3>
-                <p>Establishing computational infrastructure, team coordination protocols, and initial corpus collection procedures.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span class="phase-number">Phase 2</span>
-                    <span style="color: var(--secondary); font-weight: 500;">Corpus Building</span>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary);">Phase 2: Computational Tools</h3>
+                        <p><strong>Months 6-18</strong></p>
+                        <p>Development of open access parsing tools and valency extraction algorithms.</p>
+                    </div>
                 </div>
-                <h3>Text Collection & Digitization</h3>
-                <p>Gathering texts across multiple language families from antiquity to modern times. Target: 1+ million tokens. Special focus on diachronic retranslations and open access materials.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span class="phase-number">Phase 3</span>
-                    <span style="color: var(--secondary); font-weight: 500;">Annotation</span>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary);">Phase 3: Analysis & Lexicon</h3>
+                        <p><strong>Months 12-30</strong></p>
+                        <p>Systematic analysis of valency patterns and construction of the interactive lexicon.</p>
+                    </div>
                 </div>
-                <h3>Linguistic Annotation</h3>
-                <p>Comprehensive annotation including morphology, syntax (Universal Dependencies), semantic roles, and valency frames.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span class="phase-number">Phase 4</span>
-                    <span style="color: var(--secondary); font-weight: 500;">Tool Development</span>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--primary);">Phase 4: Open Access Release</h3>
+                        <p><strong>Months 24-36</strong></p>
+                        <p>Public release of all data, tools, and educational materials.</p>
+                    </div>
                 </div>
-                <h3>Software Creation</h3>
-                <p>Building web interfaces, query tools, visualization platforms, and machine learning models for pattern detection.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span class="phase-number">Phase 5</span>
-                    <span style="color: var(--secondary); font-weight: 500;">Analysis</span>
-                </div>
-                <h3>Comparative Analysis</h3>
-                <p>Statistical analysis of diachronic patterns, cross-linguistic comparisons, and theoretical model development.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span class="phase-number">Phase 6</span>
-                    <span style="color: var(--secondary); font-weight: 500;">Dissemination</span>
-                </div>
-                <h3>Publication & Outreach</h3>
-                <p>Open-access database release, journal publications, conference presentations, and educational workshops.</p>
             </div>
         </div>
     </section>
     
-    <!-- Publications Section -->
-    <section class="section" style="background: var(--light-bg);" id="publications">
+    <!-- Educational Programs -->
+    <section class="section" id="education" style="background-color: var(--light-bg);">
         <div class="container">
-            <h2 class="section-title">Publications & Outputs</h2>
+            <h2 class="section-title">Educational Programs</h2>
             
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Publications</h3>
-                <p style="text-align: center; color: #666; padding: 2rem;">
-                    Publications related to the CVL-CDSAML project will be listed here as they become available.
-                </p>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h3>Naxos Diachronic Linguistic School</h3>
+                    </div>
+                    <div class="edu-card-content">
+                        <p>Annual summer school on historical linguistics and corpus methods.</p>
+                        <div class="video-container" style="margin-top: 1rem;">
+                            <iframe src="https://www.youtube.com/embed/hk5SBXvKUc0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
                 
-                <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Conference Presentations</h3>
-                <p style="text-align: center; color: #666; padding: 2rem;">
-                    Conference presentations and workshop papers will be added here.
-                </p>
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h3>GlossaContact Lab</h3>
+                    </div>
+                    <div class="edu-card-content">
+                        <p>Research laboratory for language contact and historical sociolinguistics.</p>
+                        <div class="video-container" style="margin-top: 1rem;">
+                            <iframe src="https://www.youtube.com/embed/YEaSxhcns7Y" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h3>CIVIS BIP: Diachronic Linguistics in the 21st Century</h3>
+                    </div>
+                    <div class="edu-card-content">
+                        <p>Intensive program on computational approaches to language change.</p>
+                        <div class="video-container" style="margin-top: 1rem;">
+                            <iframe src="https://www.youtube.com/embed/_gwJHuEa9Jc" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="edu-card">
+                    <div class="edu-card-header">
+                        <h3>MA Program: English, Linguistics and Translation</h3>
+                    </div>
+                    <div class="edu-card-content">
+                        <p>Graduate program with specialization in historical and computational linguistics.</p>
+                        <div class="video-container" style="margin-top: 1rem;">
+                            <iframe src="https://www.youtube.com/embed/GiDsKcSzuYE" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Showcase Section -->
+    <section class="section" id="videos">
+        <div class="container">
+            <h2 class="section-title">Open Access Video Resources</h2>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p>Educational videos about historical linguistics, language evolution, and computational methods</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/iWDKsHm6gTA" allowfullscreen></iframe>
+                    <h4>Introduction to Language Change</h4>
+                </div>
+                
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/SqK7XXvfiXs" allowfullscreen></iframe>
+                    <h4>Computational Historical Linguistics</h4>
+                </div>
+                
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/hk5SBXvKUc0" allowfullscreen></iframe>
+                    <h4>Corpus Methods Tutorial</h4>
+                </div>
             </div>
         </div>
     </section>
@@ -1096,150 +1021,49 @@
     <!-- Resources Section -->
     <section class="section" id="resources">
         <div class="container">
-            <h2 class="section-title">Resources & Tools</h2>
-            <p style="text-align: center; margin-bottom: 3rem; color: #666;">Access our computational linguistics toolkit</p>
+            <h2 class="section-title">Open Access Resources</h2>
             
             <div class="resources-grid">
-                <div class="resource-item" onclick="openModal('lexicon')">
-                    <h4>Valency Lexicon</h4>
-                    <p>Interactive database of 5,000+ verbs with diachronic patterns</p>
-                    <button class="btn" style="margin-top: 1rem;">View Details</button>
+                <div class="resource-card" onclick="openModal('valency')">
+                    <h3>Valency Lexicon</h3>
+                    <p>Interactive database of valency patterns from Homer to today</p>
                 </div>
                 
-                <div class="resource-item" onclick="openModal('corpus')">
-                    <h4>Corpus Query</h4>
-                    <p>Search annotated texts with linguistic filters</p>
-                    <button class="btn" style="margin-top: 1rem;">View Details</button>
+                <div class="resource-card" onclick="openModal('corpus')">
+                    <h3>Corpus Query</h3>
+                    <p>Search annotated historical texts with Penn-Helsinki standards</p>
                 </div>
                 
-                <div class="resource-item">
-                    <h4>GitHub</h4>
-                    <p>Open-source code and documentation</p>
-                    <a href="https://github.com/AthensDiaCorpus" class="btn" style="margin-top: 1rem;">View Code</a>
+                <div class="resource-card" onclick="openModal('tutorials')">
+                    <h3>Tutorials</h3>
+                    <p>Video guides and documentation for all tools</p>
                 </div>
                 
-                <div class="resource-item" onclick="openModal('tutorials')">
-                    <h4>Tutorials</h4>
-                    <p>Training materials and guides</p>
-                    <button class="btn" style="margin-top: 1rem;">Learn More</button>
+                <div class="resource-card" onclick="openModal('downloads')">
+                    <h3>Downloads</h3>
+                    <p>Open access data, tools, and educational materials</p>
                 </div>
             </div>
             
-            <div style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 15px;">
-                <h3 style="color: var(--primary); margin-bottom: 1.5rem; text-align: center;">Video Tutorials & Demonstrations</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div>
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/SqK7XXvfiXs" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="text-align: center; margin-top: 1rem; font-weight: 600;">Corpus Query Tool Demo</p>
-                    </div>
-                    <div>
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/hk5SBXvKUc0" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="text-align: center; margin-top: 1rem; font-weight: 600;">Valency Pattern Analysis</p>
-                    </div>
-                    <div>
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/GiDsKcSzuYE" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="text-align: center; margin-top: 1rem; font-weight: 600;">Historical Linguistics Methods</p>
-                    </div>
+            <div style="margin-top: 3rem; text-align: center;">
+                <div class="video-container" style="max-width: 600px; margin: 0 auto;">
+                    <iframe src="https://www.youtube.com/embed/YEaSxhcns7Y" allowfullscreen></iframe>
+                    <h4 style="margin-top: 1rem; color: var(--primary);">Introduction to Our Open Access Tools</h4>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Events Section -->
-    <section class="section" style="background: var(--light-bg);" id="events">
+    <!-- Publications Section -->
+    <section class="section" id="publications" style="background-color: var(--light-bg);">
         <div class="container">
-            <h2 class="section-title">Educational Programs & Events</h2>
+            <h2 class="section-title">Publications</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Naxos Diachronic Linguistic School</h3>
-                    <p>Annual summer school focusing on computational methods in historical linguistics.</p>
-                    <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="margin-top: 1rem;">
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/hk5SBXvKUc0" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">MIT OpenCourseWare: Historical Linguistics</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">GlossaContact Lab</h3>
-                    <p>Research laboratory for language contact phenomena and computational modeling.</p>
-                    <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="margin-top: 1rem;">
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/iWDKsHm6gTA" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Language evolution methodology</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">CIVIS BIP Course</h3>
-                    <p>"Diachronic Linguistics in the 21st Century" - Intensive European course.</p>
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="margin-top: 1rem;">
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/_gwJHuEa9Jc" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Morphological change in languages</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">MA Program in English, Linguistics and Translation</h3>
-                    <p>Featuring courses: "Historical Linguistics and Diachronic Corpora" and "Translation and Language Variation" by Assoc. Prof. Lavidas</p>
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-top: 1rem;">
-                    <div style="margin-top: 1rem;">
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/YEaSxhcns7Y" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Language history and translation studies</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PhD Dissertations -->
-            <div style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 15px;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">PhD Dissertations in Progress</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div>
-                        <h4 style="color: var(--secondary);">Maria Episkopou</h4>
-                        <p>Diachronic retranslations and influential texts</p>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary);">Georgia Stavrianopoulou</h4>
-                        <p>Diachronic retellings and influential texts</p>
-                    </div>
-                </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; color: #666;">
+                    Publications from the CVL-CDSAML project will be listed here as they become available. 
+                    All publications will be open access.
+                </p>
             </div>
         </div>
     </section>
@@ -1249,20 +1073,19 @@
         <div class="container">
             <h2 class="section-title">Contact</h2>
             
-            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-                <div style="background: var(--light-bg); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Principal Investigator</h3>
-                    <p><strong>Assoc. Prof. Nikolaos Lavidas</strong><br>
-                    Division of Language-Linguistics<br>
-                    Department of English Language and Literature<br>
-                    School of Philosophy<br>
-                    National and Kapodistrian University of Athens<br>
-                    Email: nlavidas@enl.uoa.gr</p>
-                </div>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h3 style="color: var(--primary); margin-bottom: 2rem;">Principal Investigator</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;"><strong>Assoc. Prof. Nikolaos Lavidas</strong></p>
+                <p>Division of Language-Linguistics</p>
+                <p>Department of English Language and Literature</p>
+                <p>School of Philosophy</p>
+                <p>National and Kapodistrian University of Athens</p>
+                <p style="margin-top: 1.5rem;">
+                    <strong>Email:</strong> <a href="mailto:nlavidas@enl.uoa.gr" style="color: var(--secondary);">nlavidas@enl.uoa.gr</a>
+                </p>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <a href="mailto:nlavidas@enl.uoa.gr" class="btn" style="width: 100%;">Email</a>
-                    <a href="https://github.com/AthensDiaCorpus" class="btn" style="width: 100%; background: var(--success);">GitHub</a>
+                <div style="margin-top: 3rem;">
+                    <a href="#resources" class="btn">Access Open Resources</a>
                 </div>
             </div>
         </div>
@@ -1272,47 +1095,35 @@
     <footer>
         <div class="footer-content">
             <h3 style="margin-bottom: 2rem;">CVL-CDSAML Project</h3>
-            <p style="margin-bottom: 3rem;">A Corpus-based Valency Lexicon for Contrastive and Diachronic Study of Languages from Antiquity to Today</p>
+            <p style="margin-bottom: 3rem;">A Corpus-based Valency Lexicon for Contrastive and Diachronic Study<br>Languages from Antiquity to Today</p>
             
-            <div class="footer-logos" style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px;">
-                <div style="text-align: center;">
-                    <img src="1.png" 
-                         alt="HFRI/ELIDEK Logo" 
-                         style="height: 120px; max-width: 300px; object-fit: contain;">
-                </div>
-                
-                <div style="text-align: center;">
-                    <img src="2.png" 
-                         alt="Greece 2.0 Logo" 
-                         style="height: 120px; max-width: 300px; object-fit: contain;">
-                </div>
+            <div class="footer-logos">
+                <img src="1.png" alt="HFRI/ELIDEK" style="height: 100px;">
+                <img src="2.png" alt="Greece 2.0" style="height: 100px;">
             </div>
             
-            <div style="text-align: center; color: #999; font-size: 0.9rem; margin-top: 2rem;">
-                <p>© 2024 CVL-CDSAML Project | HFRI Grant #16177</p>
-                <p>Assoc. Prof. Nikolaos Lavidas<br>
-                Division of Language-Linguistics<br>
-                Department of English Language and Literature<br>
-                School of Philosophy<br>
-                National and Kapodistrian University of Athens</p>
-            </div>
+            <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.8;">
+                © 2024 CVL-CDSAML Project | National and Kapodistrian University of Athens<br>
+                All resources are open access under Creative Commons licenses
+            </p>
         </div>
     </footer>
     
+    <!-- Open Access Banner -->
+    <div class="open-access-banner">
+        <strong>OPEN ACCESS PROJECT</strong> - All data, tools, and publications freely available to researchers worldwide
+    </div>
+    
     <!-- Modals -->
-    <div id="lexiconModal" class="modal">
+    <div id="valencyModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('lexicon')">&times;</span>
-            <h2 style="color: var(--primary); margin-bottom: 2rem;">Valency Lexicon Database</h2>
-            <p>Comprehensive database covering over 5,000 verbs across multiple language families from antiquity to today. All data follows open access principles with Penn-Helsinki and PROIEL standards.</p>
+            <span class="close" onclick="closeModal('valency')">&times;</span>
+            <h2 style="color: var(--primary); margin-bottom: 2rem;">Interactive Valency Lexicon</h2>
+            <p>Comprehensive database of valency patterns across 3,000 years, from Homer to contemporary texts. 
+               Search by verb, period, or pattern type. All data follows open access principles with Penn-Helsinki and PROIEL standards.</p>
             
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800" alt="Database visualization">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Data analysis">
-                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800" alt="Linguistic patterns">
-                <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=800" alt="Statistical models">
-                <img src="https://images.unsplash.com/photo-1569163139394-de4798aa4e8f?w=800" alt="Network analysis">
-                <img src="https://images.unsplash.com/photo-1560732488-6b0df240254a?w=800" alt="Language evolution">
+            <div class="video-container" style="margin-top: 2rem;">
+                <iframe src="https://www.youtube.com/embed/hk5SBXvKUc0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -1323,13 +1134,8 @@
             <h2 style="color: var(--primary); margin-bottom: 2rem;">Corpus Query Interface</h2>
             <p>Advanced search capabilities for annotated historical texts. Open access platform following Penn-Helsinki and PROIEL standards for maximum interoperability.</p>
             
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=800" alt="Text analysis">
-                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800" alt="Corpus tools">
-                <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=800" alt="Query interface">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Data processing">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Historical texts">
-                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800" alt="Neural networks">
+            <div class="video-container" style="margin-top: 2rem;">
+                <iframe src="https://www.youtube.com/embed/_gwJHuEa9Jc" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -1338,84 +1144,46 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('tutorials')">&times;</span>
             <h2 style="color: var(--primary); margin-bottom: 2rem;">Training Materials</h2>
-            <p>Comprehensive guides for using our computational tools and databases.</p>
+            <p>Comprehensive tutorials for using our open access tools and resources.</p>
             
-            <div style="margin: 2rem 0;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Video Tutorials</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/_gwJHuEa9Jc" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="text-align: center; margin-top: 0.5rem;">Getting Started Guide</p>
-                    </div>
-                    <div>
-                        <iframe width="100%" height="200" 
-                            src="https://www.youtube.com/embed/YEaSxhcns7Y" 
-                            frameborder="0" 
-                            allowfullscreen
-                            style="border-radius: 10px;">
-                        </iframe>
-                        <p style="text-align: center; margin-top: 0.5rem;">Advanced Features</p>
-                    </div>
+            <div class="video-grid" style="margin-top: 2rem;">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/iWDKsHm6gTA" allowfullscreen></iframe>
+                    <h4>Getting Started Guide</h4>
                 </div>
-            </div>
-            
-            <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Documentation Screenshots</h3>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800" alt="Tutorial session">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="Team training">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800" alt="Workshop">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800" alt="Coding tutorial">
-                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800" alt="Development">
-                <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800" alt="Online learning">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/SqK7XXvfiXs" allowfullscreen></iframe>
+                    <h4>Advanced Features</h4>
+                </div>
             </div>
         </div>
     </div>
     
+    <div id="downloadsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('downloads')">&times;</span>
+            <h2 style="color: var(--primary); margin-bottom: 2rem;">Open Access Downloads</h2>
+            <p>All project resources are freely available under Creative Commons licenses:</p>
+            <ul style="line-height: 2; margin-top: 1.5rem;">
+                <li>Annotated corpora (CoNLL-U format)</li>
+                <li>Valency lexicon database (JSON/XML)</li>
+                <li>Computational tools (Python/R packages)</li>
+                <li>Educational materials (PDF/Videos)</li>
+                <li>Diachronic retranslations collection</li>
+            </ul>
+        </div>
+    </div>
+    
     <script>
-        // Password validation
-        const PASSWORDS = [
-            'CVL2024@Athens!',
-            'ELIDEK#Corpus2024',
-            'ValencyLexicon@2024',
-            'Athens&Diachronic#24',
-            'HFRI@Research2024!'
-        ];
-        
-        function checkPassword() {
-            const input = document.getElementById('passwordInput').value;
-            if (PASSWORDS.includes(input)) {
-                document.getElementById('passwordOverlay').style.display = 'none';
-                sessionStorage.setItem('cvl-authenticated', 'true');
-            } else {
-                alert('Incorrect password. Please contact nlavidas@enl.uoa.gr for access.');
-            }
-        }
-        
-        // Check if already authenticated
-        if (sessionStorage.getItem('cvl-authenticated') === 'true') {
-            document.getElementById('passwordOverlay').style.display = 'none';
-        }
-        
-        // Allow Enter key to submit password
-        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-        
-        // Smooth scrolling
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
@@ -1424,166 +1192,30 @@
         // Modal functions
         function openModal(type) {
             document.getElementById(type + 'Modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
         }
         
         function closeModal(type) {
             document.getElementById(type + 'Modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
         }
         
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modals = document.getElementsByClassName('modal');
-            for (let modal of modals) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
             }
         }
         
-        // Log site info
-        console.log('CVL-CDSAML Project Website');
-        console.log('Version: 1.0');
-        console.log('Powered by: GitHub Pages with minimal Jekyll');
-        console.log('Principal Investigator: Nikolaos Lavidas');
-        
-        // Demo video functions
-        function playDemo(demoNumber) {
-            const music = document.getElementById('demoMusic');
-            const demoContainers = document.querySelectorAll('.demo-video-container');
-            const demoContainer = demoNumber === 1 ? demoContainers[0] : demoContainers[1];
-            const playButton = demoContainer.querySelector('.play-button');
-            
-            // Toggle play button
-            if (music.paused) {
-                music.play();
-                playButton.style.display = 'none';
-                
-                // Add playing animation
-                demoContainer.classList.add('playing');
-                
-                // Show full demo content after 2 seconds
-                setTimeout(() => {
-                    if (demoNumber === 1) {
-                        showDemo1Content();
-                    } else if (demoNumber === 2) {
-                        showDemo2Content();
-                    }
-                }, 2000);
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255,255,255,1)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
-                music.pause();
-                playButton.style.display = 'flex';
-                demoContainer.classList.remove('playing');
+                nav.style.background = 'rgba(255,255,255,0.98)';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
-        }
-        
-        function showDemo1Content() {
-            const demoContents = document.querySelectorAll('.demo-content');
-            if (demoContents.length > 0) {
-                const demoContent = demoContents[0];
-                demoContent.innerHTML = `
-                    <h3 class="demo-title" style="font-size: 2rem;">CVL-CDSAML Project</h3>
-                    <div style="animation: textSlide 1s ease forwards;">
-                        <p style="font-size: 1.2rem; margin: 1rem 0;">1+ Million Annotated Tokens</p>
-                        <p style="font-size: 1.2rem; margin: 1rem 0;">3 Language Families</p>
-                        <p style="font-size: 1.2rem; margin: 1rem 0;">3,000 Years of Data</p>
-                        <p style="font-size: 1.2rem; margin: 1rem 0;">Open Access Tools</p>
-                    </div>
-                `;
-            }
-        }
-        
-        function showDemo2Content() {
-            const demoContents = document.querySelectorAll('.demo-content');
-            if (demoContents.length > 1) {
-                const demoContent = demoContents[1];
-                demoContent.innerHTML = `
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Search Tutorial</h3>
-                    <div style="text-align: left; max-width: 300px; margin: 0 auto;">
-                        <p style="margin: 0.5rem 0;">Step 1: Enter Greek verb (δίδωμι)</p>
-                        <p style="margin: 0.5rem 0;">Step 2: Select time period</p>
-                        <p style="margin: 0.5rem 0;">Step 3: Choose valency pattern</p>
-                        <p style="margin: 0.5rem 0;">Step 4: View results by century</p>
-                        <p style="margin: 0.5rem 0;">Step 5: Export data (CSV/JSON)</p>
-                    </div>
-                `;
-            }
-        }
-        
-        function playMiniDemo(element) {
-            if (!element) return;
-            
-            element.classList.toggle('mini-playing');
-            const music = document.getElementById('demoMusic');
-            
-            if (element.classList.contains('mini-playing') && music) {
-                music.volume = 0.3;
-                music.play().catch(e => console.log('Audio play failed:', e));
-                
-                // Animate content
-                const content = element.querySelector('.demo-content');
-                if (content) {
-                    setTimeout(() => {
-                        content.innerHTML = `
-                            <h4 style="font-size: 1.3rem;">Features</h4>
-                            <p style="font-size: 0.9rem; margin-top: 1rem;">
-                                Penn-Helsinki Standards<br>
-                                PROIEL Integration<br>
-                                Open Access Data
-                            </p>
-                        `;
-                    }, 1000);
-                }
-            } else {
-                if (music) music.pause();
-                const content = element.querySelector('.demo-content');
-                if (content) {
-                    content.innerHTML = `
-                        <h4 style="font-size: 1.5rem;">Diachronic Analysis</h4>
-                        <p style="font-size: 1rem; margin-top: 0.5rem;">AI-Powered Tools</p>
-                    `;
-                }
-            }
-        }
-        
-        function playResourceDemo(element, type) {
-            if (!element) return;
-            
-            element.classList.toggle('mini-playing');
-            const music = document.getElementById('demoMusic');
-            const content = element.querySelector('.demo-content');
-            
-            if (element.classList.contains('mini-playing') && music && content) {
-                music.volume = 0.2;
-                music.play().catch(e => console.log('Audio play failed:', e));
-                
-                if (type === 'corpus') {
-                    let step = 1;
-                    const interval = setInterval(() => {
-                        if (step === 1) {
-                            content.innerHTML = '<h5>Step 1: Enter Verb</h5><p style="font-size: 1.2rem;">δίδωμι</p>';
-                        } else if (step === 2) {
-                            content.innerHTML = '<h5>Step 2: Select Period</h5><p style="font-size: 1rem;">Homer → Today</p>';
-                        } else if (step === 3) {
-                            content.innerHTML = '<h5>Step 3: Results!</h5><p style="font-size: 1rem;">1,247 matches found</p>';
-                        } else {
-                            clearInterval(interval);
-                            element.classList.remove('mini-playing');
-                            if (music) music.pause();
-                            content.innerHTML = '<h5 style="font-size: 1.3rem;">Live Demo</h5><p style="font-size: 0.9rem;">Click to Start</p>';
-                        }
-                        step++;
-                    }, 2000);
-                }
-            } else {
-                if (music) music.pause();
-                if (content) {
-                    content.innerHTML = '<h5 style="font-size: 1.3rem;">Live Demo</h5><p style="font-size: 0.9rem;">Click to Start</p>';
-                }
-            }
-        }
+        });
     </script>
 </body>
 </html>
