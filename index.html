@@ -67,7 +67,7 @@
     
     <style>
         /* Password Protection Styles */
-        #passwordModal {
+        #passwordModal, #secondPasswordModal {
             display: block;
             position: fixed;
             z-index: 9999;
@@ -703,9 +703,22 @@
         <div class="password-content">
             <h2>CVL-CDSAML Project Access</h2>
             <p>This site is password protected during development</p>
+            <p style="color: #666; font-size: 0.9rem;">Step 1 of 2: General Access</p>
             <input type="password" id="passwordInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPassword()">
-            <button onclick="checkPassword()">Access Site</button>
+            <button onclick="checkPassword()">Next</button>
             <div class="password-error" id="passwordError">Incorrect password. Please try again.</div>
+        </div>
+    </div>
+    
+    <!-- Second Password Modal -->
+    <div id="secondPasswordModal" style="display: none;">
+        <div class="password-content">
+            <h2>Secure Access Verification</h2>
+            <p>Please enter the second security password</p>
+            <p style="color: #666; font-size: 0.9rem;">Step 2 of 2: Team Access</p>
+            <input type="password" id="secondPasswordInput" placeholder="Enter secure password" onkeypress="if(event.key==='Enter')checkSecondPassword()">
+            <button onclick="checkSecondPassword()">Access Site</button>
+            <div class="password-error" id="secondPasswordError">Incorrect password. Please try again.</div>
         </div>
     </div>
     <!-- Navigation -->
@@ -860,7 +873,7 @@
                     <h3>Kiki Nikiforidou</h3>
                     <p class="role">Research Team Member</p>
                     <p class="affiliation">National and Kapodistrian University of Athens</p>
-                    <p>Professor of Linguistics specializing in cognitive linguistics and construction grammar. Co-editor of The Cambridge Handbook of Construction Grammar (CUP, 2024) and the Brill series on language change with N. Lavidas. Expert in theoretical linguistics, lexicography, and grammatical approaches to genre.</p>
+                    <p>Professor of Linguistics specializing in construction grammar, lexicography, and language change.</p>
                 </div>
                 
                 <div class="team-member">
@@ -1245,22 +1258,42 @@
     </div>
     
     <script>
-        // Password Protection
-        const PASSWORDS = ['cvl2024', 'athens2024', 'lavidas2024', 'hfri2024', 'cdsaml2024'];
+        // Two-Password Protection System
+        const FIRST_PASSWORDS = ['cvl2024', 'athens2024', 'lavidas2024', 'hfri2024', 'cdsaml2024'];
+        const SECOND_PASSWORDS = ['secure-cvl-2024', 'team-access-2024'];
         
         function checkPassword() {
             const input = document.getElementById('passwordInput').value;
-            if (PASSWORDS.includes(input)) {
-                sessionStorage.setItem('authenticated', 'true');
+            if (FIRST_PASSWORDS.includes(input)) {
+                // First password correct, show second password screen
                 document.getElementById('passwordModal').style.display = 'none';
+                document.getElementById('secondPasswordModal').style.display = 'block';
+                document.getElementById('passwordError').style.display = 'none';
+                // Focus on second password input
+                setTimeout(() => {
+                    document.getElementById('secondPasswordInput').focus();
+                }, 100);
             } else {
                 document.getElementById('passwordError').style.display = 'block';
             }
         }
         
-        // Check if already authenticated
-        if (sessionStorage.getItem('authenticated') === 'true') {
+        function checkSecondPassword() {
+            const input = document.getElementById('secondPasswordInput').value;
+            if (SECOND_PASSWORDS.includes(input)) {
+                // Both passwords correct, grant access
+                sessionStorage.setItem('authenticated', 'true');
+                sessionStorage.setItem('doubleAuthenticated', 'true');
+                document.getElementById('secondPasswordModal').style.display = 'none';
+            } else {
+                document.getElementById('secondPasswordError').style.display = 'block';
+            }
+        }
+        
+        // Check if already authenticated with both passwords
+        if (sessionStorage.getItem('authenticated') === 'true' && sessionStorage.getItem('doubleAuthenticated') === 'true') {
             document.getElementById('passwordModal').style.display = 'none';
+            document.getElementById('secondPasswordModal').style.display = 'none';
         }
         
         // Smooth scrolling for navigation links
