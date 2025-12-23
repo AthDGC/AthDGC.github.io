@@ -1,434 +1,682 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AthDGC | Athens Digital Glossa Chronos Research Network</title>
-    <meta name="description" content="Athens Digital Glossa Chronos - Corpus-based research on diachronic linguistics and language evolution. HFRI/ELIDEK funded project at the University of Athens.">
-    <link rel="icon" type="image/x-icon" href="https://www.uoa.gr/favicon.ico">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Georgia, 'Times New Roman', serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: #ffffff;
-        }
-        
-        .header {
-            background: #1a4d8f;
-            color: white;
-            padding: 2.5rem 0;
-            border-bottom: 4px solid #d4af37;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            font-weight: normal;
-            letter-spacing: 1px;
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin: 0.3rem 0;
-        }
-        
-        .logos {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .logos img {
-            height: 60px;
-            background: white;
-            padding: 10px;
-        }
-        
-        nav {
-            background: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            display: block;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            color: #1a4d8f;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-        
-        nav a:hover {
-            background: #e9ecef;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: #1a4d8f;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 0.5rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin: 2rem 0 1rem 0;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        .intro {
-            font-size: 1.1rem;
-            background: #f8f9fa;
-            padding: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .team-member {
-            background: #f8f9fa;
-            padding: 1.5rem;
-        }
-        
-        .team-member h4 {
-            color: #1a4d8f;
-            margin-bottom: 0.5rem;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .project-card {
-            background: #f8f9fa;
-            padding: 2rem;
-        }
-        
-        .project-card h3 {
-            margin-top: 0;
-        }
-        
-        .project-card a {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #1a4d8f;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .project-card a:hover {
-            text-decoration: underline;
-        }
-        
-        .publications {
-            background: #f8f9fa;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .publication-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        .publication-item:last-child {
-            border-bottom: none;
-        }
-        
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-        
-        footer .container {
-            padding: 2rem;
-        }
-        
-        footer a {
-            color: #d4af37;
-        }
-    </style>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>Adapting a parser to historical English - Gerold Schneider</title>
+    <link rel="stylesheet" href="../css/style-oldbrowsers.css" type="text/css" media="screen">
+    <style type="text/css" media="screen"><!-- @import url(../css/style-screen.css); --></style>
+    <link rel="stylesheet" href="../css/style-print.css" type="text/css" media="print">
+
+    <!-- javascript -->
+    <script type="text/javascript" src="../js/popups.js"></script>
+    <script type="text/javascript" src="mypopup.js"></script>
+
+
 </head>
-<body>
-    <header class="header">
-        <div class="header-content">
-            <h1>AthDGC</h1>
-            <p>Athens Digital Glossa Chronos</p>
-            <p>Corpus-based Research on Diachronic Linguistics and Language Evolution</p>
-            <div class="logos">
-                <img src="https://www.elidek.gr/wp-content/themes/elidek/images/elidek_logo.png" alt="HFRI/ELIDEK">
-                <img src="https://www.uoa.gr/wp-content/themes/uoa/images/logo.svg" alt="University of Athens">
+
+	<body>
+        <div class="all">
+      <table class="all" cellpadding="0" cellspacing="0">
+	<tr class="header">
+	  <td class="header"><img src="../images/logos.gif" alt=""></td>
+	</tr>
+<tr class="navbar">
+	<td>
+		<table class="navbar" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="navbar"><a href="../../../../index.html">VARIENG Home</a></td>
+				<td class="navbar">&nbsp;&nbsp;<a href="../../../index.html">Home</a>&nbsp;&nbsp;</td>
+				<td class="navbar"><a href="../../../about.html">About&nbsp;the eSeries </a></td>
+				<td class="navbar"><a href="../../index.html">Volumes</a></td>
+				<td class="navbar"><a href="../../../people/index.html">Authors</a></td>
+				<td class="navbar">&nbsp;&nbsp;<a href="../../../news/index.html">News</a>&nbsp;&nbsp;</td>
+				<td class="navbar"><a href="../../../search.html">Search</a></td>
+				<td class="navspace">&nbsp;</td>
+				<td class="navbar" id="last"><a href="../../../sitemap/index.html">Sitemap</a></td>
+			</tr>
+		</table>
+	</td>
+</tr>
+	<tr class="main">
+	  <td>
+	    <table class="main" cellpadding="0" cellspacing="0">
+	      <tr>
+		<td class="sidebar" rowspan="2">
+		  <div class="sidebar">
+            <p><a href="../index.html">Volume 10 &ndash; <em>Outposts of Historical Corpus Linguistics: From the Helsinki Corpus to a Proliferation of Resources</em></p>
+		    <h1>Article Contents</h1>
+		    <p><a href="#sect1">1. Introduction</a></p>
+            <p><a href="#sect2">2. The Pro3Gres Parser</a></p>
+            <p><a href="#sect3">3. Normalizing Spelling Variation</a></p>
+            <p><a href="#sect4">4. Performance on the Archer Corpus</a></p>
+            <p><a href="#sect5">5. Error Analysis</a></p>
+            <p class="subsection"><a href="#sect5.1">5.1 Errors in 16xx</a></p>
+            <p class="subsection"><a href="#sect5.2">5.2 Errors in 17xx</a></p>
+            <p class="subsection"><a href="#sect5.3">5.3 Errors in 18xx</a></p>
+            <p><a href="#sect6">6. Adaptations to the Parser for historical English</a></p>
+            <p class="subsection"><a href="#sect6.1">6.1 Specific improvements</a></p>
+            <p class="subsection"><a href="#sect6.2">6.2 Bigger generalisations</a></p>
+            <p><a href="#sect7">7. Application to Descriptive Linguistics</a></p>
+            <p><a href="#sect8">8. Conclusions</a></p>
+		  </div>
+         </td>
+		
+        <td class="content">
+		
+			<h1>Adapting a parser to historical English</h1>
+			<p>Gerold Schneider (<a href="http://www.es.uzh.ch/aboutus/team/gschneider.html">Homepage</a>, <a href="http://www.zora.uzh.ch/view/authors/Schneider=3AG=3A=3A.html">Publications</a>)<br>
+	<a href="http://www.es.uzh.ch">English Department, University of Zurich</a><br>
+		  </p>
+			
+            <h2>Abstract</h2>
+			<div class="abstract">
+            <p>The automatic syntactic analysis of natural language texts has made impressive progess. But when applied to historical linguistic texts, parser performance drops considerably. We first report parsing performance on several time periods in the Archer corpus. Second, we implement and evalutate a variety of adaptations to historical texts. We address spelling issues, adapt local grammar rules, and conduct an analysis of errors. Parser performance increases due to our adaptations. This pilot study also tests a number of more global extensions to address freer word order and different punctuation in earlier texts. We give an outlook on possible applications.</p>
             </div>
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#project">CVL-CDSAML Project</a></li>
-            <li><a href="#team">Research Team</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="about" class="container">
-            <h2>About AthDGC</h2>
-            <div class="intro">
-                <p>The Athens Digital Glossa Chronos Research Network conducts computational and corpus-based research on diachronic linguistics, language contact, and syntactic change. Our work combines traditional philological expertise with state-of-the-art natural language processing methods to analyze linguistic evolution across multiple language families and historical periods.</p>
-                <p>Based at the National and Kapodistrian University of Athens, AthDGC coordinates several major research initiatives funded by the Hellenic Foundation for Research and Innovation and supported by the Greece 2.0 National Recovery and Resilience Plan.</p>
-            </div>
-
-            <h3>Research Focus</h3>
-            <p>Our research addresses fundamental questions in historical linguistics through corpus-based quantitative analysis. We develop annotated corpora of ancient and medieval languages, create computational tools for syntactic analysis, and investigate patterns of language change across time periods spanning from antiquity to the present day.</p>
             
-            <p>Key research areas include verb valency patterns, argument structure alternations, syntactic borrowing in language contact situations, and the role of influential texts in language change. We employ Penn-Helsinki parsing standards and PROIEL treebank architecture to ensure compatibility with international corpora and enable cross-linguistic comparative research.</p>
-        </section>
-
-        <section id="project" class="container">
-            <h2>CVL-CDSAML Project</h2>
-            <p>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</p>
+	<h2><a name="sect1"></a>1. Introduction</h2>
+		    <p>The automatic syntactic analysis of natural language texts, typically known as parsing, has made impressive progess in the past few years. A number of fast and robust parsers with reasonable accuracy for Present Day English texts exist now, for example Collins (<a href="#collins_1999">1999</a>), Nivre (<a href="#nivre_2006">2006</a>) and Schneider (<a href="#schneider_2008">2008</a>). </p>
+		    <p>Typically, parsers are trained on the Penn Treebank (Marcus et al. <a href="#marcus_et_al_1993">1993</a>), which consists of sentences from the Wall Street Journal (WSJ), and applied to held-out texts from the same corpus. The genre of WSJ is mainly news and finance. The accuracy of parsers declines significantly when they are applied to genres that differ from the training domain. For example, Gildea (<a href="#gildea_2001">2001</a>) has trained a parser on the Penn Treebank,  and measured its performance when applied to a subsection of the Brown corpus which primarily contains fiction texts. He showed that performance on the Brown subsection is about 5% lower than on the in-domain WSJ texts. While precision on WSJ was 86.6%, precision on Brown was only 81.0% percent. Also recall decreases: recall on WSJ was 86.1%, recall on Brown 80.3%. These figures illustrate why adaptation to other genres has become an important research topic. For example, in the CoNLL shared task on dependency parsing (Nivre et al. <a href="#nivre_et_al_2007">2007</a>), subtasks were included on the adaptation of parsers to chemical research texts and to child language.</p>
+		    <p>When applied to historical linguistic texts, parser performance also drops considerably. Arguably, texts from 400 years ago are much more different from PDE texts than genre variation within PDE texts, for example between news and fiction, as tested by Gildea (<a href="#gildea_2001">2001</a>). We first report parsing performance on several time periods in the Archer corpus (Biber et al. <a href="#biber_et_al_1994">1994</a>). Second, we suggest, implement and evalutate a variety of adaptations to historical texts. We perform an analysis of errors which on the one hand allows us to improve the parser, and on the other hand shows characteristics of the language of the investigated periods. To improve the performance, we address spelling issues, adapt the grammar rules and test extensions to the parsing algorithm. We show that parser performance increases due to our adaptations.</p>
+		    <p>The paper is structured as follows. In section 2, we give a brief introduction to the dependency grammar parser that we have used. In section 3, we address spelling variation and show that spelling normalisation improves parsing. In section 4, we describe the performance of the parser on a random subset of the Archer corpus, and give an overview of the problems encountered. In section 5, we do an analysis of the errors. In section 6, we describe the improvements that we have made to the parser. In section 7, we give an example of possible diachronic applications of using a parser for the description of historical differences.</p>
+		    
+            <h2><a name="sect2"></a>2. The Pro3Gres Parser</h2>
+		    <p>We have used the dependency parser Pro3Gres (Schneider <a href="#schneider_2008">2008</a>) for our experiments. Dependency Grammar goes back to Tesni&egrave;re (1959) and is used by many parsers (e.g. Tapanainen and J&auml;rvinen <a href="#tapanainen_jarvinen_1997">1997</a>, Nivre <a href="#nivre_2006">2006</a>). Pro3Gres uses a hand-written grammar which models linguistic <em>competence,</em> and statistical disambiguation which models <em>performance. </em>The parser learns the performance statistics from the Penn Treebank. The performance model measures attachment probabilities for a dependency relation (<em>R</em>), given the lexical heads of the governor (<em>a</em>) and the dependent (<em>b</em>).</p>
+		    <p>p(R|a,b) = f(R,a,b) / f(&sum;R,a,b)</p>
+		    <p>Using a hand-written grammar allows us to adapt the grammar, for example to do linguistic experiments or to adapt it to genres, varieties and diachronic stages of English for which little or no training material exists. The parser outputs intuitive dependency relations. A subset of possible relations is given in Table 1.</p>
             
-            <div class="intro">
-                <p><strong>Funded by:</strong> Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577)</p>
-                <p><strong>Principal Investigator:</strong> Professor Nikolaos Lavidas, National and Kapodistrian University of Athens</p>
-                <p><strong>Duration:</strong> 24 months</p>
+			<div class="tstyle"><a name="Table1"></a>
+              <table class="ptable">
+              <tbody>
+                <tr>
+                  <th>RELATION</th>
+                  <th>LABEL</th>
+                  <th>EXAMPLE</th>
+                </tr>
+                <tr>
+                  <td>verb&#150;subject</td>
+                  <td><i>subj</i></td>
+                  <td>he sleeps</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;direct object</td>
+                  <td><i>obj</i></td>
+                  <td>sees it</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;second object</td>
+                  <td><i>obj2</i></td>
+                  <td>gave (her) kisses</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;adjunct</td>
+                  <td><i>adj</i></td>
+                  <td>ate yesterday</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;subord. clause</td>
+                  <td><i>sentobj</i></td>
+                  <td>saw (they) came</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;pred. adjective</td>
+                  <td><i>predadj</i></td>
+                  <td>is ready</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;prep. phrase</td>
+                  <td><i>pobj</i></td>
+                  <td>slept in bed</td>
+                </tr>
+                <tr>
+                  <td>noun&#150;prep. phrase</td>
+                  <td><i>modpp</i></td>
+                  <td>draft of paper</td>
+                </tr>
+                <tr>
+                  <td>noun&#150;participle</td>
+                  <td><i>modpart</i></td>
+                  <td>report written</td>
+                </tr>
+                <tr>
+                  <td>verb&#150;complementizer</td>
+                  <td><i>compl</i></td>
+                  <td>to eat apples</td>
+                </tr>
+                <tr>
+                  <td>noun&#150;preposition</td>
+                  <td><i>prep</i></td>
+                  <td>to the house</td>                
+                </tr>
+                </tbody>
+              </table>
+                <p class="caption">Table 1. Important dependency relations that are output by Pro3Gres</p>
+			</div>              
+
+			<p>The parser uses tagging and chunking as pre-processing step. Tagging, and by consequence also chunking  is affected by spelling variants that are different from the PDE training corpus. Let us look at an example sentence from the 17th century part of the Archer corpus.</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example1" id="example1"><strong>(1)</strong></td>
+            <td><em>My Love to my wife, whom I easilie beleife the finest yong woman in your country.</em></td>
+            </tr>
+          </table>
+			
+            <p>This sentence is tagged as follows by the C&amp;C tagger, which we use in our pipeline. We use the Penn Treebank tagset.</p>
+			<table class="example">
+			<tr><td align="left" width="80" name="example1a" id="example1a"><strong>(1a)</strong></td>
+            <td><em>My_PRP$ Love_NN to_TO my_PRP$ wife_NN c_COMMA whom_WP I_PRP easilie_VBP beleife_VB the_DT finest_JJS yong_JJ woman_NN in_IN your_PRP$ country_NN ._.</em></td>
+            </tr>
+          </table>
+
+			<p>There are three words that are spelled differently from present day English: <i>easilie</i>, <i>beleife</i> and <i>yong</i>. They are unkown to the tagger. Unknown words do not necessarily get incorrect part-of-speech tags. While the tagger can assign the correct tag (JJ=adjective) to the unknown word <i>yong</i>, as the context between a superlative adjective (JJS) and singular noun (NN) is not very ambiguous, the fact that pronouns (I_PRP) are typically followed by a verb triggers the incorrect tag VBP (verb, present tense) to be assigned to the unknown word <i>easilie</i>. Word endings of unknown words are typically also considered by taggers. Many verbs end in -e, a tendency which supports finding the (almost) correct  tag for <i>beleife</i>, but which in the case of <i>easilie</i> also contributes to assigning a wrong tag. The tag VB, which is given to  the word beleife, signifies verb base form, whilw we actually have a present tense form (VBP) here. Some tagging errors lead to chunking and or parsing errors, some are inconsequential. Most parsers are robust enough to attach a subject to a verb base form (which strictly speaking is syntactically not possible), as this is a relatively frequent tagging error, also in present day English. As a consequence, the correct parse could still be found, so this tagging error (beleife_VB) is inconsequential. But the error of assigning a verb tag to <i>easilie</i> has the immediate consequence that the parser attaches the pronoun <i>I_PRP</i> to this verb.</p>
+			<p>We discuss a possible solution to the spelling variant problem in the following section.</p>
+			
+            <h2><a name="sect3"></a>3. Normalizing Spelling Variation</h2>
+			<p>Spelling in the earlier Archer texts was different from PDE and not fully standardized. Applying standard taggers to them produces many tagging errors, many of which are due to spelling differences. A solution to this problem can be to map the original spelling to its PDE counterpart, for which a number of tools are available. We have used <a href="#vard">VARD</a> (Baron &amp; Rayson <a href="#baron_rayson_2008">2008</a>). We will henceforth refer to the process of replacing historical spellings by their PDE counterparts in the text as normalisation.</p>
+    <p>Intuitively, tagging and consequently also chunking and parsing, improve from mapping the original spelling to the same spelling as used in the tagger and parser training resource. The statistical performance disambiguation, which uses lexical heads, should equally profit. As the normalisation process also makes errors, the assumption that performance will improve cannot be taken for granted. Concerning tagging accuracy, this assumption has been tested in Rayson et al. (<a href="#rayson_et_al_2007">2007</a>). They report an increase of about 3% (from 82% to 85% accuracy) on Shakespeare texts. As an upper bound, when tests are manually normalized, they report 89% accuracy.</p>
+			<p>Concerning parsing, the assumption that normalisation improves the performance has, to our knowledge, not been confirmed. We have thus tested it by selecting 100 random sentences from the 17th century (1600&ndash;1699) part of the Archer corpus and evaluated by comparing the parser output. In the automatic conversion mode, at a 50% threshold (see <a href="#vard">VARD</a> for details), 131 normalisations are made in these 100 sentences. In the normalised text, 16 of the 100 sentences receive a syntactic analysis which differs from the original. 12 of these 16 sentences get a normalised syntactic analysis that is better than the original analysis, 1 sentence gets a worse analysis. 3 sentences correct some errors, but introduce new errors instead. An example of a sentence in the latter class is given in figure 1 (original spelling) and figure 2 (using normalized spelling). The past participle in its original spelling <em>arriv'd</em> is split into two words by the tokenizer, the second word<em> 'd</em> is tagged as a proper name, which leads to an analysis in which<em> 'd</em> is an object of <em>is</em>. After spelling normalisation, the verb chunk <em>is safely arrived</em> is recognized correctly. But the NP <em>our Ambassador Boorel</em> is not recognized as a single noun chunk. Therefore, preference is given to an incorrect relative clause analysis. Parsing with the normalised spelling thus also introduces a new error here. The object attachment <em>prosecute journey </em>is also better in the normalised version, but this does not affect the classification: correcting some errors while introducing new errors.</p>
+          <blockquote class="example">
+          <div class="body">
+          <script type="text/javascript">
+          myPopup('Boorel_unvard',1290,352,'Boorel_unvard.png','Boorel_unvard_medium.png','<strong>(1)</strong> Analysis of sentence using original spelling')
+		  </script>
+          <noscript>
+          <p>
+          (1) Analysis of sentence using original spelling <a href="Boorel_unvard.png">(Click to enlarge.)</a>
+          </p>
+          <p>
+          <a href="Boorel_unvard.png"><img src="Boorel_unvard_medium.png" alt="Figure (1)" /></a>
+          </p>
+          </noscript>
+          </div>
+          <div class="end">
+          </div>
+          </blockquote>			
+
+          <blockquote class="example">
+          <div class="body">
+          <script type="text/javascript">
+          myPopup('Boorel_vard',1304,308,'Boorel_vard.png','Boorel_vard_medium.png','<strong>(2)</strong> Analysis of sentence after spelling normalisation')
+		  </script>
+          <noscript>
+          <p>
+          (2) Analysis of sentence after spelling normalisation <a href="Boorel_vard.png">(Click to enlarge.)</a>
+          </p>
+          <p>
+          <a href="Boorel_vard.png"><img src="Boorel_vard_medium.png" alt="Figure (2)" /></a>
+          </p>
+          </noscript>
+          </div>
+          <div class="end">
+          </div>
+          </blockquote>			
+
+          <p>Since the normalized data leads to considerably fewer errors, we use normalised texts except for  the 20th century (where there is no need to normalise) for the rest of our experiments.</p>
+    
+    <h2><a name="sect4"></a>4. Performance on the Archer Corpus</h2>
+    <p>We have conducted an evaluation of the performance on Archer as follows. We have selected 25 random sentences from each century (16xx, 17xx, 18xx, 19xx) leading to a total of 100 sentences. We have manually annotated them and then compared to the parser output on the following relations: subject (<em>subj</em>), object (<em>obj</em>), PP-attachment (<em>modpp</em> and <em>pobj</em>) and subordinated clauses (<em>sentobj</em>). We report precision and recall by century in figure 3. Precision measures how many syntactic relations that the parser delivers are also contained in the manual annotation (or in simpler words, how <i>correct </i>the parser output is). Recall measures how many of the relations that are given in the gold standard are also assigned by the system (or in simpler words, how <i>complete</i> the parser output is).</p>
+			<p>(Near-) PDE texts (19xx) achieve above 80% precision and recall, which is similar to the performance of Pro3Gres on other PDE texts (Schneider <a href="#schneider_2008">2008</a>, Haverinen <a href="#haverinen_et_al_2008">2008</a>, Lehmann and Schneider <a href="#lehmann_schneider_2009">2009</a>). There is a clear trend towards lower performance, the further one moves into the past, although 18xx is potentially an outlier. In 16xx, precision and recall are about 70%, which indicates an increase in errors by about a third compared to PDE. This could also indicate that every third parsing error is caused by language changes in 16xx, and thus gives a rough measure of the linguistic distance from the training century.</p>
+			<div class="figure">
+				<p class="center"><a href="Archer_eval_overview.png" name="figure3"><img src="Archer_eval_overview.png" alt="Figure 3"></a></p>
+				<p class="caption">Figure 3. Precision and recall by century</p>
+			</div>
+    <p>Figure 4 reports precision broken down by relation, figure 5 shows recall by relation. Only subordinate clauses (<em>sentobj</em>) are below 80% precision on PDE, subject precision stays relatively high in all periods.</p>
+    <div class="figure">
+				<p class="center"><a href="Archer_eval_prec.png" name="figure4"><img src="Archer_eval_prec.png" alt="Figure 4"></a></p>
+				<p class="caption">Figure 4. Precision, broken down by relation</p>
+	</div>
+    		<div class="figure">
+				<p class="center"><a href="Archer_eval_recall.png" name="figure5"><img src="Archer_eval_recall.png" alt="Figure 5"></a></p>
+				<p class="caption">Figure 5. Recall, broken down by relation</p>
+	</div>
+    <p>As counts are low for some relations, there is considerable fluctuation. The table of absolute counts of 16xx and 18xx is given in Table 2, giving an impression of the data sparseness. This sparseness can account for the extremely low <em>sentobj</em> recall on 18xx. The low recall is due to the fact that there were many <em>saith</em> and <em>doth</em> in 18xx, which were not normalised to <em>says</em> and <em>does</em>, respectively, by VARD. Therefore, they always got mistagged as noun. </p>
+			<div class="tstyle"><a name="Table2"></a>
+              <table class="ptable">
+      <tr>
+        <th width="93"><div align="center">16xx</div></th>
+        <th width="58"><div align="center">is</div></th>
+        <th width="61"><div align="center">should</div></th>
+        <th width="73"><div align="center">%</div></th>
+        <th width="40"><div align="center"></div></th>
+        <th width="93"><div align="center">18xx</div></th>
+        <th width="58"><div align="center">is</div></th>
+        <th width="61"><div align="center">should</div></th>
+        <th width="73"><div align="center">%</div></th>
+      </tr>
+      <tr>
+        <td><div align="center">PRECISION</div></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><div align="center">PRECISION</div></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><div align="center">subj</div></td>
+        <td><div align="right">36</div></td>
+        <td><div align="right">43</div></td>
+        <td><div align="right">83.7%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">subj</div></td>
+        <td><div align="right">21</div></td>
+        <td><div align="right">28</div></td>
+        <td><div align="right">75.0%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">obj</div></td>
+        <td><div align="right">23</div></td>
+        <td><div align="right">32</div></td>
+        <td><div align="right">71.9%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">obj</div></td>
+        <td><div align="right">12</div></td>
+        <td><div align="right">16</div></td>
+        <td><div align="right">75.0%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">pobj</div></td>
+        <td><div align="right">11</div></td>
+        <td><div align="right">18</div></td>
+        <td><div align="right">61.1%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">pobj</div></td>
+        <td><div align="right">26</div></td>
+        <td><div align="right">31</div></td>
+        <td><div align="right">83.9%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">modpp</div></td>
+        <td><div align="right">17</div></td>
+        <td><div align="right">27</div></td>
+        <td><div align="right">63.0%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">modpp</div></td>
+        <td><div align="right">8</div></td>
+        <td><div align="right">12</div></td>
+        <td><div align="right">66.7%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">sentobj</div></td>
+        <td><div align="right">5</div></td>
+        <td><div align="right">12</div></td>
+        <td><div align="right">41.6%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">sentobj</div></td>
+        <td><div align="right">3</div></td>
+        <td><div align="right">6</div></td>
+        <td><div align="right">50.0%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center"><strong>&sum;</strong></div></td>
+        <td><div align="right">92</div></td>
+        <td><div align="right">132</div></td>
+        <td><div align="right"><strong>69.7%</strong></div></td>
+        <td>&nbsp;</td>
+        <td><div align="center"><strong>&sum;</strong></div></td>
+        <td><div align="right">70</div></td>
+        <td><div align="right">93</div></td>
+        <td><div align="right"><strong>75.3%</strong></div></td>
+      </tr>
+      <tr>
+        <td><div align="center"></div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+        <td>&nbsp;</td>
+        <td><div align="center"></div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+      </tr>
+      <tr>
+        <td><div align="center">RECALL</div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">RECALL</div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+        <td><div align="right"></div></td>
+      </tr>
+      <tr>
+        <td><div align="center">subj</div></td>
+        <td><div align="right">36</div></td>
+        <td><div align="right">41</div></td>
+        <td><div align="right">87.8%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">subj</div></td>
+        <td><div align="right">21</div></td>
+        <td><div align="right">27</div></td>
+        <td><div align="right">77.8%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">obj</div></td>
+        <td><div align="right">23</div></td>
+        <td><div align="right">26</div></td>
+        <td><div align="right">88.4%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">obj</div></td>
+        <td><div align="right">12</div></td>
+        <td><div align="right">17</div></td>
+        <td><div align="right">70.6%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">pobj</div></td>
+        <td><div align="right">11</div></td>
+        <td><div align="right">26</div></td>
+        <td><div align="right">42.3%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">pobj</div></td>
+        <td><div align="right">26</div></td>
+        <td><div align="right">30</div></td>
+        <td><div align="right">86.7%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">modpp</div></td>
+        <td><div align="right">17</div></td>
+        <td><div align="right">20</div></td>
+        <td><div align="right">85.0%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">modpp</div></td>
+        <td><div align="right">8</div></td>
+        <td><div align="right">10</div></td>
+        <td><div align="right">80.0%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">sentobj</div></td>
+        <td><div align="right">5</div></td>
+        <td><div align="right">14</div></td>
+        <td><div align="right">35.7%</div></td>
+        <td>&nbsp;</td>
+        <td><div align="center">sentobj</div></td>
+        <td><div align="right">3</div></td>
+        <td><div align="right">10</div></td>
+        <td><div align="right">30.0%</div></td>
+      </tr>
+      <tr>
+        <td><div align="center"><strong>&sum;</strong></div></td>
+        <td><div align="right">92</div></td>
+        <td><div align="right">127</div></td>
+        <td><div align="right"><strong>72.4%</strong></div></td>
+        <td>&nbsp;</td>
+        <td><div align="center"><strong>&sum;</strong></div></td>
+        <td><div align="right">70</div></td>
+        <td><div align="right">94</div></td>
+        <td><div align="right"><strong>74.5%</strong></div></td>
+      </tr>                
+              </table>
+                <p class="caption">Table 2. Absolute counts on 16xx and 18xx</p>
+			</div>              
+
+    <p>A first inspection of the errors in the early texts suggests that there are more complex conjunctions, many extremely long sentences (both leading to a considerable loss in the performance of <em>sentobj</em>), and freer constituent order.  To get an impression, we give an example sentence from 16xx:</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example2" id="example2"><strong>(2)</strong></td>
+            <td><em>butt she was well built, a fair ship, of a good burden, and had mounted in her forty pieces of brass cannon, two of them demi cannon, and she was well manned, and of good force and strength for war: she was a good sailor, and would turn and tack about well; she held 100 persons of Whitelocke &rsquo;s followers, and most of his baggage, besides her own mariners, about 200.</em></td>
+            </tr>
+          </table>
+			
+    
+    <p>This sentence shows the following difficulties for the automatic parser:</p>
+    <ul><li>Genitive of quality / quality of-PP: <em>of a good burden , of good force</em></li>
+  <li>X-bar violation, freer word order: <em>mounted [in her] forty pieces</em></li>
+  <li>Ellipsis: <em>two of them demi cannon</em></li>
+  <li>Conjunctions: <em>was well manned , and of good force and strength for war</em> (adjective/participle and complex PP in coordination)</li>
+  <li>Appositions: <em>besides her own mariners , about 200</em></li></ul>
+  <p>We take a closer look at typical parsing errors in the following section.</p>
+  
+  <h2><a name="sect5"></a>5. Error Analysis</h2>
+  <p>We now give an analysis of selected errors that we encountered in the 100 random sentences. We proceed by century.</p>
+    
+    <h3><a name="sect5.1"></a>5.1 Errors in 16xx</h3>
+    <p>Sentence (2) illustrates many of the parser errors in 16xx. For example, the quality <em>of</em>-PP has lower probability than an apposition analysis, which is thus returned as the most likely analysis. This error arises from PDE lexical preferences which are unsuitable for application to 17th century material.</p>
+    <p>The X-bar violation <em>mounted [in her] forty pieces</em> causes the chunker to do overchunking; <em>[in her forty pieces] </em>is returned as a single noun chunk. Other chunking errors are also found. For example in the phrase <em>The states [are here reinforcing] their guards</em> the chunker does underchunking and returns two verb chunks (<em>[are] here [reinforcing]</em>). This chunking error is caused by the fact that in PDE, the adjective <em>here</em> very rarely appears inside verb chunks.</p>
+    <p>A further frequent source of parsing errors stem from tagging errors. In <em>The cabins wherein_NN Whitelocke was , were of an handsome make_VBP</em> the unknown relative pronoun <em>wherein</em> is tagged as noun, the noun <em>make</em> is mistagged as verb.</p>
+    <p>Further difficulties arise from the frequent very long sentences, which partly explains generally low performance of <em>sentobj. </em>An example of such a sentence is:</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example3" id="example3"><strong>(3)</strong></td>
+            <td><em>that, for his part, he had done nothing but sigh for her ever since she came; and that all the white beauties he had seen, never charmed him so absolutely as this fine creature had done; and that no man of any nation, ever beheld her, that did not fall in love with her; and that she had all the slaves perpetually at her feet; and the whole Country resounded with the fame of Clemene, &ldquo;For so,&rdquo; said he, &ldquo;we have Christened her&rdquo;.</em></td>
+            </tr>
+          </table>
+    
+    <p>In sentences of this type, it is also difficult for human annotators to determine clausal relations.</p>
+    
+    <h3><a name="sect5.2"></a>5.2 Errors in 17xx</h3>
+    <p>In the 18th century random sentences, we have encountered the following parsing errors.</p>
+    <p>A crossing relative pronoun dependency (indicated by indeces) could not be found by the parser in the following sentence:</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example4" id="example4"><strong>(4)</strong></td>
+            <td><em>It might be perhaps as easy to persuade a </em>man_1<em> to dance </em>who_1<em> had lost the use of his limbs, ...</em></td>
+            </tr>
+          </table>
+    
+    <p>Crossing dependencies also exist in PDE, but they are relatively rare.</p>
+    <p>A further source of problems is illustrated by the following sentence. The word <em>but</em> is not known as an adverb in the parser grammar:</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example5" id="example5"><strong>(5)</strong></td>
+            <td><em>He is such an Itinerant, to speak that I have </em>but<em> little of his company.</em></td>
+            </tr>
+          </table>
+    
+    <p>Similarly, <em>lest</em> is not known as a complementizer in the parser grammar:</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example6" id="example6"><strong>(6)</strong></td>
+            <td><em>A like policy inspired him with the thought of inviting Frederic &rsquo;s champion into his castle, </em>lest<em> he should be informed of Isabella&rsquo;s flight ...</em></td>
+            </tr>
+          </table>
+    
+    <p>Tagging errors are again frequent. In the following sentence, the unknown word <em>thee</em> is tagged as verb in one case and as noun in another case.</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example7" id="example7"><strong>(7)</strong></td>
+            <td><em>To thee_VB , and thee_NN alone, do I confess my weakness.</em></td>
+            </tr>
+          </table>
+    
+    <h3><a name="sect5.3"></a>5.3 Errors in 18xx</h3>
+    <p>As mentioned in section 4, an important source of errors in 18xx is the relative frequency of <em>saith</em> and <em>doth</em>, which seem to cluster in our random sentences. This can happen due to low counts.</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example8" id="example8"><strong>(8)</strong></td>
+            <td><em> She </em>doth_VBZ<em> nothing but laugh at and make light of the afflicted children, and </em>saith_NN<em> there be no witches.</em></td>
+            </tr>
+          </table>
+
+    <p><em>doth</em> is actually tagged correctly, but the morphological analyzer delivers the incorrect lemma <em>doth</em>.</p>
+    <p>Possible solutions to some of these errors are now addressed in section 6.</p>
+    
+    <h2><a name="sect6"></a>6. Adaptations to the Parser for historical English</h2>
+		    <h3><a name="sect6.1"></a>6.1 Specific improvements</h3>
+		    <p>In order to tackle some of the errors reported in section 5, we have extended the grammar by a number of specific local adaptations. We have added rules addressing<em> but </em>and <em>lest</em> to the grammar, thus correcting the analyses for sentences (5) and (6). However, we have decided not to deal with tagging and chunking issues here, as the parser uses off-the-shelf taggers and chunkers. The problems caused by <em>doth</em> and <em>saith</em> could easily be solved by adapting VARD. We will address these issues in future research.</p>
+		    <p>Each of these small changes has lead to a small improvement in general performance, but many types of errors cannot be addressed by local grammar adaptations. Bigger generalisations, for example relaxing word-order constraints to adapt to the freer word order which we have observed, seem more appropriate. We have therefore tried several more global improvements, which we present in the following subsection.</p>
+
+		    <h3><a name="sect6.2"></a>6.2 Bigger generalisations</h3>
+		    <p>We have noticed that sentences in historical texts are often extremely long, and that punctuation seems to be used differently (see e.g. sentence (3)). Full stops are rarer, and commas often appear in different places than in PDE. For example, the difficulty with the quality <em>of</em>-PP in sentence (2), which gets analysed as an apposition, partly stems from the comma: PDE <em>of</em>-PPs are typically not separated by commas, while appositions are. As an experiment, we have removed all commas from the text. In order to make a fair comparison, for the experiments in this subsection we have used a version of the parser without the extensions described in section 6.1. Performance differences are given in figure 6. The figure shows that there is a considerable improvement in 16xx, but not in the textual samples for the other centuries. There is also too much fluctuation to discern a clear trend. The improvement in 16xx but not later could either be due to the fact that log sentences and irregular comma uses are particularly prevalent there, but it could equally be a sparse data problem caused by the small evaluation corpus.</p>
+		        <div class="figure">
+              <p class="center"><a href="Archer_eval_nocomma.png" name="figure6"><img src="Archer_eval_nocomma_medium.png" alt="Figure 6"></a></p>
+		      <p class="caption">Figure 6. Performance when removing commas. Original system in grey, after removing commas in green.</p>
+    </div>
+		    <p>As noticed above, word order is not as fixed as in PDE. Relaxing word-order constraints to adapt to the freer word order could lead to a better performance. Fronted PPs are a frequent example of freer word order in historical or poetic English. In the following sentence, the PP <em>in the morning</em> is fronted.</p>
+          <table class="example">
+			<tr><td align="left" width="80" name="example9" id="example9"><strong>(9)</strong></td>
+            <td><em> &hellip;and went well to bed, where she took as good rest and sleep, as ever before, but </em>in the morning, when she awakened<em>, and attempted to turn herself in her bed, was not able&hellip;</em></td>
+            </tr>
+          </table>
+
+		    <p> In the original parser grammar, fronted PPs are only allowed sentence-initially in order to curb overgeneration. If we relax this constraint and generally allow PPs to be fronted (i.e. allowing verbs to attach PPs that appear before them), this leads to the results given in figure 7. We see that performance generally decreases. In particular, precision decreases, which indicates overgeneration: many PPs that should attach to a preceding verb are now attached to a subsequent verb.</p>
+		    <div class="figure">
+              <p class="center"><a href="Archer_eval_leftPP.png" name="figure7"><img src="Archer_eval_leftPP_medium.png" alt="Figure 7"></a></p>
+		      <p class="caption">Figure 7. Performance when generally allowing fronted PPs</p>
+    </div>
+		    <p>We have also tested versions that make semantic restrictions: only temporal and manner-PPs are allowed to be fronted. While this partly recovers precision, recall is more affected.</p>
+		    
+            <h2><a name="sect7"></a>7. Application to Descriptive Linguistics</h2>
+		    <p>In this section, we give an outlook on a possible application to descriptive linguistics: the investigation of diachronic differences. From a quantitative perspective, frequency differences in certain features (i.e. the signal which the parser reports), indicate differences in language use. We are assuming that the increasing error rate on older texts does not introduce a significant skew. From a qualitative perspective, an analysis of errors as we have given in section 5 provides detailed insights into diachronic developments.</p>
+		    <p>The question whether the parser signal can be used is addressed by Schneider and Hundt (<a href="#schneider_hundt_2009">2009</a>). This study investigates the use of the same syntactic parser as used here on English varieties, particularly on New Englishes. The paper investigates if the parser signal reliably describes linguistic differences, and if non-standard varieties lead to increased parser breakdowns, as the parser has not been trained to non-standard varieties. It is concluded that the signal can be usefully exploited in a partly corpus-driven approach to the description of New Englishes, that the reported statistical differences in the use of constructions indicate differences in language use. Concerning parser breakdowns, hardly any connection between parser breakdowns and non-standard variety is reported. We will briefly report on parser breakdowns in the Archer corpus and then show an example of a signal difference.</p>
+		    <p>English texts that date from several centuries back are potentially more different from standard English than New English texts, we have therefore measured parser-breakdowns on historical texts. Pro3Gres is a robust parser, it always reports some results, but if sentences are ungrammatical or not modelled in the grammar or are very long, it often returns several fragments instead of a single analysis spanning the entire sentence. The fragments are connected with an ad-hoc relation with the label <em>bridge</em>. We measure the frequency of the <em>bridge</em> relation as percentage per all relations. Measuring fragmentation per sentence would add a skew towards longer sentences, as longer sentences are far more likely to break. The frequency of the <em>bridge</em> relation on a random subset is given in Table 3. While fragmentation is clearly lowest on the training century (19xx), there is no increase towards older texts: 16xx to 18xx are at the same level. In other words: the parser has more difficulties with all older texts than with PDE.</p>
+		    <div class="tstyle"><a name="Table3"></a>
+              <table class="ptable">
+              <tr>
+                <th width="150" scope="col"><div align="left">Fragmentation</div></th>
+                <th width="60" scope="col">16xx</th>
+                <th width="60" scope="col">17xx</th>
+                <th width="60" scope="col">18xx</th>
+                <th width="60" scope="col">19xx</th>
+              </tr>
+              <tr>
+                <td><div align="left"># bridge</div></td>
+                <td><div align="right">204</div></td>
+                <td><div align="right">242</div></td>
+                <td><div align="right">224</div></td>
+                <td><div align="right">129</div></td>
+              </tr>
+              <tr>
+                <td><div align="left">&sum; rels</div></td>
+                <td><div align="right">3738</div></td>
+                <td><div align="right">4231</div></td>
+                <td><div align="right">3503</div></td>
+                <td><div align="right">3508</div></td>
+              </tr>
+              <tr>
+                <td><div align="left">% bridge</div></td>
+                <td><div align="right">5.46%</div></td>
+                <td><div align="right">5.72%</div></td>
+                <td><div align="right">6.36%</div></td>
+                <td><div align="right">3.68%</div></td>
+              </tr>
+            </table>
+		    <p>Table 3. Parse fragmentation by century</p>
             </div>
-
-            <h3>Project Objectives</h3>
-            <p>The CVL-CDSAML project develops a comprehensive corpus-based valency lexicon for the contrastive and diachronic study of languages from antiquity to today. The project employs computational linguistic methods to track valency patterns and argument structure changes across 3,000 years of documented language evolution.</p>
-
-            <h3>Methodology</h3>
-            <p>The project involves six major work packages: selection and analysis of texts from subsequent periods of target languages, selective annotation of texts using established treebank standards, annotation of valency features in relation to language contact phenomena and linguistic genealogy, automatic extraction of valency information through modified PROIEL codes, statistical analysis for diachronic and contrastive presentation of data, and dissemination of results through workshops and academic publications.</p>
-
-            <p>We utilize Penn-Helsinki parsing standards and adapt PROIEL annotation schemes to create selective treebanks that capture valency patterns across multiple historical stages of Greek, English, Germanic languages, and Romance languages. The resulting valency lexicon enables systematic comparison of argument structure evolution within and across language families.</p>
-
-            <h3>Expected Outcomes</h3>
-            <p>The project produces annotated corpora of representative texts from each historical period under investigation, a comprehensive diachronic contrastive valency lexicon accessible through the project website, scholarly publications including a thematic volume chapter and peer-reviewed journal article, and workshops bringing together international experts in corpus linguistics and historical syntax.</p>
-        </section>
-
-        <section id="team" class="container">
-            <h2>Research Team</h2>
             
-            <div class="team-member">
-                <h4>Professor Nikolaos Lavidas</h4>
-                <p>Principal Investigator</p>
-                <p>Department of English Language and Literature, National and Kapodistrian University of Athens</p>
-                <p>Co-Editor-in-Chief, GLOSSA Contact</p>
+		    <p>When measuring signal differences we have noticed that for most features there are no signal differences. For example, if one measures frequencies of relation types, no clear differences are visible. Language change typically occurs at lexical level and at the interface between lexis and grammar. As an example, we compare the frequency of the most frequent prepositions in 16xx to the overall frequency of this preposition in Table 4.</p> 
+            <div class="tstyle"><a name="Table4"></a>
+              <table class="ptable">
+              <tr>
+                <th width="120" scope="col"><div align="center">prep in a PP</div></th>
+                <th width="60" scope="col"><div align="center">16xx</div></th>
+                <th width="110" scope="col"><div align="center">&sum; Archer</div></th>
+                <th width="110" scope="col"><div align="center">Reduction</div></th>
+              </tr>
+              <tr>
+                <td><div align="center">of</div></td>
+                <td><div align="right">130</div></td>
+                <td><div align="right">54517</div></td>
+                <td><div align="right">1.09</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">in</div></td>
+                <td><div align="right">62</div></td>
+                <td><div align="right">28109</div></td>
+                <td><div align="right">1.01</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">to</div></td>
+                <td><div align="right">48</div></td>
+                <td><div align="right">19397</div></td>
+                <td><div align="right">1.13</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">with</div></td>
+                <td><div align="right">37</div></td>
+                <td><div align="right">13140</div></td>
+                <td><div align="right">1.29</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">by</div></td>
+                <td><div align="right">20</div></td>
+                <td><div align="right">8659</div></td>
+                <td><div align="right">1.05</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">for</div></td>
+                <td><div align="right">19</div></td>
+                <td><div align="right">10590</div></td>
+                <td><div align="right">0.82</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">at</div></td>
+                <td><div align="right">19</div></td>
+                <td><div align="right">9374</div></td>
+                <td><div align="right">0.93</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">as</div></td>
+                <td><div align="right">17</div></td>
+                <td><div align="right">4786</div></td>
+                <td><div align="right">1.62</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">from</div></td>
+                <td><div align="right">16</div></td>
+                <td><div align="right">7665</div></td>
+                <td><div align="right">0.95</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">upon</div></td>
+                <td><div align="right">10</div></td>
+                <td><div align="right">2259</div></td>
+                <td><div align="right">2.02</div></td>
+              </tr>
+              <tr>
+                <td><div align="center">&sum;</div></td>
+                <td><div align="right">441</div></td>
+                <td><div align="right">201229</div></td>
+                <td><div align="right">1</div></td>
+              </tr>
+            </table>
+		    <p>Table 4. Reductions in frequency of the most frequent 16xx prepositions</p>
             </div>
-
-            <div class="team-grid">
-                <div class="team-member">
-                    <h4>Professor Emerita Kiki Nikiforidou</h4>
-                    <p>Co-Editor, Genres and Influential Texts volume</p>
-                    <p>Expertise in Theoretical Linguistics and Lexicography</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Professor Dag Haug</h4>
-                    <p>International Collaborator</p>
-                    <p>University of Oslo</p>
-                    <p>PROIEL Project Director</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Professor Leonid Kulikov</h4>
-                    <p>International Collaborator</p>
-                    <p>Ghent University</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Dr. Vassiliki Geka</h4>
-                    <p>Post-Doctoral Researcher</p>
-                    <p>Co-Editor, Genres and Influential Texts volume</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Dr. Vassileios Symeonidis</h4>
-                    <p>Post-Doctoral Researcher</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Dr. Theodoros Michalareas</h4>
-                    <p>Post-Doctoral Researcher</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Sofia Chionidi</h4>
-                    <p>PhD Candidate</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Anastasia Tsiropina</h4>
-                    <p>PhD Candidate</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Eleni Plakoutsi</h4>
-                    <p>PhD Candidate</p>
-                </div>
-
-                <div class="team-member">
-                    <h4>Evangelos Argyropoulos</h4>
-                    <p>Research Assistant</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="events" class="container">
-            <h2>Research Programs and Events</h2>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>11th Naxos Summer School on Diachronic Linguistics</h3>
-                    <p>July 20-24, 2026, Naxos, Greece</p>
-                    <p>Annual summer school featuring international faculty and workshops on computational methods in historical linguistics. Topics include corpus-based approaches to language change, valency analysis, and digital humanities methodologies.</p>
-                    <a href="https://athdgc.github.io/naxos-summer-school-2026">Learn more</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>CIVIS Blended Intensive Programme 2026</h3>
-                    <p>Diachronic Linguistics in the 21st Century</p>
-                    <p>Three-phase programme including online spring school, collaborative workshops, and summer school in Naxos. Students from CIVIS alliance universities work on diachronic linguistics projects using digital humanities methods. 6 ECTS credits available.</p>
-                    <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026">Learn more</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Delphi Workshop 2025</h3>
-                    <p>November 26-29, 2025, Delphi, Greece</p>
-                    <p>Corpora and Diachrony: Influential Texts, Text Types and Genres. International workshop bringing together corpus linguists, philologists, and computational linguists to discuss methodological advances in diachronic corpus research.</p>
-                    <a href="https://athdgc.github.io/Delphi2025">Learn more</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>GlossaContact Laboratory</h3>
-                    <p>Language Contact Research Unit</p>
-                    <p>Research laboratory dedicated to language contact through translations and written language contact in ancient and medieval periods. Develops computational methods for detecting and analyzing contact-induced change in historical corpora.</p>
-                    <a href="https://athdgc.github.io/GlossaContactLab">Visit lab site</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="container">
-            <h2>Selected Publications</h2>
-
-            <div class="publications">
-                <div class="publication-item">
-                    <p><strong>Lavidas, N., Nikiforidou, K., & Geka, V.</strong> (forthcoming). Editors. <em>Genres, Influential Texts and Language Change: Exploring Cross-Fertilising Effects</em>. Berlin: De Gruyter Mouton.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2021). <em>The Diachrony of Written Language Contact: A Contrastive Approach</em>. Brill's Studies in Historical Linguistics. Leiden, Boston: Brill.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> & Nikiforidou, K. (eds). (2022). <em>Studying Language Change in the 21st Century: Theory and Methodologies</em>. Brill's Studies in Historical Linguistics. Leiden, Boston: Brill.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2020). Isoglosses and language change: Evidence of the rise and loss of isoglosses from a comparison of early Greek and early English. <em>Poznan Studies in Contemporary Linguistics</em> 56(4): 553-575.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2019). Word order and closest-conjunct agreement in the Greek Septuagint: On the position of a biblical translation in the diachrony of a syntactic correlation. <em>Questions and Answers in Linguistics</em> 5(2): 37-90.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2019). Syntactic borrowability in a Sprachbund setting: Object clitics and definite articles in the West Thracian Greek (Evros) dialect. In C. Tzitzilis & G. Papanastassiou (eds), <em>Language Contact in the Balkans and Asia Minor 1</em>, 189-208. Thessaloniki: Institute of Modern Greek Studies.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2018). Language change and early dictionaries of Modern Greek. In G.K. Giannakis et al. (eds.), <em>Studies in Greek Lexicography</em>, 57-78. Berlin: De Gruyter.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2017). Cognate noun constructions in Early Modern English: The case of Tyndale's New Testament. In H. Cuyckens, H. De Smet, L. Heyvaert & C. Maekelberghe (eds.), <em>Explorations in English Historical Syntax</em>, 51-76. Amsterdam: John Benjamins.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2017). Case in diachrony: Or, why Greek is not English. In E. Mathieu & R. Truswell (eds.), <em>Micro-change and Macro-change in Diachronic Syntax</em>, 125-144. Oxford: Oxford University Press.</p>
-                </div>
-
-                <div class="publication-item">
-                    <p><strong>Lavidas, N.</strong> (2014). The Greek Septuagint and language change at the syntax-semantics Interface: From null to 'pleonastic' object pronouns. In C. Gianollo, A. Jäger & D. Penka (eds.), <em>Language Change at the Syntax-Semantics Interface</em>, 153-182. Berlin: de Gruyter Mouton.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="container">
-            <h2>Contact Information</h2>
-            <p><strong>Professor Nikolaos Lavidas</strong><br>
-            Principal Investigator<br>
-            Department of English Language and Literature<br>
-            School of Philosophy<br>
-            National and Kapodistrian University of Athens<br>
-            University Campus, Zografou 157 84<br>
-            Athens, Greece</p>
+            <p>The preposition<em> for</em> has increased slightly since the 17th century,<em> as</em> has decreased slightly, and <em>upon</em> has become much rarer. The counts do not represent surface word occurrences (e.g., <em>to</em> is  often an infinite particle), but the frequency of these words as preposition in the parsed data.</p>
             
-            <p>Email: <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
-            
-            <p><a href="https://en.uoa.gr">University of Athens</a> | <a href="https://www.elidek.gr">HFRI/ELIDEK</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Athens Digital Glossa Chronos Research Network</p>
-            <p>National and Kapodistrian University of Athens</p>
-            <p>Funded by the Hellenic Foundation for Research and Innovation (HFRI) under the Greece 2.0 National Recovery and Resilience Plan</p>
-            <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-        </div>
-    </footer>
-</body>
+            <h2><a name="sect8"></a>8. Conclusions</h2>
+    <p>We have shown that spelling normalisation has a big impact, in particular that the use of the spelling normalisation tool VARD leads to improved parser performance.</p>
+		    <p>Performance on texts with normalised text, using the unadapted parser, increases from about 70% in the 17th century (16xx) to 80% in the 20th century (19xx). The parser makes about a third more errors on 17th century texts than on the (near-) PDE text for which the competence grammar was written and on which the performance disambiguation was trained.</p>
+    <p>Further progress has been reported by several local grammar adaptations for specific lexemes. These are easy to make and slightly improve general performance.</p>
+    <p>In order to address more global changes in historical linguistics, such as freer word order in older texts, we have conducted experiments on removing grammatical constraints. Removing constraints, however, comes at the cost of detrimental side-effects, which introduced more errors than they were able to correct.</p>
+    <p>An analysis of the errors that occurred in our evaluation set has shown that many difficulties in historical texts from as early as the 17th century, for example freer word order and crossing dependencies, are the same as in PDE texts. But they are more frequent in earlier data, and less restricted to e.g. poetic and emphatic use.</p>
+    <p>We have given an outlook on using the parser as a tool for the description of language change: Some differences are in the signal (i.e. analysed correctly), and some differences are in the errors: parser errors offer a different, partly systematically wrong perspective on the data. While the parser has more difficulties to parse texts from before 1900, no trend towards further difficulties with even older texts could be measured.</p>
+    <p>Adapting parsers to historical texts is a new research task at an early stage. In our pilot study, we have not addressed tagging, chunking or VARD retraining issues, which we will tackle in future research.<br>
+    </p>
+    
+    <h2>Sources</h2>
+    <p><a name="vard"></a> The VARD 2 homepage can be found here: <a href="http://www.comp.lancs.ac.uk/%7ebarona/vard2/">www.comp.lancs.ac.uk/~barona/vard2/</a></p>
+    
+         <h2>References</h2>
+		  <p><a name="baron_rayson_2008"></a>Baron, Alistair &amp; Paul Rayson. 2008. &ldquo;VARD 2: A tool for dealing with spelling variation in historical corpora&rdquo;. <em>Proceedings of the Postgraduate Conference in Corpus Linguistics</em>, Aston University, Birmingham, 22 May 2008. <a href="http://acorn.aston.ac.uk/conf_proceedings.html">http://acorn.aston.ac.uk/conf_proceedings.html</a></p>
+  		  <p><a name="biber_et_al_1994"></a>Biber, Douglas, Edward Finegan &amp; Dwight Atkinson. 1994. &ldquo;ARCHER and its challenges: Compiling and exploring A Representative Corpus of Historical English Registers&rdquo;. <em>Creating and using English language corpora</em>, Papers from the 14th International Conference on English Language Research on Computerized Corpora, Zurich 1993, ed. by Udo Fries, Peter Schneider &amp; Gunnel Tottie, 1&ndash;13. Amsterdam: Rodopi.</p>
+		  <p><a name="collins_1999"></a>Collins, Michael. 1999. <em>Head-Driven Statistical Models for Natural Language Parsing</em>. Ph.D. thesis, University of Pennsylvania. <a href="http://www.cs.columbia.edu/%7emcollins/papers/thesis.ps">http://www.cs.columbia.edu/~mcollins/papers/thesis.ps</a></p>
+		  <p><a name="gildea_2001"></a>Gildea, Daniel. 2001. &ldquo;Corpus variation and parser performance&rdquo;. <em>Proceedings of the 2001 Conference on Empirical Methods in Natural Language Processing (EMNLP)</em>, 167&ndash;202, Pittsburgh, PA. <a href="http://www.aclweb.org/anthology-new/W/W01/W01-0521.pdf">http://www.aclweb.org/anthology-new/W/W01/W01-0521.pdf</a></p>
+  		  <p><a name="haverinen_et_al_2008"></a>Haverinen, Katri, Filip Ginter, Sampo Pyysalo &amp; Tapio Salakoski. 2008. &ldquo;Accurate conversion of dependency parses: targeting the Stanford scheme&rdquo;. <i>Proceedings of Third International Symposium on Semantic Mining in Biomedicine (SMBM 2008)</i>, Turku, Finland, 2008. <a href="http://mars.cs.utu.fi/smbm2008/?q=proceedings">http://mars.cs.utu.fi/smbm2008/?q=proceedings</a></p>
+		  <p><a name="lehmann_schneider_2009"></a>Lehmann, Hans Martin, &amp; Gerold Schneider. 2009. &ldquo;Parser-Based Analysis of Syntax-Lexis Interaction&rdquo;. <em>Corpora: Pragmatics and Discourse. Papers from the 29th International conference on English language research on computerized corpora</em> (ICAME 29), Ascona, Switzerland, 14&ndash;18 May 2008 (Language and computers 68), ed. by Andreas H. Jucker, Daniel Schreier &amp; Marianne Hundt, 477&ndash;502.  Amsterdam: Rodopi.</p>
+		  <p><a name="marcus_et_al_1993"></a>Marcus, M., B. Santorini, &amp; M. Marcinkiewicz. 1993. &ldquo;Building a large annotated corpus of English: the Penn Treebank&rdquo;. <em>Computational Linguistics</em>, 19(2): 313&ndash;330. <a href="http://www.aclweb.org/anthology-new/J/J93/J93-2004.pdf">http://www.aclweb.org/anthology-new/J/J93/J93-2004.pdf</a></p>
+		  <p><a name="nivre_2006"></a>Nivre, Joakim. 2006.<em> Inductive Dependency Parsing</em>. Text, Speech and Language Technology 34. Springer, Dordrecht, The Netherlands.</p>
+		  <p><a name="nivre_et_al_2007"></a>Nivre, Joakim, Johan Hall, Sandra K&uuml;bler, Ryan McDonald, Jens Nilsson, Sebastian Riedel &amp; Deniz Yuret. 2007. &quot;The CoNLL 2007 shared task on dependency parsing&quot;. <em>Proceedings of the CoNLL Shared Task Session of EMNLP-CoNLL 2007</em>, 915&#150;932. <a href="http://www.aclweb.org/anthology-new/D/D07/D07-1096.pdf">http://www.aclweb.org/anthology-new/D/D07/D07-1096.pdf</a></p>
+  		  <p><a name="pawley_syder_1983"></a>Pawley, Andrew &amp; Frances Hodgetts Syder. 1983. &quot;Two Puzzles for Linguistic Theory: Native-like selection and native-like fluency&quot;. <em>Language and Communication</em>, ed. by J. C. Richards &amp; R. W. Schmidt, 191&ndash;226. London: Longman. </p>
+		  <p><a name="rayson_et_al_2007"></a>Rayson, Paul, Dawn Archer, Alistair Baron, Jonathan Culpeper &amp; Nicholas Smith. 2007. &quot;Tagging the Bard: Evaluating the accuracy of a modern POS tagger on Early Modern English corpora&quot;. <i>Proceedings of Corpus Linguistics 2007</i>, July 27&ndash;30, University of Birmingham, UK. <a href="http://ucrel.lancs.ac.uk/people/paul/publications/RaysonEtAl_CL2007.pdf">http://ucrel.lancs.ac.uk/people/paul/publications/RaysonEtAl_CL2007.pdf</a></p>
+		  <p><a name="schneider_2008"></a>Schneider, Gerold. 2008. <em>Hybrid Long-Distance Functional Dependency Parsing</em>. Doctoral Thesis, Institute of Computational Linguistics, University of Zurich. <a href="http://dx.doi.org/10.5167/uzh-7188">http://dx.doi.org/10.5167/uzh-7188</a></p>
+		  <p><a name="schneider_hundt_2009"></a>Schneider, Gerold &amp; Marianne Hundt. 2009. &ldquo;Using a parser as a heuristic tool for the description of New Englishes.&rdquo; <i>Proceedings of the Fifth Corpus Linguistics Conference</i>, Liverpool 20&ndash;23 July 2009. <a href="http://ucrel.lancs.ac.uk/publications/cl2009/">http://ucrel.lancs.ac.uk/publications/cl2009/</a></p>
+		  <p><a name="tapanainen_jarvinen_1997"></a>Tapanainen, Pasi &amp; Timo J&auml;rvinen. 1997. &quot;A non-projective dependency parser&quot;. <em>Proceedings of the 5th Conference on Applied Natural Language Processing</em>, 64&ndash;71. Association for Computational Linguistics.</p>
+ 
+ </td>
+		<td class="contentright">&nbsp;</td>
+	      </tr>
+	      <tr>
+		<td class="footer">
+		  <div class="footer">
+				<p class="updated">Studies in Variation, Contacts and Change in English 10: Outposts of Historical Corpus Linguistics: From the Helsinki Corpus to a Proliferation of Resources
+				<br>
+				Article &copy; 2012 Gerold Schneider; series &copy; 2007&ndash; VARIENG
+				<br>
+				Last updated 2012-10-05 by Joe McVeigh</p>
+		  </div>
+		</td>
+		<td class="footerright">&nbsp;</td>
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  </body>
 </html>
