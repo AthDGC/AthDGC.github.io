@@ -15,308 +15,232 @@
         }
 
         :root {
-            --primary: #1a4d8f;
-            --primary-dark: #0f2f5c;
-            --accent: #d4af37;
-            --text: #2c3e50;
-            --text-light: #5a6c7d;
-            --bg-light: #f8f9fa;
+            --primary: #003366;
+            --text: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f4f4;
             --white: #ffffff;
+            --border: #dddddd;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
             color: var(--text);
+            background-color: var(--white);
         }
 
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
+        header {
             padding: 4rem 2rem;
             text-align: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto 1rem;
-        }
-
-        .hero .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.8;
+        .subtitle {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .section {
-            padding: 4rem 0;
-        }
-
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
 
         .sites-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 3rem;
         }
 
-        .site-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .site-item {
+            display: block;
             text-decoration: none;
             color: inherit;
-            display: block;
+            margin-bottom: 2rem;
         }
 
-        .site-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .site-card-header {
-            padding: 1.5rem;
-            color: white;
-        }
-
-        .site-card-header h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .site-card-header .tag {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
-
-        .site-card-body {
-            padding: 1.5rem;
-        }
-
-        .site-card-body p {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .site-card-body .url {
-            display: block;
-            margin-top: 1rem;
+        .site-item:hover h3 {
+            text-decoration: underline;
             color: var(--primary);
-            font-size: 0.9rem;
-            font-weight: 500;
         }
 
-        /* Color themes for different sites */
-        .bg-blue {
-            background: linear-gradient(135deg, #1a4d8f 0%, #2e6db5 100%);
-        }
-
-        .bg-purple {
-            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
-        }
-
-        .bg-teal {
-            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
-        }
-
-        .bg-orange {
-            background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
-        }
-
-        .bg-rose {
-            background: linear-gradient(135deg, #be123c 0%, #fb7185 100%);
-        }
-
-        .bg-indigo {
-            background: linear-gradient(135deg, #4338ca 0%, #818cf8 100%);
-        }
-
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.8;
+        .site-header {
             margin-bottom: 0.5rem;
         }
 
-        footer a {
-            color: var(--accent);
-        }
-
-        .hosted-by {
-            background: var(--bg-light);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .hosted-by p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
-
-        .hosted-by a {
+        .site-header h3 {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.4rem;
             color: var(--primary);
             font-weight: 600;
+            display: inline-block;
+        }
+
+        .tag {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            background: var(--bg-light);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            color: var(--text-light);
+            margin-left: 1rem;
+            vertical-align: middle;
+        }
+
+        .site-description {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            max-width: 800px;
+        }
+
+        .site-url {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding: 3rem 0;
+            background: var(--bg-light);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            header {
+                padding: 3rem 1rem;
             }
 
-            .sites-grid {
-                grid-template-columns: 1fr;
+            h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <header class="hero">
+    <header>
         <div class="container">
             <h1>AthDGC</h1>
-            <p>Athens Digital Glossa Chronos</p>
-            <p class="subtitle">Corpus-based Research on Diachronic Linguistics and Language Evolution</p>
-            <p class="subtitle">National and Kapodistrian University of Athens</p>
+            <p class="subtitle">Athens Digital Glossa Chronos Research Network</p>
+            <p class="subtitle" style="font-size: 1rem; margin-top: 1rem;">National and Kapodistrian University of
+                Athens</p>
         </div>
     </header>
 
-    <main>
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Research Network Sites</h2>
-                <p class="section-subtitle">Explore our research projects, educational programs, and collaborative
-                    initiatives in historical linguistics and digital humanities.</p>
+    <main class="container">
+        <section>
+            <h2 class="section-title">Research Network Sites</h2>
 
-                <div class="sites-grid">
-                    <a href="https://athdgc.github.io/hfri2024/" class="site-card">
-                        <div class="site-card-header bg-blue">
-                            <h3>HFRI Research Project</h3>
-                            <span class="tag">CVL-CDSAML Valency Lexicon</span>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient & Medieval
-                                Languages. Funded by the Hellenic Foundation for Research and Innovation.</p>
-                            <span class="url">athdgc.github.io/hfri2024</span>
-                        </div>
-                    </a>
+            <div class="sites-grid">
+                <a href="https://athdgc.github.io/hfri2024/" class="site-item">
+                    <div class="site-header">
+                        <h3>HFRI Research Project</h3>
+                        <span class="tag">CVL-CDSAML Valency Lexicon</span>
+                    </div>
+                    <p class="site-description">Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of
+                        Ancient & Medieval Languages. Funded by the Hellenic Foundation for Research and Innovation.</p>
+                    <span class="site-url">athdgc.github.io/hfri2024</span>
+                </a>
 
-                    <a href="https://athdgc.github.io/naxos-summer-school-2026/" class="site-card">
-                        <div class="site-card-header bg-teal">
-                            <h3>Naxos Summer School 2026</h3>
-                            <span class="tag">11th Edition • July 20-24, 2026</span>
-                        </div>
-                        <div class="site-card-body">
-                            <p>International summer school on diachronic linguistics featuring computational methods,
-                                corpus-based approaches, and language change. Held annually in Naxos, Greece.</p>
-                            <span class="url">athdgc.github.io/naxos-summer-school-2026</span>
-                        </div>
-                    </a>
+                <a href="https://athdgc.github.io/naxos-summer-school-2026/" class="site-item">
+                    <div class="site-header">
+                        <h3>Naxos Summer School 2026</h3>
+                        <span class="tag">11th Edition • July 20-24, 2026</span>
+                    </div>
+                    <p class="site-description">International summer school on diachronic linguistics featuring
+                        computational methods, corpus-based approaches, and language change. Held annually in Naxos,
+                        Greece.</p>
+                    <span class="site-url">athdgc.github.io/naxos-summer-school-2026</span>
+                </a>
 
-                    <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026/" class="site-card">
-                        <div class="site-card-header bg-purple">
-                            <h3>CIVIS BIP 2026</h3>
-                            <span class="tag">Blended Intensive Programme</span>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Diachronic Linguistics in the 21st Century. Three-phase programme with online spring
-                                school, collaborative workshops, and summer school. 6 ECTS credits available.</p>
-                            <span class="url">athdgc.github.io/civis-diachronic-linguistics-2026</span>
-                        </div>
-                    </a>
+                <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026/" class="site-item">
+                    <div class="site-header">
+                        <h3>CIVIS BIP 2026</h3>
+                        <span class="tag">Blended Intensive Programme</span>
+                    </div>
+                    <p class="site-description">Diachronic Linguistics in the 21st Century. Three-phase programme with
+                        online spring school, collaborative workshops, and summer school.</p>
+                    <span class="site-url">athdgc.github.io/civis-diachronic-linguistics-2026</span>
+                </a>
 
-                    <a href="https://athdgc.github.io/GlossaContactLab/" class="site-card">
-                        <div class="site-card-header bg-rose">
-                            <h3>GlossaContact Laboratory</h3>
-                            <span class="tag">Language Contact Research Unit</span>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Research laboratory dedicated to language contact through translations and written
-                                language contact in ancient and medieval periods. Home of GLOSSA Contact journal.</p>
-                            <span class="url">athdgc.github.io/GlossaContactLab</span>
-                        </div>
-                    </a>
+                <a href="https://athdgc.github.io/GlossaContactLab/" class="site-item">
+                    <div class="site-header">
+                        <h3>GlossaContact Laboratory</h3>
+                        <span class="tag">Language Contact Research Unit</span>
+                    </div>
+                    <p class="site-description">Research laboratory dedicated to language contact through translations
+                        and written language contact in ancient and medieval periods. Home of GLOSSA Contact journal.
+                    </p>
+                    <span class="site-url">athdgc.github.io/GlossaContactLab</span>
+                </a>
 
-                    <a href="https://athdgc.github.io/Delphi2025/" class="site-card">
-                        <div class="site-card-header bg-orange">
-                            <h3>Delphi Workshop 2025</h3>
-                            <span class="tag">November 26-29, 2025</span>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Corpora and Diachrony: Influential Texts, Text Types and Genres. International workshop
-                                bringing together corpus linguists, philologists, and computational linguists.</p>
-                            <span class="url">athdgc.github.io/Delphi2025</span>
-                        </div>
-                    </a>
+                <a href="https://athdgc.github.io/Delphi2025/" class="site-item">
+                    <div class="site-header">
+                        <h3>Delphi Workshop 2025</h3>
+                        <span class="tag">November 26-29, 2025</span>
+                    </div>
+                    <p class="site-description">Corpora and Diachrony: Influential Texts, Text Types and Genres.
+                        International workshop bringing together corpus linguists, philologists, and computational
+                        linguists.</p>
+                    <span class="site-url">athdgc.github.io/Delphi2025</span>
+                </a>
 
-                    <a href="https://glossacontact.org" class="site-card" target="_blank">
-                        <div class="site-card-header bg-indigo">
-                            <h3>GLOSSA Contact Journal</h3>
-                            <span class="tag">Open Access • Peer-Reviewed</span>
-                        </div>
-                        <div class="site-card-body">
-                            <p>International journal dedicated to research on language contact phenomena, structural
-                                borrowing, contact-induced change, multilingualism, and areal linguistics.</p>
-                            <span class="url">glossacontact.org</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="hosted-by">
-            <div class="container">
-                <p><strong>Principal Investigator:</strong> Professor Nikolaos Lavidas</p>
-                <p>Department of English Language and Literature, School of Philosophy</p>
-                <p><a href="https://en.uoa.gr" target="_blank">National and Kapodistrian University of Athens</a></p>
-                <p style="margin-top: 1rem;"><strong>Contact:</strong> <a
-                        href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
+                <a href="https://glossacontact.org" class="site-item" target="_blank">
+                    <div class="site-header">
+                        <h3>GLOSSA Contact Journal</h3>
+                        <span class="tag">Open Access • Peer-Reviewed</span>
+                    </div>
+                    <p class="site-description">International journal dedicated to research on language contact
+                        phenomena, structural borrowing, contact-induced change, multilingualism, and areal linguistics.
+                    </p>
+                    <span class="site-url">glossacontact.org</span>
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>Athens Digital Glossa Chronos Research Network</p>
-            <p>© 2024-2026 AthDGC. All rights reserved.</p>
-            <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-                    4.0</a></p>
+            <p><strong>Principal Investigator:</strong> Professor Nikolaos Lavidas</p>
+            <p>Department of English Language and Literature, School of Philosophy</p>
+            <p><a href="https://en.uoa.gr" target="_blank">National and Kapodistrian University of Athens</a></p>
+            <p style="margin-top: 1rem; margin-bottom: 2rem;">Contact: <a
+                    href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
+            <p style="border-top: 1px solid #ddd; padding-top: 1rem; font-size: 0.8rem;">&copy; 2024-2026 AthDGC.
+                Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
         </div>
     </footer>
 </body>
