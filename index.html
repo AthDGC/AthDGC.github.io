@@ -28,6 +28,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
             color: var(--text);
+            background: #f9f9f9;
         }
 
         .hero {
@@ -126,6 +127,7 @@
 
         .site-card-header {
             padding: 1.5rem;
+            background: var(--primary);
             color: white;
         }
 
@@ -156,31 +158,6 @@
             color: var(--primary);
             font-size: 0.9rem;
             font-weight: 500;
-        }
-
-        /* Minimal color themes for different sites */
-        .bg-blue {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-        }
-
-        .bg-purple {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-        }
-
-        .bg-teal {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-        }
-
-        .bg-orange {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-        }
-
-        .bg-rose {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-        }
-
-        .bg-indigo {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         footer {
@@ -215,6 +192,38 @@
             font-weight: 600;
         }
 
+        .logos-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo-item {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .logo-item img {
+            height: 80px;
+            width: auto;
+            margin-bottom: 0.5rem;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .logo-item img:hover {
+            filter: grayscale(0%);
+        }
+
+        .logo-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -246,9 +255,8 @@
 
                 <div class="sites-grid">
                     <a href="https://athdgc.github.io/hfri2024/" class="site-card">
-                        <div class="site-card-header bg-blue">
+                        <div class="site-card-header">
                             <h3>HFRI Research Project</h3>
-                            <span class="tag">CVL-CDSAML Valency Lexicon</span>
                         </div>
                         <div class="site-card-body">
                             <p>Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient & Medieval
@@ -258,9 +266,8 @@
                     </a>
 
                     <a href="https://athdgc.github.io/naxos-summer-school-2026/" class="site-card">
-                        <div class="site-card-header bg-teal">
+                        <div class="site-card-header">
                             <h3>Naxos Summer School 2026</h3>
-                            <span class="tag">11th Edition • July 20-24, 2026</span>
                         </div>
                         <div class="site-card-body">
                             <p>International summer school on diachronic linguistics featuring computational methods,
@@ -270,9 +277,8 @@
                     </a>
 
                     <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026/" class="site-card">
-                        <div class="site-card-header bg-purple">
+                        <div class="site-card-header">
                             <h3>CIVIS BIP 2026</h3>
-                            <span class="tag">Blended Intensive Programme</span>
                         </div>
                         <div class="site-card-body">
                             <p>Diachronic Linguistics in the 21st Century. Three-phase programme with online spring
@@ -282,9 +288,8 @@
                     </a>
 
                     <a href="https://athdgc.github.io/GlossaContactLab/" class="site-card">
-                        <div class="site-card-header bg-rose">
+                        <div class="site-card-header">
                             <h3>GlossaContact Laboratory</h3>
-                            <span class="tag">Language Contact Research Unit</span>
                         </div>
                         <div class="site-card-body">
                             <p>Research laboratory dedicated to language contact through translations and written
@@ -294,9 +299,8 @@
                     </a>
 
                     <a href="https://athdgc.github.io/Delphi2025/" class="site-card">
-                        <div class="site-card-header bg-orange">
+                        <div class="site-card-header">
                             <h3>Delphi Workshop 2025</h3>
-                            <span class="tag">November 26-29, 2025</span>
                         </div>
                         <div class="site-card-body">
                             <p>Corpora and Diachrony: Influential Texts, Text Types and Genres. International workshop
@@ -306,9 +310,8 @@
                     </a>
 
                     <a href="https://glossacontact.org" class="site-card" target="_blank">
-                        <div class="site-card-header bg-indigo">
+                        <div class="site-card-header">
                             <h3>GLOSSA Contact Journal</h3>
-                            <span class="tag">Open Access • Peer-Reviewed</span>
                         </div>
                         <div class="site-card-body">
                             <p>International journal dedicated to research on language contact phenomena, structural
@@ -327,6 +330,19 @@
                 <p><a href="https://en.uoa.gr" target="_blank">National and Kapodistrian University of Athens</a></p>
                 <p style="margin-top: 1rem;"><strong>Contact:</strong> <a
                         href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
+
+                <div class="logos-section">
+                    <div class="logo-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/University_of_Athens_logo.jpg"
+                            alt="University of Athens Logo" style="height: 80px; width: auto;">
+                        <p>National and Kapodistrian<br>University of Athens</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=200&fit=crop&crop=center"
+                            alt="Research Innovation" style="height: 80px; width: auto; border-radius: 4px;">
+                        <p>Hellenic Foundation for<br>Research & Innovation</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -334,7 +350,7 @@
     <footer>
         <div class="container">
             <p>Athens Digital Glossa Chronos Research Network</p>
-            <p>© 2024-2026 AthDGC. All rights reserved.</p>
+            <p>&copy; 2024-2026 AthDGC. All rights reserved.</p>
             <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
                     4.0</a></p>
         </div>
