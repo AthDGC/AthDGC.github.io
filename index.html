@@ -15,9 +15,9 @@
         }
 
         :root {
-            --primary: #1a4d8f;
-            --primary-dark: #0f2f5c;
-            --accent: #d4af37;
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --accent: #3498db;
             --text: #2c3e50;
             --text-light: #5a6c7d;
             --bg-light: #f8f9fa;
@@ -35,6 +35,25 @@
             color: white;
             padding: 4rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&h=1080&fit=crop&crop=center') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -91,17 +110,18 @@
         .site-card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
             color: inherit;
             display: block;
+            border: 1px solid #e9ecef;
         }
 
         .site-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
         }
 
         .site-card-header {
@@ -138,29 +158,29 @@
             font-weight: 500;
         }
 
-        /* Color themes for different sites */
+        /* Minimal color themes for different sites */
         .bg-blue {
-            background: linear-gradient(135deg, #1a4d8f 0%, #2e6db5 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .bg-purple {
-            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .bg-teal {
-            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .bg-orange {
-            background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .bg-rose {
-            background: linear-gradient(135deg, #be123c 0%, #fb7185 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .bg-indigo {
-            background: linear-gradient(135deg, #4338ca 0%, #818cf8 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         footer {
