@@ -105,6 +105,10 @@
             padding: 4rem 0;
         }
 
+        .section-alt {
+            background: var(--bg-light);
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -119,6 +123,146 @@
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 3rem;
+        }
+
+        .affiliations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .affiliation-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .affiliation-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .affiliation-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .affiliation-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .affiliation-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .affiliation-card a:hover {
+            text-decoration: underline;
+        }
+
+        .research-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .research-block {
+            text-align: center;
+        }
+
+        .research-block h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        .research-block p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .research-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+        }
+
+        .education-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .education-card h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .education-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .education-card .highlight {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
 
         .sites-grid {
@@ -349,6 +493,128 @@
                             <span class="url">glossacontact.org</span>
                         </div>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Institutional Affiliations</h2>
+                <p class="section-subtitle">Our research network is supported by leading academic institutions and
+                    professional organizations.</p>
+
+                <div class="affiliations-grid">
+                    <div class="affiliation-card">
+                        <h3>National and Kapodistrian University of Athens</h3>
+                        <p>Official English website of the University of Athens, Greece's premier academic institution
+                            founded in 1837.</p>
+                        <a href="https://en.uoa.gr/" target="_blank">Visit Website →</a>
+                    </div>
+
+                    <div class="affiliation-card">
+                        <h3>Department of English Language & Literature</h3>
+                        <p>Information on undergraduate and postgraduate studies, faculty research, and academic
+                            announcements.</p>
+                        <a href="https://en.enl.uoa.gr/" target="_blank">Visit Department →</a>
+                    </div>
+
+                    <div class="affiliation-card">
+                        <h3>MA in English Language, Linguistics and Translation</h3>
+                        <p>Specialized master's program in linguistics and translation theory. Director: Prof. N.
+                            Lavidas</p>
+                        <a href="https://en.enl.uoa.gr/postgraduate_studies/ma_in_english_language_linguistics_and_translation/"
+                            target="_blank">Learn More →</a>
+                    </div>
+
+                    <div class="affiliation-card">
+                        <h3>Interdepartmental MA in Translation</h3>
+                        <p>Interdepartmental program focused on trilingual translation and cultural studies.</p>
+                        <a href="https://en.enl.uoa.gr/postgraduate_studies/interdepartmental_postgraduate_studies_programme_translation_greek_english_russian/"
+                            target="_blank">Explore Program →</a>
+                    </div>
+
+                    <div class="affiliation-card">
+                        <h3>Societas Linguistica Europaea (SLE)</h3>
+                        <p>The European Linguistic Association, promoting linguistic research across Europe.</p>
+                        <a href="https://societaslinguistica.eu/" target="_blank">Visit SLE →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Research Network Overview</h2>
+                <p class="section-subtitle">Athens Digital Glossa Chronos serves as a comprehensive hub for diachronic
+                    linguistic research.</p>
+
+                <div class="research-overview">
+                    <div class="research-block">
+                        <div class="research-icon">📊</div>
+                        <h3>Corpus-Based Diachronic Linguistics</h3>
+                        <p>Systematic analysis of language change across time periods using large-scale digital corpora
+                            and computational methods.</p>
+                    </div>
+
+                    <div class="research-block">
+                        <div class="research-icon">🌐</div>
+                        <h3>Language Contact Phenomena</h3>
+                        <p>Investigation of linguistic borrowing, code-switching, and contact-induced change in
+                            multilingual contexts.</p>
+                    </div>
+
+                    <div class="research-block">
+                        <div class="research-icon">💻</div>
+                        <h3>Computational Tools for Analysis</h3>
+                        <p>Development and application of digital tools for linguistic annotation, parsing, and
+                            statistical analysis.</p>
+                    </div>
+
+                    <div class="research-block">
+                        <div class="research-icon">🔓</div>
+                        <h3>Open Access Research</h3>
+                        <p>Commitment to transparent, reproducible research with freely available data, tools, and
+                            publications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Educational Programs</h2>
+                <p class="section-subtitle">Integrated educational initiatives combining research excellence with
+                    comprehensive training.</p>
+
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>Naxos Diachronic Linguistic School</h3>
+                        <h4>11th Edition • July 20-24, 2026</h4>
+                        <p>Annual international summer school bringing together leading scholars and students in
+                            diachronic linguistics. Features hands-on computational workshops and collaborative research
+                            projects.</p>
+                        <span class="highlight">International Faculty & Students</span>
+                        <span class="highlight">Hands-on Workshops</span>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>CIVIS BIP: Diachronic Linguistics in the 21st Century</h3>
+                        <h4>Blended Intensive Programme</h4>
+                        <p>Three-phase programme combining online spring school, collaborative workshops, and summer
+                            school. Open to students from CIVIS alliance universities with 6 ECTS credits available.</p>
+                        <span class="highlight">April-May-July 2026</span>
+                        <span class="highlight">6 ECTS Credits</span>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>MA Program in English, Linguistics and Translation</h3>
+                        <h4>Director: Professor Nikolaos Lavidas</h4>
+                        <p>Advanced master's program integrating theoretical linguistics with practical translation
+                            studies. Students benefit from direct involvement in ongoing research projects and thesis
+                            supervision opportunities.</p>
+                        <span class="highlight">Research Integration</span>
+                        <span class="highlight">Thesis Supervision</span>
+                    </div>
                 </div>
             </div>
         </section>
