@@ -23,16 +23,32 @@
         }
 
         .header {
-            background: #1a4d8f;
+            background: linear-gradient(135deg, #1a4d8f 0%, #2c5f8f 50%, #1a4d8f 100%);
             color: white;
-            padding: 2.5rem 0;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
             border-bottom: 4px solid #d4af37;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1568667256645-0943453d1446?w=1920&h=1080&fit=crop&crop=center') center/cover;
+            opacity: 0.15;
+            z-index: 0;
         }
 
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
@@ -60,6 +76,13 @@
             height: 60px;
             background: white;
             padding: 10px;
+            border-radius: 4px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .logos img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         nav {
@@ -208,8 +231,9 @@
             <p>Athens Digital Glossa Chronos</p>
             <p>Corpus-based Research on Diachronic Linguistics and Language Evolution</p>
             <div class="logos">
-                <img src="https://www.elidek.gr/wp-content/themes/elidek/images/elidek_logo.png" alt="HFRI/ELIDEK">
-                <img src="https://www.uoa.gr/wp-content/themes/uoa/images/logo.svg" alt="University of Athens">
+                <img src="https://www.elidek.gr/wp-content/uploads/2021/09/ELIDEK-logo-positive-en.png"
+                    alt="HFRI/ELIDEK">
+                <img src="https://share.uoa.gr/public/Documents/new-logo/LOGO_UOA%20b_w.jpg" alt="University of Athens">
             </div>
         </div>
     </header>
