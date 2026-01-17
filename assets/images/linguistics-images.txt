@@ -1,0 +1,28 @@
+# Historical & Computational Linguistics Images
+
+## Recommended Free Images from Unsplash:
+
+### 1. Ancient Manuscripts
+URL: https://images.unsplash.com/photo-1568667256645-0943453d1446?w=1920&h=1080&fit=crop&crop=center
+Description: Ancient manuscripts/books - perfect for historical linguistics context
+
+### 2. Computational Analysis
+URL: https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&crop=center
+Description: Data visualization/computational analysis - great for computational linguistics
+
+### 3. Language Study
+URL: https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&h=1080&fit=crop&crop=center
+Description: Books and language study materials
+
+### 4. Digital Humanities
+URL: https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop&crop=center
+Description: Modern digital research setup
+
+### 5. Historical Text Analysis
+URL: https://images.unsplash.com/photo-1589998059171-988d887df646?w=1920&h=1080&fit=crop&crop=center
+Description: Ancient text analysis
+
+## Usage:
+- Download and save to: assets/images/
+- Use relative paths in HTML
+- All images are free for commercial use, no attribution required
