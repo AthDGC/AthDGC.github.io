@@ -380,23 +380,30 @@
         .logos-section {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            margin: 2rem 0;
+            align-items: flex-start;
+            gap: 4rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
+            padding: 2rem 0;
         }
 
         .logo-item {
             text-align: center;
-            max-width: 200px;
+            max-width: 180px;
+            min-width: 150px;
+            flex: 0 0 auto;
         }
 
         .logo-item img {
-            height: 120px;
+            height: 100px;
             width: auto;
+            max-width: 180px;
             margin-bottom: 0.5rem;
             filter: grayscale(0%);
             transition: transform 0.3s, filter 0.3s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .logo-item img:hover {
@@ -435,178 +442,19 @@
 <body>
     <header style="background: var(--bg-page); padding: 2rem 0; border-bottom: 1px solid var(--border);">
         <div class="container">
-            <h1
-                style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); text-align: center; margin: 0;">
-                AthDGC</h1>
-            <p style="text-align: center; font-size: 1.3rem; color: var(--text-light); margin-top: 0.5rem;">Athens
-                Digital Glossa Chronos</p>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-top: 0.5rem;">Corpus-based
-                Research on Diachronic Linguistics and Language Evolution</p>
-            <p style="text-align: center; font-size: 1rem; color: var(--text-light); margin-top: 0.5rem;">National and
-                Kapodistrian University of Athens</p>
+            <div class="hero" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <img src="athdgc-logo.svg" alt="AthDGC Logo" style="height: 120px; width: auto;">
+                <div style="text-align: center;">
+                    <h1>AthDGC</h1>
+                    <div class="subtitle">Athens Digital Glossa Chronos</div>
+                    <div class="tagline">Corpus-based Diachronic Linguistics Research</div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Research Network Sites</h2>
-                <p class="section-subtitle">Explore our research projects, educational programs, and collaborative
-                    initiatives in historical linguistics and digital humanities.</p>
-
-                <div class="sites-grid">
-                    <a href="https://athdgc.github.io/hfri2024/" class="site-card">
-                        <div class="site-card-header">
-                            <h3>HFRI Research Project</h3>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient & Medieval
-                                Languages. Funded by the Hellenic Foundation for Research and Innovation.</p>
-                            <span class="url">athdgc.github.io/hfri2024</span>
-                        </div>
-                    </a>
-
-                    <a href="https://athdgc.github.io/naxos-summer-school-2026/" class="site-card">
-                        <div class="site-card-header">
-                            <h3>Naxos Summer School 2026</h3>
-                        </div>
-                        <div class="site-card-body">
-                            <p>International summer school on diachronic linguistics featuring computational methods,
-                                corpus-based approaches, and language change. Held annually in Naxos, Greece.</p>
-                            <span class="url">athdgc.github.io/naxos-summer-school-2026</span>
-                        </div>
-                    </a>
-
-                    <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026/" class="site-card">
-                        <div class="site-card-header">
-                            <h3>CIVIS BIP 2026</h3>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Diachronic Linguistics in the 21st Century. Three-phase programme with online spring
-                                school, collaborative workshops, and summer school. 6 ECTS credits available.</p>
-                            <span class="url">athdgc.github.io/civis-diachronic-linguistics-2026</span>
-                        </div>
-                    </a>
-
-                    <a href="https://athdgc.github.io/GlossaContactLab/" class="site-card">
-                        <div class="site-card-header">
-                            <h3>GlossaContact Laboratory</h3>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Research laboratory dedicated to language contact through translations and written
-                                language contact in ancient and medieval periods. Home of GLOSSA Contact journal.</p>
-                            <span class="url">athdgc.github.io/GlossaContactLab</span>
-                        </div>
-                    </a>
-
-                    <a href="https://athdgc.github.io/Delphi2025/" class="site-card">
-                        <div class="site-card-header">
-                            <h3>Delphi Workshop 2025</h3>
-                        </div>
-                        <div class="site-card-body">
-                            <p>Corpora and Diachrony: Influential Texts, Text Types and Genres. International workshop
-                                bringing together corpus linguists, philologists, and computational linguists.</p>
-                            <span class="url">athdgc.github.io/Delphi2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://glossacontact.org" class="site-card" target="_blank">
-                        <div class="site-card-header">
-                            <h3>GLOSSA Contact Journal</h3>
-                        </div>
-                        <div class="site-card-body">
-                            <p>International journal dedicated to research on language contact phenomena, structural
-                                borrowing, contact-induced change, multilingualism, and areal linguistics.</p>
-                            <span class="url">glossacontact.org</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Institutional Affiliations</h2>
-                <p class="section-subtitle">Our research network is supported by leading academic institutions and
-                    professional organizations.</p>
-
-                <div class="affiliations-grid">
-                    <div class="affiliation-card">
-                        <h3>National and Kapodistrian University of Athens</h3>
-                        <p>Official English website of the University of Athens, Greece's premier academic institution
-                            founded in 1837.</p>
-                        <a href="https://en.uoa.gr/" target="_blank">Visit Website →</a>
-                    </div>
-
-                    <div class="affiliation-card">
-                        <h3>Department of English Language & Literature</h3>
-                        <p>Information on undergraduate and postgraduate studies, faculty research, and academic
-                            announcements.</p>
-                        <a href="https://en.enl.uoa.gr/" target="_blank">Visit Department →</a>
-                    </div>
-
-                    <div class="affiliation-card">
-                        <h3>MA in English Language, Linguistics and Translation</h3>
-                        <p>Specialized master's program in linguistics and translation theory. Director: Prof. N.
-                            Lavidas</p>
-                        <a href="https://en.enl.uoa.gr/postgraduate_studies/ma_in_english_language_linguistics_and_translation/"
-                            target="_blank">Learn More →</a>
-                    </div>
-
-                    <div class="affiliation-card">
-                        <h3>Interdepartmental MA in Translation</h3>
-                        <p>Interdepartmental program focused on trilingual translation and cultural studies.</p>
-                        <a href="https://en.enl.uoa.gr/postgraduate_studies/interdepartmental_postgraduate_studies_programme_translation_greek_english_russian/"
-                            target="_blank">Explore Program →</a>
-                    </div>
-
-                    <div class="affiliation-card">
-                        <h3>Societas Linguistica Europaea (SLE)</h3>
-                        <p>The European Linguistic Association, promoting linguistic research across Europe.</p>
-                        <a href="https://societaslinguistica.eu/" target="_blank">Visit SLE →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Educational Programs</h2>
-                <p class="section-subtitle">Integrated educational initiatives combining research excellence with
-                    comprehensive training.</p>
-
-                <div class="education-grid">
-                    <div class="education-card">
-                        <h3>Naxos Diachronic Linguistic School</h3>
-                        <h4>11th Edition • July 20-24, 2026</h4>
-                        <p>Annual international summer school bringing together leading scholars and students in
-                            diachronic linguistics. Features hands-on computational workshops and collaborative research
-                            projects.</p>
-                        <span class="highlight">International Faculty & Students</span>
-                        <span class="highlight">Hands-on Workshops</span>
-                    </div>
-
-                    <div class="education-card">
-                        <h3>CIVIS BIP: Diachronic Linguistics in the 21st Century</h3>
-                        <h4>Blended Intensive Programme</h4>
-                        <p>Three-phase programme combining online spring school, collaborative workshops, and summer
-                            school. Open to students from CIVIS alliance universities with 6 ECTS credits available.</p>
-                        <span class="highlight">April-May-July 2026</span>
-                        <span class="highlight">6 ECTS Credits</span>
-                    </div>
-
-                    <div class="education-card">
-                        <h3>MA Program in English, Linguistics and Translation</h3>
-                        <h4>Director: Professor Nikolaos Lavidas</h4>
-                        <p>Advanced master's program integrating theoretical linguistics with practical translation
-                            studies. Students benefit from direct involvement in ongoing research projects and thesis
-                            supervision opportunities.</p>
-                        <span class="highlight">Research Integration</span>
-                        <span class="highlight">Thesis Supervision</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ... -->
 
         <section class="hosted-by">
             <div class="container">
@@ -614,28 +462,33 @@
                 <p>Division of Language-Linguistics</p>
                 <p>Department of English Language and Literature, School of Philosophy</p>
                 <p><a href="https://en.uoa.gr" target="_blank">National and Kapodistrian University of Athens</a></p>
-                <p style="margin-top: 1rem;"><strong>Contact:</strong> <a
-                        href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
+                <p style="margin-top: 1rem;"><strong>Contact:</strong> <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
 
                 <div class="logos-section">
                     <div class="logo-item">
+                        <a href="https://athdgc.github.io/" target="_blank">
+                            <img src="athdgc-logo.svg" alt="AthDGC Logo" style="height: 100px; object-fit: contain;">
+                            <p>Athens Digital<br>Glossa Chronos</p>
+                        </a>
+                    </div>
+                    <div class="logo-item">
                         <a href="https://en.uoa.gr" target="_blank">
-                            <img src="assets/logos/logo_ekpa_new.png" alt="University of Athens Logo"
-                                style="height: 80px; object-fit: contain;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/National_and_Kapodistrian_University_of_Athens_logo.svg/2560px-National_and_Kapodistrian_University_of_Athens_logo.svg.png"
+                                alt="University of Athens Logo" style="height: 100px; object-fit: contain;">
                             <p>National and Kapodistrian<br>University of Athens</p>
                         </a>
                     </div>
                     <div class="logo-item">
                         <a href="https://www.elidek.gr/en/homepage/" target="_blank">
-                            <img src="assets/logos/elidek_logo_en.png" alt="HFRI ELIDEK Logo"
-                                style="height: 80px; object-fit: contain; background: white; padding: 5px; border-radius: 4px;">
+                            <img src="https://www.elidek.gr/wp-content/uploads/2021/09/ELIDEK-logo-positive-en.png"
+                                alt="HFRI ELIDEK Logo" style="height: 100px; object-fit: contain; background: white; padding: 5px; border-radius: 4px;">
                             <p>Hellenic Foundation for<br>Research & Innovation</p>
                         </a>
                     </div>
                     <div class="logo-item">
-                        <a href="https://athdgc.github.io" target="_blank">
-                            <img src="assets/logos/nkua.jpg" alt="AthDGC" style="height: 80px; object-fit: contain;">
-                            <p>AthDGC</p>
+                        <a href="https://syntacticus.org/" target="_blank">
+                            <img src="https://syntacticus.org/logo.png" alt="Syntacticus Logo" style="height: 100px; object-fit: contain;">
+                            <p>PROIEL Syntacticus<br>Treebank</p>
                         </a>
                     </div>
                 </div>
