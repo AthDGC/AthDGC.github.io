@@ -12,7 +12,11 @@
         .lang-en { display: none; }
         html[lang="en"] .lang-el { display: none; }
         html[lang="en"] .lang-en { display: block; }
-        .hero-gradient { background: linear-gradient(135deg, var(--primary-color) 0%, #004b8d 100%); }
+        .hero-gradient { 
+            background-image: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 75, 141, 0.85)), url('assets/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .section-title { border-left: 4px solid var(--secondary-color); padding-left: 1rem; }
@@ -28,8 +32,9 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
-                <div class="flex items-center space-x-3">
-                    <img src="https://www.uoa.gr/fileadmin/user_upload/HTM_files/logo_uoa_en_2.svg" alt="UoA Logo" class="h-12">
+                <div class="flex items-center space-x-4">
+                    <img src="assets/logo-gr.png" alt="UoA Logo Greek" class="h-12 lang-el">
+                    <img src="assets/logo-en.png" alt="UoA Logo English" class="h-12 lang-en">
                     <div>
                         <h1 class="text-sm font-bold text-gray-700">
                             <span class="lang-el">ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ</span>
@@ -111,7 +116,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 relative bg-cover bg-center" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('assets/details-bg.jpg');">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title"><span class="lang-el">Σχετικά με το Πρόγραμμα</span><span class="lang-en">About the Program</span></h2>
             <div class="grid md:grid-cols-2 gap-12 items-start">
@@ -165,9 +170,9 @@
     </section>
 
     <!-- Modules Section -->
-    <section id="modules" class="py-20 bg-gray-50">
+    <section id="modules" class="py-20 relative bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 75, 141, 0.9)), url('assets/code-bg.jpg');">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title"><span class="lang-el">Διδακτικές Ενότητες</span><span class="lang-en">Teaching Modules</span></h2>
+            <h2 class="text-3xl font-bold text-white mb-8 section-title" style="border-left-color: var(--secondary-color);"><span class="lang-el">Διδακτικές Ενότητες</span><span class="lang-en">Teaching Modules</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Module 1 -->
                 <div class="bg-white rounded-lg shadow-md p-6 card-hover">
