@@ -7,6 +7,7 @@
     <title>AthDGC | Athens Digital Glossa Chronos Research Network</title>
     <meta name="description"
         content="Athens Digital Glossa Chronos - Corpus-based research on diachronic linguistics and language evolution at the University of Athens.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -429,6 +430,164 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Journal Section Styles */
+        .journal-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .journal-card {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .journal-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .journal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .journal-header h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .journal-header h4 {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .journal-content {
+            padding: 2rem;
+        }
+
+        .journal-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+
+        .journal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-soft);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .detail-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .detail-item span {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .journal-highlights {
+            margin-bottom: 2rem;
+        }
+
+        .journal-highlights h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .journal-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .journal-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .journal-highlights li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .journal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .journal-links h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .journal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .journal-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .journal-details {
+                grid-template-columns: 1fr;
+            }
+
+            .journal-links {
+                flex-direction: column;
+            }
+
+            .journal-link {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -618,6 +777,71 @@
                         <span class="highlight">ΚΕΔΙΒΙΜ Accredited</span>
                         <span class="highlight">Professional Development</span>
                         <span class="highlight">Bilingual (GR/EN)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Academic Journals</h2>
+                <p class="section-subtitle">Editorial leadership in international peer-reviewed publications advancing
+                    linguistic research.</p>
+
+                <div class="journal-grid">
+                    <div class="journal-card">
+                        <div class="journal-header">
+                            <h3>GLOSSA Contact</h3>
+                            <h4>International Journal of Language Contact</h4>
+                        </div>
+                        <div class="journal-content">
+                            <p>Peer-reviewed open-access journal dedicated to research on language contact phenomena,
+                                structural borrowing,
+                                contact-induced change, multilingualism, written language contact, translation studies,
+                                and areal linguistics.</p>
+
+                            <div class="journal-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Co-Editor-in-Chief: Prof. Nikolaos Lavidas</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>Publisher: National and Kapodistrian University of Athens</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-book-open"></i>
+                                    <span>ISSN: 2653-9519</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Open Access Publication</span>
+                                </div>
+                            </div>
+
+                            <div class="journal-highlights">
+                                <h4>Research Areas:</h4>
+                                <ul>
+                                    <li>Language contact and structural borrowing</li>
+                                    <li>Contact-induced language change</li>
+                                    <li>Multilingualism and code-switching</li>
+                                    <li>Written language contact through translations</li>
+                                    <li>Areal linguistics and linguistic diffusion</li>
+                                </ul>
+                            </div>
+
+                            <div class="journal-links">
+                                <h4>Journal Access:</h4>
+                                <a href="https://glossacontact.org" target="_blank" class="journal-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Visit Journal Website
+                                </a>
+                                <a href="https://athdgc.github.io/GlossaContactLab/" class="journal-link">
+                                    <i class="fas fa-flask"></i>
+                                    Visit Editorial Laboratory
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
