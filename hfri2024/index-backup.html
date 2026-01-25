@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthDGC | Athens Digital Glossa Chronos Research Network</title>
+    <meta name="description"
+        content="Athens Digital Glossa Chronos - Corpus-based research on diachronic linguistics and language evolution. HFRI/ELIDEK funded project at the University of Athens.">
+    <link rel="icon" type="image/x-icon" href="https://www.uoa.gr/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fbf7ef;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #fbf7ef 0%, #f6f2e8 55%, #fbf7ef 100%);
+            color: #2c3e50;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #ebe3d6;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1568667256645-0943453d1446?w=1920&h=1080&fit=crop&crop=center') center/cover;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin: 0.3rem 0;
+        }
+
+        .image-credit {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .image-credit a {
+            color: rgba(44, 62, 80, 0.9);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.25);
+        }
+
+        .image-credit a:hover {
+            border-bottom-color: rgba(44, 62, 80, 0.6);
+        }
+
+        .logos {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logos img {
+            height: 60px;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .logos img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        nav {
+            background: #f6f2e8;
+            border-bottom: 1px solid #ebe3d6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #1a4d8f;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #ebe3d6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #1a4d8f;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ebe3d6;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid #ebe3d6;
+            border-radius: 8px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .team-member,
+        .project-card,
+        .publications {
+            background: #ffffff;
+            padding: 2rem;
+            border: 1px solid #ebe3d6;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .team-member h4 {
+            color: #1a4d8f;
+            margin-bottom: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1a4d8f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        .publications {
+            background: #ffffff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #ebe3d6;
+            border-radius: 8px;
+        }
+
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            background: #fbf7ef;
+            color: #2c3e50;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #ebe3d6;
+        }
+
+        footer .container {
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #1a4d8f;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>AthDGC</h1>
+            <p>Athens Digital Glossa Chronos</p>
+            <p>Corpus-based Research on Diachronic Linguistics and Language Evolution</p>
+            <div class="logos">
+                <img src="../assets/logos/elidek_logo_en.png" alt="HFRI/ELIDEK">
+                <img src="../assets/logos/logo_ekpa_new.png" alt="University of Athens">
+            </div>
+            <p class="image-credit">Background image source: <a
+                    href="https://images.unsplash.com/photo-1568667256645-0943453d1446" target="_blank"
+                    rel="noopener noreferrer">Unsplash</a></p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#project">CVL-CDSAML Project</a></li>
+            <li><a href="#team">Research Team</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="container">
+            <h2>About AthDGC</h2>
+            <div class="intro">
+                <p>The Athens Digital Glossa Chronos Research Network conducts computational and corpus-based research
+                    on diachronic linguistics, language contact, and syntactic change. Our work combines traditional
+                    philological expertise with state-of-the-art natural language processing methods to analyze
+                    linguistic evolution across multiple language families and historical periods.</p>
+                <p>Based at the National and Kapodistrian University of Athens, AthDGC coordinates several major
+                    research initiatives funded by the Hellenic Foundation for Research and Innovation and supported by
+                    the Greece 2.0 National Recovery and Resilience Plan.</p>
+            </div>
+
+            <h3>Research Focus</h3>
+            <p>Our research addresses fundamental questions in historical linguistics through corpus-based quantitative
+                analysis. We develop annotated corpora of ancient and medieval languages, create computational tools for
+                syntactic analysis, and investigate patterns of language change across time periods spanning from
+                antiquity to the present day.</p>
+
+            <p>Key research areas include verb valency patterns, argument structure alternations, syntactic borrowing in
+                language contact situations, and the role of influential texts in language change. We employ
+                Penn-Helsinki parsing standards and PROIEL treebank architecture to ensure compatibility with
+                international corpora and enable cross-linguistic comparative research.</p>
+        </section>
+
+        <section id="project" class="container">
+            <h2>CVL-CDSAML Project</h2>
+            <p>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages
+            </p>
+
+            <div class="intro">
+                <p><strong>Funded by:</strong> Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call
+                    for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577)</p>
+                <p><strong>Principal Investigator:</strong> Professor Nikolaos Lavidas, National and Kapodistrian
+                    University of Athens</p>
+                <p><strong>Duration:</strong> 24 months</p>
+            </div>
+
+            <h3>Project Objectives</h3>
+            <p>The CVL-CDSAML project develops a comprehensive corpus-based valency lexicon for the contrastive and
+                diachronic study of languages from antiquity to today. The project employs computational linguistic
+                methods to track valency patterns and argument structure changes across 3,000 years of documented
+                language evolution.</p>
+
+            <h3>Methodology</h3>
+            <p>The project involves six major work packages: selection and analysis of texts from subsequent periods of
+                target languages, selective annotation of texts using established treebank standards, annotation of
+                valency features in relation to language contact phenomena and linguistic genealogy, automatic
+                extraction of valency information through modified PROIEL codes, statistical analysis for diachronic and
+                contrastive presentation of data, and dissemination of results through workshops and academic
+                publications.</p>
+
+            <p>We utilize Penn-Helsinki parsing standards and adapt PROIEL annotation schemes to create selective
+                treebanks that capture valency patterns across multiple historical stages of Greek, English, Germanic
+                languages, and Romance languages. The resulting valency lexicon enables systematic comparison of
+                argument structure evolution within and across language families.</p>
+
+            <h3>Expected Outcomes</h3>
+            <p>The project produces annotated corpora of representative texts from each historical period under
+                investigation, a comprehensive diachronic contrastive valency lexicon accessible through the project
+                website, scholarly publications including a thematic volume chapter and peer-reviewed journal article,
+                and workshops bringing together international experts in corpus linguistics and historical syntax.</p>
+        </section>
+
+        <section id="team" class="container">
+            <h2>Research Team</h2>
+
+            <div class="team-member">
+                <h4>Professor Nikolaos Lavidas</h4>
+                <p>Principal Investigator</p>
+                <p>Department of English Language and Literature, National and Kapodistrian University of Athens</p>
+                <p>Co-Editor-in-Chief, GLOSSA Contact</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Professor Emerita Kiki Nikiforidou</h4>
+                    <p>Co-Editor, Genres and Influential Texts volume</p>
+                    <p>Expertise in Theoretical Linguistics and Lexicography</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Professor Dag Haug</h4>
+                    <p>International Collaborator</p>
+                    <p>University of Oslo</p>
+                    <p>PROIEL Project Director</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Professor Leonid Kulikov</h4>
+                    <p>International Collaborator</p>
+                    <p>Ghent University</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Dr. Vassiliki Geka</h4>
+                    <p>Post-Doctoral Researcher</p>
+                    <p>Co-Editor, Genres and Influential Texts volume</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Dr. Vassileios Symeonidis</h4>
+                    <p>Post-Doctoral Researcher</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Dr. Theodoros Michalareas</h4>
+                    <p>Post-Doctoral Researcher</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Sofia Chionidi</h4>
+                    <p>PhD Candidate</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Anastasia Tsiropina</h4>
+                    <p>PhD Candidate</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Eleni Plakoutsi</h4>
+                    <p>PhD Candidate</p>
+                </div>
+
+                <div class="team-member">
+                    <h4>Evangelos Argyropoulos</h4>
+                    <p>Research Assistant</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="container">
+            <h2>Research Programs and Events</h2>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>11th Naxos Summer School on Diachronic Linguistics</h3>
+                    <p>July 20-24, 2026, Naxos, Greece</p>
+                    <p>Annual summer school featuring international faculty and workshops on computational methods in
+                        historical linguistics. Topics include corpus-based approaches to language change, valency
+                        analysis, and digital humanities methodologies.</p>
+                    <a href="https://athdgc.github.io/naxos-summer-school-2026">Learn more</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>CIVIS Blended Intensive Programme 2026</h3>
+                    <p>Diachronic Linguistics in the 21st Century</p>
+                    <p>Three-phase programme including online spring school, collaborative workshops, and summer school
+                        in Naxos. Students from CIVIS alliance universities work on diachronic linguistics projects
+                        using digital humanities methods. 6 ECTS credits available.</p>
+                    <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026">Learn more</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Delphi Workshop 2025</h3>
+                    <p>November 26-29, 2025, Delphi, Greece</p>
+                    <p>Corpora and Diachrony: Influential Texts, Text Types and Genres. International workshop bringing
+                        together corpus linguists, philologists, and computational linguists to discuss methodological
+                        advances in diachronic corpus research.</p>
+                    <a href="https://athdgc.github.io/Delphi2025">Learn more</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>GlossaContact Laboratory</h3>
+                    <p>Language Contact Research Unit</p>
+                    <p>Research laboratory dedicated to language contact through translations and written language
+                        contact in ancient and medieval periods. Develops computational methods for detecting and
+                        analyzing contact-induced change in historical corpora.</p>
+                    <a href="https://athdgc.github.io/GlossaContactLab">Visit lab site</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="container">
+            <h2>Selected Publications</h2>
+
+            <div class="publications">
+                <div class="publication-item">
+                    <p><strong>Lavidas, N., Nikiforidou, K., & Geka, V.</strong> (forthcoming). Editors. <em>Genres,
+                            Influential Texts and Language Change: Exploring Cross-Fertilising Effects</em>. Berlin: De
+                        Gruyter Mouton.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2021). <em>The Diachrony of Written Language Contact: A Contrastive
+                            Approach</em>. Brill's Studies in Historical Linguistics. Leiden, Boston: Brill.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> & Nikiforidou, K. (eds). (2022). <em>Studying Language Change in the
+                            21st Century: Theory and Methodologies</em>. Brill's Studies in Historical Linguistics.
+                        Leiden, Boston: Brill.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2020). Isoglosses and language change: Evidence of the rise and
+                        loss of isoglosses from a comparison of early Greek and early English. <em>Poznan Studies in
+                            Contemporary Linguistics</em> 56(4): 553-575.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2019). Word order and closest-conjunct agreement in the Greek
+                        Septuagint: On the position of a biblical translation in the diachrony of a syntactic
+                        correlation. <em>Questions and Answers in Linguistics</em> 5(2): 37-90.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2019). Syntactic borrowability in a Sprachbund setting: Object
+                        clitics and definite articles in the West Thracian Greek (Evros) dialect. In C. Tzitzilis & G.
+                        Papanastassiou (eds), <em>Language Contact in the Balkans and Asia Minor 1</em>, 189-208.
+                        Thessaloniki: Institute of Modern Greek Studies.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2018). Language change and early dictionaries of Modern Greek. In
+                        G.K. Giannakis et al. (eds.), <em>Studies in Greek Lexicography</em>, 57-78. Berlin: De Gruyter.
+                    </p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2017). Cognate noun constructions in Early Modern English: The case
+                        of Tyndale's New Testament. In H. Cuyckens, H. De Smet, L. Heyvaert & C. Maekelberghe (eds.),
+                        <em>Explorations in English Historical Syntax</em>, 51-76. Amsterdam: John Benjamins.
+                    </p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2017). Case in diachrony: Or, why Greek is not English. In E.
+                        Mathieu & R. Truswell (eds.), <em>Micro-change and Macro-change in Diachronic Syntax</em>,
+                        125-144. Oxford: Oxford University Press.</p>
+                </div>
+
+                <div class="publication-item">
+                    <p><strong>Lavidas, N.</strong> (2014). The Greek Septuagint and language change at the
+                        syntax-semantics Interface: From null to 'pleonastic' object pronouns. In C. Gianollo, A. Jäger
+                        & D. Penka (eds.), <em>Language Change at the Syntax-Semantics Interface</em>, 153-182. Berlin:
+                        de Gruyter Mouton.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Contact Information</h2>
+            <p><strong>Professor Nikolaos Lavidas</strong><br>
+                Principal Investigator<br>
+                Department of English Language and Literature<br>
+                School of Philosophy<br>
+                National and Kapodistrian University of Athens<br>
+                University Campus, Zografou 157 84<br>
+                Athens, Greece</p>
+
+            <p>Email: <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
+        </section>
+
+        <section class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1a4d8f;">Hosted By</h2>
+            <div style="display: flex; justify-content: center; padding: 3rem;">
+                <a href="https://en.uoa.gr" target="_blank"
+                    style="text-decoration: none; max-width: 500px; width: 100%;">
+                    <div
+                        style="padding: 3rem; background: white; border: 4px solid #1a4d8f; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); text-align: center;">
+                        <img src="../assets/logos/university of athens.jpg" alt="University of Athens"
+                            style="height: 90px; width: auto; object-fit: contain; margin-bottom: 1.5rem;">
+                        <p style="font-weight: 800; color: #1a4d8f; font-size: 1.6rem; margin: 0; line-height: 1.4;">
+                            NATIONAL AND KAPODISTRIAN<br>UNIVERSITY OF ATHENS</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Athens Digital Glossa Chronos Research Network</p>
+            <p>National and Kapodistrian University of Athens</p>
+            <p>Funded by the Hellenic Foundation for Research and Innovation (HFRI) under the Greece 2.0 National
+                Recovery and Resilience Plan</p>
+            <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+                    4.0</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
