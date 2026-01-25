@@ -1,0 +1,24 @@
+# Naxos Island Images for Summer School Site
+
+## Recommended Free Images from Unsplash:
+
+### 1. Naxos Portara (Sunset)
+URL: https://images.unsplash.com/photo-1549587822-684f8ed5dfb9?w=1920&h=1080&fit=crop&crop=center
+Description: Iconic Portara gate at sunset - perfect for hero section
+
+### 2. Naxos Beach
+URL: https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=1080&fit=crop&crop=center
+Description: Beautiful beach scene - great for venue section
+
+### 3. Naxos Old Town
+URL: https://images.unsplash.com/photo-1516483632557-5461e7402194?w=1920&h=1080&fit=crop&crop=center
+Description: Traditional architecture - perfect for cultural context
+
+### 4. Naxos Landscape
+URL: https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&crop=center
+Description: Panoramic view - good for background
+
+## Usage:
+- Download and save to: assets/images/
+- Use relative paths in HTML
+- All images are free for commercial use, no attribution required
