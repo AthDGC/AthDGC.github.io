@@ -7,20 +7,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-color: #003366; --secondary-color: #d4a017; }
+        :root { 
+            --primary: #1a1a2e;
+            --secondary: #d4a017;
+            --accent: #3498db;
+            --bg-page: #fbf7ef;
+            --bg-surface: #ffffff;
+            --bg-soft: #f6f2e8;
+            --border: #ebe3d6;
+            --text-primary: #2c3e50;
+            --text-secondary: #5a6c7d;
+        }
         .lang-el { display: block; }
         .lang-en { display: none; }
         html[lang="en"] .lang-el { display: none; }
         html[lang="en"] .lang-en { display: block; }
         .hero-gradient { 
-            background-image: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 75, 141, 0.85)), url('/digital-diachrony/assets/hero-bg.jpg');
+            background-image: linear-gradient(rgba(26, 26, 46, 0.85), rgba(52, 152, 219, 0.85)), url('/digital-diachrony/assets/hero-bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .section-title { border-left: 4px solid var(--secondary-color); padding-left: 1rem; }
-        .tab-btn.active { border-bottom-color: var(--primary-color); color: var(--primary-color); font-weight: 600; }
+        .section-title { border-left: 4px solid var(--secondary); padding-left: 1rem; }
+        .tab-btn.active { border-bottom-color: var(--primary); color: var(--primary); font-weight: 600; }
         .tab-btn { border-bottom: 2px solid transparent; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -29,12 +39,19 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header & Language Switcher -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center space-x-4">
-                    <img src="/digital-diachrony/assets/logo-gr.png" alt="UoA Logo Greek" class="h-12 lang-el">
-                    <img src="/digital-diachrony/assets/logo-en.jpg" alt="UoA Logo English" class="h-12 lang-en">
+                    <img src="/athdgc-logo-final.svg" alt="AthDGC" class="h-10">
+                    <div>
+                        <h1 class="text-lg font-bold text-[var(--primary)]">AthDGC</h1>
+                        <p class="text-xs text-[var(--text-secondary)]">Athens Digital Glossa Chronos</p>
+                    </div>
+                    <div class="border-l border-gray-300 pl-4">
+                        <img src="/digital-diachrony/assets/logo-gr.png" alt="UoA Logo Greek" class="h-12 lang-el">
+                        <img src="/digital-diachrony/assets/logo-en.jpg" alt="UoA Logo English" class="h-12 lang-en">
+                    </div>
                     <div>
                         <h1 class="text-sm font-bold text-gray-700">
                             <span class="lang-el">ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ</span>
@@ -386,5 +403,14 @@
             this.reset();
         });
     </script>
+
+    <!-- Floating Return Button -->
+    <div class="fixed bottom-8 right-8 z-40">
+        <a href="/" class="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+            <i class="fas fa-home text-xl"></i>
+            <span class="font-bold text-lg">Return to AthDGC</span>
+            <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        </a>
+    </div>
 </body>
 </html>
