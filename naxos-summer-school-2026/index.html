@@ -42,6 +42,82 @@
         </div>
     </section>
 
+    <!-- Application Countdown Section -->
+    <section class="countdown-section"
+        style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">📅 Applications Open Soon!</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 2rem;">11th Naxos Summer School on
+                Diachronic Linguistics</p>
+
+            <div id="countdown"
+                style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <div class="countdown-item"
+                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
+                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;" id="days">
+                        --</div>
+                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Days</div>
+                </div>
+                <div class="countdown-item"
+                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
+                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;"
+                        id="hours">--</div>
+                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Hours</div>
+                </div>
+                <div class="countdown-item"
+                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
+                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;"
+                        id="minutes">--</div>
+                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Minutes</div>
+                </div>
+                <div class="countdown-item"
+                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
+                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;"
+                        id="seconds">--</div>
+                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Seconds</div>
+                </div>
+            </div>
+
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1.5rem;">Applications open:
+                December 1, 2025</p>
+            <a href="mailto:nlavidas@enl.uoa.gr" class="btn"
+                style="background: white; color: #2c3e50; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Get
+                Notified</a>
+        </div>
+    </section>
+
+    <script>
+        // Set the date we're counting down to (December 1, 2025)
+        const countDownDate = new Date("December 1, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function () {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the countdown date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the elements
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<h2 style='color: white;'>Applications are NOW OPEN!</h2><p style='color: rgba(255,255,255,0.9); font-size: 1.2rem;'>Apply today for the 11th Naxos Summer School!</p>";
+            }
+        }, 1000);
+    </script>
+
     <section class="topics-section">
         <div class="container">
             <div class="topics-grid">

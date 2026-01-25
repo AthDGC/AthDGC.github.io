@@ -37,12 +37,9 @@
   "lang": "en-US",
   "dir": "ltr",
   "scope": "/cvl-cdsaml/",
-  "categories": ["education", "research", "academic"],
-  "screenshots": [
-    {
-      "src": "/cvl-cdsaml/screenshot1.png",
-      "sizes": "1280x720",
-      "type": "image/png"
-    }
+  "categories": [
+    "education",
+    "research",
+    "academic"
   ]
 }
