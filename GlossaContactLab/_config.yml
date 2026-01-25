@@ -1,0 +1,8 @@
+title: "Glossa Contact Lab"
+description: "Language Contact Research Laboratory"
+baseurl: "/GlossaContactLab"
+url: "https://nlavidas.github.io"
+
+# Keep private during development
+future: false
+show_drafts: false

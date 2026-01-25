@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://athdgc.github.io/Delphi2025/sitemap.xml
