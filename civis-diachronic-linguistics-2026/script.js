@@ -1,5 +1,5 @@
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu toggle
     const toggle = document.querySelector('.mobile-toggle');
     const menu = document.querySelector('.nav-menu');
 
@@ -18,6 +18,58 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Newsletter form submission with improved feedback
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            const formContent = this.parentElement;
+
+            // Display a success message
+            formContent.innerHTML = '<p class="form-success-message">Thank you for subscribing! We\'ll keep you updated.</p>';
+        });
+    }
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Lazy loading for images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    }
 
     // Social sharing functions
     window.shareOnFacebook = function () {

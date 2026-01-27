@@ -6,125 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supported By | 11th Naxos Summer School 2026</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .support-page {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: #fff;
-        }
-
-        .support-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #1a4d8f;
-            background: #eaf0fa;
-            padding-top: 1.5rem;
-        }
-
-        .support-section {
-            margin-bottom: 4rem;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #1a4d8f;
-        }
-
-        .support-section h2 {
-            color: #1a4d8f;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            text-align: center;
-        }
-
-        .support-section h3 {
-            color: #2c5aa0;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .acknowledgment-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #333;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.5rem;
-            align-items: center;
-            justify-items: center;
-            margin: 2rem 0 3rem 0;
-            padding-bottom: 2rem;
-        }
-
-        @media (max-width: 900px) {
-            .logo-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .logo-item {
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .logo-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .logo-item img,
-        .uniform-logo {
-            height: 150px;
-            width: 100%;
-            max-width: 300px;
-            object-fit: contain;
-            margin-bottom: 0.5rem;
-        }
-
-        .civis-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .civis-logo {
-            height: 160px;
-            margin-bottom: 1rem;
-        }
-
-        .eu-logo {
-            height: 80px;
-            width: auto;
-        }
-
-        .funding-details {
-            background: #e3f2fd;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border-left: 4px solid #2196f3;
-        }
-
-        .project-info {
-            background: #fff3e0;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border-left: 4px solid #ff9800;
-        }
-    </style>
 </head>
 
 <body>
@@ -156,7 +37,7 @@
 
         <div class="support-section">
             <h2>We gratefully acknowledge a grant from the Van Riemsdijk Foundation (VRF)</h2>
-            <div class="logo-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="logo-grid">
                 <div class="logo-item">
                     <a href="https://vanriemsdijkfoundation.org/" target="_blank">
                         <img src="assets/logos/van_riemsdijk_foundation.png" alt="Van Riemsdijk Foundation logo"
@@ -172,7 +53,7 @@
             <div class="funding-details">
                 <h3>Research Project No. 20577 within the 3rd Call for HFRI Research Projects to Support Faculty Members
                     and Researchers</h3>
-                <div class="logo-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="logo-grid">
                     <div class="logo-item">
                         <a href="https://www.elidek.gr/en/homepage/" target="_blank">
                             <img src="assets/logos/hfri.png" alt="Hellenic Foundation for Research and Innovation logo"
@@ -192,18 +73,14 @@
         </div>
 
         <!-- CIVIS + EU Funding Section -->
-        <div class="support-section civis-section"
-            style="background: #fff; text-align: center; padding: 3rem 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <img src="assets/logos/civis_logo.png" alt="CIVIS European University Alliance logo"
-                style="display: block; margin: 0 auto 2rem auto; max-width: 100%; width: 500px; height: auto;">
-            <img src="assets/logos/eu_funded_by.png" alt="Funded by the European Union logo"
-                style="display: block; margin: 0 auto; max-width: 100%; width: 500px; height: auto;">
+        <div class="support-section civis-section">
+            <img src="assets/logos/civis_logo.png" alt="CIVIS European University Alliance logo" class="civis-logo">
+            <img src="assets/logos/eu_funded_by.png" alt="Funded by the European Union logo" class="eu-logo">
         </div>
 
         <div class="support-section">
             <h2>Coordinating Institutions</h2>
-            <div class="logo-grid"
-                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; justify-items: center;">
+            <div class="logo-grid logo-grid-2-col">
                 <div class="logo-item">
                     <a href="https://en.uoa.gr" target="_blank">
                         <img src="assets/logos/university_of_athens.png"
