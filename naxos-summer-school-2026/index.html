@@ -31,125 +31,78 @@
         </div>
     </nav>
 
-    <section class="hero"
-        style="background-image: url('assets/images/stefanos-nt-Yi0sH4InPRQ-unsplash.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-overlay"
-            style="background: rgba(0,0,0,0.3); position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
-        <div class="hero-content" style="position: relative; z-index: 2;">
-            <h1 style="color: white; font-size: 3rem; margin-bottom: 1rem;">11th Naxos Summer School</h1>
-            <h2 style="color: white; font-size: 1.8rem; margin-bottom: 2rem;">Diachronic Linguistics 2026</h2>
-            <p class="hero-details" style="color: white; font-size: 1.2rem;">July 20–24, 2026 | Naxos, Greece</p>
+    <section class="hero hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">11th Naxos Summer School</h1>
+            <h2 class="hero-subtitle">Diachronic Linguistics 2026</h2>
+            <p class="hero-details">July 20–24, 2026 | Naxos, Greece</p>
         </div>
     </section>
 
     <!-- Application Countdown Section -->
-    <section class="countdown-section"
-        style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); padding: 3rem 0; text-align: center;">
+    <section class="countdown-section">
         <div class="container">
-            <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">📅 Applications Open Soon!</h2>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 2rem;">11th Naxos Summer School on
-                Diachronic Linguistics</p>
+            <h2 class="countdown-title">📅 Applications Open Soon!</h2>
+            <p class="countdown-description">11th Naxos Summer School on Diachronic Linguistics</p>
 
-            <div id="countdown"
-                style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                <div class="countdown-item"
-                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
-                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;" id="days">
-                        --</div>
-                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Days</div>
+            <div id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">--</div>
+                    <div class="countdown-label">Days</div>
                 </div>
-                <div class="countdown-item"
-                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
-                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;"
-                        id="hours">--</div>
-                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Hours</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">--</div>
+                    <div class="countdown-label">Hours</div>
                 </div>
-                <div class="countdown-item"
-                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
-                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;"
-                        id="minutes">--</div>
-                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Minutes</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">--</div>
+                    <div class="countdown-label">Minutes</div>
                 </div>
-                <div class="countdown-item"
-                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; min-width: 100px;">
-                    <div class="countdown-number" style="font-size: 2.5rem; font-weight: bold; color: white;"
-                        id="seconds">--</div>
-                    <div class="countdown-label" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Seconds</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">--</div>
+                    <div class="countdown-label">Seconds</div>
                 </div>
             </div>
 
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1.5rem;">Applications open:
-                December 1, 2025</p>
-            <a href="mailto:nlavidas@enl.uoa.gr" class="btn"
-                style="background: white; color: #2c3e50; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Get
-                Notified</a>
+            <p class="countdown-date">Applications open: December 1, 2025</p>
+            <a href="mailto:nlavidas@enl.uoa.gr" class="btn btn-notify">Get Notified</a>
         </div>
     </section>
-
-    <script>
-        // Set the date we're counting down to (December 1, 2025)
-        const countDownDate = new Date("December 1, 2025 00:00:00").getTime();
-
-        // Update the countdown every 1 second
-        const x = setInterval(function () {
-            // Get today's date and time
-            const now = new Date().getTime();
-
-            // Find the distance between now and the countdown date
-            const distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes, and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the elements
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-
-            // If the countdown is finished, display a message
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "<h2 style='color: white;'>Applications are NOW OPEN!</h2><p style='color: rgba(255,255,255,0.9); font-size: 1.2rem;'>Apply today for the 11th Naxos Summer School!</p>";
-            }
-        }, 1000);
-    </script>
 
     <section class="topics-section">
         <div class="container">
             <div class="topics-grid">
                 <div class="topic-item">
-                    <h3>The diachrony of English</h3>
+                    <h3 class="topic-title">The diachrony of English</h3>
                 </div>
                 <div class="topic-item">
-                    <h3>New perspectives in Studying Ancient and Medieval IE Languages</h3>
+                    <h3 class="topic-title">New perspectives in Studying Ancient and Medieval IE Languages</h3>
                 </div>
                 <div class="topic-item">
-                    <h3>The diachrony of Romance</h3>
+                    <h3 class="topic-title">The diachrony of Romance</h3>
                 </div>
                 <div class="topic-item">
-                    <h3>Comparative and Contrastive Diachronic Linguistics</h3>
+                    <h3 class="topic-title">Comparative and Contrastive Diachronic Linguistics</h3>
                 </div>
                 <div class="topic-item">
-                    <h3>Language Contact</h3>
+                    <h3 class="topic-title">Language Contact</h3>
                 </div>
                 <div class="topic-item">
-                    <h3>Workshop / Poster session<br><small>(of summer school participants)</small></h3>
+                    <h3 class="topic-title">Workshop / Poster session<br><small>(of summer school participants)</small>
+                    </h3>
                 </div>
             </div>
             <div class="topic-item-single">
-                <h3>Linguistic Diachronies: A Contrastive Approach</h3>
+                <h3 class="topic-title">Linguistic Diachronies: A Contrastive Approach</h3>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <h3 style="margin-bottom: 1.5rem;">Contact & Information</h3>
-            <p style="margin-bottom: 1rem;">
+            <h3 class="footer-title">Contact & Information</h3>
+            <p class="footer-description">
                 <strong>Organizers:</strong><br>
                 Professor Nikolaos Lavidas (National and Kapodistrian University of Athens)<br>
                 Professor Elly van Gelderen (Arizona State University)<br>
@@ -157,45 +110,39 @@
                 Professor Alexander Bergs (University of Osnabrück)<br>
                 Department of Language-Linguistics, Faculty of English, School of Philosophy
             </p>
-            <p style="margin-bottom: 2rem;">
+            <p class="footer-email">
                 <strong>Email:</strong> <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a>
             </p>
 
-            <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
+            <p class="footer-meta">
                 Part of the CIVIS European University Alliance<br>
                 Connected to the Athens Digital Glossa Chronos (AthDGC) Project
             </p>
 
-            <div class="logos"
-                style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap;">
-                <div style="text-align: center;">
+            <div class="logos">
+                <div class="logo-item">
                     <img src="assets/logos/university_of_athens.jpg"
-                        alt="National and Kapodistrian University of Athens logo"
-                        style="height: 60px; width: auto; margin-bottom: 0.5rem; border-radius: 4px;">
-                    <p style="font-size: 0.8rem; margin: 0; color: #666;">National and Kapodistrian<br>University of
-                        Athens</p>
+                        alt="National and Kapodistrian University of Athens logo">
+                    <p>National and Kapodistrian<br>University of Athens</p>
                 </div>
-                <div style="text-align: center;">
-                    <img src="assets/logos/civis.png" alt="CIVIS European University Alliance logo"
-                        style="height: 60px; width: auto; margin-bottom: 0.5rem; border-radius: 4px;">
-                    <p style="font-size: 0.8rem; margin: 0; color: #666;">CIVIS European<br>University Alliance</p>
+                <div class="logo-item">
+                    <img src="assets/logos/civis.png" alt="CIVIS European University Alliance logo">
+                    <p>CIVIS European<br>University Alliance</p>
                 </div>
-                <div style="text-align: center;">
-                    <img src="assets/logos/nkua.jpg" alt="Athens Digital Glossa Chronos logo"
-                        style="height: 80px; width: auto; margin-bottom: 0.5rem; border-radius: 0; filter: brightness(0.9);">
-                    <p style="font-size: 0.8rem; margin: 0; color: #666;">Athens Digital<br>Glossa Chronos</p>
+                <div class="logo-item logo-item-bright">
+                    <img src="assets/logos/nkua.jpg" alt="Athens Digital Glossa Chronos logo">
+                    <p>Athens Digital<br>Glossa Chronos</p>
                 </div>
             </div>
 
-            <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.85rem;">
+            <p class="footer-copyright">
                 2026 11th Naxos Summer School on Diachronic Linguistics. All rights reserved.<br>
-                <small>Background image: <a href="https://unsplash.com" target="_blank"
-                        rel="noopener noreferrer">Unsplash</a></small>
                 <small>Background image: <a href="https://unsplash.com" target="_blank"
                         rel="noopener noreferrer">Unsplash</a></small>
             </p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
