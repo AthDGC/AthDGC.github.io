@@ -29,22 +29,48 @@
         </div>
     </nav>
 
-    <section id="speakers">
+    <section class="faculty-hero" aria-labelledby="faculty-title">
         <div class="container">
-            <h2 class="section-title">Distinguished Faculty</h2>
-            <p
-                style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--text-light);">
-                Learn from leading scholars at the forefront of computational and theoretical approaches to language
-                change.
-            </p>
+            <h1 id="faculty-title">Distinguished Faculty</h1>
+            <p class="faculty-subtitle">Learn from World-Renowned Experts in Diachronic Linguistics</p>
+        </div>
+    </section>
 
-            <div class="speakers-grid">
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Nikolaos Lavidas</h4>
-                        <p class="affiliation">National and Kapodistrian University of Athens, Greece</p>
+    <section class="faculty-grid" aria-label="Faculty profiles">
+        <div class="container">
+            <div class="profiles-grid">
+
+                <!-- Template Profile Card -->
+                <article class="profile-card" aria-labelledby="profile-template">
+                    <div class="profile-image-placeholder">
+                        <span class="emoji" aria-hidden="true">👨‍🏫</span>
                     </div>
-                </div>
+                    <div class="profile-content">
+                        <header>
+                            <h2 id="profile-template" class="profile-name">Coming Soon</h2>
+                            <p class="profile-title">Distinguished Professor</p>
+                            <p class="profile-affiliation">Leading Institution</p>
+                        </header>
+                        <div class="profile-details">
+                            <div class="profile-expertise">
+                                <h3>Areas of Expertise</h3>
+                                <ul class="expertise-tags">
+                                    <li>Diachronic Linguistics</li>
+                                    <li>Historical Syntax</li>
+                                    <li>Language Change</li>
+                                </ul>
+                            </div>
+                            <div class="profile-links">
+                                <a href="#" class="profile-link scholar" aria-label="View Google Scholar profile">
+                                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="profile-link website" aria-label="Visit personal website">
+                                    <i class="fas fa-globe" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <div class="speaker-card">
                     <div class="speaker-info">
@@ -67,73 +93,42 @@
                     </div>
                 </div>
 
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Gerhard Jäger</h4>
-                        <p class="affiliation">University of Tübingen, Germany</p>
-                    </div>
-                </div>
-
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Igor Yanovich</h4>
-                        <p class="affiliation">University of Vienna, Austria</p>
-                    </div>
-                </div>
-
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Johan van der Auwera</h4>
-                        <p class="affiliation">University of Antwerp, Belgium</p>
-                    </div>
-                </div>
-
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Katrin Axel-Tober</h4>
-                        <p class="affiliation">University of Tübingen, Germany</p>
-                    </div>
-                </div>
-
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Joanna Kopaczyk</h4>
-                        <p class="affiliation">University of Glasgow, UK</p>
-                    </div>
-                </div>
-
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Ljuba Veselinova</h4>
-                        <p class="affiliation">Stockholm University, Sweden</p>
-                    </div>
-                </div>
-
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Nikolaos Lavidas</h4>
-                        <p class="affiliation">National and Kapodistrian University of Athens, Greece</p>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Elly van Gelderen</h4>
-                        <p class="affiliation">Arizona State University, USA</p>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Ioanna Sitaridou</h4>
-                        <p class="affiliation">University of Cambridge, UK</p>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-info">
-                        <h4>Professor Alexander Bergs</h4>
-                        <p class="affiliation">University of Osnabrück, Germany</p>
-                    </div>
+                <!-- Faculty Update Notice -->
+                <div class="update-notice" role="status">
+                    <p><span class="emoji" aria-hidden="true">✨</span> Faculty profiles will be announced soon!</p>
+                    <p>Check back tomorrow for the complete list of distinguished professors and their expertise.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="faculty-highlights" aria-labelledby="highlights-title">
+        <div class="container">
+            <h2 id="highlights-title">Faculty Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <span class="highlight-number">15+</span>
+                    <p>Leading Institutions</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">200+</span>
+                    <p>Combined Publications</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">50+</span>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faculty-cta" aria-labelledby="cta-title">
+        <div class="container">
+            <h2 id="cta-title">Join Our Distinguished Faculty</h2>
+            <p>Applications for faculty positions are reviewed on a rolling basis.</p>
+            <a href="mailto:nlavidas@enl.uoa.gr" class="btn btn-primary">
+                <span class="emoji" aria-hidden="true">📧</span> Contact for Faculty Opportunities
+            </a>
         </div>
     </section>
 
