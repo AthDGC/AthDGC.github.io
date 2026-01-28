@@ -488,6 +488,13 @@ footer a {
     border-radius: 8px;
 }
 
+.detail-item.single-line {
+    white-space: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: thin;
+}
+
 .detail-item i {
     color: var(--primary);
     font-size: 1.1rem;
