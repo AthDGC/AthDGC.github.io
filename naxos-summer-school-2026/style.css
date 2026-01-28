@@ -149,6 +149,8 @@ nav a.active {
     color: var(--primary);
 }
 
+@import url('../assets/shared/nav.css');
+
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;

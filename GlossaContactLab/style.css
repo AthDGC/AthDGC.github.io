@@ -13,12 +13,13 @@ body {
 }
 
 .header {
-    background: linear-gradient(135deg, #fbf7ef 0%, #f6f2e8 55%, #fbf7ef 100%);
-    color: #2c3e50;
+    background: linear-gradient(135deg, #004040 0%, #003333 100%);
+    color: white;
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid #ebe3d6;
+    border-bottom: 4px solid #1a4d8f;
+    margin-top: 60px;
 }
 
 .header::before {
@@ -42,14 +43,25 @@ body {
 }
 
 .header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
-    font-weight: normal;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.header p {
-    font-size: 1.3rem;
+.header p.subtitle {
+    font-size: 1.5rem;
     opacity: 0.95;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.header p.subtitle-2 {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    font-weight: 300;
 }
 
 .image-credit {
@@ -89,35 +101,7 @@ body {
     filter: brightness(1.1);
 }
 
-nav {
-    background: #f6f2e8;
-    border-bottom: 1px solid #ebe3d6;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    flex-wrap: wrap;
-}
-
-nav a {
-    display: block;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: #1a4d8f;
-    font-weight: 500;
-    transition: background 0.3s;
-}
-
-nav a:hover {
-    background: #ebe3d6;
-}
+@import url('../assets/shared/nav.css');
 
 .container {
     max-width: 1200px;
@@ -264,11 +248,11 @@ p {
 }
 
 footer {
-    background: #fbf7ef;
-    color: #2c3e50;
-    padding: 2rem 0;
+    background: #004040;
+    color: white;
+    padding: 3rem 0;
     margin-top: 4rem;
-    border-top: 1px solid #ebe3d6;
+    border-top: 4px solid #1a4d8f;
 }
 
 footer .container {
@@ -276,5 +260,12 @@ footer .container {
 }
 
 footer a {
-    color: #1a4d8f;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border-color 0.3s;
+}
+
+footer a:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.9);
 }
