@@ -3,42 +3,95 @@ const countDownDate = new Date("December 1, 2025 00:00:00").getTime();
 
 document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu functionality
-    const navToggle = document.createElement('button');
-    navToggle.className = 'nav-toggle';
-    navToggle.innerHTML = '&#9776;';
-    navToggle.setAttribute('aria-label', 'Toggle navigation menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainMenu = document.getElementById('main-menu');
+    const menuItems = mainMenu.querySelectorAll('a');
+    let isMenuOpen = false;
 
-    const nav = document.querySelector('nav .container');
-    const navList = document.querySelector('nav ul');
-    nav.insertBefore(navToggle, navList);
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        mainMenu.classList.toggle('show');
+        navToggle.setAttribute('aria-expanded', isMenuOpen);
+        navToggle.querySelector('.icon').innerHTML = isMenuOpen ? '×' : '☰';
 
-    navToggle.addEventListener('click', function () {
-        navList.classList.toggle('show');
-        navToggle.innerHTML = navList.classList.contains('show') ? '&times;' : '&#9776;';
-    });
+        if (isMenuOpen) {
+            menuItems[0].focus();
+        }
+    }
+
+    // Toggle menu on button click
+    navToggle.addEventListener('click', toggleMenu);
 
     // Close menu when clicking outside
     document.addEventListener('click', function (event) {
-        if (!nav.contains(event.target) && navList.classList.contains('show')) {
-            navList.classList.remove('show');
-            navToggle.innerHTML = '&#9776;';
+        if (isMenuOpen && !event.target.closest('nav')) {
+            toggleMenu();
         }
     });
 
-    // Active state for current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelector(`nav a[href="${currentPage}"]`)?.classList.add('active');
+    // Keyboard navigation
+    mainMenu.addEventListener('keydown', function (event) {
+        const currentItem = document.activeElement;
+        const isMenuItem = currentItem.tagName === 'A' && currentItem.closest('#main-menu');
 
-    // Countdown functionality
+        if (!isMenuItem) return;
+
+        const items = Array.from(menuItems);
+        const currentIndex = items.indexOf(currentItem);
+
+        switch (event.key) {
+            case 'ArrowRight':
+            case 'ArrowDown':
+                event.preventDefault();
+                items[(currentIndex + 1) % items.length].focus();
+                break;
+            case 'ArrowLeft':
+            case 'ArrowUp':
+                event.preventDefault();
+                items[(currentIndex - 1 + items.length) % items.length].focus();
+                break;
+            case 'Home':
+                event.preventDefault();
+                items[0].focus();
+                break;
+            case 'End':
+                event.preventDefault();
+                items[items.length - 1].focus();
+                break;
+            case 'Escape':
+                if (isMenuOpen) {
+                    toggleMenu();
+                    navToggle.focus();
+                }
+                break;
+        }
+    });
+
+    // Set active page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const activeLink = document.querySelector(`nav a[href="${currentPage}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+        activeLink.setAttribute('aria-current', 'page');
+    }
+
+    // Countdown functionality with ARIA live updates
     const countdownEl = document.getElementById("countdown");
 
     if (countdownEl) {
+        // Add ARIA live region for screen readers
+        const ariaLive = document.createElement('div');
+        ariaLive.setAttribute('aria-live', 'polite');
+        ariaLive.setAttribute('class', 'sr-only');
+        countdownEl.parentNode.insertBefore(ariaLive, countdownEl.nextSibling);
+
         const updateCountdown = function () {
             const now = new Date().getTime();
             const distance = countDownDate - now;
 
             if (distance < 0) {
-                countdownEl.innerHTML = "<h2 style='color: white;'>Applications are NOW OPEN!</h2><p style='color: rgba(255,255,255,0.9); font-size: 1.2rem;'>Apply today for the 11th Naxos Summer School!</p>";
+                countdownEl.innerHTML = "<div class='countdown-open' role='alert'>Applications are now open!</div>";
+                ariaLive.textContent = "Applications are now open!";
                 return;
             }
 
@@ -51,9 +104,24 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
             document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            // Update ARIA live region every minute
+            if (seconds === 0) {
+                ariaLive.textContent = `${days} days, ${hours} hours, and ${minutes} minutes until applications open`;
+            }
         };
 
         updateCountdown();
-        setInterval(updateCountdown, 1000);
+        const timer = setInterval(updateCountdown, 1000);
+
+        // Cleanup on page hide/unload
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                clearInterval(timer);
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        });
     }
 }, 1000);
