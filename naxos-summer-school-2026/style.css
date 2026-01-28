@@ -413,11 +413,108 @@ section {
     border-top: 1px solid var(--border);
 }
 
+.registration-status {
+    background: var(--bg-soft);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.registration-status h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.registration-status p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
+}
+
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.price-features li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.price-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.payment-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-info h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.payment-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.payment-info li {
+    padding: 0.5rem 0;
+    color: var(--text);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.payment-info li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.cancellation-terms {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.cancellation-terms li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cancellation-terms li:last-child {
+    border-bottom: none;
+}
+
+.cancellation-terms strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 .pricing-card {
