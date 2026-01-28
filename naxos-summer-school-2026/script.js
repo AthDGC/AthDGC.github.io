@@ -2,6 +2,37 @@
 const countDownDate = new Date("December 1, 2025 00:00:00").getTime();
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Clipboard functionality
+    const copyButton = document.querySelector('.share-button.copy');
+    if (copyButton) {
+        copyButton.addEventListener('click', async function () {
+            const url = this.dataset.url;
+            try {
+                await navigator.clipboard.writeText(url);
+                const originalIcon = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+                this.style.background = 'var(--primary-light)';
+                setTimeout(() => {
+                    this.innerHTML = originalIcon;
+                    this.style.background = '';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+        });
+    }
+
+    // Social share tracking
+    const shareButtons = document.querySelectorAll('.share-button');
+    shareButtons.forEach(button => {
+        if (!button.classList.contains('copy')) {
+            button.addEventListener('click', function (e) {
+                const network = this.classList.contains('twitter') ? 'Twitter' : 'LinkedIn';
+                console.log(`Shared on ${network}`);
+            });
+        }
+    });
+
     // Mobile menu functionality
     const navToggle = document.querySelector('.nav-toggle');
     const mainMenu = document.getElementById('main-menu');
