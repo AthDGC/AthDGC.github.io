@@ -367,17 +367,19 @@ footer a {
     font-weight: 600;
 }
 
+/* Logo Section */
 .logos-section {
     margin: 3rem 0;
     padding: 2rem;
+    background: var(--bg-surface);
 }
 
 .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -387,9 +389,67 @@ footer a {
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-normal);
+}
+
+.logo-img.logo-uoa {
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.logo-img.logo-elidek {
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.logo-img.logo-athdgc {
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.logo-caption {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+/* Emoji Support */
+.emoji {
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Improved Mobile Layout */
+@media (max-width: 768px) {
+    .logo-grid {
+        gap: 2rem;
+    }
+
+    .logo-item {
+        max-width: 200px;
+        padding: 1rem;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
 }
 
 .logo-item img {
