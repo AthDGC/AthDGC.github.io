@@ -1,561 +1,89 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GlossaContact Laboratory | University of Athens</title>
-<meta content="GlossaContact Laboratory - Research on language contact through translations, ancient and medieval written language contact at the University of Athens." name="description"/>
-<style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Georgia, 'Times New Roman', serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: #fbf7ef;
-            font-size: 18px;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #fbf7ef 0%, #f6f2e8 55%, #fbf7ef 100%);
-            color: #2c3e50;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid #ebe3d6;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('assets/images/language-contact.svg') center/cover;
-            opacity: 0.07;
-            z-index: 0;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            font-weight: normal;
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        .image-credit {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.75;
-        }
-
-        .image-credit a {
-            color: rgba(44, 62, 80, 0.9);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.25);
-        }
-
-        .image-credit a:hover {
-            border-bottom-color: rgba(44, 62, 80, 0.6);
-        }
-
-        .logos {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .logos img {
-            height: 50px;
-            background: white;
-            padding: 8px;
-            border-radius: 4px;
-            transition: transform 0.3s, filter 0.3s;
-        }
-
-        .logos img:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-
-        nav {
-            background: #f6f2e8;
-            border-bottom: 1px solid #ebe3d6;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            display: block;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            color: #1a4d8f;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #ebe3d6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            color: #1a4d8f;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #ebe3d6;
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.6rem;
-            color: #2c3e50;
-            margin: 2rem 0 1rem 0;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        .intro {
-            font-size: 1.2rem;
-            background: #ffffff;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border: 1px solid #ebe3d6;
-            border-radius: 8px;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .team-member {
-            background: #ffffff;
-            padding: 1.5rem;
-            border: 1px solid #ebe3d6;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .team-member h4 {
-            color: #1a4d8f;
-            margin-bottom: 0.5rem;
-        }
-
-        .research-areas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .research-area {
-            background: #ffffff;
-            padding: 2rem;
-            border: 1px solid #ebe3d6;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .research-area h3 {
-            margin-top: 0;
-        }
-
-        .publications {
-            background: #ffffff;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid #ebe3d6;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .publication-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .publication-item:last-child {
-            border-bottom: none;
-        }
-
-        footer {
-            background: #fbf7ef;
-            color: #2c3e50;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            border-top: 1px solid #ebe3d6;
-        }
-
-        footer .container {
-            padding: 2rem;
-        }
-
-        footer a {
-            color: #1a4d8f;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlossaContact Laboratory | University of Athens</title>
+    <meta name="description" content="GlossaContact Laboratory - Research on language contact through translations, ancient and medieval written language contact at the University of Athens.">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header class="header">
-<div class="header-content">
-<h1>GlossaContact Laboratory</h1>
-<p>Language Contact through Translations</p>
-<p>Ancient and Medieval Written Language Contact</p>
-<div class="logos">
-<img alt="University of Athens" src="assets/logos/logo_ekpa_new.png"/>
-<img alt="HFRI/ELIDEK" src="assets/logos/elidek-logo.jpg"/>
-<img alt="Greece 2.0" src="assets/logos/greece-logo.jpg"/>
-</div>
-<p class="image-credit">Background image source: </p>
-</div>
-</header>
-<nav>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#research">Research Focus</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#team">Team</a></li>
-<li><a href="#publications">Publications</a></li>
-<li><a href="#news">News &amp; Events</a></li>
-<li><a href="#journal">GLOSSA Contact</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<main>
-<section class="container" id="about">
-<h2>About the Laboratory</h2>\n<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:2rem; margin:3rem 0;"><div style="border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><div style="padding:1rem; background:#f8f9fa; text-align:center; font-size:0.9rem; color:#666;">Ancient Manuscript Analysis<br/></div></div><div style="border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><div style="padding:1rem; background:#f8f9fa; text-align:center; font-size:0.9rem; color:#666;">Medieval Text Studies<br/></div></div><div style="border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);"><div style="padding:1rem; background:#f8f9fa; text-align:center; font-size:0.9rem; color:#666;">Corpus-based Research<br/></div></div></div>
-<div class="intro">
-<p>The GlossaContact Laboratory specializes in the study of language contact phenomena through the lens
-                    of translations, with particular emphasis on ancient and medieval written language contact. Based at
-                    the National and Kapodistrian University of Athens, the laboratory investigates how languages
-                    influence each other through translation practices, biblical and literary retranslations, and
-                    written language borrowing across historical periods.</p>
-<p>Our research examines contact-induced change in historical texts, including the Greek Septuagint,
-                    medieval translations, and Renaissance retranslations, analyzing how translation acts as a vehicle
-                    for syntactic and lexical borrowing. We employ corpus-based methods to trace the development of
-                    contact phenomena in written registers and distinguish translation effects from natural language
-                    change.</p>
-</div>
-<div class="intro" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-<img alt="Modern research and corpora" src="assets/images/modern_library.jpg" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);"/>
-<p style="font-size: 0.95rem; color: #555; margin: 0;">Image source: </p>
-</div>
-<h3>Laboratory Information</h3>
-<div class="intro">
-<p><strong>Founded:</strong> April 2024</p>
-<p><strong>Official Documentation:</strong> ΦΕΚ (Government Gazette) founding document</p>
-<p><strong>Laboratory Name Change:</strong> Updated with new ΦΕΚ for regulatory compliance</p>
-<p><strong>Location:</strong> Room 929, 9th floor</p>
-<p><strong>Department:</strong> English Language and Literature</p>
-<p><strong>School:</strong> Philosophy, National and Kapodistrian University of Athens</p>
-</div>
-<h3>Laboratory Objectives</h3>
-<div class="intro">
-<p><strong>Research &amp; Analysis:</strong> Support experimental research investigating cross-linguistic
-                    and cross-cultural identities in discourse during translation and interpretation, relating to social
-                    reality and how changes affect translation outcomes.</p>
-<p><strong>Educational Support:</strong> Serve as a hub for practical research and training for
-                    undergraduate, graduate, and doctoral students in technological applications of translation and
-                    interpretation.</p>
-<p><strong>Vulnerable Groups Support:</strong> Support educational work related to vulnerable social
-                    groups where translation and interpretation are essential survival prerequisites.</p>
-<p><strong>Professional Development:</strong> Develop training and educational activities (seminars,
-                    conferences, lectures) supporting the operation of Graduate Programs and undergraduate programs.</p>
-<p><strong>Community Engagement:</strong> Connect the University with Greek society through high-level
-                    scientific training for educators and specialists seeking development in cross-cultural
-                    understanding.</p>
-<p><strong>Professional Collaboration:</strong> Develop cooperation with associations and organizations
-                    to promote translation and interpretation issues.</p>
-</div>
-<h3>Quality Assurance Policies</h3>
-<p>The laboratory operates under strict quality assurance policies ensuring research excellence, ethical
-                standards, and compliance with university regulations. Our commitment to quality encompasses research
-                methodology, data integrity, collaborative partnerships, and educational outcomes.</p>
-<h3>Core Research Mission</h3>
-<p>The laboratory addresses fundamental questions about written language contact and its role in language
-                evolution. We investigate how translation practices create contact situations that differ from spoken
-                language contact, examining the specific mechanisms through which written borrowing occurs and the
-                constraints that govern structural transfer in literary and religious texts.</p>
-<p>Our work focuses on developing methodologies for identifying and analyzing contact effects in historical
-                corpora, with emphasis on separating genuine contact-induced change from translation interference,
-                analyzing retranslation patterns across centuries, and understanding how influential texts shape
-                recipient language syntax through sustained contact.</p>
-</section>
-<section class="container" id="research">
-<h2>Research Focus Areas</h2>
-<div class="research-areas">
-<div class="research-area">
-<h3>Contact through Biblical Translation</h3>
-<p>Investigation of language contact effects in the Greek Septuagint and biblical retranslations.
-                        Analysis of Hebrew-Greek syntactic interference, argument structure borrowing, and the evolution
-                        of translation norms across successive retranslations from antiquity through medieval periods.
-                    </p>
-</div>
-<div class="research-area">
-<h3>Medieval Translation Contact</h3>
-<p>Study of contact phenomena in medieval literary and religious translations. Examination of
-                        Latin-Greek, Arabic-Greek, and other medieval translation traditions, focusing on how
-                        translation practice created sustained contact situations and enabled structural borrowing.</p>
-</div>
-<div class="research-area">
-<h3>Written Language Borrowing</h3>
-<p>Analysis of syntactic and lexical borrowing specifically in written registers. Investigation of
-                        how written contact differs from spoken contact in terms of borrowing constraints, the role of
-                        literacy and prestige in enabling structural transfer, and the persistence of written borrowings
-                        across generations.</p>
-</div>
-<div class="research-area">
-<h3>Diachronic Retranslation Studies</h3>
-<p>Comparative analysis of successive retranslations of the same source texts across centuries.
-                        Study of how retranslation norms evolve, the accumulation of contact effects through multiple
-                        translation cycles, and the role of influential earlier translations in shaping later versions.
-                    </p>
-</div>
-<div class="research-area">
-<h3>Corpus-based Contact Analysis</h3>
-<p>Development of computational methods for detecting and quantifying contact phenomena in
-                        historical treebanks. Application of statistical techniques to distinguish translation
-                        interference from contact-induced change and identify genuine structural borrowings in
-                        translated texts.</p>
-</div>
-<div class="research-area">
-<h3>Syntactic Transfer Mechanisms</h3>
-<p>Theoretical investigation of how syntactic structures transfer between languages in written
-                        contact situations. Analysis of constraints on borrowability in written versus spoken contact,
-                        the role of argument structure in enabling transfer, and grammaticalization through contact in
-                        literary texts.</p>
-</div>
-</div>
-</section>
-<section class="container" id="projects">
-<h2>Current Research Projects</h2>
-<h3>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient &amp; Medieval Languages
-            </h3>
-<p>Major research project developing comprehensive valency lexicons for historical language analysis. This
-                project creates annotated corpora and computational tools for systematic comparison of syntactic
-                patterns across ancient and medieval language varieties.</p>
-<h3>Written Language Contact Corpus</h3>
-<p>Development of annotated corpora of biblical and medieval translations for systematic analysis of contact
-                effects. This project extends the PROIEL treebank with post-classical and medieval Greek texts, creating
-                resources for diachronic contact linguistics research. The corpus includes successive retranslations
-                enabling comparison of contact phenomena across translation traditions.</p>
-<h3>Septuagint Contact Phenomena</h3>
-<p>Comprehensive study of Hebrew-Greek contact effects in the Septuagint, analyzing argument structure
-                patterns, word order interference, and the development of syntactic constructions under contact
-                influence. The project examines how biblical translation created a sustained contact situation that
-                influenced later Greek syntax.</p>
-<h3>Renaissance Retranslation Patterns</h3>
-<p>Analysis of Early Modern English and Greek retranslations, investigating how Renaissance translation
-                practices differed from medieval approaches and examining the accumulation of contact effects through
-                successive translation cycles. Focus on Tyndale's New Testament and contemporary Greek biblical
-                translations.</p>
-<h3>Contrastive Written Contact</h3>
-<p>Cross-linguistic comparison of written contact phenomena in multiple language pairs, examining whether
-                contact effects in translation show universal patterns or language-specific constraints. Integration
-                with the CVL-CDSAML valency lexicon enables systematic contrastive analysis.</p>
-</section>
-<section class="container" id="team">
-<h2>Research Team</h2>
-<div class="team-member">
-<h4>Professor Nikolaos Lavidas</h4>
-<p>Laboratory Director</p>
-<p>Department of English Language and Literature</p>
-<p>National and Kapodistrian University of Athens</p>
-<p>Co-Editor-in-Chief, GLOSSA Contact (with Ioanna Sitaridou &amp; Igor Yanovich)</p>
-</div>
-<div class="team-grid">
-<div class="team-member">
-<h4>Dr. Vassileios Symeonidis</h4>
-<p>Post-Doctoral Researcher</p>
-</div>
-<div class="team-member">
-<h4>Dr. Theodoros Michalareas</h4>
-<p>Post-Doctoral Researcher</p>
-</div>
-<div class="team-member">
-<h4>Sofia Chionidi</h4>
-<p>PhD Candidate</p>
-</div>
-<div class="team-member">
-<h4>Anastasia Tsiropina</h4>
-<p>PhD Candidate</p>
-</div>
-<div class="team-member">
-<h4>Eleni Plakoutsi</h4>
-<p>PhD Candidate</p>
-</div>
-<div class="team-member">
-<h4>Evangelos Argyropoulos</h4>
-<p>Research Assistant</p>
-</div>
-</div>
-<h3>International Collaborators</h3>
-<div class="team-grid">
-<div class="team-member">
-<h4>Professor Dag Haug</h4>
-<p>University of Oslo</p>
-<p>PROIEL Project Director</p>
-</div>
-<div class="team-member">
-<h4>Professor Leonid Kulikov</h4>
-<p>Ghent University</p>
-<p>Indo-European Historical Linguistics</p>
-</div>
-</div>
-</section>
-<section class="container" id="news">
-<h2>News and Events</h2>
-<div class="intro">
-<h3>Latest News</h3>
-<p>Stay updated with our latest research developments, publications, and laboratory activities.</p>
-<h3>Upcoming Events</h3>
-<p>Information about conferences, workshops, seminars, and collaborative research meetings.</p>
-<h3>Collaborations</h3>
-<p>Partnerships with Greek and international institutions, research centers, and academic networks.</p>
-</div>
-</section>
-<section class="container" id="publications">
-<h2>Key Publications</h2>
-<div class="publications">
-<div class="publication-item">
-<p><strong>Lavidas, N.</strong> (2021). <em>The Diachrony of Written Language Contact: A Contrastive
-                            Approach</em>. Brill's Studies in Historical Linguistics. Leiden, Boston: Brill.</p>
-<p style="font-size: 0.95rem; color: #555;">Monograph examining contact-induced change in written
-                        registers, focusing on biblical and literary translations from antiquity through the
-                        Renaissance.</p>
-</div>
-<div class="publication-item">
-<p>Gamagari, T. &amp; <strong>Lavidas, N.</strong> (2022). How does language change (not) affect
-                        translations? A corpus-based study on lexical transfer in translations of Renaissance English
-                        and Greek. In N. Lavidas &amp; K. Nikiforidou (eds), <em>Language Change: Theory and Methodologies
-                            in the 21st Century</em>. Brill's Studies in Historical Linguistics. Leiden, Boston: Brill.
-                    </p>
-</div>
-<div class="publication-item">
-<p><strong>Lavidas, N.</strong> (2019). Word order and closest-conjunct agreement in the Greek
-                        Septuagint: On the position of a biblical translation in the diachrony of a syntactic
-                        correlation. <em>Questions and Answers in Linguistics</em> 5(2): 37-90.</p>
-</div>
-<div class="publication-item">
-<p><strong>Lavidas, N.</strong> (2017). Cognate noun constructions in Early Modern English: The case
-                        of Tyndale's New Testament. In H. Cuyckens et al. (eds.), <em>Explorations in English Historical
-                            Syntax</em>, 51-76. Amsterdam: John Benjamins.</p>
-</div>
-<div class="publication-item">
-<p><strong>Lavidas, N.</strong> (2014). The Greek Septuagint and language change at the
-                        syntax-semantics interface: From null to 'pleonastic' object pronouns. In C. Gianollo, A. Jäger
-                        &amp; D. Penka (eds.), <em>Language Change at the Syntax-Semantics Interface</em>, 153-182. Berlin:
-                        de Gruyter Mouton.</p>
-</div>
-<div class="publication-item">
-<p><strong>Lavidas, N.</strong> (2012). Null vs. cognate objects and language contact: Evidence from
-                        Hellenistic Greek. <em>Poznań Studies in Contemporary Linguistics</em> 48(4): 547-569.</p>
-</div>
-</div>
-</section>
-<section class="container" id="journal">
-<h2>GLOSSA Contact</h2>
-<div class="intro">
-<p><strong>GLOSSA Contact</strong> is an international peer-reviewed open-access journal dedicated to
-                    research on language contact phenomena. The journal publishes high-quality research articles on
-                    structural borrowing, contact-induced change, multilingualism, written language contact, translation
-                    studies, and areal linguistics.</p>
-<p><strong>Co-Editors-in-Chief:</strong></p>
-<p style="margin-left: 2rem; margin-bottom: 0.5rem;">
-                    Nikolaos Lavidas • Ioanna Sitaridou • Igor Yanovich
-                </p>
-<p style="margin-left: 2rem; margin-bottom: 1rem; font-size: 0.95rem; color: #555;">
-                    University of Athens • University of Cambridge • University of Tübingen
-                </p>
-<p>The journal welcomes submissions employing diverse methodological approaches, from traditional
-                    comparative-historical methods to contemporary corpus-based and computational techniques. Special
-                    interest in research on contact through translation and written language borrowing.</p>
-<p><strong>Journal Information:</strong><br/>
-                    ISSN: 2653-9519<br/>
-                    Publisher: National and Kapodistrian University of Athens<br/>
-                    Access: Open Access<br/>
-                    Website: <a href="https://glossacontact.org">glossacontact.org</a></p>
-</div>
-</section>
-<section class="container" id="contact">
-<h2>Contact Information</h2>
-<div class="intro">
-<h3>Laboratory Director</h3>
-<p><strong>Professor Nikolaos Lavidas</strong><br/>
-<strong>Email:</strong> <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a>
-</p>
-<h3>Location</h3>
-<p><strong>Room:</strong> 929, 9th floor<br/>
-<strong>Department:</strong> English Language and Literature<br/>
-<strong>School:</strong> Philosophy<br/>
-<strong>Institution:</strong> National and Kapodistrian University of Athens<br/>
-<strong>Campus:</strong> Zografou, 157 84 Athens, Greece
-                </p>
-<p><strong>Affiliated Network:</strong> <a href="https://athdgc.github.io">AthDGC Research Network</a>
-</p>
-</div>
-</section>
-<section class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
-<h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1a4d8f;">Hosted By</h2>
-<div style="display: flex; justify-content: center; padding: 3rem;">
-<a href="https://en.uoa.gr" style="text-decoration: none; max-width: 500px; width: 100%;" target="_blank">
-<div style="padding: 3rem; background: white; border: 4px solid #1a4d8f; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); text-align: center;">
-<img alt="University of Athens" src="assets/logos/logo_ekpa_new.png" style="height: 90px; width: auto; object-fit: contain; margin-bottom: 1.5rem;"/>
-<p style="font-weight: 800; color: #1a4d8f; font-size: 1.6rem; margin: 0; line-height: 1.4;">
-                            NATIONAL AND KAPODISTRIAN<br/>UNIVERSITY OF ATHENS</p>
-</div>
-</a>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-<p>GlossaContact Laboratory</p>
-<p>National and Kapodistrian University of Athens</p>
-<p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-                    4.0</a></p>
-</div>
-</footer>\n\n
+    <header class="header">
+        <div class="header-content">
+            <h1>GlossaContact Laboratory</h1>
+            <p>Language Contact Research Laboratory</p>
+            <p>National and Kapodistrian University of Athens</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#journal">Journal</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://athdgc.github.io/" class="return-btn">Return to Main Site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="container">
+            <h2>About the Laboratory</h2>
+            <div class="research-highlights">
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h4>Biblical Translation Analysis</h4>
+                        <p>Examining language contact effects in the Greek Septuagint and early biblical translations</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h4>Medieval Translation Studies</h4>
+                        <p>Investigating contact phenomena in medieval literary and religious translations</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h4>Digital Corpus Research</h4>
+                        <p>Applying computational methods to historical language contact analysis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="intro">
+                <p>The GlossaContact Laboratory specializes in the study of language contact phenomena through translations, with particular emphasis on ancient and medieval written language contact.</p>
+                <p>Based at the National and Kapodistrian University of Athens, the laboratory investigates how languages influence each other through translation practices, biblical and literary retranslations, and written language borrowing across historical periods.</p>
+            </div>
+        </section>
+
+        <section id="team" class="container">
+            <h2>Research Team</h2>
+            <div class="team-member">
+                <h4>Professor Nikolaos Lavidas</h4>
+                <p>Laboratory Director</p>
+                <p>Department of English Language and Literature</p>
+                <p>National and Kapodistrian University of Athens</p>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Contact Information</h2>
+            <div class="intro">
+                <p><strong>Email:</strong> <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
+                <p><strong>Location:</strong> Room 929, 9th floor, Department of English Language and Literature, National and Kapodistrian University of Athens</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>GlossaContact Laboratory</p>
+            <p>National and Kapodistrian University of Athens</p>
+            <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+        </div>
+    </footer>
 </body>
 </html>
