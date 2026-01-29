@@ -151,6 +151,80 @@ nav a.active {
 
 @import url('../assets/shared/nav.css');
 
+.organizers-section {
+    background: #f6f2e8;
+    padding: 4rem 0 2rem 0;
+    border-top: 2px solid #004040;
+    border-bottom: 1px solid #ebe3d6;
+    margin-top: 3rem;
+}
+.organizers-title {
+    font-size: 2.2rem;
+    color: #004040;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+}
+.organizers-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.organizer-affil {
+    display: block;
+    color: #666;
+    font-size: 1.08rem;
+    margin-top: 0.3rem;
+}
+
+.teaching-assistants-section {
+    background: #fff;
+    padding: 3rem 0 2rem 0;
+    border-bottom: 1px solid #ebe3d6;
+}
+.tas-title {
+    font-size: 2rem;
+    color: #004040;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+.tas-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.ta-card {
+    background: #f6f2e8;
+    border: 1px solid #ebe3d6;
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    min-width: 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: transform 0.2s;
+}
+.ta-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+}
+.ta-affil {
+    display: block;
+    color: #666;
+    font-size: 1.01rem;
+    margin-top: 0.4rem;
+}
+
+
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
