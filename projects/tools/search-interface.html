@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Interface | AthDGC Tools</title>
+    <meta name="description" content="Advanced search interface for PROIEL treebanks with pattern matching, regular expressions, and filtering capabilities.">
+    <meta name="keywords" content="treebank search, corpus search, pattern matching, regular expressions, linguistic search, PROIEL">
+    <link rel="stylesheet" href="assets/css/tools.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">T</div>
+                    AthDGC Tools
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span>&#9776;</span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html" class="active">Search</a></li>
+                        <li><a href="analysis-tools.html">Analysis</a></li>
+                        <li><a href="export-tools.html">Export</a></li>
+                        <li><a href="api-reference.html">API</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="container">
+            <h1>Search Interface</h1>
+            <p class="section-subtitle">Advanced search capabilities for PROIEL treebanks with pattern matching and filtering</p>
+        </section>
+
+        <section class="container">
+            <div class="tool-interface">
+                <div class="tool-header">
+                    <h3 class="tool-title">Corpus Search</h3>
+                    <p class="tool-description">Search through treebanks with advanced pattern matching and filtering options</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('search')">Search</button>
+                    <button class="tab" onclick="showTab('advanced')">Advanced</button>
+                    <button class="tab" onclick="showTab('results')">Results</button>
+                    <button class="tab" onclick="showTab('history')">History</button>
+                </div>
+
+                <div class="tab-content active" id="search">
+                    <div class="form-group">
+                        <label class="form-label">Search Query</label>
+                        <input type="text" class="form-input" id="searchQuery" placeholder="Enter search query..." size="50">
+                        <div class="form-help">Use Greek, Latin, Gothic, or Old Church Slavonic text. Supports regular expressions.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Search Type</label>
+                        <select class="form-select" id="searchType">
+                            <option value="text">Text Search</option>
+                            <option value="lemma">Lemma Search</option>
+                            <option value="pos">POS Search</option>
+                            <option value="feature">Feature Search</option>
+                            <option value="dependency">Dependency Search</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Treebank Selection</label>
+                        <select class="form-select" id="treebankSelect" multiple size="4">
+                            <option value="all">All Treebanks</option>
+                            <option value="greek-classical">Greek - Classical</option>
+                            <option value="greek-koine">Greek - Koine</option>
+                            <option value="greek-byzantine">Greek - Byzantine</option>
+                            <option value="greek-modern">Greek - Modern</option>
+                            <option value="gothic">Gothic</option>
+                            <option value="latin-classical">Latin - Classical</option>
+                            <option value="latin-vulgate">Latin - Vulgate</option>
+                            <option value="old-church-slavonic">Old Church Slavonic</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Search Scope</label>
+                        <select class="form-select" id="searchScope">
+                            <option value="all">All Content</option>
+                            <option value="texts">Texts Only</option>
+                            <option value="annotations">Annotations Only</option>
+                            <option value="metadata">Metadata Only</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Match Type</label>
+                        <select class="form-select" id="matchType">
+                            <option value="exact">Exact Match</option>
+                            <option value="partial">Partial Match</option>
+                            <option value="regex">Regular Expression</option>
+                            <option value="fuzzy">Fuzzy Match</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Case Sensitivity</label>
+                        <label class="form-check">
+                            <input type="checkbox" id="caseSensitive">
+                            Case-sensitive search
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Results Per Page</label>
+                        <select class="form-select" id="resultsPerPage">
+                            <option value="10">10 results</option>
+                            <option value="25">25 results</option>
+                            <option value="50">50 results</option>
+                            <option value="100">100 results</option>
+                        </select>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button class="btn" onclick="performSearch()">Search</button>
+                        <button class="btn btn-secondary" onclick="clearSearch()">Clear</button>
+                        <button class="btn btn-secondary" onclick="saveSearch()">Save Search</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="advanced">
+                    <h4>Advanced Search Options</h4>
+                    
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Language Filter</label>
+                            <select class="form-select" id="advancedLanguageFilter">
+                                <option value="">All Languages</option>
+                                <option value="greek">Greek</option>
+                                <option value="latin">Latin</option>
+                                <option value="gothic">Gothic</option>
+                                <option value="old-church-slavonic">Old Church Slavonic</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Period Filter</label>
+                            <select class="form-select" id="advancedPeriodFilter">
+                                <option value="">All Periods</option>
+                                <option value="classical">Classical (500 BCE - 323 BCE)</option>
+                                <option value="hellenistic">Hellenistic (323 BCE - 31 BCE)</option>
+                                <option value="roman">Roman (31 BCE - 476 CE)</option>
+                                <option value="medieval">Medieval (476 CE - 1453 CE)</option>
+                                <option value="modern">Modern (1453 CE - present)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Text Type Filter</label>
+                            <select class="form-select" id="advancedTextTypeFilter">
+                                <option value="">All Types</option>
+                                <option value="literary">Literary</option>
+                                <option value="religious">Religious</option>
+                                <option value="philosophical">Philosophical</option>
+                                <option value="historical">Historical</option>
+                                <option value="legal">Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">POS Filter</label>
+                            <select class="form-select" id="advancedPOSFilter" multiple>
+                                <option value="">All POS Tags</option>
+                                <option value="noun">Noun</option>
+                                <option value="verb">Verb</option>
+                                <option value="adjective">Adjective</option>
+                                <option value="adverb">Adverb</option>
+                                <option value="pronoun">Pronoun</option>
+                                <option value="article">Article</option>
+                                <option value="conjunction">Conjunction</option>
+                                <option value="preposition">Preposition</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Minimum Sentence Length</label>
+                            <input type="number" class="form-input" id="advancedMinLength" placeholder="Min tokens" min="1" value="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Maximum Sentence Length</label>
+                            <input type="number" class="form-input" id="maxLength" placeholder="Max tokens" min="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Date Range</label>
+                            <div class="grid grid-2">
+                                <input type="date" class="form-input" id="startDate" placeholder="Start date">
+                                <input type="date" class="form-input" id="endDate" placeholder="End date">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Quality Filter</label>
+                            <select class="form-select" id="qualityFilter">
+                                <option value="">All Quality Levels</option>
+                                <option value="high">High Quality</option>
+                                <option value="medium">Medium Quality</option>
+                                <option value="low">Low Quality</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Export Format</label>
+                            <select class="form-select" id="exportFormat">
+                                <option value="json">JSON</option>
+                                <option value="csv">CSV</option>
+                                <option value="xml">XML</option>
+                                <option value="conllu">CoNLL-U</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button class="btn" onclick="applyAdvancedFilters()">Apply Filters</button>
+                        <button class="btn btn-secondary" onclick="resetAdvancedFilters()">Reset Filters</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="results">
+                    <h4>Search Results</h4>
+                    
+                    <div class="tool-output" id="searchResults">
+                        <div class="output-header">
+                            <div class="output-title">Search Results</div>
+                            <div class="output-actions">
+                                <button class="btn btn-secondary" onclick="exportResults()">Export Results</button>
+                                <button class="btn btn-secondary" onclick="copyResults()">Copy Results</button>
+                                <button class="btn btn-secondary" onclick="saveResults()">Save Results</button>
+                            </div>
+                        </div>
+                        <div class="output-content" id="searchData">
+                            <p>Enter a search query and click "Search" to see results.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="history">
+                    <h4>Search History</h4>
+                    
+                    <div class="tool-output" id="searchHistory">
+                        <div class="output-header">
+                            <div class="output-title">Search History</div>
+                            <div class="output-actions">
+                                <button class="btn btn-secondary" onclick="clearHistory()">Clear History</button>
+                                <button class="btn btn-secondary" onclick="exportHistory()">Export History</button>
+                            </div>
+                        </div>
+                        <div class="output-content" id="historyData">
+                            <p>No search history yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Search Features</h2>
+            <p class="section-subtitle">Advanced search capabilities and pattern matching options</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Pattern Matching</h3>
+                    <p class="feature-description">Regular expression support for complex pattern matching</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Fuzzy Search</h3>
+                    <p class="feature-description">Fuzzy matching for approximate string matching</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Multi-Treebank Search</h3>
+                    <p class="feature-description">Search across multiple treebanks simultaneously</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <h3>Dependency Search</h3>
+                    <p class="feature-description">Search for specific dependency relations</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>Feature Search</h3>
+                    <p class="feature-description">Search by morphological features</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Lemma Search</h3>
+                    <p class="feature-description">Search by lemmatized forms</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>POS Search</h3>
+                    <p class="feature-description">Filter by part-of-speech tags</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Search Examples</h2>
+            <p class="section-subtitle">Example searches and their expected results</p>
+            
+            <div class="example-container">
+                <div class="example-title">Text Search Example</div>
+                <div class="example-content">
+                    <div class="code-header">
+                        <span>Search: "ἀνθρωπος"</span>
+                        <span>Type: Text Search</span>
+                        <span>Results: 15 matches</span>
+                    </div>
+                    <div class="code-content">Found in: Greek Classical treebank
+1. ἀνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ.
+2. ὁ ἔστιν ἀγαθὸν τὸν ἀνθρώπῳν.
+3. ἀγρῷᾳ ἐστὶν τῇ ἀγρῷᾳ.</div>
+                </div>
+            </div>
+
+            <div class="example-container">
+                <div class="example-title">POS Search Example</div>
+                <div class="example-content">
+                    <div class="code-header">
+                        <span>Search: "noun"</span>
+                        <span>Type: POS Search</span>
+                        <span>Results: 1,234 matches</span>
+                    </div>
+                    <div class="code-content">Found in all treebanks
+1. ὁ (article) - 1,234 occurrences
+2. ἀνθρωπος (noun) - 892 occurrences
+3. ἀγρῷᾳ (noun) - 756 occurrences</div>
+                </div>
+            </div>
+
+            <div class="example-container">
+                <div class="example-title">Regex Example</div>
+                <div class="example-content">
+                    <div class="code-header">
+                        <span>Search: "ἀ.*θ.*ς"</span>
+                        <span>Type: Regular Expression</span>
+                        <span>Results: 23 matches</span>
+                    </div>
+                    <div class="code-content">Found in Greek treebanks
+1. ἀνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ.
+2. ἀνθρῷᾳ ἐστὶν τῇ ἀγρῷᾳ.
+3. ἀνθρῷᾳ ἐστὶν τῇ ἀγρῷᾳ.</div>
+                </div>
+            </div>
+
+            <div class="example-container">
+                <div class="example-title">Dependency Search Example</div>
+                <div class="class="example-content">
+                    <div class="code-header">
+                        <span>Search: "nsubj → obj"</span>
+                        <span>Type: Dependency Search</span>
+                        <span>Results: 892 matches</span>
+                    </div>
+                    <div class="code-content">Found in Greek treebanks
+1. ὁ (article) → ἀνθρωπος (noun)
+2. ὁ (article) → ἐστὶν (verb)
+3. ὁ (article) → τῇ (noun)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Search Statistics</h2>
+            <p class="section-subtitle">Real-time search statistics and usage patterns</p>
+            
+            <div class="tool-metrics">
+                <div class="metric">
+                    <div class="metric-value">2,341</div>
+                    <div class="metric-label">Searches Today</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">89%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">1.2s</div>
+                    <div class="metric-label">Avg Response Time</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">45</div>
+                    <div class="metric-label">Active Users</div>
+                </div>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="tool-card">
+                    <h3 class="tool-title">Popular Searches</h3>
+                    <ul class="tool-features">
+                        <li>"ἀνθρωπος" - 234 searches</li>
+                        <li>"ἀγρῷᾳ" - 189 searches</li>
+                        <li>"ἀστιν" - 156 searches</li>
+                        <li>"ἐστὶν" - 134 searches</li>
+                        <li>"τῇ ἀγρῷᾳ" - 98 searches</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-card">
+                    <h3 class="search-title">Search Patterns</h3>
+                    <ul class="tool-features">
+                        <li>Text searches: 45%</li>
+                        <li>POS searches: 25%</li>
+                        <li>Dependency searches: 15%</li>
+                        <li>Feature searches: 10%</li>
+                        <li>Regex searches: 5%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AthDGC Tools</h3>
+                    <p>Interactive corpus analysis platform</p>
+                    <p>National and Kapodistrian University of Athens</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search Interface</a></li>
+                        <li><a href="analysis-tools.html">Analysis Tools</a></li>
+                        <li><a href="export-tools.html">Export Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="api-reference.html">API Documentation</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                        <li><a href="https://github.com/athdgc">GitHub</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="mailto:support@athdgc.org">Email Support</a></li>
+                        <li><a href="https://en.uoa.gr">University of Athens</a></li>
+                        <li><a href="https://en.enl.uoa.gr">English Department</a></li>
+                        <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AthDGC Tools. National and Kapodistrian University of Athens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Tab switching
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Search functionality
+        function performSearch() {
+            const query = document.getElementById('searchQuery').value.trim();
+            const searchType = document.getElementById('searchType').value;
+            const treebanks = Array.from(document.getElementById('treebankSelect').selectedOptions).map(option => option.value);
+            
+            if (!query) {
+                alert('Please enter a search query.');
+                return;
+            }
+
+            // Show loading state
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = '<div class="status status-processing"><div class="tool-status-icon status-processing"></div>Searching...</div>';
+
+            // Simulate API call
+            setTimeout(() => {
+                const results = simulateSearch(query, searchType, treebanks);
+                displaySearchResults(results);
+            }, 1500);
+        }
+
+        function simulateSearch(query, searchType, treebanks) {
+            // Simulate search results
+            const results = [];
+            
+            // Mock search logic
+            if (searchType === 'text') {
+                treebanks.forEach(treebank => {
+                    if (treebank === 'all' || treebank.includes('greek')) {
+                        // Greek text search
+                        if (query.includes('ἀνθρωπος')) {
+                            results.push({
+                                id: 'gk-cl-001',
+                                treebank: treebank,
+                                match: query,
+                                type: 'text',
+                                context: 'Greek Classical',
+                                confidence: 0.95
+                            });
+                        }
+                    }
+                });
+            } else if (searchType === 'lemma') {
+                // Lemma search
+                results.push({
+                    id: 'lemma-001',
+                    treebank: 'all',
+                    match: query,
+                    type: 'lemma',
+                    context: 'All Languages',
+                    confidence: 0.88
+                });
+            } else if (searchType === 'pos') {
+                // POS search
+                results.push({
+                    id: 'pos-001',
+                    treebank: 'all',
+                    match: query,
+                    type: 'pos',
+                    context: 'All Languages',
+                    confidence: 0.92
+                });
+            }
+
+            return results;
+        }
+
+        function displayResults(results) {
+            const outputFormat = document.getElementById('outputFormat').value;
+            const resultsDiv = document.getElementById('searchResults');
+            
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<p>No results found.</p>';
+                return;
+            }
+
+            let html = '';
+            
+            if (outputFormat === 'json') {
+                html = '<pre class="code-content">' + JSON.stringify(results, null, 2) + '</pre>';
+            } else if (outputFormat === 'csv') {
+                html = '<pre class="code-content">ID,Treebank,Match,Type,Context,Confidence\n';
+                results.forEach(result => {
+                    html += `${result.id},${result.treebank},"${result.match}","${result.type}","${result.context}","${result.confidence.toFixed(2)}\n`;
+                });
+                html += '</pre>';
+            } else {
+                html = '<div class="search-results-list">';
+                
+                results.forEach(result => {
+                    html += `<div class="search-result-item">
+                        <div class="search-result-header">
+                            <span class="status status-success">✓</span>
+                            <span class="search-result-id">${result.id}</span>
+                            <span class="search-result-treebank">${result.treebank}</span>
+                            <span class="search-result-context">${result.context}</span>
+                        </div>
+                        <div class="search-result-content">
+                            <div class="search-result-match">Match: "${result.match}"</div>
+                            <div class="search-result-type">Type: ${result.type}</div>
+                            <div class="search-result-context">Context: ${result.context}</div>
+                            <div class="search-result-confidence">Confidence: ${result.confidence.toFixed(2)}</div>
+                        </div>
+                    </div>';
+                });
+                
+                html += '</div>';
+            }
+            
+            resultsDiv.innerHTML = html;
+        }
+
+        function clearSearch() {
+            document.getElementById('searchQuery').value = '';
+            document.getElementById('searchResults').innerHTML = '<p>Enter a search query and click "Search" to see results.</p>';
+        }
+
+        function saveSearch() {
+            const query = document.getElementById('searchQuery').value;
+            const searchType = document.getElementById('searchType').value;
+            const treebanks = Array.from(document.getElementById('treebankSelect').selectedOptions).map(option => option.value);
+            
+            const searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+            searchHistory.unshift({
+                query: query,
+                type: searchType,
+                treebanks: treebanks,
+                timestamp: new Date().toISOString()
+            });
+            
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+            
+            alert('Search saved to history.');
+        }
+
+        function clearHistory() {
+            localStorage.removeItem('searchHistory');
+            document.getElementById('historyData').innerHTML = '<p>No search history.</p>';
+        }
+
+        function exportResults() {
+            const results = document.getElementById('searchResults').textContent;
+            const blob = new Blob([results], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'search_results.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function exportHistory() {
+            const historyData = document.getElementById('historyData').textContent;
+            const blob = new Blob([historyData], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'search_history.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function applyAdvancedFilters() {
+            applyFilters();
+            performSearch();
+        }
+
+        function resetAdvancedFilters() {
+            document.getElementById('advancedLanguageFilter').value = '';
+            document.getElementById('advancedPeriodFilter').value = '';
+            document.getElementById('advancedTextTypeFilter').value = '';
+            document.getElementById('advancedPOSFilter').value = [];
+            document.getElementById('advancedMinLength').value = '';
+            document.getElementById('maxLength').value = '';
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+            document.getElementById('qualityFilter').value = '';
+            document.getElementById('exportFormat').value = 'json';
+            
+            applyFilters();
+        }
+
+        function loadExample(type) {
+            const examples = {
+                'greek-classical': 'ὁ ἄνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ.',
+                'latin-classical': 'Homo est animal rationale, mortale, viviparum, capite erectum, pedibus bis bipedibus.',
+                'gothic': 'ata waurþ jabai waurþ, jah waurþ jah waurþ jah waurþ.',
+                'old-church-slavonic': 'Слово бѣаше, и бѣаше светъло во тьмнѣ, и тьмнѣ во свѣтѣ.'
+            };
+            
+            document.getElementById('inputText').value = examples[type];
+            document.getElementById('languageSelect').value = type.includes('greek') ? 'greek' : 
+                                                     type.includes('latin') ? 'latin' : 
+                                                     type.includes('gothic') ? 'gothic' : 
+                                                     type.includes('slavonic') ? 'old-church-slavonic' : 'auto';
+            document.getElementById('analysisMode').value = 'basic';
+            
+            performSearch();
+        }
+
+        // Initialize
+        document.getElementById('resultsPerPage').addEventListener('change', () => {
+            if (currentResults.length > 0) {
+                displaySearchResults();
+            }
+        });
+
+        // Initialize search history
+        const historyData = localStorage.getItem('searchHistory');
+        if (historyData) {
+            const history = JSON.parse(historyData);
+            document.getElementById('historyData').innerHTML = history.map(item => 
+                `<div class="history-item">
+                    <div class="history-query">${item.query}</div>
+                    <div class="history-type">${item.type}</div>
+                    <div class="history-treebank">${item.treebanks.join(', ')}</div>
+                    <div class="history-time">${new Date(item.timestamp).toLocaleString()}</div>
+                </div>
+            ).join('');
+        }
+    </script>
+</body>
+</html>

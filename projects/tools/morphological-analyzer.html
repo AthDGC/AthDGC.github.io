@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphological Analyzer | AthDGC Tools</title>
+    <meta name="description"
+        content="Interactive morphological analysis tool for PROIEL treebanks with lemmatization, POS tagging, and feature extraction.">
+    <meta name="keywords"
+        content="morphological analysis, lemmatization, POS tagging, morphological features, PROIEL, historical linguistics">
+    <link rel="stylesheet" href="assets/css/tools.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">T</div>
+                    AthDGC Tools
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span>&#9776;</span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search</a></li>
+                        <li><a href="analysis-tools.html" class="active">Analysis</a></li>
+                        <li><a href="export-tools.html">Export</a></li>
+                        <li><a href="api-reference.html">API</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="container">
+            <h1>Morphological Analyzer</h1>
+            <p class="section-subtitle">Advanced morphological analysis with lemmatization, POS tagging, and feature
+                extraction</p>
+        </section>
+
+        <section class="container">
+            <div class="tool-interface">
+                <div class="tool-header">
+                    <h3 class="tool-title">Morphological Analysis</h3>
+                    <p class="tool-description">Analyze morphological structure of text with comprehensive feature
+                        extraction</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('input')">Input</button>
+                    <button class="tab" onclick="showTab('options')">Options</button>
+                    <button class="tag" onclick="showTab('results')">Results</button>
+                    <button class="tab" onclick="showTab('examples')">Examples</button>
+                </div>
+
+                <div class="tab-content active" id="input">
+                    <div class="form-group">
+                        <label class="form-label">Input Text</label>
+                        <textarea class="form-textarea" id="inputText" rows="6"
+                            placeholder="Enter text to analyze...">ὁ ἄνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ.</textarea>
+                        <div class="form-help">Enter Greek, Latin, Gothic, or Old Church Slavonic text for morphological
+                            analysis</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Language</label>
+                        <select class="form-select" id="languageSelect">
+                            <option value="auto">Auto-detect</option>
+                            <option value="greek">Greek</option>
+                            <option value="latin">Latin</option>
+                            <option value="gothic">Gothic</option>
+                            <option value="old-church-slavonic">Old Church Slavonic</option>
+                            <option value="old-english">Old English</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Analysis Mode</label>
+                        <select class="form-select" id="analysisMode">
+                            <option value="basic">Basic Analysis</option>
+                            <option value="detailed">Detailed Analysis</option>
+                            <option value="comparative">Comparative Analysis</option>
+                            <option value="diachronic">Diachronic Analysis</option>
+                        </select>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button class="btn" onclick="analyzeText()">Analyze Text</button>
+                        <button class="btn btn-secondary" onclick="clearInput()">Clear</button>
+                        <button class="btn btn-secondary" onclick="loadExample()">Load Example</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="options">
+                    <h4>Analysis Options</h4>
+
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Output Format</label>
+                            <select class="form-select" id="outputFormat">
+                                <option value="table">Table View</option>
+                                <option value="json">JSON Format</option>
+                                <option value="csv">CSV Format</option>
+                                <option value="xml">XML Format</option>
+                                <option value="conllu">CoNLL-U Format</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Feature Set</label>
+                            <select class="form-select" id="featureSet">
+                                <option value="basic">Basic Features</option>
+                                <option value="extended">Extended Features</option>
+                                <option value="universal">Universal Dependencies</option>
+                                <option value="custom">Custom Features</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Include Lemmas</label>
+                            <label class="form-check">
+                                <input type="checkbox" id="includeLemmas" checked>
+                                Include lemmatization
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Include Features</label>
+                            <label class="form-check">
+                                <input type="checkbox" id="includeFeatures" checked>
+                                Include morphological features
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Include Statistics</label>
+                            <label class="form-check">
+                                <input type="checkbox" id="includeStats" checked>
+                                Include statistical analysis
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">POS Tagging</label>
+                            <label class="form-check">
+                                <input type="checkbox" id="includePOS" checked>
+                                Include POS tagging
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Disambiguation</label>
+                            <select class="form-select" id="disambiguation">
+                                <option value="none">No Disambiguation</option>
+                                <option value="basic">Basic Disambiguation</option>
+                                <option value="advanced">Advanced Disambiguation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Confidence Threshold</label>
+                            <input type="range" class="form-input" id="confidenceThreshold" min="0" max="1" step="0.1"
+                                value="0.8">
+                            <div class="form-help">Minimum confidence score for analysis</div>
+                        </div>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button class="btn" onclick="applyOptions()">Apply Options</button>
+                        <button class="btn btn-secondary" onclick="resetOptions()">Reset Options</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="results">
+                    <h4>Analysis Results</h4>
+
+                    <div class="tool-output" id="resultsOutput">
+                        <div class="output-header">
+                            <div class="output-title">Morphological Analysis Results</div>
+                            <div class="output-actions">
+                                <button class="btn btn-secondary" onclick="exportResults()">Export Results</button>
+                                <button class="btn btn-secondary" onclick="copyResults()">Copy Results</button>
+                            </div>
+                        </div>
+                        <div class="output-content" id="analysisResults">
+                            <p>Enter text and click "Analyze Text" to see morphological analysis results.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="examples">
+                    <h4>Example Texts</h4>
+
+                    <div class="example-content">
+                        <div class="code-header">
+                            <span>Greek Classical</span>
+                            <button class="btn btn-secondary" onclick="loadExample('greek-classical')">Load</button>
+                        </div>
+                        <div class="code-content">ὁ ἄνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ. ὁ ἔστιν ἀγαθὸν τὸν ἀνθρώπῳν, καὶ ἀπὸν
+                            τῆς ἐν τῇ ἀγρῷᾳ.</div>
+                    </div>
+
+                    <div class="example-container">
+                        <div class="example-title">Latin Example</div>
+                        <div class="example-content">
+                            <div class="code-header">
+                                <span>Latin Classical</span>
+                                <button class="btn btn-secondary" onclick="loadExample('latin-classical')">Load</button>
+                            </div>
+                            <div class="code-content">Homo est animal rationale, mortale, viviparum, capite erectum,
+                                pedibus bis bipedibus.</div>
+                        </div>
+                    </div>
+
+                    <div class="example-container">
+                        <div class="example-title">Gothic Example</div>
+                        <div class="example-content">
+                            <div class="code-header">
+                                <span>Gothic</span>
+                                <button class="btn btn-secondary" onclick="loadExample('gothic')">Load</button>
+                            </div>
+                            <div class="code-content">ata waurþ jabai waurþ, jah waurþ jah waurþ jah waurþ.</div>
+                        </div>
+                    </div>
+
+                    <div class="example-container">
+                        <div class="example-title">Old Church Slavonic Example</div>
+                        <div class="example-content">
+                            <div class="code-header">
+                                <span>Old Church Slavonic</span>
+                                <button class="btn btn-secondary"
+                                    onclick="loadExample('old-church-slavonic')">Load</button>
+                            </div>
+                            <div class="code-content">Слово бѣаше, и бѣаше светъло во тьмнѣ, и тьмнѣ во свѣтѣ.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Analysis Features</h2>
+            <p class="section-subtitle">Comprehensive morphological analysis capabilities</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔤</div>
+                    <h3 class="feature-title">Tokenization</h3>
+                    <p class="feature-description">Accurate tokenization for historical languages with special character
+                        handling</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🏷️</div>
+                    <h3 class="feature-title">POS Tagging</h3>
+                    <p class="feature-description">Part-of-speech identification with high accuracy for historical
+                        languages</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Lemmatization</h3>
+                    <p class="feature-description">Dictionary-based lemmatization with historical form recognition</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-icon">Feature Extraction</h3>
+                        <p class="feature-description">Comprehensive morphological feature extraction and analysis</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Statistics</h3>
+                        <p class="feature-description">Statistical analysis of morphological patterns and distributions
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Supported Languages</h2>
+            <p class="section-subtitle">Languages with morphological analysis support</p>
+
+            <div class="grid grid-3">
+                <div class="tool-card">
+                    <h3 class="tool-title">Greek</h3>
+                    <ul class="tool-features">
+                        <li>Classical Greek</li>
+                        <li>Koine Greek</li>
+                        <li>Byzantine Greek</li>
+                        <li>Modern Greek</li>
+                        <li>Complete morphology</li>
+                        <li>Historical forms</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h3 class="tool-title">Latin</h3>
+                    <ul class="tool-features">
+                        <li>Classical Latin</li>
+                        <li>Vulgate Latin</li>
+                        <li>Medieval Latin</li>
+                        <li>Complete morphology</li>
+                        <li>Inflection patterns</li>
+                        <li>Case system</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h3 class="tool-title">Germanic</h3>
+                    <ul class="tool-features">
+                        <li>Gothic</li>
+                        <li>Old English</li>
+                        <li>Old Norse</li>
+                        <li>Old High German</li>
+                        <li>Germanic morphology</li>
+                        <li>Strong/weak verbs</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h3 class="tool-title">Slavic</h3>
+                    <ul class="tool-features">
+                        <li>Old Church Slavonic</li>
+                        <li>Old Russian</li>
+                        <li>Old Bulgarian</li>
+                        <li>Church Slavonic</li>
+                        <li>Slavic morphology</li>
+                        <li>Case system</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">API Access</h2>
+            <p class="section-section">Programmatic access to morphological analysis</p>
+
+            <div class="tool-interface">
+                <div class="tool-header">
+                    <h3 class="tool-title">API Endpoint</h3>
+                    <p class="tool-description">RESTful API for morphological analysis integration</p>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span>POST /api/v1/analyze/morphology</span>
+                        <button class="btn btn-secondary" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <div class="code-content">{
+                        "text": "ὁ ἄνθρωπος ἐστιν",
+                        "language": "greek",
+                        "options": {
+                        "includeLemmas": true,
+                        "includeFeatures": true,
+                        "includeStats": true,
+                        "outputFormat": "json"
+                        }
+                        }</div>
+                </div>
+
+                <div class="tool-actions">
+                    <a href="api-reference.html#morphology" class="btn">View Documentation</a>
+                    <a href="developers.html" class="btn btn-secondary">Developer Guide</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AthDGC Tools</h3>
+                    <p>Interactive corpus analysis platform</p>
+                    <p>National and Kapodistrian University of Athens</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search Interface</a></li>
+                        <li><a href="analysis-tools.html">Analysis Tools</a></li>
+                        <li><a href="export-tools.html">Export Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="api-reference.html">API Documentation</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                        <li><a href="https://github.com/athdgc">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="mailto:support@athdgc.org">Email Support</a></li>
+                        <li><a href="https://en.uoa.gr">University of <a href="https://en.enl.uoa.gr">English
+                                    Department</a></li>
+                        <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AthDGC Tools. National and Kapodistrian University of Athens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Tab switching
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Example texts
+        const examples = {
+            'greek-classical': 'ὁ ἄνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ. ὁ ἔστιν ἀγαθὸν τὸν ἀνθρώπῳν, καὶ ἀπὸν τῆς ἐν τῇ ἀγρῷᾳ.',
+            'latin-classical': 'Homo est animal rationale, mortale, viviparum, capite erectum, pedibus bis bipedibus.',
+            'gothic': 'ata waurþ jabai waurþ, jah waurþ jah waurþ jah waurþ.',
+            'old-church-slavonic': 'Слово бѣаше, и бѣаше светъло во тьмнѣ, и тьмнѣ во свѣтѣ.'
+        };
+
+        function analyzeText() {
+            const text = document.getElementById('inputText').value.trim();
+            if (!text) {
+                alert('Please enter text to analyze.');
+                return;
+            }
+
+            const language = document.getElementById('languageSelect').value;
+            const mode = document.getElementById('analysisMode').value;
+
+            // Show loading state
+            const resultsDiv = document.getElementById('analysisResults');
+            resultsDiv.innerHTML = '<div class="status status-processing"><div class="tool-status-icon status-processing"></div>Analyzing...</div>';
+
+            // Simulate API call
+            setTimeout(() => {
+                const results = simulateAnalysis(text, language, mode);
+                displayResults(results);
+            }, 1500);
+        }
+
+        function simulateAnalysis(text, language, mode) {
+            // Simulate morphological analysis
+            const tokens = text.split(/\s+/).filter(token => token.length > 0);
+
+            return tokens.map((token, index) => ({
+                id: index + 1,
+                token: token,
+                lemma: getLemma(token, language),
+                pos: getPOS(token, language),
+                features: getFeatures(token, language),
+                confidence: Math.random() * 0.2 + 0.8
+            }));
+        }
+
+        function getLemma(token, language) {
+            // Simple lemmatization (simplified for demo)
+            const lemmas = {
+                'greek': {
+                    'ὁ': 'ὁ',
+                    'Ἀ': 'εἰ',
+                    'ἀ': 'ἀ',
+                    'ἀνθρωπος': 'ἀνθρωπος',
+                    'ἀστιν': 'ἀστιν',
+                    'ἐν': 'ἐν',
+                    'τῇ': 'τῇ',
+                    'ἀγρῷᾳ': 'ἀγρῷᾳ'
+                },
+                'latin': {
+                    'Homo': 'homo',
+                    'est': 'sum',
+                    'animal': 'animal',
+                    'rationale': 'rationale',
+                    'mortale': 'mortalis',
+                    'viviparum': 'viviparus',
+                    'capite': 'caput',
+                    'pedibus': 'pedibus',
+                    'bipedibus': 'bipedibus'
+                }
+            };
+
+            return lemmas[language]?.[token] || token;
+        }
+
+        function getPOS(token, language) {
+            // Simple POS tagging (simplified for demo)
+            const posTags = {
+                'greek': {
+                    'ὁ': 'article',
+                    'Ἀ': 'adverb',
+                    'ἀ': 'article',
+                    'ἀνθρωπος': 'noun',
+                    'ἀστιν': 'verb',
+                    'ἐν': 'preposition',
+                    'τῇ': 'article',
+                    'ἀγρῷᾳ': 'noun'
+                },
+                'latin': {
+                    'Homo': 'noun',
+                    'est': 'verb',
+                    'animal': 'noun',
+                    'rationale': 'adjective',
+                    'mortale': 'adjective',
+                    'viviparum': 'adjective',
+                    'capite': 'noun',
+                    'pedibus': 'noun',
+                    'bipedibus': 'adjective'
+                }
+            };
+
+            return posTags[language]?.[token] || 'unknown';
+        }
+
+        function getFeatures(token, language) {
+            // Simple feature extraction (simplified for demo)
+            const features = {
+                'greek': {
+                    'ὁ': 'Case=Nom|Number=Sing|Gender=Masc',
+                    'Ἀ': '',
+                    'ἀ': 'Case=Nom|Number=Sing|Gender=Neut',
+                    'ἀνθρωπος': 'Case=Nom|Number=Sing|Gender=Masc',
+                    'ἀστιν': 'Tense=Pres|Mood=Ind|Voice=Act|Person=3',
+                    'ἐν': '',
+                    'τῇ': 'Case=Dat|Number=Sing',
+                    'ἀγρῷᾳ': 'Case=Dat|Number=Sing|Gender=Masc'
+                },
+                'latin': {
+                    'Homo': 'Case=Nom|Number=Sing|Gender=Masc',
+                    'est': 'Tense=Pres|Mood=Ind|Voice=Act|Person=3',
+                    'animal': 'Case=Nom|Number=Sing',
+                    'rationale': 'Case=Nom|Number=Sing',
+                    'mortale': 'Case=Nom|Number=Sing',
+                    'viviparum': 'Case=Nom|Number=Sing',
+                    'capite': 'Case=Abl|Number=Sing',
+                    'pedibus': 'Abl|Plural',
+                    'bipedibus': 'Abl|Plural'
+                }
+            };
+
+            return features[language]?.[token] || '';
+        }
+
+        function displayResults(results) {
+            const outputFormat = document.getElementById('outputFormat').value;
+            let html = '';
+
+            if (outputFormat === 'table') {
+                html = '<table class="data-table"><thead><tr><th>ID</th><th>Token</th><th>Lemma</th><th>POS</th><th>Features</th><th>Confidence</th></tr></thead><tbody>';
+
+                results.forEach(token => {
+                    html += `<tr>
+                        <td>${token.id}</td>
+                        <td>${token.token}</td>
+                        <td>${token.lemma}</td>
+                        <td>${token.pos}</td>
+                        <td><code>${token.features}</code></td>
+                        <td>${token.confidence.toFixed(2)}</td>
+                    </tr>`;
+                });
+
+                html += '</tbody></table>';
+            } else if (outputFormat === 'json') {
+                html = '<pre class="code-content">' + JSON.stringify(results, null, 2) + '</pre>';
+            } else if (outputFormat === 'csv') {
+                html = '<pre class="code-content">ID,Token,Lemma,POS,Features,Confidence\n';
+                results.forEach(token => {
+                    html += `${token.id},"${token.token}","${token.lemma}","${token.pos}","${token.features}","${token.confidence.toFixed(2)}\n`;
+                });
+                html += '</pre>';
+            } else if (outputFormat === 'xml') {
+                html = '<pre class="code-content"><analysis>';
+                results.forEach(token => {
+                    <token class="code-content">  <token id="${token.id}" form="${token.token}" lemma="${token.lemma}" pos="${token.pos}" features="${token.features}" confidence="${token.confidence.toFixed(2)} /></token>';
+                });
+                html += '</analysis></pre>';
+            } else if (outputFormat === 'conllu') {
+                html = '<pre class="code-content"># ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL';
+                results.forEach(token => {
+                            html += `${token.id}\t${token.token}\t${token.lemma}\t${token.pos}\t_\t_\t${token.features}\t${token.head || '_'}\t${token.dependent || '_'}\t_\t_\t_\n`;
+                });
+                        html += '</pre>';
+                }
+            
+            document.getElementById('analysisResults').innerHTML = html;
+            }
+
+            function clearInput() {
+                document.getElementById('inputText').value = '';
+                document.getElementById('analysisResults').innerHTML = '<p>Enter text and click "Analyze Text" to see morphological analysis results.</p>';
+            }
+
+            function loadExample(type) {
+                const text = examples[type];
+                document.getElementById('inputText').value = text;
+                document.getElementById('languageSelect').value = type.includes('greek') ? 'greek' :
+                    type.includes('latin') ? 'latin' :
+                        type.includes('gothic') ? 'gothic' :
+                            type.includes('slavonic') ? 'old-church-slavonic' : 'auto';
+                document.getElementById('analysisMode').value = 'basic';
+            }
+
+            function applyOptions() {
+                displayResults();
+            }
+
+            function resetOptions() {
+                document.getElementById('outputFormat').value = 'table';
+                document.getElementById('featureSet').value = 'basic';
+                document.getElementById('includeLemmas').checked = true;
+                document.getElementById('includeFeatures').checked = true;
+                document.getElementById('includeStats').checked = true;
+                document.getElementById('includePOS').checked = true;
+                document.getElementById('disambiguation').value = 'none';
+                document.getElementById('confidenceThreshold').value = '0.8';
+
+                applyOptions();
+            }
+
+            function exportResults() {
+                const results = document.getElementById('analysisResults').textContent;
+                const blob = new Blob([results], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'morphological_analysis_results.txt';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            function copyResults() {
+                const results = document.getElementById('analysisResults').textContent;
+                navigator.clipboard.writeText(results).then(() => {
+                    // Show success message
+                    const button = event.target;
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
+                });
+            }
+
+            // Initialize
+            document.getElementById('itemsPerPage').addEventListener('change', displayResults);
+    </script>
+</body>
+
+</html>

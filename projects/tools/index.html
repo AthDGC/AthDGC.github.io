@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthDGC Tools | Corpus Analysis Platform</title>
+    <meta name="description" content="Interactive corpus analysis tools for PROIEL treebanks, including morphological analysis, syntactic parsing, dependency visualization, and statistical analysis.">
+    <meta name="keywords" content="corpus analysis, PROIEL, treebank tools, morphological analysis, syntactic parsing, dependency visualization, statistical analysis">
+    <link rel="stylesheet" href="assets/css/tools.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">T</div>
+                    AthDGC Tools
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span>&#9776;</span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Overview</a></li>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search</a></li>
+                        <li><a href="analysis-tools.html">Analysis</a></li>
+                        <li><a href="export-tools.html">Export</a></li>
+                        <li><a href="api-reference.html">API</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Interactive Corpus Analysis Tools</h1>
+                <p>Professional tools for PROIEL treebank analysis, morphological parsing, syntactic visualization, and statistical research</p>
+                <div class="tool-actions">
+                    <a href="treebank-browser.html" class="btn">Browse Treebanks</a>
+                    <a href="search-interface.html" class="btn btn-secondary">Search Corpus</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Tool Categories</h2>
+            <p class="section-subtitle">Comprehensive suite of analysis tools for historical linguistics research</p>
+            
+            <div class="grid grid-3">
+                <div class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3 class="tool-title">Search & Browse</h3>
+                    <p class="tool-description">Navigate and search through PROIEL treebanks with advanced filtering options</p>
+                    <ul class="tool-features">
+                        <li>Treebank browser with filters</li>
+                        <li>Advanced search interface</li>
+                        <li>Pattern matching</li>
+                        <li>Concordance generation</li>
+                        <li>Collocation analysis</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="treebank-browser.html" class="btn btn-secondary">Browse</a>
+                        <a href="search-interface.html" class="btn btn-secondary">Search</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h3 class="tool-title">Analysis Tools</h3>
+                    <p class="tool-description">Advanced linguistic analysis with morphological and syntactic processing</p>
+                    <ul class="tool-features">
+                        <li>Morphological analyzer</li>
+                        <li>Syntactic parser</li>
+                        <li>Dependency visualizer</li>
+                        <li>Statistical analyzer</li>
+                        <li>Comparative tools</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="analysis-tools.html" class="btn btn-secondary">Analyze</a>
+                        <a href="morphological-analyzer.html" class="btn btn-secondary">Morphology</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📈</div>
+                    <h3 class="tool-title">Export & API</h3>
+                    <p class="tool-description">Export data and integrate tools with your research workflow</p>
+                    <ul class="tool-features">
+                        <li>Data export tools</li>
+                        <li>RESTful API access</li>
+                        <li>Python library</li>
+                        <li>Format conversion</li>
+                        <li>Batch processing</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="export-tools.html" class="btn btn-secondary">Export</a>
+                        <a href="api-reference.html" class="btn btn-secondary">API Docs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Featured Tools</h2>
+            <p class="section-subtitle">Most popular and powerful analysis tools</p>
+            
+            <div class="grid grid-2">
+                <div class="tool-card">
+                    <div class="tool-icon">🌳</div>
+                    <h3 class="tool-title">Dependency Visualizer</h3>
+                    <p class="tool-description">Interactive visualization of syntactic dependency trees with zoom, pan, and export options</p>
+                    <ul class="tool-features">
+                        <li>Interactive tree visualization</li>
+                        <li>Multiple layout algorithms</li>
+                        <li>Color-coded relations</li>
+                        <li>Export to SVG/PNG</li>
+                        <li>Batch processing</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="dependency-visualizer.html" class="btn">Launch Tool</a>
+                        <a href="tutorials.html#dependency-visualization" class="btn btn-secondary">Tutorial</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🔬</div>
+                    <h3 class="tool-title">Morphological Analyzer</h3>
+                    <p class="tool-description">Comprehensive morphological analysis with lemmatization and feature extraction</p>
+                    <ul class="tool-features">
+                        <li>Part-of-speech tagging</li>
+                        <li>Morphological feature analysis</li>
+                        <li>Lemmatization</li>
+                        <li>Inflectional paradigm extraction</li>
+                        <li>Historical morphology tracking</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="morphological-analyzer.html" class="btn">Launch Tool</a>
+                        <a href="tutorials.html#morphological-analysis" class="btn btn-secondary">Tutorial</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h3 class="tool-title">Statistical Analyzer</h3>
+                    <p class="tool-description">Statistical analysis of linguistic patterns and diachronic change</p>
+                    <ul class="tool-features">
+                        <li>Frequency analysis</li>
+                        <li>N-gram analysis</li>
+                        <li>Collocation statistics</li>
+                        <li>Diachronic change tracking</li>
+                        <li>Significance testing</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="statistical-analyzer.html" class="btn">Launch Tool</a>
+                        <a href="tutorials.html#statistical-analysis" class="btn btn-secondary">Tutorial</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🔄</div>
+                    <h3 class="tool-title">Historical Tracker</h3>
+                    <p class="tool-description">Track linguistic change across historical periods and languages</p>
+                    <ul class="tool-features">
+                        <li>Diachronic comparison</li>
+                        <li>Change point detection</li>
+                        <li>Trend analysis</li>
+                        <li>Period comparison</li>
+                        <li>Language family analysis</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <a href="historical-tracker.html" class="btn">Launch Tool</a>
+                        <a href="tutorials.html#historical-tracking" class="btn btn-secondary">Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Quick Start</h2>
+            <p class="section-subtitle">Get started with our tools in minutes</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">1</div>
+                    <h3 class="feature-title">Choose Your Data</h3>
+                    <p class="feature-description">Select from 15+ languages and 4 historical periods</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">2</div>
+                    <h3 class="feature-title">Select Tool</h3>
+                    <p class="feature-description">Pick the right analysis tool for your research</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">3</div>
+                    <h3 class="feature-title">Configure Options</h3>
+                    <p class="feature-description">Set parameters and filters for your analysis</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">4</div>
+                    <h3 class="feature-title">Run Analysis</h3>
+                    <p class="feature-description">Execute the tool and view results</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">5</div>
+                    <h3 class="feature-title">Export Results</h3>
+                    <p class="feature-description">Download or export your findings</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">6</div>
+                    <h3 class="feature-title">Integrate</h3>
+                    <p class="feature-description">Use API for automated workflows</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Data Coverage</h2>
+            <p class="section-subtitle">Comprehensive linguistic data across languages and periods</p>
+            
+            <div class="tool-metrics">
+                <div class="metric">
+                    <div class="metric-value">15+</div>
+                    <div class="metric-label">Languages</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">500K+</div>
+                    <div class="metric-label">Annotated Tokens</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Historical Periods</div>
+                </div>
+                
+                <div class="metric-value">25+</div>
+                <div class="metric-label">Influential Texts</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="tool-card">
+                    <h3 class="tool-title">Greek</h3>
+                    <ul class="tool-features">
+                        <li>Classical Greek</li>
+                        <li>Koine Greek</li>
+                        <li>Byzantine Greek</li>
+                        <li>Modern Greek</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-card">
+                    <h3 class="tool-title">Germanic</h3>
+                    <ul class="tool-features">
+                        <li>Gothic</li>
+                        <li>Old English</li>
+                        <li>Old Norse</li>
+                        <li>Old High German</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-card">
+                    <h3 class="tool-title">Italic</h3>
+                    <ul class="tool-features">
+                        <li>Classical Latin</li>
+                        <li>Vulgate Latin</li>
+                        <li>Medieval Latin</li>
+                        <li>Early Romance</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-card">
+                    <h3 class="tool-title">Slavic</h3>
+                    <ul class="tool-features">
+                        <li>Old Church Slavonic</li>
+                        <li>Old Russian</li>
+                        <li>Old Bulgarian</li>
+                        <li>Church Slavonic</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">API Access</h2>
+            <p class="section-subtitle">Programmatic access to all tools and data</p>
+            
+            <div class="tool-interface">
+                <div class="tool-header">
+                    <h3 class="tool-title">RESTful API</h3>
+                    <p class="tool-description">Complete API access for automated workflows and integration</p>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('overview')">Overview</button>
+                    <button class="tab" onclick="showTab('endpoints')">Endpoints</button>
+                    <button class="tab" onclick="showTab('examples')">Examples</button>
+                </div>
+                
+                <div class="tab-content active" id="overview">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔐</div>
+                            <h3 class="feature-title">Authentication</h3>
+                            <p class="feature-description">OAuth2 authentication with tiered access control</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h3 class="feature-title">Rate Limiting</h3>
+                            <p class="feature-description">Tiered rate limits based on user access level</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="feature-title">Data Formats</h3>
+                            <p class="feature-description">JSON, CoNLL-U, XML, CSV export options</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">🔧</div>
+                            <h3 class="feature-title">Documentation</h3>
+                            <p class="feature-description">Complete API documentation with examples</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="endpoints">
+                    <div class="api-endpoint">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-url">/api/v1/treebanks</div>
+                        <div class="endpoint-description">List all available treebanks</div>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-url">/api/v1/analyze/morphology</div>
+                        <div class="endpoint-description">Run morphological analysis</div>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-url">/api/v1/analyze/syntax</div>
+                        <div class="endpoint-description">Run syntactic parsing</div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="examples">
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>Python Example</span>
+                            <button class="btn btn-secondary" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <div class="code-content">import requests
+
+# Get treebanks
+response = requests.get('https://api.athdgc.org/v1/treebanks')
+treebanks = response.json()
+
+# Run analysis
+data = {
+    'text': 'ὁ ἄνθρωπος ἐστιν',
+    'language': 'greek',
+    'analysis': 'morphology'
+}
+
+response = requests.post(
+    'https://api.athdgc.org/v1/analyze/morphology',
+    json=data,
+    headers={'Authorization': 'Bearer YOUR_TOKEN'}
+)
+
+result = response.json()
+print(result)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-actions">
+                <a href="api-reference.html" class="btn">View Full Documentation</a>
+                <a href="developers.html" class="btn btn-secondary">Developer Guide</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Tutorials & Documentation</h2>
+            <p class="section-subtitle">Learn how to use our tools effectively</p>
+            
+            <div class="grid grid-3">
+                <div class="tool-card">
+                    <div class="tool-icon">📚</div>
+                    <h3 class="tool-title">Getting Started</h3>
+                    <p class="tool-description">Basic tutorials for new users</p>
+                    <ul class="tool-features">
+                        <li>Quick start guide</li>
+                        <li>Tool overview</li>
+                        <li>Data selection</li>
+                        <li>Basic analysis</li>
+                    </ul>
+                    <a href="tutorials.html" class="btn btn-secondary">View Tutorials</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🔧</div>
+                    <h3 class="tool-title">Advanced Usage</h3>
+                    <p class="tool-description">Advanced techniques and workflows</p>
+                    <ul class="tool-features">
+                        <li>Batch processing</li>
+                        <li>API integration</li>
+                        <li>Custom analysis</li>
+                        <li>Automation</li>
+                    </ul>
+                    <a href="tutorials.html#advanced" class="btn btn-secondary">Advanced Guide</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">💡</div>
+                    <h3 class="tool-title">Examples</h3>
+                    <p class="tool-description">Real-world usage examples</p>
+                    <ul class="tool-features">
+                        <li>Research workflows</li>
+                        <li>Case studies</li>
+                        <li>Code samples</li>
+                        <li>Best practices</li>
+                    </ul>
+                    <a href="tutorials.html#examples" class="btn btn-secondary">View Examples</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">System Status</h2>
+            <p class="section-subtitle">Current system performance and availability</p>
+            
+            <div class="tool-metrics">
+                <div class="metric">
+                    <div class="metric-value">99.9%</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">245ms</div>
+                    <div class="metric-label">Avg Response</div>
+                </div>
+                
+                <div class="metric-value">1.2M</div>
+                <div class="metric-label">API Calls/Month</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">Active</div>
+                    <div class="metric-label">System Status</div>
+                </div>
+            </div>
+            
+            <div class="tool-status">
+                <div class="tool-status-icon status-ready">✓</div>
+                <span>All systems operational</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AthDGC Tools</h3>
+                    <p>Interactive corpus analysis platform</p>
+                    <p>National and Kapodistrian University of Athens</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search Interface</a></li>
+                        <li><a href="analysis-tools.html">Analysis Tools</a></li>
+                        <li><a href="export-tools.html">Export Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="api-reference.html">API Documentation</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                        <li><a href="https://github.com/athdgc">GitHub</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="mailto:support@athdgc.org">Email Support</a></li>
+                        <li><a href="https://en.uoa.gr">University of Athens</a></li>
+                        <li><a href="https://en.enl.uoa.gr">English Department</a></li>
+                        <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AthDGC Tools. National and Kapodistrian University of Athens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Show selected tab
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Copy code function
+        function copyCode(button) {
+            const codeBlock = button.parentElement.nextElementSibling;
+            const code = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

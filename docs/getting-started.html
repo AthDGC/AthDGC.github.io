@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started | AthDGC Documentation</title>
+    <meta name="description" content="Complete getting started guide for the AthDGC platform, including installation, setup, and first steps.">
+    <meta name="keywords" content="getting started, installation, setup, first steps, AthDGC platform, quick start">
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">AthDGC Docs</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Getting Started</div>
+                    <ul>
+                        <li><a href="index.html">Documentation Home</a></li>
+                        <li><a href="getting-started.html" class="active">Getting Started</a></li>
+                        <li><a href="installation.html">Installation</a></li>
+                        <li><a href="quick-start.html">Quick Start</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">API Documentation</div>
+                    <ul>
+                        <li><a href="api/overview.html">API Overview</a></li>
+                        <li><a href="api/authentication.html">Authentication</a></li>
+                        <li><a href="api/endpoints.html">API Endpoints</a></li>
+                        <li><a href="api/examples.html">Code Examples</a></li>
+                        <li><a href="api/errors.html">Error Handling</a></li>
+                        <li><a href="api/rate-limiting.html">Rate Limiting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Data & Formats</div>
+                    <ul>
+                        <li><a href="treebank-format.html">PROIEL Format</a></li>
+                        <li><a href="linguistic-annotation.html">Annotation Guidelines</a></li>
+                        <li><a href="data-access.html">Data Access</a></li>
+                        <li><a href="data-schemas.html">Data Schemas</a></li>
+                        <li><a href="export-formats.html">Export Formats</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Technical</div>
+                    <ul>
+                        <li><a href="technical-specs.html">Technical Specifications</a></li>
+                        <li><a href="system-requirements.html">System Requirements</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="monitoring.html">Monitoring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Support</div>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="contributing.html">Contributing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
+            
+            <header class="docs-header">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <a href="getting-started.html">Getting Started</a>
+                    </div>
+                    <h1 class="docs-title">Getting Started</h1>
+                    <p class="docs-subtitle">Complete guide to getting started with the AthDGC platform</p>
+                </div>
+            </header>
+
+            <div class="container" id="main">
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <div class="toc-title">Table of Contents</div>
+                    <ul>
+                        <li><a href="#prerequisites">Prerequisites</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#authentication">Authentication</a></li>
+                        <li><a href="#first-api-call">First API Call</a></li>
+                        <li><a href="#basic-usage">Basic Usage</a></li>
+                        <li><a href="#next-steps">Next Steps</a></li>
+                    </ul>
+                </div>
+
+                <!-- Prerequisites -->
+                <section class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <p>Before you start using the AthDGC platform, make sure you have the following:</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="callout">
+                            <div class="callout-title">🔧 Technical Requirements</div>
+                            <ul>
+                                <li>Python 3.8+ or Node.js 14+</li>
+                                <li>Git for version control</li>
+                                <li>Text editor or IDE</li>
+                                <li>Internet connection for API access</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">👤 Account Requirements</div>
+                            <ul>
+                                <li>Google account for OAuth2 authentication</li>
+                                <li>Academic or research affiliation (optional)</li>
+                                <li>Valid email address</li>
+                                <li>Basic understanding of REST APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Installation -->
+                <section class="content-section" id="installation">
+                    <h2>Installation</h2>
+                    <p>Choose the installation method that best fits your needs.</p>
+                    
+                    <div class="tabs">
+                        <button class="tab active" onclick="showInstallTab('python')">Python</button>
+                        <button class="tab" onclick="showInstallTab('javascript')">JavaScript</button>
+                        <button class="tab" onclick="showInstallTab('cli')">Command Line</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="python-install">
+                        <h3>Python Installation</h3>
+                        <p>Install the AthDGC Python library using pip:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content">pip install athdgc</div>
+                        </div>
+                        
+                        <p>Verify installation:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">python</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content"><span class="keyword">import</span> athdgc
+<span class="keyword">print</span>(athdgc.<span class="function">__version__</span>)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="javascript-install">
+                        <h3>JavaScript Installation</h3>
+                        <p>Install the AthDGC JavaScript library using npm:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content">npm install athdgc</div>
+                        </div>
+                        
+                        <p>Or use yarn:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content">yarn add athdgc</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="cli-install">
+                        <h3>Command Line Tools</h3>
+                        <p>Install the AthDGC CLI tool:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content">curl -sSL https://raw.githubusercontent.com/athdgc/install.sh | bash</div>
+                        </div>
+                        
+                        <p>Verify installation:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content">athdgc --version</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Authentication -->
+                <section class="content-section" id="authentication">
+                    <h2>Authentication</h2>
+                    <p>The AthDGC platform uses OAuth2 authentication for secure API access.</p>
+                    
+                    <div class="alert alert-info">
+                        <strong>Important:</strong> You need a Google account to authenticate with the AthDGC platform.
+                    </div>
+                    
+                    <h3>Step 1: Register for API Access</h3>
+                    <p>Visit the <a href="https://api.athdgc.org/register">API registration page</a> to register your application.</p>
+                    
+                    <h3>Step 2: Get Your Credentials</h3>
+                    <p>After registration, you'll receive:</p>
+                    <ul>
+                        <li>Client ID</li>
+                        <li>Client Secret</li>
+                        <li>Redirect URI</li>
+                    </ul>
+                    
+                    <h3>Step 3: Authenticate</h3>
+                    <p>Use the OAuth2 flow to get an access token:</p>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">python</span>
+                            <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <div class="code-content"><span class="keyword">from</span> athdgc <span class="keyword">import</span> Auth
+
+<span class="comment"># Initialize authentication client</span>
+auth = Auth(
+    client_id=<span class="string">'your_client_id'</span>,
+    client_secret=<span class="string">'your_client_secret'</span>,
+    redirect_uri=<span class="string">'http://localhost:8000/callback'</span>
+)
+
+<span class="comment"># Get authorization URL</span>
+auth_url = auth.<span class="function">get_authorization_url</span>()
+<span class="keyword">print</span>(<span class="string">f"Visit: {auth_url}"</span>)
+
+<span class="comment"># After authorization, exchange code for token</span>
+token = auth.<span class="function">exchange_code_for_token</span>(authorization_code)
+<span class="keyword">print</span>(<span class="string">f"Access token: {token.access_token}"</span>)</div>
+                    </div>
+                </section>
+
+                <!-- First API Call -->
+                <section class="content-section" id="first-api-call">
+                    <h2>First API Call</h2>
+                    <p>Let's make your first API call to list available treebanks.</p>
+                    
+                    <div class="tabs">
+                        <button class="tab active" onclick="showApiTab('python')">Python</button>
+                        <button class="tab" onclick="showApiTab('javascript')">JavaScript</button>
+                        <button class="tab" onclick="showApiTab('curl')">cURL</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="python-api">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">python</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content"><span class="keyword">from</span> athdgc <span class="keyword">import</span> AthDGCClient
+
+<span class="comment"># Initialize client with your access token</span>
+client = AthDGCClient(access_token=<span class="string">'your_access_token'</span>)
+
+<span class="comment"># List available treebanks</span>
+treebanks = client.<span class="function">list_treebanks</span>()
+<span class="keyword">for</span> treebank <span class="keyword">in</span> treebanks:
+    <span class="keyword">print</span>(<span class="string">f"ID: {treebank.id}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Name: {treebank.name}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Language: {treebank.language}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Tokens: {treebank.token_count}"</span>)
+    <span class="keyword">print</span>(<span class="string">"---"</span>)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="javascript-api">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">javascript</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content"><span class="keyword">import</span> { AthDGCClient } <span class="keyword">from</span> <span class="string">'athdgc'</span>;
+
+<span class="comment">// Initialize client with your access token</span>
+<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="function">AthDGCClient</span>({
+    accessToken: <span class="string">'your_access_token'</span>
+});
+
+<span class="comment">// List available treebanks</span>
+<span class="keyword">const</span> treebanks = <span class="keyword">await</span> client.<span class="function">listTreebanks</span>();
+treebanks.<span class="function">forEach</span>(treebank => {
+    <span class="variable">console</span>.<span class="function">log</span>(<span class="string">`ID: ${treebank.id}`</span>);
+    <span class="variable">console</span>.<span class="function">log</span>(<span class="string">`Name: ${treebank.name}`</span>);
+    <span class="variable">console</span>.<span class="function">log</span>(<span class="string">`Language: ${treebank.language}`</span>);
+    <span class="variable">console</span>.<span class="function">log</span>(<span class="string">`Tokens: ${treebank.tokenCount}`</span>);
+    <span class="variable">console</span>.<span class="function">log</span>(<span class="string">'---'</span>);
+});</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="curl-api">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content">curl -X GET <span class="string">"https://api.athdgc.org/v1/treebanks"</span> \
+     -H <span class="string">"Authorization: Bearer your_access_token"</span> \
+     -H <span class="string">"Content-Type: application/json"</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Basic Usage -->
+                <section class="content-section" id="basic-usage">
+                    <h2>Basic Usage</h2>
+                    <p>Here are some common tasks you'll perform with the AthDGC platform.</p>
+                    
+                    <h3 id="historical-linguistics">Historical Linguistics Research</h3>
+                    <p>Analyze diachronic changes in Greek and related languages:</p>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">python</span>
+                            <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <div class="code-content"><span class="comment"># Analyze morphological changes over time</span>
+results = client.<span class="function">analyze_morphology</span>(
+    text=<span class="string">'ὁ ἄνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ'</span>,
+    language=<span class="string">'greek'</span>,
+    options={
+        <span class="string">'include_features'</span>: <span class="keyword">True</span>,
+        <span class="string">'diachronic_analysis'</span>: <span class="keyword">True</span>
+    }
+)
+
+<span class="keyword">for</span> token <span class="keyword">in</span> results.tokens:
+    <span class="keyword">print</span>(<span class="string">f"Token: {token.form}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Lemma: {token.lemma}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"POS: {token.pos}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Features: {token.features}"</span>)
+    <span class="keyword">print</span>(<span class="string">"---"</span>)</div>
+                    </div>
+                    
+                    <h3 id="corpus-analysis">Corpus Analysis</h3>
+                    <p>Search and analyze large linguistic corpora:</p>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">python</span>
+                            <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <div class="code-content"><span class="comment"># Search for specific patterns</span>
+search_results = client.<span class="function">search</span>(
+    query=<span class="string">'ἀνθρωπος'</span>,
+    treebanks=[<span class="string">'greek-classical'</span>, <span class="string">'greek-koine'</span>],
+    search_type=<span class="string">'text'</span>,
+    options={
+        <span class="string">'case_sensitive'</span>: <span class="keyword">False</span>,
+        <span class="string">'include_context'</span>: <span class="keyword">True</span>
+    }
+)
+
+<span class="keyword">print</span>(<span class="string">f"Found {len(search_results)} matches"</span>)
+<span class="keyword">for</span> result <span class="keyword">in</span> search_results[:10]:  <span class="comment"># Show first 10 results</span>
+    <span class="keyword">print</span>(<span class="string">f"Text: {result.text}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Treebank: {result.treebank}"</span>)
+    <span class="keyword">print</span>(<span class="string">f"Context: {result.context}"</span>)
+    <span class="keyword">print</span>(<span class="string">"---"</span>)</div>
+                    </div>
+                    
+                    <h3>Data Export</h3>
+                    <p>Export data in various formats for further analysis:</p>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">python</span>
+                            <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <div class="code-content"><span class="comment"># Export treebank data</span>
+export_data = client.<span class="function">export_treebank</span>(
+    treebank_id=<span class="string">'greek-classical'</span>,
+    format=<span class="string">'json'</span>,
+    options={
+        <span class="string">'include_morphology'</span>: <span class="keyword">True</span>,
+        <span class="string">'include_dependencies'</span>: <span class="keyword">True</span>,
+        <span class="string">'include_metadata'</span>: <span class="keyword">True</span>
+    }
+)
+
+<span class="comment"># Save to file</span>
+<span class="keyword">with</span> <span class="function">open</span>(<span class="string">'greek-classical.json'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:
+    <span class="variable">json</span>.<span class="function">dump</span>(export_data, f, indent=2)
+
+<span class="keyword">print</span>(<span class="string">"Data exported successfully"</span>)</div>
+                    </div>
+                </section>
+
+                <!-- Next Steps -->
+                <section class="content-section" id="next-steps">
+                    <h2>Next Steps</h2>
+                    <p>Now that you're set up, here are some recommended next steps:</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="callout">
+                            <div class="callout-title">📚 Explore the API</div>
+                            <p>Learn about all available endpoints and features.</p>
+                            <ul>
+                                <li><a href="api/overview.html">API Overview</a></li>
+                                <li><a href="api/endpoints.html">API Endpoints</a></li>
+                                <li><a href="api/examples.html">Code Examples</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🔧 Try the Tools</div>
+                            <p>Explore our interactive analysis tools.</p>
+                            <ul>
+                                <li><a href="https://athdgc.github.io/tools">Tools Platform</a></li>
+                                <li><a href="https://athdgc.github.io/tools/morphological-analyzer.html">Morphological Analyzer</a></li>
+                                <li><a href="https://athdgc.github.io/tools/treebank-browser.html">Treebank Browser</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">📊 Understand Data Formats</div>
+                            <p>Learn about PROIEL format and annotation guidelines.</p>
+                            <ul>
+                                <li><a href="treebank-format.html">PROIEL Format</a></li>
+                                <li><a href="linguistic-annotation.html">Annotation Guidelines</a></li>
+                                <li><a href="data-schemas.html">Data Schemas</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🤝 Join the Community</div>
+                            <p>Connect with other researchers and get help.</p>
+                            <ul>
+                                <li><a href="https://github.com/athdgc">GitHub Repository</a></li>
+                                <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                                <li><a href="contributing.html">Contributing Guidelines</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Common Issues -->
+                <section class="content-section">
+                    <h2>Common Issues</h2>
+                    <p>Solutions to common problems you might encounter.</p>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Authentication Error:</strong> Make sure your access token is valid and not expired.
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Rate Limiting:</strong> Be mindful of rate limits when making API calls.
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Data Format Issues:</strong> Check the PROIEL format specification for proper data structure.
+                    </div>
+                    
+                    <p>For more troubleshooting help, see our <a href="troubleshooting.html">troubleshooting guide</a>.</p>
+                </section>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="docs-nav">
+                <div class="nav-link nav-prev">
+                    <a href="index.html">← Documentation Home</a>
+                </div>
+                <div class="nav-link nav-next">
+                    <a href="installation.html">Installation →</a>
+                </div>
+            </nav>
+        </main>
+
+        <!-- Footer -->
+        <footer class="docs-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>AthDGC Platform</h3>
+                        <p>Athens Digital Glossa Chronos</p>
+                        <p>National and Kapodistrian University of Athens</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="api/overview.html">API Reference</a></li>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://athdgc.github.io/tools">Tools Platform</a></li>
+                            <li><a href="https://athdgc.github.io/research">Research Site</a></li>
+                            <li><a href="https://github.com/athdgc">GitHub</a></li>
+                            <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="mailto:support@athdgc.org">Email Support</a></li>
+                            <li><a href="https://en.uoa.gr">University of Athens</a></li>
+                            <li><a href="https://en.enl.uoa.gr">English Department</a></li>
+                            <li><a href="contact.html">Contact Page</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 AthDGC Platform. National and Kapodistrian University of Athens.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to top button -->
+        <button class="scroll-to-top" onclick="scrollToTop()" id="scrollToTop">↑</button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+
+        // Tab switching for installation
+        function showInstallTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName + '-install').classList.add('active');
+        }
+
+        // Tab switching for API examples
+        function showApiTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName + '-api').classList.add('active');
+        }
+
+        // Copy code function
+        function copyCode(button) {
+            const codeBlock = button.parentElement.nextElementSibling;
+            const code = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthDGC Documentation | Technical Documentation</title>
+    <meta name="description" content="Comprehensive technical documentation for the AthDGC platform, including API reference, authentication, data formats, and development guides.">
+    <meta name="keywords" content="AthDGC documentation, API reference, PROIEL format, authentication, development guide, technical specs">
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">AthDGC Docs</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Getting Started</div>
+                    <ul>
+                        <li><a href="index.html" class="active">Documentation Home</a></li>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="installation.html">Installation</a></li>
+                        <li><a href="quick-start.html">Quick Start</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">API Documentation</div>
+                    <ul>
+                        <li><a href="api/overview.html">API Overview</a></li>
+                        <li><a href="api/authentication.html">Authentication</a></li>
+                        <li><a href="api/endpoints.html">API Endpoints</a></li>
+                        <li><a href="api/examples.html">Code Examples</a></li>
+                        <li><a href="api/errors.html">Error Handling</a></li>
+                        <li><a href="api/rate-limiting.html">Rate Limiting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Data & Formats</div>
+                    <ul>
+                        <li><a href="treebank-format.html">PROIEL Format</a></li>
+                        <li><a href="linguistic-annotation.html">Annotation Guidelines</li></li>
+                        <li><a href="data-access.html">Data Access</a></li>
+                        <li><a href="data-schemas.html">Data Schemas</a></li>
+                        <li><a href="export-formats.html">Export Formats</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Technical</div>
+                    <ul>
+                        <li><a href="technical-specs.html">Technical Specifications</a></li>
+                        <li><a href="system-requirements.html">System Requirements</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="monitoring.html">Monitoring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Support</div>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="contributing.html">Contributing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
+            
+            <header class="docs-header">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                    </div>
+                    <h1 class="docs-title">AthDGC Documentation</h1>
+                    <p class="docs-subtitle">Comprehensive technical documentation for the Athens Digital Glossa Chronos platform</p>
+                </div>
+            </header>
+
+            <div class="container" id="main">
+                <!-- Quick Start -->
+                <section class="content-section">
+                    <h2>Quick Start</h2>
+                    <p>Get up and running with the AthDGC platform in minutes.</p>
+                    
+                    <div class="grid grid-3">
+                        <div class="callout">
+                            <div class="callout-title">🚀 1. Get API Access</div>
+                            <p>Register for an API key and set up authentication.</p>
+                            <a href="api/authentication.html" class="btn btn-secondary">Setup Authentication</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">📊 2. Explore Data</div>
+                            <p>Browse available treebanks and data formats.</p>
+                            <a href="treebank-format.html" class="btn btn-secondary">Explore Treebanks</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🔧 3. Start Building</div>
+                            <p>Use our tools and APIs for your research.</p>
+                            <a href="api/examples.html" class="btn btn-secondary">View Examples</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Overview -->
+                <section class="content-section">
+                    <h2>Platform Overview</h2>
+                    <p>The Athens Digital Glossa Chronos (AthDGC) platform provides comprehensive tools and resources for historical linguistics research, focusing on Greek-Indo-European language contact and diachronic analysis.</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="callout">
+                            <div class="callout-title">📚 Research Tools</div>
+                            <p>Interactive corpus analysis tools for PROIEL treebanks, including morphological analysis, syntactic parsing, and statistical analysis.</p>
+                            <ul>
+                                <li>Morphological analyzer</li>
+                                <li>Syntactic parser</li>
+                                <li>Dependency visualizer</li>
+                                <li>Statistical analyzer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🔌 API Access</div>
+                            <p>RESTful API for programmatic access to all platform features and data, with OAuth2 authentication and tiered access control.</p>
+                            <ul>
+                                <li>RESTful endpoints</li>
+                                <li>OAuth2 authentication</li>
+                                <li>Rate limiting</li>
+                                <li>Multiple data formats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Features -->
+                <section class="content-section">
+                    <h2>Key Features</h2>
+                    
+                    <div class="grid grid-4">
+                        <div class="callout">
+                            <div class="callout-title">🌍 Multi-Language Support</div>
+                            <p>15+ historical languages across 4 major Indo-European families</p>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">📅 Diachronic Coverage</div>
+                            <p>Complete coverage from Classical to Modern periods</p>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🔍 Advanced Search</div>
+                            <p>Pattern matching, regex support, and complex queries</p>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">📊 Statistical Analysis</div>
+                            <p>Comprehensive statistical tools for linguistic research</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Overview -->
+                <section class="content-section">
+                    <h2>Data Overview</h2>
+                    <p>Our platform provides access to comprehensive linguistic data with detailed annotation.</p>
+                    
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Language Family</th>
+                                    <th>Languages</th>
+                                    <th>Periods</th>
+                                    <th>Tokens</th>
+                                    <th>Texts</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Greek</td>
+                                    <td>4 periods</td>
+                                    <td>Classical to Modern</td>
+                                    <td>225,000</td>
+                                    <td>12 texts</td>
+                                </tr>
+                                <tr>
+                                    <td>Germanic</td>
+                                    <td>3 languages</td>
+                                    <td>4th-13th century CE</td>
+                                    <td>110,000</td>
+                                    <td>8 texts</td>
+                                </tr>
+                                <tr>
+                                    <td>Italic</td>
+                                    <td>2 periods</td>
+                                    <td>Classical to Medieval</td>
+                                    <td>95,000</td>
+                                    <td>6 texts</td>
+                                </tr>
+                                <tr>
+                                    <td>Slavic</td>
+                                    <td>3 languages</td>
+                                    <td>9th-14th century CE</td>
+                                    <td>70,000</td>
+                                    <td>5 texts</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- API Quick Reference -->
+                <section class="content-section">
+                    <h2>API Quick Reference</h2>
+                    <p>Essential API endpoints for getting started quickly.</p>
+                    
+                    <div class="endpoint">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-url">/api/v1/treebanks</div>
+                        <div class="endpoint-description">List all available treebanks</div>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-url">/api/v1/treebanks/{id}</div>
+                        <div class="endpoint-description">Get specific treebank information</div>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-url">/api/v1/analyze/morphology</div>
+                        <div class="endpoint-description">Run morphological analysis</div>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-url">/api/v1/analyze/syntax</div>
+                        <div class="endpoint-description">Run syntactic parsing</div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> All API endpoints require authentication. See our <a href="api/authentication.html">authentication guide</a> for details.
+                    </div>
+                </section>
+
+                <!-- Code Examples -->
+                <section class="content-section">
+                    <h2>Quick Code Examples</h2>
+                    <p>Get started with these basic examples in different programming languages.</p>
+                    
+                    <div class="tabs">
+                        <button class="tab active" onclick="showCodeExample('python')">Python</button>
+                        <button class="tab" onclick="showCodeExample('javascript')">JavaScript</button>
+                        <button class="tab" onclick="showCodeExample('curl')">cURL</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="python-example">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">Python</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content"><span class="keyword">import</span> requests
+
+<span class="comment"># Get treebanks</span>
+response = requests.<span class="function">get</span>(
+    <span class="string">'https://api.athdgc.org/v1/treebanks'</span>,
+    headers={<span class="string">'Authorization'</span>: <span class="string">'Bearer YOUR_TOKEN'</span>}
+)
+
+treebanks = response.<span class="function">json</span>()
+<span class="keyword">print</span>(treebanks)
+
+<span class="comment"># Run morphological analysis</span>
+data = {
+    <span class="string">'text'</span>: <span class="string">'ὁ ἄνθρωπος ἐστιν'</span>,
+    <span class="string">'language'</span>: <span class="string">'greek'</span>
+}
+
+response = requests.<span class="function">post</span>(
+    <span class="string">'https://api.athdgc.org/v1/analyze/morphology'</span>,
+    json=data,
+    headers={<span class="string">'Authorization'</span>: <span class="string">'Bearer YOUR_TOKEN'</span>}
+)
+
+result = response.<span class="function">json</span>()
+<span class="keyword">print</span>(result)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="javascript-example">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">JavaScript</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content"><span class="comment">// Get treebanks</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.athdgc.org/v1/treebanks'</span>, {
+    headers: {
+        <span class="string">'Authorization'</span>: <span class="string">'Bearer YOUR_TOKEN'</span>
+    }
+});
+
+<span class="keyword">const</span> treebanks = <span class="keyword">await</span> response.<span class="function">json</span>();
+<span class="variable">console</span>.<span class="function">log</span>(treebanks);
+
+<span class="comment">// Run morphological analysis</span>
+<span class="keyword">const</span> data = {
+    text: <span class="string">'ὁ ἄνθρωπος ἐστιν'</span>,
+    language: <span class="string">'greek'</span>
+};
+
+<span class="keyword">const</span> analysisResponse = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.athdgc.org/v1/analyze/morphology'</span>, {
+    method: <span class="string">'POST'</span>,
+    headers: {
+        <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,
+        <span class="string">'Authorization'</span>: <span class="string">'Bearer YOUR_TOKEN'</span>
+    },
+    body: <span class="variable">JSON</span>.<span class="function">stringify</span>(data)
+});
+
+<span class="keyword">const</span> result = <span class="keyword">await</span> analysisResponse.<span class="function">json</span>();
+<span class="variable">console</span>.<span class="function">log</span>(result);</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="curl-example">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">cURL</span>
+                                <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <div class="code-content"><span class="comment"># Get treebanks</span>
+curl -X GET <span class="string">"https://api.athdgc.org/v1/treebanks"</span> \
+     -H <span class="string">"Authorization: Bearer YOUR_TOKEN"</span>
+
+<span class="comment"># Run morphological analysis</span>
+curl -X POST <span class="string">"https://api.athdgc.org/v1/analyze/morphology"</span> \
+     -H <span class="string">"Content-Type: application/json"</span> \
+     -H <span class="string">"Authorization: Bearer YOUR_TOKEN"</span> \
+     -d <span class="string">'{"text": "ὁ ἄνθρωπος ἐστιν", "language": "greek"}'</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Common Use Cases -->
+                <section class="content-section">
+                    <h2>Common Use Cases</h2>
+                    <p>Popular ways researchers use the AthDGC platform.</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="callout">
+                            <div class="callout-title">📚 Historical Linguistics Research</div>
+                            <p>Analyze diachronic changes in Greek and related languages.</p>
+                            <ul>
+                                <li>Track morphological changes over time</li>
+                                <li>Compare syntactic patterns across periods</li>
+                                <li>Study language contact phenomena</li>
+                            </ul>
+                            <a href="getting-started.html#historical-linguistics" class="btn btn-secondary">Learn More</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🔍 Corpus Analysis</div>
+                            <p>Search and analyze large linguistic corpora efficiently.</p>
+                            <ul>
+                                <li>Pattern matching and regex search</li>
+                                <li>Statistical analysis of linguistic features</li>
+                                <li>Export data for further analysis</li>
+                            </ul>
+                            <a href="getting-started.html#corpus-analysis" class="btn btn-secondary">Learn More</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🔧 Tool Development</div>
+                            <p>Build custom tools and integrate with existing workflows.</p>
+                            <ul>
+                                <li>API integration with Python/R</li>
+                                <li>Custom analysis pipelines</li>
+                                <li>Batch processing workflows</li>
+                            </ul>
+                            <a href="api/examples.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">📊 Data Visualization</div>
+                            <p>Create visualizations of linguistic patterns and changes.</p>
+                            <ul>
+                                <li>Dependency tree visualization</li>
+                                <li>Diachronic trend charts</li>
+                                <li>Statistical graphs and plots</li>
+                            </ul>
+                            <a href="api/examples.html#visualization" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources -->
+                <section class="content-section">
+                    <h2>Additional Resources</h2>
+                    <p>Helpful resources for getting the most out of the platform.</p>
+                    
+                    <div class="grid grid-3">
+                        <div class="callout">
+                            <div class="callout-title">📖 Tutorials</div>
+                            <p>Step-by-step guides for common tasks and advanced features.</p>
+                            <a href="https://athdgc.github.io/tools/tutorials.html" class="btn btn-secondary">View Tutorials</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">💡 Examples</div>
+                            <p>Real-world code examples and use cases.</p>
+                            <a href="api/examples.html" class="btn btn-secondary">View Examples</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">🤝 Community</div>
+                            <p>Join our community and get help from other researchers.</p>
+                            <a href="https://github.com/athdgc" class="btn btn-secondary">Join Community</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support -->
+                <section class="content-section">
+                    <h2>Need Help?</h2>
+                    <p>We're here to help you get the most out of the AthDGC platform.</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="callout">
+                            <div class="callout-title">📧 Contact Support</div>
+                            <p>Get help with technical issues and questions.</p>
+                            <ul>
+                                <li>Email: support@athdgc.org</li>
+                                <li>Response time: 24-48 hours</li>
+                                <li>Priority support for academic users</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-secondary">Contact Support</a>
+                        </div>
+                        
+                        <div class="callout">
+                            <div class="callout-title">📚 Documentation</div>
+                            <p>Comprehensive guides and reference materials.</p>
+                            <ul>
+                                <li>API reference</li>
+                                <li>Troubleshooting guide</li>
+                                <li>FAQ section</li>
+                            </ul>
+                            <a href="faq.html" class="btn btn-secondary">Browse Documentation</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="docs-nav">
+                <div class="nav-link nav-prev">
+                    <span>← Previous</span>
+                </div>
+                <div class="nav-link nav-next">
+                    <a href="getting-started.html">Getting Started →</a>
+                </div>
+            </nav>
+        </main>
+
+        <!-- Footer -->
+        <footer class="docs-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>AthDGC Platform</h3>
+                        <p>Athens Digital Glossa Chronos</p>
+                        <p>National and Kapodistrian University of Athens</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li><a href="api/overview.html">API Reference</a></li>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://athdgc.github.io/tools">Tools Platform</a></li>
+                            <li><a href="https://athdgc.github.io/research">Research Site</a></li>
+                            <li><a href="https://github.com/athdgc">GitHub</a></li>
+                            <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="mailto:support@athdgc.org">Email Support</a></li>
+                            <li><a href="https://en.uoa.gr">University of Athens</a></li>
+                            <li><a href="https://en.enl.uoa.gr">English Department</a></li>
+                            <li><a href="contact.html">Contact Page</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 AthDGC Platform. National and Kapodistrian University of Athens.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to top button -->
+        <button class="scroll-to-top" onclick="scrollToTop()" id="scrollToTop">↑</button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+
+        // Tab switching for code examples
+        function showCodeExample(language) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(language + '-example').classList.add('active');
+        }
+
+        // Copy code function
+        function copyCode(button) {
+            const codeBlock = button.parentElement.nextElementSibling;
+            const code = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
