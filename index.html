@@ -4,14 +4,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AthDGC | Athens Digital Glossa Chronos Research Network</title>
+    <title>AthDGC | Athens Digital Glossa Chronos - PROIEL Platform for Historical Linguistics</title>
     <meta name="description"
-        content="Athens Digital Glossa Chronos - Corpus-based research on diachronic linguistics and language evolution at the University of Athens.">
+        content="AthDGC Platform: Comprehensive PROIEL treebank coverage of Greek-Indo-European language contact, translations, influential texts across all periods with argument structure analysis.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hero-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .platform-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .coverage-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .coverage-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .coverage-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .coverage-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .timeline-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .period-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .period-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+
+        .period-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .period-years {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+
+        .features-section {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #3498db;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">AthDGC Platform</h1>
+                <p class="hero-subtitle">Comprehensive PROIEL Treebank Coverage for Historical Linguistics Research</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-language"></i>
+                        <span>Greek-IE Language Contact</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-book"></i>
+                        <span>Influential Texts</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>All Historical Periods</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Argument Structure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Statistics -->
+    <section class="container">
+        <div class="platform-stats">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Languages Covered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Historical Periods</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500K+</div>
+                <div class="stat-label">Annotated Tokens</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Influential Texts</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROIEL Coverage -->
+    <section class="container">
+        <h2 class="section-title">PROIEL Treebank Coverage</h2>
+        <p class="section-subtitle">Comprehensive syntactic and morphological annotation for historical languages</p>
+
+        <div class="coverage-grid">
+            <div class="coverage-card">
+                <div class="coverage-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="coverage-title">Greek Languages</h3>
+                <p>Complete coverage from Classical to Modern Greek with morphological and syntactic annotations</p>
+                <ul class="feature-list">
+                    <li>Classical Greek (5th-4th c. BCE)</li>
+                    <li>Koine Greek (3rd c. BCE - 4th c. CE)</li>
+                    <li>Byzantine Greek (4th-15th c. CE)</li>
+                    <li>Modern Greek (15th c. CE - present)</li>
+                </ul>
+            </div>
+
+            <div class="coverage-card">
+                <div class="coverage-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3 class="coverage-title">Indo-European Family</h3>
+                <p>Extensive coverage across major Indo-European language branches</p>
+                <ul class="feature-list">
+                    <li>Germanic: Gothic, Old English, Old Norse</li>
+                    <li>Italic: Latin, Vulgate, Romance</li>
+                    <li>Slavic: Old Church Slavonic, Old Russian</li>
+                    <li>Celtic: Old Irish, Welsh</li>
+                    <li>Indo-Iranian: Sanskrit, Avestan</li>
+                </ul>
+            </div>
+
+            <div class="coverage-card">
+                <div class="coverage-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3 class="coverage-title">Language Contact</h3>
+                <p>Bilingual and multilingual texts showing contact phenomena</p>
+                <ul class="feature-list">
+                    <li>Greek-Latin translations</li>
+                    <li>Gothic-Greek biblical texts</li>
+                    <li>Old Church Slavonic Greek sources</li>
+                    <li>Armenian-Greek translations</li>
+                    <li>Georgian-Greek religious texts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Complete Historical Coverage</h2>
+            <p class="section-subtitle">From Classical Antiquity to Early Modern Period</p>
+
+            <div class="timeline-grid">
+                <div class="period-card">
+                    <h3 class="period-title">Classical Period</h3>
+                    <p class="period-years">500 BCE - 323 BCE</p>
+                    <p>Classical Greek, early Latin, Sanskrit texts with philosophical and literary content</p>
+                </div>
+
+                <div class="period-card">
+                    <h3 class="period-title">Hellenistic Period</h3>
+                    <p class="period-years">323 BCE - 31 BCE</p>
+                    <p>Koine Greek, Septuagint, early Christian texts, Greek-Latin contact</p>
+                </div>
+
+                <div class="period-card">
+                    <h3 class="period-title">Roman Period</h3>
+                    <p class="period-years">31 BCE - 476 CE</p>
+                    <p>Latin Vulgate, Greek New Testament, Gothic Bible, early Christian literature</p>
+                </div>
+
+                <div class="period-card">
+                    <h3 class="period-title">Medieval Period</h3>
+                    <p class="period-years">476 CE - 1453 CE</p>
+                    <p>Byzantine Greek, Old Church Slavonic, Old English, Old Norse, Armenian texts</p>
+                </div>
+
+                <div class="period-card">
+                    <h3 class="period-title">Early Modern Period</h3>
+                    <p class="period-years">1453 CE - 1800 CE</p>
+                    <p>Early Modern Greek, Protestant translations, early scientific texts</p>
+                </div>
+
+                <div class="period-card">
+                    <h3 class="period-title">Modern Period</h3>
+                    <p class="period-years">1800 CE - present</p>
+                    <p>Modern Greek, contemporary translations, digital humanities applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Influential Texts -->
+    <section class="container">
+        <h2 class="section-title">Influential Texts & Translations</h2>
+        <p class="section-subtitle">Key texts that shaped linguistic and cultural development</p>
+
+        <div class="coverage-grid">
+            <div class="coverage-card">
+                <div class="coverage-icon">
+                    <i class="fas fa-bible"></i>
+                </div>
+                <h3 class="coverage-title">Biblical Texts</h3>
+                <p>Complete biblical corpora in multiple languages with parallel translations</p>
+                <ul class="feature-list">
+                    <li>Greek Septuagint (3rd c. BCE)</li>
+                    <li>Latin Vulgate (4th c. CE)</li>
+                    <li>Gothic Bible (4th c. CE)</li>
+                    <li>Old Church Slavonic (9th c. CE)</li>
+                    <li>Luther Bible (16th c. CE)</li>
+                    <li>King James Bible (17th c. CE)</li>
+                </ul>
+            </div>
+
+            <div class="coverage-card">
+                <div class="coverage-icon">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <h3 class="coverage-title">Classical Literature</h3>
+                <p>Major works of classical literature with linguistic annotations</p>
+                <ul class="feature-list">
+                    <li>Homer (Iliad, Odyssey)</li>
+                    <li>Hesiod (Theogony, Works and Days)</li>
+                    <li>Sophocles, Euripides, Aeschylus</li>
+                    <li>Virgil, Ovid, Cicero</li>
+                    <li>Plato, Aristotle</li>
+                </ul>
+            </div>
+
+            <div class="coverage-card">
+                <div class="coverage-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="coverage-title">Historical Documents</h3>
+                <p>Historical texts, legal documents, and administrative records</p>
+                <ul class="feature-list">
+                    <li>Herodotus, Thucydides</li>
+                    <li>Legal codes and inscriptions</li>
+                    <li>Administrative documents</li>
+                    <li>Chronicles and annals</li>
+                    <li>Letters and correspondence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Argument Structure Analysis -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Argument Structure Analysis</h2>
+            <p class="section-subtitle">Advanced syntactic analysis for linguistic research</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="feature-title">Dependency Parsing</h3>
+                    <ul class="feature-list">
+                        <li>Complete dependency relations</li>
+                        <li>Head-dependent relationships</li>
+                        <li>Syntactic functions</li>
+                        <li>Grammatical relations</li>
+                        <li>Argument structure mapping</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="feature-title">Valency Patterns</h3>
+                    <ul class="feature-list">
+                        <li>Verb valency frames</li>
+                        <li>Argument realization patterns</li>
+                        <li>Syntactic alternations</li>
+                        <li>Case marking systems</li>
+                        <li>Diachronic valency change</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Translation Analysis</h3>
+                    <ul class="feature-list">
+                        <li>Source-target correspondences</li>
+                        <li>Translation shifts</li>
+                        <li>Contact-induced changes</li>
+                        <li>Interlingual patterns</li>
+                        <li>Transfer phenomena</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Diachronic Analysis</h3>
+                    <ul class="feature-list">
+                        <li>Syntactic change tracking</li>
+                        <li>Grammaticalization patterns</li>
+                        <li>Argument structure evolution</li>
+                        <li>Typological shifts</li>
+                        <li>Language family comparisons</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Start Your Research Journey</h2>
+            <p class="cta-subtitle">Access comprehensive PROIEL treebanks for your linguistic research</p>
+            <div class="cta-buttons">
+                <a href="https://athdgc-public.github.io" class="btn-primary" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Access Treebanks
+                </a>
+                <a href="https://github.com/athdgc" class="btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Original Content -->
     <header style="background: var(--bg-page); padding: 2rem 0; border-bottom: 1px solid var(--border);">
         <div class="container">
             <h1
