@@ -357,6 +357,738 @@ section {
     margin-bottom: 0.5rem;
 }
 
+/* Content Sections */
+.content-section {
+    background: var(--white);
+    padding: 4rem 0;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.content-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.content-section h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+/* Grid Layouts */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid var(--primary);
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Topics Detail Grid */
+.topics-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.topic-detail-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.topic-detail-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.topic-detail-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.topic-detail-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.topic-detail-card li:last-child {
+    border-bottom: none;
+}
+
+/* Outcomes */
+.outcomes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.outcome-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.outcome-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.day-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--primary);
+}
+
+.day-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.day-card h4 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.day-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.day-card li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* Faculty Grid */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.faculty-member {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.faculty-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.faculty-title {
+    color: var(--primary-light);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.faculty-institution {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.faculty-expertise {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Expertise Areas */
+.expertise-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.expertise-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.expertise-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Registration */
+.registration-status {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.registration-status h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.fees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.fee-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid var(--primary);
+}
+
+.fee-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 1rem 0;
+}
+
+.fee-details {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.fee-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.fee-card li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* Inclusions */
+.inclusions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.inclusion-item {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.inclusion-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Eligibility */
+.eligibility-criteria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.criterion {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.criterion h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Application Steps */
+.application-steps {
+    margin: 3rem 0;
+}
+
+.step {
+    background: var(--bg-light);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.step h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta-section .btn {
+    margin: 0.5rem;
+}
+
+/* Venue */
+.venue-details {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.facility-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.facility-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.transport-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.transport-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.transport-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.amenity-item {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.amenity-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Accommodation */
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.hotel-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--primary);
+}
+
+.hotel-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.hotel-category,
+.hotel-distance {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.hotel-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hotel-card li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.booking-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.budget-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.budget-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.budget-type,
+.budget-distance {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.alternative-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.alternative-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.alternative-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.booking-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.tip-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.tip-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Explore */
+.sites-grid,
+.beaches-grid,
+.villages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.site-card,
+.beach-card,
+.village-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.site-card h3,
+.beach-card h3,
+.village-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.beach-location,
+.beach-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.activities-grid,
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.activity-item,
+.food-item {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.activity-item h3,
+.food-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Social */
+.event-card,
+.excursion-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--primary);
+}
+
+.event-card h3,
+.excursion-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.event-card h4,
+.excursion-card h4 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.workshop-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.workshop-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.informal-grid,
+.cultural-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.informal-item,
+.cultural-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.informal-item h3,
+.cultural-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Support */
+.support-reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.reason-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.reason-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.support-option {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.support-option h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.sponsorship-levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.sponsor-level {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid var(--primary);
+}
+
+.sponsor-level h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 1rem 0;
+}
+
+.sponsor-level ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.sponsor-level li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.supporters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.supporter-category {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.supporter-category h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.supporter-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.supporter-category li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.impact-item {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.impact-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
 /* Footer */
 footer {
     background: var(--primary);
@@ -384,43 +1116,43 @@ footer a:hover {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .nav-container ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
     }
-    
+
     .hero {
         height: auto;
         padding: 4rem 0;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .key-features {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .cta-group {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .timeline-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .topics-grid {
         grid-template-columns: 1fr;
     }
