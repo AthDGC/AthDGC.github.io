@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11th Naxos Summer School on Diachronic Linguistics 2026 | Comparing Diachronies</title>
+    <meta name="description"
+        content="International summer school on diachronic linguistics, computational methods, and language change. July 20-24, 2026 in Naxos, Greece. Part of CIVIS European University Alliance.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a4d8f;
+            --primary-dark: #0f2f5c;
+            --accent: #d4af37;
+            --text: #2c3e50;
+            --text-light: #5a6c7d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --aegean: #2e5c8a;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 77, 143, 0.92) 0%, rgba(46, 92, 138, 0.88) 100%),
+                url('https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-details {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background: #f0c94c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--primary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .topics {
+            background: var(--bg-light);
+        }
+
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .topic-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .topic-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .speaker-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-info {
+            padding: 2rem;
+        }
+
+        .speaker-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .speaker-info .affiliation {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .registration {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--aegean) 100%);
+            color: var(--white);
+        }
+
+        .registration .section-title {
+            color: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            color: var(--text);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            color: var(--primary);
+        }
+
+        .pricing-card.featured .price {
+            color: var(--primary-dark);
+        }
+
+        .deadline {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .venue {
+            background: var(--bg-light);
+        }
+
+        .venue-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .venue-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .previous-editions {
+            background: var(--white);
+        }
+
+        .editions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .edition-link {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .edition-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .edition-link h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edition-link .year {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .logos {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .logo-item {
+            text-align: center;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+        }
+
+        .logo-item img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 8rem 1rem 4rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .venue-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Naxos 2026</a>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="index.html#topics">Topics</a></li>
+                <li><a href="speakers.html">Faculty</a></li>
+                <li><a href="registration.html">Register</a></li>
+                <li><a href="venue.html">Venue</a></li>
+                <li><a href="index.html#accommodation">Stay</a></li>
+                <li><a href="index.html#explore">Explore</a></li>
+                <li><a href="index.html#social">Social</a></li>
+                <li><a href="index.html#previous">Previous</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>11th Naxos Summer School on Diachronic Linguistics</h1>
+            <p class="hero-subtitle">Comparing Diachronies</p>
+            <p class="hero-details">Naxos, Cyclades, Greece | July 20-24, 2026</p>
+            <div class="cta-buttons">
+                <a href="mailto:nlavidas@enl.uoa.gr" class="btn btn-primary">Apply Now</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">An Intensive Research Experience</h2>
+            <p
+                style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--text-light);">
+                The National and Kapodistrian University of Athens, Arizona State University, University of Osnabrück,
+                and University of Cambridge collaborate with the CIVIS Blended Intensive Programme to coordinate a
+                summer school program, workshop, and master classes on ancient and medieval languages and linguistics.
+            </p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Who Should Attend</h3>
+                    <p>The summer school is open to BA, MA students, and PhD candidates working in linguistics,
+                        philology, literature, culture, history, archaeology, digital humanities, computer science,
+                        anthropology, and related fields. The aim is to attract students and scholars to study ancient
+                        and medieval languages in a relaxed yet focused and stimulating atmosphere that promotes
+                        in-depth analysis and discussion.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>ECTS Credits</h3>
+                    <p>Students will be able to earn up to 6 ECTS from the summer school. National and Kapodistrian
+                        University of Athens Summer Programs ECTS approval: 8-2-2021 - law: a90.4692/2020.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>CIVIS Programme</h3>
+                    <p>The 11th Naxos Summer School collaborates with the CIVIS Blended Intensive Programme "Diachronic
+                        Linguistics in the 21st Century." Part of the CIVIS European University Alliance connecting
+                        leading universities across Europe.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="margin-bottom: 2rem; color: var(--primary);">Workshop & Poster Session</h3>
+                <p style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+                    The summer school will organize a workshop and poster session on "Linguistic Diachronies: A
+                    Contrastive Approach." Students will present their work at the workshop, which will also include
+                    invited talks from leading researchers in the field.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="topics" class="topics">
+        <div class="container">
+            <h2 class="section-title">Core Research Areas</h2>
+
+            <div class="topics-list">
+                <div class="topic-item">
+                    <h4>Computational Historical Linguistics</h4>
+                    <p>Transform historical texts into analyzable data using NLP tools, machine learning algorithms,
+                        automated parsing systems, and AI-powered analysis of linguistic evolution.</p>
+                </div>
+
+                <div class="topic-item">
+                    <h4>Corpus-Based Methods</h4>
+                    <p>Advanced techniques for creating, annotating, and analyzing diachronic corpora. Learn to navigate
+                        the complex challenges of integrating digital heritage databases with linguistic research.</p>
+                </div>
+
+                <div class="topic-item">
+                    <h4>Language Change Theory</h4>
+                    <p>Contemporary theoretical frameworks in diachronic linguistics, from models enhanced by big data
+                        to AI-assisted reconstruction of linguistic prehistory.</p>
+                </div>
+
+                <div class="topic-item">
+                    <h4>Grammaticalization Processes</h4>
+                    <p>Understanding how grammatical items and categories develop in natural language, covering
+                        phenomena from central grammatical areas such as tense, aspect, mood, modality, negation, and
+                        sentence structure.</p>
+                </div>
+
+                <div class="topic-item">
+                    <h4>Language Contact & Variation</h4>
+                    <p>Corpus-driven approaches to identifying contact-induced change, enriching annotated corpora with
+                        new tools and methods. Analysis of language contact and borrowing through translations.</p>
+                </div>
+
+                <div class="topic-item">
+                    <h4>Phylogenetic Methods</h4>
+                    <p>Computational tools and statistical models to reconstruct linguistic family trees and trace the
+                        historical pathways of language change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program">
+        <div class="container">
+            <h2 class="section-title">Program Schedule</h2>
+
+            <div
+                style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.5rem; border-radius: 8px; margin-bottom: 3rem; text-align: center;">
+                <p style="color: #856404; font-size: 1.1rem; margin: 0;">Detailed program schedule will be announced
+                    soon. Please check back for updates.</p>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Tentative Schedule Overview</h3>
+
+            <div class="about-grid" style="margin: 2rem 0;">
+                <div class="about-card">
+                    <h3>Sunday, July 19, 2026</h3>
+                    <p style="font-weight: 600; color: var(--primary); margin-top: 1rem;">Evening</p>
+                    <p><strong>Welcome Reception</strong></p>
+                    <p>Join us for an opening evening gathering at a traditional taverna in Naxos Town. Meet fellow
+                        participants and faculty in a relaxed setting with local wine and mezze.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Monday–Thursday</h3>
+                    <p style="font-weight: 600; color: var(--primary); margin-top: 1rem;">July 20–23, 2026</p>
+                    <p><strong>Intensive Workshops & Lectures</strong></p>
+                    <p>Daily sessions featuring interactive lectures, hands-on workshops with real corpora, small group
+                        discussions, and individual feedback on student projects.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Friday, July 24, 2026</h3>
+                    <p style="font-weight: 600; color: var(--primary); margin-top: 1rem;">Day</p>
+                    <p><strong>Final Classes & Poster Session</strong></p>
+                    <p style="font-weight: 600; color: var(--primary); margin-top: 1.5rem;">Evening</p>
+                    <p><strong>Farewell Reception</strong></p>
+                    <p>Closing celebration featuring traditional Greek music and dancing. Certificate presentation and
+                        celebration of the summer school experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers">
+        <div class="container">
+            <h2 class="section-title">Distinguished Faculty</h2>
+            <p
+                style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--text-light);">
+                Learn from leading scholars at the forefront of computational and theoretical approaches to language
+                change.
+            </p>
+
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Gerhard Jäger</h4>
+                        <p class="affiliation">University of Tübingen, Germany</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Igor Yanovich</h4>
+                        <p class="affiliation">University of Vienna, Austria</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Johan van der Auwera</h4>
+                        <p class="affiliation">University of Antwerp, Belgium</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Nikolaos Lavidas</h4>
+                        <p class="affiliation">National and Kapodistrian University of Athens, Greece</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Katrin Axel-Tober</h4>
+                        <p class="affiliation">University of Tübingen, Germany</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Joanna Kopaczyk</h4>
+                        <p class="affiliation">University of Glasgow, UK</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Ljuba Veselinova</h4>
+                        <p class="affiliation">Stockholm University, Sweden</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Adina Dragomirescu</h4>
+                        <p class="affiliation">University of Bucharest, Romania</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Alexandru Nicolae</h4>
+                        <p class="affiliation">University of Bucharest, Romania</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Antonio R. Revuelta Puigdollers</h4>
+                        <p class="affiliation">Universidad Autónoma de Madrid, Spain</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Artemij Keidan</h4>
+                        <p class="affiliation">Sapienza Università di Roma, Italy</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Flavia Pompeo</h4>
+                        <p class="affiliation">Sapienza Università di Roma, Italy</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Linda Pillière</h4>
+                        <p class="affiliation">Aix-Marseille Université, France</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>Matthias Heinz</h4>
+                        <p class="affiliation">Paris Lodron University of Salzburg, Austria</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-info">
+                        <h4>ARCAS Team</h4>
+                        <p class="affiliation">Center for Hellenic Studies, Harvard University, USA<br>
+                            <span style="font-size: 0.85rem; display: block; margin-top: 0.5rem;">Esteban Belmehdi,
+                                Ioanna Papadopoulou, Julien Razanajao, Mark Schiefsky</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" style="opacity: 0.7; border-left-color: var(--text-light);">
+                    <div class="speaker-info">
+                        <h4>Additional Speakers</h4>
+                        <p class="affiliation">To be announced</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="registration">
+        <div class="container">
+            <h2 class="section-title">Registration & Fees</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Limited spots available. Early registration strongly encouraged.
+            </p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <h3>Early Bird</h3>
+                    <div class="price">€175</div>
+                    <p class="deadline">Deadline: Mid-April 2026</p>
+                    <p>Full access to all sessions, materials, workshops, and poster session. Light lunches included.
+                        Best value for early planners.</p>
+                    <a href="mailto:nlavidas@enl.uoa.gr" class="btn btn-primary" style="margin-top: 1.5rem;">Apply
+                        Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Regular Registration</h3>
+                    <div class="price">€210</div>
+                    <p class="deadline">Deadline: Mid-May 2026</p>
+                    <p>Full access to all sessions, materials, workshops, and poster session. Light lunches included.
+                    </p>
+                    <a href="mailto:nlavidas@enl.uoa.gr" class="btn btn-primary" style="margin-top: 1.5rem;">Apply
+                        Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Late Registration</h3>
+                    <div class="price">€230</div>
+                    <p class="deadline">Deadline: Mid-June 2026</p>
+                    <p>Full access to all sessions, materials, workshops, and poster session. Light lunches included.
+                        Subject to availability.</p>
+                    <a href="mailto:nlavidas@enl.uoa.gr" class="btn btn-primary" style="margin-top: 1.5rem;">Apply
+                        Now</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem; font-size: 1rem;">
+                <h3 style="margin-bottom: 1.5rem;">Financial Aid</h3>
+                <p style="margin-bottom: 1rem;">3 scholarships available that cover the registration fees for university
+                    (BA, MA, PhD) students.</p>
+                <p>To apply for a scholarship, please email your motivation and CV to <a
+                        href="mailto:nlavidas@enl.uoa.gr" style="color: var(--accent);">nlavidas@enl.uoa.gr</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="venue" class="venue">
+        <div class="container">
+            <h2 class="section-title">The Island of Naxos</h2>
+
+            <div class="venue-content">
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">Where Ancient Heritage Meets Modern Scholarship</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Naxos is the largest and most fertile island in the Cyclades, steeped in mythology and history.
+                        As the legendary birthplace of Zeus and center of archaic Cycladic culture, the island provides
+                        an inspiring backdrop for exploring language evolution through the millennia.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        The island is famous for its history, beautiful beaches, and distinct cuisine. Beyond its
+                        academic significance, Naxos offers participants pristine Aegean waters, traditional mountain
+                        villages, archaeological sites dating from the 3rd millennium BCE, and exceptional Greek cuisine
+                        featuring local cheeses, wines, and fresh Mediterranean ingredients.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800"
+                        alt="Naxos Portara temple gateway" class="venue-image">
+                </div>
+            </div>
+
+            <div class="venue-content" style="margin-top: 3rem;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1601823984263-b55b7d2d9594?w=800"
+                        alt="Naxos Aegean Sea coastline" class="venue-image">
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">The Cycladic Experience</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        The summer school venue combines academic excellence with the natural beauty of the Aegean.
+                        Naxos offers pristine beaches, crystal-clear waters, and a landscape that has inspired scholars
+                        and artists for millennia.
+                    </p>
+                    <p>
+                        Between intensive academic sessions, participants can explore the island's rich cultural
+                        heritage, from ancient marble quarries to Byzantine monasteries, experiencing the living
+                        connection between past and present that makes Naxos the perfect setting for studying language
+                        evolution.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <h3 style="margin-bottom: 2rem; color: var(--primary); text-align: center;">Venue: Ursulines School of
+                    Naxos</h3>
+                <p
+                    style="max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.05rem; line-height: 1.8;">
+                    The summer school will be held at the historic Ursulines School (Greek-French Ursuline School of
+                    Naxos), a prestigious educational institution with a rich history dating back to 1672. Located in
+                    the heart of Naxos Town (Chora), the school provides modern facilities in a beautifully preserved
+                    historic setting, offering an inspiring environment for academic exchange and learning.
+                </p>
+
+                <h3 style="margin-bottom: 1.5rem; margin-top: 4rem;">Getting to Naxos</h3>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>By Ferry from Athens</h3>
+                        <p>Regular ferry services from Piraeus (Athens) to Naxos. Journey time: 3.5-5 hours for
+                            conventional ferries, 3-3.5 hours for high-speed catamarans. Multiple departures daily
+                            during summer. The trip by boat is all part of the island experience and is considered
+                            pleasant by most during summer months. University students may use the 30% discount for Blue
+                            Star Ferries.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>By Air</h3>
+                        <p>Naxos Apollon National Airport is located 3 km from Chora. Regular flights from Athens
+                            International Airport (45 minutes). Two to three flights daily with the national carrier.
+                            The airport is connected by taxi and regional buses (KTEL). In peak season there are
+                            additional flights as well as charter flights from many European airports.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>From the Airport/Port to Venue</h3>
+                        <p>The Ursulines School is located in Naxos Town (Chora), within walking distance from the port.
+                            From the airport, taxi or bus service (KTEL) is available. Detailed directions will be
+                            provided to registered participants.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem; margin-top: 4rem;">Accommodation Options</h3>
+                <div class="about-grid">
+                    <div class="about-card" style="border-left: 4px solid var(--accent);">
+                        <h3>Free Dormitory Accommodation</h3>
+                        <p><strong>Limited spaces available in a mountain village!</strong> Free dormitory accommodation
+                            is offered at a traditional village location outside Naxos Town. This option provides an
+                            authentic experience of island life in the mountainous interior. Transportation to/from the
+                            venue will be arranged. First-come, first-served basis - apply early!</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Hotels & Guesthouses in Naxos Town</h3>
+                        <p>A comprehensive list of recommended hotels and guesthouses near the Ursulines School venue
+                            will be provided to registered participants. Options range from budget-friendly rooms to
+                            boutique hotels. Book early for best availability and rates during the peak summer season.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Other Accommodation</h3>
+                        <p>Many participants choose to stay in nearby beach areas (Agios Prokopios, Agia Anna) which are
+                            connected to Naxos Town by frequent bus service. Apartments and studios are also available
+                            for longer stays. Detailed recommendations will be shared upon registration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accommodation" class="venue">
+        <div class="container">
+            <h2 class="section-title">Accommodation</h2>
+
+            <div class="about-grid" style="margin-bottom: 4rem;">
+                <div class="about-card" style="border-left: 4px solid var(--accent); background: #fffbf0;">
+                    <h3>Free Municipality Dormitory</h3>
+                    <p><strong>Location:</strong> Vivlos (Tripodes village), 8 km from Naxos Town (15 minutes by bus)
+                    </p>
+                    <p style="margin-top: 1rem;"><strong>Available to:</strong> University (BA, MA, PhD) students who
+                        are participants of the Naxos Summer School and are not receiving a CIVIS mobility grant</p>
+                    <p style="margin-top: 1rem;"><strong>Capacity:</strong> 40 beds - first-come, first-served</p>
+
+                    <h4 style="margin-top: 1.5rem; color: var(--primary); font-size: 1.1rem;">What to Bring</h4>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Your own bedsheets</li>
+                        <li>Towels</li>
+                        <li>Personal toiletries</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem; color: var(--primary); font-size: 1.1rem;">Important Notes</h4>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>No air conditioning available</li>
+                        <li>No stable WiFi connection</li>
+                        <li>Participants are responsible for keeping the premises clean</li>
+                        <li>The organizing committee is not responsible for transportation or daily expenses of hostel
+                            participants</li>
+                        <li>Bus service connects Vivlos to Naxos Town regularly</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem; font-weight: 500;">The Municipality of Naxos and Small Cyclades
+                        generously provides this hostel. Apply early as spaces are limited!</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Recommended Hotels Near Venue</h3>
+                    <p style="margin-bottom: 1rem;">The following hotels are within walking distance of the Ursulines
+                        School:</p>
+
+                    <ul style="line-height: 2; margin-left: 0; list-style: none;">
+                        <li><strong>Hotel Anixis</strong> (350 meters from venue)<br>
+                            <a href="mailto:info@hotel-anixis.gr"
+                                style="color: var(--primary); font-size: 0.9rem;">info@hotel-anixis.gr</a>
+                        </li>
+
+                        <li style="margin-top: 1rem;"><strong>Korali Boutique Hotel</strong><br>
+                            <a href="mailto:info@koralihotel.com"
+                                style="color: var(--primary); font-size: 0.9rem;">info@koralihotel.com</a>
+                        </li>
+
+                        <li style="margin-top: 1rem;"><strong>Korali Palace Hotel</strong><br>
+                            <a href="mailto:info@koralipalace.com"
+                                style="color: var(--primary); font-size: 0.9rem;">info@koralipalace.com</a>
+                        </li>
+
+                        <li style="margin-top: 1rem;"><strong>Korali Garden Hotel</strong><br>
+                            <a href="mailto:koraligarden@gmail.com"
+                                style="color: var(--primary); font-size: 0.9rem;">koraligarden@gmail.com</a>
+                        </li>
+
+                        <li style="margin-top: 1rem;"><strong>Naxos Ark Rooms</strong><br>
+                            <a href="mailto:naxosark@gmail.com"
+                                style="color: var(--primary); font-size: 0.9rem;">naxosark@gmail.com</a>
+                        </li>
+
+                        <li style="margin-top: 1rem;"><strong>Hotel Koronis</strong><br>
+                            <a href="mailto:info@hotelcoronis.gr"
+                                style="color: var(--primary); font-size: 0.9rem;">info@hotelcoronis.gr</a>
+                        </li>
+
+                        <li style="margin-top: 1rem;"><strong>Yacht Marine Maison</strong><br>
+                            <a href="mailto:yachtmarinemaison1@gmail.com"
+                                style="color: var(--primary); font-size: 0.9rem;">yachtmarinemaison1@gmail.com</a>
+                        </li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem; font-style: italic;">Please contact hotels directly to make
+                        reservations. Mention the Naxos Summer School for potential discounts.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Other Accommodation Options</h3>
+                    <p>Traditional guesthouses, rooms and apartments for rent, and youth hostels are available near the
+                        venue in Naxos Town (Chora).</p>
+
+                    <p style="margin-top: 1rem;">Many participants choose to stay in nearby beach areas such as:</p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Agios Prokopios</li>
+                        <li>Agia Anna</li>
+                        <li>Agios Georgios</li>
+                    </ul>
+
+                    <p style="margin-top: 1rem;">These areas are connected to Naxos Town by frequent bus service (KTEL)
+                        and offer beautiful beaches alongside accommodation options.</p>
+
+                    <p style="margin-top: 1.5rem;"><strong>Booking Tip:</strong> Book early for best availability and
+                        rates during the peak summer season (July). Apartments and studios are available for longer
+                        stays at competitive prices.</p>
+
+                    <p style="margin-top: 1rem;">Detailed recommendations and additional options will be provided to
+                        registered participants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="explore" class="previous-editions">
+        <div class="container">
+            <h2 class="section-title">Explore Naxos</h2>
+            <p
+                style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--text-light);">
+                Beyond the academic programme, Naxos offers an unforgettable Mediterranean experience combining pristine
+                beaches, traditional mountain villages, ancient archaeological treasures, and vibrant island culture.
+            </p>
+
+            <h3 style="margin-bottom: 2rem; color: var(--primary);">Beaches & Natural Beauty</h3>
+            <div class="about-grid" style="margin-bottom: 4rem;">
+                <div class="about-card">
+                    <h3>Agios Prokopios & Agia Anna</h3>
+                    <p>Award-winning golden sand beaches just minutes from Naxos Town. Crystal-clear waters, water
+                        sports facilities, beachfront tavernas. Ranked among the best beaches in Greece. Frequent bus
+                        service from town.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Plaka Beach</h3>
+                    <p>4 kilometers of unspoiled white sand and turquoise waters. Less crowded than beaches closer to
+                        town. Perfect for swimming, windsurfing, and kitesurfing. Beach bars and tavernas available.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Mikri Vigla & Beaches of the South</h3>
+                    <p>Paradise for wind and kite surfing. Cedar forests meet pristine coastline. More remote beaches
+                        like Kastraki and Pyrgaki offer serene escapes with stunning natural beauty.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 2rem; color: var(--primary);">Traditional Villages</h3>
+            <div class="about-grid" style="margin-bottom: 4rem;">
+                <div class="about-card">
+                    <h3>Apiranthos</h3>
+                    <p>Mountain village built with marble, maintaining authentic Cycladic architecture and traditions.
+                        Home to several small museums, traditional kafeneia, and artisan workshops. Often called the
+                        "marble village" of Naxos.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Chalki</h3>
+                    <p>Historic capital of Naxos with neoclassical mansions and Byzantine churches. Visit the Citron
+                        Distillery (Vallindras) producing the famous kitron liqueur since 1896. Art galleries and
+                        traditional workshops.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Filoti & Mount Zas</h3>
+                    <p>Largest mountain village at the foot of Mount Zas (Zeus), the highest peak in the Cyclades
+                        (1,004m). Traditional tavernas, hiking trails, and the Cave of Zeus. Stunning views across the
+                        island.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 2rem; color: var(--primary);">Archaeological Sites & Monuments</h3>
+            <div class="about-grid" style="margin-bottom: 4rem;">
+                <div class="about-card">
+                    <h3>Temple of Apollo (Portara)</h3>
+                    <p>The iconic 6th century BC marble gateway, symbol of Naxos. Monumental entrance to an unfinished
+                        temple, standing majestically at the harbor entrance. Perfect for sunset viewing. Free entry.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>Temple of Demeter</h3>
+                    <p>Beautifully restored 6th century BC marble temple dedicated to the goddess of agriculture. One of
+                        the most important archaeological sites on the island. Unique architectural features and museum
+                        on site.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Venetian Castle (Kastro)</h3>
+                    <p>13th century fortress in Naxos Town with medieval towers, Catholic cathedral, and the
+                        Archaeological Museum. Wander through narrow medieval streets and visit the Glezos Tower and
+                        Crispi-Glezos Museum.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Kouros Statues</h3>
+                    <p>Massive unfinished marble statues from the 7th-6th century BC found in ancient quarries. The
+                        Kouros of Apollonas (10.7m) and Kouros of Flerio are impressive examples of archaic Greek
+                        sculpture.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Grotta Archaeological Site</h3>
+                    <p>Ancient Mycenaean settlement and cemetery near Naxos Town. Visible remains of Cycladic
+                        civilization from the 3rd millennium BC. Located along a scenic coastal walk from the port.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Byzantine Churches</h3>
+                    <p>Over 500 Byzantine and post-Byzantine churches scattered across the island, many with remarkable
+                        frescoes. Panagia Drosiani (6th century) near Moni is one of the oldest in Greece.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 2rem; color: var(--primary);" id="social">Social Events & Activities</h3>
+            <div class="about-grid" style="margin-bottom: 4rem;">
+                <div class="about-card">
+                    <h3>Welcome Reception</h3>
+                    <p>Opening evening gathering at a traditional taverna in Naxos Town. Meet fellow participants and
+                        faculty in a relaxed setting. Local wine and mezze. Opportunity to experience authentic Greek
+                        hospitality and cuisine.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Island Tour</h3>
+                    <p>Guided tour to mountain villages, archaeological sites, and scenic viewpoints. Visit Apiranthos,
+                        Chalki, and the Temple of Demeter. Experience traditional island life and local culture.
+                        Transportation provided.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Beach Afternoon</h3>
+                    <p>Organized beach outing to one of Naxos's famous beaches. Swimming, relaxation, and informal
+                        discussions. Beach taverna lunch featuring fresh seafood and local specialties. Optional water
+                        sports available.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Sunset at Portara</h3>
+                    <p>Evening gathering at the Temple of Apollo to watch the legendary Naxos sunset through the ancient
+                        marble gateway. One of the most photographed spots in the Cyclades. Short walk from town center.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>Day Trip to Nearby Island</h3>
+                    <p>Optional excursion to a neighboring Cycladic island (Paros, Delos, or Small Cyclades). Experience
+                        island hopping, visit additional archaeological sites, explore different island cultures. Ferry
+                        tickets at student rates.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Farewell Dinner</h3>
+                    <p>Closing evening celebration featuring traditional Greek music and dancing. Local musicians and
+                        dancers showcase Naxian cultural traditions. Certificates presented. Celebration of the summer
+                        school experience.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 2rem; color: var(--primary);">Local Experiences</h3>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Gastronomy</h3>
+                    <p>Naxos is famous for its agricultural products: arseniko cheese, graviera, fresh potatoes, kitron
+                        liqueur, local wines. Visit traditional tavernas, kafeneia, and the Vallindras Distillery.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Hiking & Nature</h3>
+                    <p>Numerous hiking trails through olive groves, ancient paths connecting villages, routes to Mount
+                        Zas summit. Explore the lush interior valleys and dramatic coastlines.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Arts & Crafts</h3>
+                    <p>Discover local artisans creating ceramics, textiles, jewelry. Visit galleries in Naxos Town and
+                        Chalki. Traditional workshops demonstrate ancient crafts still practiced today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="previous" class="previous-editions" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Previous Editions</h2>
+            <p
+                style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.05rem; color: var(--text-light);">
+                The Naxos Summer School has been running since 2016, bringing together scholars and students from around
+                the world to study diachronic linguistics in the beautiful setting of the Cyclades.
+            </p>
+
+            <div class="editions-grid">
+                <a href="https://conferences.uoa.gr/event/91/" class="edition-link" target="_blank">
+                    <h4>10th Edition</h4>
+                    <p class="year">July 20-25, 2025</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Comparing Diachronies</p>
+                </a>
+
+                <a href="https://conferences.uoa.gr/event/80/" class="edition-link" target="_blank">
+                    <h4>9th Edition</h4>
+                    <p class="year">July 25-31, 2024</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Comparing Diachronies</p>
+                </a>
+
+                <a href="https://conferences.uoa.gr/event/61/" class="edition-link" target="_blank">
+                    <h4>8th Edition</h4>
+                    <p class="year">July 23-29, 2023</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Comparing Diachronies</p>
+                </a>
+
+                <a href="https://conferences.uoa.gr/event/32/" class="edition-link" target="_blank">
+                    <h4>7th Edition</h4>
+                    <p class="year">July 25-30, 2022</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Language Variation and Change</p>
+                </a>
+
+                <a href="#" class="edition-link">
+                    <h4>6th Edition</h4>
+                    <p class="year">2021</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diachronic Linguistics</p>
+                </a>
+
+                <a href="#" class="edition-link">
+                    <h4>5th Edition</h4>
+                    <p class="year">2020</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diachronic Linguistics</p>
+                </a>
+
+                <a href="#" class="edition-link">
+                    <h4>4th Edition</h4>
+                    <p class="year">2019</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diachronic Linguistics</p>
+                </a>
+
+                <a href="#" class="edition-link">
+                    <h4>3rd Edition</h4>
+                    <p class="year">2018</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diachronic Linguistics</p>
+                </a>
+
+                <a href="#" class="edition-link">
+                    <h4>2nd Edition</h4>
+                    <p class="year">2017</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diachronic Linguistics</p>
+                </a>
+
+                <a href="#" class="edition-link">
+                    <h4>1st Edition</h4>
+                    <p class="year">2016</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diachronic Linguistics</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="logos">
+        <div class="container">
+            <h3 style="text-align: center; margin-bottom: 3rem; color: var(--primary); font-size: 2rem;">Supported By
+            </h3>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; align-items: center; margin-bottom: 4rem; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <div
+                    style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); border-radius: 8px;">
+                    <p style="font-weight: 700; color: white; font-size: 1.3rem; margin: 0; line-height: 1.4;">Van
+                        Riemdijk Foundation</p>
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://civis.eu" target="_blank">
+                        <img src="https://civis.eu/images/civis.svg" alt="CIVIS European University Alliance"
+                            style="max-height: 100px; width: auto;">
+                    </a>
+                </div>
+            </div>
+
+            <h4 style="text-align: center; margin-bottom: 3rem; color: var(--primary); font-size: 1.8rem;">Coordinating
+                Institutions</h4>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; align-items: stretch; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <a href="https://en.uoa.gr" target="_blank" style="text-decoration: none;">
+                    <div
+                        style="padding: 1.5rem; background: #1a4d8f; border-radius: 8px; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <p
+                            style="font-weight: 700; color: white; font-size: 1rem; margin: 0; text-align: center; line-height: 1.4;">
+                            National and Kapodistrian<br>University of Athens</p>
+                    </div>
+                </a>
+                <a href="https://www.asu.edu" target="_blank" style="text-decoration: none;">
+                    <div
+                        style="padding: 1.5rem; background: #8C1D40; border-radius: 8px; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <p
+                            style="font-weight: 700; color: #FFC627; font-size: 1rem; margin: 0; text-align: center; line-height: 1.4;">
+                            Arizona State<br>University</p>
+                    </div>
+                </a>
+                <a href="https://www.uni-osnabrueck.de/en/" target="_blank" style="text-decoration: none;">
+                    <div
+                        style="padding: 1.5rem; background: #003366; border-radius: 8px; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <p
+                            style="font-weight: 700; color: white; font-size: 1rem; margin: 0; text-align: center; line-height: 1.4;">
+                            University of<br>Osnabrück</p>
+                    </div>
+                </a>
+                <a href="https://www.cam.ac.uk" target="_blank" style="text-decoration: none;">
+                    <div
+                        style="padding: 1.5rem; background: #a3c1ad; border-radius: 8px; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <p
+                            style="font-weight: 700; color: #000; font-size: 1rem; margin: 0; text-align: center; line-height: 1.4;">
+                            University of<br>Cambridge</p>
+                    </div>
+                </a>
+                <a href="https://www.naxos.gr" target="_blank" style="text-decoration: none;">
+                    <div
+                        style="padding: 1.5rem; background: #2563eb; border-radius: 8px; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <p
+                            style="font-weight: 700; color: white; font-size: 1rem; margin: 0; text-align: center; line-height: 1.4;">
+                            Municipality of Naxos<br>and Small Cyclades</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="margin-bottom: 1.5rem;">Contact & Information</h3>
+            <p style="margin-bottom: 1rem;">
+                <strong>Organizer:</strong> Professor Nikolaos Lavidas<br>
+                National and Kapodistrian University of Athens<br>
+                Department of Language-Linguistics, Faculty of English, School of Philosophy
+            </p>
+            <p style="margin-bottom: 2rem;">
+                <strong>Email:</strong> <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a>
+            </p>
+
+            <div class="logos"
+                style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="assets/logos/university_of_athens.jpg"
+                        alt="National and Kapodistrian University of Athens logo"
+                        style="height: 60px; width: auto; margin-bottom: 0.5rem; border-radius: 4px;">
+                    <p style="font-size: 0.8rem; margin: 0; color: #666;">National and Kapodistrian<br>University of
+                        Athens</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/logos/civis.png" alt="CIVIS European University Alliance logo"
+                        style="height: 60px; width: auto; margin-bottom: 0.5rem; border-radius: 4px;">
+                    <p style="font-size: 0.8rem; margin: 0; color: #666;">CIVIS European<br>University Alliance</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/logos/nkua.jpg" alt="Athens Digital Glossa Chronos logo"
+                        style="height: 80px; width: auto; margin-bottom: 0.5rem; border-radius: 0; filter: brightness(0.9);">
+                    <p style="font-size: 0.8rem; margin: 0; color: #666;">Athens Digital<br>Glossa Chronos</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.85rem;">
+                2026 11th Naxos Summer School on Diachronic Linguistics. All rights reserved.<br>
+                <small>Background image: <a href="https://unsplash.com" target="_blank"
+                        rel="noopener noreferrer">Unsplash</a></small>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+
+</html>

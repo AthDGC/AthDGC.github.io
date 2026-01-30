@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CMS - Local Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .logo-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 2px solid #e0e0e0;
+        }
+        .logo-item h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        .export-btn {
+            background: #764ba2;
+        }
+        .export-btn:hover {
+            background: #5a3a7a;
+        }
+        .instructions {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .instructions h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+            color: #856404;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        .success {
+            background: #ede7f6;
+            border: 2px solid #764ba2;
+            color: #4a148c;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: none;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Simple CMS - Local Editor</h1>
+        <p class="subtitle">Edit your website content without authentication</p>
+        
+        <div class="instructions">
+            <h3>📖 How to use:</h3>
+            <ol>
+                <li>Edit the content below</li>
+                <li>Click "Export JSON Files" when done</li>
+                <li>Two files will download: <code>logos.json</code> and <code>home.json</code></li>
+                <li>Replace the files in the <code>content/</code> folder with these new files</li>
+                <li>Commit and push to GitHub</li>
+            </ol>
+        </div>
+
+        <!-- Home Page Images Section -->
+        <div class="section">
+            <h2>🖼️ Homepage Images</h2>
+            
+            <div class="form-group">
+                <label>Hero Background Image URL</label>
+                <input type="url" id="hero_background" placeholder="https://example.com/image.jpg">
+            </div>
+            
+            <div class="form-group">
+                <label>About Section Image URL</label>
+                <input type="url" id="about_image" placeholder="https://example.com/image.jpg">
+            </div>
+            
+            <div class="form-group">
+                <label>Venue Section Image URL</label>
+                <input type="url" id="venue_image" placeholder="https://example.com/image.jpg">
+            </div>
+        </div>
+
+        <!-- Logos Section -->
+        <div class="section">
+            <h2>🏢 Partner Logos</h2>
+            <div id="logos-container"></div>
+        </div>
+
+        <div class="button-group">
+            <button class="export-btn" onclick="exportFiles()">💾 Export JSON Files</button>
+        </div>
+
+        <div class="success" id="successMsg">
+            ✅ Files exported successfully! Check your downloads folder.
+        </div>
+    </div>
+
+    <script>
+        // Initial data
+        const initialLogos = [
+            {
+                "name": "Hellenic Foundation for Research and Innovation",
+                "src": "https://upload.wikimedia.org/wikipedia/el/thumb/7/72/Logo_of_the_Hellenic_Foundation_for_Research_and_Innovation.svg/320px-Logo_of_the_Hellenic_Foundation_for_Research_and_Innovation.svg.png",
+                "href": "https://www.elidek.gr/en/homepage/"
+            },
+            {
+                "name": "Greece 2.0",
+                "src": "https://upload.wikimedia.org/wikipedia/el/thumb/c/c3/Greece_2.0_logo.svg/320px-Greece_2.0_logo.svg.png",
+                "href": "https://greece20.gov.gr/"
+            },
+            {
+                "name": "National and Kapodistrian University of Athens",
+                "src": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/National_and_Kapodistrian_University_of_Athens_logo.svg/320px-National_and_Kapodistrian_University_of_Athens_logo.svg.png",
+                "href": "https://en.uoa.gr/"
+            },
+            {
+                "name": "Naxos School of Diachronic Linguistics",
+                "src": "https://via.placeholder.com/150x80.png?text=Naxos+School",
+                "href": "#"
+            },
+            {
+                "name": "Center for Hellenic Studies, Harvard University",
+                "src": "https://via.placeholder.com/150x80.png?text=CHS+Harvard",
+                "href": "https://chs.harvard.edu/"
+            },
+            {
+                "name": "Athens Diachronic Corpus",
+                "src": "https://via.placeholder.com/150x80.png?text=AthDGC",
+                "href": "#"
+            }
+        ];
+
+        const initialHome = {
+            "hero_background": "https://images.pexels.com/photos/164323/pexels-photo-164323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "about_image": "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "venue_image": "https://eccd.gr/wp-content/uploads/2021/07/DSC_3589_s-1-1024x683.jpg"
+        };
+
+        // Load initial data
+        function loadData() {
+            // Load home images
+            document.getElementById('hero_background').value = initialHome.hero_background;
+            document.getElementById('about_image').value = initialHome.about_image;
+            document.getElementById('venue_image').value = initialHome.venue_image;
+
+            // Load logos
+            const container = document.getElementById('logos-container');
+            container.innerHTML = '';
+            
+            initialLogos.forEach((logo, index) => {
+                const logoDiv = document.createElement('div');
+                logoDiv.className = 'logo-item';
+                logoDiv.innerHTML = `
+                    <h3>Logo ${index + 1}</h3>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="logo_name_${index}" value="${logo.name}">
+                    </div>
+                    <div class="form-group">
+                        <label>Logo Image URL</label>
+                        <input type="url" id="logo_src_${index}" value="${logo.src}">
+                    </div>
+                    <div class="form-group">
+                        <label>Website Link</label>
+                        <input type="url" id="logo_href_${index}" value="${logo.href}">
+                    </div>
+                `;
+                container.appendChild(logoDiv);
+            });
+        }
+
+        // Export files
+        function exportFiles() {
+            // Collect home data
+            const homeData = {
+                hero_background: document.getElementById('hero_background').value,
+                about_image: document.getElementById('about_image').value,
+                venue_image: document.getElementById('venue_image').value
+            };
+
+            // Collect logos data
+            const logosData = {
+                items: []
+            };
+
+            for (let i = 0; i < initialLogos.length; i++) {
+                const nameInput = document.getElementById(`logo_name_${i}`);
+                const srcInput = document.getElementById(`logo_src_${i}`);
+                const hrefInput = document.getElementById(`logo_href_${i}`);
+                
+                if (nameInput && srcInput && hrefInput) {
+                    logosData.items.push({
+                        name: nameInput.value,
+                        src: srcInput.value,
+                        href: hrefInput.value
+                    });
+                }
+            }
+
+            // Download home.json
+            downloadJSON(homeData, 'home.json');
+            
+            // Download logos.json
+            setTimeout(() => {
+                downloadJSON(logosData, 'logos.json');
+            }, 100);
+
+            // Show success message
+            const successMsg = document.getElementById('successMsg');
+            successMsg.style.display = 'block';
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+        }
+
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize on load
+        loadData();
+    </script>
+</body>
+</html>

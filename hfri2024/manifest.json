@@ -1,0 +1,45 @@
+{
+  "name": "CVL-CDSAML Corpus-based Valency Lexicon",
+  "short_name": "CVL-CDSAML",
+  "description": "Open access corpus-based valency lexicon for diachronic study of languages from antiquity to today",
+  "start_url": "/cvl-cdsaml/",
+  "display": "standalone",
+  "background_color": "#1B5E20",
+  "theme_color": "#1B5E20",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/cvl-cdsaml/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/cvl-cdsaml/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/cvl-cdsaml/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/cvl-cdsaml/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/cvl-cdsaml/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/cvl-cdsaml/",
+  "categories": [
+    "education",
+    "research",
+    "academic"
+  ]
+}

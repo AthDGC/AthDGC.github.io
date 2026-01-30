@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="translation" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8e44ad;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#663399;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#translation)"/>
+  <rect x="300" y="250" width="250" height="400" fill="#ecf0f1" stroke="#34495e" stroke-width="3"/>
+  <rect x="1370" y="250" width="250" height="400" fill="#ecf0f1" stroke="#34495e" stroke-width="3"/>
+  <text x="425" y="450" font-family="Georgia, serif" font-size="24" fill="#2c3e50" text-anchor="middle">Source Text</text>
+  <text x="1495" y="450" font-family="Georgia, serif" font-size="24" fill="#2c3e50" text-anchor="middle">Translation</text>
+  <path d="M 550 450 Q 960 350 1370 450" stroke="#e74c3c" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+  </defs>
+  <text x="960" y="540" font-family="Georgia, serif" font-size="48" fill="#ffffff" text-anchor="middle">Language Contact</text>
+  <text x="960" y="580" font-family="Georgia, serif" font-size="24" fill="#ecf0f1" text-anchor="middle">Through Translation & Written Texts</text>
+</svg>

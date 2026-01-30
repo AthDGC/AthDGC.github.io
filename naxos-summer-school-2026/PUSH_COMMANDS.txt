@@ -1,0 +1,31 @@
+========================================
+EXACT COMMANDS TO PUSH IMAGE FIXES
+========================================
+
+Open Command Prompt and copy/paste these commands ONE AT A TIME:
+
+1. Navigate to the naxos folder:
+cd C:\Users\nlavi\Desktop\naxos-summer-school-2026
+
+2. Add the fixed HTML files:
+git add index.html venue.html
+
+3. Add the documentation files:
+git add IMAGE_FIXES_SUMMARY.md PROBLEMATIC_IMAGES_REPORT.md
+
+4. Commit with a message:
+git commit -m "Fix: Replace irrelevant images with authentic Naxos/Greek imagery"
+
+5. Push to GitHub:
+git push origin main
+
+========================================
+THAT'S IT! 
+========================================
+
+After step 5, GitHub Pages will automatically update within 1-5 minutes.
+
+Check your website at:
+https://athdgc.github.io/naxos-summer-school-2026/
+
+========================================
