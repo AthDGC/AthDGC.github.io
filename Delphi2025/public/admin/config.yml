@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: AthensDiaCorpus/Delphi2025
+  branch: main
+  open_authoring: true
+
+publish_mode: editorial_workflow
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Logos"
+        name: "logos"
+        file: "content/logos.json"
+        fields:
+          - label: "Logo List"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo", name: "src", widget: "image" }
+              - { label: "Link", name: "href", widget: "string" }
+
+      - label: "Home Page Content"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero Background Image", name: "hero_background", widget: "image" }
+          - { label: "About Section Image", name: "about_image", widget: "image" }
+          - { label: "Venue Section Image", name: "venue_image", widget: "image" }

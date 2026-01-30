@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nlavidas.github.io/GlossaContactLab/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Google Scholar
+Allow: /

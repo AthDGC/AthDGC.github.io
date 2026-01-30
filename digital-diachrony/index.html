@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ψηφιακά Εργαλεία για τη Μελέτη της Γλωσσικής Εξέλιξης | Digital Tools for the Study of Language Evolution
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #d4a017;
+            --accent: #3498db;
+            --bg-page: #fbf7ef;
+            --bg-surface: #ffffff;
+            --bg-soft: #f6f2e8;
+            --border: #ebe3d6;
+            --text-primary: #2c3e50;
+            --text-secondary: #5a6c7d;
+        }
+
+        .lang-el {
+            display: block;
+        }
+
+        .lang-en {
+            display: none;
+        }
+
+        html[lang="en"] .lang-el {
+            display: none;
+        }
+
+        html[lang="en"] .lang-en {
+            display: block;
+        }
+
+        .hero-gradient {
+            background-image: linear-gradient(rgba(26, 26, 46, 0.85), rgba(52, 152, 219, 0.85)), url('/digital-diachrony/assets/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+        }
+
+        .tab-btn.active {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .tab-btn {
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Language Switcher -->
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center space-x-4">
+                    <img src="assets/logos/logo_ekpa_new.png" alt="AthDGC" class="h-10">
+                    <div>
+                        <h1 class="text-lg font-bold text-[var(--primary)]">AthDGC</h1>
+                        <p class="text-xs text-[var(--text-secondary)]">Athens Digital Glossa Chronos</p>
+                    </div>
+                    <div class="border-l border-gray-300 pl-4">
+                        <img src="assets/logos/university_of_athens.jpg"
+                            alt="UoA Logo Greek" class="h-12 lang-el">
+                        <img src="assets/logos/university_of_athens.jpg"
+                            alt="UoA Logo English" class="h-12 lang-en">
+                    </div>
+                    <div>
+                        <h1 class="text-sm font-bold text-gray-700">
+                            <span class="lang-el">ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ</span>
+                            <span class="lang-en">NATIONAL AND KAPODISTRIAN UNIVERSITY OF ATHENS</span>
+                        </h1>
+                        <p class="text-xs text-gray-500">
+                            <span class="lang-el">ΚΕΝΤΡΟ ΕΠΙΜΟΡΦΩΣΗΣ ΚΑΙ ΔΙΑ ΒΙΟΥ ΜΑΘΗΣΗΣ</span>
+                            <span class="lang-en">CENTER OF EDUCATION AND LIFELONG LEARNING</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white rounded-lg p-1 flex space-x-1 border border-gray-200">
+                        <button onclick="setLanguage('el')"
+                            class="lang-btn px-3 py-1 rounded-md text-sm font-medium transition-colors"
+                            data-lang="el">ΕΛ</button>
+                        <button onclick="setLanguage('en')"
+                            class="lang-btn px-3 py-1 rounded-md text-sm font-medium transition-colors"
+                            data-lang="en">EN</button>
+                    </div>
+                    <button class="md:hidden text-gray-600" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-100 border-b border-gray-200">
+        <div class="container mx-auto px-4 hidden md:flex justify-center space-x-8 py-2">
+            <a href="#home"
+                class="nav-link text-gray-600 hover:text-[var(--primary-color)] transition-colors font-medium"><span
+                    class="lang-el">Αρχική</span><span class="lang-en">Home</span></a>
+            <a href="#about"
+                class="nav-link text-gray-600 hover:text-[var(--primary-color)] transition-colors font-medium"><span
+                    class="lang-el">Περιγραφή</span><span class="lang-en">About</span></a>
+            <a href="#modules"
+                class="nav-link text-gray-600 hover:text-[var(--primary-color)] transition-colors font-medium"><span
+                    class="lang-el">Ενότητες</span><span class="lang-en">Modules</span></a>
+            <a href="#details"
+                class="nav-link text-gray-600 hover:text-[var(--primary-color)] transition-colors font-medium"><span
+                    class="lang-el">Λεπτομέρειες</span><span class="lang-en">Details</span></a>
+            <a href="#contact"
+                class="nav-link text-gray-600 hover:text-[var(--primary-color)] transition-colors font-medium"><span
+                    class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></a>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-[var(--primary-color)]"><span
+                        class="lang-el">Αρχική</span><span class="lang-en">Home</span></a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-[var(--primary-color)]"><span
+                        class="lang-el">Περιγραφή</span><span class="lang-en">About</span></a>
+                <a href="#modules" class="block py-2 text-gray-600 hover:text-[var(--primary-color)]"><span
+                        class="lang-el">Ενότητες</span><span class="lang-en">Modules</span></a>
+                <a href="#details" class="block py-2 text-gray-600 hover:text-[var(--primary-color)]"><span
+                        class="lang-el">Λεπτομέρειες</span><span class="lang-en">Details</span></a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-[var(--primary-color)]"><span
+                        class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                <span class="lang-el">Ψηφιακά Εργαλεία για τη Μελέτη της Γλωσσικής Εξέλιξης</span>
+                <span class="lang-en">Digital Tools for the Study of Language Evolution</span>
+            </h2>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-200">
+                <span class="lang-el">Ψηφιακή Διαχρονία - Υπολογιστικές Προσεγγίσεις στη Διαχρονική Γλωσσολογία</span>
+                <span class="lang-en">Digital Diachrony - Computational Approaches to Diachronic Linguistics</span>
+            </p>
+            <div
+                class="flex justify-center items-center space-x-6 bg-white/10 backdrop-blur-sm p-4 rounded-lg max-w-2xl mx-auto">
+                <div class="text-center">
+                    <p class="text-2xl font-bold text-white">8</p>
+                    <p class="text-sm text-gray-300"><span class="lang-el">Μήνες</span><span
+                            class="lang-en">Months</span></p>
+                </div>
+                <div class="border-l border-white/30 h-10"></div>
+                <div class="text-center">
+                    <p class="text-2xl font-bold text-white">300</p>
+                    <p class="text-sm text-gray-300"><span class="lang-el">Ώρες</span><span class="lang-en">Hours</span>
+                    </p>
+                </div>
+                <div class="border-l border-white/30 h-10"></div>
+                <div class="text-center">
+                    <p class="text-2xl font-bold text-white">12</p>
+                    <p class="text-sm text-gray-300">ECTS</p>
+                </div>
+                <div class="border-l border-white/30 h-10"></div>
+                <div class="text-center">
+                    <p class="text-2xl font-bold text-white"><i class="fas fa-laptop"></i></p>
+                    <p class="text-sm text-gray-300"><span class="lang-el">Online</span><span
+                            class="lang-en">Online</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative bg-cover bg-center"
+        style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('/digital-diachrony/assets/details-bg.jpg');">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title"><span class="lang-el">Σχετικά με το
+                    Πρόγραμμα</span><span class="lang-en">About the Program</span></h2>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"><span class="lang-el">Σκοπός</span><span
+                            class="lang-en">Purpose</span></h3>
+                    <p class="text-gray-600 mb-6">
+                        <span class="lang-el">Η κατάρτιση φιλολόγων και ερευνητών στις σύγχρονες ψηφιακές μεθόδους
+                            μελέτης της γλωσσικής εξέλιξης, συνδυάζοντας την παραδοσιακή γλωσσολογική ανάλυση με
+                            υπολογιστικά εργαλεία. Το πρόγραμμα υιοθετεί πλήρως τη φιλοσοφία Open Access, εξασφαλίζοντας
+                            ελεύθερη πρόσβαση σε όλους τους πόρους και εργαλεία.</span>
+                        <span class="lang-en">The training of philologists and researchers in modern digital methods for
+                            the study of language evolution, combining traditional linguistic analysis with
+                            computational tools. The program fully adopts the Open Access philosophy, ensuring free
+                            access to all resources and tools.</span>
+                    </p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"><span class="lang-el">Ομάδα Στόχος</span><span
+                            class="lang-en">Target Audience</span></h3>
+                    <p class="text-gray-600">
+                        <span class="lang-el">Ανοιχτό σε φιλολόγους όλων των φιλολογιών/γλωσσών (κλασικοί, βυζαντινοί,
+                            νεοελληνιστές, αγγλικής, γερμανικής, γαλλικής, ισπανικής, ιταλικής, άλλων γλωσσών),
+                            εκπαιδευτικούς με ενδιαφέρον για ψηφιακές μεθόδους, μεταπτυχιακούς φοιτητές γλωσσολογίας,
+                            ερευνητές ψηφιακών ανθρωπιστικών επιστημών, επαγγελματίες γλωσσικής τεχνολογίας.</span>
+                        <span class="lang-en">Open to philologists of all fields/languages (classical, byzantine, modern
+                            greek, english, german, french, spanish, italian, other languages), educators with an
+                            interest in digital methods, postgraduate linguistics students, digital humanities
+                            researchers, and language technology professionals.</span>
+                    </p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4"><span class="lang-el">Βασικά
+                            Χαρακτηριστικά</span><span class="lang-en">Key Features</span></h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-[var(--primary-color)] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold"><span class="lang-el">100% Online</span><span
+                                        class="lang-en">100% Online</span></h4>
+                                <p class="text-sm text-gray-600"><span class="lang-el">Συνδυασμός σύγχρονης
+                                        (προαιρετικής) και ασύγχρονης (υποχρεωτικής) εκπαίδευσης.</span><span
+                                        class="lang-en">Combination of synchronous (optional) and asynchronous
+                                        (mandatory) learning.</span></p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-[var(--primary-color)] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">Open Access</h4>
+                                <p class="text-sm text-gray-600"><span class="lang-el">Ελεύθερη πρόσβαση σε όλο το
+                                        υλικό, τις διαλέξεις και τα εργαλεία.</span><span class="lang-en">Free access to
+                                        all materials, lectures, and tools.</span></p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-[var(--primary-color)] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold"><span class="lang-el">Καινοτομία</span><span
+                                        class="lang-en">Innovation</span></h4>
+                                <p class="text-sm text-gray-600"><span class="lang-el">Πρώτο πρόγραμμα υπολογιστικής
+                                        διαχρονικής γλωσσολογίας στην Ελλάδα.</span><span class="lang-en">The first
+                                        program in computational diachronic linguistics in Greece.</span></p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-[var(--primary-color)] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold"><span class="lang-el">Διεθνής Διάσταση</span><span
+                                        class="lang-en">International Dimension</span></h4>
+                                <p class="text-sm text-gray-600"><span class="lang-el">Συνεργασία με διεθνή κέντρα και
+                                        διαλέξεις από κορυφαίους ερευνητές.</span><span class="lang-en">Collaboration
+                                        with international centers and lectures from leading researchers.</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="py-20 relative bg-cover bg-center"
+        style="background-image: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 75, 141, 0.9)), url('/digital-diachrony/assets/code-bg.jpg');">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-8 section-title"
+                style="border-left-color: var(--secondary-color);"><span class="lang-el">Διδακτικές Ενότητες</span><span
+                    class="lang-en">Teaching Modules</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-xl font-bold text-[var(--primary-color)]">
+                            1</div>
+                        <h3 class="text-lg font-semibold"><span class="lang-el">Θεμέλια Διαχρονικής
+                                Γλωσσολογίας</span><span class="lang-en">Foundations of Diachronic Linguistics</span>
+                        </h3>
+                    </div>
+                    <p class="text-sm text-gray-600"><span class="lang-el">Εξετάζει τους μηχανισμούς γλωσσικής αλλαγής,
+                            θεωρίες γραμματικοποίησης, φωνητικές και σημασιολογικές μεταβολές.</span><span
+                            class="lang-en">Examines mechanisms of language change, grammaticalization theories,
+                            phonetic and semantic shifts.</span></p>
+                </div>
+                <!-- Module 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-xl font-bold text-[var(--primary-color)]">
+                            2</div>
+                        <h3 class="text-lg font-semibold"><span class="lang-el">Υπολογιστικές Μέθοδοι &
+                                Εργαλεία</span><span class="lang-en">Computational Methods & Tools</span></h3>
+                    </div>
+                    <p class="text-sm text-gray-600"><span class="lang-el">Διδάσκει προγραμματισμό Python/R, χρήση
+                            NLTK/spaCy για επεξεργασία κειμένων, regular expressions και web scraping.</span><span
+                            class="lang-en">Teaches Python/R programming, use of NLTK/spaCy for text processing, regular
+                            expressions, and web scraping.</span></p>
+                </div>
+                <!-- Module 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-xl font-bold text-[var(--primary-color)]">
+                            3</div>
+                        <h3 class="text-lg font-semibold"><span class="lang-el">Στατιστική Ανάλυση &
+                                Μοντελοποίηση</span><span class="lang-en">Statistical Analysis & Modeling</span></h3>
+                    </div>
+                    <p class="text-sm text-gray-600"><span class="lang-el">Καλύπτει περιγραφική στατιστική, έλεγχο
+                            υποθέσεων, regression analysis και οπτικοποίηση δεδομένων.</span><span
+                            class="lang-en">Covers descriptive statistics, hypothesis testing, regression analysis, and
+                            data visualization.</span></p>
+                </div>
+                <!-- Module 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-xl font-bold text-[var(--primary-color)]">
+                            4</div>
+                        <h3 class="text-lg font-semibold"><span class="lang-el">Εφαρμογές σε Ιστορικές
+                                Γλώσσες</span><span class="lang-en">Applications in Historical Languages</span></h3>
+                    </div>
+                    <p class="text-sm text-gray-600"><span class="lang-el">Εστιάζει σε ψηφιακή επεξεργασία
+                            αρχαίων/μεσαιωνικών κειμένων, OCR, κωδικοποίηση TEI/XML και δημιουργία ψηφιακών
+                            εκδόσεων.</span><span class="lang-en">Focuses on digital processing of ancient/medieval
+                            texts, OCR, TEI/XML encoding, and creating digital editions.</span></p>
+                </div>
+                <!-- Module 5 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-xl font-bold text-[var(--primary-color)]">
+                            5</div>
+                        <h3 class="text-lg font-semibold"><span class="lang-el">Ερευνητικό Εργαστήριο</span><span
+                                class="lang-en">Research Workshop</span></h3>
+                    </div>
+                    <p class="text-sm text-gray-600"><span class="lang-el">Ανάπτυξη πρωτότυπου ερευνητικού project,
+                            δημιουργία ανοιχτού dataset/εργαλείου και συγγραφή επιστημονικής εργασίας.</span><span
+                            class="lang-en">Development of an original research project, creation of an open
+                            dataset/tool, and writing a scientific paper.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section id="details" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title"><span class="lang-el">Λεπτομέρειες
+                    Προγράμματος</span><span class="lang-en">Program Details</span></h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="border-b border-gray-200">
+                    <nav class="-mb-px flex space-x-6" aria-label="Tabs">
+                        <button class="tab-btn py-4 px-1 text-gray-500 hover:text-gray-700" data-tab="outcomes"><span
+                                class="lang-el">Μαθησιακά Αποτελέσματα</span><span class="lang-en">Learning
+                                Outcomes</span></button>
+                        <button class="tab-btn py-4 px-1 text-gray-500 hover:text-gray-700" data-tab="assessment"><span
+                                class="lang-el">Αξιολόγηση</span><span class="lang-en">Assessment</span></button>
+                        <button class="tab-btn py-4 px-1 text-gray-500 hover:text-gray-700" data-tab="fees"><span
+                                class="lang-el">Κόστος & Εκπτώσεις</span><span class="lang-en">Fees &
+                                Discounts</span></button>
+                    </nav>
+                </div>
+                <div class="py-8">
+                    <!-- Learning Outcomes Tab -->
+                    <div id="tab-outcomes" class="tab-content">
+                        <p class="text-gray-600"><span class="lang-el">Με την ολοκλήρωση του προγράμματος, οι
+                                συμμετέχοντες θα είναι σε θέση να:</span><span class="lang-en">Upon completion of the
+                                program, participants will be able to:</span></p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-gray-600">
+                            <li><span class="lang-el">Αναγνωρίζουν και να χρησιμοποιούν τα κύρια εργαλεία επεξεργασίας
+                                    φυσικής γλώσσας (NLTK, spaCy).</span><span class="lang-en">Recognize and use major
+                                    natural language processing tools (NLTK, spaCy).</span></li>
+                            <li><span class="lang-el">Προσδιορίζουν τους βασικούς μηχανισμούς γλωσσικής
+                                    αλλαγής.</span><span class="lang-en">Identify the basic mechanisms of language
+                                    change.</span></li>
+                            <li><span class="lang-el">Εφαρμόζουν τις αρχές προγραμματισμού Python σε γλωσσολογικές
+                                    εφαρμογές.</span><span class="lang-en">Apply Python programming principles to
+                                    linguistic applications.</span></li>
+                            <li><span class="lang-el">Αξιολογούν την καταλληλότητα ψηφιακών εργαλείων για ερευνητικές
+                                    ανάγκες.</span><span class="lang-en">Evaluate the suitability of digital tools for
+                                    research needs.</span></li>
+                            <li><span class="lang-el">Συμμετέχουν ενεργά σε ερευνητικά projects ψηφιακών ανθρωπιστικών
+                                    επιστημών.</span><span class="lang-en">Actively participate in digital humanities
+                                    research projects.</span></li>
+                        </ul>
+                    </div>
+                    <!-- Assessment Tab -->
+                    <div id="tab-assessment" class="tab-content">
+                        <p class="text-gray-600"><span class="lang-el">Η αξιολόγηση είναι συνεχής και βασίζεται
+                                σε:</span><span class="lang-en">Assessment is continuous and based on:</span></p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-gray-600">
+                            <li><span class="lang-el">Πρακτικές ασκήσεις (40%)</span><span class="lang-en">Practical
+                                    exercises (40%)</span></li>
+                            <li><span class="lang-el">Ομαδικά projects ανά ενότητα (20%)</span><span
+                                    class="lang-en">Group projects per module (20%)</span></li>
+                            <li><span class="lang-el">Τελική ερευνητική εργασία (40%)</span><span class="lang-en">Final
+                                    research paper (40%)</span></li>
+                        </ul>
+                        <p class="mt-4 text-gray-600"><span class="lang-el">Για την επιτυχή ολοκλήρωση απαιτείται η
+                                ολοκλήρωση όλου του ασύγχρονου υλικού, η επιτυχής υποβολή όλων των ασκήσεων (βαθμός
+                                ≥5/10) και η υποβολή της τελικής εργασίας.</span><span class="lang-en">Successful
+                                completion requires finishing all asynchronous material, successful submission of all
+                                exercises (grade ≥5/10), and submission of the final paper.</span></p>
+                    </div>
+                    <!-- Fees Tab -->
+                    <div id="tab-fees" class="tab-content">
+                        <p class="text-2xl font-bold text-[var(--primary-color)] mb-4">500€</p>
+                        <p class="text-gray-600 mb-4"><span class="lang-el">Δυνατότητα πληρωμής σε 4 δόσεις. Προκαταβολή
+                                100€. Έκπτωση 5% στην εφάπαξ πληρωμή.</span><span class="lang-en">Payment in 4
+                                installments available. 100€ down payment. 5% discount for lump-sum payment.</span></p>
+                        <h4 class="font-semibold mb-2"><span class="lang-el">Εκπτώσεις & Υποτροφίες</span><span
+                                class="lang-en">Discounts & Scholarships</span></h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 text-sm">
+                            <li><span class="lang-el">Άνεργοι: 30%</span><span class="lang-en">Unemployed: 30%</span>
+                            </li>
+                            <li><span class="lang-el">Άτομα με ειδικές ανάγκες: 50%</span><span class="lang-en">People
+                                    with disabilities: 50%</span></li>
+                            <li><span class="lang-el">Εισόδημα κάτω από 12.000€: 30%</span><span class="lang-en">Income
+                                    below 12,000€: 30%</span></li>
+                            <li><span class="lang-el">Απόφοιτοι ΑΕΙ (Παιδαγωγικών, Ανθρωπιστικών, Θετικών):
+                                    15%</span><span class="lang-en">University Graduates (Pedagogy, Humanities,
+                                    Sciences): 15%</span></li>
+                            <li><span class="lang-el">Εκπαιδευόμενοι/Απόφοιτοι ΕΚΠΑ: 20%</span><span
+                                    class="lang-en">Current/Past UoA Students: 20%</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 section-title"><span
+                    class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto items-center">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold"><span class="lang-el">Επιστημονικός Υπεύθυνος</span><span
+                            class="lang-en">Scientific Coordinator</span></h3>
+                    <p class="text-lg font-medium">Νικόλαος Λαβίδας / Nikolaos Lavidas</p>
+                    <div class="space-y-4 text-gray-600">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope w-5 text-center text-[var(--primary-color)]"></i>
+                            <a href="mailto:nlavidas@enl.uoa.gr"
+                                class="hover:text-[var(--primary-color)]">nlavidas@enl.uoa.gr</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone w-5 text-center text-[var(--primary-color)]"></i>
+                            <span>2107277462, 6948066777</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-briefcase w-5 text-center text-[var(--primary-color)]"></i>
+                            <span><span class="lang-el">Καθηγητής, Διαχρονική Γλωσσολογία</span><span
+                                    class="lang-en">Professor, Diachronic Linguistics</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4"><span class="lang-el">Στείλτε μας μήνυμα</span><span
+                            class="lang-en">Send us a message</span></h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1"><span
+                                    class="lang-el">Όνομα</span><span class="lang-en">Name</span></label>
+                            <input type="text"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1"><span
+                                    class="lang-el">Μήνυμα</span><span class="lang-en">Message</span></label>
+                            <textarea rows="4"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-[var(--primary-color)] text-white py-2 rounded-md font-semibold hover:bg-opacity-90 transition-colors">
+                            <span class="lang-el">Αποστολή</span><span class="lang-en">Submit</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p class="mb-2">&copy; 2026 <span class="lang-el">Εθνικόν και Καποδιστριακόν Πανεπιστήμιον
+                    Αθηνών</span><span class="lang-en">National and Kapodistrian University of Athens</span></p>
+            <p class="text-sm"><span class="lang-el">Με την επιφύλαξη παντός δικαιώματος.</span><span
+                    class="lang-en">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            updateLanguageButtons(lang);
+        }
+
+        function updateLanguageButtons(activeLang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.dataset.lang === activeLang) {
+                    btn.classList.add('bg-[var(--primary-color)]', 'text-white');
+                    btn.classList.remove('bg-gray-200', 'text-gray-700');
+                } else {
+                    btn.classList.remove('bg-[var(--primary-color)]', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        const tabs = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('active'));
+                tab.classList.add('active');
+                const target = document.getElementById('tab-' + tab.dataset.tab);
+                tabContents.forEach(content => content.classList.remove('active'));
+                if (target) target.classList.add('active');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.startsWith('el') ? 'el' : 'en';
+            const initialLang = savedLang || browserLang;
+            setLanguage(initialLang);
+            tabs[0].click();
+        });
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Το μήνυμά σας έχει αποσταλεί! / Your message has been sent!');
+            this.reset();
+        });
+    </script>
+
+    <!-- Floating Return Button -->
+    <div class="fixed bottom-8 right-8 z-40">
+        <a href="/"
+            class="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+            <i class="fas fa-home text-xl"></i>
+            <span class="font-bold text-lg">Return to AthDGC</span>
+            <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        </a>
+    </div>
+</body>
+
+</html>
