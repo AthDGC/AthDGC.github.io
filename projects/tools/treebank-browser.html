@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treebank Browser | AthDGC Tools</title>
+    <meta name="description" content="Interactive browser for PROIEL treebanks with advanced filtering, search, and visualization capabilities.">
+    <meta name="keywords" content="treebank browser, PROIEL, corpus navigation, linguistic data, historical linguistics">
+    <link rel="stylesheet" href="assets/css/tools.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">T</div>
+                    AthDGC Tools
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span>&#9776;</span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="treebank-browser.html" class="active">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search</a></li>
+                        <li><a href="analysis-tools.html">Analysis</a></li>
+                        <li><a href="export-tools.html">Export</a></li>
+                        <li><a href="api-reference.html">API</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="container">
+            <h1>Treebank Browser</h1>
+            <p class="section-subtitle">Interactive navigation through PROIEL treebanks with advanced filtering and visualization</p>
+        </section>
+
+        <section class="container">
+            <div class="tool-interface">
+                <div class="tool-header">
+                    <h3 class="tool-title">Browse Treebanks</h3>
+                    <p class="tool-description">Navigate through our comprehensive collection of PROIEL treebanks</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('browser')">Browser</button>
+                    <button class="tab" onclick="showTab('filters')">Filters</button>
+                    <button class="tab" onclick="showTab('preview')">Preview</button>
+                </div>
+
+                <div class="tab-content active" id="browser">
+                    <!-- Treebank Selection -->
+                    <div class="form-group">
+                        <label class="form-label">Select Treebank</label>
+                        <select class="form-select" id="treebankSelect" onchange="loadTreebank()">
+                            <option value="">Choose a treebank...</option>
+                            <option value="greek-classical">Greek - Classical Period</option>
+                            <option value="greek-koine">Greek - Koine Period</option>
+                            <option value="greek-byzantine">Greek - Byzantine Period</option>
+                            <option value="greek-modern">Greek - Modern Period</option>
+                            <option value="gothic">Gothic</option>
+                            <option value="old-english">Old English</option>
+                            <option value="old-norse">Old Norse</option>
+                            <option value="latin-classical">Latin - Classical</option>
+                            <option value="latin-vulgate">Latin - Vulgate</option>
+                            <option value="old-church-slavonic">Old Church Slavonic</option>
+                        </select>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="tool-metrics" id="treebankStats">
+                        <div class="metric">
+                            <div class="metric-value">-</div>
+                            <div class="metric-label">Sentences</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-</div>
+                            <div class="metric-label">Tokens</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-</div>
+                            <div class="metric-label">Types</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-</div>
+                            <div class="metric-label">Period</div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <div class="form-group">
+                        <label class="form-label">Navigation</label>
+                        <div class="tool-actions">
+                            <button class="btn" onclick="firstPage()">First</button>
+                            <button class="btn" onclick="previousPage()">Previous</button>
+                            <button class="btn" onclick="nextPage()">Next</button>
+                            <button class="btn" onclick="lastPage()">Last</button>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-input" id="pageInput" placeholder="Page" value="1" style="width: 100px;">
+                            <button class="btn" onclick="goToPage()">Go</button>
+                        </div>
+                    </div>
+
+                    <!-- Treebank Content -->
+                    <div class="tool-output" id="treebankContent">
+                        <div class="output-header">
+                            <div class="output-title">Treebank Content</div>
+                            <div class="output-actions">
+                                <button class="btn btn-secondary" onclick="exportCurrentPage()">Export Page</button>
+                                <button class="btn btn-secondary" onclick="exportAll()">Export All</button>
+                            </div>
+                        </div>
+                        <div class="output-content" id="treebankData">
+                            <p>Select a treebank from the dropdown menu above to begin browsing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="filters">
+                    <h4>Filter Options</h4>
+                    
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Language Family</label>
+                            <select class="form-select" id="languageFilter">
+                                <option value="">All Languages</option>
+                                <option value="greek">Greek</option>
+                                <option value="germanic">Germanic</option>
+                                <option value="italic">Italic</option>
+                                <option value="slavic">Slavic</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Historical Period</label>
+                            <select class="form-select" id="periodFilter">
+                                <option value="">All Periods</option>
+                                <option value="classical">Classical (500 BCE - 323 BCE)</option>
+                                <option value="hellenistic">Hellenistic (323 BCE - 31 BCE)</option>
+                                <option value="roman">Roman (31 BCE - 476 CE)</option>
+                                <option value="medieval">Medieval (476 CE - 1453 CE)</option>
+                                <option value="modern">Modern (1453 CE - present)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Text Type</label>
+                            <select class="form-select" id="textTypeFilter">
+                                <option value="">All Types</option>
+                                <option value="literary">Literary</option>
+                                <option value="religious">Religious</option>
+                                <option value="philosophical">Philosophical</option>
+                                <option value="historical">Historical</option>
+                                <option value="legal">Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Annotation Quality</label>
+                            <select class="form-select" id="qualityFilter">
+                                <option value="">All Quality Levels</option>
+                                <option value="high">High Quality</option>
+                                <option value="medium">Medium Quality</option>
+                                <option value="low">Low Quality</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Minimum Sentence Length</label>
+                            <input type="number" class="form-input" id="minLengthFilter" placeholder="Min tokens" min="1" value="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Maximum Sentence Length</label>
+                            <input type="number" class="form-input" id="maxLengthFilter" placeholder="Max tokens" min="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Part of Speech</label>
+                            <select class="form-select" id="posFilter" multiple>
+                                <option value="">All POS Tags</option>
+                                <option value="noun">Noun</option>
+                                <option value="verb">Verb</option>
+                                <option value="adjective">Adjective</option>
+                                <option value="adverb">Adverb</option>
+                                <option value="pronoun">Pronoun</option>
+                                <option value="article">Article</option>
+                                <option value="conjunction">Conjunction</option>
+                                <option value="preposition">Preposition</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Search Text</label>
+                            <input type="text" class="form-input" id="searchFilter" placeholder="Search in text...">
+                            <div class="form-help">Enter Greek or Latin text to search</div>
+                        </div>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button class="btn" onclick="applyFilters()">Apply Filters</button>
+                        <button class="btn btn-secondary" onclick="resetFilters()">Reset Filters</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="preview">
+                    <h4>Preview Mode</h4>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Preview Options</label>
+                        <div class="grid grid-2">
+                            <label class="form-check">
+                                <input type="checkbox" id="showMorphology" checked>
+                                Show Morphology
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" id="showDependencies" checked>
+                                Show Dependencies
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" id="showLemmas">
+                                Show Lemmas
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" id="showGlosses">
+                                Show Glosses
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Display Format</label>
+                        <select class="form-select" id="displayFormat">
+                            <option value="table">Table View</option>
+                            <option value="list">List View</option>
+                            <option value="compact">Compact View</option>
+                            <option value="detailed">Detailed View</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Items per Page</label>
+                        <select class="form-select" id="itemsPerPage">
+                            <option value="10">10 items</option>
+                            <option value="25">25 items</option>
+                            <option value="50">50 items</option>
+                            <option value="100">100 items</option>
+                        </select>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button class="btn" onclick="updatePreview()">Update Preview</button>
+                        <button class="btn btn-secondary" onclick="resetPreview()">Reset Preview</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Available Treebanks</h2>
+            <p class="section-subtitle">Complete collection of PROIEL treebanks with detailed information</p>
+            
+            <div class="grid grid-3">
+                <div class="tool-card">
+                    <div class="tool-icon">📚</div>
+                    <h3 class="tool-title">Greek Classical</h3>
+                    <p class="tool-description">Classical Greek texts from 5th-4th century BCE</p>
+                    <ul class="tool-features">
+                        <li>50,000 tokens</li>
+                        <li>2,500 sentences</li>
+                        <li>Complete morphology</li>
+                        <li>Dependency relations</li>
+                        <li>Homer, Plato, Aristotle</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <button class="btn" onclick="loadTreebank('greek-classical')">Browse</button>
+                        <button class="btn btn-secondary" onclick="downloadTreebank('greek-classical')">Download</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📖</div>
+                    <h3 class="tool-title">Greek Koine</h3>
+                    <p class="tool-description">Koine Greek biblical and Hellenistic texts</p>
+                    <ul class="tool-features">
+                        <li>75,000 tokens</li>
+                        <li>3,200 sentences</li>
+                        <li>Septuagint</li>
+                        <li>New Testament</li>
+                        <li>Josephus, Philo</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <button class="btn" onclick="loadTreebank('greek-koine')">Browse</button>
+                        <button class="btn btn-secondary" onclick="downloadTreebank('greek-koine')">Download</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">⛪</div>
+                    <h3 class="tool-title">Gothic</h3>
+                    <p class="tool-description">Gothic Bible and related texts from 4th century CE</p>
+                    <ul class="tool-features">
+                        <li>35,000 tokens</li>
+                        <li>1,800 sentences</li>
+                        <li>Gothic Bible</li>
+                        <li>Skeireins</li>
+                        <li>Wulfila translation</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <button class="btn" onclick="loadTreebank('gothic')">Browse</button>
+                        <button class="btn btn-secondary" onclick="downloadTreebank('gothic')">Download</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📜</div>
+                    <h3 class="tool-title">Latin Classical</h3>
+                    <p class="tool-description">Classical Latin literature and philosophy</p>
+                    <ul class="tool-features">
+                        <li>55,000 tokens</li>
+                        <li>2,800 sentences</li>
+                        <li>Cicero, Virgil</li>
+                        <li>Ovid, Livy</li>
+                        <li>Caesar, Seneca</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <button class="btn" onclick="loadTreebank('latin-classical')">Browse</button>
+                        <button class="btn btn-secondary" onclick="downloadTreebank('latin-classical')">Download</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📜</div>
+                    <h3 class="tool-title">Latin Vulgate</h3>
+                    <p class="tool-description">Latin Vulgate Bible from 4th century CE</p>
+                    <ul class="tool-features">
+                        <li>40,000 tokens</li>
+                        <li>2,000 sentences</li>
+                        <li>Complete Bible</li>
+                        <li>Jerome translation</li>
+                        <li>Religious texts</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <button class="btn" onclick="loadTreebank('latin-vulgate')">Browse</button>
+                        <button class="btn btn-secondary" onclick="downloadTreebank('latin-vulgate')">Download</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📜</div>
+                    <h3 class="tool-title">Old Church Slavonic</h3>
+                    <p class="command-line">Old Church Slavonic religious texts</p>
+                    <ul class="tool-features">
+                        <li>35,000 tokens</li>
+                        <li>1,900 sentences</li>
+                        <li>Biblical translations</li>
+                        <li>Liturgical texts</li>
+                        <li>Cyril and Methodius</li>
+                    </ul>
+                    <div class="tool-actions">
+                        <button class="btn" onclick="loadTreebank('old-church-slavonic')">Browse</button>
+                        <button class="btn btn-secondary" onclick="downloadTreebank('old-church-slavonic')">Download</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Usage Statistics</h2>
+            <p class="section-subtitle">Real-time usage statistics for the treebank browser</p>
+            
+            <div class="tool-metrics">
+                <div class="metric">
+                    <div class="metric-value">1,234</div>
+                    <div class="metric-label">Active Users</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">45,678</div>
+                    <div class="metric-label">Page Views Today</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">892</div>
+                    <div class="metric-label">Downloads Today</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-value">12.3GB</div>
+                    <div class="metric-label">Data Transferred</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AthDGC Tools</h3>
+                    <p>Interactive corpus analysis platform</p>
+                    <p>National and Kapodistrian University of Athens</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="treebank-browser.html">Treebank Browser</a></li>
+                        <li><a href="search-interface.html">Search Interface</a></li>
+                        <li><a href="analysis-tools.html">Analysis Tools</a></li>
+                        <li><a href="export-tools.html">Export Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="api-reference.html">API Documentation</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                        <li><a href="https://github.com/athdgc">GitHub</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="mailto:support@athdgc.org">Email Support</a></li>
+                        <li><a href="https://en.uoa.gr">University of Athens</a></li>
+                        <li><a href="https://en.enl.uoa.gr">English Department</a></li>
+                        <li><a href="https://glossacontact.org">GLOSSA Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AthDGC Tools. National and Kapodistrian University of Athens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Tab switching
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Treebank data (simplified for demo)
+        const treebankData = {
+            'greek-classical': {
+                sentences: 2500,
+                tokens: 50000,
+                types: 2500,
+                period: 'Classical (500 BCE - 323 BCE)',
+                data: [
+                    {
+                        id: 'gk-cl-001',
+                        text: 'Ἀὁ ἄνθρωπος ἐστιν ἐν τῇ ἀγρῷᾳ.',
+                        tokens: [
+                            {id: '1', form: 'ὁ', lemma: 'ὁ', pos: 'article', features: 'Case=Nom|Number=Sing'},
+                            {id: '2', form: 'Ἀ', lemma: 'εἰ', pos: 'adverb', features: ''},
+                            {id: '3', form: 'ἀ', lemma: 'ἀ', pos: 'article', features: 'Case=Nom|Number=Sing'},
+                            {id: '4', form: 'ἀνθρωπος', lemma: 'ἀνθρωπος', pos: 'noun', features: 'Case=Nom|Number=Sing|Gender=Masc'},
+                            {id: '5', form: 'ἀστιν', lemma: 'ἀστιν', pos: 'verb', features: 'Tense=Pres|Mood=Ind|Voice=Act|Person=3'},
+                            {id: '6', form: 'ἐν', lemma: 'ἐν', pos: 'preposition', features: ''},
+                            {id: '7', form: 'τῇ', lemma: 'τῇ', pos: 'article', features: 'Case=Dat|Number=Sing'},
+                            {id: '8', form: 'ἀγρῷᾳ', lemma: 'ἀγρῷᾳ', pos: 'noun', features: 'Case=Dat|Number=Sing|Gender=Masc'}
+                        ],
+                        dependencies: [
+                            {head: '2', relation: 'advmod', dependent: '1'},
+                            {head: '5', relation: 'nsubj', dependent: '4'},
+                            {head: '5', relation: 'advmod', dependent: '2'},
+                            {head: '5', relation: 'case', dependent: '6'},
+                            {head: '5', relation: 'nmod', dependent: '7'},
+                            {head: '5', relation: 'obj', dependent: '8'}
+                        ]
+                    }
+                ]
+            },
+            'greek-koine': {
+                sentences: 3200,
+                tokens: 75000,
+                types: 3200,
+                period: 'Hellenistic (323 BCE - 31 BCE)',
+                data: []
+            },
+            'gothic': {
+                sentences: 1800,
+                tokens: 35000,
+                types: 1800,
+                period: 'Roman (31 BCE - 476 CE)',
+                data: []
+            }
+        };
+
+        let currentTreebank = null;
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        function loadTreebank(treebankId) {
+            currentTreebank = treebankId;
+            currentPage = 1;
+            
+            const data = treebankData[treebankId];
+            if (data) {
+                updateStats(data);
+                displayPage();
+            }
+        }
+
+        function updateStats(data) {
+            document.getElementById('treebankStats').innerHTML = `
+                <div class="metric">
+                    <div class="metric-value">${data.sentences.toLocaleString()}</div>
+                    <div class="metric-label">Sentences</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${data.tokens.toLocaleString()}</div>
+                    <div class="metric-label">Tokens</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${data.types.toLocaleString()}</div>
+                    <div class="metric-label">Types</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">${data.period}</div>
+                    <div class="metric-label">Period</div>
+                </div>
+            `;
+        }
+
+        function displayPage() {
+            if (!currentTreebank) return;
+            
+            const data = treebankData[currentTreebank];
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, data.sentences);
+            const pageData = data.data.slice(startIndex, endIndex);
+            
+            const displayFormat = document.getElementById('displayFormat').value;
+            let html = '';
+            
+            if (displayFormat === 'table') {
+                html = '<table class="data-table"><thead><tr><th>ID</th><th>Text</th><th>Tokens</th><th>Dependencies</th></tr></thead><tbody>';
+                
+                pageData.forEach(sentence => {
+                    html += `<tr>
+                        <td>${sentence.id}</td>
+                        <td>${sentence.text}</td>
+                        <td>${sentence.tokens.length}</td>
+                        <td>${sentence.dependencies.length}</td>
+                    </tr>`;
+                });
+                
+                html += '</tbody></table>';
+            } else if (displayFormat === 'list') {
+                html = '<div class="sentence-list">';
+                
+                pageData.forEach(sentence => {
+                    html += `<div class="sentence-item">
+                        <div class="sentence-id">${sentence.id}</div>
+                        <div class="sentence-text">${sentence.text}</div>
+                        <div class="sentence-meta">
+                            <span class="status status-info">${sentence.tokens.length} tokens</span>
+                            <span class="status status-info">${sentence.dependencies.length} dependencies</span>
+                        </div>
+                    </div>`;
+                });
+                
+                html += '</div>';
+            } else {
+                html = '<div class="compact-list">';
+                
+                pageData.forEach(sentence => {
+                    html += `<div class="compact-item">
+                        <span class="sentence-id">${sentence.id}</span>
+                        <span class="sentence-text">${sentence.text}</span>
+                    </div>`;
+                });
+                
+                html += '</div>';
+            }
+            
+            document.getElementById('treebankData').innerHTML = html;
+            document.getElementById('pageInput').value = currentPage;
+            
+            // Update pagination
+            const totalPages = Math.ceil(data.sentences / itemsPerPage);
+            updatePagination(totalPages);
+        }
+
+        function updatePagination(totalPages) {
+            // Update page input max value
+            document.getElementById('pageInput').max = totalPages;
+            
+            // Enable/disable buttons
+            document.querySelector('button[onclick="firstPage()"]').disabled = currentPage === 1;
+            document.querySelector('button[onclick="previousPage()"]').disabled = currentPage === 1;
+            document.querySelector('button[onclick="nextPage()"]').disabled = currentPage === totalPages;
+            document.querySelector('button[onclick="lastPage()"]').disabled = currentPage === totalPages;
+        }
+
+        function firstPage() {
+            currentPage = 1;
+            displayPage();
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayPage();
+            }
+        }
+
+        function nextPage() {
+            const data = treebankData[currentTreebank];
+            const totalPages = Math.ceil(data.sentences / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayPage();
+            }
+        }
+
+        function lastPage() {
+            const data = treebankData[currentTreebank];
+            currentPage = Math.ceil(data.sentences / itemsPerPage);
+            displayPage();
+        }
+
+        function goToPage() {
+            const pageInput = document.getElementById('pageInput');
+            const page = parseInt(pageInput.value);
+            
+            if (page && page >= 1) {
+                const data = treebankData[currentTreebank];
+                const totalPages = Math.ceil(data.sentences / itemsPerPage);
+                if (page <= totalPages) {
+                    currentPage = page;
+                    displayPage();
+                }
+            }
+        }
+
+        function applyFilters() {
+            // Apply filters and reload current page
+            displayPage();
+        }
+
+        function resetFilters() {
+            // Reset all filter values
+            document.getElementById('languageFilter').value = '';
+            document.getElementById('periodFilter').value = '';
+            document.getElementById('textTypeFilter').value = '';
+            document.getElementById('qualityFilter').value = '';
+            document.getElementById('minLengthFilter').value = '';
+            document.getElementById('maxLengthFilter').value = '';
+            document.getElementById('posFilter').value = '';
+            document.getElementById('searchFilter').value = '';
+            
+            applyFilters();
+        }
+
+        function updatePreview() {
+            // Update preview with new settings
+            displayPage();
+        }
+
+        function resetPreview() {
+            // Reset preview options to defaults
+            document.getElementById('showMorphology').checked = true;
+            document.getElementById('showDependencies').checked = true;
+            document.getElementById('showLemmas').checked = false;
+            document.getElementById('showGlosses').checked = false;
+            document.getElementById('displayFormat').value = 'table';
+            document.getElementById('itemsPerPage').value = '10';
+            
+            updatePreview();
+        }
+
+        function exportCurrentPage() {
+            if (!currentTreebank) return;
+            
+            const data = treebankData[currentTreebank];
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, data.sentences);
+            const pageData = data.data.slice(startIndex, endIndex);
+            
+            const csvContent = 'ID,Text,Tokens,Dependencies\n' +
+                pageData.map(sentence => 
+                    `"${sentence.id}","${sentence.text}","${sentence.tokens.length}","${sentence.dependencies.length}"`
+                ).join('\n');
+            
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${currentTreebank}_page_${currentPage}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function exportAll() {
+            if (!currentTreebank) return;
+            
+            const data = treebankData[currentTreebank];
+            const csvContent = 'ID,Text,Tokens,Dependencies\n' +
+                data.data.map(sentence => 
+                    `"${sentence.id}","${sentence.text}","${sentence.tokens.length}","${sentence.dependencies.length}"`
+                ).join('\n');
+            
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${currentTreebank}_complete.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadTreebank(treebankId) {
+            loadTreebank(treebankId);
+            exportAll();
+        }
+
+        // Initialize
+        document.getElementById('itemsPerPage').addEventListener('change', updatePreview);
+    </script>
+</body>
+</html>
