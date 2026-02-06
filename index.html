@@ -7,7 +7,7 @@
     <title>AthDGC | Athens Digital Glossa Chronos - PROIEL Platform for Historical Linguistics</title>
     <meta name="description"
         content="AthDGC Platform: Comprehensive PROIEL treebank coverage of Greek-Indo-European language contact, translations, influential texts across all periods with argument structure analysis.">
-    <link rel="icon" type="image/png" href="assets/logos/athdgc-favicon.jpg">
+    <link rel="icon" type="image/jpg" href="assets/logos/athdgc-favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
@@ -255,22 +255,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #3498db;
-        }
-
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -289,6 +273,47 @@
                 font-size: 2rem;
             }
         }
+
+        /* Profile section styles */
+        .profile-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .profile-heading {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s ease;
+        }
+
+        .profile-link:hover {
+            color: #2c3e50;
+        }
+
+        .profile-link i {
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -301,19 +326,15 @@
                 <p class="hero-subtitle">Comprehensive PROIEL Treebank Coverage for Historical Linguistics Research</p>
                 <div class="hero-features">
                     <div class="hero-feature">
-                        <i class="fas fa-language"></i>
                         <span>Greek-IE Language Contact</span>
                     </div>
                     <div class="hero-feature">
-                        <i class="fas fa-book"></i>
                         <span>Influential Texts</span>
                     </div>
                     <div class="hero-feature">
-                        <i class="fas fa-clock"></i>
                         <span>All Historical Periods</span>
                     </div>
                     <div class="hero-feature">
-                        <i class="fas fa-project-diagram"></i>
                         <span>Argument Structure</span>
                     </div>
                 </div>
@@ -350,9 +371,6 @@
 
         <div class="coverage-grid">
             <div class="coverage-card">
-                <div class="coverage-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
                 <h3 class="coverage-title">Greek</h3>
                 <p>Complete coverage from Classical to Modern Greek with morphological and syntactic annotations</p>
                 <ul class="feature-list">
@@ -364,9 +382,6 @@
             </div>
 
             <div class="coverage-card">
-                <div class="coverage-icon">
-                    <i class="fas fa-language"></i>
-                </div>
                 <h3 class="coverage-title">Indo-European Family</h3>
                 <p>Extensive coverage across major Indo-European language branches</p>
                 <ul class="feature-list">
@@ -379,9 +394,6 @@
             </div>
 
             <div class="coverage-card">
-                <div class="coverage-icon">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
                 <h3 class="coverage-title">Language Contact</h3>
                 <p>Bilingual and multilingual texts showing contact phenomena</p>
                 <ul class="feature-list">
@@ -448,9 +460,6 @@
 
         <div class="coverage-grid">
             <div class="coverage-card">
-                <div class="coverage-icon">
-                    <i class="fas fa-bible"></i>
-                </div>
                 <h3 class="coverage-title">Biblical Texts</h3>
                 <p>Complete biblical corpora in multiple languages with parallel translations</p>
                 <ul class="feature-list">
@@ -464,9 +473,6 @@
             </div>
 
             <div class="coverage-card">
-                <div class="coverage-icon">
-                    <i class="fas fa-scroll"></i>
-                </div>
                 <h3 class="coverage-title">Classical Literature</h3>
                 <p>Major works of classical literature with linguistic annotations</p>
                 <ul class="feature-list">
@@ -479,9 +485,6 @@
             </div>
 
             <div class="coverage-card">
-                <div class="coverage-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
                 <h3 class="coverage-title">Historical Documents</h3>
                 <p>Historical texts, legal documents, and administrative records</p>
                 <ul class="feature-list">
@@ -503,9 +506,6 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
                     <h3 class="feature-title">Dependency Parsing</h3>
                     <ul class="feature-list">
                         <li>Complete dependency relations</li>
@@ -517,9 +517,6 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
                     <h3 class="feature-title">Valency Patterns</h3>
                     <ul class="feature-list">
                         <li>Verb valency frames</li>
@@ -531,9 +528,6 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
                     <h3 class="feature-title">Translation Analysis</h3>
                     <ul class="feature-list">
                         <li>Source-target correspondences</li>
@@ -545,9 +539,6 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
                     <h3 class="feature-title">Diachronic Analysis</h3>
                     <ul class="feature-list">
                         <li>Syntactic change tracking</li>
@@ -568,7 +559,6 @@
             <p class="cta-subtitle">Access comprehensive PROIEL treebanks for your linguistic research</p>
             <div class="cta-buttons">
                 <a href="https://athdgc-public.github.io" class="btn-primary" target="_blank">
-                    <i class="fas fa-download"></i>
                     Access Treebanks
                 </a>
             </div>
@@ -806,40 +796,9 @@
                             <div class="journal-links">
                                 <h4>Journal Access:</h4>
                                 <a href="https://glossacontact.org" target="_blank" class="journal-link">
-                                    <i class="fas fa-external-link-alt"></i>
                                     Visit Journal Website
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="hosted-by">
-            <div class="container">
-                <p><strong>Principal Investigator:</strong> Professor Nikolaos Lavidas</p>
-                <p>Division of Language-Linguistics</p>
-                <p>Department of English Language and Literature, School of Philosophy</p>
-                <p><a href="https://en.uoa.gr" target="_blank">National and Kapodistrian University of Athens</a></p>
-                <p style="margin-top: 1rem;"><strong>Contact:</strong> <a
-                        href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a></p>
-
-                <div class="logos-section">
-                    <div class="logo-grid">
-                        <div class="logo-item">
-                            <img src="assets/logos/uoa-logo.png" alt="UoA English Logo" width="80" height="80">
-                            <p class="logo-caption">National and Kapodistrian University of Athens</p>
-                        </div>
-                        <div class="logo-item">
-                            <img src="assets/logos/elidek_logo_en.png" alt="HFRI ELIDEK logo"
-                                class="logo-img logo-elidek" width="200" height="80" loading="lazy" decoding="async">
-                            <p class="logo-caption">Hellenic Foundation for Research & Innovation</p>
-                        </div>
-                        <div class="logo-item">
-                            <img src="assets/logos/logo_ekpa_new.png" alt="AthDGC Research Network logo"
-                                class="logo-img logo-athdgc" width="200" height="80" loading="lazy" decoding="async">
-                            <p class="logo-caption">AthDGC Research Network</p>
                         </div>
                     </div>
                 </div>
@@ -862,8 +821,28 @@
                 <img src="assets/logos/elidek_logo_en.png" alt="HFRI" style="height: 80px; width: auto;">
                 <img src="assets/logos/athdgc-favicon.jpg" alt="AthDGC" style="height: 80px; width: auto;">
             </div>
+
+            <div class="profile-section">
+                <h3 class="profile-heading">Prof. Nikolaos Lavidas - Academic Profiles</h3>
+                <div class="profile-links">
+                    <a href="https://scholar.google.com/citations?user=RH0edYcAAAAJ" target="_blank"
+                        class="profile-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Google Scholar</span>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Nikolaos-Lavidas" target="_blank"
+                        class="profile-link">
+                        <i class="fab fa-researchgate"></i>
+                        <span>ResearchGate</span>
+                    </a>
+                    <a href="https://en-uoa-gr.academia.edu/NIKOLAOSLAVIDAS" target="_blank" class="profile-link">
+                        <i class="fas fa-university"></i>
+                        <span>Academia.edu</span>
+                    </a>
+                </div>
+            </div>
             
-            <p style="text-align: center; opacity: 0.6; font-size: 0.85rem;">
+            <p style="text-align: center; opacity: 0.6; font-size: 0.85rem; margin-top: 1.5rem;">
                 Athens Digital Glossa Chronos Research Network<br>
                 &copy; 2024-2026 AthDGC. All rights reserved.
             </p>
