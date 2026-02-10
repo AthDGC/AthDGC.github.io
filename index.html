@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AthDGC | Athens Digital Glossa Chronos - PROIEL Platform for Historical Linguistics</title>
     <meta name="description"
-        content="AthDGC Platform: A pioneering digital historical linguistics environment that synthesizes comprehensive PROIEL treebank methodology with diachronic contact linguistics, delivering systematic syntactic-semantic analysis of Greek's evolutionary trajectory in comparative Indo-European perspective through systematic annotation of influential texts and translation traditions">
+        content="AthDGC Platform: A pioneering digital historical linguistics environment that synthesizes comprehensive PROIEL treebank methodology with diachronic contact linguistics.">
     <link rel="icon" type="image/jpg" href="assets/logos/athdgc-favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/jpeg" href="assets/logos/athdgc-favicon.jpg">
     <link rel="stylesheet" href="style.css">
     <style>
         /* CSS Styles */
@@ -55,7 +54,11 @@
         
         /* Updated Education Grid Styles */
         .education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .education-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 4px solid #3498db; display: flex; flex-direction: column; }
+        /* Make education cards look clickable if they are links */
+        a.education-card { text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        a.education-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        
+        .education-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 4px solid #3498db; display: flex; flex-direction: column; height: 100%; }
         .education-card h3 { color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.25rem; font-weight: 700; }
         .education-card h4 { color: #3498db; font-size: 0.95rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
         .education-card p { color: #555; font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6; }
@@ -76,7 +79,7 @@
         .profile-link:hover { color: #2c3e50; }
         .profile-link i { font-size: 0.9rem; }
         
-        /* Research Network Sites Styles */
+        /* Research Network Sites Styles (Restored) */
         .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2c3e50; margin-bottom: 1rem; }
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
         .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
@@ -228,31 +231,49 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Research Network Sites</h2>
-                <p class="section-subtitle">Explore our research projects, educational programs, and collaborative initiatives.</p>
+                <p class="section-subtitle">Explore our research projects, educational programs, and collaborative initiatives in historical linguistics and digital humanities.</p>
                 <div class="sites-grid">
                     <a href="https://athdgc.github.io/hfri2024/" class="site-card">
                         <div class="site-card-header"><h3>HFRI Research Project</h3></div>
-                        <div class="site-card-body"><p>Corpus-based Valency Lexicon for a Contrastive and Diachronic Study.</p><span class="url">athdgc.github.io/hfri2024</span></div>
+                        <div class="site-card-body">
+                            <p>Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient & Medieval Languages. Funded by the Hellenic Foundation for Research and Innovation.</p>
+                            <span class="url">athdgc.github.io/hfri2024</span>
+                        </div>
                     </a>
                     <a href="https://athdgc.github.io/naxos-summer-school-2026/" class="site-card">
                         <div class="site-card-header"><h3>Naxos Summer School 2026</h3></div>
-                        <div class="site-card-body"><p>International summer school on diachronic linguistics.</p><span class="url">athdgc.github.io/naxos-summer-school-2026</span></div>
+                        <div class="site-card-body">
+                            <p>International summer school on diachronic linguistics featuring computational methods, corpus-based approaches, and language change. Held annually in Naxos, Greece.</p>
+                            <span class="url">athdgc.github.io/naxos-summer-school-2026</span>
+                        </div>
                     </a>
                     <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026/" class="site-card">
                         <div class="site-card-header"><h3>CIVIS BIP 2026</h3></div>
-                        <div class="site-card-body"><p>Diachronic Linguistics in the 21st Century (BIP).</p><span class="url">athdgc.github.io/civis-diachronic-linguistics-2026</span></div>
+                        <div class="site-card-body">
+                            <p>Diachronic Linguistics in the 21st Century. Three-phase programme with online spring school, collaborative workshops, and summer school. 6 ECTS credits available.</p>
+                            <span class="url">athdgc.github.io/civis-diachronic-linguistics-2026</span>
+                        </div>
                     </a>
                     <a href="https://athdgc.github.io/GlossaContactLab/" class="site-card">
                         <div class="site-card-header"><h3>GlossaContact Laboratory</h3></div>
-                        <div class="site-card-body"><p>Research laboratory dedicated to language contact.</p><span class="url">athdgc.github.io/GlossaContactLab</span></div>
+                        <div class="site-card-body">
+                            <p>Research laboratory dedicated to language contact through translations and written language contact in ancient and medieval periods. Home of GLOSSA Contact journal.</p>
+                            <span class="url">athdgc.github.io/GlossaContactLab</span>
+                        </div>
                     </a>
                     <a href="https://athdgc.github.io/Delphi2025/" class="site-card">
                         <div class="site-card-header"><h3>Delphi Workshop 2025</h3></div>
-                        <div class="site-card-body"><p>Corpora and Diachrony International Workshop.</p><span class="url">athdgc.github.io/Delphi2025</span></div>
+                        <div class="site-card-body">
+                            <p>Corpora and Diachrony: Influential Texts, Text Types and Genres. International workshop bringing together corpus linguists, philologists, and computational linguists.</p>
+                            <span class="url">athdgc.github.io/Delphi2025</span>
+                        </div>
                     </a>
                     <a href="https://glossacontact.org" class="site-card" target="_blank">
                         <div class="site-card-header"><h3>GLOSSA Contact Journal</h3></div>
-                        <div class="site-card-body"><p>International journal on language contact.</p><span class="url">glossacontact.org</span></div>
+                        <div class="site-card-body">
+                            <p>International journal dedicated to research on language contact phenomena, structural borrowing, contact-induced change, multilingualism, and areal linguistics.</p>
+                            <span class="url">glossacontact.org</span>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -264,43 +285,45 @@
                 <p class="section-subtitle">Integrated educational initiatives combining research excellence with comprehensive training.</p>
 
                 <div class="education-grid">
-                    <div class="education-card">
+                    <a href="https://athdgc.github.io/naxos-summer-school-2026/" class="education-card">
                         <h3>Naxos Diachronic Linguistics School</h3>
                         <h4>11th Edition • July 20-24, 2026</h4>
                         <p>Annual international summer school bringing together leading scholars and students in diachronic linguistics. Features hands-on computational workshops and collaborative research projects.</p>
                         <span class="highlight">International Faculty & Students</span>
                         <span class="highlight">Hands-on Workshops</span>
-                    </div>
+                    </a>
 
-                    <div class="education-card">
+                    <a href="https://athdgc.github.io/civis-diachronic-linguistics-2026/" class="education-card">
                         <h3>CIVIS BIP: Diachronic Linguistics in the 21st Century</h3>
                         <h4>Blended Intensive Programme</h4>
                         <p>Three-phase programme combining online spring school, collaborative workshops, and summer school. Open to students from CIVIS alliance universities with 6 ECTS credits available.</p>
                         <span class="highlight">April-May-July 2026</span>
                         <span class="highlight">6 ECTS Credits</span>
-                    </div>
+                    </a>
 
-                    <div class="education-card">
+                    <a href="https://en.enl.uoa.gr/postgraduate_studies/ma_in_english_language_linguistics_and_translation/" target="_blank" class="education-card">
                         <h3>MA Program in English, Linguistics and Translation</h3>
                         <h4>Director: Prof. Nikolaos Lavidas</h4>
                         <p>Advanced master's program integrating theoretical linguistics with practical translation studies. Students benefit from direct involvement in ongoing research projects and thesis supervision opportunities.</p>
                         <span class="highlight">Research Integration</span>
                         <span class="highlight">Thesis Supervision</span>
-                    </div>
+                    </a>
 
                     <div class="education-card">
-                        <h3>Professional Development Program | Πρόγραμμα Επαγγελματικής Ανάπτυξης</h3>
-                        <h4>Continuing Education & Professional Development</h4>
-                        <p>Professional development program under the authority of ΚΕΔΙΒΙΜ (Center for Continuing Education and Lifelong Learning) of the National and Kapodistrian University of Athens. Designed for professionals seeking advanced training in linguistics and digital humanities.</p>
+                        <h3>Digital Tools for the Study of Language Evolution: Digital Diachrony</h3>
+                        <h4>Computational Approaches to Diachronic Linguistics</h4>
                         
-                        <p><strong>Ελληνικά:</strong> Πρόγραμμα συνεχούς εκπαίδευσης υπό την αιγίδα του ΚΕΔΙΒΙΜ του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών για επαγγελματίες που επιδιώκουν εξειδικευμένη κατάρτιση στη γλωσσολογία και τις ψηφιακές ανθρωπιστικές επιστήμες.</p>
+                        <p>Professional development program (KEDIVIM NKUA). Designed for philologists and researchers seeking advanced training in linguistics and digital humanities. Duration: 8 Months (12 ECTS). Asynchronous Distance Learning.</p>
                         
-                        <span class="highlight">ΚΕΔΙΒΙΜ Accredited</span>
-                        <span class="highlight">Professional Development</span>
-                        <span class="highlight">Bilingual (GR/EN)</span>
+                        <p><strong>Ελληνικά:</strong> "Ψηφιακά Εργαλεία για τη Μελέτη της Γλωσσικής Εξέλιξης: Ψηφιακή Διαχρονία - Υπολογιστικές Προσεγγίσεις στη Διαχρονική Γλωσσολογία". Πρόγραμμα ΚΕΔΙΒΙΜ ΕΚΠΑ για φιλολόγους και ερευνητές.</p>
                         
-                        <div style="margin-top: 1rem;">
-                            <a href="https://athdgc.github.io/Digital-Diachrony/" target="_blank" class="btn-primary" style="font-size: 0.9rem;">Visit Program Site</a>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="highlight">KEDIVIM Accredited</span>
+                            <span class="highlight">Bilingual (GR/EN)</span>
+                        </div>
+                        
+                        <div style="margin-top: auto;">
+                            <a href="https://athdgc.github.io/Digital-Diachrony/" target="_blank" class="btn-primary" style="font-size: 0.9rem; display:inline-block;">Visit Program Site</a>
                         </div>
                     </div>
                 </div>
