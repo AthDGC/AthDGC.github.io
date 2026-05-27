@@ -1,7 +1,3 @@
-> **PROVISIONAL DRAFT** - this document is part of the v0.1 release of AthDGC.
-> Numerical claims and per-period coverage figures are provisional and will be
-> refreshed from the latest ARIS build before formal journal submission.
-> Last revised: 2026-05-27.
 # AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels
 
 ## A formal short data paper for journal submission
@@ -73,7 +69,7 @@ Surviving text is converted into the **PROIEL XML 2.0** schema with sentence-lev
 
 ### 2.4 Annotation
 
-Annotation is performed sentence by sentence with the Stanford **Stanza** pipeline (Qi *et al.* 2020) using the PROIEL-trained model for Ancient Greek (`grc_proiel`). For each token, Stanza emits the canonical four-tuple: lemma, Universal POS tag, language-specific tag, and a morphological feature bundle (case, gender, number, tense, aspect, voice, mood, person). Dependencies follow the Universal Dependencies relation set with PROIEL-compatible re-labelling where the two conventions diverge. Analogous PROIEL-trained Stanza models are used for Latin (`la_proiel`), Old Church Slavonic (`cu_proiel`), Gothic (`got_proiel`), and Classical Armenian.
+Annotation is performed sentence by sentence with the Stanford **Stanza** pipeline (Qi *et al.* 2020) using the PROIEL-trained model for Ancient Greek (`grc_proiel`). For each token, Stanza emits the canonical four-tuple: lemma, Universal POS tag, language-specific tag, and a morphological feature bundle (case, gender, number, tense, aspect, voice, mood, person). Dependencies follow the Universal Dependencies relation set with PROIEL-compatible re-labelling where the two conventions diverge. Analogous PROIEL-trained Stanza models are used for Latin (`la_proiel`), Old Church Slavonic (`cu_proiel`), and Gothic (`got_proiel`); Classical Armenian is annotated through a separate UD-style pipeline currently under development.
 
 ### 2.5 Argument-structure capture
 
@@ -181,4 +177,3 @@ The project gratefully acknowledges the Greek national HPC infrastructure GRNET 
 - [ ] Two figures (period tab screenshot + alignment graph diagram) prepared at 300 dpi
 - [ ] Co-author affiliations and emails confirmed if any are added beyond the lead author
 - [ ] A short cover letter to the JOHD editor explaining what is novel about AthDGC (PROIEL-style annotation + diachronic forward extension + retranslation focus + argument-structure capture)
-
