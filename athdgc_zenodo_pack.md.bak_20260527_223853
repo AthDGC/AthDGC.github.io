@@ -24,60 +24,60 @@ This file controls the metadata Zenodo will write into the deposition. Copy the 
 
 ```json
 {
- "title": "AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)",
- "description": "<p>An open, end-to-end PROIEL-style treebank of the entire Greek language - from Homeric and Archaic texts (8th c. BC) through Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern Greek - with cross-lingual alignment to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian via the verse-level cross-lingual alignment of the New Testament. Includes Stanza PROIEL-trained dependency parses, LaBSE sentence-level + mBERT word-level alignment, and ASJP/LingPy phonetic cognate scoring. Developed at the National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.</p>",
- "creators": [
- {
- "name": "Lavidas, Nikolaos",
- "affiliation": "National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy",
- "orcid": "[ORCID pending]"
- }
- ],
- "keywords": [
- "diachronic linguistics",
- "ancient Greek",
- "Byzantine Greek",
- "Modern Greek",
- "Indo-European linguistics",
- "treebank",
- "PROIEL",
- "dependency parsing",
- "argument structure",
- "cross-lingual alignment",
- "retranslations",
- "retellings",
- "Latin",
- "Gothic",
- "Old Church Slavonic",
- "Classical Armenian",
- "corpus linguistics",
- "digital humanities",
- "Stanza",
- "LaBSE",
- "Athens"
- ],
- "license": "Apache-2.0",
- "upload_type": "dataset",
- "access_right": "open",
- "language": "ell",
- "communities": [
- { "identifier": "dariah" },
- { "identifier": "clarin" },
- { "identifier": "digital-humanities" }
- ],
- "related_identifiers": [
- {
- "identifier": "https://github.com/AthDGC/Diachronic-Linguistics-Platform",
- "relation": "isSupplementTo",
- "resource_type": "software"
- },
- {
- "identifier": "https://athdgc.github.io",
- "relation": "isDocumentedBy",
- "resource_type": "publication-other"
- }
- ],
- "notes": "If you use AthDGC in scholarly work, please cite the DOI of the specific version you used and the conceptual DOI (the latest-version pointer). The corpus is based on the PROIEL Treebank tradition (Haug & Jøhndal 2008) and follows the PROIEL XML 2.0 schema."
+  "title": "AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)",
+  "description": "<p>An open, end-to-end PROIEL-style treebank of the entire Greek language - from Homeric and Archaic texts (8th c. BC) through Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern Greek - with cross-lingual alignment to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian via the New Testament's verse-level anchor system. Includes Stanza PROIEL-trained dependency parses, LaBSE sentence-level + mBERT word-level alignment, and ASJP/LingPy phonetic cognate scoring. Developed at the National and Kapodistrian University of Athens (EKPA), Section of Linguistics.</p>",
+  "creators": [
+    {
+      "name": "Lavidas, Nikolaos",
+      "affiliation": "National and Kapodistrian University of Athens (EKPA), Section of Linguistics",
+      "orcid": "[ORCID pending]"
+    }
+  ],
+  "keywords": [
+    "diachronic linguistics",
+    "ancient Greek",
+    "Byzantine Greek",
+    "Modern Greek",
+    "Indo-European linguistics",
+    "treebank",
+    "PROIEL",
+    "dependency parsing",
+    "argument structure",
+    "cross-lingual alignment",
+    "retranslations",
+    "retellings",
+    "Latin",
+    "Gothic",
+    "Old Church Slavonic",
+    "Classical Armenian",
+    "corpus linguistics",
+    "digital humanities",
+    "Stanza",
+    "LaBSE",
+    "Athens"
+  ],
+  "license": "Apache-2.0",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "language": "ell",
+  "communities": [
+    { "identifier": "dariah" },
+    { "identifier": "clarin" },
+    { "identifier": "digital-humanities" }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AthDGC/Diachronic-Linguistics-Platform",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://athdgc.github.io",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    }
+  ],
+  "notes": "If you use AthDGC in scholarly work, please cite the DOI of the specific version you used and the conceptual DOI (the latest-version pointer). The corpus is anchored in the PROIEL Treebank tradition (Haug & Jøhndal 2008) and follows the PROIEL XML 2.0 schema."
 }
 ```
 
@@ -93,29 +93,29 @@ title: "AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)"
 message: "If you use AthDGC in your research, please cite both the dataset DOI and this software repository."
 type: dataset
 authors:
- - family-names: Lavidas
- given-names: Nikolaos
- affiliation: "National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy"
- orcid: ""
+  - family-names: Lavidas
+    given-names: Nikolaos
+    affiliation: "National and Kapodistrian University of Athens (EKPA), Section of Linguistics"
+    orcid: ""
 repository-code: "https://github.com/AthDGC/Diachronic-Linguistics-Platform"
 url: "https://athdgc.github.io"
 abstract: >
- AthDGC is an open, end-to-end PROIEL-style treebank of the entire Greek
- language from Homer to the present, with cross-lingual alignment to Latin,
- Gothic, Old Church Slavonic, and Classical Armenian, focusing on
- retranslations, retellings, and the argument structure of influential
- Indo-European texts.
+  AthDGC is an open, end-to-end PROIEL-style treebank of the entire Greek
+  language from Homer to the present, with cross-lingual alignment to Latin,
+  Gothic, Old Church Slavonic, and Classical Armenian, focusing on
+  retranslations, retellings, and the argument structure of influential
+  Indo-European texts.
 keywords:
- - diachronic linguistics
- - ancient Greek
- - PROIEL
- - dependency parsing
- - Indo-European
- - cross-lingual alignment
- - treebank
- - argument structure
- - retranslation
- - Athens
+  - diachronic linguistics
+  - ancient Greek
+  - PROIEL
+  - dependency parsing
+  - Indo-European
+  - cross-lingual alignment
+  - treebank
+  - argument structure
+  - retranslation
+  - Athens
 license: Apache-2.0
 version: 0.1.0
 date-released: 2026-05-25
@@ -125,7 +125,7 @@ date-released: 2026-05-25
 
 ```bash
 cd /path/to/Diachronic-Linguistics-Platform
-git add.zenodo.json CITATION.cff
+git add .zenodo.json CITATION.cff
 git commit -m "Add Zenodo + Citation metadata for v0.1 release"
 git push
 
@@ -177,20 +177,20 @@ If you want a DOI right now and you're not ready to tag a release yet:
 
 ```bibtex
 @dataset{lavidas_athdgc_2026,
- author = {Lavidas, Nikolaos},
- title = {{AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)}},
- year = 2026,
- publisher = {Zenodo},
- version = {0.1.0},
- doi = {[DOI pending Zenodo mint]},
- url = {#},
- note = {Open infrastructure for Indo-European diachronic linguistics, developed at the National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.}
+  author       = {Lavidas, Nikolaos},
+  title        = {{AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)}},
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {0.1.0},
+  doi          = {[DOI pending Zenodo mint]},
+  url          = {#},
+  note         = {Open infrastructure for Indo-European diachronic linguistics, developed at the National and Kapodistrian University of Athens (EKPA), Section of Linguistics.}
 }
 ```
 
 And the human-readable version:
 
-> Lavidas, N. (2026). *AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)* (Version 0.1.0) [Dataset]. National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy. #
+> Lavidas, N. (2026). *AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)* (Version 0.1.0) [Dataset]. National and Kapodistrian University of Athens (EKPA), Section of Linguistics. #
 
 ---
 

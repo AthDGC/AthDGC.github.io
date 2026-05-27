@@ -1,28 +1,28 @@
 # Google Cloud Research Credits - Application
 
-Apply at: https://edu.google.com/programs/credits/research/
+Apply at:  https://edu.google.com/programs/credits/research/
 
 ---
 
-**Researcher name:** Prof. Nikolaos Lavidas
-**Title:** Professor of Linguistics
-**Institution:** National and Kapodistrian University of Athens (EKPA)
-**Department:** Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy
-**Country:** Greece
-**Academic email (required):** nlavidas@enl.uoa.gr (institutional address)
-**Researcher / project URL:** https://github.com/AthDGC
+**Researcher name:**  Prof. Nikolaos Lavidas
+**Title:**  Associate Professor of Linguistics
+**Institution:**  National and Kapodistrian University of Athens (EKPA)
+**Department:**  Department of English Language and Literature, Section of Linguistics
+**Country:**  Greece
+**Academic email (required):**  nlavidas@enl.uoa.gr  (institutional address)
+**Researcher / project URL:**  https://github.com/AthDGC
 
-**Project title:** AthDGC - Athens Diachronic Greek Corpus and Indo-European Cross-Lingual Alignment Pipeline
+**Project title:**  AthDGC - Athens Diachronic Greek Corpus and Indo-European Cross-Lingual Alignment Pipeline
 
-**Funding amount requested:** USD 5,000 in Google Cloud credits (12-month consumption window)
+**Funding amount requested:**  USD 5,000 in Google Cloud credits (12-month consumption window)
 
 ---
 
 ## Project description (≈400 words, paste into the application's "Research summary" field)
 
-AthDGC is an open, end-to-end pipeline that builds the first fully self-feeding annotated diachronic corpus of the Greek language - from Homeric and Archaic texts (8th century BC) through Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern Greek. Each text is dependency-parsed (Stanza with the PROIEL Treebank model), and every New-TestameNT-aligned verse is cross-lingually aligned to its parallel in Latin (Vulgate), Gothic (Wulfila Bible), Old Church Slavonic, and Classical Armenian - providing a rare end-to-end diachronic + interlingual annotation graph across the Indo-European family.
+AthDGC is an open, end-to-end pipeline that builds the first fully self-feeding annotated diachronic corpus of the Greek language - from Homeric and Archaic texts (8th century BC) through Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern Greek. Each text is dependency-parsed (Stanza with the PROIEL Treebank model), and every New-Testament-anchored verse is cross-lingually aligned to its parallel in Latin (Vulgate), Gothic (Wulfila Bible), Old Church Slavonic, and Classical Armenian - providing a rare end-to-end diachronic + interlingual annotation graph across the Indo-European family.
 
-The pipeline is already operational on Greece's national HPC cluster (GRNET ARIS), running an autonomous daily harvest that discovers, filters, OCRs, converts to PROIEL XML 2.0, annotates with Stanza on GPU, and merges the result into the master corpus. Current state: **89.9 M corpus rows**, **4.08 M annotated Greek rows**, **6,861 NT-aligned Greek verses** with parallels across four IE languages, a Phase-IV fine-tuned transformer at **eval_loss 1.61** (8.5% improvement over the prior baseline).
+The pipeline is already operational on Greece's national HPC cluster (GRNET ARIS), running an autonomous daily harvest that discovers, filters, OCRs, converts to PROIEL XML 2.0, annotates with Stanza on GPU, and merges the result into the master corpus. Current state: **89.9 M corpus rows**, **4.08 M annotated Greek rows**, **6,861 NT-anchored Greek verses** with parallels across four IE languages, a Phase-IV fine-tuned transformer at **eval_loss 1.61** (8.5% improvement over the prior baseline).
 
 We are requesting Google Cloud Research Credits to complement our existing ARIS allocation in three specific ways:
 

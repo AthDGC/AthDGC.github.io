@@ -1,13 +1,13 @@
 # AthDGC · Athens-PROIEL - Announcement pack
 
-Prof. Nikolaos Lavidas · National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy
+Prof. Nikolaos Lavidas · National and Kapodistrian University of Athens (EKPA), Section of Linguistics
 Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 
 ---
 
 ## Short announcement (≈140 words, English)
 
-**Announcing AthDGC ("Athens-PROIEL") - an open diachronic Greek treebank with Indo-European parallels.** AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-TestameNT-aligned backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is *retranslations*, *retellings*, and *influential texts* across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-aligned verses across five IE witnesses. Code, dataset, and live showcase are open: https://athdgc.github.io · https://github.com/AthDGC - Funded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577), with support from the Greece 2.0 National Recovery and Resilience Plan.
+**Announcing AthDGC ("Athens-PROIEL") - an open diachronic Greek treebank with Indo-European parallels.** AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is *retranslations*, *retellings*, and *influential texts* across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open: https://athdgc.github.io · https://github.com/AthDGC — Funded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577), with support from the Greece 2.0 National Recovery and Resilience Plan.
 
 ---
 
@@ -21,7 +21,7 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 ---
 
 ## Athens Digital Glossa Chronos Research Network
-- **Prof. Nikolaos Lavidas** (Principal Investigator) - EKPA, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy
+- **Prof. Nikolaos Lavidas** (Principal Investigator) - EKPA, Department of English Language and Literature, Section of Linguistics
 - **Prof. Emerita Kiki Nikiforidou** - EKPA (Co-Editor, Genres and Influential Texts volume)
 - **Prof. Dag Haug** - University of Oslo (International Collaborator; PROIEL Project Director)
 - **Prof. Leonid Kulikov** - Ghent University (International Collaborator)
@@ -38,7 +38,7 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 
 ## Even shorter blurb (≈40 words, for Twitter/X & LinkedIn)
 
-🏛️ Announcing **AthDGC** - Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy · https://athdgc.github.io
+🏛️ Announcing **AthDGC** - Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Section of Linguistics · https://athdgc.github.io
 
 ---
 
@@ -80,7 +80,7 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 
 | Venue | What to do |
 |---|---|
-| **EKPA news page** (en.uoa.gr / news) | One-paragraph press item via the Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy → Faculty press officer. |
+| **EKPA news page** (en.uoa.gr / news) | One-paragraph press item via the Section of Linguistics → Faculty press officer. |
 | **English Department news page** (enl.uoa.gr) | Same one-pager. |
 | **GRNET press** (grnet.gr) | They are happy to publish an ARIS success story - the daily-harvest pipeline on national HPC is a perfect angle for them. |
 | **Embassy of Greece - Science & Culture office** | International visibility for Greek-origin digital scholarship. |

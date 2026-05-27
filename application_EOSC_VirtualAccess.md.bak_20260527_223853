@@ -1,17 +1,17 @@
 # EOSC · Virtual Access (EGI Federated Cloud) - Application
 
-Submit at: https://marketplace.eosc-portal.eu (filter for "Virtual Access" cloud-compute services)
+Submit at:  https://marketplace.eosc-portal.eu  (filter for "Virtual Access" cloud-compute services)
 
 EOSC Virtual Access is funded by the European Commission to give researchers access to federated cloud resources (EGI Fed Cloud) without per-PI charge. Particularly suited for hosting the **public-facing infrastructure side** of AthDGC (the gateway VM that exposes the annotated corpus to the wider research community), in contrast to ARIS / EuroHPC which is best for the heavy GPU compute.
 
 ---
 
-**Researcher:** Prof. Nikolaos Lavidas, EKPA, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy
-**Institutional email:** nlavidas@enl.uoa.gr
-**ORCID:** (add if available)
-**Project:** AthDGC - Athens Diachronic Greek Corpus
-**Discipline:** Digital Humanities · Computational Linguistics · Indo-European Linguistics
-**Open Science compliance:** Full - all code on github.com/AthDGC, dataset under permissive per-source licenses, dashboard public.
+**Researcher:**  Prof. Nikolaos Lavidas, EKPA Section of Linguistics
+**Institutional email:**  nlavidas@enl.uoa.gr
+**ORCID:**  (add if available)
+**Project:**  AthDGC - Athens Diachronic Greek Corpus
+**Discipline:**  Digital Humanities · Computational Linguistics · Indo-European Linguistics
+**Open Science compliance:**  Full - all code on github.com/AthDGC, dataset under permissive per-source licenses, dashboard public.
 
 ---
 
@@ -67,19 +67,19 @@ By hosting on EOSC, the resource is:
 
 | Month | Milestone |
 |---|---|
-| M0 | EOSC VM provisioned, gateway stack deployed via the cloud-agnostic migration script |
-| M2 | First public corpus query endpoint live; ATHDGC.github.io updated to point at it |
-| M6 | All Greek diachronic periods at completion thresholds; pipeline advances to Latin |
+| M0  | EOSC VM provisioned, gateway stack deployed via the cloud-agnostic migration script |
+| M2  | First public corpus query endpoint live; ATHDGC.github.io updated to point at it |
+| M6  | All Greek diachronic periods at completion thresholds; pipeline advances to Latin |
 | M12 | Cross-lingual alignment for grc/lat/got/chu/xcl in Neo4j; public polyglot matrix UI |
 | M18 | Pipeline progresses through Sanskrit, Old English; new dataset releases on HuggingFace |
 | M24 | Final dataset + paper releases; sustainability plan for hand-off to a permanent host (EKPA bare-metal as fallback) |
 
 ## Why EOSC
 
-The EOSC Virtual Access mechanism exists precisely for projects like AthDGC: open scientific infrastructure that benefits a European-wide research community, hosted by Europe's federated cloud, accessible without commercial vendor lock-in. The full Docker Compose stack we ship is portable to any provider - but EOSC's federated mechanism aligns best with our Open Science commitments and our existing GRNET / EKPA / EuroHPC cross-alignments.
+The EOSC Virtual Access mechanism exists precisely for projects like AthDGC: open scientific infrastructure that benefits a European-wide research community, hosted by Europe's federated cloud, accessible without commercial vendor lock-in. The full Docker Compose stack we ship is portable to any provider - but EOSC's federated mechanism aligns best with our Open Science commitments and our existing GRNET / EKPA / EuroHPC anchors.
 
 ## Contact
 
 Prof. Nikolaos Lavidas - nikolaos.lavidas@gmail.com
-GitHub: github.com/AthDGC
-Live showcase: https://athdgc.github.io
+GitHub:  github.com/AthDGC
+Live showcase:  https://athdgc.github.io

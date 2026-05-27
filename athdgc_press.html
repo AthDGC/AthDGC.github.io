@@ -7,41 +7,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0A2540;--mid:#1B4D8A;--cream:#F5E8C7;--paper:#FBF6E9;
-  --gold:#C5A572;--goldDk:#8E7340;--ink:#1A1A1A;--inkSoft:#3D3D3D;
-  --muted:#6B7280;--proielY:#8B3A3A;--proielG:#2E6B41;--proielB:#1F5E8C;--proielO:#8C5E1F;
-  --serif:"Cormorant Garamond",Palatino,Georgia,serif;
-  --sans:"Inter",sans-serif;
-  --mono:"JetBrains Mono",Consolas,monospace;
+ --navy:#0A2540;--mid:#1B4D8A;--cream:#F5E8C7;--paper:#FBF6E9;
+ --gold:#C5A572;--goldDk:#8E7340;--ink:#1A1A1A;--inkSoft:#3D3D3D;
+ --muted:#6B7280;--proielY:#8B3A3A;--proielG:#2E6B41;--proielB:#1F5E8C;--proielO:#8C5E1F;
+ --serif:"Cormorant Garamond",Palatino,Georgia,serif;
+ --sans:"Inter",sans-serif;
+ --mono:"JetBrains Mono",Consolas,monospace;
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6}
 
 nav.top{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;padding:14px 6%;display:flex;align-items:center;gap:24px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-nav.top .brand{font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:.05em;color:#fff}
-nav.top .brand .ao{color:var(--gold)}
+nav.top.brand{font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:.05em;color:#fff}
+nav.top.brand.ao{color:var(--gold)}
 nav.top a{color:#FBF6E9;text-decoration:none;font-size:14px;font-weight:500;padding:6px 10px;border-radius:2px}
 nav.top a:hover{background:var(--mid);color:var(--gold)}
-nav.top .spacer{flex:1}
-nav.top .ext{color:var(--gold);font-family:var(--mono);font-size:12px;border:1px solid var(--gold);padding:5px 10px;border-radius:2px}
+nav.top.spacer{flex:1}
+nav.top.ext{color:var(--gold);font-family:var(--mono);font-size:12px;border:1px solid var(--gold);padding:5px 10px;border-radius:2px}
 
 .hero{background:linear-gradient(180deg,var(--navy) 0%,#143358 100%);color:#fff;padding:70px 8% 60px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:"\03B1";position:absolute;font-family:var(--serif);font-size:480px;color:#1B4D8A;opacity:.32;top:-40px;left:-30px;line-height:1}
 .hero::after{content:"\03C9";position:absolute;font-family:var(--serif);font-size:480px;color:#1B4D8A;opacity:.32;bottom:-100px;right:-20px;line-height:1}
 .hero h1{font-family:var(--serif);font-size:64px;margin:0;font-weight:600;letter-spacing:.04em;position:relative}
-.hero .sub{color:var(--gold);font-family:var(--serif);font-style:italic;font-size:24px;margin-top:10px;position:relative}
-.hero .tag{color:#FBF6E9;font-size:17px;margin-top:22px;max-width:780px;margin-left:auto;margin-right:auto;position:relative}
-.hero .meta{margin-top:24px;color:#C5A572;font-family:var(--mono);font-size:11px;letter-spacing:.1em;position:relative}
+.hero.sub{color:var(--gold);font-family:var(--serif);font-style:italic;font-size:24px;margin-top:10px;position:relative}
+.hero.tag{color:#FBF6E9;font-size:17px;margin-top:22px;max-width:780px;margin-left:auto;margin-right:auto;position:relative}
+.hero.meta{margin-top:24px;color:#C5A572;font-family:var(--mono);font-size:11px;letter-spacing:.1em;position:relative}
 
 .meander{height:30px;background:var(--navy)}
 
 section{padding:60px 6%;max-width:1200px;margin:0 auto;scroll-margin-top:80px}
 section h2{font-family:var(--serif);font-size:36px;color:var(--navy);font-weight:600;margin:0 0 6px}
-section .sect-sub{color:var(--muted);font-style:italic;margin-bottom:32px;font-size:16px}
+section.sect-sub{color:var(--muted);font-style:italic;margin-bottom:32px;font-size:16px}
 
 .quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:32px 0 0}
 .qcard{background:#fff;padding:18px 22px;border-left:4px solid var(--gold);box-shadow:0 2px 8px rgba(10,37,64,.05)}
-.qcard .qlbl{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--goldDk);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.qcard.qlbl{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--goldDk);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
 .qcard a{color:var(--navy);text-decoration:none;font-family:var(--serif);font-size:18px;font-weight:600}
 .qcard a:hover{color:var(--mid);text-decoration:underline}
 .qcard code{font-family:var(--mono);font-size:11px;color:var(--inkSoft);background:var(--paper);padding:1px 5px;border-radius:2px;display:inline-block;margin-top:6px}
@@ -54,29 +54,29 @@ section .sect-sub{color:var(--muted);font-style:italic;margin-bottom:32px;font-s
 .ann-pane{display:none;background:#fff;padding:24px 28px;border-left:5px solid var(--gold);box-shadow:0 4px 14px rgba(10,37,64,.08)}
 .ann-pane.active{display:block}
 .ann-pane p{font-family:var(--serif);font-size:17px;line-height:1.7;color:var(--ink);margin:0 0 14px}
-.ann-pane .meta-row{font-family:var(--mono);font-size:11px;color:var(--goldDk);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed var(--cream)}
-.ann-pane .copy-row{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--cream)}
+.ann-pane.meta-row{font-family:var(--mono);font-size:11px;color:var(--goldDk);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed var(--cream)}
+.ann-pane.copy-row{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--cream)}
 .copy-btn{font:inherit;font-size:11px;font-weight:700;letter-spacing:.06em;padding:6px 12px;border:1px solid var(--cream);background:var(--paper);color:var(--inkSoft);cursor:pointer;border-radius:2px;text-transform:uppercase}
 .copy-btn:hover{background:#fff;border-color:var(--gold);color:var(--navy)}
 
 /* Publications cards */
 .pub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
 .pub-card{background:#fff;border-left:5px solid var(--mid);padding:22px 24px;box-shadow:0 4px 14px rgba(10,37,64,.08)}
-.pub-card .ptype{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--goldDk);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.pub-card.ptype{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--goldDk);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
 .pub-card h3{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:600;margin:0 0 8px}
-.pub-card .pmeta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:12px}
+.pub-card.pmeta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:12px}
 .pub-card p{color:var(--inkSoft);font-size:14px;margin:0 0 14px}
-.pub-card .plinks{display:flex;flex-wrap:wrap;gap:6px}
-.pub-card .plinks a{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:5px 10px;background:var(--paper);color:var(--navy);text-decoration:none;border:1px solid var(--cream);border-radius:2px}
-.pub-card .plinks a:hover{background:var(--navy);color:var(--gold)}
+.pub-card.plinks{display:flex;flex-wrap:wrap;gap:6px}
+.pub-card.plinks a{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:5px 10px;background:var(--paper);color:var(--navy);text-decoration:none;border:1px solid var(--cream);border-radius:2px}
+.pub-card.plinks a:hover{background:var(--navy);color:var(--gold)}
 .pub-card.featured{border-left-color:var(--proielY)}
-.pub-card.featured .ptype{color:var(--proielY)}
+.pub-card.featured.ptype{color:var(--proielY)}
 
 /* Citation block */
 .cite-block{background:var(--navy);color:#FBF6E9;padding:24px 28px;border-left:5px solid var(--gold);font-family:var(--mono);font-size:12px;line-height:1.7;overflow-x:auto;position:relative}
 .cite-block pre{margin:0;color:var(--gold);font-family:var(--mono);font-size:12px;white-space:pre-wrap}
-.cite-block .cite-h{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:10px;font-weight:700}
-.cite-block .copy-cite{position:absolute;top:14px;right:14px}
+.cite-block.cite-h{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:10px;font-weight:700}
+.cite-block.copy-cite{position:absolute;top:14px;right:14px}
 
 /* Channels matrix */
 .chan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
@@ -85,11 +85,11 @@ section .sect-sub{color:var(--muted);font-style:italic;margin-bottom:32px;font-s
 .chan-card.tier2{border-left:5px solid var(--mid)}
 .chan-card.tier3{border-left:5px solid var(--gold)}
 .chan-card.tier4{border-left:5px solid var(--proielO)}
-.chan-card .tier{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--goldDk);text-transform:uppercase;letter-spacing:.1em}
+.chan-card.tier{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--goldDk);text-transform:uppercase;letter-spacing:.1em}
 .chan-card h4{font-family:var(--serif);font-size:18px;color:var(--navy);margin:4px 0 4px;font-weight:600}
 .chan-card p{font-size:13px;color:var(--inkSoft);margin:0 0 8px;line-height:1.55}
-.chan-card .chan-url{font-family:var(--mono);font-size:11px;color:var(--mid);word-break:break-all}
-.chan-card .status{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:.06em;display:inline-block;margin-top:8px}
+.chan-card.chan-url{font-family:var(--mono);font-size:11px;color:var(--mid);word-break:break-all}
+.chan-card.status{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:.06em;display:inline-block;margin-top:8px}
 .status.todo{background:var(--paper);color:var(--goldDk);border:1px solid var(--cream)}
 .status.done{background:#EAF7EE;color:var(--proielG);border:1px solid var(--proielG)}
 .status.pending{background:#FBEAEA;color:var(--proielY);border:1px solid var(--proielY)}
@@ -107,18 +107,18 @@ section .sect-sub{color:var(--muted);font-style:italic;margin-bottom:32px;font-s
 /* Asset / press kit */
 .asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:18px}
 .asset{background:#fff;padding:18px;text-align:center;border:1px solid var(--cream);border-radius:2px}
-.asset .ic{font-family:var(--serif);font-size:42px;color:var(--gold);line-height:1}
+.asset.ic{font-family:var(--serif);font-size:42px;color:var(--gold);line-height:1}
 .asset h5{font-family:var(--serif);font-size:15px;color:var(--navy);margin:6px 0 4px;font-weight:600}
 .asset p{font-family:var(--mono);font-size:10px;color:var(--muted);margin:0;letter-spacing:.05em}
-.asset.ready{border-color:var(--proielG)}.asset.ready .ic{color:var(--proielG)}
+.asset.ready{border-color:var(--proielG)}.asset.ready.ic{color:var(--proielG)}
 .asset.pending{border-color:var(--gold);background:var(--paper)}
 
 /* Footer */
 footer{padding:50px 8%;background:var(--navy);color:#FBF6E9;text-align:center;margin-top:40px}
-footer .logo{font-family:var(--serif);font-size:38px;color:#fff;font-weight:600;letter-spacing:.04em;margin-bottom:6px}
-footer .tagline{color:var(--gold);font-style:italic;font-size:16px;font-family:var(--serif);margin-bottom:14px}
-footer .attribution{color:#C5A572;font-size:12px;font-family:var(--mono);letter-spacing:.06em;margin-bottom:14px}
-footer .links a{color:#FBF6E9;text-decoration:none;margin:0 12px;border-bottom:1px dotted var(--gold);font-size:13px}
+footer.logo{font-family:var(--serif);font-size:38px;color:#fff;font-weight:600;letter-spacing:.04em;margin-bottom:6px}
+footer.tagline{color:var(--gold);font-style:italic;font-size:16px;font-family:var(--serif);margin-bottom:14px}
+footer.attribution{color:#C5A572;font-size:12px;font-family:var(--mono);letter-spacing:.06em;margin-bottom:14px}
+footer.links a{color:#FBF6E9;text-decoration:none;margin:0 12px;border-bottom:1px dotted var(--gold);font-size:13px}
 
 /* small util */
 strong{color:var(--navy)}
@@ -131,544 +131,544 @@ em{color:var(--mid)}
 <body>
 
 <nav class="top">
-  <div class="brand"><span class="ao">Α</span>thDGC<span class="ao">Ω</span></div>
-  <a href="https://athdgc.github.io/">Corpus</a>
-  <a href="#announce">Announcement</a>
-  <a href="#publications">Publications</a>
-  <a href="#cite">How to cite</a>
-  <a href="#channels">Channels</a>
-  <a href="#timeline">Timeline</a>
-  <a href="#team">Team</a><a href="#kit">Press kit</a>
-  <div class="spacer"></div>
-  <span class="ext">Press · v0.1</span>
+ <div class="brand"><span class="ao">Α</span>thDGC<span class="ao">Ω</span></div>
+ <a href="https://athdgc.github.io/">Corpus</a>
+ <a href="#announce">Announcement</a>
+ <a href="#publications">Publications</a>
+ <a href="#cite">How to cite</a>
+ <a href="#channels">Channels</a>
+ <a href="#timeline">Timeline</a>
+ <a href="#team">Team</a><a href="#kit">Press kit</a>
+ <div class="spacer"></div>
+ <span class="ext">Press · v0.1</span>
 </nav>
 
 <div id="hero" class="hero">
-  <h1>Press &amp; Publications</h1>
-  <div class="sub">AthDGC &middot; Athens-PROIEL</div>
-  <div class="tag">Everything you need to announce, cite, and publish the
-    <strong>Athens Diachronic Greek Corpus</strong> - DOI, data paper, announcement
-    text in English and Greek, and a ranked list of venues.</div>
-  <div class="meta">National &amp; Kapodistrian University of Athens (EKPA) &middot; Section of Linguistics &middot; Funded by HFRI (Project No. 20577) &middot; Greece 2.0 NRRP</div>
+ <h1>Press &amp; Publications</h1>
+ <div class="sub">AthDGC &middot; Athens-PROIEL</div>
+ <div class="tag">Everything you need to announce, cite, and publish the
+ <strong>Athens Diachronic Greek Corpus</strong> - DOI, data paper, announcement
+ text in English and Greek, and a ranked list of venues.</div>
+ <div class="meta">National &amp; Kapodistrian University of Athens (EKPA) &middot; Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy &middot; Funded by HFRI (Project No. 20577) &middot; Greece 2.0 NRRP</div>
 </div>
 <div class="meander"></div>
 
 <!-- Quick links -->
 <section id="quick">
-  <h2>Quick links</h2>
-  <div class="sect-sub">DOIs, repositories, and one-line citations</div>
-  <div class="quick">
-    <div class="qcard">
-      <div class="qlbl">Concept DOI</div>
-      <a href="#">[DOI pending Zenodo mint]</a>
-      <div><code>mint before announcing - see Zenodo pack</code></div>
-    </div>
-    <div class="qcard">
-      <div class="qlbl">Showcase</div>
-      <a href="https://athdgc.github.io">athdgc.github.io</a>
-      <div><code>browsable PROIEL-annotated samples</code></div>
-    </div>
-    <div class="qcard">
-      <div class="qlbl">GitHub</div>
-      <a href="https://github.com/AthDGC">github.com/AthDGC</a>
-      <div><code>source code + dataset releases</code></div>
-    </div>
-    <div class="qcard">
-      <div class="qlbl">Hugging Face</div>
-      <a href="#">athdgc/diachronic-greek-corpus</a>
-      <div><code>forthcoming v0.1 dataset</code></div>
-    </div>
-    <div class="qcard">
-      <div class="qlbl">Contact</div>
-      <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a>
-      <div><code>Prof. Nikolaos Lavidas, EKPA</code></div>
-    </div>
-    <div class="qcard">
-      <div class="qlbl">Press kit</div>
-      <a href="#kit">Download below</a>
-      <div><code>logo · screenshots · one-pager</code></div>
-    </div>
-  </div>
+ <h2>Quick links</h2>
+ <div class="sect-sub">DOIs, repositories, and one-line citations</div>
+ <div class="quick">
+ <div class="qcard">
+ <div class="qlbl">Concept DOI</div>
+ <a href="#">[DOI pending Zenodo mint]</a>
+ <div><code>mint before announcing - see Zenodo pack</code></div>
+ </div>
+ <div class="qcard">
+ <div class="qlbl">Showcase</div>
+ <a href="https://athdgc.github.io">athdgc.github.io</a>
+ <div><code>browsable PROIEL-annotated samples</code></div>
+ </div>
+ <div class="qcard">
+ <div class="qlbl">GitHub</div>
+ <a href="https://github.com/AthDGC">github.com/AthDGC</a>
+ <div><code>source code + dataset releases</code></div>
+ </div>
+ <div class="qcard">
+ <div class="qlbl">Hugging Face</div>
+ <a href="#">athdgc/diachronic-greek-corpus</a>
+ <div><code>forthcoming v0.1 dataset</code></div>
+ </div>
+ <div class="qcard">
+ <div class="qlbl">Contact</div>
+ <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a>
+ <div><code>Prof. Nikolaos Lavidas, EKPA</code></div>
+ </div>
+ <div class="qcard">
+ <div class="qlbl">Press kit</div>
+ <a href="#kit">Download below</a>
+ <div><code>logo · screenshots · one-pager</code></div>
+ </div>
+ </div>
 </section>
 
 <!-- Announcement texts -->
 <section id="announce">
-  <h2>Announcement text</h2>
-  <div class="sect-sub">Three ready-to-paste variants - English long, Greek long, and one-line social</div>
-  <div class="ann-tabs" role="tablist">
-    <button class="ann-btn active" data-target="ann-en">English &middot; ~140 words</button>
-    <button class="ann-btn" data-target="ann-gr">Ελληνικά &middot; ~110 λέξεις</button>
-    <button class="ann-btn" data-target="ann-social">Social &middot; ~40 words</button>
-  </div>
+ <h2>Announcement text</h2>
+ <div class="sect-sub">Three ready-to-paste variants - English long, Greek long, and one-line social</div>
+ <div class="ann-tabs" role="tablist">
+ <button class="ann-btn active" data-target="ann-en">English &middot; ~140 words</button>
+ <button class="ann-btn" data-target="ann-gr">Ελληνικά &middot; ~110 λέξεις</button>
+ <button class="ann-btn" data-target="ann-social">Social &middot; ~40 words</button>
+ </div>
 
-  <div id="ann-en" class="ann-pane active">
-    <div class="meta-row">For: LINGUIST List, HUMANIST, CORPORA, academic blogs</div>
-    <p><strong>Announcing AthDGC (&ldquo;Athens-PROIEL&rdquo;) - an open diachronic Greek treebank with Indo-European parallels.</strong>
-       AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is <em>retranslations</em>, <em>retellings</em>, and <em>influential texts</em> across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open:
-       <a href="https://athdgc.github.io">athdgc.github.io</a> &middot; <a href="https://github.com/AthDGC">github.com/AthDGC</a></p>
-    <div class="copy-row">
-      <button class="copy-btn" data-copy="ann-en">📋 Copy this announcement</button>
-      <button class="copy-btn" data-copy="ann-en-md">📋 Copy as plain text (no HTML)</button>
-    </div>
-  </div>
+ <div id="ann-en" class="ann-pane active">
+ <div class="meta-row">For: LINGUIST List, HUMANIST, CORPORA, academic blogs</div>
+ <p><strong>Announcing AthDGC (&ldquo;Athens-PROIEL&rdquo;) - an open diachronic Greek treebank with Indo-European parallels.</strong>
+ AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-TestameNT-aligned backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is <em>retranslations</em>, <em>retellings</em>, and <em>influential texts</em> across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-aligned verses across five IE witnesses. Code, dataset, and live showcase are open:
+ <a href="https://athdgc.github.io">athdgc.github.io</a> &middot; <a href="https://github.com/AthDGC">github.com/AthDGC</a></p>
+ <div class="copy-row">
+ <button class="copy-btn" data-copy="ann-en">📋 Copy this announcement</button>
+ <button class="copy-btn" data-copy="ann-en-md">📋 Copy as plain text (no HTML)</button>
+ </div>
+ </div>
 
-  <div id="ann-gr" class="ann-pane">
-    <div class="meta-row">For: Greek mailing lists · ICGL · EKPA press · social</div>
-    <p class="greek"><strong>AthDGC - Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).</strong> Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής - από τον Όμηρο έως σήμερα - με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις <em>επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις</em> και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: <a href="https://athdgc.github.io">athdgc.github.io</a></p>
-    <div class="copy-row">
-      <button class="copy-btn" data-copy="ann-gr">📋 Αντιγραφή κειμένου</button>
-    </div>
-  </div>
+ <div id="ann-gr" class="ann-pane">
+ <div class="meta-row">For: Greek mailing lists · ICGL · EKPA press · social</div>
+ <p class="greek"><strong>AthDGC - Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).</strong> Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής - από τον Όμηρο έως σήμερα - με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις <em>επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις</em> και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: <a href="https://athdgc.github.io">athdgc.github.io</a></p>
+ <div class="copy-row">
+ <button class="copy-btn" data-copy="ann-gr">📋 Αντιγραφή κειμένου</button>
+ </div>
+ </div>
 
-  <div id="ann-social" class="ann-pane">
-    <div class="meta-row">For: X / Bluesky / LinkedIn / Mastodon</div>
-    <p style="font-family:var(--sans);font-size:16px">🏛️ Announcing <strong>AthDGC</strong> - Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Section of Linguistics · <a href="https://athdgc.github.io">athdgc.github.io</a>
-    <br><br>
-    <code class="kbd">#DH #DigitalHumanities #AncientGreek #PROIEL #HistoricalLinguistics #IndoEuropean #DiachronicCorpus</code></p>
-    <div class="copy-row">
-      <button class="copy-btn" data-copy="ann-social">📋 Copy social blurb</button>
-    </div>
-  </div>
+ <div id="ann-social" class="ann-pane">
+ <div class="meta-row">For: X / Bluesky / LinkedIn / Mastodon</div>
+ <p style="font-family:var(--sans);font-size:16px">🏛️ Announcing <strong>AthDGC</strong> - Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy · <a href="https://athdgc.github.io">athdgc.github.io</a>
+ <br><br>
+ <code class="kbd">#DH #DigitalHumanities #AncientGreek #PROIEL #HistoricalLinguistics #IndoEuropean #DiachronicCorpus</code></p>
+ <div class="copy-row">
+ <button class="copy-btn" data-copy="ann-social">📋 Copy social blurb</button>
+ </div>
+ </div>
 </section>
 
 <!-- Publications -->
 <section id="publications">
-  <h2>Publications &amp; reports</h2>
-  <div class="sect-sub">Data paper for journal submission, plus grant applications and internal reports</div>
+ <h2>Publications &amp; reports</h2>
+ <div class="sect-sub">Data paper for journal submission, plus grant applications and internal reports</div>
 
-  <div class="pub-grid">
+ <div class="pub-grid">
 
-    <div class="pub-card featured">
-      <div class="ptype">Featured · data paper · ready for submission</div>
-      <h3>AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels</h3>
-      <div class="pmeta">Lavidas, N. &middot; ~1,800 words &middot; 6 figures/tables &middot; JOHD-format</div>
-      <p>A formal short data paper introducing the corpus, methodology (seven-stage pipeline, PROIEL XML 2.0, Stanza, LaBSE, AwesomeAlign, LingPy), the dataset description (89.9 M rows, 4.08 M annotated Greek, 6,861 NT-aligned verses), and reuse potential. Target venue: <em>Journal of Open Humanities Data</em> (Ubiquity Press).</p>
-      <div class="plinks">
-        <a href="athdgc_data_paper.docx">⬇ Download .docx</a>
-        <a href="athdgc_data_paper.md">⬇ Download .md</a>
-        <a href="#cite">How to cite</a>
-      </div>
-    </div>
+ <div class="pub-card featured">
+ <div class="ptype">Featured · data paper · ready for submission</div>
+ <h3>AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels</h3>
+ <div class="pmeta">Lavidas, N. &middot; ~1,800 words &middot; 6 figures/tables &middot; JOHD-format</div>
+ <p>A formal short data paper introducing the corpus, methodology (seven-stage pipeline, PROIEL XML 2.0, Stanza, LaBSE, AwesomeAlign, LingPy), the dataset description (89.9 M rows, 4.08 M annotated Greek, 6,861 NT-aligned verses), and reuse potential. Target venue: <em>Journal of Open Humanities Data</em> (Ubiquity Press).</p>
+ <div class="plinks">
+ <a href="athdgc_data_paper.docx">⬇ Download.docx</a>
+ <a href="athdgc_data_paper.md">⬇ Download.md</a>
+ <a href="#cite">How to cite</a>
+ </div>
+ </div>
 
-    <div class="pub-card">
-      <div class="ptype">Zenodo / DOI pack</div>
-      <h3>AthDGC v0.1 - DOI Minting Pack</h3>
-      <div class="pmeta">Step-by-step GitHub→Zenodo integration &middot; ready-to-paste .zenodo.json + CITATION.cff</div>
-      <p>Mint the concept DOI and the v0.1.0 version DOI before any other announcement. Two paths (auto-archive on GitHub release, or manual upload).</p>
-      <div class="plinks">
-        <a href="athdgc_zenodo_pack.md">⬇ Open the Zenodo pack</a>
-        <a href="https://zenodo.org/account/settings/github/">Zenodo · GitHub settings</a>
-      </div>
-    </div>
+ <div class="pub-card">
+ <div class="ptype">Zenodo / DOI pack</div>
+ <h3>AthDGC v0.1 - DOI Minting Pack</h3>
+ <div class="pmeta">Step-by-step GitHub→Zenodo integration &middot; ready-to-paste.zenodo.json + CITATION.cff</div>
+ <p>Mint the concept DOI and the v0.1.0 version DOI before any other announcement. Two paths (auto-archive on GitHub release, or manual upload).</p>
+ <div class="plinks">
+ <a href="athdgc_zenodo_pack.md">⬇ Open the Zenodo pack</a>
+ <a href="https://zenodo.org/account/settings/github/">Zenodo · GitHub settings</a>
+ </div>
+ </div>
 
-    <div class="pub-card">
-      <div class="ptype">Announcement copy</div>
-      <h3>Announcement text + venue list</h3>
-      <div class="pmeta">3 text variants &middot; ranked venues &middot; 7-day rollout plan</div>
-      <p>Short EN + GR announcements with a ranked venue list for mailing lists, conferences, repositories, institutional channels, and bilateral emails.</p>
-      <div class="plinks">
-        <a href="athdgc_announcement.md">⬇ Open the announcement pack</a>
-      </div>
-    </div>
+ <div class="pub-card">
+ <div class="ptype">Announcement copy</div>
+ <h3>Announcement text + venue list</h3>
+ <div class="pmeta">3 text variants &middot; ranked venues &middot; 7-day rollout plan</div>
+ <p>Short EN + GR announcements with a ranked venue list for mailing lists, conferences, repositories, institutional channels, and bilateral emails.</p>
+ <div class="plinks">
+ <a href="athdgc_announcement.md">⬇ Open the announcement pack</a>
+ </div>
+ </div>
 
-    <div class="pub-card">
-      <div class="ptype">Grant application</div>
-      <h3>EuroHPC JU · Development Access Call</h3>
-      <div class="pmeta">~20,000 GPU-node-hours &middot; LUMI / MeluXina / Discoverer</div>
-      <p>Application for EuroHPC compute to scale dependency parsing and cross-lingual alignment beyond ARIS-only capacity, in preparation as of 2026-05.</p>
-      <div class="plinks">
-        <a href="application_EuroHPC_JU.md">⬇ Open the application</a>
-      </div>
-    </div>
+ <div class="pub-card">
+ <div class="ptype">Grant application</div>
+ <h3>EuroHPC JU · Development Access Call</h3>
+ <div class="pmeta">~20,000 GPU-node-hours &middot; LUMI / MeluXina / Discoverer</div>
+ <p>Application for EuroHPC compute to scale dependency parsing and cross-lingual alignment beyond ARIS-only capacity, in preparation as of 2026-05.</p>
+ <div class="plinks">
+ <a href="application_EuroHPC_JU.md">⬇ Open the application</a>
+ </div>
+ </div>
 
-    <div class="pub-card">
-      <div class="ptype">Grant application</div>
-      <h3>Google Cloud Research Credits</h3>
-      <div class="pmeta">USD 5,000 over 12 months &middot; A100 burst + Cloud Run hosting</div>
-      <p>Complementary cloud burst capacity for Stanza dependency parsing and public hosting of the cross-lingual alignment graph endpoint.</p>
-      <div class="plinks">
-        <a href="application_GoogleCloud_Research.md">⬇ Open the application</a>
-      </div>
-    </div>
+ <div class="pub-card">
+ <div class="ptype">Grant application</div>
+ <h3>Google Cloud Research Credits</h3>
+ <div class="pmeta">USD 5,000 over 12 months &middot; A100 burst + Cloud Run hosting</div>
+ <p>Complementary cloud burst capacity for Stanza dependency parsing and public hosting of the cross-lingual alignment graph endpoint.</p>
+ <div class="plinks">
+ <a href="application_GoogleCloud_Research.md">⬇ Open the application</a>
+ </div>
+ </div>
 
-    <div class="pub-card">
-      <div class="ptype">Grant application</div>
-      <h3>EOSC · Virtual Access (EGI Fed Cloud)</h3>
-      <div class="pmeta">8 vCPU · 32 GB RAM · 200 GB SSD · 24 months</div>
-      <p>European Open Science Cloud Virtual Access application for the public-facing gateway VM (Qdrant + Neo4j + FastAPI + NGINX + BlackLab + INCEpTION).</p>
-      <div class="plinks">
-        <a href="application_EOSC_VirtualAccess.md">⬇ Open the application</a>
-      </div>
-    </div>
+ <div class="pub-card">
+ <div class="ptype">Grant application</div>
+ <h3>EOSC · Virtual Access (EGI Fed Cloud)</h3>
+ <div class="pmeta">8 vCPU · 32 GB RAM · 200 GB SSD · 24 months</div>
+ <p>European Open Science Cloud Virtual Access application for the public-facing gateway VM (Qdrant + Neo4j + FastAPI + NGINX + BlackLab + INCEpTION).</p>
+ <div class="plinks">
+ <a href="application_EOSC_VirtualAccess.md">⬇ Open the application</a>
+ </div>
+ </div>
 
-  </div>
+ </div>
 </section>
 
 <!-- Citation -->
 <section id="cite">
-  <h2>How to cite</h2>
-  <div class="sect-sub">Use the concept DOI everywhere - it always resolves to the latest version</div>
+ <h2>How to cite</h2>
+ <div class="sect-sub">Use the concept DOI everywhere - it always resolves to the latest version</div>
 
-  <div class="cite-block">
-    <button class="copy-btn copy-cite" data-copy="cite-bibtex">📋 Copy BibTeX</button>
-    <div class="cite-h">BibTeX</div>
-    <pre id="cite-bibtex">@dataset{lavidas_athdgc_2026,
-  author       = {Lavidas, Nikolaos},
-  title        = {{AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)}},
-  year         = 2026,
-  publisher    = {Zenodo},
-  version      = {0.1.0},
-  doi          = {[DOI pending Zenodo mint]},
-  url          = {#},
-  note         = {Open infrastructure for Indo-European diachronic linguistics,
-                  developed at the National and Kapodistrian University of Athens (EKPA),
-                  Section of Linguistics.}
+ <div class="cite-block">
+ <button class="copy-btn copy-cite" data-copy="cite-bibtex">📋 Copy BibTeX</button>
+ <div class="cite-h">BibTeX</div>
+ <pre id="cite-bibtex">@dataset{lavidas_athdgc_2026,
+ author = {Lavidas, Nikolaos},
+ title = {{AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)}},
+ year = 2026,
+ publisher = {Zenodo},
+ version = {0.1.0},
+ doi = {[DOI pending Zenodo mint]},
+ url = {#},
+ note = {Open infrastructure for Indo-European diachronic linguistics,
+ developed at the National and Kapodistrian University of Athens (EKPA),
+ Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.}
 }</pre>
-  </div>
+ </div>
 
-  <div class="cite-block" style="margin-top:14px">
-    <button class="copy-btn copy-cite" data-copy="cite-text">📋 Copy plain text</button>
-    <div class="cite-h">Plain text (APA-ish)</div>
-    <pre id="cite-text">Lavidas, N. (2026). AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL) (Version 0.1.0) [Dataset]. National and Kapodistrian University of Athens (EKPA), Section of Linguistics. #</pre>
-  </div>
+ <div class="cite-block" style="margin-top:14px">
+ <button class="copy-btn copy-cite" data-copy="cite-text">📋 Copy plain text</button>
+ <div class="cite-h">Plain text (APA-ish)</div>
+ <pre id="cite-text">Lavidas, N. (2026). AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL) (Version 0.1.0) [Dataset]. National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy. #</pre>
+ </div>
 
-  <div class="cite-block" style="margin-top:14px">
-    <button class="copy-btn copy-cite" data-copy="cite-cff">📋 Copy CITATION.cff</button>
-    <div class="cite-h">CITATION.cff (paste into the GitHub repo root)</div>
+ <div class="cite-block" style="margin-top:14px">
+ <button class="copy-btn copy-cite" data-copy="cite-cff">📋 Copy CITATION.cff</button>
+ <div class="cite-h">CITATION.cff (paste into the GitHub repo root)</div>
 <pre id="cite-cff">cff-version: 1.2.0
 title: "AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL)"
 message: "If you use AthDGC in your research, please cite both the dataset DOI and this software repository."
 type: dataset
 authors:
-  - family-names: Lavidas
-    given-names: Nikolaos
-    affiliation: "National and Kapodistrian University of Athens (EKPA), Section of Linguistics"
-    orcid: ""
+ - family-names: Lavidas
+ given-names: Nikolaos
+ affiliation: "National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy"
+ orcid: ""
 repository-code: "https://github.com/AthDGC/Diachronic-Linguistics-Platform"
 url: "https://athdgc.github.io"
 license: Apache-2.0
 version: 0.1.0
 date-released: 2026-05-25</pre>
-  </div>
+ </div>
 </section>
 
 <!-- Channels -->
 <section id="channels">
-  <h2>Where to announce</h2>
-  <div class="sect-sub">Tiered by reach &amp; relevance - top-tier first</div>
+ <h2>Where to announce</h2>
+ <div class="sect-sub">Tiered by reach &amp; relevance - top-tier first</div>
 
-  <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 1 · Mailing lists &amp; high-reach forums</h3>
-  <div class="chan-grid">
-    <div class="chan-card tier1">
-      <div class="tier">Tier 1</div>
-      <h4>LINGUIST List</h4>
-      <p>Single largest reach for linguistics professionals worldwide. Tag as <em>historical linguistics, corpus linguistics, ancient Greek</em>.</p>
-      <div class="chan-url">linguistlist.org/issues/submit/</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier1">
-      <div class="tier">Tier 1</div>
-      <h4>HUMANIST list</h4>
-      <p>Digital Humanities flagship; international, well-archived, exactly your audience for cross-lingual alignment + reproducibility.</p>
-      <div class="chan-url">humanist.kdl.kcl.ac.uk</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier1">
-      <div class="tier">Tier 1</div>
-      <h4>CORPORA list</h4>
-      <p>Corpus linguistics community - the natural home for a new treebank announcement.</p>
-      <div class="chan-url">clarino.uib.no / corpora-list</div>
-      <span class="status todo">TODO</span>
-    </div>
-  </div>
+ <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 1 · Mailing lists &amp; high-reach forums</h3>
+ <div class="chan-grid">
+ <div class="chan-card tier1">
+ <div class="tier">Tier 1</div>
+ <h4>LINGUIST List</h4>
+ <p>Single largest reach for linguistics professionals worldwide. Tag as <em>historical linguistics, corpus linguistics, ancient Greek</em>.</p>
+ <div class="chan-url">linguistlist.org/issues/submit/</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier1">
+ <div class="tier">Tier 1</div>
+ <h4>HUMANIST list</h4>
+ <p>Digital Humanities flagship; international, well-archived, exactly your audience for cross-lingual alignment + reproducibility.</p>
+ <div class="chan-url">humanist.kdl.kcl.ac.uk</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier1">
+ <div class="tier">Tier 1</div>
+ <h4>CORPORA list</h4>
+ <p>Corpus linguistics community - the natural home for a new treebank announcement.</p>
+ <div class="chan-url">clarino.uib.no / corpora-list</div>
+ <span class="status todo">TODO</span>
+ </div>
+ </div>
 
-  <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 2 · Conferences &amp; demo venues</h3>
-  <div class="chan-grid">
-    <div class="chan-card tier2">
-      <div class="tier">Tier 2</div>
-      <h4>ICGL (Intl. Conf. on Greek Linguistics)</h4>
-      <p>Most relevant venue for Greek linguistics. Submit a short abstract or demo.</p>
-      <div class="chan-url">abstracts ~Jan · conf Sep 2026</div>
-      <span class="status pending">PENDING SUBMISSION</span>
-    </div>
-    <div class="chan-card tier2">
-      <div class="tier">Tier 2</div>
-      <h4>CIDL · Civis Diachronic Linguistics</h4>
-      <p>Athens-Sofia track, direct fit; AthDGC paper already in preparation.</p>
-      <div class="chan-url">civis-diachronic-linguistics-2026</div>
-      <span class="status done">IN PROGRESS</span>
-    </div>
-    <div class="chan-card tier2">
-      <div class="tier">Tier 2</div>
-      <h4>DH2026</h4>
-      <p>Big DH visibility - PROIEL XML + cross-lingual alignment graph is a strong poster.</p>
-      <div class="chan-url">poster CFP ~Feb · conf Aug</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier2">
-      <div class="tier">Tier 2</div>
-      <h4>LREC-COLING 2026</h4>
-      <p>The resource paper venue for treebanks.</p>
-      <div class="chan-url">lrec-coling-2026.org</div>
-      <span class="status todo">TODO</span>
-    </div>
-  </div>
+ <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 2 · Conferences &amp; demo venues</h3>
+ <div class="chan-grid">
+ <div class="chan-card tier2">
+ <div class="tier">Tier 2</div>
+ <h4>ICGL (Intl. Conf. on Greek Linguistics)</h4>
+ <p>Most relevant venue for Greek linguistics. Submit a short abstract or demo.</p>
+ <div class="chan-url">abstracts ~Jan · conf Sep 2026</div>
+ <span class="status pending">PENDING SUBMISSION</span>
+ </div>
+ <div class="chan-card tier2">
+ <div class="tier">Tier 2</div>
+ <h4>CIDL · Civis Diachronic Linguistics</h4>
+ <p>Athens-Sofia track, direct fit; AthDGC paper already in preparation.</p>
+ <div class="chan-url">civis-diachronic-linguistics-2026</div>
+ <span class="status done">IN PROGRESS</span>
+ </div>
+ <div class="chan-card tier2">
+ <div class="tier">Tier 2</div>
+ <h4>DH2026</h4>
+ <p>Big DH visibility - PROIEL XML + cross-lingual alignment graph is a strong poster.</p>
+ <div class="chan-url">poster CFP ~Feb · conf Aug</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier2">
+ <div class="tier">Tier 2</div>
+ <h4>LREC-COLING 2026</h4>
+ <p>The resource paper venue for treebanks.</p>
+ <div class="chan-url">lrec-coling-2026.org</div>
+ <span class="status todo">TODO</span>
+ </div>
+ </div>
 
-  <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 3 · Repositories &amp; permanent IDs</h3>
-  <div class="chan-grid">
-    <div class="chan-card tier3">
-      <div class="tier">Tier 3 · DOI first</div>
-      <h4>Zenodo</h4>
-      <p>Mint the concept DOI and version DOI; community: DARIAH, CLARIN, Digital Humanities.</p>
-      <div class="chan-url">zenodo.org</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier3">
-      <div class="tier">Tier 3</div>
-      <h4>Hugging Face Datasets</h4>
-      <p><code>athdgc/diachronic-greek-corpus</code> - public card with examples + per-source licence.</p>
-      <div class="chan-url">(forthcoming)</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier3">
-      <div class="tier">Tier 3</div>
-      <h4>CLARIN / DARIAH</h4>
-      <p>Submit metadata so the corpus is findable in the European research infrastructure catalogue.</p>
-      <div class="chan-url">clarin.eu / dariah.eu</div>
-      <span class="status todo">TODO</span>
-    </div>
-  </div>
+ <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 3 · Repositories &amp; permanent IDs</h3>
+ <div class="chan-grid">
+ <div class="chan-card tier3">
+ <div class="tier">Tier 3 · DOI first</div>
+ <h4>Zenodo</h4>
+ <p>Mint the concept DOI and version DOI; community: DARIAH, CLARIN, Digital Humanities.</p>
+ <div class="chan-url">zenodo.org</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier3">
+ <div class="tier">Tier 3</div>
+ <h4>Hugging Face Datasets</h4>
+ <p><code>athdgc/diachronic-greek-corpus</code> - public card with examples + per-source licence.</p>
+ <div class="chan-url">(forthcoming)</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier3">
+ <div class="tier">Tier 3</div>
+ <h4>CLARIN / DARIAH</h4>
+ <p>Submit metadata so the corpus is findable in the European research infrastructure catalogue.</p>
+ <div class="chan-url">clarin.eu / dariah.eu</div>
+ <span class="status todo">TODO</span>
+ </div>
+ </div>
 
-  <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 4 · Institutional &amp; bilateral</h3>
-  <div class="chan-grid">
-    <div class="chan-card tier4">
-      <div class="tier">Tier 4 · Institutional</div>
-      <h4>EKPA news page</h4>
-      <p>One-paragraph press item via the Section of Linguistics → Faculty press officer.</p>
-      <div class="chan-url">en.uoa.gr / news</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier4">
-      <div class="tier">Tier 4 · Institutional</div>
-      <h4>GRNET press</h4>
-      <p>ARIS success-story angle: daily-harvest pipeline on national HPC.</p>
-      <div class="chan-url">grnet.gr / press</div>
-      <span class="status todo">TODO</span>
-    </div>
-    <div class="chan-card tier4">
-      <div class="tier">Tier 4 · Bilateral emails</div>
-      <h4>Haug, Passarotti, Dik, Crane &amp; others</h4>
-      <p>Send the short blurb privately to the PROIEL / Perseus / Greek-diachronic / IE argument-structure circles.</p>
-      <div class="chan-url">see athdgc_announcement.md</div>
-      <span class="status todo">TODO</span>
-    </div>
-  </div>
+ <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 4 · Institutional &amp; bilateral</h3>
+ <div class="chan-grid">
+ <div class="chan-card tier4">
+ <div class="tier">Tier 4 · Institutional</div>
+ <h4>EKPA news page</h4>
+ <p>One-paragraph press item via the Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy → Faculty press officer.</p>
+ <div class="chan-url">en.uoa.gr / news</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier4">
+ <div class="tier">Tier 4 · Institutional</div>
+ <h4>GRNET press</h4>
+ <p>ARIS success-story angle: daily-harvest pipeline on national HPC.</p>
+ <div class="chan-url">grnet.gr / press</div>
+ <span class="status todo">TODO</span>
+ </div>
+ <div class="chan-card tier4">
+ <div class="tier">Tier 4 · Bilateral emails</div>
+ <h4>Haug, Passarotti, Dik, Crane &amp; others</h4>
+ <p>Send the short blurb privately to the PROIEL / Perseus / Greek-diachronic / IE argument-structure circles.</p>
+ <div class="chan-url">see athdgc_announcement.md</div>
+ <span class="status todo">TODO</span>
+ </div>
+ </div>
 </section>
 
 <!-- Timeline -->
 <section id="timeline">
-  <h2>Rollout timeline</h2>
-  <div class="sect-sub">One week from DOI to public announcement</div>
+ <h2>Rollout timeline</h2>
+ <div class="sect-sub">One week from DOI to public announcement</div>
 
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-day">Day 1 · DOI</div>
-      <div class="tl-title">Mint Zenodo DOI for v0.1.0</div>
-      <div class="tl-desc">Tag the GitHub release. Activate the Hugging Face dataset card. Add the DOI badge to the README of every AthDGC repo.</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-day">Day 2 · Site</div>
-      <div class="tl-title">Make showcase site public</div>
-      <div class="tl-desc">Update <code>athdgc.github.io</code> with the new (Athens-PROIEL emphasised) showcase. Add the DOI badge under the hero "Build" line.</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-day">Day 3 · Mailing lists</div>
-      <div class="tl-title">LINGUIST List · HUMANIST · CORPORA</div>
-      <div class="tl-desc">Submit the resource posting. Use the EN announcement, prefixed with the freshly minted DOI.</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-day">Day 4 · Socials</div>
-      <div class="tl-title">X / Bluesky / LinkedIn / Mastodon</div>
-      <div class="tl-desc">Post the short blurb with a screenshot of the PROIEL tree visualisation and the cross-lingual NT thread.</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-day">Day 5 · Institutional</div>
-      <div class="tl-title">EKPA + GRNET press items</div>
-      <div class="tl-desc">English Department news page, EKPA news, GRNET ARIS success-story email.</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-day">Day 6 · Bilateral</div>
-      <div class="tl-title">Bilateral emails</div>
-      <div class="tl-desc">Send to Haug, Passarotti, Dik, Crane and the Greek-diachronic / IE argument-structure circles - paste DOI + preprint link.</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-day">Day 7 · Submission</div>
-      <div class="tl-title">Submit data paper to JOHD</div>
-      <div class="tl-desc">Submit <code>athdgc_data_paper.docx</code> to <em>Journal of Open Humanities Data</em>. Submit ICGL / CIDL / DH2026 / LREC-COLING abstracts to whichever windows are open.</div>
-    </div>
-  </div>
+ <div class="timeline">
+ <div class="tl-item">
+ <div class="tl-day">Day 1 · DOI</div>
+ <div class="tl-title">Mint Zenodo DOI for v0.1.0</div>
+ <div class="tl-desc">Tag the GitHub release. Activate the Hugging Face dataset card. Add the DOI badge to the README of every AthDGC repo.</div>
+ </div>
+ <div class="tl-item">
+ <div class="tl-day">Day 2 · Site</div>
+ <div class="tl-title">Make showcase site public</div>
+ <div class="tl-desc">Update <code>athdgc.github.io</code> with the new (Athens-PROIEL emphasised) showcase. Add the DOI badge under the hero "Build" line.</div>
+ </div>
+ <div class="tl-item">
+ <div class="tl-day">Day 3 · Mailing lists</div>
+ <div class="tl-title">LINGUIST List · HUMANIST · CORPORA</div>
+ <div class="tl-desc">Submit the resource posting. Use the EN announcement, prefixed with the freshly minted DOI.</div>
+ </div>
+ <div class="tl-item">
+ <div class="tl-day">Day 4 · Socials</div>
+ <div class="tl-title">X / Bluesky / LinkedIn / Mastodon</div>
+ <div class="tl-desc">Post the short blurb with a screenshot of the PROIEL tree visualisation and the cross-lingual NT thread.</div>
+ </div>
+ <div class="tl-item">
+ <div class="tl-day">Day 5 · Institutional</div>
+ <div class="tl-title">EKPA + GRNET press items</div>
+ <div class="tl-desc">English Department news page, EKPA news, GRNET ARIS success-story email.</div>
+ </div>
+ <div class="tl-item">
+ <div class="tl-day">Day 6 · Bilateral</div>
+ <div class="tl-title">Bilateral emails</div>
+ <div class="tl-desc">Send to Haug, Passarotti, Dik, Crane and the Greek-diachronic / IE argument-structure circles - paste DOI + preprint link.</div>
+ </div>
+ <div class="tl-item">
+ <div class="tl-day">Day 7 · Submission</div>
+ <div class="tl-title">Submit data paper to JOHD</div>
+ <div class="tl-desc">Submit <code>athdgc_data_paper.docx</code> to <em>Journal of Open Humanities Data</em>. Submit ICGL / CIDL / DH2026 / LREC-COLING abstracts to whichever windows are open.</div>
+ </div>
+ </div>
 </section>
 
 
 <!-- Research Team -->
 <section id="team">
-  <h2>Research team</h2>
-  <div class="sect-sub">Athens Digital Glossa Chronos Research Network &middot; National &amp; Kapodistrian University of Athens (EKPA)</div>
+ <h2>Research team</h2>
+ <div class="sect-sub">Athens Digital Glossa Chronos Research Network &middot; National &amp; Kapodistrian University of Athens (EKPA)</div>
 
-  <div class="chan-grid">
-    <div class="chan-card tier1">
-      <div class="tier">Principal Investigator</div>
-      <h4>Prof. Nikolaos Lavidas</h4>
-      <p>EKPA, Department of English Language and Literature, Section of Linguistics.</p>
-    </div>
-    <div class="chan-card tier1">
-      <div class="tier">EKPA</div>
-      <h4>Prof. Emerita Kiki Nikiforidou</h4>
-      <p>Co-Editor, Genres and Influential Texts volume.</p>
-    </div>
-    <div class="chan-card tier2">
-      <div class="tier">International Collaborator</div>
-      <h4>Prof. Dag Haug</h4>
-      <p>University of Oslo &middot; PROIEL Project Director.</p>
-    </div>
-    <div class="chan-card tier2">
-      <div class="tier">International Collaborator</div>
-      <h4>Prof. Leonid Kulikov</h4>
-      <p>Ghent University.</p>
-    </div>
-    <div class="chan-card tier3">
-      <div class="tier">Post-Doctoral Researcher</div>
-      <h4>Dr. Vassiliki Geka</h4>
-      <p>EKPA &middot; Co-Editor, Genres and Influential Texts volume.</p>
-    </div>
-    <div class="chan-card tier3">
-      <div class="tier">Post-Doctoral Researcher</div>
-      <h4>Dr. Vassileios Symeonidis</h4>
-      <p>EKPA.</p>
-    </div>
-    <div class="chan-card tier3">
-      <div class="tier">Post-Doctoral Researcher</div>
-      <h4>Dr. Theodoros Michalareas</h4>
-      <p>EKPA.</p>
-    </div>
-    <div class="chan-card tier4">
-      <div class="tier">PhD Candidate</div>
-      <h4>Sofia Chionidi</h4>
-      <p>EKPA.</p>
-    </div>
-    <div class="chan-card tier4">
-      <div class="tier">PhD Candidate</div>
-      <h4>Anastasia Tsiropina</h4>
-      <p>EKPA.</p>
-    </div>
-    <div class="chan-card tier4">
-      <div class="tier">PhD Candidate</div>
-      <h4>Eleni Plakoutsi</h4>
-      <p>EKPA.</p>
-    </div>
-    <div class="chan-card tier4">
-      <div class="tier">Research Assistant</div>
-      <h4>Evangelos Argyropoulos</h4>
-      <p>EKPA.</p>
-    </div>
-  </div>
+ <div class="chan-grid">
+ <div class="chan-card tier1">
+ <div class="tier">Principal Investigator</div>
+ <h4>Prof. Nikolaos Lavidas</h4>
+ <p>EKPA, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.</p>
+ </div>
+ <div class="chan-card tier1">
+ <div class="tier">EKPA</div>
+ <h4>Prof. Emerita Kiki Nikiforidou</h4>
+ <p>Co-Editor, Genres and Influential Texts volume.</p>
+ </div>
+ <div class="chan-card tier2">
+ <div class="tier">International Collaborator</div>
+ <h4>Prof. Dag Haug</h4>
+ <p>University of Oslo &middot; PROIEL Project Director.</p>
+ </div>
+ <div class="chan-card tier2">
+ <div class="tier">International Collaborator</div>
+ <h4>Prof. Leonid Kulikov</h4>
+ <p>Ghent University.</p>
+ </div>
+ <div class="chan-card tier3">
+ <div class="tier">Post-Doctoral Researcher</div>
+ <h4>Dr. Vassiliki Geka</h4>
+ <p>EKPA &middot; Co-Editor, Genres and Influential Texts volume.</p>
+ </div>
+ <div class="chan-card tier3">
+ <div class="tier">Post-Doctoral Researcher</div>
+ <h4>Dr. Vassileios Symeonidis</h4>
+ <p>EKPA.</p>
+ </div>
+ <div class="chan-card tier3">
+ <div class="tier">Post-Doctoral Researcher</div>
+ <h4>Dr. Theodoros Michalareas</h4>
+ <p>EKPA.</p>
+ </div>
+ <div class="chan-card tier4">
+ <div class="tier">PhD Candidate</div>
+ <h4>Sofia Chionidi</h4>
+ <p>EKPA.</p>
+ </div>
+ <div class="chan-card tier4">
+ <div class="tier">PhD Candidate</div>
+ <h4>Anastasia Tsiropina</h4>
+ <p>EKPA.</p>
+ </div>
+ <div class="chan-card tier4">
+ <div class="tier">PhD Candidate</div>
+ <h4>Eleni Plakoutsi</h4>
+ <p>EKPA.</p>
+ </div>
+ <div class="chan-card tier4">
+ <div class="tier">Research Assistant</div>
+ <h4>Evangelos Argyropoulos</h4>
+ <p>EKPA.</p>
+ </div>
+ </div>
 
-  <div class="cite-block" style="margin-top:24px">
-    <div class="cite-h">Funding</div>
-    <p style="font-family:var(--sans);color:#FBF6E9;font-size:14px;line-height:1.7;margin:0">
-      The Athens Digital Glossa Chronos Research Network (AthDGC) and the CVL-CDSAML project
-      (<em>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em>)
-      are funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong>
-      under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers
-      (<strong>Project No. 20577</strong>), with complementary support from the
-      <strong>Greece 2.0 National Recovery and Resilience Plan</strong>.<br><br>
-      Compute infrastructure provided by GRNET ARIS (allocation pa260305), the Greek national HPC cluster.
-    </p>
-  </div>
+ <div class="cite-block" style="margin-top:24px">
+ <div class="cite-h">Funding</div>
+ <p style="font-family:var(--sans);color:#FBF6E9;font-size:14px;line-height:1.7;margin:0">
+ The Athens Digital Glossa Chronos Research Network (AthDGC) and the CVL-CDSAML project
+ (<em>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em>)
+ are funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong>
+ under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers
+ (<strong>Project No. 20577</strong>), with complementary support from the
+ <strong>Greece 2.0 National Recovery and Resilience Plan</strong>.<br><br>
+ Compute infrastructure provided by GRNET ARIS (allocation pa260305), the Greek national HPC cluster.
+ </p>
+ </div>
 </section>
 
 <!-- Press kit -->
 <section id="kit">
-  <h2>Press kit</h2>
-  <div class="sect-sub">Logos, screenshots, one-pagers - everything a press contact may ask for</div>
-  <div class="asset-grid">
-    <div class="asset ready">
-      <div class="ic">Α</div><h5>Logo + favicon</h5>
-      <p>athdgc-favicon.jpg<br>(L:\0\!\)</p>
-    </div>
-    <div class="asset pending">
-      <div class="ic">📊</div><h5>Tree screenshot</h5>
-      <p>athdgc_tree.png<br>300 dpi · TODO</p>
-    </div>
-    <div class="asset pending">
-      <div class="ic">🌐</div><h5>NT parallels</h5>
-      <p>athdgc_parallels.png<br>300 dpi · TODO</p>
-    </div>
-    <div class="asset ready">
-      <div class="ic">📄</div><h5>One-pager</h5>
-      <p>AthDGC_Project.pdf</p>
-    </div>
-    <div class="asset ready">
-      <div class="ic">🎤</div><h5>CIDL deck</h5>
-      <p>AthDGC_CIDL25_Complete_Professional.pptx</p>
-    </div>
-    <div class="asset ready">
-      <div class="ic">📑</div><h5>Data paper</h5>
-      <p>athdgc_data_paper.docx</p>
-    </div>
-  </div>
+ <h2>Press kit</h2>
+ <div class="sect-sub">Logos, screenshots, one-pagers - everything a press contact may ask for</div>
+ <div class="asset-grid">
+ <div class="asset ready">
+ <div class="ic">Α</div><h5>Logo + favicon</h5>
+ <p>athdgc-favicon.jpg<br>(L:\0\!\)</p>
+ </div>
+ <div class="asset pending">
+ <div class="ic">📊</div><h5>Tree screenshot</h5>
+ <p>athdgc_tree.png<br>300 dpi · TODO</p>
+ </div>
+ <div class="asset pending">
+ <div class="ic">🌐</div><h5>NT parallels</h5>
+ <p>athdgc_parallels.png<br>300 dpi · TODO</p>
+ </div>
+ <div class="asset ready">
+ <div class="ic">📄</div><h5>One-pager</h5>
+ <p>AthDGC_Project.pdf</p>
+ </div>
+ <div class="asset ready">
+ <div class="ic">🎤</div><h5>CIDL deck</h5>
+ <p>AthDGC_CIDL25_Complete_Professional.pptx</p>
+ </div>
+ <div class="asset ready">
+ <div class="ic">📑</div><h5>Data paper</h5>
+ <p>athdgc_data_paper.docx</p>
+ </div>
+ </div>
 
-  <h3 style="font-family:var(--serif);font-size:20px;color:var(--navy);margin:32px 0 12px;font-weight:600">Press contact</h3>
-  <p>Prof. Nikolaos Lavidas &middot; Associate Professor of Linguistics &middot; <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a><br>
-     <span class="dim">National and Kapodistrian University of Athens (EKPA), Department of English Language and Literature, Section of Linguistics</span></p>
+ <h3 style="font-family:var(--serif);font-size:20px;color:var(--navy);margin:32px 0 12px;font-weight:600">Press contact</h3>
+ <p>Prof. Nikolaos Lavidas &middot; Professor of Linguistics &middot; <a href="mailto:nlavidas@enl.uoa.gr">nlavidas@enl.uoa.gr</a><br>
+ <span class="dim">National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy</span></p>
 </section>
 
 <footer>
-  <div class="logo">AthDGC <span style="color:var(--gold);font-size:22px">&middot;</span> Athens-PROIEL</div>
-  <div class="tagline">Press &amp; Publications &middot; everything in one place</div>
-  <div class="attribution">National &amp; Kapodistrian University of Athens (EKPA) &middot; Section of Linguistics &middot; HFRI Project No. 20577 &middot; Greece 2.0 NRRP</div>
-  <div class="links">
-    <a href="https://athdgc.github.io/">Corpus showcase</a>
-    <a href="https://github.com/AthDGC">GitHub</a>
-    <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform">Source repo</a>
-    <a href="https://en.uoa.gr/">EKPA</a>
-  </div>
+ <div class="logo">AthDGC <span style="color:var(--gold);font-size:22px">&middot;</span> Athens-PROIEL</div>
+ <div class="tagline">Press &amp; Publications &middot; everything in one place</div>
+ <div class="attribution">National &amp; Kapodistrian University of Athens (EKPA) &middot; Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy &middot; HFRI Project No. 20577 &middot; Greece 2.0 NRRP</div>
+ <div class="links">
+ <a href="https://athdgc.github.io/">Corpus showcase</a>
+ <a href="https://github.com/AthDGC">GitHub</a>
+ <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform">Source repo</a>
+ <a href="https://en.uoa.gr/">EKPA</a>
+ </div>
 </footer>
 
 <script>
 // Announcement tab switching
 document.addEventListener('click', e => {
-  const tb = e.target.closest('.ann-btn');
-  if (tb) {
-    const pane = tb.dataset.target;
-    document.querySelectorAll('.ann-btn').forEach(b=>b.classList.remove('active'));
-    tb.classList.add('active');
-    document.querySelectorAll('.ann-pane').forEach(p=>{
-      if (p.id===pane) p.classList.add('active'); else p.classList.remove('active');
-    });
-    return;
-  }
-  // Copy buttons
-  const cb = e.target.closest('.copy-btn');
-  if (cb) {
-    const targetId = cb.dataset.copy;
-    let text = "";
-    if (targetId.endsWith("-md")) {
-      const base = targetId.replace(/-md$/, "");
-      const el = document.getElementById(base);
-      if (el) text = el.innerText;
-    } else {
-      const el = document.getElementById(targetId);
-      if (el) text = el.innerText;
-    }
-    if (text) {
-      navigator.clipboard.writeText(text).then(() => {
-        const orig = cb.textContent;
-        cb.textContent = "✓ Copied!";
-        setTimeout(() => { cb.textContent = orig; }, 1400);
-      });
-    }
-  }
+ const tb = e.target.closest('.ann-btn');
+ if (tb) {
+ const pane = tb.dataset.target;
+ document.querySelectorAll('.ann-btn').forEach(b=>b.classList.remove('active'));
+ tb.classList.add('active');
+ document.querySelectorAll('.ann-pane').forEach(p=>{
+ if (p.id===pane) p.classList.add('active'); else p.classList.remove('active');
+ });
+ return;
+ }
+ // Copy buttons
+ const cb = e.target.closest('.copy-btn');
+ if (cb) {
+ const targetId = cb.dataset.copy;
+ let text = "";
+ if (targetId.endsWith("-md")) {
+ const base = targetId.replace(/-md$/, "");
+ const el = document.getElementById(base);
+ if (el) text = el.innerText;
+ } else {
+ const el = document.getElementById(targetId);
+ if (el) text = el.innerText;
+ }
+ if (text) {
+ navigator.clipboard.writeText(text).then(() => {
+ const orig = cb.textContent;
+ cb.textContent = "✓ Copied!";
+ setTimeout(() => { cb.textContent = orig; }, 1400);
+ });
+ }
+ }
 });
 </script>
 
