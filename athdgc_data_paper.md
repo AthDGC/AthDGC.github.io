@@ -19,6 +19,7 @@
 **Code DOI.** [DOI pending Zenodo mint] (concept DOI).
 **Repository.** https://github.com/AthDGC/Diachronic-Linguistics-Platform · https://athdgc.github.io
 **Licence.** Source code Apache-2.0; corpus metadata + alignments CC-BY-4.0; per-source raw text under its original licence (PROIEL CC-BY-NC-SA, Modern Greek ODC-BY-1.0, Perseus CC-BY-SA-4.0, etc.) recorded per row.
+**Funding.** Funded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577), with support from the Greece 2.0 National Recovery and Resilience Plan.  Project: CVL-CDSAML (Athens Digital Glossa Chronos Research Network).
 
 ---
 
@@ -147,7 +148,25 @@ We commit to (a) keeping AthDGC openly available under the licences stated above
 
 ## Acknowledgements
 
-The project gratefully acknowledges the Greek national HPC infrastructure GRNET / ARIS (allocation pa260305) for compute, the National and Kapodistrian University of Athens (EKPA) Section of Linguistics for institutional support, and the open scholarly community whose source texts AthDGC builds on - most importantly the PROIEL Treebank team at the University of Oslo (Haug, Jøhndal, Eckhoff and collaborators), the Perseus Digital Library, the First1K Greek and OpenGreekAndLatin projects, and the Diorisis Corpus.
+### Research team
+
+The Athens Digital Glossa Chronos Research Network at the National and Kapodistrian University of Athens includes:
+- **Prof. Nikolaos Lavidas** (Principal Investigator) - EKPA, Department of English Language and Literature, Section of Linguistics
+- **Prof. Emerita Kiki Nikiforidou** - EKPA (Co-Editor, Genres and Influential Texts volume)
+- **Prof. Dag Haug** - University of Oslo (International Collaborator; PROIEL Project Director)
+- **Prof. Leonid Kulikov** - Ghent University (International Collaborator)
+- **Dr. Vassiliki Geka** - Post-Doctoral Researcher, EKPA
+- **Dr. Vassileios Symeonidis** - Post-Doctoral Researcher, EKPA
+- **Dr. Theodoros Michalareas** - Post-Doctoral Researcher, EKPA
+- **Sofia Chionidi** - PhD Candidate, EKPA
+- **Anastasia Tsiropina** - PhD Candidate, EKPA
+- **Eleni Plakoutsi** - PhD Candidate, EKPA
+- **Evangelos Argyropoulos** - Research Assistant, EKPA
+
+### Funding and infrastructure
+
+This research is part of the Athens Digital Glossa Chronos Research Network (AthDGC) and the CVL-CDSAML project (A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages). It is funded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577), with complementary support from the Greece 2.0 National Recovery and Resilience Plan. The Greek national HPC infrastructure GRNET / ARIS (allocation pa260305) provided compute resources. We thank the PROIEL Treebank team at the University of Oslo (Haug, Joehndal, Eckhoff and collaborators), the Perseus Digital Library, the First1K Greek and OpenGreekAndLatin projects, and the Diorisis Corpus for their open scholarly resources.
+
 
 ## References
 

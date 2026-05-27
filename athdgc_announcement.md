@@ -7,7 +7,7 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 
 ## Short announcement (≈140 words, English)
 
-**Announcing AthDGC ("Athens-PROIEL") - an open diachronic Greek treebank with Indo-European parallels.** AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is *retranslations*, *retellings*, and *influential texts* across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open: https://athdgc.github.io · https://github.com/AthDGC
+**Announcing AthDGC ("Athens-PROIEL") - an open diachronic Greek treebank with Indo-European parallels.** AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is *retranslations*, *retellings*, and *influential texts* across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open: https://athdgc.github.io · https://github.com/AthDGC — Funded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577), with support from the Greece 2.0 National Recovery and Resilience Plan.
 
 ---
 
@@ -16,6 +16,25 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 **AthDGC - Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).** Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής - από τον Όμηρο έως σήμερα - με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις *επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις* και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: https://athdgc.github.io
 
 ---
+
+
+---
+
+## Athens Digital Glossa Chronos Research Network
+- **Prof. Nikolaos Lavidas** (Principal Investigator) - EKPA, Department of English Language and Literature, Section of Linguistics
+- **Prof. Emerita Kiki Nikiforidou** - EKPA (Co-Editor, Genres and Influential Texts volume)
+- **Prof. Dag Haug** - University of Oslo (International Collaborator; PROIEL Project Director)
+- **Prof. Leonid Kulikov** - Ghent University (International Collaborator)
+- **Dr. Vassiliki Geka** - Post-Doctoral Researcher, EKPA
+- **Dr. Vassileios Symeonidis** - Post-Doctoral Researcher, EKPA
+- **Dr. Theodoros Michalareas** - Post-Doctoral Researcher, EKPA
+- **Sofia Chionidi** - PhD Candidate, EKPA
+- **Anastasia Tsiropina** - PhD Candidate, EKPA
+- **Eleni Plakoutsi** - PhD Candidate, EKPA
+- **Evangelos Argyropoulos** - Research Assistant, EKPA
+**Funded by:** Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers (Project No. 20577); Greece 2.0 National Recovery and Resilience Plan.
+**Funded project:** CVL-CDSAML (A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages).
+
 
 ## Even shorter blurb (≈40 words, for Twitter/X & LinkedIn)
 
