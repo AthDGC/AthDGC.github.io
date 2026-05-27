@@ -1,4 +1,4 @@
-# EOSC · Virtual Access (EGI Federated Cloud) - Application
+# EOSC · Virtual Access (EGI Federated Cloud) — Application
 
 Submit at:  https://marketplace.eosc-portal.eu  (filter for "Virtual Access" cloud-compute services)
 
@@ -9,9 +9,9 @@ EOSC Virtual Access is funded by the European Commission to give researchers acc
 **Researcher:**  Prof. Nikolaos Lavidas, EKPA Section of Linguistics
 **Institutional email:**  nlavidas@enl.uoa.gr
 **ORCID:**  (add if available)
-**Project:**  AthDGC - Athens Diachronic Greek Corpus
+**Project:**  AthDGC — Athens Diachronic Greek Corpus
 **Discipline:**  Digital Humanities · Computational Linguistics · Indo-European Linguistics
-**Open Science compliance:**  Full - all code on github.com/AthDGC, dataset under permissive per-source licenses, dashboard public.
+**Open Science compliance:**  Full — all code on github.com/AthDGC, dataset under permissive per-source licenses, dashboard public.
 
 ---
 
@@ -28,7 +28,7 @@ A medium-sized federated cloud VM, hosted at any EGI Fed Cloud provider:
 
 This sizing supports the full Phase III/IV gateway stack: Qdrant (vector DB), Neo4j (graph DB with the PROIEL-style cross-lingual alignment schema), FastAPI receiver, NGINX TLS reverse proxy with Keycloak forward-auth, BlackLab corpus search engine, and INCEpTION semantic-alignment review GUI.
 
-ARIS itself (GRNET national HPC) handles the GPU-heavy training and annotation. The EOSC VM is the **public-facing exposure layer** - researchers worldwide access the annotated corpus through it.
+ARIS itself (GRNET national HPC) handles the GPU-heavy training and annotation. The EOSC VM is the **public-facing exposure layer** — researchers worldwide access the annotated corpus through it.
 
 ## Scientific case (≈350 words)
 
@@ -36,18 +36,18 @@ The Athens Diachronic Greek Corpus (AthDGC) is the first open, autonomous, end-t
 
 The project has two complementary infrastructure needs:
 
-**(a) HPC compute** for transformer fine-tuning and dependency parsing - already provided by our active GRNET ARIS allocation (pa260305) and a complementary EuroHPC JU Development Access application currently in preparation.
+**(a) HPC compute** for transformer fine-tuning and dependency parsing — already provided by our active GRNET ARIS allocation (pa260305) and a complementary EuroHPC JU Development Access application currently in preparation.
 
 **(b) Federated cloud exposure** for public access to the annotated corpus, alignment graph, and corpus-search interface. *This is what we request from EOSC.*
 
-The gateway stack - Qdrant + Neo4j + FastAPI + NGINX + BlackLab + INCEpTION - provides:
+The gateway stack — Qdrant + Neo4j + FastAPI + NGINX + BlackLab + INCEpTION — provides:
 
 1. **Cross-lingual graph queries** ("show me every Greek verb of giving with an accusative object, and how that exact syntactic construction was translated into Latin and Gothic")
 2. **PROIEL-style corpus search** via Lucene + CQL ("aorist verbs in Byzantine documents with a feminine accusative complement")
 3. **Manual alignment review** by external collaborators through the INCEpTION GUI
-4. **Public dataset browser** at https://athdgc.github.io - already live in beta as a static page
+4. **Public dataset browser** at https://athdgc.github.io — already live in beta as a static page
 
-We have already implemented the full architecture in our private development repository (github.com/AthDGC/Diachronic-Linguistics-Platform). The Docker Compose stack is cloud-agnostic: a single `migrate_gateway.sh` script tar's all persistent volumes and rsyncs to any host with Docker installed - Hetzner, EKPA bare-metal, or, ideally, an EOSC-funded EGI Fed Cloud VM.
+We have already implemented the full architecture in our private development repository (github.com/AthDGC/Diachronic-Linguistics-Platform). The Docker Compose stack is cloud-agnostic: a single `migrate_gateway.sh` script tar's all persistent volumes and rsyncs to any host with Docker installed — Hetzner, EKPA bare-metal, or, ideally, an EOSC-funded EGI Fed Cloud VM.
 
 By hosting on EOSC, the resource is:
 - Free at the point of use (EOSC Virtual Access mechanism)
@@ -60,7 +60,7 @@ By hosting on EOSC, the resource is:
 - **Code:** Apache 2.0 / MIT, on GitHub at github.com/AthDGC
 - **Data:** released under per-source licenses (PROIEL CC-BY-NC-SA, Modern Greek ODC-BY-1.0, etc.) with clear per-row license attribution in the JSONL partitions and PROIEL XML metadata
 - **API:** public read-only endpoints (sentence-level, dep-tree, cross-lingual polyglot matrix), TLS-terminated through NGINX, no authentication required for GET
-- **Metadata:** FAIR-compliant - every text carries its source URL, license, author, century, edition, dialect, region, and Stanza annotation provenance
+- **Metadata:** FAIR-compliant — every text carries its source URL, license, author, century, edition, dialect, region, and Stanza annotation provenance
 - **Dashboard:** Public showcase at https://athdgc.github.io · Live status at https://huggingface.co/spaces/nlavidas/athdgc-dashboard-private (to be made public at grant release)
 
 ## Project milestones (24-month plan)
@@ -76,10 +76,10 @@ By hosting on EOSC, the resource is:
 
 ## Why EOSC
 
-The EOSC Virtual Access mechanism exists precisely for projects like AthDGC: open scientific infrastructure that benefits a European-wide research community, hosted by Europe's federated cloud, accessible without commercial vendor lock-in. The full Docker Compose stack we ship is portable to any provider - but EOSC's federated mechanism aligns best with our Open Science commitments and our existing GRNET / EKPA / EuroHPC anchors.
+The EOSC Virtual Access mechanism exists precisely for projects like AthDGC: open scientific infrastructure that benefits a European-wide research community, hosted by Europe's federated cloud, accessible without commercial vendor lock-in. The full Docker Compose stack we ship is portable to any provider — but EOSC's federated mechanism aligns best with our Open Science commitments and our existing GRNET / EKPA / EuroHPC anchors.
 
 ## Contact
 
-Prof. Nikolaos Lavidas - nikolaos.lavidas@gmail.com
+Prof. Nikolaos Lavidas — nikolaos.lavidas@gmail.com
 GitHub:  github.com/AthDGC
 Live showcase:  https://athdgc.github.io

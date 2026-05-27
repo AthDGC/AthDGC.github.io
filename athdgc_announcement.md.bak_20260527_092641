@@ -1,4 +1,4 @@
-# AthDGC · Athens-PROIEL - Announcement pack
+# AthDGC · Athens-PROIEL — Announcement pack
 
 Prof. Nikolaos Lavidas · National and Kapodistrian University of Athens (EKPA), Section of Linguistics
 Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
@@ -7,23 +7,23 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 
 ## Short announcement (≈140 words, English)
 
-**Announcing AthDGC ("Athens-PROIEL") - an open diachronic Greek treebank with Indo-European parallels.** AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is *retranslations*, *retellings*, and *influential texts* across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open: https://athdgc.github.io · https://github.com/AthDGC
+**Announcing AthDGC ("Athens-PROIEL") — an open diachronic Greek treebank with Indo-European parallels.** AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language — from Homer to Modern Greek — at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is *retranslations*, *retellings*, and *influential texts* across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open: https://athdgc.github.io · https://github.com/AthDGC
 
 ---
 
 ## Short announcement (Greek, ~110 words)
 
-**AthDGC - Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).** Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής - από τον Όμηρο έως σήμερα - με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις *επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις* και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: https://athdgc.github.io
+**AthDGC — Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).** Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής — από τον Όμηρο έως σήμερα — με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις *επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις* και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: https://athdgc.github.io
 
 ---
 
 ## Even shorter blurb (≈40 words, for Twitter/X & LinkedIn)
 
-🏛️ Announcing **AthDGC** - Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Section of Linguistics · https://athdgc.github.io
+🏛️ Announcing **AthDGC** — Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Section of Linguistics · https://athdgc.github.io
 
 ---
 
-## Where to announce - ranked by likely impact
+## Where to announce — ranked by likely impact
 
 ### 1 · Linguistics & DH mailing lists (free, high reach in field)
 
@@ -52,7 +52,7 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 | Venue | What to do |
 |---|---|
 | **Zenodo** | Mint a DOI for the dataset (first release) and one for the code. Cite the DOI in every other announcement. |
-| **Hugging Face Datasets** | `athdgc/diachronic-greek-corpus` - public dataset card with examples + license per source. |
+| **Hugging Face Datasets** | `athdgc/diachronic-greek-corpus` — public dataset card with examples + license per source. |
 | **Hugging Face Spaces** | Make `nlavidas/athdgc-dashboard` public when ready. |
 | **GitHub Release** | Tag v0.1, attach a CITATION.cff and the Zenodo DOI badge. |
 | **CLARIN / DARIAH** | Submit metadata so the corpus is findable in the European research infrastructure catalogue. |
@@ -63,26 +63,26 @@ Project home: https://athdgc.github.io · GitHub: https://github.com/AthDGC
 |---|---|
 | **EKPA news page** (en.uoa.gr / news) | One-paragraph press item via the Section of Linguistics → Faculty press officer. |
 | **English Department news page** (enl.uoa.gr) | Same one-pager. |
-| **GRNET press** (grnet.gr) | They are happy to publish an ARIS success story - the daily-harvest pipeline on national HPC is a perfect angle for them. |
-| **Embassy of Greece - Science & Culture office** | International visibility for Greek-origin digital scholarship. |
+| **GRNET press** (grnet.gr) | They are happy to publish an ARIS success story — the daily-harvest pipeline on national HPC is a perfect angle for them. |
+| **Embassy of Greece — Science & Culture office** | International visibility for Greek-origin digital scholarship. |
 
 ### 5 · Social
 
-- **X / Twitter** - tag `@LINGUISTList`, `@huggingface`, `@grnet_gr`, `@uoaofficial`; hashtags `#DH #DigitalHumanities #AncientGreek #PROIEL #HistoricalLinguistics #IndoEuropean #DiachronicCorpus`.
-- **LinkedIn** - same blurb, tag EKPA institutional page.
-- **Mastodon / scholar.social** - corpus-linguistics crowd hangs out there.
-- **Bluesky** - growing academic linguistics community.
+- **X / Twitter** — tag `@LINGUISTList`, `@huggingface`, `@grnet_gr`, `@uoaofficial`; hashtags `#DH #DigitalHumanities #AncientGreek #PROIEL #HistoricalLinguistics #IndoEuropean #DiachronicCorpus`.
+- **LinkedIn** — same blurb, tag EKPA institutional page.
+- **Mastodon / scholar.social** — corpus-linguistics crowd hangs out there.
+- **Bluesky** — growing academic linguistics community.
 
 ### 6 · Bilateral emails (highest individual ROI)
 
 Send the short blurb privately to:
 
-- **Dag Haug** (Oslo, original PROIEL) - for continuity / cross-citation.
-- **Marco Passarotti** (LiLa / Latin LiLa) - interoperability with Latin treebanks.
-- **Gregory Crane / Bridget Almas** (Perseus / Alpheios) - Perseus integration.
-- **Helma Dik** (Chicago, ancient Greek dependency parsing) - directly downstream.
-- **Eleni Karantzola, Io Manolessou, Christos Tzitzilis, Geoffrey Horrocks** - Greek diachronic linguistics community.
-- **Silvia Luraghi, Carlotta Viti, Eystein Dahl** - Indo-European argument structure community.
+- **Dag Haug** (Oslo, original PROIEL) — for continuity / cross-citation.
+- **Marco Passarotti** (LiLa / Latin LiLa) — interoperability with Latin treebanks.
+- **Gregory Crane / Bridget Almas** (Perseus / Alpheios) — Perseus integration.
+- **Helma Dik** (Chicago, ancient Greek dependency parsing) — directly downstream.
+- **Eleni Karantzola, Io Manolessou, Christos Tzitzilis, Geoffrey Horrocks** — Greek diachronic linguistics community.
+- **Silvia Luraghi, Carlotta Viti, Eystein Dahl** — Indo-European argument structure community.
 
 ---
 

@@ -147,7 +147,7 @@ em{color:var(--mid)}
   <h1>Press &amp; Publications</h1>
   <div class="sub">AthDGC &middot; Athens-PROIEL</div>
   <div class="tag">Everything you need to announce, cite, and publish the
-    <strong>Athens Diachronic Greek Corpus</strong> - DOI, data paper, announcement
+    <strong>Athens Diachronic Greek Corpus</strong> — DOI, data paper, announcement
     text in English and Greek, and a ranked list of venues.</div>
   <div class="meta">National &amp; Kapodistrian University of Athens (EKPA) &middot; Section of Linguistics &middot; Prof. Nikolaos Lavidas</div>
 </div>
@@ -160,8 +160,8 @@ em{color:var(--mid)}
   <div class="quick">
     <div class="qcard">
       <div class="qlbl">Concept DOI</div>
-      <a href="#">[DOI pending Zenodo mint]</a>
-      <div><code>mint before announcing - see Zenodo pack</code></div>
+      <a href="https://doi.org/10.5281/zenodo.XXXXXXX">10.5281/zenodo.XXXXXXX</a>
+      <div><code>mint before announcing — see Zenodo pack</code></div>
     </div>
     <div class="qcard">
       <div class="qlbl">Showcase</div>
@@ -175,7 +175,7 @@ em{color:var(--mid)}
     </div>
     <div class="qcard">
       <div class="qlbl">Hugging Face</div>
-      <a href="#">athdgc/diachronic-greek-corpus</a>
+      <a href="https://huggingface.co/datasets/athdgc/diachronic-greek-corpus">athdgc/diachronic-greek-corpus</a>
       <div><code>forthcoming v0.1 dataset</code></div>
     </div>
     <div class="qcard">
@@ -194,7 +194,7 @@ em{color:var(--mid)}
 <!-- Announcement texts -->
 <section id="announce">
   <h2>Announcement text</h2>
-  <div class="sect-sub">Three ready-to-paste variants - English long, Greek long, and one-line social</div>
+  <div class="sect-sub">Three ready-to-paste variants — English long, Greek long, and one-line social</div>
   <div class="ann-tabs" role="tablist">
     <button class="ann-btn active" data-target="ann-en">English &middot; ~140 words</button>
     <button class="ann-btn" data-target="ann-gr">Ελληνικά &middot; ~110 λέξεις</button>
@@ -203,8 +203,8 @@ em{color:var(--mid)}
 
   <div id="ann-en" class="ann-pane active">
     <div class="meta-row">For: LINGUIST List, HUMANIST, CORPORA, academic blogs</div>
-    <p><strong>Announcing AthDGC (&ldquo;Athens-PROIEL&rdquo;) - an open diachronic Greek treebank with Indo-European parallels.</strong>
-       AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language - from Homer to Modern Greek - at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is <em>retranslations</em>, <em>retellings</em>, and <em>influential texts</em> across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open:
+    <p><strong>Announcing AthDGC (&ldquo;Athens-PROIEL&rdquo;) — an open diachronic Greek treebank with Indo-European parallels.</strong>
+       AthDGC is the first end-to-end open infrastructure that ingests, OCRs, dependency-parses, and cross-lingually aligns the entire Greek language &mdash; from Homer to Modern Greek &mdash; at the National and Kapodistrian University of Athens (EKPA). Following the PROIEL Treebank convention, every sentence carries full PROIEL-style argument-structure annotation; the New-Testament-anchored backbone aligns Greek to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian, with Sanskrit, Old English, Avestan, and Old Persian queued next. Our focus is <em>retranslations</em>, <em>retellings</em>, and <em>influential texts</em> across three millennia. Current state: 89.9 M corpus rows, 4.08 M annotated Greek rows, 6,861 NT-anchored verses across five IE witnesses. Code, dataset, and live showcase are open:
        <a href="https://athdgc.github.io">athdgc.github.io</a> &middot; <a href="https://github.com/AthDGC">github.com/AthDGC</a></p>
     <div class="copy-row">
       <button class="copy-btn" data-copy="ann-en">📋 Copy this announcement</button>
@@ -214,7 +214,7 @@ em{color:var(--mid)}
 
   <div id="ann-gr" class="ann-pane">
     <div class="meta-row">For: Greek mailing lists · ICGL · EKPA press · social</div>
-    <p class="greek"><strong>AthDGC - Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).</strong> Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής - από τον Όμηρο έως σήμερα - με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις <em>επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις</em> και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: <a href="https://athdgc.github.io">athdgc.github.io</a></p>
+    <p class="greek"><strong>AthDGC — Διαχρονικό Σώμα Ελληνικών Κειμένων Αθηνών (Athens-PROIEL).</strong> Το AthDGC είναι μια ανοικτή υποδομή για τη διαχρονική ελληνική γλωσσολογία, η οποία αναπτύσσεται στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών (Τομέας Γλωσσολογίας, Τμήμα Αγγλικής Γλώσσας και Φιλολογίας). Καλύπτει συνεχώς το σύνολο των περιόδων της ελληνικής — από τον Όμηρο έως σήμερα — με συντακτική ανάλυση εξαρτήσεων κατά PROIEL και ευθυγράμμιση επί της λατινικής, της γοτθικής, της παλαιάς εκκλησιαστικής σλαβικής και της κλασικής αρμενικής. Έμφαση στις <em>επιδραστικές διαχρονικές μεταφράσεις και επανα-διηγήσεις</em> και στη δομή ορισμάτων (argument structure). Σε εξέλιξη: 89,9 εκ. σειρές σώματος, 4,08 εκ. σχολιασμένες ελληνικές, 6.861 αντιστοιχισμένα εδάφια ΚΔ σε πέντε ινδοευρωπαϊκές μάρτυρες. Όλα ανοικτά: <a href="https://athdgc.github.io">athdgc.github.io</a></p>
     <div class="copy-row">
       <button class="copy-btn" data-copy="ann-gr">📋 Αντιγραφή κειμένου</button>
     </div>
@@ -222,7 +222,7 @@ em{color:var(--mid)}
 
   <div id="ann-social" class="ann-pane">
     <div class="meta-row">For: X / Bluesky / LinkedIn / Mastodon</div>
-    <p style="font-family:var(--sans);font-size:16px">🏛️ Announcing <strong>AthDGC</strong> - Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Section of Linguistics · <a href="https://athdgc.github.io">athdgc.github.io</a>
+    <p style="font-family:var(--sans);font-size:16px">🏛️ Announcing <strong>AthDGC</strong> — Athens-PROIEL: an open diachronic Greek treebank from Homer to today, with full PROIEL-style argument-structure annotation and Indo-European retranslation parallels (Latin, Gothic, OCS, Armenian). EKPA · Section of Linguistics · <a href="https://athdgc.github.io">athdgc.github.io</a>
     <br><br>
     <code class="kbd">#DH #DigitalHumanities #AncientGreek #PROIEL #HistoricalLinguistics #IndoEuropean #DiachronicCorpus</code></p>
     <div class="copy-row">
@@ -252,7 +252,7 @@ em{color:var(--mid)}
 
     <div class="pub-card">
       <div class="ptype">Zenodo / DOI pack</div>
-      <h3>AthDGC v0.1 - DOI Minting Pack</h3>
+      <h3>AthDGC v0.1 — DOI Minting Pack</h3>
       <div class="pmeta">Step-by-step GitHub→Zenodo integration &middot; ready-to-paste .zenodo.json + CITATION.cff</div>
       <p>Mint the concept DOI and the v0.1.0 version DOI before any other announcement. Two paths (auto-archive on GitHub release, or manual upload).</p>
       <div class="plinks">
@@ -307,7 +307,7 @@ em{color:var(--mid)}
 <!-- Citation -->
 <section id="cite">
   <h2>How to cite</h2>
-  <div class="sect-sub">Use the concept DOI everywhere - it always resolves to the latest version</div>
+  <div class="sect-sub">Use the concept DOI everywhere — it always resolves to the latest version</div>
 
   <div class="cite-block">
     <button class="copy-btn copy-cite" data-copy="cite-bibtex">📋 Copy BibTeX</button>
@@ -318,8 +318,8 @@ em{color:var(--mid)}
   year         = 2026,
   publisher    = {Zenodo},
   version      = {0.1.0},
-  doi          = {[DOI pending Zenodo mint]},
-  url          = {#},
+  doi          = {10.5281/zenodo.XXXXXXX},
+  url          = {https://doi.org/10.5281/zenodo.XXXXXXX},
   note         = {Open infrastructure for Indo-European diachronic linguistics,
                   developed at the National and Kapodistrian University of Athens (EKPA),
                   Section of Linguistics.}
@@ -329,7 +329,7 @@ em{color:var(--mid)}
   <div class="cite-block" style="margin-top:14px">
     <button class="copy-btn copy-cite" data-copy="cite-text">📋 Copy plain text</button>
     <div class="cite-h">Plain text (APA-ish)</div>
-    <pre id="cite-text">Lavidas, N. (2026). AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL) (Version 0.1.0) [Dataset]. National and Kapodistrian University of Athens (EKPA), Section of Linguistics. #</pre>
+    <pre id="cite-text">Lavidas, N. (2026). AthDGC: Athens Diachronic Greek Corpus (Athens-PROIEL) (Version 0.1.0) [Dataset]. National and Kapodistrian University of Athens (EKPA), Section of Linguistics. https://doi.org/10.5281/zenodo.XXXXXXX</pre>
   </div>
 
   <div class="cite-block" style="margin-top:14px">
@@ -343,7 +343,7 @@ authors:
   - family-names: Lavidas
     given-names: Nikolaos
     affiliation: "National and Kapodistrian University of Athens (EKPA), Section of Linguistics"
-    orcid: ""
+    orcid: "https://orcid.org/0000-0000-0000-0000"
 repository-code: "https://github.com/AthDGC/Diachronic-Linguistics-Platform"
 url: "https://athdgc.github.io"
 license: Apache-2.0
@@ -355,7 +355,7 @@ date-released: 2026-05-25</pre>
 <!-- Channels -->
 <section id="channels">
   <h2>Where to announce</h2>
-  <div class="sect-sub">Tiered by reach &amp; relevance - top-tier first</div>
+  <div class="sect-sub">Tiered by reach &amp; relevance — top-tier first</div>
 
   <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-top:32px;font-weight:600">Tier 1 · Mailing lists &amp; high-reach forums</h3>
   <div class="chan-grid">
@@ -376,7 +376,7 @@ date-released: 2026-05-25</pre>
     <div class="chan-card tier1">
       <div class="tier">Tier 1</div>
       <h4>CORPORA list</h4>
-      <p>Corpus linguistics community - the natural home for a new treebank announcement.</p>
+      <p>Corpus linguistics community &mdash; the natural home for a new treebank announcement.</p>
       <div class="chan-url">clarino.uib.no / corpora-list</div>
       <span class="status todo">TODO</span>
     </div>
@@ -401,7 +401,7 @@ date-released: 2026-05-25</pre>
     <div class="chan-card tier2">
       <div class="tier">Tier 2</div>
       <h4>DH2026</h4>
-      <p>Big DH visibility - PROIEL XML + cross-lingual alignment graph is a strong poster.</p>
+      <p>Big DH visibility &mdash; PROIEL XML + cross-lingual alignment graph is a strong poster.</p>
       <div class="chan-url">poster CFP ~Feb · conf Aug</div>
       <span class="status todo">TODO</span>
     </div>
@@ -426,8 +426,8 @@ date-released: 2026-05-25</pre>
     <div class="chan-card tier3">
       <div class="tier">Tier 3</div>
       <h4>Hugging Face Datasets</h4>
-      <p><code>athdgc/diachronic-greek-corpus</code> - public card with examples + per-source licence.</p>
-      <div class="chan-url">(forthcoming)</div>
+      <p><code>athdgc/diachronic-greek-corpus</code> &mdash; public card with examples + per-source licence.</p>
+      <div class="chan-url">huggingface.co/datasets/athdgc/...</div>
       <span class="status todo">TODO</span>
     </div>
     <div class="chan-card tier3">
@@ -499,7 +499,7 @@ date-released: 2026-05-25</pre>
     <div class="tl-item">
       <div class="tl-day">Day 6 · Bilateral</div>
       <div class="tl-title">Bilateral emails</div>
-      <div class="tl-desc">Send to Haug, Passarotti, Dik, Crane and the Greek-diachronic / IE argument-structure circles - paste DOI + preprint link.</div>
+      <div class="tl-desc">Send to Haug, Passarotti, Dik, Crane and the Greek-diachronic / IE argument-structure circles &mdash; paste DOI + preprint link.</div>
     </div>
     <div class="tl-item">
       <div class="tl-day">Day 7 · Submission</div>
@@ -512,7 +512,7 @@ date-released: 2026-05-25</pre>
 <!-- Press kit -->
 <section id="kit">
   <h2>Press kit</h2>
-  <div class="sect-sub">Logos, screenshots, one-pagers - everything a press contact may ask for</div>
+  <div class="sect-sub">Logos, screenshots, one-pagers — everything a press contact may ask for</div>
   <div class="asset-grid">
     <div class="asset ready">
       <div class="ic">Α</div><h5>Logo + favicon</h5>
