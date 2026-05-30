@@ -1,0 +1,50 @@
+/* Font import for Old Standard TT (Didot-style Greek) + Cardo + JetBrains Mono */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Cardo:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* Greek-glyph polish: nudge Cardo Greek slightly lower for descender clarity */
+.greek, [lang="grc"], [lang="el"] {
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* PROIEL tree visualisation - inherits Lavidas typography */
+.proiel-tree {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  margin: 1rem 0;
+}
+.proiel-tree .pt-node {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 1px 0;
+}
+.proiel-tree .pt-node[data-depth="0"]::before { content: "• "; color: #777; }
+.proiel-tree .pt-node[data-depth="1"]::before,
+.proiel-tree .pt-node[data-depth="2"]::before,
+.proiel-tree .pt-node[data-depth="3"]::before,
+.proiel-tree .pt-node[data-depth="4"]::before { content: "└─ "; color: #777; }
+.proiel-tree .pt-id { color: #777; min-width: 28px; }
+.proiel-tree .pt-rel { color: #111; font-style: italic; min-width: 72px; }
+.proiel-tree .pt-form { font-family: "Old Standard TT", serif; font-size: 1.1rem; color: #111; min-width: 90px; }
+.proiel-tree .pt-lemma { font-family: "Old Standard TT", serif; font-style: italic; color: #444; min-width: 80px; }
+.proiel-tree .pt-pos { color: #777; font-size: 0.78em; min-width: 40px; }
+.proiel-tree .pt-feat { color: #777; font-size: 0.78em; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Citation block: monospace DOI with subtle frame */
+.citation-block {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  border-left: 2px solid #aaa;
+  padding: 0.6rem 0 0.6rem 1rem;
+  margin: 1.2rem 0;
+  color: #333;
+}
+
+/* Hide colored Quarto announcement / callout backgrounds */
+.callout.callout-note, .callout.callout-tip, .callout.callout-important,
+.callout.callout-warning, .callout.callout-caution {
+  background: transparent !important;
+  border-left: 2px solid #aaa !important;
+}
+.callout-header { background: transparent !important; }
