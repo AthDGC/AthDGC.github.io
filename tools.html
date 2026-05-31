@@ -228,8 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>AthDGC is not only a corpus. It is a <strong>toolkit for computational diachronic linguistics</strong>, designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only — no CoNLL-U, no UD-flavoured export.</p>
-<p>All tools are open source (Apache-2.0 / MIT / GPL where the upstream license requires). All are documented for classroom use — from undergraduate to PhD level — so digital-humanities courses can adopt them without per-seat licensing.</p>
+<p>AthDGC is not only a corpus. It is a <strong>toolkit for computational diachronic linguistics</strong>, designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only - no CoNLL-U, no UD-flavoured export.</p>
+<p>All tools are open source (Apache-2.0 / MIT / GPL where the upstream license requires). All are documented for classroom use - from undergraduate to PhD level - so digital-humanities courses can adopt them without per-seat licensing.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
 <table class="caption-top table">
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td><strong>Corpus-fix toolkit</strong></td>
-<td><code>fix_corpus_data.py</code> — TLG author + Stanza-error corrections at scale</td>
+<td><code>fix_corpus_data.py</code> - TLG author + Stanza-error corrections at scale</td>
 <td>Apache-2.0</td>
 <td>Annotation curators</td>
 </tr>
@@ -292,13 +292,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td><strong>Showcase generator</strong></td>
-<td><code>51_build_showcase_site.py</code> — regenerate a public showcase from any JSONL corpus</td>
+<td><code>51_build_showcase_site.py</code> - regenerate a public showcase from any JSONL corpus</td>
 <td>Apache-2.0</td>
 <td>Project sites</td>
 </tr>
 <tr class="odd">
 <td><strong>Quarto template pack</strong></td>
-<td>This site — ready-made multi-output (HTML + PDF + .docx + Reveal.js + Beamer + .pptx) for any diachronic linguistics project</td>
+<td>This site - ready-made multi-output (HTML + PDF + .docx + Reveal.js + Beamer + .pptx) for any diachronic linguistics project</td>
 <td>MIT</td>
 <td>All academic users</td>
 </tr>
@@ -308,28 +308,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="lightside-text-mining-workbench" class="level2">
 <h2 class="anchored" data-anchor-id="lightside-text-mining-workbench">LightSIDE (text-mining workbench)</h2>
-<p><a href="https://www.cs.cmu.edu/~cprose/LightSIDE.html">LightSIDE</a> is the open-source text-mining workbench developed by Carolyn Rosé’s group at Carnegie Mellon. It pairs naturally with a PROIEL-style treebank because it lets you:</p>
+<p><a href="https://www.cs.cmu.edu/~cprose/LightSIDE.html">LightSIDE</a> is the open-source text-mining workbench developed by Carolyn Rosé's group at Carnegie Mellon. It pairs naturally with a PROIEL-style treebank because it lets you:</p>
 <ul>
 <li>extract features from annotated text (n-grams, POS-tag patterns, syntactic dependencies)</li>
 <li>train classifiers (SVM, logistic regression, decision tree) on diachronic period labels</li>
-<li>inspect what features each model relies on (i.e.&nbsp;<em>which</em> linguistic patterns let you tell Classical from Koine, or Byzantine from Modern, apart)</li>
+<li>inspect what features each model relies on (i.e. <em>which</em> linguistic patterns let you tell Classical from Koine, or Byzantine from Modern, apart)</li>
 <li>export the trained models for reuse in research or pedagogy</li>
 </ul>
 <section id="athdgc-lightside-pipeline" class="level3">
 <h3 class="anchored" data-anchor-id="athdgc-lightside-pipeline">AthDGC + LightSIDE pipeline</h3>
 <ol type="1">
-<li><strong>Export</strong> an AthDGC slice to LightSIDE’s tab-separated input format with <code>tools/athdgc_to_lightside.py</code>.</li>
+<li><strong>Export</strong> an AthDGC slice to LightSIDE's tab-separated input format with <code>tools/athdgc_to_lightside.py</code>.</li>
 <li><strong>Open</strong> LightSIDE, load the <code>.csv</code>, configure features (POS unigrams, argument-structure frames, lemma trigrams, etc.).</li>
 <li><strong>Train</strong> a classifier on the period column.</li>
-<li><strong>Inspect</strong> the most predictive features per period — <em>which morphological patterns survive into Modern Greek? which die out at the Byzantine boundary?</em></li>
+<li><strong>Inspect</strong> the most predictive features per period - <em>which morphological patterns survive into Modern Greek? which die out at the Byzantine boundary?</em></li>
 </ol>
 <p>We provide:</p>
 <ul>
-<li><code>tools/athdgc_to_lightside.py</code> — export script</li>
-<li><code>tools/lightside-recipes/</code> — worked examples (Archaic-vs-Classical, NT-vs-Byzantine, etc.)</li>
-<li><code>slides/lightside_workshop.qmd</code> — a one-hour workshop slide deck for classroom use</li>
+<li><code>tools/athdgc_to_lightside.py</code> - export script</li>
+<li><code>tools/lightside-recipes/</code> - worked examples (Archaic-vs-Classical, NT-vs-Byzantine, etc.)</li>
+<li><code>slides/lightside_workshop.qmd</code> - a one-hour workshop slide deck for classroom use</li>
 </ul>
-<p>(LightSIDE itself remains BSD-licensed and downloadable from CMU. We do not redistribute the binaries — only the AthDGC-side adapters + tutorials.)</p>
+<p>(LightSIDE itself remains BSD-licensed and downloadable from CMU. We do not redistribute the binaries - only the AthDGC-side adapters + tutorials.)</p>
 </section>
 </section>
 <section id="nosketch-style-concordancer-for-athdgc" class="level2">
@@ -352,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="cross-lingual-alignment-viewer" class="level2">
 <h2 class="anchored" data-anchor-id="cross-lingual-alignment-viewer">Cross-lingual alignment viewer</h2>
 <p>The Neo4j alignment graph is queryable through a public Neo4j Browser endpoint (URL forthcoming) or via the open-source <a href="https://neo4j.com/developer/neo4j-browser/">Neo4j Browser</a> loaded against a local copy of the alignment graph. The dump is part of the Zenodo deposition.</p>
-<p>Example Cypher — find every Greek aorist active verb whose Vulgate counterpart is passive:</p>
+<p>Example Cypher - find every Greek aorist active verb whose Vulgate counterpart is passive:</p>
 <pre class="cypher"><code>MATCH (gk:Token {language:"grc", upos:"VERB"})-[:TRANSLATED_AS]-&gt;(la:Token {language:"lat"})
 WHERE gk.feats CONTAINS "Aspect=Perf"
   AND gk.feats CONTAINS "Voice=Act"
@@ -378,7 +378,7 @@ LIMIT 100</code></pre>
 <ul>
 <li>subject (<code>nsubj</code>, <code>nsubj:pass</code>, <code>csubj</code>, <code>csubj:pass</code>)</li>
 <li>direct object (<code>obj</code>)</li>
-<li>indirect / oblique args (<code>iobj</code>, <code>obl:arg</code>, <code>obl:agent</code>, …)</li>
+<li>indirect / oblique args (<code>iobj</code>, <code>obl:arg</code>, <code>obl:agent</code>, ...)</li>
 <li>voice (active / middle / passive)</li>
 <li>aspect (perfective / imperfective)</li>
 <li>tense, mood, verb-form, person, number</li>
@@ -387,7 +387,7 @@ LIMIT 100</code></pre>
 </section>
 <section id="showcase-generator" class="level2">
 <h2 class="anchored" data-anchor-id="showcase-generator">Showcase generator</h2>
-<p><code>51_build_showcase_site.py</code> — the script that builds <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> — is generic: point it at any directory of PROIEL XML 2.0 JSONL partitions and it generates a browsable showcase with per-period tabs, PROIEL dependency trees, argument-structure cards, and review toolbar. PROIEL only — no CoNLL-U pathway.</p>
+<p><code>51_build_showcase_site.py</code> - the script that builds <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> - is generic: point it at any directory of PROIEL XML 2.0 JSONL partitions and it generates a browsable showcase with per-period tabs, PROIEL dependency trees, argument-structure cards, and review toolbar. PROIEL only - no CoNLL-U pathway.</p>
 <p>Reuse it for any historical-treebank project under <code>tools/showcase/</code>.</p>
 </section>
 <section id="quarto-template-pack" class="level2">
@@ -409,7 +409,7 @@ LIMIT 100</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AthDGC/Diachronic-Linguistics-Platform</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Diachronic-Linguistics-Platform</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> tools/   <span class="co"># all the modules described above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>License: Apache-2.0 (except where upstream tools require otherwise; see each tool’s <code>LICENSE</code>).</p>
+<p>License: Apache-2.0 (except where upstream tools require otherwise; see each tool's <code>LICENSE</code>).</p>
 </section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
@@ -839,10 +839,10 @@ LIMIT 100</code></pre>
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Athens Digital Glossa Chronos Research Network · EKPA · CC-BY-4.0</p>
+<p>Athens Digital Glossa Chronos Research Network - EKPA - CC-BY-4.0</p>
 </div>   
     <div class="nav-footer-center">
-<p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP</p>
+<p>Funded by HFRI (Project No. 20577) - Greece 2.0 NRRP</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></p>

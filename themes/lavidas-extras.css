@@ -129,25 +129,152 @@
 }
 
 /* ============================================================
-   PROIEL viz-svg wrappers (samples.qmd / .viz-grew, .viz-perseus, .viz-lavidas)
-   ============================================================ */
-.viz-svg {
-  margin: 0.8rem 0 1.6rem 0;
-  border-left: 2px solid #aaa;
-  padding: 0.4rem 0 0.4rem 1rem;
-}
-.viz-svg svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 760px;
-}
-.viz-svg svg text { user-select: text; }
-.viz-grew     svg { max-height: 320px; }
-.viz-perseus  svg { max-height: 420px; }
-.viz-lavidas  svg { max-height: 400px; }
+   AthDGC PROIEL house-style review format (samples.qmd)
+   ------------------------------------------------------------
+   .proiel-frame       -- argument-structure synopsis table
+   .proiel-review      -- token-by-token review table
+   .proiel-tree-color  -- compact dependency overview, colored
+   .proiel-legend      -- relation-colour legend strip
+   .rel.rel-<NAME>     -- colored relation label, used inline
 
-/* On narrow viewports keep SVGs readable */
-@media (max-width: 720px) {
-  .viz-svg svg { max-height: none; }
+   Colour palette (Lavidasized academic, subdued; no neon, no
+   AI-block fills, only ink-with-hue):
+     pred       deep burgundy (the verb anchors the clause)
+     sub        deep navy     (primary core argument)
+     obj        teal          (secondary core argument)
+     iobj       plum
+     obl        sage          (oblique / agent / instrument)
+     atr        ochre         (adnominal modifier)
+     adv        warm ochre    (adverbial)
+     voc        amber         (discourse: addressee)
+     aux        gray          (auxiliary / article)
+     xcomp/comp dusty plum    (embedded clause)
+     coord      neutral grey  (coordination)
+   ============================================================ */
+
+.rel {
+  font-style: italic;
+  font-family: 'Old Standard TT', Cardo, Georgia, serif;
+  letter-spacing: 0.01em;
+}
+.rel-pred   { color: #6b2c2c; }
+.rel-sub    { color: #1f3050; }
+.rel-obj    { color: #2c5d5d; }
+.rel-iobj   { color: #5a3d6b; }
+.rel-obl    { color: #3d5a3d; }
+.rel-atr    { color: #7d5a2c; }
+.rel-adv    { color: #8a6d2c; }
+.rel-voc    { color: #a06a1c; }
+.rel-aux    { color: #777777; }
+.rel-xcomp,
+.rel-comp   { color: #6b3d5d; }
+.rel-coord  { color: #555555; }
+
+/* .tk -- token form inside the colored tree, slightly bolder Old Standard TT */
+.proiel-tree-color .tk {
+  font-family: 'Old Standard TT', Cardo, Georgia, serif;
+  font-weight: 600;
+  color: #111;
+}
+
+.proiel-tree-color pre {
+  font-family: 'JetBrains Mono', 'DejaVu Sans Mono', monospace !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 2px solid #aaa !important;
+  border-radius: 0 !important;
+  padding: 0.7rem 0 0.7rem 1rem !important;
+  margin: 0.5rem 0 1.2rem 0 !important;
+  white-space: pre !important;
+  color: #111 !important;
+  overflow-x: auto;
+}
+.proiel-tree-color pre .tk,
+.proiel-tree-color pre .rel {
+  font-family: 'Old Standard TT', Cardo, Georgia, serif !important;
+  font-size: 1.02rem;
+}
+.proiel-tree-color pre .rel {
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* .proiel-frame -- argument-structure synopsis */
+.proiel-frame table {
+  font-family: 'Old Standard TT', Cardo, Georgia, serif !important;
+  font-size: 1.0rem !important;
+  border-collapse: collapse !important;
+  width: 100%;
+  margin: 0.4rem 0 1.4rem 0;
+}
+.proiel-frame th,
+.proiel-frame td {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding: 0.45rem 0.7rem;
+  vertical-align: top;
+  color: #111;
+}
+.proiel-frame tr:first-child td:first-child,
+.proiel-frame tr:first-child th:first-child {
+  border-bottom: 2px solid #aaa;
+}
+.proiel-frame tr:last-child td { border-bottom: 1px solid #aaa; }
+
+/* .proiel-review -- the token-by-token review table */
+.proiel-review table {
+  font-family: 'Old Standard TT', Cardo, Georgia, serif !important;
+  font-size: 0.96rem !important;
+  border-collapse: collapse !important;
+  width: 100%;
+  margin: 0.4rem 0 1.4rem 0;
+}
+.proiel-review th {
+  text-align: left;
+  border-bottom: 2px solid #aaa;
+  padding: 0.45rem 0.55rem;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.86rem;
+  color: #555;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.proiel-review td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.42rem 0.55rem;
+  vertical-align: top;
+  color: #111;
+}
+.proiel-review tr:last-child td { border-bottom: 1px solid #aaa; }
+.proiel-review td:nth-child(1) {  /* # */
+  color: #888;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+}
+.proiel-review td:nth-child(5) {  /* morphology */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  color: #444;
+}
+.proiel-review td:nth-child(6) {  /* head ref */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  color: #444;
+}
+
+/* .proiel-legend -- horizontal strip of relation labels */
+.proiel-legend {
+  font-size: 0.92rem;
+  line-height: 1.9;
+  border-left: 2px solid #aaa;
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin: 0.6rem 0 1.4rem 0;
+  color: #444;
+}
+.proiel-legend .rel {
+  display: inline-block;
+  padding: 0 0.1rem;
 }
