@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About AthDGC – AthDGC</title>
+<title>Computational Tools for Diachronic Linguistics – AthDGC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,11 +137,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Samples</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tools.html"> 
+    <a class="nav-link active" href="./tools.html" aria-current="page"> 
 <span class="menu-text">Tools</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -153,19 +188,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-athens-digital-glossa-chronos-research-network" id="toc-the-athens-digital-glossa-chronos-research-network" class="nav-link active" data-scroll-target="#the-athens-digital-glossa-chronos-research-network">The Athens Digital Glossa Chronos Research Network</a></li>
-  <li><a href="#the-cvl-cdsaml-project" id="toc-the-cvl-cdsaml-project" class="nav-link" data-scroll-target="#the-cvl-cdsaml-project">The CVL-CDSAML project</a></li>
-  <li><a href="#how-athdgc-works-in-brief" id="toc-how-athdgc-works-in-brief" class="nav-link" data-scroll-target="#how-athdgc-works-in-brief">How AthDGC works (in brief)</a></li>
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#lightside-text-mining-workbench" id="toc-lightside-text-mining-workbench" class="nav-link" data-scroll-target="#lightside-text-mining-workbench">LightSIDE (text-mining workbench)</a>
+  <ul class="collapse">
+  <li><a href="#athdgc-lightside-pipeline" id="toc-athdgc-lightside-pipeline" class="nav-link" data-scroll-target="#athdgc-lightside-pipeline">AthDGC + LightSIDE pipeline</a></li>
+  </ul></li>
+  <li><a href="#nosketch-style-concordancer-for-athdgc" id="toc-nosketch-style-concordancer-for-athdgc" class="nav-link" data-scroll-target="#nosketch-style-concordancer-for-athdgc">NoSketch-style concordancer for AthDGC</a></li>
+  <li><a href="#diachronic-greek-stanza-checkpoints" id="toc-diachronic-greek-stanza-checkpoints" class="nav-link" data-scroll-target="#diachronic-greek-stanza-checkpoints">Diachronic Greek Stanza checkpoints</a></li>
+  <li><a href="#cross-lingual-alignment-viewer" id="toc-cross-lingual-alignment-viewer" class="nav-link" data-scroll-target="#cross-lingual-alignment-viewer">Cross-lingual alignment viewer</a></li>
+  <li><a href="#corpus-fix-toolkit" id="toc-corpus-fix-toolkit" class="nav-link" data-scroll-target="#corpus-fix-toolkit">Corpus-fix toolkit</a></li>
+  <li><a href="#argument-structure-extractor" id="toc-argument-structure-extractor" class="nav-link" data-scroll-target="#argument-structure-extractor">Argument-structure extractor</a></li>
+  <li><a href="#showcase-generator" id="toc-showcase-generator" class="nav-link" data-scroll-target="#showcase-generator">Showcase generator</a></li>
+  <li><a href="#quarto-template-pack" id="toc-quarto-template-pack" class="nav-link" data-scroll-target="#quarto-template-pack">Quarto template pack</a></li>
+  <li><a href="#get-the-tools" id="toc-get-the-tools" class="nav-link" data-scroll-target="#get-the-tools">Get the tools</a></li>
+  <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation">Citation</a></li>
+  <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">Roadmap</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/about.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About AthDGC</h1>
+<h1 class="title">Computational Tools for Diachronic Linguistics</h1>
+<p class="subtitle lead">The AthDGC toolkit: open-source, lightweight, classroom-ready</p>
 </div>
 
 
@@ -182,25 +229,208 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-athens-digital-glossa-chronos-research-network" class="level2">
-<h2 class="anchored" data-anchor-id="the-athens-digital-glossa-chronos-research-network">The Athens Digital Glossa Chronos Research Network</h2>
-<p>AthDGC is an open infrastructure for Indo-European diachronic linguistics, developed at the <strong>National and Kapodistrian University of Athens</strong> (Εθνικόν και Καποδιστριακόν Πανεπιστήμιον Αθηνών), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.</p>
-<p>The network is led by <strong>Prof.&nbsp;Nikolaos Lavidas</strong> and coordinates several research initiatives funded by the Hellenic Foundation for Research and Innovation under the Greece 2.0 National Recovery and Resilience Plan.</p>
+<p>AthDGC is not only a corpus. It is a <strong>toolkit for computational diachronic linguistics</strong>, designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only — no CoNLL-U, no UD-flavoured export.</p>
+<p>All tools are open source (Apache-2.0 / MIT / GPL where the upstream license requires). All are documented for classroom use — from undergraduate to PhD level — so digital-humanities courses can adopt them without per-seat licensing.</p>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>What it does</th>
+<th>License</th>
+<th>Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LightSIDE</strong> (mirror + tutorials)</td>
+<td>Text-mining workbench: feature extraction, classifier training, error analysis</td>
+<td>BSD</td>
+<td>Researchers, classrooms</td>
+</tr>
+<tr class="even">
+<td><strong>AthDGC concordancer</strong></td>
+<td>NoSketch-style concordance interface for the AthDGC corpus</td>
+<td>Apache-2.0</td>
+<td>Researchers, students</td>
+</tr>
+<tr class="odd">
+<td><strong>PROIEL XML 2.0 exporter</strong></td>
+<td>Convert raw Stanza output to PROIEL XML 2.0</td>
+<td>Apache-2.0</td>
+<td>Treebank builders</td>
+</tr>
+<tr class="even">
+<td><strong>Diachronic Greek Stanza checkpoints</strong></td>
+<td>Fine-tuned <code>grc_proiel</code> weights for diachronic adaptation</td>
+<td>Apache-2.0</td>
+<td>NLP researchers</td>
+</tr>
+<tr class="odd">
+<td><strong>Cross-lingual alignment viewer</strong></td>
+<td>Browse the NT-aligned graph (Greek / Latin / Gothic / OCS)</td>
+<td>MIT</td>
+<td>Comparative linguists</td>
+</tr>
+<tr class="even">
+<td><strong>Corpus-fix toolkit</strong></td>
+<td><code>fix_corpus_data.py</code> — TLG author + Stanza-error corrections at scale</td>
+<td>Apache-2.0</td>
+<td>Annotation curators</td>
+</tr>
+<tr class="odd">
+<td><strong>Argument-structure extractor</strong></td>
+<td>Per-verb argument frame (subject / object / oblique / voice / aspect)</td>
+<td>Apache-2.0</td>
+<td>Syntacticians</td>
+</tr>
+<tr class="even">
+<td><strong>Showcase generator</strong></td>
+<td><code>51_build_showcase_site.py</code> — regenerate a public showcase from any JSONL corpus</td>
+<td>Apache-2.0</td>
+<td>Project sites</td>
+</tr>
+<tr class="odd">
+<td><strong>Quarto template pack</strong></td>
+<td>This site — ready-made multi-output (HTML + PDF + .docx + Reveal.js + Beamer + .pptx) for any diachronic linguistics project</td>
+<td>MIT</td>
+<td>All academic users</td>
+</tr>
+</tbody>
+</table>
+<p>All tools live in <a href="https://github.com/AthDGC" class="uri">https://github.com/AthDGC</a>.</p>
 </section>
-<section id="the-cvl-cdsaml-project" class="level2">
-<h2 class="anchored" data-anchor-id="the-cvl-cdsaml-project">The CVL-CDSAML project</h2>
-<p><em>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em></p>
-<p>The project develops a comprehensive corpus-based valency lexicon for the contrastive and diachronic study of languages from antiquity to today, employing computational linguistic methods to track valency patterns and argument-structure changes across more than 3,000 years of documented language evolution.</p>
-<p>The project uses Penn-Helsinki parsing standards and adapts PROIEL annotation schemes to create selective treebanks that capture valency patterns across multiple historical stages of Greek, English, Germanic languages, and Romance languages.</p>
+<section id="lightside-text-mining-workbench" class="level2">
+<h2 class="anchored" data-anchor-id="lightside-text-mining-workbench">LightSIDE (text-mining workbench)</h2>
+<p><a href="https://www.cs.cmu.edu/~cprose/LightSIDE.html">LightSIDE</a> is the open-source text-mining workbench developed by Carolyn Rosé’s group at Carnegie Mellon. It pairs naturally with a PROIEL-style treebank because it lets you:</p>
+<ul>
+<li>extract features from annotated text (n-grams, POS-tag patterns, syntactic dependencies)</li>
+<li>train classifiers (SVM, logistic regression, decision tree) on diachronic period labels</li>
+<li>inspect what features each model relies on (i.e.&nbsp;<em>which</em> linguistic patterns let you tell Classical from Koine, or Byzantine from Modern, apart)</li>
+<li>export the trained models for reuse in research or pedagogy</li>
+</ul>
+<section id="athdgc-lightside-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="athdgc-lightside-pipeline">AthDGC + LightSIDE pipeline</h3>
+<ol type="1">
+<li><strong>Export</strong> an AthDGC slice to LightSIDE’s tab-separated input format with <code>tools/athdgc_to_lightside.py</code>.</li>
+<li><strong>Open</strong> LightSIDE, load the <code>.csv</code>, configure features (POS unigrams, argument-structure frames, lemma trigrams, etc.).</li>
+<li><strong>Train</strong> a classifier on the period column.</li>
+<li><strong>Inspect</strong> the most predictive features per period — <em>which morphological patterns survive into Modern Greek? which die out at the Byzantine boundary?</em></li>
+</ol>
+<p>We provide:</p>
+<ul>
+<li><code>tools/athdgc_to_lightside.py</code> — export script</li>
+<li><code>tools/lightside-recipes/</code> — worked examples (Archaic-vs-Classical, NT-vs-Byzantine, etc.)</li>
+<li><code>slides/lightside_workshop.qmd</code> — a one-hour workshop slide deck for classroom use</li>
+</ul>
+<p>(LightSIDE itself remains BSD-licensed and downloadable from CMU. We do not redistribute the binaries — only the AthDGC-side adapters + tutorials.)</p>
 </section>
-<section id="how-athdgc-works-in-brief" class="level2">
-<h2 class="anchored" data-anchor-id="how-athdgc-works-in-brief">How AthDGC works (in brief)</h2>
-<p>AthDGC is the technical infrastructure that supports the CVL-CDSAML project’s diachronic Greek component. It runs an autonomous daily harvest pipeline on the <strong>GRNET ARIS</strong> national HPC, covering discovery, filtering, OCR conversion to PROIEL XML 2.0, Stanza dependency parsing, and cross-lingual alignment to the New Testament’s Latin / Gothic / Old Church Slavonic witnesses.</p>
-<p>See the <a href="./data_paper.html#sec-method">Method</a> section of the data paper for a complete description.</p>
 </section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>AthDGC is published in continuous release. The samples shown on <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> are drawn automatically from the latest ARIS build. Dependency parses and morphology are produced by the Stanza <code>grc_proiel</code> pipeline and reviewed by the AthDGC team; individual sentences may still contain Stanza-introduced errors (lemmatisation of contracted forms, POS of pronouns, feature-bundle mismatches), which are corrected at the source in continuous data-cleanup passes (see <code>fix_corpus_data.py</code> in the source repository).</p>
+<section id="nosketch-style-concordancer-for-athdgc" class="level2">
+<h2 class="anchored" data-anchor-id="nosketch-style-concordancer-for-athdgc">NoSketch-style concordancer for AthDGC</h2>
+<p>The corpus is also available as a CWB (Corpus Workbench) index, queriable via <a href="https://nlp.fi.muni.cz/trac/noske">NoSketch Engine</a>:</p>
+<pre><code>[lemma="αἱρέω" &amp; feats=".*Voice=Mid.*"] within &lt;s/&gt;</code></pre>
+<p>…returns every middle-voice instance of αἱρέω across the entire diachronic span, grouped by period.</p>
+<p>The build script <code>tools/build_cwb_index.sh</code> converts the JSONL partitions into a CWB-compatible binary index. Sample queries and CQL recipes are in <code>tools/cwb-recipes/</code>.</p>
+</section>
+<section id="diachronic-greek-stanza-checkpoints" class="level2">
+<h2 class="anchored" data-anchor-id="diachronic-greek-stanza-checkpoints">Diachronic Greek Stanza checkpoints</h2>
+<p>We provide fine-tuned variants of the Stanford <code>grc_proiel</code> Stanza pipeline, adapted to:</p>
+<ul>
+<li>Byzantine Greek (<code>grc_byz_proiel</code>)</li>
+<li>Late-Byzantine + Early-Modern Greek (<code>grc_lbem_proiel</code>)</li>
+<li>Modern Greek with classical morphological retention (<code>grc_mod_proiel</code>)</li>
+</ul>
+<p>Released as Hugging Face model repos under <code>athdgc/*</code>. Training scripts in <code>tools/stanza-finetune/</code>. Eval loss and per-tag F1 reported per checkpoint.</p>
+</section>
+<section id="cross-lingual-alignment-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="cross-lingual-alignment-viewer">Cross-lingual alignment viewer</h2>
+<p>The Neo4j alignment graph is queryable through a public Neo4j Browser endpoint (URL forthcoming) or via the open-source <a href="https://neo4j.com/developer/neo4j-browser/">Neo4j Browser</a> loaded against a local copy of the alignment graph. The dump is part of the Zenodo deposition.</p>
+<p>Example Cypher — find every Greek aorist active verb whose Vulgate counterpart is passive:</p>
+<pre class="cypher"><code>MATCH (gk:Token {language:"grc", upos:"VERB"})-[:TRANSLATED_AS]-&gt;(la:Token {language:"lat"})
+WHERE gk.feats CONTAINS "Aspect=Perf"
+  AND gk.feats CONTAINS "Voice=Act"
+  AND la.feats CONTAINS "Voice=Pass"
+RETURN gk.form, gk.lemma, gk.feats, la.form, la.lemma, la.feats
+ORDER BY gk.work_title
+LIMIT 100</code></pre>
+</section>
+<section id="corpus-fix-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="corpus-fix-toolkit">Corpus-fix toolkit</h2>
+<p><code>fix_corpus_data.py</code> (used to bulk-correct 314,048 rows across 89.9M corpus rows in v0.4) is released so other projects can adapt it for their own PROIEL-style treebanks:</p>
+<ul>
+<li>TLG-canonical author + period override table (50+ entries)</li>
+<li>Stanza-error fixes (lemma + POS for crasis, pronouns, common mis-lemmatisations)</li>
+<li>Idempotent, with <code>.bak</code> backups</li>
+<li>Reports per-file diff counts</li>
+</ul>
+<p>Adapt for your corpus by extending <code>TLG_AUTHOR</code>, <code>AUTHOR_PERIOD</code>, and <code>LEMMA_FIXES</code>.</p>
+</section>
+<section id="argument-structure-extractor" class="level2">
+<h2 class="anchored" data-anchor-id="argument-structure-extractor">Argument-structure extractor</h2>
+<p>The function <code>extract_arg_structures(sentence)</code> (in <code>51_build_showcase_site.py</code> and exported as a standalone module in <code>tools/arg_structure.py</code>) returns, for every VERB / AUX token:</p>
+<ul>
+<li>subject (<code>nsubj</code>, <code>nsubj:pass</code>, <code>csubj</code>, <code>csubj:pass</code>)</li>
+<li>direct object (<code>obj</code>)</li>
+<li>indirect / oblique args (<code>iobj</code>, <code>obl:arg</code>, <code>obl:agent</code>, …)</li>
+<li>voice (active / middle / passive)</li>
+<li>aspect (perfective / imperfective)</li>
+<li>tense, mood, verb-form, person, number</li>
+</ul>
+<p>…as a Python dict, ready to be joined onto the cross-lingual alignment edges.</p>
+</section>
+<section id="showcase-generator" class="level2">
+<h2 class="anchored" data-anchor-id="showcase-generator">Showcase generator</h2>
+<p><code>51_build_showcase_site.py</code> — the script that builds <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> — is generic: point it at any directory of PROIEL XML 2.0 JSONL partitions and it generates a browsable showcase with per-period tabs, PROIEL dependency trees, argument-structure cards, and review toolbar. PROIEL only — no CoNLL-U pathway.</p>
+<p>Reuse it for any historical-treebank project under <code>tools/showcase/</code>.</p>
+</section>
+<section id="quarto-template-pack" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-template-pack">Quarto template pack</h2>
+<p>The site you are reading is generated from a Quarto pack (<a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/athdgc-quarto"><code>athdgc-quarto</code></a>) that is itself open source. It produces, from one source per page:</p>
+<ul>
+<li>HTML website</li>
+<li>PDF article (via xetex)</li>
+<li><code>.docx</code> for journal-submission portals</li>
+<li>Reveal.js slides for the browser</li>
+<li>Beamer PDF slides</li>
+<li><code>.pptx</code> PowerPoint slides</li>
+<li>A0 Typst posters</li>
+</ul>
+<p>Adapt it for any academic project by editing <code>_quarto.yml</code> + <code>themes/lavidas.scss</code>.</p>
+</section>
+<section id="get-the-tools" class="level2">
+<h2 class="anchored" data-anchor-id="get-the-tools">Get the tools</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AthDGC/Diachronic-Linguistics-Platform</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Diachronic-Linguistics-Platform</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> tools/   <span class="co"># all the modules described above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>License: Apache-2.0 (except where upstream tools require otherwise; see each tool’s <code>LICENSE</code>).</p>
+</section>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<p>If you use any AthDGC tool in your research, please cite the corpus DOI and the tool explicitly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">@dataset{lavidas2026athdgc,</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">  author    = {Lavidas, Nikolaos and {Athens Digital Glossa Chronos Research Network}},</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">  title     = {{AthDGC}: Athens Diachronic Glossa Chronos ({Athens-PROIEL})},</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  year      = {2026},</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  publisher = {Zenodo},</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  version   = {v0.4.0},</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">  doi       = {(pending)}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap">Roadmap</h2>
+<ul>
+<li><strong>Argument-structure typology workbench</strong> (in development): joint cross-lingual visualisation of argument-structure shifts under retranslation</li>
+<li><strong>Diachronic syntactic-change detector</strong>: change-point analysis over PROIEL feature frequencies per century</li>
+<li><strong>Browser-based PROIEL tree editor</strong>: lightweight in-page editor that produces validated PROIEL XML 2.0 patches (PR-fri</li>
+</ul>
 
 
 </section>
@@ -614,7 +844,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
 <p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/about.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Zenodo DOI: pending</p>
 </div>

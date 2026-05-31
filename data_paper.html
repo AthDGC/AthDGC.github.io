@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nikolaos Lavidas">
+<meta name="keywords" content="diachronic linguistics, ancient Greek, Byzantine Greek, Modern Greek, Indo-European, PROIEL, dependency treebank, cross-lingual alignment, argument structure, retranslation">
 
-<title>About AthDGC – AthDGC</title>
+<title>AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels – AthDGC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tools</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -153,54 +155,144 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-athens-digital-glossa-chronos-research-network" id="toc-the-athens-digital-glossa-chronos-research-network" class="nav-link active" data-scroll-target="#the-athens-digital-glossa-chronos-research-network">The Athens Digital Glossa Chronos Research Network</a></li>
-  <li><a href="#the-cvl-cdsaml-project" id="toc-the-cvl-cdsaml-project" class="nav-link" data-scroll-target="#the-cvl-cdsaml-project">The CVL-CDSAML project</a></li>
-  <li><a href="#how-athdgc-works-in-brief" id="toc-how-athdgc-works-in-brief" class="nav-link" data-scroll-target="#how-athdgc-works-in-brief">How AthDGC works (in brief)</a></li>
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">1. Overview</a>
+  <ul class="collapse">
+  <li><a href="#context-and-motivation" id="toc-context-and-motivation" class="nav-link" data-scroll-target="#context-and-motivation">1.1 Context and motivation</a></li>
+  <li><a href="#repository-location" id="toc-repository-location" class="nav-link" data-scroll-target="#repository-location">1.2 Repository location</a></li>
+  <li><a href="#institutional-context" id="toc-institutional-context" class="nav-link" data-scroll-target="#institutional-context">1.3 Institutional context</a></li>
+  </ul></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">2. Method</a>
+  <ul class="collapse">
+  <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">2.1 Discovery</a></li>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering">2.2 Filtering</a></li>
+  <li><a href="#conversion" id="toc-conversion" class="nav-link" data-scroll-target="#conversion">2.3 Conversion</a></li>
+  <li><a href="#annotation" id="toc-annotation" class="nav-link" data-scroll-target="#annotation">2.4 Annotation</a></li>
+  <li><a href="#argument-structure-capture" id="toc-argument-structure-capture" class="nav-link" data-scroll-target="#argument-structure-capture">2.5 Argument-structure capture</a></li>
+  <li><a href="#cross-lingual-alignment" id="toc-cross-lingual-alignment" class="nav-link" data-scroll-target="#cross-lingual-alignment">2.6 Cross-lingual alignment</a></li>
+  </ul></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">3. Dataset description</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/about.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/data_paper.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/data_paper.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="data_paper.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About AthDGC</h1>
+<h1 class="title">AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels</h1>
+<p class="subtitle lead">A formal short data paper for journal submission</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nikolaos Lavidas <a href="mailto:nlavidas@enl.uoa.gr" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>AthDGC (“Athens-PROIEL”) is an open, end-to-end pipeline and dataset that provides the first continuously updated, dependency-parsed treebank of the entire Greek language — from Homeric and Archaic texts to Modern Greek — with cross-lingual alignment to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian via the verse-level cross-alignment of the New Testament. AthDGC follows the PROIEL XML 2.0 schema, uses the Stanford Stanza PROIEL-trained pipeline for annotation, and applies LaBSE sentence embeddings and multilingual-BERT attention for word-level alignment. As of v0.4, the corpus contains 89.9M total rows, 4.08M annotated Greek rows, and 6,861 NT-aligned Greek verses cross-aligned to four sister IE witnesses.</p>
+  </div>
+</div>
 
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>diachronic linguistics, ancient Greek, Byzantine Greek, Modern Greek, Indo-European, PROIEL, dependency treebank, cross-lingual alignment, argument structure, retranslation</p>
+  </div>
+</div>
 
 </header>
 
 
-<section id="the-athens-digital-glossa-chronos-research-network" class="level2">
-<h2 class="anchored" data-anchor-id="the-athens-digital-glossa-chronos-research-network">The Athens Digital Glossa Chronos Research Network</h2>
-<p>AthDGC is an open infrastructure for Indo-European diachronic linguistics, developed at the <strong>National and Kapodistrian University of Athens</strong> (Εθνικόν και Καποδιστριακόν Πανεπιστήμιον Αθηνών), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.</p>
-<p>The network is led by <strong>Prof.&nbsp;Nikolaos Lavidas</strong> and coordinates several research initiatives funded by the Hellenic Foundation for Research and Innovation under the Greece 2.0 National Recovery and Resilience Plan.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">1. Overview</h2>
+<section id="context-and-motivation" class="level3">
+<h3 class="anchored" data-anchor-id="context-and-motivation">1.1 Context and motivation</h3>
+<p>Greek is the longest continuously attested member of the Indo-European family. The PROIEL Treebank <span class="citation" data-cites="haug2008 eckhoff2018">[@haug2008; @eckhoff2018]</span> established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment to its sister IE languages. AthDGC closes that gap.</p>
+<p>The project’s specific scholarly focus is <em>retranslation</em>: the same canonical text — the Iliad, the New Testament, the Septuagint Psalms, classical historiography — is re-rendered into Greek across periods (Homeric → Koine → Byzantine → Modern) and into sister languages (Latin, Gothic, OCS, Armenian) across the Indo-European family.</p>
 </section>
-<section id="the-cvl-cdsaml-project" class="level2">
-<h2 class="anchored" data-anchor-id="the-cvl-cdsaml-project">The CVL-CDSAML project</h2>
-<p><em>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em></p>
-<p>The project develops a comprehensive corpus-based valency lexicon for the contrastive and diachronic study of languages from antiquity to today, employing computational linguistic methods to track valency patterns and argument-structure changes across more than 3,000 years of documented language evolution.</p>
-<p>The project uses Penn-Helsinki parsing standards and adapts PROIEL annotation schemes to create selective treebanks that capture valency patterns across multiple historical stages of Greek, English, Germanic languages, and Romance languages.</p>
+<section id="repository-location" class="level3">
+<h3 class="anchored" data-anchor-id="repository-location">1.2 Repository location</h3>
+<ul>
+<li>Source code: <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></li>
+<li>Public showcase: <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a></li>
+<li>Zenodo deposition: (DOI pending)</li>
+</ul>
 </section>
-<section id="how-athdgc-works-in-brief" class="level2">
-<h2 class="anchored" data-anchor-id="how-athdgc-works-in-brief">How AthDGC works (in brief)</h2>
-<p>AthDGC is the technical infrastructure that supports the CVL-CDSAML project’s diachronic Greek component. It runs an autonomous daily harvest pipeline on the <strong>GRNET ARIS</strong> national HPC, covering discovery, filtering, OCR conversion to PROIEL XML 2.0, Stanza dependency parsing, and cross-lingual alignment to the New Testament’s Latin / Gothic / Old Church Slavonic witnesses.</p>
-<p>See the <a href="./data_paper.html#sec-method">Method</a> section of the data paper for a complete description.</p>
+<section id="institutional-context" class="level3">
+<h3 class="anchored" data-anchor-id="institutional-context">1.3 Institutional context</h3>
+<p>AthDGC is developed at the <strong>National and Kapodistrian University of Athens (EKPA)</strong>, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof.&nbsp;Nikolaos Lavidas. Compute is supplied by GRNET ARIS, allocation <code>pa260305</code>.</p>
 </section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>AthDGC is published in continuous release. The samples shown on <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> are drawn automatically from the latest ARIS build. Dependency parses and morphology are produced by the Stanza <code>grc_proiel</code> pipeline and reviewed by the AthDGC team; individual sentences may still contain Stanza-introduced errors (lemmatisation of contracted forms, POS of pronouns, feature-bundle mismatches), which are corrected at the source in continuous data-cleanup passes (see <code>fix_corpus_data.py</code> in the source repository).</p>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">2. Method</h2>
+<section id="discovery" class="level3">
+<h3 class="anchored" data-anchor-id="discovery">2.1 Discovery</h3>
+<p>Each day, the discovery stage probes open-access repositories — archive.org, Perseus Digital Library, First1K Greek, Wikisource, the Diorisis Corpus, OpenGreekAndLatin/PerseusDL — for new or updated Greek and parallel-language source material.</p>
+</section>
+<section id="filtering" class="level3">
+<h3 class="anchored" data-anchor-id="filtering">2.2 Filtering</h3>
+<p>Candidate texts are filtered by Greek-script ratio (at least 75% of alphabetic characters in the Greek Unicode blocks), a Path-B line filter for bilingual editorial apparatus, and content-hash deduplication.</p>
+</section>
+<section id="conversion" class="level3">
+<h3 class="anchored" data-anchor-id="conversion">2.3 Conversion</h3>
+<p>Surviving text is converted into the PROIEL XML 2.0 schema with sentence-level structure.</p>
+</section>
+<section id="annotation" class="level3">
+<h3 class="anchored" data-anchor-id="annotation">2.4 Annotation</h3>
+<p>Annotation is performed sentence by sentence with the Stanford Stanza pipeline <span class="citation" data-cites="qi2020">[@qi2020]</span> using the PROIEL-trained model <code>grc_proiel</code>. Analogous PROIEL-trained Stanza models are used for Latin (<code>la_proiel</code>), Old Church Slavonic (<code>cu_proiel</code>), and Gothic (<code>got_proiel</code>); Classical Armenian is annotated through a PROIEL-style pipeline currently under development. All output is normalised to the PROIEL XML 2.0 schema; no CoNLL-U or other format is published.</p>
+</section>
+<section id="argument-structure-capture" class="level3">
+<h3 class="anchored" data-anchor-id="argument-structure-capture">2.5 Argument-structure capture</h3>
+<p>Beyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token: the subject (<code>nsubj</code> / <code>nsubj:pass</code>), direct object (<code>obj</code>), indirect / oblique arguments (<code>iobj</code>, <code>obl:arg</code>), voice (active / middle / passive), and aspect (perfective / imperfective).</p>
+</section>
+<section id="cross-lingual-alignment" class="level3">
+<h3 class="anchored" data-anchor-id="cross-lingual-alignment">2.6 Cross-lingual alignment</h3>
+<p>Sentence-level alignment uses LaBSE embeddings <span class="citation" data-cites="feng2022">[@feng2022]</span>; word-level alignment uses multilingual-BERT attention via the AwesomeAlign procedure <span class="citation" data-cites="dou2021">[@dou2021]</span>. Phonetic cognate scoring uses ASJP sound-class encoding and LingPy edit distance <span class="citation" data-cites="list2014">[@list2014]</span>.</p>
+</section>
+</section>
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">3. Dataset description</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Object name</td>
+<td>AthDGC corpus, v0.4 release</td>
+</tr>
+<tr class="even">
+<td>Format</td>
+<td>PROIEL XML 2.0 (primary); JSONL partitions</td>
+</tr>
+<tr class="odd">
+<td>Creation dates</td>
+<td>2025-09 o</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -614,7 +706,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
 <p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/about.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/data_paper.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/data_paper.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Zenodo DOI: pending</p>
 </div>

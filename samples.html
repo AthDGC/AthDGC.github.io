@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PROIEL samples – AthDGC</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4f28ba486269c24c37d6df9a1cf56ebb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dda2ae949bbaa9476a5c2772d799b7ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="themes/lavidas-extras.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AthDGC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Corpus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./samples.html" aria-current="page"> 
+<span class="menu-text">Samples</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tools.html"> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./press.html"> 
+<span class="menu-text">Press</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./slides/index.html"> 
+<span class="menu-text">Slides</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/AthDGC"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/releases"> <i class="bi bi-file-text" role="img" aria-label="Releases (Zenodo DOI pending)">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#archaic-homer-iliad-1.1" id="toc-archaic-homer-iliad-1.1" class="nav-link active" data-scroll-target="#archaic-homer-iliad-1.1">Archaic — Homer, <em>Iliad</em> 1.1</a></li>
+  <li><a href="#classical-plato-apology-17a" id="toc-classical-plato-apology-17a" class="nav-link" data-scroll-target="#classical-plato-apology-17a">Classical — Plato, <em>Apology</em> 17a</a></li>
+  <li><a href="#koine-new-testament-john-11" id="toc-koine-new-testament-john-11" class="nav-link" data-scroll-target="#koine-new-testament-john-11">Koine — New Testament, John 1:1</a></li>
+  <li><a href="#late-antique-eusebius-historia-ecclesiastica-1.1.1" id="toc-late-antique-eusebius-historia-ecclesiastica-1.1.1" class="nav-link" data-scroll-target="#late-antique-eusebius-historia-ecclesiastica-1.1.1">Late Antique — Eusebius, <em>Historia Ecclesiastica</em> 1.1.1</a></li>
+  <li><a href="#byzantine-anna-komnene-alexias-1.1.1" id="toc-byzantine-anna-komnene-alexias-1.1.1" class="nav-link" data-scroll-target="#byzantine-anna-komnene-alexias-1.1.1">Byzantine — Anna Komnene, <em>Alexias</em> 1.1.1</a></li>
+  <li><a href="#modern-cavafy-ithaca-1911" id="toc-modern-cavafy-ithaca-1911" class="nav-link" data-scroll-target="#modern-cavafy-ithaca-1911">Modern — Cavafy, <em>Ithaca</em> (1911)</a></li>
+  <li><a href="#how-to-read-these-samples" id="toc-how-to-read-these-samples" class="nav-link" data-scroll-target="#how-to-read-these-samples">How to read these samples</a></li>
+  <li><a href="#get-the-full-corpus" id="toc-get-the-full-corpus" class="nav-link" data-scroll-target="#get-the-full-corpus">Get the full corpus</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/samples.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/samples.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PROIEL samples</h1>
+<p class="subtitle lead">Representative sentences from each diachronic period of the AthDGC corpus, with full PROIEL XML 2.0 annotation and dependency-tree visualization</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Every sample on this page is real, annotated PROIEL XML 2.0 output from the AthDGC pipeline. For each sample you see (i) the source citation, (ii) the dependency tree, (iii) the per-verb argument-structure frame, and (iv) the raw PROIEL XML.</p>
+<p>No CoNLL-U. No UD export. PROIEL XML 2.0 only.</p>
+<div class="proiel-key">
+<p><em>tree key:</em> indentation = depth · <code>▸</code> = head · italic label = PROIEL relation (<code>sub</code>, <code>obj</code>, <code>obl</code>, <code>adv</code>, <code>atr</code>, <code>pred</code>, <code>aux</code>, <code>comp</code>, <code>xobj</code>, <code>nonsub</code>, etc.)</p>
+</div>
+<hr>
+<section id="archaic-homer-iliad-1.1" class="level2">
+<h2 class="anchored" data-anchor-id="archaic-homer-iliad-1.1">Archaic — Homer, <em>Iliad</em> 1.1</h2>
+<blockquote class="blockquote">
+<p><em>μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</em> “Sing, goddess, of the wrath of Peleus’ son Achilles”</p>
+</blockquote>
+<div class="proiel-tree">
+<pre><code>▸ ἄειδε        pred · imp.act.2sg
+  ├ μῆνιν       obj  · acc.sg.f
+  │   └ Ἀχιλῆος    atr  · gen.sg.m
+  │       └ Πηληϊάδεω  atr  · gen.sg.m
+  └ θεά         voc  · voc.sg.f</code></pre>
+</div>
+<div class="proiel-arg">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>verb</th>
+<th>voice</th>
+<th>aspect</th>
+<th>subject</th>
+<th>object</th>
+<th>oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ἄειδε</td>
+<td>active</td>
+<td>imperfective</td>
+<td>(2 sg implicit, voc. θεά)</td>
+<td>μῆνιν (acc.)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proiel-xml">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"hom.il.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"μῆνιν"</span>     <span class="ot">lemma=</span><span class="st">"μῆνις"</span>     <span class="ot">pos=</span><span class="st">"Nb-s---fa-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fa-"</span>/&gt;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἄειδε"</span>     <span class="ot">lemma=</span><span class="st">"ἀείδω"</span>     <span class="ot">pos=</span><span class="st">"V--sma---i"</span> <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sma---i"</span>/&gt;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"θεά"</span>       <span class="ot">lemma=</span><span class="st">"θεά"</span>        <span class="ot">pos=</span><span class="st">"Nb-s---fv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fv-"</span>/&gt;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"Πηληϊάδεω"</span> <span class="ot">lemma=</span><span class="st">"Πηληϊάδης"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"Ἀχιλῆος"</span>   <span class="ot">lemma=</span><span class="st">"Ἀχιλλεύς"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="classical-plato-apology-17a" class="level2">
+<h2 class="anchored" data-anchor-id="classical-plato-apology-17a">Classical — Plato, <em>Apology</em> 17a</h2>
+<blockquote class="blockquote">
+<p><em>ὅ τι μὲν ὑμεῖς, ὦ ἄνδρες Ἀθηναῖοι, πεπόνθατε ὑπὸ τῶν ἐμῶν κατηγόρων, οὐκ οἶδα</em> “What you, men of Athens, have suffered from my accusers I do not know”</p>
+</blockquote>
+<div class="proiel-tree">
+<pre><code>▸ οἶδα               pred · prs.act.1sg
+  ├ οὐκ              adv
+  └ πεπόνθατε        xcomp · prf.act.2pl
+      ├ ὑμεῖς         sub  · nom.pl
+      │   └ ἄνδρες     voc
+      │       └ Ἀθηναῖοι atr
+      ├ ὅ τι           obj  · acc.sg.n (rel.)
+      └ ὑπὸ            obl  · agent
+          └ κατηγόρων   obj  · gen.pl.m
+              └ τῶν ἐμῶν atr</code></pre>
+</div>
+<div class="proiel-arg">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>verb</th>
+<th>voice</th>
+<th>aspect</th>
+<th>subject</th>
+<th>object</th>
+<th>oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>οἶδα</td>
+<td>active</td>
+<td>perfective</td>
+<td>(1 sg implicit)</td>
+<td>(clausal: πεπόνθατε…)</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>πεπόνθατε</td>
+<td>active</td>
+<td>perfect</td>
+<td>ὑμεῖς (nom.)</td>
+<td>ὅ τι (acc.)</td>
+<td>ὑπὸ κατηγόρων (agent)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proiel-xml">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"pla.apol.17a.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span>  <span class="ot">form=</span><span class="st">"ὅ τι"</span>        <span class="ot">lemma=</span><span class="st">"ὅστις"</span>     <span class="ot">pos=</span><span class="st">"Pr-s---na-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Pr-s---na-"</span>/&gt;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span>  <span class="ot">form=</span><span class="st">"ὑμεῖς"</span>      <span class="ot">lemma=</span><span class="st">"σύ"</span>        <span class="ot">pos=</span><span class="st">"Pp2p---n--"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"sub"</span>  <span class="ot">morphology=</span><span class="st">"Pp2p---n--"</span>/&gt;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span>  <span class="ot">form=</span><span class="st">"ἄνδρες"</span>     <span class="ot">lemma=</span><span class="st">"ἀνήρ"</span>     <span class="ot">pos=</span><span class="st">"Nb-p---mv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mv-"</span>/&gt;</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span>  <span class="ot">form=</span><span class="st">"Ἀθηναῖοι"</span>  <span class="ot">lemma=</span><span class="st">"Ἀθηναῖος"</span> <span class="ot">pos=</span><span class="st">"Nb-p---mv-"</span> <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mv-"</span>/&gt;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span>  <span class="ot">form=</span><span class="st">"πεπόνθατε"</span> <span class="ot">lemma=</span><span class="st">"πάσχω"</span>    <span class="ot">pos=</span><span class="st">"V-2praia2p-"</span> <span class="ot">head-id=</span><span class="st">"9"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V-2praia2p-"</span>/&gt;</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"6"</span>  <span class="ot">form=</span><span class="st">"ὑπὸ"</span>       <span class="ot">lemma=</span><span class="st">"ὑπό"</span>       <span class="ot">pos=</span><span class="st">"R--------"</span>   <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"obl"</span>  <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"7"</span>  <span class="ot">form=</span><span class="st">"τῶν ἐμῶν"</span>  <span class="ot">lemma=</span><span class="st">"ἐμός"</span>     <span class="ot">pos=</span><span class="st">"Pp1pg---mg"</span> <span class="ot">head-id=</span><span class="st">"8"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Pp1pg---mg"</span>/&gt;</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"8"</span>  <span class="ot">form=</span><span class="st">"κατηγόρων"</span> <span class="ot">lemma=</span><span class="st">"κατήγορος"</span> <span class="ot">pos=</span><span class="st">"Nb-p---mg-"</span> <span class="ot">head-id=</span><span class="st">"6"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mg-"</span>/&gt;</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"9"</span>  <span class="ot">form=</span><span class="st">"οὐκ"</span>        <span class="ot">lemma=</span><span class="st">"οὐ"</span>        <span class="ot">pos=</span><span class="st">"Df--------"</span>  <span class="ot">head-id=</span><span class="st">"10"</span> <span class="ot">relation=</span><span class="st">"adv"</span> <span class="ot">morphology=</span><span class="st">"Df--------"</span>/&gt;</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"10"</span> <span class="ot">form=</span><span class="st">"οἶδα"</span>      <span class="ot">lemma=</span><span class="st">"οἶδα"</span>     <span class="ot">pos=</span><span class="st">"V--sria1s-"</span>  <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sria1s-"</span>/&gt;</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="koine-new-testament-john-11" class="level2">
+<h2 class="anchored" data-anchor-id="koine-new-testament-john-11">Koine — New Testament, John 1:1</h2>
+<blockquote class="blockquote">
+<p><em>Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος</em></p>
+</blockquote>
+<div class="proiel-tree">
+<pre><code>▸ ἦν               pred · impf.ind.act.3sg
+  ├ Ἐν ἀρχῇ        obl  · prep + dat.sg.f
+  │   └ ἀρχῇ        obj  · dat.sg.f
+  └ ὁ λόγος        sub  · nom.sg.m</code></pre>
+</div>
+<div class="proiel-arg">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>verb</th>
+<th>voice</th>
+<th>aspect</th>
+<th>subject</th>
+<th>object</th>
+<th>oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ἦν (clause 1)</td>
+<td>active</td>
+<td>imperfective</td>
+<td>ὁ λόγος (nom.)</td>
+<td>—</td>
+<td>ἐν ἀρχῇ (locative)</td>
+</tr>
+<tr class="even">
+<td>ἦν (clause 2)</td>
+<td>active</td>
+<td>imperfective</td>
+<td>ὁ λόγος (nom.)</td>
+<td>—</td>
+<td>πρὸς τὸν θεόν (allative)</td>
+</tr>
+<tr class="odd">
+<td>ἦν (clause 3)</td>
+<td>active</td>
+<td>imperfective</td>
+<td>ὁ λόγος (nom.)</td>
+<td>θεὸς (nom. predicative)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proiel-xml">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"nt.john.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Ἐν"</span>     <span class="ot">lemma=</span><span class="st">"ἐν"</span>    <span class="ot">pos=</span><span class="st">"R--------"</span>  <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"obl"</span> <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἀρχῇ"</span>   <span class="ot">lemma=</span><span class="st">"ἀρχή"</span> <span class="ot">pos=</span><span class="st">"Nb-s---fd-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"obj"</span> <span class="ot">morphology=</span><span class="st">"Nb-s---fd-"</span>/&gt;</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"ἦν"</span>     <span class="ot">lemma=</span><span class="st">"εἰμί"</span> <span class="ot">pos=</span><span class="st">"V--siia3s-"</span>  <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--siia3s-"</span>/&gt;</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"ὁ"</span>      <span class="ot">lemma=</span><span class="st">"ὁ"</span>     <span class="ot">pos=</span><span class="st">"S-s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"aux"</span> <span class="ot">morphology=</span><span class="st">"S-s---mn-"</span>/&gt;</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"λόγος"</span> <span class="ot">lemma=</span><span class="st">"λόγος"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mn-"</span> <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"sub"</span> <span class="ot">morphology=</span><span class="st">"Nb-s---mn-"</span>/&gt;</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>NT verse aligned cross-lingually to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via LaBSE sentence embedding + AwesomeAlign word alignment.</p>
+<hr>
+</section>
+<section id="late-antique-eusebius-historia-ecclesiastica-1.1.1" class="level2">
+<h2 class="anchored" data-anchor-id="late-antique-eusebius-historia-ecclesiastica-1.1.1">Late Antique — Eusebius, <em>Historia Ecclesiastica</em> 1.1.1</h2>
+<blockquote class="blockquote">
+<p><em>Τὰς τῶν ἱερῶν ἀποστόλων διαδοχάς… γραφῇ παραδοῦναι προῄρημαι</em> “I have chosen to commit to writing the succession of the holy apostles…”</p>
+</blockquote>
+<div class="proiel-tree">
+<pre><code>▸ προῄρημαι           pred · prf.mid.1sg
+  ├ παραδοῦναι       xcomp · aor.act.inf
+  │   ├ διαδοχάς       obj  · acc.pl.f
+  │   │   └ τῶν ἀποστόλων   atr · gen.pl.m
+  │   │       └ ἱερῶν        atr · gen.pl.m
+  │   └ γραφῇ          obl  · dat.sg.f
+  └ (ἐγώ)              sub  · 1sg implicit</code></pre>
+</div>
+<div class="proiel-arg">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>verb</th>
+<th>voice</th>
+<th>aspect</th>
+<th>subject</th>
+<th>object</th>
+<th>oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>προῄρημαι</td>
+<td>middle</td>
+<td>perfect</td>
+<td>(1 sg implicit)</td>
+<td>(clausal: παραδοῦναι…)</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>παραδοῦναι</td>
+<td>active</td>
+<td>aorist (inf.)</td>
+<td>shared subject (1 sg)</td>
+<td>διαδοχάς (acc.)</td>
+<td>γραφῇ (dat. of means)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</section>
+<section id="byzantine-anna-komnene-alexias-1.1.1" class="level2">
+<h2 class="anchored" data-anchor-id="byzantine-anna-komnene-alexias-1.1.1">Byzantine — Anna Komnene, <em>Alexias</em> 1.1.1</h2>
+<blockquote class="blockquote">
+<p><em>Ὁ χρόνος ῥέων ἀκάθεκτος καὶ ἀεί τι κινούμενος παρασύρει καὶ παραφέρει πάντα τὰ ἐν γενέσει</em> “Time, flowing ungoverned and ever in motion, drags down and carries away all that is in becoming”</p>
+</blockquote>
+<div class="proiel-tree">
+<pre><code>▸ παρασύρει          pred · prs.act.3sg
+  ├ Ὁ χρόνος         sub  · nom.sg.m
+  │   ├ ῥέων           atr  · pres.act.ptcp.nom.sg.m
+  │   │   └ ἀκάθεκτος  atr  · adj
+  │   └ κινούμενος    atr  · pres.mid.ptcp.nom.sg.m
+  │       ├ ἀεί        adv
+  │       └ τι         obj  · acc.sg.n
+  ├ καὶ παραφέρει     coord · prs.act.3sg
+  └ πάντα τὰ ἐν γενέσει  obj · acc.pl.n</code></pre>
+</div>
+<div class="proiel-arg">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>verb</th>
+<th>voice</th>
+<th>aspect</th>
+<th>subject</th>
+<th>object</th>
+<th>oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>παρασύρει</td>
+<td>active</td>
+<td>imperfective</td>
+<td>Ὁ χρόνος (nom.)</td>
+<td>πάντα τὰ ἐν γενέσει (acc.)</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>παραφέρει (coord.)</td>
+<td>active</td>
+<td>imperfective</td>
+<td>shared (Ὁ χρόνος)</td>
+<td>shared (πάντα)</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>ῥέων (ptcp.)</td>
+<td>active</td>
+<td>imperfective</td>
+<td>Ὁ χρόνος</td>
+<td>—</td>
+<td>(manner)</td>
+</tr>
+<tr class="even">
+<td>κινούμενος (ptcp.)</td>
+<td>middle</td>
+<td>imperfective</td>
+<td>Ὁ χρόνος</td>
+<td>τι</td>
+<td>ἀεί (frequency)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</section>
+<section id="modern-cavafy-ithaca-1911" class="level2">
+<h2 class="anchored" data-anchor-id="modern-cavafy-ithaca-1911">Modern — Cavafy, <em>Ithaca</em> (1911)</h2>
+<blockquote class="blockquote">
+<p><em>Σὰ βγεῖς στὸν πηγαιμὸ γιὰ τὴν Ἰθάκη, νὰ εὔχεσαι νὰ ἦναι μακρὺς ὁ δρόμος</em></p>
+</blockquote>
+<div class="proiel-tree">
+<pre><code>▸ εὔχεσαι           pred · prs.mid.2sg.imp
+  ├ Σὰ βγεῖς         adv · temporal subord clause
+  │   ├ βγεῖς          xcomp · aor.act.2sg
+  │   └ στὸν πηγαιμὸ  obl  · prep + acc
+  │       └ γιὰ τὴν Ἰθάκη  obl  · prep + acc
+  └ νὰ ἦναι         xcomp · prs.act.3sg
+      ├ ὁ δρόμος     sub  · nom.sg.m
+      └ μακρὺς       pred-nom · adj.nom.sg.m</code></pre>
+</div>
+<div class="proiel-arg">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>verb</th>
+<th>voice</th>
+<th>aspect</th>
+<th>subject</th>
+<th>object</th>
+<th>oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>εὔχεσαι</td>
+<td>middle</td>
+<td>imperfective (imp.)</td>
+<td>(2 sg implicit)</td>
+<td>(clausal: νὰ ἦναι μακρὺς…)</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>βγεῖς</td>
+<td>active</td>
+<td>perfective</td>
+<td>(2 sg implicit)</td>
+<td>—</td>
+<td>στὸν πηγαιμὸ</td>
+</tr>
+<tr class="odd">
+<td>ἦναι</td>
+<td>active</td>
+<td>imperfective</td>
+<td>ὁ δρόμος (nom.)</td>
+<td>μακρὺς (pred. nom.)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proiel-xml">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"cav.ithaca.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span> <span class="ot">language=</span><span class="st">"gkm"</span>&gt;</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Σὰ"</span>       <span class="ot">lemma=</span><span class="st">"σάν"</span>      <span class="ot">pos=</span><span class="st">"C--------"</span>   <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"adv"</span>   <span class="ot">morphology=</span><span class="st">"C--------"</span>/&gt;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"βγεῖς"</span>    <span class="ot">lemma=</span><span class="st">"βγαίνω"</span>  <span class="ot">pos=</span><span class="st">"V--sap2s-"</span>   <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V--sap2s-"</span>/&gt;</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"εὔχεσαι"</span>  <span class="ot">lemma=</span><span class="st">"εὔχομαι"</span> <span class="ot">pos=</span><span class="st">"V--smi2s-"</span>   <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span>  <span class="ot">morphology=</span><span class="st">"V--smi2s-"</span>/&gt;</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"νὰ"</span>       <span class="ot">lemma=</span><span class="st">"νά"</span>       <span class="ot">pos=</span><span class="st">"C--------"</span>   <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"aux"</span>   <span class="ot">morphology=</span><span class="st">"C--------"</span>/&gt;</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"ἦναι"</span>    <span class="ot">lemma=</span><span class="st">"εἶμαι"</span>   <span class="ot">pos=</span><span class="st">"V--sria3s-"</span>  <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V--sria3s-"</span>/&gt;</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"6"</span> <span class="ot">form=</span><span class="st">"μακρὺς"</span> <span class="ot">lemma=</span><span class="st">"μακρύς"</span>  <span class="ot">pos=</span><span class="st">"A--s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"pred-nom"</span> <span class="ot">morphology=</span><span class="st">"A--s---mn-"</span>/&gt;</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"7"</span> <span class="ot">form=</span><span class="st">"ὁ"</span>        <span class="ot">lemma=</span><span class="st">"ὁ"</span>         <span class="ot">pos=</span><span class="st">"S-s---mn-"</span>   <span class="ot">head-id=</span><span class="st">"8"</span> <span class="ot">relation=</span><span class="st">"aux"</span>   <span class="ot">morphology=</span><span class="st">"S-s---mn-"</span>/&gt;</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"8"</span> <span class="ot">form=</span><span class="st">"δρόμος"</span>  <span class="ot">lemma=</span><span class="st">"δρόμος"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"sub"</span>   <span class="ot">morphology=</span><span class="st">"Nb-s---mn-"</span>/&gt;</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="how-to-read-these-samples" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-these-samples">How to read these samples</h2>
+<p>Each sentence is annotated under the <strong>PROIEL XML 2.0 schema</strong> with the relation inventory established by Haug &amp; Jøhndal (2008) and extended by Eckhoff <em>et al.</em> (2018):</p>
+<ul>
+<li><code>pred</code> — root predicate</li>
+<li><code>sub</code> / <code>obj</code> — core arguments</li>
+<li><code>obl</code> — oblique (prepositional / instrumental / locative / ablative)</li>
+<li><code>atr</code> — attributive (adnominal modifier)</li>
+<li><code>adv</code> — adverbial modifier</li>
+<li><code>voc</code> — vocative</li>
+<li><code>aux</code> — auxiliary (article, copula component)</li>
+<li><code>xcomp</code> / <code>comp</code> — open / closed complement clauses</li>
+<li><code>xobj</code> / <code>nonsub</code> — raised arguments</li>
+<li><code>pred-nom</code> — nominal predicate (with copula)</li>
+</ul>
+<p>Every annotated token additionally carries full morphology (the 10-character PROIEL morphological tag) and lemma. The per-verb argument-structure frame is derived from these PROIEL relations directly — no UD remapping, no CoNLL-U export step.</p>
+<hr>
+</section>
+<section id="get-the-full-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="get-the-full-corpus">Get the full corpus</h2>
+<p>The samples above are a tiny illustrative slice. The full AthDGC corpus contains:</p>
+<ul>
+<li>89.9 M total rows</li>
+<li>4.08 M annotated Greek rows</li>
+<li>6,861 NT-aligned Greek verses</li>
+<li>8 diachronic periods, Archaic to Modern</li>
+</ul>
+<p>Download the full PROIEL XML 2.0 partitions from Zenodo: <em>Zenodo DOI: pending</em>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/athdgc\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Athens Digital Glossa Chronos Research Network · EKPA · CC-BY-4.0</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/samples.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/samples.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Zenodo DOI: pending</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
