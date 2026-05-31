@@ -140,6 +140,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tools</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./training.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -192,6 +196,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#athdgc-lightside-pipeline" id="toc-athdgc-lightside-pipeline" class="nav-link" data-scroll-target="#athdgc-lightside-pipeline">AthDGC + LightSIDE pipeline</a></li>
   </ul></li>
+  <li><a href="#lightside-athdgc-for-syntax-lavidas-extension" id="toc-lightside-athdgc-for-syntax-lavidas-extension" class="nav-link" data-scroll-target="#lightside-athdgc-for-syntax-lavidas-extension">LightSIDE-AthDGC for syntax (Lavidas extension)</a>
+  <ul class="collapse">
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
+  <li><a href="#lightside-athdgc-pipeline" id="toc-lightside-athdgc-pipeline" class="nav-link" data-scroll-target="#lightside-athdgc-pipeline">LightSIDE-AthDGC pipeline</a></li>
+  <li><a href="#what-we-ship" id="toc-what-we-ship" class="nav-link" data-scroll-target="#what-we-ship">What we ship</a></li>
+  </ul></li>
   <li><a href="#nosketch-style-concordancer-for-athdgc" id="toc-nosketch-style-concordancer-for-athdgc" class="nav-link" data-scroll-target="#nosketch-style-concordancer-for-athdgc">NoSketch-style concordancer for AthDGC</a></li>
   <li><a href="#diachronic-greek-stanza-checkpoints" id="toc-diachronic-greek-stanza-checkpoints" class="nav-link" data-scroll-target="#diachronic-greek-stanza-checkpoints">Diachronic Greek Stanza checkpoints</a></li>
   <li><a href="#cross-lingual-alignment-viewer" id="toc-cross-lingual-alignment-viewer" class="nav-link" data-scroll-target="#cross-lingual-alignment-viewer">Cross-lingual alignment viewer</a></li>
@@ -229,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The AthDGC platform ships <strong>two open deliverables in parallel</strong>: this <strong>computational toolkit for diachronic linguistics</strong> plus a PROIEL XML 2.0 diachronic Greek corpus. The toolkit is, designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only - no CoNLL-U, no UD-flavoured export.</p>
+<p>The AthDGC platform ships <strong>two open deliverables in parallel</strong>: this <strong>computational toolkit for diachronic linguistics</strong> plus a PROIEL XML 2.0 diachronic Greek corpus. The toolkit is designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only - no CoNLL-U, no UD-flavoured export.</p>
 <p>All tools are open source (Apache-2.0 / MIT / GPL where the upstream license requires). All are documented for classroom use - from undergraduate to PhD level - so digital-humanities courses can adopt them without per-seat licensing.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
@@ -256,48 +266,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Researchers, classrooms</td>
 </tr>
 <tr class="even">
+<td><strong>LightSIDE-AthDGC</strong> (Lavidas extension)</td>
+<td>LightSIDE for <strong>syntactic</strong> features: PROIEL arcs, argument-structure frames, morphology bundles, voice/aspect/mood cross-tabs</td>
+<td>BSD + Apache-2.0</td>
+<td>Diachronic syntacticians</td>
+</tr>
+<tr class="odd">
 <td><strong>AthDGC concordancer</strong></td>
 <td>NoSketch-style concordance interface for the AthDGC corpus</td>
 <td>Apache-2.0</td>
 <td>Researchers, students</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>PROIEL XML 2.0 exporter</strong></td>
 <td>Convert raw Stanza output to PROIEL XML 2.0</td>
 <td>Apache-2.0</td>
 <td>Treebank builders</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Diachronic Greek Stanza checkpoints</strong></td>
 <td>Fine-tuned <code>grc_proiel</code> weights for diachronic adaptation</td>
 <td>Apache-2.0</td>
 <td>NLP researchers</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Cross-lingual alignment viewer</strong></td>
 <td>Browse the NT-aligned graph (Greek / Latin / Gothic / OCS)</td>
 <td>MIT</td>
 <td>Comparative linguists</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Corpus-fix toolkit</strong></td>
 <td><code>fix_corpus_data.py</code> - TLG author + Stanza-error corrections at scale</td>
 <td>Apache-2.0</td>
 <td>Annotation curators</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Argument-structure extractor</strong></td>
 <td>Per-verb argument frame (subject / object / oblique / voice / aspect)</td>
 <td>Apache-2.0</td>
 <td>Syntacticians</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Showcase generator</strong></td>
 <td><code>51_build_showcase_site.py</code> - regenerate a public showcase from any JSONL corpus</td>
 <td>Apache-2.0</td>
 <td>Project sites</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Quarto template pack</strong></td>
 <td>This site - ready-made multi-output (HTML + PDF + .docx + Reveal.js + Beamer + .pptx) for any diachronic linguistics project</td>
 <td>MIT</td>
@@ -331,6 +347,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>slides/lightside_workshop.qmd</code> - a one-hour workshop slide deck for classroom use</li>
 </ul>
 <p>(LightSIDE itself remains BSD-licensed and downloadable from CMU. We do not redistribute the binaries - only the AthDGC-side adapters + tutorials.)</p>
+</section>
+</section>
+<section id="lightside-athdgc-for-syntax-lavidas-extension" class="level2">
+<h2 class="anchored" data-anchor-id="lightside-athdgc-for-syntax-lavidas-extension">LightSIDE-AthDGC for syntax (Lavidas extension)</h2>
+<p>The standard LightSIDE workbench operates on <strong>word-level text features</strong> (n-grams, character n-grams, simple POS counts). The <strong>LightSIDE-AthDGC</strong> fork - developed by N. Lavidas - extends LightSIDE so it operates on <strong>PROIEL syntactic features</strong>, not just on text. This is the toolkit's signal contribution to diachronic syntactic research.</p>
+<p>What LightSIDE-AthDGC adds:</p>
+<ul>
+<li><strong>Dependency-arc features.</strong> Each (head-relation-dependent) triple in a PROIEL parse becomes a feature, e.g. <code>obj:V-N</code>, <code>atr:N-N</code>, <code>obl:V-N+prep</code>. The classifier can learn that <em>obj:V-N with acc.sg.f</em> is over-represented in Archaic and under-represented in Modern, etc.</li>
+<li><strong>Argument-structure-frame features.</strong> For every VERB / AUX token, the full valency frame is emitted as a feature: <code>pred[sub:nom, obj:acc, voc:voc]</code>, <code>pred[sub:nom, obj:acc, obl:dat]</code>, etc. Period classifiers built on frame features distinguish Greek diachronic stages with markedly better accuracy than text-only models.</li>
+<li><strong>Morphology-bundle features.</strong> The PROIEL 10-character morphological tag becomes a feature bundle (case + gender + number + tense + mood + voice + aspect). Selectable via the LightSIDE feature panel.</li>
+<li><strong>Voice / aspect / mood cross-tabulations.</strong> Joint features like <code>voice=mid,aspect=perf,mood=ind</code> enable detection of construction-level diachronic shifts (e.g. middle-perfect retention).</li>
+<li><strong>Relation-co-occurrence features.</strong> Pairs of relations sharing a head (e.g. <em>sub + obj + voc</em> on the same verb) become single features for valency-pattern classification.</li>
+</ul>
+<section id="why-this-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
+<p>Standard text-mining tools are blind to syntactic structure. A bag-of-words classifier might distinguish Classical from Koine on lexical evidence, but it cannot reveal <strong>which syntactic patterns</strong> survive into Modern Greek and <strong>which die out at the Byzantine boundary</strong>. LightSIDE-AthDGC closes that gap by exposing the PROIEL dependency arcs, argument-structure frames, and morphology bundles as native LightSIDE features.</p>
+</section>
+<section id="lightside-athdgc-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="lightside-athdgc-pipeline">LightSIDE-AthDGC pipeline</h3>
+<ol type="1">
+<li><strong>Export</strong> an AthDGC slice to LightSIDE-AthDGC's tab-separated input format (<code>tools/athdgc_to_lightside_syntax.py</code>) - each row carries token features plus syntactic features (head id, relation, parent relation, dependency-arc triple, valency frame).</li>
+<li><strong>Open</strong> LightSIDE-AthDGC, load the <code>.csv</code>, and select syntactic-feature panels: <em>Dependency arcs</em>, <em>Argument frames</em>, <em>Morphology bundle</em>, <em>Voice/aspect/mood</em>, <em>Relation co-occurrence</em>.</li>
+<li><strong>Train</strong> SVM / logistic / decision-tree classifiers on the period column (Archaic, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern).</li>
+<li><strong>Inspect</strong> the per-feature weights to find <em>which syntactic patterns</em> drive the classifier's decision per period boundary. Export feature-importance tables for the data paper or a follow-on linguistic-change study.</li>
+</ol>
+</section>
+<section id="what-we-ship" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-ship">What we ship</h3>
+<ul>
+<li><code>tools/athdgc_to_lightside_syntax.py</code> - the syntactic-feature export script (Apache-2.0).</li>
+<li><code>tools/lightside-athdgc/</code> - the LightSIDE fork patches: feature plugins for PROIEL arcs, frames, and morphology (BSD as parent license).</li>
+<li><code>tools/lightside-recipes-syntax/</code> - worked classroom examples (Archaic-vs-Classical-on-arcs, Koine-vs-Byzantine-on-frames, etc.).</li>
+<li><code>slides/lightside_syntax_workshop.qmd</code> - a one-hour workshop slide deck for classroom use.</li>
+</ul>
+<p>Upstream LightSIDE remains BSD-licensed and downloadable from CMU. We do not redistribute binaries; LightSIDE-AthDGC ships as a patch set + helper scripts that the user applies to a standard LightSIDE install.</p>
 </section>
 </section>
 <section id="nosketch-style-concordancer-for-athdgc" class="level2">

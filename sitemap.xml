@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://athdgc.github.io/tools.html</loc>
-    <lastmod>2026-05-31T22:25:00.125Z</lastmod>
+    <loc>https://athdgc.github.io/training.html</loc>
+    <lastmod>2026-05-31T22:34:44.130Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/slides/lrec_demo.html</loc>
-    <lastmod>2026-05-31T22:25:00.263Z</lastmod>
+    <loc>https://athdgc.github.io/team.html</loc>
+    <lastmod>2026-05-31T22:24:27.194Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/slides/announcement.html</loc>
-    <lastmod>2026-05-31T22:26:21.116Z</lastmod>
+    <loc>https://athdgc.github.io/slides/index.html</loc>
+    <lastmod>2026-05-31T20:53:58.282Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/publications.html</loc>
-    <lastmod>2026-05-31T22:24:27.066Z</lastmod>
+    <loc>https://athdgc.github.io/slides/cidl_2026.html</loc>
+    <lastmod>2026-05-31T22:25:00.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://athdgc.github.io/samples.html</loc>
+    <lastmod>2026-05-31T22:24:27.235Z</lastmod>
   </url>
   <url>
     <loc>https://athdgc.github.io/press.html</loc>
@@ -30,23 +34,23 @@
   </url>
   <url>
     <loc>https://athdgc.github.io/index.html</loc>
-    <lastmod>2026-05-31T22:14:37.145Z</lastmod>
+    <lastmod>2026-05-31T22:34:44.204Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/samples.html</loc>
-    <lastmod>2026-05-31T22:24:27.235Z</lastmod>
+    <loc>https://athdgc.github.io/publications.html</loc>
+    <lastmod>2026-05-31T22:24:27.066Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/slides/cidl_2026.html</loc>
-    <lastmod>2026-05-31T22:25:00.242Z</lastmod>
+    <loc>https://athdgc.github.io/slides/announcement.html</loc>
+    <lastmod>2026-05-31T22:26:21.116Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/slides/index.html</loc>
-    <lastmod>2026-05-31T20:53:58.282Z</lastmod>
+    <loc>https://athdgc.github.io/slides/lrec_demo.html</loc>
+    <lastmod>2026-05-31T22:25:00.263Z</lastmod>
   </url>
   <url>
-    <loc>https://athdgc.github.io/team.html</loc>
-    <lastmod>2026-05-31T22:24:27.194Z</lastmod>
+    <loc>https://athdgc.github.io/tools.html</loc>
+    <lastmod>2026-05-31T22:32:43.748Z</lastmod>
   </url>
 </urlset>
 
