@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/releases"> <i class="bi bi-file-text" role="img" aria-label="Releases (Zenodo DOI pending)">
+    <a class="nav-link" href="https://doi.org/10.5281/zenodo.20439182"> <i class="bi bi-file-text" role="img" aria-label="Zenodo deposition (DOI 10.5281/zenodo.20439182)">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -187,7 +187,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#archaic-homer-iliad-1.1" id="toc-archaic-homer-iliad-1.1" class="nav-link active" data-scroll-target="#archaic-homer-iliad-1.1">Archaic — Homer, <em>Iliad</em> 1.1</a></li>
+  <li><a href="#viz-gallery" id="toc-viz-gallery" class="nav-link active" data-scroll-target="#viz-gallery">Four visualisations of <em>Iliad</em> 1.1</a>
+  <ul class="collapse">
+  <li><a href="#athdgc-default-indented-tree" id="toc-athdgc-default-indented-tree" class="nav-link" data-scroll-target="#athdgc-default-indented-tree">1. AthDGC default — indented tree</a></li>
+  <li><a href="#grew-arborator-style-arc-diagram" id="toc-grew-arborator-style-arc-diagram" class="nav-link" data-scroll-target="#grew-arborator-style-arc-diagram">2. Grew / Arborator style — arc diagram</a></li>
+  <li><a href="#perseus-style-descending-tree" id="toc-perseus-style-descending-tree" class="nav-link" data-scroll-target="#perseus-style-descending-tree">3. Perseus style — descending tree</a></li>
+  <li><a href="#lavidasized-typographic-new-athdgc-house-style" id="toc-lavidasized-typographic-new-athdgc-house-style" class="nav-link" data-scroll-target="#lavidasized-typographic-new-athdgc-house-style">4. Lavidasized typographic — new AthDGC house style</a></li>
+  <li><a href="#raw-proiel-xml-2.0" id="toc-raw-proiel-xml-2.0" class="nav-link" data-scroll-target="#raw-proiel-xml-2.0">Raw PROIEL XML 2.0</a></li>
+  </ul></li>
+  <li><a href="#period-by-period-samples" id="toc-period-by-period-samples" class="nav-link" data-scroll-target="#period-by-period-samples">Period-by-period samples</a></li>
+  <li><a href="#archaic-homer-iliad-1.1" id="toc-archaic-homer-iliad-1.1" class="nav-link" data-scroll-target="#archaic-homer-iliad-1.1">Archaic — Homer, <em>Iliad</em> 1.1</a></li>
   <li><a href="#classical-plato-apology-17a" id="toc-classical-plato-apology-17a" class="nav-link" data-scroll-target="#classical-plato-apology-17a">Classical — Plato, <em>Apology</em> 17a</a></li>
   <li><a href="#koine-new-testament-john-11" id="toc-koine-new-testament-john-11" class="nav-link" data-scroll-target="#koine-new-testament-john-11">Koine — New Testament, John 1:1</a></li>
   <li><a href="#late-antique-eusebius-historia-ecclesiastica-1.1.1" id="toc-late-antique-eusebius-historia-ecclesiastica-1.1.1" class="nav-link" data-scroll-target="#late-antique-eusebius-historia-ecclesiastica-1.1.1">Late Antique — Eusebius, <em>Historia Ecclesiastica</em> 1.1.1</a></li>
@@ -227,6 +236,173 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>tree key:</em> indentation = depth · <code>▸</code> = head · italic label = PROIEL relation (<code>sub</code>, <code>obj</code>, <code>obl</code>, <code>adv</code>, <code>atr</code>, <code>pred</code>, <code>aux</code>, <code>comp</code>, <code>xobj</code>, <code>nonsub</code>, etc.)</p>
 </div>
 <hr>
+<section id="viz-gallery" class="level2">
+<h2 class="anchored" data-anchor-id="viz-gallery">Four visualisations of <em>Iliad</em> 1.1</h2>
+<blockquote class="blockquote">
+<p><em>μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</em></p>
+</blockquote>
+<p>The same PROIEL XML 2.0 annotation can be rendered in several conventions. Below are four ways AthDGC presents a single sentence: the project’s default indented tree, a Grew/Arborator arc diagram, a Perseus-style descending tree, and a Lavidasized typographic layout designed for the AthDGC house style.</p>
+<section id="athdgc-default-indented-tree" class="level3">
+<h3 class="anchored" data-anchor-id="athdgc-default-indented-tree">1. AthDGC default — indented tree</h3>
+<div class="proiel-tree">
+<pre><code>▸ ἄειδε        pred · imp.act.2sg
+  ├ μῆνιν       obj  · acc.sg.f
+  │   └ Ἀχιλῆος    atr  · gen.sg.m
+  │       └ Πηληϊάδεω  atr  · gen.sg.m
+  └ θεά         voc  · voc.sg.f</code></pre>
+</div>
+</section>
+<section id="grew-arborator-style-arc-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="grew-arborator-style-arc-diagram">2. Grew / Arborator style — arc diagram</h3>
+<p>Tokens on a baseline; arcs above; each arc labelled with the PROIEL relation; arrow-heads from head to dependent.</p>
+<div class="viz-svg viz-grew">
+<svg viewbox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grew-style arc diagram for Iliad 1.1">
+  <defs>
+    <marker id="ah-grew" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#111"></path>
+    </marker>
+  </defs>
+  <g font-family="'Old Standard TT', Cardo, Georgia, serif" fill="#111">
+    <g text-anchor="middle" font-size="22">
+      <text x="80" y="220">μῆνιν</text>
+      <text x="220" y="220">ἄειδε</text>
+      <text x="360" y="220">θεά</text>
+      <text x="500" y="220">Πηληϊάδεω</text>
+      <text x="660" y="220">Ἀχιλῆος</text>
+    </g>
+    <g text-anchor="middle" font-size="12" font-style="italic" fill="#555">
+      <text x="80" y="246">μῆνις</text>
+      <text x="220" y="246">ἀείδω</text>
+      <text x="360" y="246">θεά</text>
+      <text x="500" y="246">Πηληϊάδης</text>
+      <text x="660" y="246">Ἀχιλλεύς</text>
+    </g>
+    <g text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#777">
+      <text x="80" y="266">N·acc·sg·f</text>
+      <text x="220" y="266">V·impv·2sg</text>
+      <text x="360" y="266">N·voc·sg·f</text>
+      <text x="500" y="266">N·gen·sg·m</text>
+      <text x="660" y="266">N·gen·sg·m</text>
+    </g>
+    <path d="M 220 200 Q 150 110 80 200" fill="none" stroke="#111" stroke-width="1.2" marker-end="url(#ah-grew)"></path>
+    <text x="150" y="100" text-anchor="middle" font-size="12" font-style="italic" fill="#111">obj</text>
+    <path d="M 220 200 Q 290 110 360 200" fill="none" stroke="#111" stroke-width="1.2" marker-end="url(#ah-grew)"></path>
+    <text x="290" y="100" text-anchor="middle" font-size="12" font-style="italic" fill="#111">voc</text>
+    <path d="M 660 200 Q 580 130 500 200" fill="none" stroke="#111" stroke-width="1.2" marker-end="url(#ah-grew)"></path>
+    <text x="580" y="120" text-anchor="middle" font-size="12" font-style="italic" fill="#111">atr</text>
+    <path d="M 80 200 Q 370 20 660 200" fill="none" stroke="#111" stroke-width="1.2" marker-end="url(#ah-grew)"></path>
+    <text x="370" y="40" text-anchor="middle" font-size="12" font-style="italic" fill="#111">atr</text>
+    <text x="220" y="20" text-anchor="middle" font-size="11" font-style="italic" fill="#555">root</text>
+    <line x1="220" y1="30" x2="220" y2="180" stroke="#aaa" stroke-width="0.8" stroke-dasharray="2 2"></line>
+  </g>
+</svg>
+</div>
+</section>
+<section id="perseus-style-descending-tree" class="level3">
+<h3 class="anchored" data-anchor-id="perseus-style-descending-tree">3. Perseus style — descending tree</h3>
+<p>Head at the top, dependents hanging below. Edges carry the PROIEL relation.</p>
+<div class="viz-svg viz-perseus">
+<svg viewbox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Perseus-style descending tree for Iliad 1.1">
+  <g font-family="'Old Standard TT', Cardo, Georgia, serif" fill="#111">
+    <g text-anchor="middle">
+      <text x="350" y="40" font-size="22">ἄειδε</text>
+      <text x="350" y="58" font-size="11" font-style="italic" fill="#555">root · pred</text>
+    </g>
+    <line x1="350" y1="68" x2="200" y2="120" stroke="#111" stroke-width="1"></line>
+    <line x1="350" y1="68" x2="500" y2="120" stroke="#111" stroke-width="1"></line>
+    <text x="265" y="92" font-size="11" font-style="italic" fill="#111">obj</text>
+    <text x="430" y="92" font-size="11" font-style="italic" fill="#111">voc</text>
+    <g text-anchor="middle">
+      <text x="200" y="140" font-size="20">μῆνιν</text>
+      <text x="200" y="158" font-size="11" font-style="italic" fill="#555">acc.sg.f</text>
+      <text x="500" y="140" font-size="20">θεά</text>
+      <text x="500" y="158" font-size="11" font-style="italic" fill="#555">voc.sg.f</text>
+    </g>
+    <line x1="200" y1="168" x2="200" y2="210" stroke="#111" stroke-width="1"></line>
+    <text x="212" y="190" font-size="11" font-style="italic" fill="#111">atr</text>
+    <g text-anchor="middle">
+      <text x="200" y="232" font-size="20">Ἀχιλῆος</text>
+      <text x="200" y="250" font-size="11" font-style="italic" fill="#555">gen.sg.m</text>
+    </g>
+    <line x1="200" y1="260" x2="200" y2="302" stroke="#111" stroke-width="1"></line>
+    <text x="212" y="282" font-size="11" font-style="italic" fill="#111">atr</text>
+    <g text-anchor="middle">
+      <text x="200" y="324" font-size="20">Πηληϊάδεω</text>
+      <text x="200" y="342" font-size="11" font-style="italic" fill="#555">gen.sg.m</text>
+    </g>
+  </g>
+</svg>
+</div>
+</section>
+<section id="lavidasized-typographic-new-athdgc-house-style" class="level3">
+<h3 class="anchored" data-anchor-id="lavidasized-typographic-new-athdgc-house-style">4. Lavidasized typographic — new AthDGC house style</h3>
+<p>Three-column austere typography. Token form in serif on the left (indented by dependency depth), italic relation label in the centre, PROIEL morphology in monospace on the right. Thin rules between rows. No boxes. No colours.</p>
+<div class="viz-svg viz-lavidas">
+<svg viewbox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lavidasized typographic tree for Iliad 1.1">
+  <g font-family="'Old Standard TT', Cardo, Georgia, serif" fill="#111">
+    <line x1="40" y1="40" x2="720" y2="40" stroke="#aaa" stroke-width="1"></line>
+    <g font-size="10" font-style="italic" fill="#777">
+      <text x="40" y="32">depth · form · lemma</text>
+      <text x="430" y="32">relation</text>
+      <text x="720" y="32" text-anchor="end">morphology</text>
+    </g>
+    <g>
+      <text x="40" y="80" font-size="22">ἄειδε</text>
+      <text x="40" y="100" font-size="12" font-style="italic" fill="#555">ἀείδω · root predicate</text>
+      <text x="430" y="80" font-size="14" font-style="italic" fill="#111">pred</text>
+      <text x="720" y="80" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#444">V--smp---i · 2sg.impv</text>
+    </g>
+    <line x1="40" y1="118" x2="720" y2="118" stroke="#ddd" stroke-width="0.6"></line>
+    <g>
+      <text x="80" y="148" font-size="20">μῆνιν</text>
+      <text x="80" y="166" font-size="12" font-style="italic" fill="#555">μῆνις · direct object</text>
+      <text x="430" y="148" font-size="14" font-style="italic" fill="#111">obj</text>
+      <text x="720" y="148" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#444">Nb-s---fa- · acc.sg.f</text>
+    </g>
+    <line x1="40" y1="184" x2="720" y2="184" stroke="#ddd" stroke-width="0.6"></line>
+    <g>
+      <text x="120" y="214" font-size="20">Ἀχιλῆος</text>
+      <text x="120" y="232" font-size="12" font-style="italic" fill="#555">Ἀχιλλεύς · attributive of μῆνιν</text>
+      <text x="430" y="214" font-size="14" font-style="italic" fill="#111">atr</text>
+      <text x="720" y="214" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#444">Nb-s---mg- · gen.sg.m</text>
+    </g>
+    <line x1="40" y1="250" x2="720" y2="250" stroke="#ddd" stroke-width="0.6"></line>
+    <g>
+      <text x="160" y="280" font-size="20">Πηληϊάδεω</text>
+      <text x="160" y="298" font-size="12" font-style="italic" fill="#555">Πηληϊάδης · attributive of Ἀχιλῆος</text>
+      <text x="430" y="280" font-size="14" font-style="italic" fill="#111">atr</text>
+      <text x="720" y="280" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#444">Nb-s---mg- · gen.sg.m</text>
+    </g>
+    <line x1="40" y1="316" x2="720" y2="316" stroke="#ddd" stroke-width="0.6"></line>
+    <g>
+      <text x="80" y="346" font-size="20">θεά</text>
+      <text x="430" y="346" font-size="14" font-style="italic" fill="#111">voc</text>
+      <text x="720" y="346" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#444">Nb-s---fv- · voc.sg.f</text>
+    </g>
+    <line x1="40" y1="356" x2="720" y2="356" stroke="#aaa" stroke-width="1"></line>
+  </g>
+</svg>
+</div>
+</section>
+<section id="raw-proiel-xml-2.0" class="level3">
+<h3 class="anchored" data-anchor-id="raw-proiel-xml-2.0">Raw PROIEL XML 2.0</h3>
+<div class="proiel-xml">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"hom.il.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"μῆνιν"</span>     <span class="ot">lemma=</span><span class="st">"μῆνις"</span>     <span class="ot">pos=</span><span class="st">"Nb-s---fa-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fa-"</span>/&gt;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἄειδε"</span>     <span class="ot">lemma=</span><span class="st">"ἀείδω"</span>     <span class="ot">pos=</span><span class="st">"V--sma---i"</span> <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sma---i"</span>/&gt;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"θεά"</span>       <span class="ot">lemma=</span><span class="st">"θεά"</span>        <span class="ot">pos=</span><span class="st">"Nb-s---fv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fv-"</span>/&gt;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"Πηληϊάδεω"</span> <span class="ot">lemma=</span><span class="st">"Πηληϊάδης"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"Ἀχιλῆος"</span>   <span class="ot">lemma=</span><span class="st">"Ἀχιλλεύς"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="period-by-period-samples" class="level2">
+<h2 class="anchored" data-anchor-id="period-by-period-samples">Period-by-period samples</h2>
+<p>The samples below use the AthDGC default indented tree (style 1 from the gallery above) for compactness. The Grew, Perseus, and Lavidasized styles are also available per sample via the <code>tools/render_sample.py</code> helper in the source-code pack.</p>
+<hr>
+</section>
 <section id="archaic-homer-iliad-1.1" class="level2">
 <h2 class="anchored" data-anchor-id="archaic-homer-iliad-1.1">Archaic — Homer, <em>Iliad</em> 1.1</h2>
 <blockquote class="blockquote">
@@ -272,13 +448,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 <div class="proiel-xml">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"hom.il.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"μῆνιν"</span>     <span class="ot">lemma=</span><span class="st">"μῆνις"</span>     <span class="ot">pos=</span><span class="st">"Nb-s---fa-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fa-"</span>/&gt;</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἄειδε"</span>     <span class="ot">lemma=</span><span class="st">"ἀείδω"</span>     <span class="ot">pos=</span><span class="st">"V--sma---i"</span> <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sma---i"</span>/&gt;</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"θεά"</span>       <span class="ot">lemma=</span><span class="st">"θεά"</span>        <span class="ot">pos=</span><span class="st">"Nb-s---fv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fv-"</span>/&gt;</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"Πηληϊάδεω"</span> <span class="ot">lemma=</span><span class="st">"Πηληϊάδης"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"Ἀχιλῆος"</span>   <span class="ot">lemma=</span><span class="st">"Ἀχιλλεύς"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"hom.il.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"μῆνιν"</span>     <span class="ot">lemma=</span><span class="st">"μῆνις"</span>     <span class="ot">pos=</span><span class="st">"Nb-s---fa-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fa-"</span>/&gt;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἄειδε"</span>     <span class="ot">lemma=</span><span class="st">"ἀείδω"</span>     <span class="ot">pos=</span><span class="st">"V--sma---i"</span> <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sma---i"</span>/&gt;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"θεά"</span>       <span class="ot">lemma=</span><span class="st">"θεά"</span>        <span class="ot">pos=</span><span class="st">"Nb-s---fv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---fv-"</span>/&gt;</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"Πηληϊάδεω"</span> <span class="ot">lemma=</span><span class="st">"Πηληϊάδης"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"Ἀχιλῆος"</span>   <span class="ot">lemma=</span><span class="st">"Ἀχιλλεύς"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mg-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-s---mg-"</span>/&gt;</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -340,18 +516,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 <div class="proiel-xml">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"pla.apol.17a.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span>  <span class="ot">form=</span><span class="st">"ὅ τι"</span>        <span class="ot">lemma=</span><span class="st">"ὅστις"</span>     <span class="ot">pos=</span><span class="st">"Pr-s---na-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Pr-s---na-"</span>/&gt;</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span>  <span class="ot">form=</span><span class="st">"ὑμεῖς"</span>      <span class="ot">lemma=</span><span class="st">"σύ"</span>        <span class="ot">pos=</span><span class="st">"Pp2p---n--"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"sub"</span>  <span class="ot">morphology=</span><span class="st">"Pp2p---n--"</span>/&gt;</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span>  <span class="ot">form=</span><span class="st">"ἄνδρες"</span>     <span class="ot">lemma=</span><span class="st">"ἀνήρ"</span>     <span class="ot">pos=</span><span class="st">"Nb-p---mv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mv-"</span>/&gt;</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span>  <span class="ot">form=</span><span class="st">"Ἀθηναῖοι"</span>  <span class="ot">lemma=</span><span class="st">"Ἀθηναῖος"</span> <span class="ot">pos=</span><span class="st">"Nb-p---mv-"</span> <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mv-"</span>/&gt;</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span>  <span class="ot">form=</span><span class="st">"πεπόνθατε"</span> <span class="ot">lemma=</span><span class="st">"πάσχω"</span>    <span class="ot">pos=</span><span class="st">"V-2praia2p-"</span> <span class="ot">head-id=</span><span class="st">"9"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V-2praia2p-"</span>/&gt;</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"6"</span>  <span class="ot">form=</span><span class="st">"ὑπὸ"</span>       <span class="ot">lemma=</span><span class="st">"ὑπό"</span>       <span class="ot">pos=</span><span class="st">"R--------"</span>   <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"obl"</span>  <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"7"</span>  <span class="ot">form=</span><span class="st">"τῶν ἐμῶν"</span>  <span class="ot">lemma=</span><span class="st">"ἐμός"</span>     <span class="ot">pos=</span><span class="st">"Pp1pg---mg"</span> <span class="ot">head-id=</span><span class="st">"8"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Pp1pg---mg"</span>/&gt;</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"8"</span>  <span class="ot">form=</span><span class="st">"κατηγόρων"</span> <span class="ot">lemma=</span><span class="st">"κατήγορος"</span> <span class="ot">pos=</span><span class="st">"Nb-p---mg-"</span> <span class="ot">head-id=</span><span class="st">"6"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mg-"</span>/&gt;</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"9"</span>  <span class="ot">form=</span><span class="st">"οὐκ"</span>        <span class="ot">lemma=</span><span class="st">"οὐ"</span>        <span class="ot">pos=</span><span class="st">"Df--------"</span>  <span class="ot">head-id=</span><span class="st">"10"</span> <span class="ot">relation=</span><span class="st">"adv"</span> <span class="ot">morphology=</span><span class="st">"Df--------"</span>/&gt;</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"10"</span> <span class="ot">form=</span><span class="st">"οἶδα"</span>      <span class="ot">lemma=</span><span class="st">"οἶδα"</span>     <span class="ot">pos=</span><span class="st">"V--sria1s-"</span>  <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sria1s-"</span>/&gt;</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"pla.apol.17a.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span>  <span class="ot">form=</span><span class="st">"ὅ τι"</span>        <span class="ot">lemma=</span><span class="st">"ὅστις"</span>     <span class="ot">pos=</span><span class="st">"Pr-s---na-"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Pr-s---na-"</span>/&gt;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span>  <span class="ot">form=</span><span class="st">"ὑμεῖς"</span>      <span class="ot">lemma=</span><span class="st">"σύ"</span>        <span class="ot">pos=</span><span class="st">"Pp2p---n--"</span> <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"sub"</span>  <span class="ot">morphology=</span><span class="st">"Pp2p---n--"</span>/&gt;</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span>  <span class="ot">form=</span><span class="st">"ἄνδρες"</span>     <span class="ot">lemma=</span><span class="st">"ἀνήρ"</span>     <span class="ot">pos=</span><span class="st">"Nb-p---mv-"</span> <span class="ot">head-id=</span><span class="st">"2"</span> <span class="ot">relation=</span><span class="st">"voc"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mv-"</span>/&gt;</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span>  <span class="ot">form=</span><span class="st">"Ἀθηναῖοι"</span>  <span class="ot">lemma=</span><span class="st">"Ἀθηναῖος"</span> <span class="ot">pos=</span><span class="st">"Nb-p---mv-"</span> <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mv-"</span>/&gt;</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span>  <span class="ot">form=</span><span class="st">"πεπόνθατε"</span> <span class="ot">lemma=</span><span class="st">"πάσχω"</span>    <span class="ot">pos=</span><span class="st">"V-2praia2p-"</span> <span class="ot">head-id=</span><span class="st">"9"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V-2praia2p-"</span>/&gt;</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"6"</span>  <span class="ot">form=</span><span class="st">"ὑπὸ"</span>       <span class="ot">lemma=</span><span class="st">"ὑπό"</span>       <span class="ot">pos=</span><span class="st">"R--------"</span>   <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"obl"</span>  <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"7"</span>  <span class="ot">form=</span><span class="st">"τῶν ἐμῶν"</span>  <span class="ot">lemma=</span><span class="st">"ἐμός"</span>     <span class="ot">pos=</span><span class="st">"Pp1pg---mg"</span> <span class="ot">head-id=</span><span class="st">"8"</span> <span class="ot">relation=</span><span class="st">"atr"</span>  <span class="ot">morphology=</span><span class="st">"Pp1pg---mg"</span>/&gt;</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"8"</span>  <span class="ot">form=</span><span class="st">"κατηγόρων"</span> <span class="ot">lemma=</span><span class="st">"κατήγορος"</span> <span class="ot">pos=</span><span class="st">"Nb-p---mg-"</span> <span class="ot">head-id=</span><span class="st">"6"</span> <span class="ot">relation=</span><span class="st">"obj"</span>  <span class="ot">morphology=</span><span class="st">"Nb-p---mg-"</span>/&gt;</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"9"</span>  <span class="ot">form=</span><span class="st">"οὐκ"</span>        <span class="ot">lemma=</span><span class="st">"οὐ"</span>        <span class="ot">pos=</span><span class="st">"Df--------"</span>  <span class="ot">head-id=</span><span class="st">"10"</span> <span class="ot">relation=</span><span class="st">"adv"</span> <span class="ot">morphology=</span><span class="st">"Df--------"</span>/&gt;</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"10"</span> <span class="ot">form=</span><span class="st">"οἶδα"</span>      <span class="ot">lemma=</span><span class="st">"οἶδα"</span>     <span class="ot">pos=</span><span class="st">"V--sria1s-"</span>  <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--sria1s-"</span>/&gt;</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -415,13 +591,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 <div class="proiel-xml">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"nt.john.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Ἐν"</span>     <span class="ot">lemma=</span><span class="st">"ἐν"</span>    <span class="ot">pos=</span><span class="st">"R--------"</span>  <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"obl"</span> <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἀρχῇ"</span>   <span class="ot">lemma=</span><span class="st">"ἀρχή"</span> <span class="ot">pos=</span><span class="st">"Nb-s---fd-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"obj"</span> <span class="ot">morphology=</span><span class="st">"Nb-s---fd-"</span>/&gt;</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"ἦν"</span>     <span class="ot">lemma=</span><span class="st">"εἰμί"</span> <span class="ot">pos=</span><span class="st">"V--siia3s-"</span>  <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--siia3s-"</span>/&gt;</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"ὁ"</span>      <span class="ot">lemma=</span><span class="st">"ὁ"</span>     <span class="ot">pos=</span><span class="st">"S-s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"aux"</span> <span class="ot">morphology=</span><span class="st">"S-s---mn-"</span>/&gt;</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"λόγος"</span> <span class="ot">lemma=</span><span class="st">"λόγος"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mn-"</span> <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"sub"</span> <span class="ot">morphology=</span><span class="st">"Nb-s---mn-"</span>/&gt;</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"nt.john.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Ἐν"</span>     <span class="ot">lemma=</span><span class="st">"ἐν"</span>    <span class="ot">pos=</span><span class="st">"R--------"</span>  <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"obl"</span> <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"ἀρχῇ"</span>   <span class="ot">lemma=</span><span class="st">"ἀρχή"</span> <span class="ot">pos=</span><span class="st">"Nb-s---fd-"</span> <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"obj"</span> <span class="ot">morphology=</span><span class="st">"Nb-s---fd-"</span>/&gt;</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"ἦν"</span>     <span class="ot">lemma=</span><span class="st">"εἰμί"</span> <span class="ot">pos=</span><span class="st">"V--siia3s-"</span>  <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span> <span class="ot">morphology=</span><span class="st">"V--siia3s-"</span>/&gt;</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"ὁ"</span>      <span class="ot">lemma=</span><span class="st">"ὁ"</span>     <span class="ot">pos=</span><span class="st">"S-s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"aux"</span> <span class="ot">morphology=</span><span class="st">"S-s---mn-"</span>/&gt;</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"λόγος"</span> <span class="ot">lemma=</span><span class="st">"λόγος"</span> <span class="ot">pos=</span><span class="st">"Nb-s---mn-"</span> <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"sub"</span> <span class="ot">morphology=</span><span class="st">"Nb-s---mn-"</span>/&gt;</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>NT verse aligned cross-lingually to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via LaBSE sentence embedding + AwesomeAlign word alignment.</p>
 <hr>
@@ -620,16 +796,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 <div class="proiel-xml">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"cav.ithaca.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span> <span class="ot">language=</span><span class="st">"gkm"</span>&gt;</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Σὰ"</span>       <span class="ot">lemma=</span><span class="st">"σάν"</span>      <span class="ot">pos=</span><span class="st">"C--------"</span>   <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"adv"</span>   <span class="ot">morphology=</span><span class="st">"C--------"</span>/&gt;</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"βγεῖς"</span>    <span class="ot">lemma=</span><span class="st">"βγαίνω"</span>  <span class="ot">pos=</span><span class="st">"V--sap2s-"</span>   <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V--sap2s-"</span>/&gt;</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"εὔχεσαι"</span>  <span class="ot">lemma=</span><span class="st">"εὔχομαι"</span> <span class="ot">pos=</span><span class="st">"V--smi2s-"</span>   <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span>  <span class="ot">morphology=</span><span class="st">"V--smi2s-"</span>/&gt;</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"νὰ"</span>       <span class="ot">lemma=</span><span class="st">"νά"</span>       <span class="ot">pos=</span><span class="st">"C--------"</span>   <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"aux"</span>   <span class="ot">morphology=</span><span class="st">"C--------"</span>/&gt;</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"ἦναι"</span>    <span class="ot">lemma=</span><span class="st">"εἶμαι"</span>   <span class="ot">pos=</span><span class="st">"V--sria3s-"</span>  <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V--sria3s-"</span>/&gt;</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"6"</span> <span class="ot">form=</span><span class="st">"μακρὺς"</span> <span class="ot">lemma=</span><span class="st">"μακρύς"</span>  <span class="ot">pos=</span><span class="st">"A--s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"pred-nom"</span> <span class="ot">morphology=</span><span class="st">"A--s---mn-"</span>/&gt;</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"7"</span> <span class="ot">form=</span><span class="st">"ὁ"</span>        <span class="ot">lemma=</span><span class="st">"ὁ"</span>         <span class="ot">pos=</span><span class="st">"S-s---mn-"</span>   <span class="ot">head-id=</span><span class="st">"8"</span> <span class="ot">relation=</span><span class="st">"aux"</span>   <span class="ot">morphology=</span><span class="st">"S-s---mn-"</span>/&gt;</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"8"</span> <span class="ot">form=</span><span class="st">"δρόμος"</span>  <span class="ot">lemma=</span><span class="st">"δρόμος"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"sub"</span>   <span class="ot">morphology=</span><span class="st">"Nb-s---mn-"</span>/&gt;</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"cav.ithaca.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span> <span class="ot">language=</span><span class="st">"gkm"</span>&gt;</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Σὰ"</span>       <span class="ot">lemma=</span><span class="st">"σάν"</span>      <span class="ot">pos=</span><span class="st">"C--------"</span>   <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"adv"</span>   <span class="ot">morphology=</span><span class="st">"C--------"</span>/&gt;</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"2"</span> <span class="ot">form=</span><span class="st">"βγεῖς"</span>    <span class="ot">lemma=</span><span class="st">"βγαίνω"</span>  <span class="ot">pos=</span><span class="st">"V--sap2s-"</span>   <span class="ot">head-id=</span><span class="st">"1"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V--sap2s-"</span>/&gt;</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"3"</span> <span class="ot">form=</span><span class="st">"εὔχεσαι"</span>  <span class="ot">lemma=</span><span class="st">"εὔχομαι"</span> <span class="ot">pos=</span><span class="st">"V--smi2s-"</span>   <span class="ot">head-id=</span><span class="st">""</span>  <span class="ot">relation=</span><span class="st">"pred"</span>  <span class="ot">morphology=</span><span class="st">"V--smi2s-"</span>/&gt;</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"4"</span> <span class="ot">form=</span><span class="st">"νὰ"</span>       <span class="ot">lemma=</span><span class="st">"νά"</span>       <span class="ot">pos=</span><span class="st">"C--------"</span>   <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"aux"</span>   <span class="ot">morphology=</span><span class="st">"C--------"</span>/&gt;</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"5"</span> <span class="ot">form=</span><span class="st">"ἦναι"</span>    <span class="ot">lemma=</span><span class="st">"εἶμαι"</span>   <span class="ot">pos=</span><span class="st">"V--sria3s-"</span>  <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"xcomp"</span> <span class="ot">morphology=</span><span class="st">"V--sria3s-"</span>/&gt;</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"6"</span> <span class="ot">form=</span><span class="st">"μακρὺς"</span> <span class="ot">lemma=</span><span class="st">"μακρύς"</span>  <span class="ot">pos=</span><span class="st">"A--s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"pred-nom"</span> <span class="ot">morphology=</span><span class="st">"A--s---mn-"</span>/&gt;</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"7"</span> <span class="ot">form=</span><span class="st">"ὁ"</span>        <span class="ot">lemma=</span><span class="st">"ὁ"</span>         <span class="ot">pos=</span><span class="st">"S-s---mn-"</span>   <span class="ot">head-id=</span><span class="st">"8"</span> <span class="ot">relation=</span><span class="st">"aux"</span>   <span class="ot">morphology=</span><span class="st">"S-s---mn-"</span>/&gt;</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"8"</span> <span class="ot">form=</span><span class="st">"δρόμος"</span>  <span class="ot">lemma=</span><span class="st">"δρόμος"</span>  <span class="ot">pos=</span><span class="st">"Nb-s---mn-"</span>  <span class="ot">head-id=</span><span class="st">"5"</span> <span class="ot">relation=</span><span class="st">"sub"</span>   <span class="ot">morphology=</span><span class="st">"Nb-s---mn-"</span>/&gt;</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -660,7 +836,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>6,861 NT-aligned Greek verses</li>
 <li>8 diachronic periods, Archaic to Modern</li>
 </ul>
-<p>Download the full PROIEL XML 2.0 partitions from Zenodo: <em>Zenodo DOI: pending</em>.</p>
+<p>Download the full PROIEL XML 2.0 partitions from Zenodo: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</p>
 
 
 </section>
@@ -1076,7 +1252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/samples.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/samples.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>Zenodo DOI: pending</p>
+<p><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></p>
 </div>
   </div>
 </footer>

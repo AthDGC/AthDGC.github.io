@@ -127,3 +127,27 @@
   border-top: 1px solid #aaa;
   margin: 2.4rem 0;
 }
+
+/* ============================================================
+   PROIEL viz-svg wrappers (samples.qmd / .viz-grew, .viz-perseus, .viz-lavidas)
+   ============================================================ */
+.viz-svg {
+  margin: 0.8rem 0 1.6rem 0;
+  border-left: 2px solid #aaa;
+  padding: 0.4rem 0 0.4rem 1rem;
+}
+.viz-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 760px;
+}
+.viz-svg svg text { user-select: text; }
+.viz-grew     svg { max-height: 320px; }
+.viz-perseus  svg { max-height: 420px; }
+.viz-lavidas  svg { max-height: 400px; }
+
+/* On narrow viewports keep SVGs readable */
+@media (max-width: 720px) {
+  .viz-svg svg { max-height: none; }
+}
