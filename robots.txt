@@ -1,1 +1,5 @@
+User-agent: *
+Disallow: /private/
+Disallow: /private/*
+
 Sitemap: https://athdgc.github.io/sitemap.xml

@@ -119,111 +119,6 @@
     "text": "Network publications (selected)\n\nLavidas, N., Nikiforidou, K., & Geka, V. (forthcoming). (eds.). Genres, Influential Texts and Language Change: Exploring Cross-Fertilising Effects. Berlin: De Gruyter Mouton.\nLavidas, N. (2021). The Diachrony of Written Language Contact: A Contrastive Approach. Brill’s Studies in Historical Linguistics. Leiden, Boston: Brill.\nLavidas, N. & Nikiforidou, K. (eds.) (2022). Studying Language Change in the 21st Century: Theory and Methodologies. Brill’s Studies in Historical Linguistics. Leiden, Boston: Brill.\nLavidas, N. (2020). Isoglosses and language change. Poznan Studies in Contemporary Linguistics 56(4): 553-575.\nLavidas, N. (2019). Word order and closest-conjunct agreement in the Greek Septuagint. Questions and Answers in Linguistics 5(2): 37-90.\n\n(Full list and DOIs at https://athdgc.github.io/hfri2024/#publications.)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "AthDGC",
-    "section": "",
-    "text": "The Athens Diachronic Glossa Chronos (AthDGC, Athens-PROIEL) — Διαχρονία Γλώσσας :Χρόνος — is two things at once:\n\nan open PROIEL-style dependency treebank spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern), with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via the verse-level cross-alignment of the New Testament. Classical Armenian and Sanskrit ingestion is in progress.\nan open-source computational toolkit for diachronic linguistics: LightSIDE-compatible feature-extraction + classification pipelines, a NoSketch-style concordancer, fine-tuned Stanza checkpoints, an argument-structure extractor, a cross-lingual alignment viewer, and the Quarto pack that generates this very site. See the Tools page.\n\nThe project’s specific focus is retranslation, retelling, influential texts, and argument structure.\nCite this dataset. Lavidas, N. and the Athens Digital Glossa Chronos Research Network (2026). AthDGC: Athens Diachronic Glossa Chronos. Zenodo. (DOI pending)"
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "AthDGC",
-    "section": "",
-    "text": "The Athens Diachronic Glossa Chronos (AthDGC, Athens-PROIEL) — Διαχρονία Γλώσσας :Χρόνος — is two things at once:\n\nan open PROIEL-style dependency treebank spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern), with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via the verse-level cross-alignment of the New Testament. Classical Armenian and Sanskrit ingestion is in progress.\nan open-source computational toolkit for diachronic linguistics: LightSIDE-compatible feature-extraction + classification pipelines, a NoSketch-style concordancer, fine-tuned Stanza checkpoints, an argument-structure extractor, a cross-lingual alignment viewer, and the Quarto pack that generates this very site. See the Tools page.\n\nThe project’s specific focus is retranslation, retelling, influential texts, and argument structure.\nCite this dataset. Lavidas, N. and the Athens Digital Glossa Chronos Research Network (2026). AthDGC: Athens Diachronic Glossa Chronos. Zenodo. (DOI pending)"
-  },
-  {
-    "objectID": "index.html#current-state-v0.4",
-    "href": "index.html#current-state-v0.4",
-    "title": "AthDGC",
-    "section": "Current state (v0.4)",
-    "text": "Current state (v0.4)\n\n\n\nField\nValue\n\n\n\n\nTotal corpus rows\n89.9 M\n\n\nAnnotated Greek rows\n4.08 M\n\n\nNT-aligned Greek verses\n6,861\n\n\nCross-aligned IE witnesses\n4 (Latin, Gothic, OCS, Armenian)\n\n\nConcept DOI\nZenodo DOI: pending\n\n\nRepository\nhttps://github.com/AthDGC/Diachronic-Linguistics-Platform"
-  },
-  {
-    "objectID": "index.html#browse-the-corpus",
-    "href": "index.html#browse-the-corpus",
-    "title": "AthDGC",
-    "section": "Browse the corpus",
-    "text": "Browse the corpus\nThe current showcase site provides representative samples per period with full PROIEL XML 2.0 annotation:\n\nhttps://athdgc.github.io/\n\nEach sample card carries the PROIEL dependency tree, the argument-structure frame for every verb, and the raw PROIEL XML for export."
-  },
-  {
-    "objectID": "index.html#method-in-brief",
-    "href": "index.html#method-in-brief",
-    "title": "AthDGC",
-    "section": "Method (in brief)",
-    "text": "Method (in brief)\n\nDiscovery — Daily harvest from archive.org, Perseus, First1K Greek, Wikisource, Diorisis, OpenGreekAndLatin\nFiltering — Greek-script ratio + apparatus-criticus rejection + content-hash deduplication\nConversion — PROIEL XML 2.0 schema\nAnnotation — Stanza grc_proiel (and la_proiel, cu_proiel, got_proiel for parallels)\nArgument structure — per-verb extraction of subject, object, oblique, voice, aspect\nCross-lingual alignment — LaBSE sentence embedding + multilingual-BERT attention for word-level alignment\nStorage — PROIEL XML + JSONL partitions + Qdrant vector store + Neo4j graph"
-  },
-  {
-    "objectID": "index.html#funding",
-    "href": "index.html#funding",
-    "title": "AthDGC",
-    "section": "Funding",
-    "text": "Funding\nFunded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, Project No. 20577; with complementary support from the Greece 2.0 National Recovery and Resilience Plan.\nFunded project: CVL-CDSAML — A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages.\nHosted at the National and Kapodistrian University of Athens, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.\nCompute supplied by GRNET ARIS (Gr"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About AthDGC",
-    "section": "",
-    "text": "AthDGC is an open infrastructure for Indo-European diachronic linguistics, developed at the National and Kapodistrian University of Athens (Εθνικόν και Καποδιστριακόν Πανεπιστήμιον Αθηνών), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.\nThe network is led by Prof. Nikolaos Lavidas and coordinates several research initiatives funded by the Hellenic Foundation for Research and Innovation under the Greece 2.0 National Recovery and Resilience Plan."
-  },
-  {
-    "objectID": "about.html#the-athens-digital-glossa-chronos-research-network",
-    "href": "about.html#the-athens-digital-glossa-chronos-research-network",
-    "title": "About AthDGC",
-    "section": "",
-    "text": "AthDGC is an open infrastructure for Indo-European diachronic linguistics, developed at the National and Kapodistrian University of Athens (Εθνικόν και Καποδιστριακόν Πανεπιστήμιον Αθηνών), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.\nThe network is led by Prof. Nikolaos Lavidas and coordinates several research initiatives funded by the Hellenic Foundation for Research and Innovation under the Greece 2.0 National Recovery and Resilience Plan."
-  },
-  {
-    "objectID": "about.html#the-cvl-cdsaml-project",
-    "href": "about.html#the-cvl-cdsaml-project",
-    "title": "About AthDGC",
-    "section": "The CVL-CDSAML project",
-    "text": "The CVL-CDSAML project\nA Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages\nThe project develops a comprehensive corpus-based valency lexicon for the contrastive and diachronic study of languages from antiquity to today, employing computational linguistic methods to track valency patterns and argument-structure changes across more than 3,000 years of documented language evolution.\nThe project uses Penn-Helsinki parsing standards and adapts PROIEL annotation schemes to create selective treebanks that capture valency patterns across multiple historical stages of Greek, English, Germanic languages, and Romance languages."
-  },
-  {
-    "objectID": "about.html#how-athdgc-works-in-brief",
-    "href": "about.html#how-athdgc-works-in-brief",
-    "title": "About AthDGC",
-    "section": "How AthDGC works (in brief)",
-    "text": "How AthDGC works (in brief)\nAthDGC is the technical infrastructure that supports the CVL-CDSAML project’s diachronic Greek component. It runs an autonomous daily harvest pipeline on the GRNET ARIS national HPC, covering discovery, filtering, OCR conversion to PROIEL XML 2.0, Stanza dependency parsing, and cross-lingual alignment to the New Testament’s Latin / Gothic / Old Church Slavonic witnesses.\nSee the Method section of the data paper for a complete description."
-  },
-  {
-    "objectID": "about.html#status",
-    "href": "about.html#status",
-    "title": "About AthDGC",
-    "section": "Status",
-    "text": "Status\nAthDGC is published in continuous release. The samples shown on https://athdgc.github.io are drawn automatically from the latest ARIS build. Dependency parses and morphology are produced by the Stanza grc_proiel pipeline and reviewed by the AthDGC team; individual sentences may still contain Stanza-introduced errors (lemmatisation of contracted forms, POS of pronouns, feature-bundle mismatches), which are corrected at the source in continuous data-cleanup passes (see fix_corpus_data.py in the source repository)."
-  },
-  {
-    "objectID": "data_paper.html",
-    "href": "data_paper.html",
-    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
-    "section": "",
-    "text": "Greek is the longest continuously attested member of the Indo-European family. The PROIEL Treebank [@haug2008; @eckhoff2018] established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment to its sister IE languages. AthDGC closes that gap.\nThe project’s specific scholarly focus is retranslation: the same canonical text — the Iliad, the New Testament, the Septuagint Psalms, classical historiography — is re-rendered into Greek across periods (Homeric → Koine → Byzantine → Modern) and into sister languages (Latin, Gothic, OCS, Armenian) across the Indo-European family.\n\n\n\n\nSource code: https://github.com/AthDGC/Diachronic-Linguistics-Platform\nPublic showcase: https://athdgc.github.io\nZenodo deposition: (DOI pending)\n\n\n\n\nAthDGC is developed at the National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof. Nikolaos Lavidas. Compute is supplied by GRNET ARIS, allocation pa260305."
-  },
-  {
-    "objectID": "data_paper.html#overview",
-    "href": "data_paper.html#overview",
-    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
-    "section": "",
-    "text": "Greek is the longest continuously attested member of the Indo-European family. The PROIEL Treebank [@haug2008; @eckhoff2018] established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment to its sister IE languages. AthDGC closes that gap.\nThe project’s specific scholarly focus is retranslation: the same canonical text — the Iliad, the New Testament, the Septuagint Psalms, classical historiography — is re-rendered into Greek across periods (Homeric → Koine → Byzantine → Modern) and into sister languages (Latin, Gothic, OCS, Armenian) across the Indo-European family.\n\n\n\n\nSource code: https://github.com/AthDGC/Diachronic-Linguistics-Platform\nPublic showcase: https://athdgc.github.io\nZenodo deposition: (DOI pending)\n\n\n\n\nAthDGC is developed at the National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof. Nikolaos Lavidas. Compute is supplied by GRNET ARIS, allocation pa260305."
-  },
-  {
-    "objectID": "data_paper.html#method",
-    "href": "data_paper.html#method",
-    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
-    "section": "2. Method",
-    "text": "2. Method\n\n2.1 Discovery\nEach day, the discovery stage probes open-access repositories — archive.org, Perseus Digital Library, First1K Greek, Wikisource, the Diorisis Corpus, OpenGreekAndLatin/PerseusDL — for new or updated Greek and parallel-language source material.\n\n\n2.2 Filtering\nCandidate texts are filtered by Greek-script ratio (at least 75% of alphabetic characters in the Greek Unicode blocks), a Path-B line filter for bilingual editorial apparatus, and content-hash deduplication.\n\n\n2.3 Conversion\nSurviving text is converted into the PROIEL XML 2.0 schema with sentence-level structure.\n\n\n2.4 Annotation\nAnnotation is performed sentence by sentence with the Stanford Stanza pipeline [@qi2020] using the PROIEL-trained model grc_proiel. Analogous PROIEL-trained Stanza models are used for Latin (la_proiel), Old Church Slavonic (cu_proiel), and Gothic (got_proiel); Classical Armenian is annotated through a PROIEL-style pipeline currently under development. All output is normalised to the PROIEL XML 2.0 schema; no CoNLL-U or other format is published.\n\n\n2.5 Argument-structure capture\nBeyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token: the subject (nsubj / nsubj:pass), direct object (obj), indirect / oblique arguments (iobj, obl:arg), voice (active / middle / passive), and aspect (perfective / imperfective).\n\n\n2.6 Cross-lingual alignment\nSentence-level alignment uses LaBSE embeddings [@feng2022]; word-level alignment uses multilingual-BERT attention via the AwesomeAlign procedure [@dou2021]. Phonetic cognate scoring uses ASJP sound-class encoding and LingPy edit distance [@list2014]."
-  },
-  {
-    "objectID": "data_paper.html#dataset-description",
-    "href": "data_paper.html#dataset-description",
-    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
-    "section": "3. Dataset description",
-    "text": "3. Dataset description\n\n\n\nField\nValue\n\n\n\n\nObject name\nAthDGC corpus, v0.4 release\n\n\nFormat\nPROIEL XML 2.0 (primary); JSONL partitions\n\n\nCreation dates\n2025-09 o"
-  },
-  {
     "objectID": "press.html",
     "href": "press.html",
     "title": "Press kit",
@@ -264,6 +159,111 @@
     "title": "Press kit",
     "section": "Funding statement",
     "text": "Funding statement\nFunded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, Project No. 20577; with complementary support from the **Greece 2.0 National Recovery an"
+  },
+  {
+    "objectID": "data_paper.html",
+    "href": "data_paper.html",
+    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
+    "section": "",
+    "text": "Greek is the longest continuously attested member of the Indo-European family. The PROIEL Treebank [@haug2008; @eckhoff2018] established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment to its sister IE languages. AthDGC closes that gap.\nThe project’s specific scholarly focus is retranslation: the same canonical text — the Iliad, the New Testament, the Septuagint Psalms, classical historiography — is re-rendered into Greek across periods (Homeric → Koine → Byzantine → Modern) and into sister languages (Latin, Gothic, OCS, Armenian) across the Indo-European family.\n\n\n\n\nSource code: https://github.com/AthDGC/Diachronic-Linguistics-Platform\nPublic showcase: https://athdgc.github.io\nZenodo deposition: (DOI pending)\n\n\n\n\nAthDGC is developed at the National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof. Nikolaos Lavidas. Compute is supplied by GRNET ARIS, allocation pa260305."
+  },
+  {
+    "objectID": "data_paper.html#overview",
+    "href": "data_paper.html#overview",
+    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
+    "section": "",
+    "text": "Greek is the longest continuously attested member of the Indo-European family. The PROIEL Treebank [@haug2008; @eckhoff2018] established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment to its sister IE languages. AthDGC closes that gap.\nThe project’s specific scholarly focus is retranslation: the same canonical text — the Iliad, the New Testament, the Septuagint Psalms, classical historiography — is re-rendered into Greek across periods (Homeric → Koine → Byzantine → Modern) and into sister languages (Latin, Gothic, OCS, Armenian) across the Indo-European family.\n\n\n\n\nSource code: https://github.com/AthDGC/Diachronic-Linguistics-Platform\nPublic showcase: https://athdgc.github.io\nZenodo deposition: (DOI pending)\n\n\n\n\nAthDGC is developed at the National and Kapodistrian University of Athens (EKPA), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof. Nikolaos Lavidas. Compute is supplied by GRNET ARIS, allocation pa260305."
+  },
+  {
+    "objectID": "data_paper.html#method",
+    "href": "data_paper.html#method",
+    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
+    "section": "2. Method",
+    "text": "2. Method\n\n2.1 Discovery\nEach day, the discovery stage probes open-access repositories — archive.org, Perseus Digital Library, First1K Greek, Wikisource, the Diorisis Corpus, OpenGreekAndLatin/PerseusDL — for new or updated Greek and parallel-language source material.\n\n\n2.2 Filtering\nCandidate texts are filtered by Greek-script ratio (at least 75% of alphabetic characters in the Greek Unicode blocks), a Path-B line filter for bilingual editorial apparatus, and content-hash deduplication.\n\n\n2.3 Conversion\nSurviving text is converted into the PROIEL XML 2.0 schema with sentence-level structure.\n\n\n2.4 Annotation\nAnnotation is performed sentence by sentence with the Stanford Stanza pipeline [@qi2020] using the PROIEL-trained model grc_proiel. Analogous PROIEL-trained Stanza models are used for Latin (la_proiel), Old Church Slavonic (cu_proiel), and Gothic (got_proiel); Classical Armenian is annotated through a PROIEL-style pipeline currently under development. All output is normalised to the PROIEL XML 2.0 schema; no CoNLL-U or other format is published.\n\n\n2.5 Argument-structure capture\nBeyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token: the subject (nsubj / nsubj:pass), direct object (obj), indirect / oblique arguments (iobj, obl:arg), voice (active / middle / passive), and aspect (perfective / imperfective).\n\n\n2.6 Cross-lingual alignment\nSentence-level alignment uses LaBSE embeddings [@feng2022]; word-level alignment uses multilingual-BERT attention via the AwesomeAlign procedure [@dou2021]. Phonetic cognate scoring uses ASJP sound-class encoding and LingPy edit distance [@list2014]."
+  },
+  {
+    "objectID": "data_paper.html#dataset-description",
+    "href": "data_paper.html#dataset-description",
+    "title": "AthDGC: An Open Diachronic Greek Treebank with Indo-European Parallels",
+    "section": "3. Dataset description",
+    "text": "3. Dataset description\n\n\n\nField\nValue\n\n\n\n\nObject name\nAthDGC corpus, v0.4 release\n\n\nFormat\nPROIEL XML 2.0 (primary); JSONL partitions\n\n\nCreation dates\n2025-09 o"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About AthDGC",
+    "section": "",
+    "text": "AthDGC is an open infrastructure for Indo-European diachronic linguistics, developed at the National and Kapodistrian University of Athens (Εθνικόν και Καποδιστριακόν Πανεπιστήμιον Αθηνών), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.\nThe network is led by Prof. Nikolaos Lavidas and coordinates several research initiatives funded by the Hellenic Foundation for Research and Innovation under the Greece 2.0 National Recovery and Resilience Plan."
+  },
+  {
+    "objectID": "about.html#the-athens-digital-glossa-chronos-research-network",
+    "href": "about.html#the-athens-digital-glossa-chronos-research-network",
+    "title": "About AthDGC",
+    "section": "",
+    "text": "AthDGC is an open infrastructure for Indo-European diachronic linguistics, developed at the National and Kapodistrian University of Athens (Εθνικόν και Καποδιστριακόν Πανεπιστήμιον Αθηνών), Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.\nThe network is led by Prof. Nikolaos Lavidas and coordinates several research initiatives funded by the Hellenic Foundation for Research and Innovation under the Greece 2.0 National Recovery and Resilience Plan."
+  },
+  {
+    "objectID": "about.html#the-cvl-cdsaml-project",
+    "href": "about.html#the-cvl-cdsaml-project",
+    "title": "About AthDGC",
+    "section": "The CVL-CDSAML project",
+    "text": "The CVL-CDSAML project\nA Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages\nThe project develops a comprehensive corpus-based valency lexicon for the contrastive and diachronic study of languages from antiquity to today, employing computational linguistic methods to track valency patterns and argument-structure changes across more than 3,000 years of documented language evolution.\nThe project uses Penn-Helsinki parsing standards and adapts PROIEL annotation schemes to create selective treebanks that capture valency patterns across multiple historical stages of Greek, English, Germanic languages, and Romance languages."
+  },
+  {
+    "objectID": "about.html#how-athdgc-works-in-brief",
+    "href": "about.html#how-athdgc-works-in-brief",
+    "title": "About AthDGC",
+    "section": "How AthDGC works (in brief)",
+    "text": "How AthDGC works (in brief)\nAthDGC is the technical infrastructure that supports the CVL-CDSAML project’s diachronic Greek component. It runs an autonomous daily harvest pipeline on the GRNET ARIS national HPC, covering discovery, filtering, OCR conversion to PROIEL XML 2.0, Stanza dependency parsing, and cross-lingual alignment to the New Testament’s Latin / Gothic / Old Church Slavonic witnesses.\nSee the Method section of the data paper for a complete description."
+  },
+  {
+    "objectID": "about.html#status",
+    "href": "about.html#status",
+    "title": "About AthDGC",
+    "section": "Status",
+    "text": "Status\nAthDGC is published in continuous release. The samples shown on https://athdgc.github.io are drawn automatically from the latest ARIS build. Dependency parses and morphology are produced by the Stanza grc_proiel pipeline and reviewed by the AthDGC team; individual sentences may still contain Stanza-introduced errors (lemmatisation of contracted forms, POS of pronouns, feature-bundle mismatches), which are corrected at the source in continuous data-cleanup passes (see fix_corpus_data.py in the source repository)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AthDGC",
+    "section": "",
+    "text": "The Athens Diachronic Glossa Chronos (AthDGC, Athens-PROIEL) — Διαχρονία Γλώσσας :Χρόνος — is two things at once:\n\nan open PROIEL-style dependency treebank spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern), with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via the verse-level cross-alignment of the New Testament. Classical Armenian and Sanskrit ingestion is in progress.\nan open-source computational toolkit for diachronic linguistics: LightSIDE-compatible feature-extraction + classification pipelines, a NoSketch-style concordancer, fine-tuned Stanza checkpoints, an argument-structure extractor, a cross-lingual alignment viewer, and the Quarto pack that generates this very site. See the Tools page.\n\nThe project’s specific focus is retranslation, retelling, influential texts, and argument structure.\nCite this dataset. Lavidas, N. and the Athens Digital Glossa Chronos Research Network (2026). AthDGC: Athens Diachronic Glossa Chronos. Zenodo. (DOI pending)"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "AthDGC",
+    "section": "",
+    "text": "The Athens Diachronic Glossa Chronos (AthDGC, Athens-PROIEL) — Διαχρονία Γλώσσας :Χρόνος — is two things at once:\n\nan open PROIEL-style dependency treebank spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern), with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via the verse-level cross-alignment of the New Testament. Classical Armenian and Sanskrit ingestion is in progress.\nan open-source computational toolkit for diachronic linguistics: LightSIDE-compatible feature-extraction + classification pipelines, a NoSketch-style concordancer, fine-tuned Stanza checkpoints, an argument-structure extractor, a cross-lingual alignment viewer, and the Quarto pack that generates this very site. See the Tools page.\n\nThe project’s specific focus is retranslation, retelling, influential texts, and argument structure.\nCite this dataset. Lavidas, N. and the Athens Digital Glossa Chronos Research Network (2026). AthDGC: Athens Diachronic Glossa Chronos. Zenodo. (DOI pending)"
+  },
+  {
+    "objectID": "index.html#current-state-v0.4",
+    "href": "index.html#current-state-v0.4",
+    "title": "AthDGC",
+    "section": "Current state (v0.4)",
+    "text": "Current state (v0.4)\n\n\n\nField\nValue\n\n\n\n\nTotal corpus rows\n89.9 M\n\n\nAnnotated Greek rows\n4.08 M\n\n\nNT-aligned Greek verses\n6,861\n\n\nCross-aligned IE witnesses\n4 (Latin, Gothic, OCS, Armenian)\n\n\nConcept DOI\nZenodo DOI: pending\n\n\nRepository\nhttps://github.com/AthDGC/Diachronic-Linguistics-Platform"
+  },
+  {
+    "objectID": "index.html#browse-the-corpus",
+    "href": "index.html#browse-the-corpus",
+    "title": "AthDGC",
+    "section": "Browse the corpus",
+    "text": "Browse the corpus\nThe current showcase site provides representative samples per period with full PROIEL XML 2.0 annotation:\n\nhttps://athdgc.github.io/\n\nEach sample card carries the PROIEL dependency tree, the argument-structure frame for every verb, and the raw PROIEL XML for export."
+  },
+  {
+    "objectID": "index.html#method-in-brief",
+    "href": "index.html#method-in-brief",
+    "title": "AthDGC",
+    "section": "Method (in brief)",
+    "text": "Method (in brief)\n\nDiscovery — Daily harvest from archive.org, Perseus, First1K Greek, Wikisource, Diorisis, OpenGreekAndLatin\nFiltering — Greek-script ratio + apparatus-criticus rejection + content-hash deduplication\nConversion — PROIEL XML 2.0 schema\nAnnotation — Stanza grc_proiel (and la_proiel, cu_proiel, got_proiel for parallels)\nArgument structure — per-verb extraction of subject, object, oblique, voice, aspect\nCross-lingual alignment — LaBSE sentence embedding + multilingual-BERT attention for word-level alignment\nStorage — PROIEL XML + JSONL partitions + Qdrant vector store + Neo4j graph"
+  },
+  {
+    "objectID": "index.html#funding",
+    "href": "index.html#funding",
+    "title": "AthDGC",
+    "section": "Funding",
+    "text": "Funding\nFunded by the Hellenic Foundation for Research and Innovation (HFRI) under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, Project No. 20577; with complementary support from the Greece 2.0 National Recovery and Resilience Plan.\nFunded project: CVL-CDSAML — A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages.\nHosted at the National and Kapodistrian University of Athens, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.\nCompute supplied by GRNET ARIS (Gr"
   },
   {
     "objectID": "samples.html",
