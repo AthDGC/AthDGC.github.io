@@ -208,6 +208,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cross-lingual-alignment-viewer" id="toc-cross-lingual-alignment-viewer" class="nav-link" data-scroll-target="#cross-lingual-alignment-viewer">Cross-lingual alignment viewer</a></li>
   <li><a href="#corpus-fix-toolkit" id="toc-corpus-fix-toolkit" class="nav-link" data-scroll-target="#corpus-fix-toolkit">Corpus-fix toolkit</a></li>
   <li><a href="#argument-structure-extractor" id="toc-argument-structure-extractor" class="nav-link" data-scroll-target="#argument-structure-extractor">Argument-structure extractor</a></li>
+  <li><a href="#valency-frame-database-v0.5" id="toc-valency-frame-database-v0.5" class="nav-link" data-scroll-target="#valency-frame-database-v0.5">Valency-frame database (v0.5)</a></li>
+  <li><a href="#retranslation-pair-browser-v0.5" id="toc-retranslation-pair-browser-v0.5" class="nav-link" data-scroll-target="#retranslation-pair-browser-v0.5">Retranslation-pair browser (v0.5)</a></li>
+  <li><a href="#retelling-chain-explorer-v0.5" id="toc-retelling-chain-explorer-v0.5" class="nav-link" data-scroll-target="#retelling-chain-explorer-v0.5">Retelling-chain explorer (v0.5)</a></li>
+  <li><a href="#athdgc-proiel-validator-v0.5" id="toc-athdgc-proiel-validator-v0.5" class="nav-link" data-scroll-target="#athdgc-proiel-validator-v0.5">AthDGC PROIEL validator (v0.5)</a></li>
   <li><a href="#showcase-generator" id="toc-showcase-generator" class="nav-link" data-scroll-target="#showcase-generator">Showcase generator</a></li>
   <li><a href="#quarto-template-pack" id="toc-quarto-template-pack" class="nav-link" data-scroll-target="#quarto-template-pack">Quarto template pack</a></li>
   <li><a href="#get-the-tools" id="toc-get-the-tools" class="nav-link" data-scroll-target="#get-the-tools">Get the tools</a></li>
@@ -319,6 +323,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>This site - ready-made multi-output (HTML + PDF + .docx + Reveal.js + Beamer + .pptx) for any diachronic linguistics project</td>
 <td>MIT</td>
 <td>All academic users</td>
+</tr>
+<tr class="odd">
+<td><strong>Valency-frame database</strong> (<em>v0.5</em>)</td>
+<td>Queryable database of per-verb argument-frame distributions across periods</td>
+<td>Apache-2.0</td>
+<td>Syntacticians, typologists</td>
+</tr>
+<tr class="even">
+<td><strong>Retranslation-pair browser</strong> (<em>v0.5</em>)</td>
+<td>Same passage in N periods + N IE languages, side by side with aligned PROIEL trees</td>
+<td>Apache-2.0</td>
+<td>Comparatists, translation scholars</td>
+</tr>
+<tr class="odd">
+<td><strong>Retelling-chain explorer</strong> (<em>v0.5</em>)</td>
+<td>Trace an influential text's reception across periods (epitomes, paraphrases, glosses)</td>
+<td>Apache-2.0</td>
+<td>Reception scholars, philologists</td>
+</tr>
+<tr class="even">
+<td><strong>AthDGC PROIEL validator</strong> (<em>v0.5</em>)</td>
+<td>Schema-strict + relation-inventory-strict linter for community contributions</td>
+<td>Apache-2.0</td>
+<td>Treebank builders</td>
 </tr>
 </tbody>
 </table>
@@ -438,6 +466,57 @@ LIMIT 100</code></pre>
 <li>tense, mood, verb-form, person, number</li>
 </ul>
 <p>…as a Python dict, ready to be joined onto the cross-lingual alignment edges.</p>
+</section>
+<section id="valency-frame-database-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="valency-frame-database-v0.5">Valency-frame database (v0.5)</h2>
+<p><em>Status: ingestion in progress on ARIS; first release with v0.5.</em></p>
+<p>The valency-frame database collects every per-verb argument frame emitted by <code>extract_arg_structures()</code> across the corpus, indexes it by period + verb lemma + frame signature, and exposes it for SQL-style query. The output of the corpus-fix audit pass feeds directly into this index, so v0.5 ships with a clean version.</p>
+<p>Example queries supported at v0.5:</p>
+<ul>
+<li><code>verb=αἱρέω, voice=middle, aspect=perfective</code> -&gt; frequency by period</li>
+<li><code>frame=[sub:nom, obj:acc, obl:dat]</code> -&gt; all verbs that license this frame, with diachronic trend</li>
+<li><code>verb=ἀκούω</code> -&gt; case distribution of its object (accusative vs genitive) across periods</li>
+</ul>
+<p>The database lives behind a small JSON-RPC interface; a Python client <code>tools/valency_db.py</code> will ship alongside the v0.5 release. The full SQL dump will be deposited at Zenodo as part of the v0.5 dataset record under CC-BY-4.0.</p>
+</section>
+<section id="retranslation-pair-browser-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="retranslation-pair-browser-v0.5">Retranslation-pair browser (v0.5)</h2>
+<p><em>Status: design complete; implementation queued for v0.5.</em></p>
+<p>The retranslation-pair browser is the public-facing reading interface for the project's central research focus: tracking the same canonical text across periods and languages. For a given verse or sentence id, the browser displays the source-language passage and every attested retranslation (across Greek periods + IE parallels), each rendered with its own colour-coded compact PROIEL tree. Aligned tokens are visually linked across the panels.</p>
+<p>Concretely at v0.5 the browser supports:</p>
+<ul>
+<li><em>Iliad</em> 1.1 in Homeric Greek + a Byzantine epitome paraphrase + a Modern Greek translation (a single tri-period panel)</li>
+<li>NT John 1:1 in Koine Greek + Latin Vulgate + Gothic Wulfila + OCS Marianus (already shipped as a static example on <code>samples.qmd</code>; the v0.5 browser makes any aligned NT verse queryable in the same format)</li>
+<li>Septuagint Psalm 1:1 in Koine + Byzantine paraphrase + Modern Greek</li>
+<li>Any verse aligned via the existing LaBSE + AwesomeAlign pipeline</li>
+</ul>
+<p>This is the tool that makes <em>retranslation</em> a queryable property rather than a research note.</p>
+</section>
+<section id="retelling-chain-explorer-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="retelling-chain-explorer-v0.5">Retelling-chain explorer (v0.5)</h2>
+<p><em>Status: scoping; implementation queued for v0.5.</em></p>
+<p>Where the retranslation-pair browser shows the same sentence under different translations, the retelling-chain explorer follows an <em>influential text's reception</em>: epitomes, paraphrases, glosses, marginalia, and full-scale re-tellings of canonical sources. The explorer renders a directed reception graph (source -&gt; retelling -&gt; commentary -&gt; Modern Greek paraphrase) and displays each node's PROIEL tree on demand.</p>
+<p>Reference reception chains targeted for v0.5:</p>
+<ul>
+<li><em>Iliad</em> -&gt; Byzantine epitomes (Tzetzes, Eustathios) -&gt; Modern Greek translations</li>
+<li><em>New Testament</em> -&gt; patristic commentaries -&gt; Byzantine homily tradition</li>
+<li><em>Plato's Phaedrus</em> -&gt; Neoplatonic reception (Proclus) -&gt; later doxographies</li>
+<li><em>Septuagint Psalms</em> -&gt; patristic exegesis -&gt; Modern Greek liturgical use</li>
+</ul>
+<p>This is the tool that makes <em>retelling</em> a navigable network rather than a literary commonplace.</p>
+</section>
+<section id="athdgc-proiel-validator-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="athdgc-proiel-validator-v0.5">AthDGC PROIEL validator (v0.5)</h2>
+<p><em>Status: ships at v0.5 alongside the public corpus release.</em></p>
+<p>A schema-strict + relation-inventory-strict linter for PROIEL XML 2.0 contributions. Checks:</p>
+<ul>
+<li>XML well-formedness against the PROIEL XML 2.0 schema</li>
+<li>relation labels drawn from the PROIEL inventory only (no UD leakage: <code>nsubj</code>, <code>dobj</code>, <code>nmod</code>, <code>amod</code>, <code>case</code>, etc. flagged as errors)</li>
+<li>head-id integrity (every <code>head-id</code> resolves to a token in the same sentence; no cycles; one root per sentence with empty <code>head-id</code>)</li>
+<li>morphological-tag well-formedness (10-character PROIEL morphology code, position-by-position legal value)</li>
+<li>AthDGC house rules: no AI-marker vocabulary in <code>&lt;note&gt;</code> elements; affiliation block exact match in <code>&lt;source&gt;</code> headers</li>
+</ul>
+<p>Ships as <code>tools/proiel_validate.py</code> (CLI) and a pre-commit hook for community PRs.</p>
 </section>
 <section id="showcase-generator" class="level2">
 <h2 class="anchored" data-anchor-id="showcase-generator">Showcase generator</h2>
