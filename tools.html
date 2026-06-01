@@ -429,9 +429,10 @@ LIMIT 100</code></pre>
 <h2 class="anchored" data-anchor-id="argument-structure-extractor">Argument-structure extractor</h2>
 <p>The function <code>extract_arg_structures(sentence)</code> (in <code>51_build_showcase_site.py</code> and exported as a standalone module in <code>tools/arg_structure.py</code>) returns, for every VERB / AUX token:</p>
 <ul>
-<li>subject (<code>nsubj</code>, <code>nsubj:pass</code>, <code>csubj</code>, <code>csubj:pass</code>)</li>
+<li>subject (<code>sub</code>, including raised <code>xobj</code> / <code>nonsub</code> patterns)</li>
 <li>direct object (<code>obj</code>)</li>
-<li>indirect / oblique args (<code>iobj</code>, <code>obl:arg</code>, <code>obl:agent</code>, ...)</li>
+<li>indirect / oblique args (<code>iobj</code>, <code>obl</code>)</li>
+<li>vocative addressee (<code>voc</code>)</li>
 <li>voice (active / middle / passive)</li>
 <li>aspect (perfective / imperfective)</li>
 <li>tense, mood, verb-form, person, number</li>
@@ -481,7 +482,9 @@ LIMIT 100</code></pre>
 <ul>
 <li><strong>Argument-structure typology workbench</strong> (in development): joint cross-lingual visualisation of argument-structure shifts under retranslation</li>
 <li><strong>Diachronic syntactic-change detector</strong>: change-point analysis over PROIEL feature frequencies per century</li>
-<li><strong>Browser-based PROIEL tree editor</strong>: lightweight in-page editor that produces validated PROIEL XML 2.0 patches (PR-fri ---</li>
+<li><strong>Browser-based PROIEL tree editor</strong>: lightweight in-page editor that produces validated PROIEL XML 2.0 patches (PR-friendly diffs that the Oslo PROIEL canon can adopt)</li>
+<li><strong>Cross-lingual valency-shift detector</strong>: detect changes in argument-frame distribution between retranslations of the same canonical text across periods and languages</li>
+<li><strong>AthDGC PROIEL validator</strong>: schema-strict + relation-inventory-strict linter for community contributions ---</li>
 </ul>
 </section>
 <section id="funding" class="level2">

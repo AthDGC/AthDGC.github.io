@@ -194,6 +194,10 @@ div.csl-indent {
   <li><a href="#cross-lingual-alignment" id="toc-cross-lingual-alignment" class="nav-link" data-scroll-target="#cross-lingual-alignment">2.6 Cross-lingual alignment</a></li>
   </ul></li>
   <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">3. Dataset description</a></li>
+  <li><a href="#reuse-potential" id="toc-reuse-potential" class="nav-link" data-scroll-target="#reuse-potential">4. Reuse potential</a></li>
+  <li><a href="#access-format" id="toc-access-format" class="nav-link" data-scroll-target="#access-format">5. Access + format</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">6. Acknowledgements</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/data_paper.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/data_paper.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="data_paper.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
@@ -285,7 +289,7 @@ div.csl-indent {
 </section>
 <section id="argument-structure-capture" class="level3">
 <h3 class="anchored" data-anchor-id="argument-structure-capture">2.5 Argument-structure capture</h3>
-<p>Beyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token: the subject (<code>nsubj</code> / <code>nsubj:pass</code>), direct object (<code>obj</code>), indirect / oblique arguments (<code>iobj</code>, <code>obl:arg</code>), voice (active / middle / passive), and aspect (perfective / imperfective).</p>
+<p>Beyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token, using the PROIEL relation inventory strictly: the subject (<code>sub</code>, including the raised patterns <code>xobj</code> and <code>nonsub</code>), the direct object (<code>obj</code>), indirect and oblique arguments (<code>iobj</code>, <code>obl</code>), the vocative addressee (<code>voc</code>), the voice (active / middle / passive), and the aspect (perfective / imperfective).</p>
 </section>
 <section id="cross-lingual-alignment" class="level3">
 <h3 class="anchored" data-anchor-id="cross-lingual-alignment">2.6 Cross-lingual alignment</h3>
@@ -308,20 +312,68 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Format</td>
-<td>PROIEL XML 2.0 (primary); JSONL partitions</td>
+<td>PROIEL XML 2.0 (primary); JSONL partitions; Neo4j alignment-graph dump; Qdrant vector store</td>
 </tr>
 <tr class="odd">
 <td>Creation dates</td>
-<td>2025-09 o</td>
+<td>2025-09 onwards; v0.4.0 minted 29 May 2026</td>
+</tr>
+<tr class="even">
+<td>Dataset creator</td>
+<td>Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., and Argyropoulos, E.</td>
+</tr>
+<tr class="odd">
+<td>Languages</td>
+<td>grc (Ancient Greek), gkm (Medieval Greek), ell (Modern Greek) + parallels in lat, got, chu, xcl; queued for v0.7: san, ang, ave, peo, ukr</td>
+</tr>
+<tr class="even">
+<td>Licence</td>
+<td>Code Apache-2.0; metadata + alignments CC-BY-4.0; per-source raw text under its original licence</td>
+</tr>
+<tr class="odd">
+<td>Repository</td>
+<td><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></td>
+</tr>
+<tr class="even">
+<td>Concept DOI</td>
+<td><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></td>
+</tr>
+<tr class="odd">
+<td>Publication date</td>
+<td>2026-05-29 (v0.4.0 source-code snapshot on Zenodo)</td>
+</tr>
+<tr class="even">
+<td>Release status</td>
+<td>v0.4 is samples-only on the public site; full annotated partitions are under audit on GRNET ARIS and will ship at v0.5</td>
 </tr>
 </tbody>
 </table>
-
-
-
 </section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<section id="reuse-potential" class="level2">
+<h2 class="anchored" data-anchor-id="reuse-potential">4. Reuse potential</h2>
+<p>AthDGC supports four primary reuse classes:</p>
+<ol type="1">
+<li><p><strong>Historical syntactic research.</strong> Per-period dependency parses allow analysts to track argument-structure changes across three millennia of Greek (active-to-mediopassive shifts, loss of optative, rise of periphrastic perfect, accusative-to-genitive variation under verbs of perception, etc.). The colour-coded compact dependency overview on each sample is designed for fast scanning of these patterns.</p></li>
+<li><p><strong>Indo-European comparative syntax.</strong> The verse-level cross-lingual alignment of the New Testament to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian provides aligned PROIEL parses across four sister IE languages, with Sanskrit, Old English, Avestan, Old Persian, and Ukrainian queued at v0.7. Users can query the Neo4j alignment graph for typological correspondences (e.g. <em>every Greek aorist active verb whose Latin Vulgate counterpart is passive</em>).</p></li>
+<li><p><strong>Computational diachronic NLP.</strong> The fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) ship as Hugging Face model repos under <code>athdgc/*</code> and can be used directly for parsing new Greek diachronic data. The LightSIDE-AthDGC fork extends LightSIDE to work on syntactic features (dependency arcs, argument-structure frames, morphology bundles), opening a new feature space for classification of diachronic stages.</p></li>
+<li><p><strong>Digital editions + pedagogy.</strong> The showcase generator (<code>51_build_showcase_site.py</code>) produces browsable per-sample PROIEL trees from any JSONL corpus; the Quarto template pack generates the whole multi-output site (HTML, Reveal.js slides, .docx, .pptx, Beamer, A0 poster) from a single source. Both are open-source and reusable by other historical-treebank projects.</p></li>
+</ol>
+<p>The platform is taught as a KEDIVIM continuing-education course at NKUA: <em>Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας / Digital Tools for the Diachronic Analysis of Language</em>, autumn 2026. See <a href="https://athdgc.github.io/training.html" class="uri">https://athdgc.github.io/training.html</a>.</p>
+</section>
+<section id="access-format" class="level2">
+<h2 class="anchored" data-anchor-id="access-format">5. Access + format</h2>
+<p>The public site at <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> ships <strong>curated samples only</strong> for the v0.4 release. The full annotated corpus partitions remain under audit on the GRNET ARIS national HPC under allocation <code>pa260305</code>; they will ship at v0.5 as a separate Zenodo dataset record under CC-BY-4.0. The source-code snapshot at the v0.4.0 Zenodo record is Apache-2.0.</p>
+<p>The platform's nine open-source tools (LightSIDE-AthDGC for syntax, NoSketch-style concordancer, fine-tuned Stanza checkpoints, PROIEL XML 2.0 exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual alignment viewer, showcase generator, Quarto template pack) are released and usable now. See <a href="https://athdgc.github.io/tools.html" class="uri">https://athdgc.github.io/tools.html</a>.</p>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">6. Acknowledgements</h2>
+<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+<p>Funded project: <strong>CVL-CDSAML</strong> - <em>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em>.</p>
+<p>Team: Prof. Nikolaos Lavidas (PI, NKUA), Prof. Emerita Kiki Nikiforidou (NKUA), Prof. Dag Haug (Oslo, PROIEL Director), Prof. Leonid Kulikov (Ghent), Dr. Vassiliki Geka (NKUA), Dr. Vassileios Symeonidis (NKUA), Dr. Theodoros Michalareas (NKUA), Sofia Chionidi (NKUA), Anastasia Tsiropina (NKUA), Eleni Plakoutsi (NKUA), Evangelos Argyropoulos (NKUA).</p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-dou2021" class="csl-entry" role="listitem">
 Dou, Zi-Yi, and Graham Neubig. 2021. <span>“Word Alignment by Fine-Tuning Embeddings on Parallel Corpora.”</span> <em>Proceedings of EACL 2021</em>.
 </div>
@@ -340,7 +392,12 @@ List, Johann-Mattis. 2014. <em>Sequence Comparison in Historical Linguistics</em
 <div id="ref-qi2020" class="csl-entry" role="listitem">
 Qi, Peng, Yuhao Zhang, Yuhui Zhang, Jason Bolton, and Christopher D. Manning. 2020. <span>“<span>Stanza</span>: A <span>Python</span> Natural Language Processing Toolkit for Many Human Languages.”</span> <em>Proceedings of ACL 2020</em>.
 </div>
-</div></section></div></main> <!-- /main -->
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
