@@ -384,3 +384,95 @@
     text-align: left;
   }
 }
+
+/* ============================================================
+   Integrated linguist dashboard (samples.qmd / .linguist-dashboard)
+   Five-row panel combining morphology + PROIEL syntax +
+   information structure + argument structure + LightSIDE-AthDGC
+   feature strings. Extra simple, scan-in-seconds.
+   ============================================================ */
+.linguist-dashboard {
+  border-left: 2px solid #aaa;
+  padding: 0.6rem 0 0.4rem 1.1rem;
+  margin: 0.5rem 0 1.6rem 0;
+}
+.ld {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: 'Old Standard TT', 'Cardo', Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.ld-row {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.ld-row:last-child { border-bottom: 0; }
+.ld-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-top: 0.15rem;
+}
+/* Row-specific left-border accent in muted Lavidasized palette */
+.ld-row.ld-morph    { border-left: 2px solid #1f3050; padding-left: 0.5rem; }
+.ld-row.ld-syntax   { border-left: 2px solid #6b2c2c; padding-left: 0.5rem; }
+.ld-row.ld-info     { border-left: 2px solid #a06a1c; padding-left: 0.5rem; }
+.ld-row.ld-args     { border-left: 2px solid #2c5d5d; padding-left: 0.5rem; }
+.ld-row.ld-features { border-left: 2px solid #777777; padding-left: 0.5rem; }
+
+.ld-row .ld-label   { padding-left: 0; }
+
+.ld-body { color: #111; }
+.ld-tk {
+  font-family: 'Old Standard TT', 'Cardo', Georgia, serif;
+  font-weight: 600;
+  color: #111;
+}
+.ld-sep {
+  color: #999;
+  margin: 0 0.25rem;
+}
+.ld-pill {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid #aaa;
+  color: #333;
+  background: transparent;
+  margin: 0 0.1rem;
+  white-space: nowrap;
+}
+.ld-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #444;
+}
+.ld-em { font-style: italic; font-weight: 600; }
+.ld-arrow {
+  font-family: 'JetBrains Mono', monospace;
+  color: #555;
+  margin: 0 0.2rem;
+}
+.ld-trend {
+  font-style: italic;
+  color: #555;
+  font-size: 0.86rem;
+}
+
+/* Narrow viewport: stack label above content */
+@media (max-width: 720px) {
+  .ld-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
