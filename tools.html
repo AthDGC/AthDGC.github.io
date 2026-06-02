@@ -201,7 +201,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
   <li><a href="#lightside-athdgc-pipeline" id="toc-lightside-athdgc-pipeline" class="nav-link" data-scroll-target="#lightside-athdgc-pipeline">LightSIDE-AthDGC pipeline</a></li>
-  <li><a href="#what-we-ship" id="toc-what-we-ship" class="nav-link" data-scroll-target="#what-we-ship">What we ship</a></li>
+  <li><a href="#what-we-ship-open-source-on-github" id="toc-what-we-ship-open-source-on-github" class="nav-link" data-scroll-target="#what-we-ship-open-source-on-github">What we ship (open source, on GitHub)</a></li>
+  <li><a href="#worked-example---a-sample-of-the-syntactic-feature-csv" id="toc-worked-example---a-sample-of-the-syntactic-feature-csv" class="nav-link" data-scroll-target="#worked-example---a-sample-of-the-syntactic-feature-csv">Worked example - a sample of the syntactic-feature CSV</a></li>
+  <li><a href="#workflow-at-a-glance" id="toc-workflow-at-a-glance" class="nav-link" data-scroll-target="#workflow-at-a-glance">Workflow at a glance</a></li>
   </ul></li>
   <li><a href="#nosketch-style-concordancer-for-athdgc" id="toc-nosketch-style-concordancer-for-athdgc" class="nav-link" data-scroll-target="#nosketch-style-concordancer-for-athdgc">NoSketch-style concordancer for AthDGC</a></li>
   <li><a href="#diachronic-greek-stanza-checkpoints" id="toc-diachronic-greek-stanza-checkpoints" class="nav-link" data-scroll-target="#diachronic-greek-stanza-checkpoints">Diachronic Greek Stanza checkpoints</a></li>
@@ -402,14 +404,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Inspect</strong> the per-feature weights to find <em>which syntactic patterns</em> drive the classifier's decision per period boundary. Export feature-importance tables for the data paper or a follow-on linguistic-change study.</li>
 </ol>
 </section>
-<section id="what-we-ship" class="level3">
-<h3 class="anchored" data-anchor-id="what-we-ship">What we ship</h3>
+<section id="what-we-ship-open-source-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-ship-open-source-on-github">What we ship (open source, on GitHub)</h3>
+<p>The LightSIDE-AthDGC fork lives at <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/tools/lightside-athdgc" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/tools/lightside-athdgc</a> (Apache-2.0 for the AthDGC adapters; BSD as inherited from the upstream LightSIDE licence). What's in the directory:</p>
 <ul>
-<li><code>tools/athdgc_to_lightside_syntax.py</code> - the syntactic-feature export script (Apache-2.0).</li>
-<li><code>tools/lightside-athdgc/</code> - the LightSIDE fork patches: feature plugins for PROIEL arcs, frames, and morphology (BSD as parent license).</li>
+<li><code>tools/athdgc_to_lightside_syntax.py</code> - the syntactic-feature export script.</li>
+<li><code>tools/lightside-athdgc/</code> - the LightSIDE fork patches: feature plugins for PROIEL arcs, frames, and morphology.</li>
 <li><code>tools/lightside-recipes-syntax/</code> - worked classroom examples (Archaic-vs-Classical-on-arcs, Koine-vs-Byzantine-on-frames, etc.).</li>
-<li><code>slides/lightside_syntax_workshop.qmd</code> - a one-hour workshop slide deck for classroom use.</li>
+<li><code>slides/lightside_syntax_workshop.qmd</code> - a one-hour workshop slide deck.</li>
 </ul>
+</section>
+<section id="worked-example---a-sample-of-the-syntactic-feature-csv" class="level3">
+<h3 class="anchored" data-anchor-id="worked-example---a-sample-of-the-syntactic-feature-csv">Worked example - a sample of the syntactic-feature CSV</h3>
+<p>Running <code>tools/athdgc_to_lightside_syntax.py --in samples.jsonl --out features.csv</code> on a small slice produces a CSV like this (truncated to 4 rows, 8 columns; the real export has ~40 columns for the full PROIEL feature space):</p>
+<pre><code>period          token       lemma       pos       morph             arc_feat                 frame_feat              voice_aspect_mood
+Archaic         ἄειδε       ἀείδω       V         2sg.impv.act      ROOT                     pred[obj:acc,voc:voc]   act/impf/imp
+Archaic         μῆνιν       μῆνις       Nb        acc.sg.f          obj:V-N+acc.sg.f         -                       -
+Classical       οἶδα        οἶδα        V         1sg.prs.act       ROOT                     pred[xcomp:clausal]     act/perf/ind
+Koine           ἐγένετο     γίγνομαι    V         3sg.aor.ind.mid   ROOT                     pred[sub:nom,xobj:nom]  mid/aor/ind</code></pre>
+<p>Load <code>features.csv</code> into LightSIDE-AthDGC, switch to the <em>Diachronic syntactic features</em> feature panel, train an SVM on the <code>period</code> column, and inspect which <code>arc_feat</code> and <code>frame_feat</code> strings are over-represented per period. The export script + sample CSV + worked tutorial all ship under <code>tools/lightside-recipes-syntax/</code> on the public repo.</p>
+</section>
+<section id="workflow-at-a-glance" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-at-a-glance">Workflow at a glance</h3>
+<div class="lightside-flow">
+<svg viewbox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LightSIDE-AthDGC workflow">
+  <defs>
+    <marker id="ah-ls" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="6" markerheight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#111"></path>
+    </marker>
+  </defs>
+  <g font-family="'Old Standard TT', Cardo, Georgia, serif" fill="#111" font-size="13">
+    <text x="60" y="50" text-anchor="middle" font-weight="600">PROIEL XML 2.0</text>
+    <text x="60" y="70" text-anchor="middle" font-size="11" fill="#555">AthDGC partitions</text>
+    <path d="M 130 60 L 230 60" stroke="#111" stroke-width="1" marker-end="url(#ah-ls)"></path>
+    <text x="180" y="50" text-anchor="middle" font-size="11" font-style="italic" fill="#555">export</text>
+    <text x="290" y="50" text-anchor="middle" font-weight="600">features.csv</text>
+    <text x="290" y="70" text-anchor="middle" font-size="11" fill="#555">arc / frame / morph</text>
+    <path d="M 360 60 L 460 60" stroke="#111" stroke-width="1" marker-end="url(#ah-ls)"></path>
+    <text x="410" y="50" text-anchor="middle" font-size="11" font-style="italic" fill="#555">load</text>
+    <text x="525" y="50" text-anchor="middle" font-weight="600">LightSIDE-AthDGC</text>
+    <text x="525" y="70" text-anchor="middle" font-size="11" fill="#555">SVM / logistic / decision tree</text>
+    <path d="M 525 90 L 525 140" stroke="#111" stroke-width="1" marker-end="url(#ah-ls)"></path>
+    <text x="595" y="120" font-size="11" font-style="italic" fill="#555">inspect feature weights</text>
+    <text x="525" y="170" text-anchor="middle" font-weight="600" fill="#6b2c2c">period contrasts</text>
+    <text x="525" y="190" text-anchor="middle" font-size="11" fill="#555">which syntactic patterns drive Archaic vs Classical, Byzantine vs Modern, etc.</text>
+  </g>
+</svg>
+</div>
 <p>Upstream LightSIDE remains BSD-licensed and downloadable from CMU. We do not redistribute binaries; LightSIDE-AthDGC ships as a patch set + helper scripts that the user applies to a standard LightSIDE install.</p>
 </section>
 </section>
@@ -539,22 +580,22 @@ LIMIT 100</code></pre>
 </section>
 <section id="get-the-tools" class="level2">
 <h2 class="anchored" data-anchor-id="get-the-tools">Get the tools</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AthDGC/Diachronic-Linguistics-Platform</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Diachronic-Linguistics-Platform</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> tools/   <span class="co"># all the modules described above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AthDGC/Diachronic-Linguistics-Platform</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Diachronic-Linguistics-Platform</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> tools/   <span class="co"># all the modules described above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>License: Apache-2.0 (except where upstream tools require otherwise; see each tool's <code>LICENSE</code>).</p>
 </section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
 <p>If you use any AthDGC tool in your research, please cite the corpus DOI and the tool explicitly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">@dataset{lavidas2026athdgc,</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">  author    = {Lavidas, Nikolaos and {Athens Digital Glossa Chronos Research Network}},</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">  title     = {{AthDGC}: Athens Diachronic Glossa Chronos ({Athens-PROIEL})},</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  year      = {2026},</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  publisher = {Zenodo},</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  version   = {v0.4.0},</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">  doi       = {10.5281/zenodo.20439182}</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">@dataset{lavidas2026athdgc,</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">  author    = {Lavidas, Nikolaos and Nikiforidou, Kiki and Haug, Dag and Kulikov, Leonid and Geka, Vassiliki and Symeonidis, Vassileios and Michalareas, Theodoros and Chionidi, Sofia and Tsiropina, Anastasia and Plakoutsi, Eleni and Argyropoulos, Evangelos and {Athens Digital Glossa Chronos Research Network}},</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">  title     = {{AthDGC}: Athens Diachronic Glossa Chronos ({Athens-PROIEL})},</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">  year      = {2026},</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">  publisher = {Zenodo},</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">  version   = {v0.4.0},</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">  doi       = {10.5281/zenodo.20439182}</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="roadmap" class="level2">
 <h2 class="anchored" data-anchor-id="roadmap">Roadmap</h2>

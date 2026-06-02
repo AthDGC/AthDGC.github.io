@@ -547,3 +547,96 @@
     gap: 0.2rem;
   }
 }
+
+/* ============================================================
+   Generative-grammar projection (.gen-tree)
+   Thematic-role flow (.theta-flow)
+   Both SVG; thin rules only; no boxes / fills.
+   ============================================================ */
+.gen-tree, .theta-flow {
+  border-left: 2px solid #aaa;
+  padding: 0.6rem 0 0.4rem 1.1rem;
+  margin: 0.5rem 0 1.6rem 0;
+}
+.gen-tree svg, .theta-flow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 760px;
+}
+.gen-tree svg { max-height: 420px; }
+.theta-flow svg { max-height: 260px; }
+
+@media (max-width: 720px) {
+  .gen-tree svg, .theta-flow svg { max-height: none; }
+}
+
+/* ============================================================
+   Chain comparison table (.chain-grid)
+   Side-by-side parallel-tree comparison for retelling +
+   retranslation reception chains.
+   ============================================================ */
+.chain-grid {
+  border-left: 2px solid #aaa;
+  padding: 0.6rem 0 0.4rem 1.1rem;
+  margin: 0.5rem 0 1.6rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.chain-grid .chain-node {
+  font-family: 'Old Standard TT', 'Cardo', Georgia, serif;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+.chain-grid .chain-node h4 {
+  font-family: 'Old Standard TT', 'Cardo', Georgia, serif;
+  font-size: 1.0rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #6b2c2c;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 0.25rem;
+  margin: 0 0 0.5rem 0;
+}
+.chain-grid .chain-tree {
+  font-family: 'JetBrains Mono', 'DejaVu Sans Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  white-space: pre;
+  background: transparent;
+  border-left: 1px solid #ddd;
+  padding: 0.4rem 0 0.4rem 0.6rem;
+  margin: 0.3rem 0;
+  overflow-x: auto;
+}
+.chain-grid .chain-gloss {
+  font-style: italic;
+  color: #555;
+  font-size: 0.86rem;
+  margin-top: 0.3rem;
+}
+@media (max-width: 720px) {
+  .chain-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   LightSIDE-AthDGC workflow SVG (.lightside-flow)
+   ============================================================ */
+.lightside-flow {
+  border-left: 2px solid #aaa;
+  padding: 0.6rem 0 0.4rem 1.1rem;
+  margin: 0.5rem 0 1.6rem 0;
+}
+.lightside-flow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 760px;
+  max-height: 240px;
+}
+@media (max-width: 720px) {
+  .lightside-flow svg { max-height: none; }
+}
