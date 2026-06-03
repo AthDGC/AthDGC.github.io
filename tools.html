@@ -161,6 +161,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Press</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./status.html"> 
+<span class="menu-text">Status</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./slides/index.html"> 
 <span class="menu-text">Slides</span></a>
   </li>  
@@ -217,6 +221,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#showcase-generator" id="toc-showcase-generator" class="nav-link" data-scroll-target="#showcase-generator">Showcase generator</a></li>
   <li><a href="#quarto-template-pack" id="toc-quarto-template-pack" class="nav-link" data-scroll-target="#quarto-template-pack">Quarto template pack</a></li>
   <li><a href="#get-the-tools" id="toc-get-the-tools" class="nav-link" data-scroll-target="#get-the-tools">Get the tools</a></li>
+  <li><a href="#open-source-license-matrix-repo-map" id="toc-open-source-license-matrix-repo-map" class="nav-link" data-scroll-target="#open-source-license-matrix-repo-map">Open source: license matrix + repo map</a>
+  <ul class="collapse">
+  <li><a href="#one-line-installs" id="toc-one-line-installs" class="nav-link" data-scroll-target="#one-line-installs">One-line installs</a></li>
+  <li><a href="#where-it-all-lives" id="toc-where-it-all-lives" class="nav-link" data-scroll-target="#where-it-all-lives">Where it all lives</a></li>
+  <li><a href="#repository-structure" id="toc-repository-structure" class="nav-link" data-scroll-target="#repository-structure">Repository structure</a></li>
+  <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link" data-scroll-target="#how-to-contribute">How to contribute</a></li>
+  <li><a href="#what-is-not-open" id="toc-what-is-not-open" class="nav-link" data-scroll-target="#what-is-not-open">What is not open</a></li>
+  </ul></li>
   <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation">Citation</a></li>
   <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">Roadmap</a></li>
   <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
@@ -469,11 +481,11 @@ Koine           ἐγένετο     γίγνομαι    V         3sg.aor.ind.mi
 <li>Late-Byzantine + Early-Modern Greek (<code>grc_lbem_proiel</code>)</li>
 <li>Modern Greek with classical morphological retention (<code>grc_mod_proiel</code>)</li>
 </ul>
-<p>Released as Hugging Face model repos under <code>athdgc/*</code>. Training scripts in <code>tools/stanza-finetune/</code>. Eval loss and per-tag F1 reported per checkpoint.</p>
+<p>Release status: trained on ARIS; Hugging Face mirror at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> under <code>athdgc/*</code> is in setup and ships at v0.5. Training scripts in <code>tools/stanza-finetune/</code>. Eval loss and per-tag F1 reported per checkpoint with the v0.5 release notes.</p>
 </section>
 <section id="cross-lingual-alignment-viewer" class="level2">
 <h2 class="anchored" data-anchor-id="cross-lingual-alignment-viewer">Cross-lingual alignment viewer</h2>
-<p>The Neo4j alignment graph is queryable through a public Neo4j Browser endpoint (URL forthcoming) or via the open-source <a href="https://neo4j.com/developer/neo4j-browser/">Neo4j Browser</a> loaded against a local copy of the alignment graph. The dump is part of the Zenodo deposition.</p>
+<p>The Neo4j alignment graph is queryable via the open-source <a href="https://neo4j.com/developer/neo4j-browser/">Neo4j Browser</a> loaded against a local copy of the alignment graph. The graph dump ships as part of the Zenodo deposition; a public hosted endpoint is planned for v0.5.</p>
 <p>Example Cypher - find every Greek aorist active verb whose Vulgate counterpart is passive:</p>
 <pre class="cypher"><code>MATCH (gk:Token {language:"grc", upos:"VERB"})-[:TRANSLATED_AS]-&gt;(la:Token {language:"lat"})
 WHERE gk.feats CONTAINS "Aspect=Perf"
@@ -585,17 +597,213 @@ LIMIT 100</code></pre>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> tools/   <span class="co"># all the modules described above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>License: Apache-2.0 (except where upstream tools require otherwise; see each tool's <code>LICENSE</code>).</p>
 </section>
+<section id="open-source-license-matrix-repo-map" class="level2">
+<h2 class="anchored" data-anchor-id="open-source-license-matrix-repo-map">Open source: license matrix + repo map</h2>
+<p>Every AthDGC tool ships under a recognised OSI-approved licence. The corpus itself ships under <strong>CC-BY-4.0</strong> (samples shown publicly; full partitions released at v0.5). The matrix below is the canonical reference.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>Licence</th>
+<th>Upstream constraint</th>
+<th>Code path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tools/lightside-athdgc/</code></td>
+<td>BSD-3-Clause + Apache-2.0</td>
+<td>Upstream LightSIDE is BSD-3</td>
+<td><code>Diachronic-Linguistics-Platform/tools/lightside-athdgc/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/athdgc_to_lightside_syntax.py</code></td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="odd">
+<td><code>tools/athdgc_to_lightside.py</code></td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/proiel_export/</code></td>
+<td>Apache-2.0</td>
+<td>PROIEL XML 2.0 schema by Oslo</td>
+<td><code>Diachronic-Linguistics-Platform/tools/proiel_export/</code></td>
+</tr>
+<tr class="odd">
+<td><code>tools/proiel_validate.py</code> (v0.5)</td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/arg_structure.py</code></td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="odd">
+<td><code>tools/fix_corpus_data.py</code></td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/valency_db.py</code> (v0.5)</td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="odd">
+<td><code>tools/stanza-finetune/</code></td>
+<td>Apache-2.0</td>
+<td>Stanford Stanza is Apache-2.0</td>
+<td><code>Diachronic-Linguistics-Platform/tools/stanza-finetune/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/build_cwb_index.sh</code></td>
+<td>GPL-3.0</td>
+<td>Upstream CWB is GPL</td>
+<td><code>Diachronic-Linguistics-Platform/tools/</code></td>
+</tr>
+<tr class="odd">
+<td><code>tools/cwb-recipes/</code></td>
+<td>CC-BY-4.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/cwb-recipes/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/showcase/</code> (51_build_showcase_site.py)</td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/showcase/</code></td>
+</tr>
+<tr class="odd">
+<td><code>athdgc-quarto/</code> (this site)</td>
+<td>MIT</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/athdgc-quarto/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/retranslation-browser/</code> (v0.5)</td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/retranslation-browser/</code></td>
+</tr>
+<tr class="odd">
+<td><code>tools/retelling-explorer/</code> (v0.5)</td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td><code>Diachronic-Linguistics-Platform/tools/retelling-explorer/</code></td>
+</tr>
+<tr class="even">
+<td><code>tools/neo4j-align-viewer/</code></td>
+<td>MIT</td>
+<td>Neo4j Browser is APL-2.0</td>
+<td><code>Diachronic-Linguistics-Platform/tools/neo4j-align-viewer/</code></td>
+</tr>
+<tr class="odd">
+<td>Stanza checkpoints <code>athdgc/grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code></td>
+<td>Apache-2.0</td>
+<td>-</td>
+<td>Hugging Face mirror forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (v0.5)</td>
+</tr>
+<tr class="even">
+<td><strong>Corpus samples</strong> (this site)</td>
+<td>CC-BY-4.0</td>
+<td>-</td>
+<td>Zenodo: <code>10.5281/zenodo.20439182</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Corpus partitions</strong> (v0.5 onwards)</td>
+<td>CC-BY-4.0</td>
+<td>-</td>
+<td>Zenodo: per-version DOI</td>
+</tr>
+</tbody>
+</table>
+<section id="one-line-installs" class="level3">
+<h3 class="anchored" data-anchor-id="one-line-installs">One-line installs</h3>
+<p><code>pip install athdgc-tools</code> resolves today (stub release <code>0.4.0.dev0</code>); the stub reserves the name and points users at the source repo. The full toolkit replaces the stub at v0.5. The Hugging Face model repos at <code>AthDGC/grc_byz_proiel</code>, <code>AthDGC/grc_lbem_proiel</code>, and <code>AthDGC/grc_mod_proiel</code> exist with v0.5-forthcoming READMEs; the weight payloads upload at v0.5 ship time.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># core toolkit</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install athdgc-tools                    <span class="co"># Apache-2.0, Python 3.11+ (stub until v0.5)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Stanza checkpoints (weights ship at v0.5; the model repos exist now)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import stanza; stanza.download('grc', package='athdgc_byz_proiel')"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import stanza; stanza.download('grc', package='athdgc_lbem_proiel')"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import stanza; stanza.download('grc', package='athdgc_mod_proiel')"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># LightSIDE-AthDGC patch (on top of an existing LightSIDE install)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AthDGC/Diachronic-Linguistics-Platform</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Diachronic-Linguistics-Platform/tools/lightside-athdgc</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ex">./apply_patches.sh</span> /path/to/your/LightSIDE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="where-it-all-lives" class="level3">
+<h3 class="anchored" data-anchor-id="where-it-all-lives">Where it all lives</h3>
+<ul>
+<li><strong>Source code</strong>: <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></li>
+<li><strong>Stanza checkpoints + tokenisers</strong>: <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (three model repos live with v0.5 placeholder READMEs; weights at v0.5)</li>
+<li><strong>PyPI package</strong>: <a href="https://pypi.org/project/athdgc-tools/" class="uri">https://pypi.org/project/athdgc-tools/</a> (stub <code>0.4.0.dev0</code>; full toolkit at v0.5)</li>
+<li><strong>Corpus samples + release DOIs</strong>: <a href="https://doi.org/10.5281/zenodo.20439182" class="uri">https://doi.org/10.5281/zenodo.20439182</a> (concept DOI; version-specific DOIs on the Zenodo "Versions" tab)</li>
+<li><strong>Quarto template pack</strong>: <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/athdgc-quarto" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/athdgc-quarto</a></li>
+<li><strong>Issues + PRs</strong>: <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/issues" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform/issues</a></li>
+</ul>
+</section>
+<section id="repository-structure" class="level3">
+<h3 class="anchored" data-anchor-id="repository-structure">Repository structure</h3>
+<pre><code>Diachronic-Linguistics-Platform/
+|-- LICENSE                            Apache-2.0 (root)
+|-- tools/
+|   |-- LICENSE-LightSIDE              BSD-3-Clause (upstream)
+|   |-- LICENSE-CWB                    GPL-3.0 (upstream)
+|   |-- lightside-athdgc/              syntactic-feature plugin
+|   |-- athdgc_to_lightside.py         text-feature export
+|   |-- athdgc_to_lightside_syntax.py  syntactic-feature export
+|   |-- proiel_export/                 Stanza output -&gt; PROIEL XML 2.0
+|   |-- proiel_validate.py             v0.5 schema linter
+|   |-- arg_structure.py               valency-frame extractor
+|   |-- valency_db.py                  v0.5 query client
+|   |-- fix_corpus_data.py             314,048-row audit-fix
+|   |-- stanza-finetune/               diachronic Stanza checkpoints
+|   |-- build_cwb_index.sh             NoSketch-compatible index builder
+|   |-- cwb-recipes/                   sample CQL queries
+|   |-- showcase/                      site generator
+|   |-- neo4j-align-viewer/            cross-lingual graph viewer
+|   |-- retranslation-browser/         v0.5 - retranslation UI
+|   `-- retelling-explorer/            v0.5 - reception graph UI
+|-- athdgc-quarto/                     this website
+|-- corpus-samples/                    JSONL samples (CC-BY-4.0)
+`-- docs/                              house-style, contributing, code-of-conduct</code></pre>
+</section>
+<section id="how-to-contribute" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-contribute">How to contribute</h3>
+<p>Community PRs are welcome on every module above. Two gates run on every PR:</p>
+<ol type="1">
+<li><strong>PROIEL XML 2.0 validator</strong> - <code>tools/proiel_validate.py</code> runs as a pre-commit hook and a GitHub Action. PRs that introduce UD-style labels (<code>nsubj</code>, <code>dobj</code>, <code>nmod</code>, <code>case</code>, etc.) fail the build.</li>
+<li><strong>Lavidasised house-style check</strong> - <code>tools/style_check.py</code> scans <code>.qmd</code> and <code>.md</code> for AI-marker vocabulary and em-dashes. PRs with <code>leverage</code>, <code>seamlessly</code>, <code>it is worth noting that</code>, <code>unparalleled</code>, etc. fail the build.</li>
+</ol>
+<p>For larger changes (a new IE parallel, a new period subcorpus, a new tool module), open an issue first with a short proposal; the team will assign a reviewer.</p>
+</section>
+<section id="what-is-not-open" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-not-open">What is not open</h3>
+<p>The audit-fix tooling <strong>logs</strong> (per-author error counts, per-Stanza-checkpoint diff statistics) are internal until the v0.5 release notes ship. Funding-side materials and draft grant applications stay in the private repo. Per the project's data-management policy, raw OCR scans of secondary editions that are still in copyright are <strong>not</strong> republished; only the PROIEL annotation layer on top of them.</p>
+</section>
+</section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
 <p>If you use any AthDGC tool in your research, please cite the corpus DOI and the tool explicitly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">@dataset{lavidas2026athdgc,</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">  author    = {Lavidas, Nikolaos and Nikiforidou, Kiki and Haug, Dag and Kulikov, Leonid and Geka, Vassiliki and Symeonidis, Vassileios and Michalareas, Theodoros and Chionidi, Sofia and Tsiropina, Anastasia and Plakoutsi, Eleni and Argyropoulos, Evangelos and {Athens Digital Glossa Chronos Research Network}},</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">  title     = {{AthDGC}: Athens Diachronic Glossa Chronos ({Athens-PROIEL})},</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">  year      = {2026},</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">  publisher = {Zenodo},</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">  version   = {v0.4.0},</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">  doi       = {10.5281/zenodo.20439182}</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">@dataset{lavidas2026athdgc,</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">  author    = {Lavidas, Nikolaos and Nikiforidou, Kiki and Haug, Dag and Kulikov, Leonid and Geka, Vassiliki and Symeonidis, Vassileios and Michalareas, Theodoros and Chionidi, Sofia and Tsiropina, Anastasia and Plakoutsi, Eleni and Argyropoulos, Evangelos and {Athens Digital Glossa Chronos Research Network}},</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">  title     = {{AthDGC}: Athens Diachronic Glossa Chronos ({Athens-PROIEL})},</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">  year      = {2026},</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">  publisher = {Zenodo},</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">  version   = {v0.4.0},</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">  doi       = {10.5281/zenodo.20439182}</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="roadmap" class="level2">
 <h2 class="anchored" data-anchor-id="roadmap">Roadmap</h2>

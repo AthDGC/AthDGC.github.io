@@ -127,6 +127,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Press</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./status.html"> 
+<span class="menu-text">Status</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./slides/index.html"> 
 <span class="menu-text">Slides</span></a>
   </li>  
@@ -230,11 +234,11 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Cross-aligned IE witnesses</td>
-<td>4 (Latin, Gothic, OCS, Armenian)</td>
+<td>4 (Latin, Gothic, OCS) + Classical Armenian in ingestion</td>
 </tr>
 <tr class="odd">
 <td>Open-source tools shipped</td>
-<td>9 (see <a href="./tools.html">Tools</a>)</td>
+<td>14 (see <a href="./tools.html">Tools</a>)</td>
 </tr>
 <tr class="even">
 <td>Concept DOI</td>
@@ -243,6 +247,18 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Repository</td>
 <td><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></td>
+</tr>
+<tr class="even">
+<td>Stanza checkpoints</td>
+<td>forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (org page + model repos in setup; ship at v0.5)</td>
+</tr>
+<tr class="odd">
+<td>Open-access source archives</td>
+<td>Perseus, OGL/First1K, SBL GNT, Rahlfs LXX, Papyri.info, Patrologia Graeca, Bibliotheca Augustana, Anemi, Wikisource el; Wulfila Project, TITUS, GRETIL, SARIT, TEAMS, National Library of Ukraine</td>
+</tr>
+<tr class="even">
+<td>Launch report</td>
+<td><a href="./data_paper.html">GlossaContactLab Working Papers, NKUA digital edition</a></td>
 </tr>
 </tbody>
 </table>
@@ -260,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>the platform's source code (discovery, filtering, conversion, annotation, alignment, fix, showcase generator, Quarto template pack);</li>
 <li>the open-source toolkit (LightSIDE-AthDGC for syntactic features, NoSketch-style concordancer, PROIEL XML 2.0 exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual alignment viewer);</li>
-<li>the fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) under <code>athdgc/*</code> on Hugging Face;</li>
+<li>the fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) trained on ARIS; Hugging Face mirror under <code>athdgc/*</code> is in setup, ships at v0.5;</li>
 <li>the <strong>curated showcase samples</strong> rendered on this site;</li>
 <li>the Zenodo source-code snapshot under DOI <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</li>
 </ul>

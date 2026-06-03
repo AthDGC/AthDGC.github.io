@@ -126,6 +126,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Press</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./status.html"> 
+<span class="menu-text">Status</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./slides/index.html"> 
 <span class="menu-text">Slides</span></a>
   </li>  
@@ -163,6 +167,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#i-computational-toolkit" id="toc-i-computational-toolkit" class="nav-link" data-scroll-target="#i-computational-toolkit">(i) Computational toolkit</a></li>
   <li><a href="#ii-diachronic-greek-treebank" id="toc-ii-diachronic-greek-treebank" class="nav-link" data-scroll-target="#ii-diachronic-greek-treebank">(ii) Diachronic Greek treebank</a></li>
+  <li><a href="#open-access-source-chain" id="toc-open-access-source-chain" class="nav-link" data-scroll-target="#open-access-source-chain">Open-access source chain</a></li>
   </ul></li>
   <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
   <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
@@ -212,11 +217,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="the-two-halves-of-the-platform">The two halves of the platform</h2>
 <section id="i-computational-toolkit" class="level3">
 <h3 class="anchored" data-anchor-id="i-computational-toolkit">(i) Computational toolkit</h3>
-<p>The toolkit ships nine open-source modules: LightSIDE-compatible feature extraction, a NoSketch-style concordancer, fine-tuned Stanza checkpoints for diachronic Greek, a per-verb argument-structure extractor, a cross-lingual alignment viewer (Neo4j), a corpus-fix toolkit, a showcase generator, a PROIEL XML 2.0 exporter, and the Quarto template pack that generates this very site. All modules are usable on <strong>any PROIEL-style historical treebank</strong>, not only on the AthDGC corpus. See <a href="./tools.html">Tools</a>.</p>
+<p>The toolkit ships fourteen open-source modules: LightSIDE-AthDGC for PROIEL syntactic features (dependency arcs, argument-structure frames, morphology bundles); LightSIDE-compatible text-feature extraction; a NoSketch-style concordancer; fine-tuned Stanza checkpoints for diachronic Greek (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>; Hugging Face mirror ships at v0.5); a per-verb argument-structure extractor; a cross-lingual alignment viewer (Neo4j); a corpus-fix toolkit; a showcase generator; a PROIEL XML 2.0 exporter; a v0.5 PROIEL XML 2.0 schema validator; a v0.5 valency-frame database client; a v0.5 retranslation-pair browser; a v0.5 retelling-chain explorer; and the Quarto template pack that generates this very site. All modules are usable on <strong>any PROIEL-style historical treebank</strong>, not only on the AthDGC corpus. See <a href="./tools.html">Tools</a>.</p>
 </section>
 <section id="ii-diachronic-greek-treebank" class="level3">
 <h3 class="anchored" data-anchor-id="ii-diachronic-greek-treebank">(ii) Diachronic Greek treebank</h3>
-<p>The treebank covers Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern Greek, with verse-level cross-lingual alignment of the New Testament to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian. Sanskrit ingestion is in progress. See <a href="./samples.html">Samples</a> for representative sentences per period with full PROIEL annotation.</p>
+<p>The treebank covers Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern Greek, with verse-level cross-lingual alignment of the New Testament to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian (the last in ingestion at v0.5). Sanskrit, Old English, Avestan, Old Persian, and Ukrainian are queued at v0.7. See <a href="./samples.html">Samples</a> for representative sentences per period with full PROIEL annotation.</p>
+</section>
+<section id="open-access-source-chain" class="level3">
+<h3 class="anchored" data-anchor-id="open-access-source-chain">Open-access source chain</h3>
+<p>Every primary source text is open-access (public domain, CC-BY, CC-BY-SA, or equivalent). Greek sources draw on Perseus Digital Library, Open Greek and Latin / First1K (Leipzig), SBL Greek NT, Tischendorf and Westcott-Hort, Rahlfs LXX via openscriptures.org, Papyri.info, Patrologia Graeca via Documenta Catholica Omnia, Bibliotheca Augustana, Anemi (UoC), and Wikisource el. IE parallels draw on Vulsearch + Latin Library, the Wulfila Project (University of Antwerp), TITUS (Frankfurt), Digilib Armenian, GRETIL (Goettingen), SARIT, TEAMS, the DOE corpus, and the National Library of Ukraine. The annotation layer is AthDGC-original under CC-BY-4.0. In-copyright editions are never republished verbatim; we use the open-access antecedent or short quotation samples under fair use.</p>
 <p>The treebank is built by an autonomous daily harvest pipeline on the <strong>GRNET ARIS</strong> national HPC: discovery, filtering, OCR conversion to PROIEL XML 2.0, Stanza dependency parsing, and cross-lingual alignment to the four IE witnesses.</p>
 </section>
 </section>
