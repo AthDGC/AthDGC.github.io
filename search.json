@@ -529,7 +529,7 @@
     "href": "slides/index.html#how-to-add-a-new-deck",
     "title": "Slide presentations",
     "section": "How to add a new deck",
-    "text": "How to add a new deck\n\nCreate a new .qmd file under slides/\nCopy the YAML header from announcement.qmd\nWrite your slides as Markdown (# = slide title, ## = section header)\nRun quarto render slides/your-deck.qmd to generate HTML + PDF + PPTX\n\nThe slide theme automatically inherits the Lavidasized typography (Old Standard TT serif, plain horizontal rules, no colored blocks)."
+    "text": "How to add a new deck\n\nCreate a new .qmd file under slides/\nCopy the YAML header from announcement.qmd\nWrite your slides as Markdown (# = slide title, ## = section header)\nRun quarto render slides/your-deck.qmd to generate HTML + PDF + PPTX\n\nThe slide theme automatically inherits the AthDGC house typography (Old Standard TT serif, plain horizontal rules, no colored blocks)."
   },
   {
     "objectID": "status.html",

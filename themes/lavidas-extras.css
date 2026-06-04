@@ -6,7 +6,7 @@
   font-feature-settings: "kern" 1, "liga" 1;
 }
 
-/* PROIEL tree visualisation - inherits Lavidas typography */
+/* PROIEL tree visualisation - inherits the house typography */
 .proiel-tree {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.85rem;
@@ -137,7 +137,7 @@
    .proiel-legend      -- relation-colour legend strip
    .rel.rel-<NAME>     -- colored relation label, used inline
 
-   Colour palette (Lavidasized academic, subdued; no neon, no
+   Colour palette (AthDGC house-style academic, subdued; no neon, no
    AI-block fills, only ink-with-hue):
      pred       deep burgundy (the verb anchors the clause)
      sub        deep navy     (primary core argument)
@@ -493,7 +493,7 @@
   text-transform: uppercase;
   padding-top: 0.15rem;
 }
-/* Row-specific left-border accent in muted Lavidasized palette */
+/* Row-specific left-border accent in muted AthDGC house-style palette */
 .ld-row.ld-morph    { border-left: 2px solid #1f3050; padding-left: 0.5rem; }
 .ld-row.ld-syntax   { border-left: 2px solid #6b2c2c; padding-left: 0.5rem; }
 .ld-row.ld-info     { border-left: 2px solid #a06a1c; padding-left: 0.5rem; }
