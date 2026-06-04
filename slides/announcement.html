@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Nikolaos Lavidas">
-  <meta name="dcterms.date" content="2026-06-04">
+  <meta name="dcterms.date" content="2026-06-05">
   <title>AthDGC – AthDGC · Athens-PROIEL</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -146,11 +146,11 @@ Nikolaos Lavidas
     </div>
 </div>
 
-  <p class="date">June 4, 2026</p>
+  <p class="date">June 5, 2026</p>
 </section>
 <section id="athens-digital-glossa-chronos" class="title-slide slide level1 smaller center">
 <h1>Athens Digital Glossa Chronos</h1>
-<p>The <strong>Athens Diachronic Glossa Chronos</strong> (<em>Athens-PROIEL</em>) is an open PROIEL-style dependency treebank spanning Greek diachrony with Indo-European parallels.</p>
+<p>The <strong>Athens Diachronic Glossa Chronos</strong> (<em>Athens-PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo)</em>) is an open PROIEL-style dependency treebank spanning Greek diachrony with Indo-European parallels.</p>
 <p>NKUA · Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy</p>
 <div style="font-style:italic; color:#555; font-size:0.85em">
 <p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP</p>
@@ -159,14 +159,14 @@ Nikolaos Lavidas
 
 <section id="corpus-tools" class="title-slide slide level1 center">
 <h1>Corpus + Tools</h1>
-<p>AthDGC is <strong>both</strong> a continuously-updated <strong>PROIEL XML 2.0</strong> treebank <strong>and</strong> an open-source <strong>computational diachronic-linguistics toolkit</strong>:</p>
+<p>AthDGC is <strong>both</strong> a continuously-updated <strong>PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo)</strong> treebank <strong>and</strong> an open-source <strong>computational diachronic-linguistics toolkit</strong>:</p>
 <ul>
-<li>LightSIDE-compatible feature extraction + classifier training</li>
-<li>NoSketch-style concordancer</li>
-<li>Fine-tuned Stanza checkpoints (Byzantine, Late-Byzantine, Modern adaptations)</li>
+<li>LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-compatible feature extraction + classifier training</li>
+<li>NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context)</li>
+<li>Fine-tuned (further trained on new data to adapt it to a particular text type) Stanza (Stanford’s open-source Python pipeline that automatically tags, lemmatises, and parses sentences) checkpoints (Byzantine, Late-Byzantine, Modern adaptations)</li>
 <li>Argument-structure extractor</li>
-<li>Cross-lingual alignment viewer (Neo4j)</li>
-<li>Quarto template pack for any DH project (this very deck is built with it)</li>
+<li>Cross-lingual alignment (matching corresponding words or sentences between texts in different languages) viewer (Neo4j (a graph database that stores data as nodes and connections rather than as tables))</li>
+<li>Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) template pack for any DH project (this very deck is built with it)</li>
 </ul>
 </section>
 
@@ -221,8 +221,8 @@ Nikolaos Lavidas
 <li><strong>Conversion</strong> - PROIEL XML 2.0</li>
 <li><strong>Annotation</strong> - Stanza <code>grc_proiel</code> + analogous models per parallel language</li>
 <li><strong>Argument-structure</strong> - subject, object, oblique, voice, aspect per verb</li>
-<li><strong>Cross-alignment</strong> - LaBSE + AwesomeAlign (mBERT)</li>
-<li><strong>Storage</strong> - PROIEL XML + JSONL + Qdrant + Neo4j</li>
+<li><strong>Cross-alignment</strong> - LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) + AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) (mBERT)</li>
+<li><strong>Storage</strong> - PROIEL XML + JSONL (a plain-text data format that stores one record per line) + Qdrant + Neo4j</li>
 </ol>
 </section>
 
@@ -231,7 +231,7 @@ Nikolaos Lavidas
 <ul>
 <li><strong>Retranslation</strong> of influential texts (Iliad, NT, Septuagint Psalms, classical historiography)</li>
 <li><strong>Retelling</strong> chains across periods and languages</li>
-<li><strong>Argument structure</strong> under retranslation</li>
+<li><strong>Argument structure (the set of obligatory and optional partners a verb requires, e.g.&nbsp;subject, object, oblique)</strong> under retranslation</li>
 </ul>
 </section>
 
@@ -248,8 +248,8 @@ Nikolaos Lavidas
 <section id="how-to-cite" class="title-slide slide level1 center">
 <h1>How to cite</h1>
 <div style="font-family:'JetBrains Mono',monospace; font-size:0.7em; line-height:1.6">
-<p>Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., Argyropoulos, E., and the Athens Digital Glossa Chronos Research Network (2026). <em>AthDGC: Athens Diachronic Glossa Chronos</em>. Zenodo.</p>
-<p>DOI: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></p>
+<p>Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., Argyropoulos, E., and the Athens Digital Glossa Chronos Research Network (2026). <em>AthDGC: Athens Diachronic Glossa Chronos</em>. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs).</p>
+<p>DOI (Digital Object Identifier, a permanent web link for a published artefact): <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></p>
 </div>
 </section>
 
@@ -262,14 +262,14 @@ Nikolaos Lavidas
 <li>Press kit: <a href="https://athdgc.github.io/press.html" class="uri">https://athdgc.github.io/press.html</a></li>
 <li>Launch report: <a href="https://athdgc.github.io/data_paper.html" class="uri">https://athdgc.github.io/data_paper.html</a></li>
 <li>GitHub: <a href="https://github.com/AthDGC" class="uri">https://github.com/AthDGC</a></li>
-<li>Hugging Face mirror: <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (in setup; ships at v0.5)</li>
+<li>Hugging Face (a public hosting platform for machine-learning models and datasets) mirror: <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (in setup; ships at v0.5)</li>
 </ul>
 </section>
 
 <section id="thank-you" class="title-slide slide level1 smaller center">
 <h1>Thank you</h1>
 <p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No.&nbsp;20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>.</p>
-<p>Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+<p>Compute supplied by <strong>GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET)</strong> (Greek national HPC (high-performance computing, i.e.&nbsp;a cluster of fast machines used for heavy computation)), allocation <code>pa260305</code>.</p>
 
 
 </section>

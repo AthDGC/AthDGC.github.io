@@ -263,7 +263,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="overview">1. Overview</h2>
 <section id="context-and-motivation" class="level3">
 <h3 class="anchored" data-anchor-id="context-and-motivation">1.1 Context and motivation</h3>
-<p>Greek is the longest continuously attested member of the Indo-European family. The PROIEL Treebank <span class="citation" data-cites="haug2008 eckhoff2018">(<a href="#ref-haug2008" role="doc-biblioref">Haug and Jøhndal 2008</a>; <a href="#ref-eckhoff2018" role="doc-biblioref">Eckhoff et al. 2018</a>)</span> established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment to its sister IE languages. AthDGC closes that gap.</p>
+<p>Greek is the longest continuously attested member of the Indo-European family. The PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo) Treebank <span class="citation" data-cites="haug2008 eckhoff2018">(<a href="#ref-haug2008" role="doc-biblioref">Haug and Jøhndal 2008</a>; <a href="#ref-eckhoff2018" role="doc-biblioref">Eckhoff et al. 2018</a>)</span> established the gold standard for syntactically annotated parallel Indo-European Bible corpora, but its scope is restricted to the New Testament and to a small number of language witnesses. No openly licensed, end-to-end pipeline currently covers the full diachronic record of Greek at the same level of annotation, with explicit argument-structure tagging, and with reproducible cross-lingual alignment (matching corresponding words or sentences between texts in different languages) to its sister IE languages. AthDGC closes that gap.</p>
 <p>The project's specific scholarly focus is <em>retranslation</em>: the same canonical text - the Iliad, the New Testament, the Septuagint Psalms, classical historiography - is re-rendered into Greek across periods (Homeric → Koine → Byzantine → Modern) and into sister languages (Latin, Gothic, OCS, Armenian) across the Indo-European family.</p>
 </section>
 <section id="repository-location" class="level3">
@@ -271,12 +271,12 @@ div.csl-indent {
 <ul>
 <li>Source code: <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></li>
 <li>Public showcase: <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a></li>
-<li>Zenodo deposition: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></li>
+<li>Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs) deposition: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></li>
 </ul>
 </section>
 <section id="institutional-context" class="level3">
 <h3 class="anchored" data-anchor-id="institutional-context">1.3 Institutional context</h3>
-<p>AthDGC is developed at the <strong>National and Kapodistrian University of Athens (NKUA)</strong>, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof. Nikolaos Lavidas. Compute is supplied by GRNET ARIS, allocation <code>pa260305</code>.</p>
+<p>AthDGC is developed at the <strong>National and Kapodistrian University of Athens (NKUA)</strong>, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy, under the direction of Prof. Nikolaos Lavidas. Compute is supplied by GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET), allocation <code>pa260305</code>.</p>
 </section>
 </section>
 <section id="method" class="level2">
@@ -291,19 +291,19 @@ div.csl-indent {
 </section>
 <section id="conversion" class="level3">
 <h3 class="anchored" data-anchor-id="conversion">2.3 Conversion</h3>
-<p>Surviving text is converted into the PROIEL XML 2.0 schema with sentence-level structure.</p>
+<p>Surviving text is converted into the PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) schema with sentence-level structure.</p>
 </section>
 <section id="annotation" class="level3">
 <h3 class="anchored" data-anchor-id="annotation">2.4 Annotation</h3>
-<p>Annotation is performed sentence by sentence with the Stanford Stanza pipeline <span class="citation" data-cites="qi2020">(<a href="#ref-qi2020" role="doc-biblioref">Qi et al. 2020</a>)</span> using the PROIEL-trained model <code>grc_proiel</code>. Analogous PROIEL-trained Stanza models are used for Latin (<code>la_proiel</code>), Old Church Slavonic (<code>cu_proiel</code>), and Gothic (<code>got_proiel</code>); Classical Armenian is annotated through a PROIEL-style pipeline currently under development. All output is normalised to the PROIEL XML 2.0 schema; no CoNLL-U or other format is published.</p>
+<p>Annotation is performed sentence by sentence with the Stanford Stanza (Stanford's open-source Python pipeline that automatically tags, lemmatises, and parses sentences) pipeline <span class="citation" data-cites="qi2020">(<a href="#ref-qi2020" role="doc-biblioref">Qi et al. 2020</a>)</span> using the PROIEL-trained model <code>grc_proiel</code>. Analogous PROIEL-trained Stanza models are used for Latin (<code>la_proiel</code>), Old Church Slavonic (<code>cu_proiel</code>), and Gothic (<code>got_proiel</code>); Classical Armenian is annotated through a PROIEL-style pipeline currently under development. All output is normalised to the PROIEL XML 2.0 schema; no CoNLL-U or other format is published.</p>
 </section>
 <section id="argument-structure-capture" class="level3">
 <h3 class="anchored" data-anchor-id="argument-structure-capture">2.5 Argument-structure capture</h3>
-<p>Beyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token, using the PROIEL relation inventory strictly: the subject (<code>sub</code>, including the raised patterns <code>xobj</code> and <code>nonsub</code>), the direct object (<code>obj</code>), indirect and oblique arguments (<code>iobj</code>, <code>obl</code>), the vocative addressee (<code>voc</code>), the voice (active / middle / passive), and the aspect (perfective / imperfective).</p>
+<p>Beyond standard dependency annotation, AthDGC extracts an explicit argument-structure frame for every verb token, using the PROIEL relation inventory (the closed set of grammatical-relation labels the schema allows, e.g. sub, obj, obl, atr) strictly: the subject (<code>sub</code>, including the raised patterns <code>xobj</code> and <code>nonsub</code>), the direct object (<code>obj</code>), indirect and oblique arguments (<code>iobj</code>, <code>obl</code>), the vocative addressee (<code>voc</code>), the voice (active / middle / passive), and the aspect (perfective / imperfective).</p>
 </section>
 <section id="cross-lingual-alignment" class="level3">
 <h3 class="anchored" data-anchor-id="cross-lingual-alignment">2.6 Cross-lingual alignment</h3>
-<p>Sentence-level alignment uses LaBSE embeddings <span class="citation" data-cites="feng2022">(<a href="#ref-feng2022" role="doc-biblioref">Feng et al. 2022</a>)</span>; word-level alignment uses multilingual-BERT attention via the AwesomeAlign procedure <span class="citation" data-cites="dou2021">(<a href="#ref-dou2021" role="doc-biblioref">Dou and Neubig 2021</a>)</span>. Phonetic cognate scoring uses ASJP sound-class encoding and LingPy edit distance <span class="citation" data-cites="list2014">(<a href="#ref-list2014" role="doc-biblioref">List 2014</a>)</span>.</p>
+<p>Sentence-level alignment uses LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) embeddings (numeric vectors that represent the meaning of text) <span class="citation" data-cites="feng2022">(<a href="#ref-feng2022" role="doc-biblioref">Feng et al. 2022</a>)</span>; word-level alignment uses multilingual-BERT (a neural language model trained on text from over 100 languages) attention via the AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) procedure <span class="citation" data-cites="dou2021">(<a href="#ref-dou2021" role="doc-biblioref">Dou and Neubig 2021</a>)</span>. Phonetic cognate scoring uses ASJP sound-class encoding and LingPy edit distance <span class="citation" data-cites="list2014">(<a href="#ref-list2014" role="doc-biblioref">List 2014</a>)</span>.</p>
 </section>
 </section>
 <section id="dataset-description" class="level2">
@@ -322,7 +322,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Format</td>
-<td>PROIEL XML 2.0 (primary); JSONL partitions; Neo4j alignment-graph dump; Qdrant vector store</td>
+<td>PROIEL XML 2.0 (primary); JSONL (a plain-text data format that stores one record per line) partitions; Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment-graph dump; Qdrant vector store</td>
 </tr>
 <tr class="odd">
 <td>Creation dates</td>
@@ -338,14 +338,14 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>Licence</td>
-<td>Code Apache-2.0; metadata + alignments CC-BY-4.0; per-source raw text under its original licence</td>
+<td>Code Apache-2.0 (a permissive open-source licence widely used for software); metadata + alignments CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit); per-source raw text under its original licence</td>
 </tr>
 <tr class="odd">
 <td>Repository</td>
 <td><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></td>
 </tr>
 <tr class="even">
-<td>Concept DOI</td>
+<td>Concept DOI (a Digital Object Identifier that always points to the latest version of a deposited record)</td>
 <td><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></td>
 </tr>
 <tr class="odd">
@@ -655,7 +655,7 @@ div.csl-indent {
 </section>
 <section id="tools-open-source" class="level3">
 <h3 class="anchored" data-anchor-id="tools-open-source">3.4 Tools (open source)</h3>
-<p>AthDGC ships fourteen modules under OSI-approved licences. The annotation layer plus the corpus samples are CC-BY-4.0; tool code is Apache-2.0 (most modules), MIT (Quarto pack + Neo4j viewer), BSD-3-Clause (upstream LightSIDE, retained on the patch set), and GPL-3.0 (upstream CWB, retained on the index builder).</p>
+<p>AthDGC ships fourteen modules under OSI-approved licences. The annotation layer plus the corpus samples are CC-BY-4.0; tool code is Apache-2.0 (most modules), MIT (a short permissive open-source licence) (Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) pack + Neo4j viewer), BSD-3-Clause (upstream LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon), retained on the patch set), and GPL-3.0 (upstream CWB, retained on the index builder).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -689,7 +689,7 @@ div.csl-indent {
 <td>Apache-2.0</td>
 </tr>
 <tr class="even">
-<td><code>tools/stanza-finetune/</code> (diachronic Stanza checkpoints)</td>
+<td><code>tools/stanza-finetune/</code> (diachronic Stanza checkpoints (saved snapshots of a trained model))</td>
 <td>Apache-2.0</td>
 </tr>
 <tr class="odd">
@@ -734,16 +734,16 @@ div.csl-indent {
 <p>AthDGC supports four primary reuse classes:</p>
 <ol type="1">
 <li><p><strong>Historical syntactic research.</strong> Per-period dependency parses allow analysts to track argument-structure changes across three millennia of Greek (active-to-mediopassive shifts, loss of optative, rise of periphrastic perfect, accusative-to-genitive variation under verbs of perception, etc.). The colour-coded compact dependency overview on each sample is designed for fast scanning of these patterns.</p></li>
-<li><p><strong>Indo-European comparative syntax.</strong> The verse-level cross-lingual alignment of the New Testament to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian provides aligned PROIEL parses across four sister IE languages, with Sanskrit, Old English, Avestan, Old Persian, and Ukrainian queued at v0.7. Users can query the Neo4j alignment graph for typological correspondences (e.g. <em>every Greek aorist active verb whose Latin Vulgate counterpart is passive</em>).</p></li>
-<li><p><strong>Computational diachronic NLP.</strong> The fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) are trained on ARIS; the Hugging Face mirror under <code>AthDGC/*</code> is live at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> with placeholder READMEs, and the model weights ship at v0.5. The PyPI package <code>athdgc-tools</code> reserves the name at <a href="https://pypi.org/project/athdgc-tools/" class="uri">https://pypi.org/project/athdgc-tools/</a> with stub <code>0.4.0.dev0</code>; the full toolkit replaces the stub at v0.5. The checkpoints can be loaded directly into Stanza for parsing new Greek diachronic data once the weights are published. The LightSIDE-AthDGC fork extends LightSIDE to work on syntactic features (dependency arcs, argument-structure frames, morphology bundles), opening a new feature space for classification of diachronic stages.</p></li>
-<li><p><strong>Digital editions + pedagogy.</strong> The showcase generator (<code>51_build_showcase_site.py</code>) produces browsable per-sample PROIEL trees from any JSONL corpus; the Quarto template pack generates the whole multi-output site (HTML, Reveal.js slides, .docx, .pptx, Beamer, A0 poster) from a single source. Both are open-source and reusable by other historical-treebank projects.</p></li>
+<li><p><strong>Indo-European comparative syntax.</strong> The verse-level cross-lingual alignment of the New Testament to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian provides aligned PROIEL parses across four sister IE languages, with Sanskrit, Old English, Avestan, Old Persian, and Ukrainian queued at v0.7. Users can query the Neo4j alignment graph (a database that records which token in language A corresponds to which token in language B) for typological correspondences (e.g. <em>every Greek aorist active verb whose Latin Vulgate counterpart is passive</em>).</p></li>
+<li><p><strong>Computational diachronic NLP.</strong> The fine-tuned (further trained on new data to adapt it to a particular text type) Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) are trained on ARIS; the Hugging Face (a public hosting platform for machine-learning models and datasets) mirror under <code>AthDGC/*</code> is live at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> with placeholder READMEs, and the model weights ship at v0.5. The PyPI (the Python Package Index, the central archive that pip downloads packages from) package <code>athdgc-tools</code> reserves the name at <a href="https://pypi.org/project/athdgc-tools/" class="uri">https://pypi.org/project/athdgc-tools/</a> with stub <code>0.4.0.dev0</code>; the full toolkit replaces the stub at v0.5. The checkpoints can be loaded directly into Stanza for parsing new Greek diachronic data once the weights are published. The LightSIDE-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features) fork extends LightSIDE to work on syntactic features (dependency arcs (the head-to-dependent links between words in a parsed sentence), argument-structure frames, morphology bundles), opening a new feature space for classification of diachronic stages.</p></li>
+<li><p><strong>Digital editions + pedagogy.</strong> The showcase generator (<code>51_build_showcase_site.py</code>) produces browsable per-sample PROIEL trees from any JSONL corpus; the Quarto template pack generates the whole multi-output site (HTML, Reveal.js (a browser-based slide framework) slides, .docx, .pptx, Beamer (a LaTeX-based slide format used in academic talks), A0 poster) from a single source. Both are open-source and reusable by other historical-treebank projects.</p></li>
 </ol>
 <p>The platform is taught as a KEDIVIM continuing-education course at NKUA: <em>Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας / Digital Tools for the Diachronic Analysis of Language</em>, autumn 2026. See <a href="https://athdgc.github.io/training.html" class="uri">https://athdgc.github.io/training.html</a>.</p>
 </section>
 <section id="access-format" class="level2">
 <h2 class="anchored" data-anchor-id="access-format">5. Access + format</h2>
-<p>The public site at <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> ships <strong>curated samples only</strong> for the v0.4 release. The full annotated corpus partitions remain under audit on the GRNET ARIS national HPC under allocation <code>pa260305</code>; they will ship at v0.5 as a separate Zenodo dataset record under CC-BY-4.0. The source-code snapshot at the v0.4.0 Zenodo record is Apache-2.0.</p>
-<p>The platform's fourteen open-source tools (LightSIDE-AthDGC for PROIEL syntactic features, LightSIDE-compatible text-feature export, NoSketch-style concordancer, fine-tuned diachronic Stanza checkpoints, PROIEL XML 2.0 exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual Neo4j alignment viewer, showcase generator, v0.5 PROIEL XML 2.0 validator, v0.5 valency-frame database client, v0.5 retranslation-pair browser, v0.5 retelling-chain explorer, and the Quarto template pack) are released and usable now per §3.4. See <a href="https://athdgc.github.io/tools.html" class="uri">https://athdgc.github.io/tools.html</a>.</p>
+<p>The public site at <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> ships <strong>curated samples only</strong> for the v0.4 release. The full annotated corpus partitions remain under audit on the GRNET ARIS national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code>; they will ship at v0.5 as a separate Zenodo dataset record under CC-BY-4.0. The source-code snapshot at the v0.4.0 Zenodo record is Apache-2.0.</p>
+<p>The platform's fourteen open-source tools (LightSIDE-AthDGC for PROIEL syntactic features, LightSIDE-compatible text-feature export, NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context), fine-tuned diachronic Stanza checkpoints, PROIEL XML 2.0 exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual Neo4j alignment viewer, showcase generator, v0.5 PROIEL XML 2.0 validator, v0.5 valency (the number and type of arguments a verb takes)-frame database client, v0.5 retranslation-pair browser, v0.5 retelling-chain explorer, and the Quarto template pack) are released and usable now per §3.4. See <a href="https://athdgc.github.io/tools.html" class="uri">https://athdgc.github.io/tools.html</a>.</p>
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">6. Acknowledgements</h2>

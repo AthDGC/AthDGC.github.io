@@ -294,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Every sample on this page is real, annotated PROIEL XML 2.0 output from the AthDGC pipeline. For the <em>Iliad</em> 1.1 demo below you see the <strong>full AthDGC review format</strong> in seven sections: (i) the one-glance PROIEL card (simplest), (ii) the predicate-argument valency frame, (iii) the PROIEL token-review table, (iv) the colour-coded compact dependency overview, (v) the integrated linguist dashboard (morphology + syntax + info structure + argument structure + LightSIDE-AthDGC features), (vi) the <strong>generative-grammar projection</strong> (X-bar / minimalist), and (vii) the <strong>thematic-role flow</strong> (functional / role-and-reference). The raw PROIEL XML follows. For the period-by-period samples we keep only the colour-coded compact dependency overview for screen economy.</p>
+<p>Every sample on this page is real, annotated PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo) XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) output from the AthDGC pipeline. For the <em>Iliad</em> 1.1 demo below you see the <strong>full AthDGC review format</strong> in seven sections: (i) the one-glance PROIEL card (simplest), (ii) the predicate-argument valency (the number and type of arguments a verb takes) frame, (iii) the PROIEL token-review table, (iv) the colour-coded compact dependency overview, (v) the integrated linguist dashboard (morphology + syntax + info structure + argument structure (the set of obligatory and optional partners a verb requires, e.g. subject, object, oblique) + LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features) features), (vi) the <strong>generative-grammar projection</strong> (X-bar / minimalist), and (vii) the <strong>thematic-role flow</strong> (functional / role-and-reference). The raw PROIEL XML follows. For the period-by-period samples we keep only the colour-coded compact dependency overview for screen economy.</p>
 <p>No CoNLL-U. No UD export. PROIEL XML 2.0 only.</p>
 <div class="proiel-key">
 <p><em>tree key:</em> indentation = depth · <code>▸</code> = head · italic label = PROIEL relation (<code>sub</code>, <code>obj</code>, <code>obl</code>, <code>adv</code>, <code>atr</code>, <code>pred</code>, <code>aux</code>, <code>comp</code>, <code>xobj</code>, <code>nonsub</code>, etc.)</p>
@@ -305,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><em>μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος</em> "Sing, goddess, of the wrath of Peleus' son Achilles"</p>
 </blockquote>
-<p>The format below is the <strong>AthDGC house style</strong> for presenting PROIEL XML 2.0 annotation. It is designed to be reviewed in seconds by any linguist (generative or functional) who needs to verify a single sentence's parse without prior knowledge of AthDGC conventions. Seven sections, in this fixed order: (i) one-glance PROIEL card, (ii) predicate-argument valency frame, (iii) PROIEL token-review table, (iv) compact dependency overview, (v) integrated linguist dashboard, (vi) generative-grammar X-bar projection, and (vii) thematic-role flow. Coloured by argument role; scan top-to-bottom.</p>
+<p>The format below is the <strong>AthDGC house style</strong> for presenting PROIEL XML 2.0 annotation. It is designed to be reviewed in seconds by any linguist (generative or functional) who needs to verify a single sentence's parse without prior knowledge of AthDGC conventions. Seven sections, in this fixed order: (i) one-glance PROIEL card, (ii) predicate-argument valency frame (the list of arguments a verb takes, e.g. subject + direct object + oblique), (iii) PROIEL token-review table, (iv) compact dependency overview, (v) integrated linguist dashboard, (vi) generative-grammar X-bar projection, and (vii) thematic-role flow. Coloured by argument role; scan top-to-bottom.</p>
 <section id="i-one-glance-proiel-card" class="level3">
 <h3 class="anchored" data-anchor-id="i-one-glance-proiel-card">(i) One-glance PROIEL card</h3>
 <p>The simplest possible visualization of a PROIEL-annotated sentence: each token on its own line in reading order, with its surface form, its head pointer (token id + head's surface form), and its coloured PROIEL relation. Scan top-to-bottom, you have the whole analysis in under one second.</p>
@@ -745,7 +745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 └ χωρὶς αὐτοῦ         <span class="rel rel-obl">obl</span>  · prep+gen
 </pre>
 </div>
-<p>NT John 1:1-3 is also the <strong>cross-lingual alignment showcase</strong> (Latin/Gothic/OCS); see the cross-lingual section further down for the four-language parallel of John 1:1.</p>
+<p>NT John 1:1-3 is also the <strong>cross-lingual alignment (matching corresponding words or sentences between texts in different languages) showcase</strong> (Latin/Gothic/OCS); see the cross-lingual section further down for the four-language parallel of John 1:1.</p>
 </section>
 <section id="plato-apology-17a-opening-period" class="level3">
 <h3 class="anchored" data-anchor-id="plato-apology-17a-opening-period">Plato, <em>Apology</em> 17a (opening period)</h3>
@@ -884,7 +884,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 └ <span class="tk">ὁ λόγος</span>          <span class="rel rel-sub">sub</span> · nom.sg.m
 </pre>
 </div>
-<p>NT verse aligned cross-lingually to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via LaBSE sentence embedding + AwesomeAlign word alignment.</p>
+<p>NT verse aligned cross-lingually to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) sentence embedding (a numeric vector that represents the meaning of a sentence) + AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) word alignment.</p>
 <div class="proiel-xml">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"nt.john.1.1"</span> <span class="ot">status=</span><span class="st">"annotated"</span>&gt;</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">token</span> <span class="ot">id=</span><span class="st">"1"</span> <span class="ot">form=</span><span class="st">"Ἐν"</span>    <span class="ot">lemma=</span><span class="st">"ἐν"</span>    <span class="ot">pos=</span><span class="st">"R--------"</span>   <span class="ot">head-id=</span><span class="st">"3"</span> <span class="ot">relation=</span><span class="st">"obl"</span> <span class="ot">morphology=</span><span class="st">"R--------"</span>/&gt;</span>
@@ -965,12 +965,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 <p><em>Forthcoming v0.7 IE parallels:</em> Sanskrit, Old English, Avestan, Old Persian, Classical Armenian, and <strong>Ukrainian</strong> (modern East-Slavic, via the Ostroh Bible 1581 and 20th-c. revisions) for continuity with the OCS witness.</p>
-<p>Method: sentence-level alignment via LaBSE embeddings, word-level alignment via mBERT attention through the AwesomeAlign procedure. Phonetic cognate scoring via ASJP sound classes and LingPy edit distance.</p>
+<p>Method: sentence-level alignment via LaBSE embeddings (numeric vectors that represent the meaning of text), word-level alignment via mBERT attention through the AwesomeAlign procedure. Phonetic cognate scoring via ASJP sound classes and LingPy edit distance.</p>
 <hr>
 </section>
 <section id="open-access-source-provenance" class="level2">
 <h2 class="anchored" data-anchor-id="open-access-source-provenance">Open-access source provenance</h2>
-<p>Every source text in AthDGC is open-access: public domain or an open licence (CC-BY, CC-BY-SA, or equivalent). The annotation layer is AthDGC-original under CC-BY-4.0. The open-access chain is preserved through input -&gt; annotation -&gt; distribution. The map below records where each Greek period and each IE parallel draws its source text from.</p>
+<p>Every source text in AthDGC is open-access: public domain or an open licence (CC-BY, CC-BY-SA, or equivalent). The annotation layer is AthDGC-original under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit). The open-access chain is preserved through input -&gt; annotation -&gt; distribution. The map below records where each Greek period and each IE parallel draws its source text from.</p>
 <section id="greek---per-period-source-map" class="level3">
 <h3 class="anchored" data-anchor-id="greek---per-period-source-map">Greek - per-period source map</h3>
 <table class="caption-top table">
@@ -1168,7 +1168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th>Language</th>
 <th>Family</th>
 <th>Period</th>
-<th>Stanza model</th>
+<th>Stanza (Stanford's open-source Python pipeline that automatically tags, lemmatises, and parses sentences) model</th>
 <th>Status</th>
 <th>Aligned verses (v0.4)</th>
 </tr>
@@ -1409,7 +1409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="why-this-matters-cross-linguistically" class="level3">
 <h3 class="anchored" data-anchor-id="why-this-matters-cross-linguistically">Why this matters cross-linguistically</h3>
-<p>The same <code>pred + sub + obl</code> skeleton recurs across all nine languages above. What varies is what the schema treats as core argument vs adjunct (e.g. OCS <em>искони</em> glossed <code>adv</code>, Greek <em>Ἐν ἀρχῇ</em> glossed <code>obl</code>; the difference is whether a preposition is present). PROIEL's strict relation inventory makes those differences <strong>visible</strong> rather than hidden inside a generic dependency label. That is exactly the property that lets LightSIDE-AthDGC train classifiers on argument-structure features cross-lingually.</p>
+<p>The same <code>pred + sub + obl</code> skeleton recurs across all nine languages above. What varies is what the schema treats as core argument vs adjunct (e.g. OCS <em>искони</em> glossed <code>adv</code>, Greek <em>Ἐν ἀρχῇ</em> glossed <code>obl</code>; the difference is whether a preposition is present). PROIEL's strict relation inventory (the closed set of grammatical-relation labels the schema allows, e.g. sub, obj, obl, atr) makes those differences <strong>visible</strong> rather than hidden inside a generic dependency label. That is exactly the property that lets LightSIDE-AthDGC train classifiers on argument-structure features cross-lingually.</p>
 <hr>
 </section>
 </section>
@@ -2617,12 +2617,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="get-the-full-corpus" class="level2">
 <h2 class="anchored" data-anchor-id="get-the-full-corpus">Get the full corpus</h2>
-<p>The samples above are a tiny illustrative slice. <strong>v0.4 is not yet a wide public release</strong> because Stanza-introduced annotation errors are still being corrected on the ARIS side; the full partitions will ship at v0.5. Cite the project via the concept DOI: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</p>
+<p>The samples above are a tiny illustrative slice. <strong>v0.4 is not yet a wide public release</strong> because Stanza-introduced annotation errors are still being corrected on the ARIS side; the full partitions will ship at v0.5. Cite the project via the concept DOI (a Digital Object Identifier that always points to the latest version of a deposited record): <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo (an open research-data repository hosted at CERN that mints permanent DOIs).20439182</a>.</p>
 <hr>
 </section>
 <section id="funding" class="level2">
 <h2 class="anchored" data-anchor-id="funding">Funding</h2>
-<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET)</strong> (Greek national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation)), allocation <code>pa260305</code>.</p>
 
 
 </section>

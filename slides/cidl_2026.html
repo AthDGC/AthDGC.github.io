@@ -148,9 +148,9 @@ Nikolaos Lavidas
 
   <p class="date">June 15, 2026</p>
 </section>
-<section id="athdgc---athens-proiel" class="title-slide slide level1 center">
-<h1>AthDGC - Athens-PROIEL</h1>
-<p>Diachronic Greek treebank · Indo-European cross-lingual alignment Athens Digital Glossa Chronos Research Network</p>
+<section id="athdgc---athens-proiel-the-dependency-treebank-a-collection-of-sentences-whose-grammatical-structure-has-been-analysed-and-stored-standard-for-early-indo-european-languages-developed-at-oslo" class="title-slide slide level1 center">
+<h1>AthDGC - Athens-PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo)</h1>
+<p>Diachronic Greek treebank · Indo-European cross-lingual alignment (matching corresponding words or sentences between texts in different languages) Athens Digital Glossa Chronos Research Network</p>
 <div style="font-style:italic; color:#555; font-size:0.85em">
 <p>HFRI Project No.&nbsp;20577 · Greece 2.0 NRRP · CVL-CDSAML</p>
 </div>
@@ -163,7 +163,7 @@ Nikolaos Lavidas
 <li>continuous coverage across periods</li>
 <li>aligned witnesses across languages</li>
 <li>uniform syntactic annotation</li>
-<li>machine-queryable argument structure</li>
+<li>machine-queryable argument structure (the set of obligatory and optional partners a verb requires, e.g.&nbsp;subject, object, oblique)</li>
 </ul>
 <p>No single existing resource provides all four. AthDGC does.</p>
 </section>
@@ -237,7 +237,7 @@ Nikolaos Lavidas
 <li><strong>Old Church Slavonic</strong> (Marianus) - <em>in ingestion</em></li>
 <li><strong>Classical Armenian</strong> - PROIEL-style pipeline in development</li>
 </ul>
-<p>Method: LaBSE sentence embedding + AwesomeAlign word-level (mBERT attention).</p>
+<p>Method: LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) sentence embedding (a numeric vector that represents the meaning of a sentence) + AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) word-level (mBERT attention).</p>
 </section>
 
 <section id="argument-structure" class="title-slide slide level1 smaller center">
@@ -262,24 +262,24 @@ Nikolaos Lavidas
 <p>“Show every Greek aorist transitive verb with an accusative object whose Latin Vulgate counterpart is a passive periphrastic”</p>
 </blockquote>
 </div>
-<p>Translates to a Neo4j Cypher query traversing the <code>(Token)-[TRANSLATED_AS]-&gt;(Token)</code> edges where source carries <code>voice=Act,aspect=Perf,obj=Acc</code> and target carries <code>voice=Pass,verb_form=Periphrastic</code>.</p>
+<p>Translates to a Neo4j (a graph database that stores data as nodes and connections rather than as tables) Cypher query traversing the <code>(Token)-[TRANSLATED_AS]-&gt;(Token)</code> edges where source carries <code>voice=Act,aspect=Perf,obj=Acc</code> and target carries <code>voice=Pass,verb_form=Periphrastic</code>.</p>
 </section>
 
 <section id="open-infrastructure" class="title-slide slide level1 center">
 <h1>Open infrastructure</h1>
 <ul>
-<li><strong>Source code:</strong> <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a> (Apache-2.0)</li>
-<li><strong>Dataset DOI:</strong> <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a> (CC-BY-4.0)</li>
+<li><strong>Source code:</strong> <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a> (Apache-2.0 (a permissive open-source licence widely used for software))</li>
+<li><strong>Dataset DOI (Digital Object Identifier, a permanent web link for a published artefact):</strong> <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo (an open research-data repository hosted at CERN that mints permanent DOIs).20439182</a> (CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit))</li>
 <li><strong>Showcase:</strong> <a href="https://athdgc.github.io">athdgc.github.io</a></li>
-<li><strong>Hugging Face checkpoints:</strong> mirror at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> in setup; ships at v0.5</li>
+<li><strong>Hugging Face (a public hosting platform for machine-learning models and datasets) checkpoints (saved snapshots of a trained model):</strong> mirror at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> in setup; ships at v0.5</li>
 <li><strong>Launch report:</strong> <a href="https://athdgc.github.io/data_paper.html">GlossaContactLab Working Papers, NKUA digital edition</a></li>
 </ul>
 </section>
 
 <section id="team" class="title-slide slide level1 smaller center">
 <h1>Team</h1>
-<p><strong>PI:</strong> Prof.&nbsp;Nikolaos Lavidas (NKUA) <strong>International:</strong> Prof.&nbsp;Dag Haug (Oslo, PROIEL Project Director); Prof.&nbsp;Leonid Kulikov (Ghent; Diachronic typology, valency questionnaires) <strong>NKUA:</strong> Prof.&nbsp;Emerita Kiki Nikiforidou; Dr.&nbsp;Vassiliki Geka, Dr.&nbsp;Vassileios Symeonidis, Dr.&nbsp;Theodoros Michalareas (Post-Doctoral Researchers); Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi (PhD Candidates); Evangelos Argyropoulos (Research Assistant); Athens Digital Glossa Chronos Research Network (collective author)</p>
-<p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP Compute: GRNET ARIS (pa260305)</p>
+<p><strong>PI:</strong> Prof.&nbsp;Nikolaos Lavidas (NKUA) <strong>International:</strong> Prof.&nbsp;Dag Haug (Oslo, PROIEL Project Director); Prof.&nbsp;Leonid Kulikov (Ghent; Diachronic typology, valency (the number and type of arguments a verb takes) questionnaires) <strong>NKUA:</strong> Prof.&nbsp;Emerita Kiki Nikiforidou; Dr.&nbsp;Vassiliki Geka, Dr.&nbsp;Vassileios Symeonidis, Dr.&nbsp;Theodoros Michalareas (Post-Doctoral Researchers); Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi (PhD Candidates); Evangelos Argyropoulos (Research Assistant); Athens Digital Glossa Chronos Research Network (collective author)</p>
+<p>Funded by HFRI (Project No.&nbsp;20577) · Greece 2.0 NRRP Compute: GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) (pa260305)</p>
 </section>
 
 <section id="discussion" class="title-slide slide level1 center">
@@ -287,8 +287,8 @@ Nikolaos Lavidas
 <p>What CIDL participants can do with AthDGC today:</p>
 <ol type="1">
 <li>Query the corpus via the public Neo4j endpoint</li>
-<li>Pull period-specific JSONL partitions from Hugging Face</li>
-<li>Browse the PROIEL XML 2.0 samples on <code>athdgc.github.io</code></li>
+<li>Pull period-specific JSONL (a plain-text data format that stores one record per line) partitions from Hugging Face</li>
+<li>Browse the PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) samples on <code>athdgc.github.io</code></li>
 <li>Flag annotation errors via the showcase review toolbar</li>
 <li>Cite version-pinned datasets via the version DOIs</li>
 </ol>
@@ -301,7 +301,7 @@ Nikolaos Lavidas
 
 <section id="funding" class="title-slide slide level1 center">
 <h1>Funding</h1>
-<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No.&nbsp;20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No.&nbsp;20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC (high-performance computing, i.e.&nbsp;a cluster of fast machines used for heavy computation)), allocation <code>pa260305</code>.</p>
 
 
 </section>

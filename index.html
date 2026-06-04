@@ -201,13 +201,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="what-athdgc-is" class="level2">
 <h2 class="anchored" data-anchor-id="what-athdgc-is">What AthDGC is</h2>
-<p>The <strong>Athens Diachronic Glossa Chronos</strong> (AthDGC, <em>Athens-PROIEL</em>; <em>Διαχρονία Γλώσσας :Χρόνος</em>) is a <strong>platform</strong>, not a single resource. It ships two open deliverables side by side:</p>
+<p>The <strong>Athens Diachronic Glossa Chronos</strong> (AthDGC, <em>Athens-PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo)</em>; <em>Διαχρονία Γλώσσας :Χρόνος</em>) is a <strong>platform</strong>, not a single resource. It ships two open deliverables side by side:</p>
 <ol type="1">
-<li><p>an open-source <strong>computational toolkit for diachronic linguistics</strong> - LightSIDE-compatible feature-extraction + classification pipelines, a NoSketch-style concordancer, fine-tuned Stanza checkpoints, a per-verb argument-structure extractor, a cross-lingual alignment viewer, a corpus-fix toolkit, a showcase generator, and the Quarto pack that builds this very site. See the <a href="./tools.html">Tools</a> page.</p></li>
+<li><p>an open-source <strong>computational toolkit for diachronic linguistics</strong> - LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-compatible feature-extraction + classification pipelines, a NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context), fine-tuned (further trained on new data to adapt it to a particular text type) Stanza (Stanford's open-source Python pipeline that automatically tags, lemmatises, and parses sentences) checkpoints (saved snapshots of a trained model), a per-verb argument-structure extractor, a cross-lingual alignment (matching corresponding words or sentences between texts in different languages) viewer, a corpus-fix toolkit, a showcase generator, and the Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) pack that builds this very site. See the <a href="./tools.html">Tools</a> page.</p></li>
 <li><p>an open PROIEL-style dependency <strong>treebank</strong> spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern) with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via verse-level cross-lingual alignment of the New Testament. Classical Armenian and Sanskrit ingestion are in progress; Ukrainian, Old English, Avestan, and Old Persian are queued for v0.7. See the <a href="./samples.html">Samples</a> page for representative sentences.</p></li>
 </ol>
-<p>The platform's research focus is <strong>retranslation</strong>, <strong>retelling</strong>, <strong>influential texts</strong>, and <strong>argument structure</strong>. The tools are usable on any PROIEL-style historical treebank, not only on the AthDGC corpus - so other research groups can adopt them without depending on us.</p>
-<p><strong>Cite this work.</strong> Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., Argyropoulos, E., and the Athens Digital Glossa Chronos Research Network (2026). <em>AthDGC: Athens Diachronic Glossa Chronos</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</p>
+<p>The platform's research focus is <strong>retranslation</strong>, <strong>retelling</strong>, <strong>influential texts</strong>, and <strong>argument structure (the set of obligatory and optional partners a verb requires, e.g. subject, object, oblique)</strong>. The tools are usable on any PROIEL-style historical treebank, not only on the AthDGC corpus - so other research groups can adopt them without depending on us.</p>
+<p><strong>Cite this work.</strong> Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., Argyropoulos, E., and the Athens Digital Glossa Chronos Research Network (2026). <em>AthDGC: Athens Diachronic Glossa Chronos</em>. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</p>
 <p><strong>Train with us.</strong> The platform is taught as a KEDIVIM continuing-education course at NKUA in <strong>autumn 2026</strong>: <em>Digital Tools for the Diachronic Analysis of Language / Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας</em>. See the <a href="./training.html">Training</a> page.</p>
 </section>
 <section id="current-state-v0.4" class="level2">
@@ -241,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
 <td>14 (see <a href="./tools.html">Tools</a>)</td>
 </tr>
 <tr class="even">
-<td>Concept DOI</td>
+<td>Concept DOI (a Digital Object Identifier that always points to the latest version of a deposited record)</td>
 <td><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></td>
 </tr>
 <tr class="odd">
@@ -266,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="release-status-v0.4" class="level2">
 <h2 class="anchored" data-anchor-id="release-status-v0.4">Release status (v0.4)</h2>
 <p>The platform is under continuous build. <strong>v0.4 is not yet a wide release of the corpus.</strong> The Stanford-Stanza pass introduced annotation errors in a non-trivial share of sentences (lemma mis-attribution, crasis splits, gender inheritance on indeclinables, period mis-tagging, etc.), and the team is correcting these on the ARIS side before any wide release.</p>
-<p>What this public site shows today is therefore a <strong>curated samples showcase</strong> drawn from the v0.4 partitions and rendered through the standard AthDGC PROIEL pipeline. The <strong>tools</strong>, by contrast, are released and usable now: they live in the public source-code repo and on Hugging Face. See the <a href="./samples.html">Samples</a> and <a href="./tools.html">Tools</a> pages.</p>
+<p>What this public site shows today is therefore a <strong>curated samples showcase</strong> drawn from the v0.4 partitions and rendered through the standard AthDGC PROIEL pipeline. The <strong>tools</strong>, by contrast, are released and usable now: they live in the public source-code repo and on Hugging Face (a public hosting platform for machine-learning models and datasets). See the <a href="./samples.html">Samples</a> and <a href="./tools.html">Tools</a> pages.</p>
 <p>The full corpus partitions will ship at v0.5, once the audit pass is complete. The Zenodo record above is the canonical citation for the project; the version DOIs (v0.4.0, v0.5.0, ...) track the release history.</p>
 </section>
 <section id="what-is-in-the-public-repository-and-what-is-not" class="level2">
@@ -275,15 +275,15 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>The public repository ships:</strong></p>
 <ul>
 <li>the platform's source code (discovery, filtering, conversion, annotation, alignment, fix, showcase generator, Quarto template pack);</li>
-<li>the open-source toolkit (LightSIDE-AthDGC for syntactic features, NoSketch-style concordancer, PROIEL XML 2.0 exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual alignment viewer);</li>
+<li>the open-source toolkit (LightSIDE-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features) for syntactic features, NoSketch-style concordancer, PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual alignment viewer);</li>
 <li>the fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) trained on ARIS; Hugging Face mirror under <code>athdgc/*</code> is in setup, ships at v0.5;</li>
 <li>the <strong>curated showcase samples</strong> rendered on this site;</li>
 <li>the Zenodo source-code snapshot under DOI <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</li>
 </ul>
 <p><strong>The public repository does NOT ship:</strong></p>
 <ul>
-<li>the full v0.4 annotated corpus partitions (89.9 M corpus rows / 4.08 M annotated Greek rows). These remain under active audit on the GRNET ARIS national HPC under allocation <code>pa260305</code> until the v0.5 release.</li>
-<li>the raw JSONL partitions per period, the Qdrant vector store, or the Neo4j alignment graph dump. These will ship as a separate Zenodo dataset record at v0.5, under CC-BY-4.0, when the Stanza-introduced annotation errors have been corrected at scale.</li>
+<li>the full v0.4 annotated corpus partitions (89.9 M corpus rows / 4.08 M annotated Greek rows). These remain under active audit on the GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code> until the v0.5 release.</li>
+<li>the raw JSONL (a plain-text data format that stores one record per line) partitions per period, the Qdrant vector store, or the Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph dump. These will ship as a separate Zenodo dataset record at v0.5, under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit), when the Stanza-introduced annotation errors have been corrected at scale.</li>
 </ul>
 <p>This scoping is deliberate: we will not release annotated data with known errors. The <strong>tools</strong> are released and ready for reuse on any PROIEL-style historical treebank; the <strong>corpus</strong> ships when it is correct.</p>
 </section>
@@ -295,14 +295,14 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Conversion</strong> - PROIEL XML 2.0 schema</li>
 <li><strong>Annotation</strong> - Stanza <code>grc_proiel</code> (and <code>la_proiel</code>, <code>cu_proiel</code>, <code>got_proiel</code> for parallels)</li>
 <li><strong>Argument structure</strong> - per-verb extraction of subject, object, oblique, voice, aspect</li>
-<li><strong>Cross-lingual alignment</strong> - LaBSE sentence embedding + multilingual-BERT attention for word-level alignment</li>
+<li><strong>Cross-lingual alignment</strong> - LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) sentence embedding (a numeric vector that represents the meaning of a sentence) + multilingual-BERT (a neural language model trained on text from over 100 languages) attention for word-level alignment</li>
 <li><strong>Storage</strong> - PROIEL XML + JSONL partitions + Qdrant vector store + Neo4j graph</li>
 </ol>
 </section>
 <section id="funding" class="level2">
 <h2 class="anchored" data-anchor-id="funding">Funding</h2>
 <p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>.</p>
-<p>Funded project: <strong>CVL-CDSAML</strong> - <em>A Corpus-based Valency Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em>.</p>
+<p>Funded project: <strong>CVL-CDSAML</strong> - <em>A Corpus-based Valency (the number and type of arguments a verb takes) Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em>.</p>
 <p>Hosted at the <strong>National and Kapodistrian University of Athens</strong>, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.</p>
 <p>Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
 

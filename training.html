@@ -211,10 +211,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="what-you-will-learn">What you will learn</h3>
 <p>The course pairs theoretical instruction in diachronic Greek linguistics with hands-on practice on the AthDGC platform. By the end you will be able to:</p>
 <ul>
-<li>read PROIEL XML 2.0 annotation fluently across all diachronic periods of Greek (Archaic through Modern);</li>
-<li>query the AthDGC corpus via the NoSketch-style concordancer and the Neo4j cross-lingual alignment graph;</li>
-<li>export AthDGC slices into LightSIDE-AthDGC, train classifiers on <strong>syntactic</strong> features (PROIEL dependency arcs, argument-structure frames, morphology bundles), and inspect which diachronic syntactic patterns drive the classifier's decisions;</li>
-<li>adapt the AthDGC pipeline (Stanza checkpoints, corpus-fix toolkit, PROIEL XML 2.0 exporter) to your own historical-treebank project;</li>
+<li>read PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo) XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) annotation fluently across all diachronic periods of Greek (Archaic through Modern);</li>
+<li>query the AthDGC corpus via the NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context) and the Neo4j (a graph database that stores data as nodes and connections rather than as tables) cross-lingual alignment graph (a database that records which token in language A corresponds to which token in language B);</li>
+<li>export AthDGC slices into LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features), train classifiers on <strong>syntactic</strong> features (PROIEL dependency arcs (the head-to-dependent links between words in a parsed sentence), argument-structure frames, morphology bundles), and inspect which diachronic syntactic patterns drive the classifier's decisions;</li>
+<li>adapt the AthDGC pipeline (Stanza (Stanford's open-source Python pipeline that automatically tags, lemmatises, and parses sentences) checkpoints (saved snapshots of a trained model), corpus-fix toolkit, PROIEL XML 2.0 exporter) to your own historical-treebank project;</li>
 <li>contribute back to AthDGC through the public GitHub repository.</li>
 </ul>
 </section>
@@ -224,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Module 1.</strong> Introduction to diachronic Greek linguistics and to AthDGC as a platform.</li>
 <li><strong>Module 2.</strong> PROIEL XML 2.0 annotation: reading and verifying dependency parses.</li>
-<li><strong>Module 3.</strong> Argument structure across Greek diachrony: from Homer to Modern.</li>
+<li><strong>Module 3.</strong> Argument structure (the set of obligatory and optional partners a verb requires, e.g. subject, object, oblique) across Greek diachrony: from Homer to Modern.</li>
 <li><strong>Module 4.</strong> Cross-lingual NT alignment (Greek - Latin - Gothic - OCS - Armenian).</li>
 <li><strong>Module 5.</strong> LightSIDE-AthDGC for syntactic classification of diachronic stages.</li>
 <li><strong>Module 6.</strong> NoSketch concordancer + Neo4j alignment-graph queries.</li>
@@ -243,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="workshops-talks-and-short-courses">Workshops, talks, and short courses</h2>
 <p>The AthDGC team also delivers shorter formats at partner institutions and at international conferences:</p>
 <ul>
-<li>one-hour <strong>LightSIDE-AthDGC for syntax</strong> workshops (Reveal.js slides shipped in the source repo at <code>slides/lightside_syntax_workshop.qmd</code>);</li>
+<li>one-hour <strong>LightSIDE-AthDGC for syntax</strong> workshops (Reveal.js (a browser-based slide framework) slides shipped in the source repo at <code>slides/lightside_syntax_workshop.qmd</code>);</li>
 <li>conference demos at <strong>LREC-COLING 2026</strong>, <strong>DH2026</strong>, <strong>CIDL 2026</strong>, and <strong>CIVIS</strong> alliance member institutions;</li>
 <li>bespoke training sessions for individual research groups (contact PI).</li>
 </ul>
@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="funding" class="level2">
 <h2 class="anchored" data-anchor-id="funding">Funding</h2>
-<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET)</strong> (Greek national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation)), allocation <code>pa260305</code>.</p>
 
 
 </section>

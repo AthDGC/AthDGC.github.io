@@ -216,7 +216,7 @@ Nikolaos Lavidas
 </section>
 <section id="athdgc" class="title-slide slide level1 center">
 <h1>AthDGC</h1>
-<p>Open PROIEL-style dependency treebank - Homer to Modern Greek - with NT verse-level cross-alignment to Latin / Gothic / Old Church Slavonic.</p>
+<p>Open PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo)-style dependency treebank - Homer to Modern Greek - with NT verse-level cross-alignment to Latin / Gothic / Old Church Slavonic.</p>
 <div style="font-style:italic; color:#555; font-size:0.85em">
 <p>20-minute LREC-COLING system demo · Athens-PROIEL</p>
 </div>
@@ -227,7 +227,7 @@ Nikolaos Lavidas
 <ol type="1">
 <li><em>3 min</em> - Overview + funding context</li>
 <li><em>6 min</em> - Live browse of the showcase: PROIEL tree + arg-structure cards</li>
-<li><em>5 min</em> - Live cross-alignment query (Neo4j) across Greek/Latin/Gothic</li>
+<li><em>5 min</em> - Live cross-alignment query (Neo4j (a graph database that stores data as nodes and connections rather than as tables)) across Greek/Latin/Gothic</li>
 <li><em>3 min</em> - Editor workflow: flag-for-review toolbar + corpus-side fix pipeline</li>
 <li><em>3 min</em> - Q&amp;A</li>
 </ol>
@@ -263,7 +263,7 @@ Nikolaos Lavidas
 <p>In the showcase: click <strong>Mark for review</strong> on a problematic sample.</p>
 <p>The flag is stored in <code>localStorage</code> and persists across reloads. Export current review state via the console:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a></a><span class="fu">athdgcExportReview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This JSON is then handed to the corpus-side <code>fix_corpus_data.py</code> which applies bulk corrections on ARIS.</p>
+<p>This JSON (a plain-text data format for structured records) is then handed to the corpus-side <code>fix_corpus_data.py</code> which applies bulk corrections on ARIS.</p>
 </section>
 
 <section id="architecture" class="title-slide slide level1 center">
@@ -289,16 +289,16 @@ Nikolaos Lavidas
 <td><code>44_filter_candidates.py</code> - Greek-script + apparatus filters</td>
 </tr>
 <tr class="odd">
-<td>OCR / Conversion</td>
+<td>OCR (Optical Character Recognition, the conversion of scanned page images into searchable text) / Conversion</td>
 <td><code>45_ocr_candidates.sbatch</code> + <code>46_to_proiel_xml.py</code></td>
 </tr>
 <tr class="even">
 <td>Annotation</td>
-<td><code>47_annotate_inbox.sbatch</code> - Stanza on A100 GPU</td>
+<td><code>47_annotate_inbox.sbatch</code> - Stanza (Stanford’s open-source Python pipeline that automatically tags, lemmatises, and parses sentences) on A100 GPU</td>
 </tr>
 <tr class="odd">
 <td>Merge</td>
-<td><code>48_merge_xml_to_corpus.py</code> - JSONL partitioning</td>
+<td><code>48_merge_xml_to_corpus.py</code> - JSONL (a plain-text data format that stores one record per line) partitioning</td>
 </tr>
 <tr class="even">
 <td>Corpus fix</td>
@@ -320,17 +320,17 @@ Nikolaos Lavidas
 <h1>Reuse</h1>
 <ul>
 <li>Per-period JSONL partitions for fine-tuning Greek diachronic transformers</li>
-<li>PROIEL XML 2.0 export compatible with Oslo PROIEL tools</li>
-<li>Neo4j alignment graph for cross-linguistic queries</li>
-<li>Public Hugging Face dataset (forthcoming)</li>
+<li>PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) export compatible with Oslo PROIEL tools</li>
+<li>Neo4j alignment graph (a database that records which token in language A corresponds to which token in language B) for cross-linguistic queries</li>
+<li>Public Hugging Face (a public hosting platform for machine-learning models and datasets) dataset (forthcoming)</li>
 </ul>
 </section>
 
 <section id="open-cite" class="title-slide slide level1 smaller center">
 <h1>Open + cite</h1>
 <ul>
-<li>Source code: github.com/AthDGC/Diachronic-Linguistics-Platform (Apache-2.0)</li>
-<li>Dataset: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a> (CC-BY-4.0)</li>
+<li>Source code: github.com/AthDGC/Diachronic-Linguistics-Platform (Apache-2.0 (a permissive open-source licence widely used for software))</li>
+<li>Dataset: <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo (an open research-data repository hosted at CERN that mints permanent DOIs).20439182</a> (CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit))</li>
 </ul>
 <div style="font-family:'JetBrains Mono',monospace; font-size:0.7em; line-height:1.5">
 <p>Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., Argyropoulos, E., and the Athens Digital Glossa Chronos Research Network (2026). <em>AthDGC: Athens Diachronic Glossa Chronos</em>. Zenodo.</p>
@@ -339,13 +339,13 @@ Nikolaos Lavidas
 
 <section id="thanks" class="title-slide slide level1 center">
 <h1>Thanks</h1>
-<p>Funded by <strong>HFRI</strong> (Project No.&nbsp;20577) · <strong>Greece 2.0 NRRP</strong> Compute: <strong>GRNET ARIS</strong> (<code>pa260305</code>)</p>
+<p>Funded by <strong>HFRI</strong> (Project No.&nbsp;20577) · <strong>Greece 2.0 NRRP</strong> Compute: <strong>GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET)</strong> (<code>pa260305</code>)</p>
 <p><a href="https://athdgc.github.io">athdgc.github.io</a> <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></p>
 </section>
 
 <section id="funding" class="title-slide slide level1 center">
 <h1>Funding</h1>
-<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No.&nbsp;20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No.&nbsp;20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>. Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC (high-performance computing, i.e.&nbsp;a cluster of fast machines used for heavy computation)), allocation <code>pa260305</code>.</p>
 
 
 </section>
