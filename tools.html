@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#get-the-tools" id="toc-get-the-tools" class="nav-link" data-scroll-target="#get-the-tools">Get the tools</a></li>
   <li><a href="#open-source-license-matrix-repo-map" id="toc-open-source-license-matrix-repo-map" class="nav-link" data-scroll-target="#open-source-license-matrix-repo-map">Open source: license matrix + repo map</a>
   <ul class="collapse">
-  <li><a href="#one-line-installs" id="toc-one-line-installs" class="nav-link" data-scroll-target="#one-line-installs">One-line installs</a></li>
+  <li><a href="#access-during-the-v0.5-audit-pass" id="toc-access-during-the-v0.5-audit-pass" class="nav-link" data-scroll-target="#access-during-the-v0.5-audit-pass">Access during the v0.5 audit pass</a></li>
   <li><a href="#where-it-all-lives" id="toc-where-it-all-lives" class="nav-link" data-scroll-target="#where-it-all-lives">Where it all lives</a></li>
   <li><a href="#repository-structure" id="toc-repository-structure" class="nav-link" data-scroll-target="#repository-structure">Repository structure</a></li>
   <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link" data-scroll-target="#how-to-contribute">How to contribute</a></li>
@@ -396,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td>Hugging Face model repos <code>AthDGC/grc_*_proiel</code></td>
 <td><strong>IN SETUP</strong></td>
-<td>three repos exist with placeholder READMEs; weights upload at v0.5</td>
+<td>private during the v0.5 audit pass; public at the v0.5 release with weights</td>
 </tr>
 <tr class="odd">
 <td>Zenodo concept DOI <code>10.5281/zenodo.20439182</code></td>
@@ -405,8 +405,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td>GitHub <code>AthDGC/Diachronic-Linguistics-Platform</code></td>
-<td><strong>LIVE</strong></td>
-<td>public, source-of-truth for code</td>
+<td><strong>IN SETUP</strong></td>
+<td>source repository, private during the v0.5 audit pass; public at the v0.5 release</td>
 </tr>
 <tr class="odd">
 <td>GitHub <code>AthDGC/AthDGC.github.io</code></td>
@@ -778,9 +778,10 @@ LIMIT 100</code></pre>
 </tr>
 </tbody>
 </table>
-<section id="one-line-installs" class="level3">
-<h3 class="anchored" data-anchor-id="one-line-installs">One-line installs</h3>
-<p><code>pip install athdgc-tools</code> resolves today (stub release <code>0.4.0.dev0</code>); the stub reserves the name and points users at the source repo. The full toolkit replaces the stub at v0.5. The Hugging Face model repos at <code>AthDGC/grc_byz_proiel</code>, <code>AthDGC/grc_lbem_proiel</code>, and <code>AthDGC/grc_mod_proiel</code> exist with v0.5-forthcoming READMEs; the weight payloads upload at v0.5 ship time.</p>
+<section id="access-during-the-v0.5-audit-pass" class="level3">
+<h3 class="anchored" data-anchor-id="access-during-the-v0.5-audit-pass">Access during the v0.5 audit pass</h3>
+<p>The source repository <code>AthDGC/Diachronic-Linguistics-Platform</code> and the three Hugging Face model repositories <code>AthDGC/grc_byz_proiel</code>, <code>AthDGC/grc_lbem_proiel</code>, <code>AthDGC/grc_mod_proiel</code> are <strong>private during the v0.5 audit pass</strong>. They become public at the v0.5 release, when the consolidated <code>tools/</code> directory is in place and the Stanza weights are uploaded. The PyPI package <code>athdgc-tools</code> resolves today as a stub release <code>0.4.0.dev0</code>; the full toolkit replaces the stub at v0.5.</p>
+<p>The curated samples on this site (the Samples page), the launch report (this data paper), the Working Paper deposition packet, and the Zenodo source-code snapshot of v0.4.0 remain public throughout.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># core toolkit</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install athdgc-tools                    <span class="co"># Apache-2.0, Python 3.11+ (stub until v0.5)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
