@@ -161,7 +161,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#public-site-repositories" id="toc-public-site-repositories" class="nav-link active" data-scroll-target="#public-site-repositories">Public site + repositories</a></li>
+  <li><a href="#tool-readiness" id="toc-tool-readiness" class="nav-link active" data-scroll-target="#tool-readiness">Tool readiness</a></li>
+  <li><a href="#tool-readiness-what-runs-today-what-ships-at-v0.5" id="toc-tool-readiness-what-runs-today-what-ships-at-v0.5" class="nav-link" data-scroll-target="#tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</a></li>
+  <li><a href="#public-site-repositories" id="toc-public-site-repositories" class="nav-link" data-scroll-target="#public-site-repositories">Public site + repositories</a></li>
   <li><a href="#persistent-identifiers" id="toc-persistent-identifiers" class="nav-link" data-scroll-target="#persistent-identifiers">Persistent identifiers</a></li>
   <li><a href="#hugging-face-a-public-hosting-platform-for-machine-learning-models-and-datasets-mirror" id="toc-hugging-face-a-public-hosting-platform-for-machine-learning-models-and-datasets-mirror" class="nav-link" data-scroll-target="#hugging-face-a-public-hosting-platform-for-machine-learning-models-and-datasets-mirror">Hugging Face (a public hosting platform for machine-learning models and datasets) mirror</a></li>
   <li><a href="#pypi-the-python-package-index-the-central-archive-that-pip-downloads-packages-from-package" id="toc-pypi-the-python-package-index-the-central-archive-that-pip-downloads-packages-from-package" class="nav-link" data-scroll-target="#pypi-the-python-package-index-the-central-archive-that-pip-downloads-packages-from-package">PyPI (the Python Package Index, the central archive that pip downloads packages from) package</a></li>
@@ -201,6 +203,161 @@ ul.task-list li input[type="checkbox"] {
 <li><em>in setup</em> (ochre) - the resource is being created and will resolve shortly</li>
 <li><em>forthcoming</em> (burgundy) - the resource ships at a named future release (v0.5, v0.7, v1.0)</li>
 </ul>
+<section id="tool-readiness" class="level2">
+<h2 class="anchored" data-anchor-id="tool-readiness">Tool readiness</h2>
+</section>
+<section id="tool-readiness-what-runs-today-what-ships-at-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</h2>
+<p>The AthDGC platform ships <strong>two distinct status classes</strong> for its tools, and the public page is committed to telling you which class every module is in. Confidence here matters more than completeness.</p>
+<ul>
+<li><strong>LIVE</strong> - code is in the public source repo, the install path resolves, and a clean run produces the documented output. You can clone and run it now.</li>
+<li><strong>IN SETUP</strong> - code exists in the project's internal pack (<code>athdgc-quarto/tools/</code>, Cowork outputs, or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
+<li><strong>FORTHCOMING (v0.5)</strong> - design is described, implementation lands at v0.5.</li>
+</ul>
+<p>Status as of the last redeploy:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>Status</th>
+<th>Where it lives now</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>athdgc-quarto/</code> (this site)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo <code>Diachronic-Linguistics-Platform/athdgc-quarto/</code></td>
+</tr>
+<tr class="even">
+<td><code>glossacontactlab-quarto/</code> (Working Papers)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo <code>glossacontactlab/</code></td>
+</tr>
+<tr class="odd">
+<td><code>51_build_showcase_site.py</code> (showcase generator)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
+</tr>
+<tr class="even">
+<td><code>fix_corpus_data.py</code> (corpus-fix toolkit)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
+</tr>
+<tr class="odd">
+<td><code>46_to_proiel_xml.py</code> (Stanza → PROIEL XML 2.0)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
+</tr>
+<tr class="even">
+<td><code>47_annotate_inbox.sbatch</code> (Stanza on A100)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
+</tr>
+<tr class="odd">
+<td><code>tools/proiel_validate.py</code> (Gate G6 validator)</td>
+<td><strong>IN SETUP</strong></td>
+<td>drafted in <code>athdgc-quarto/tools/</code>; migrates to public <code>tools/</code> at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/style_check.py</code> (Gate G7 style check)</td>
+<td><strong>IN SETUP</strong></td>
+<td>drafted in <code>athdgc-quarto/tools/</code>; migrates to public <code>tools/</code> at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/lightside-athdgc/</code> (syntactic-feature plugin)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>design + workflow diagram on tools.qmd; patch set lands at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/athdgc_to_lightside.py</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>design described; lands at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/athdgc_to_lightside_syntax.py</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>design described; lands at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/proiel_export/</code> (Stanza → PROIEL XML)</td>
+<td><strong>IN SETUP</strong></td>
+<td>logic exists inside the build pipeline; extracted as a standalone module at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/arg_structure.py</code> (argument-frame extractor)</td>
+<td><strong>IN SETUP</strong></td>
+<td>logic exists inside the build pipeline; extracted at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/build_cwb_index.sh</code> (NoSketch index)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>scripted at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/cwb-recipes/</code> (sample CQL queries)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>written at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/stanza-finetune/</code> (training scripts)</td>
+<td><strong>IN SETUP</strong></td>
+<td>training runs on ARIS; scripts copied to public repo at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/neo4j-align-viewer/</code> (alignment viewer)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>Cypher recipes ready; viewer wrapper at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/valency_db.py</code> (valency-frame DB client)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>tagged v0.5 on the public page already</td>
+</tr>
+<tr class="odd">
+<td><code>tools/retranslation-browser/</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>tagged v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/retelling-explorer/</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>tagged v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>athdgc-tools</code> on PyPI</td>
+<td><strong>IN SETUP</strong></td>
+<td>name reserved at <code>0.4.0.dev0</code>; full toolkit replaces the stub at v0.5</td>
+</tr>
+<tr class="even">
+<td>Hugging Face model repos <code>AthDGC/grc_*_proiel</code></td>
+<td><strong>IN SETUP</strong></td>
+<td>three repos exist with placeholder READMEs; weights upload at v0.5</td>
+</tr>
+<tr class="odd">
+<td>Zenodo concept DOI <code>10.5281/zenodo.20439182</code></td>
+<td><strong>LIVE</strong></td>
+<td>v0.4.0 source-code snapshot minted 2026-05-29</td>
+</tr>
+<tr class="even">
+<td>GitHub <code>AthDGC/Diachronic-Linguistics-Platform</code></td>
+<td><strong>LIVE</strong></td>
+<td>public, source-of-truth for code</td>
+</tr>
+<tr class="odd">
+<td>GitHub <code>AthDGC/AthDGC.github.io</code></td>
+<td><strong>LIVE</strong></td>
+<td>public, deployed showcase</td>
+</tr>
+</tbody>
+</table>
+<p>Five tools are live today, eight are in setup (working in-house, public install path lands at v0.5), and ten are forthcoming. The v0.5 release closes every <strong>IN SETUP</strong> row into a <strong>LIVE</strong> row by migrating the code into a unified public <code>tools/</code> directory and publishing the weights and the package's real contents.</p>
+</section>
 <section id="public-site-repositories" class="level2">
 <h2 class="anchored" data-anchor-id="public-site-repositories">Public site + repositories</h2>
 <table class="caption-top table">

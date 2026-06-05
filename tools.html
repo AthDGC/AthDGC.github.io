@@ -197,6 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#tool-readiness-what-runs-today-what-ships-at-v0.5" id="toc-tool-readiness-what-runs-today-what-ships-at-v0.5" class="nav-link" data-scroll-target="#tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</a></li>
   <li><a href="#lightside-text-mining-workbench" id="toc-lightside-text-mining-workbench" class="nav-link" data-scroll-target="#lightside-text-mining-workbench">LightSIDE (text-mining workbench)</a>
   <ul class="collapse">
   <li><a href="#athdgc-lightside-pipeline" id="toc-athdgc-lightside-pipeline" class="nav-link" data-scroll-target="#athdgc-lightside-pipeline">AthDGC + LightSIDE pipeline</a></li>
@@ -262,109 +263,160 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>All tools are open source (Apache-2.0 (a permissive open-source licence widely used for software) / MIT (a short permissive open-source licence) / GPL where the upstream license requires). All are documented for classroom use - from undergraduate to PhD level - so digital-humanities courses can adopt them without per-seat licensing.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<p>The platform ships modules in three readiness tiers - <strong>LIVE</strong> (clone and run today), <strong>IN SETUP</strong> (works internally, public install path lands at v0.5), and <strong>FORTHCOMING (v0.5)</strong> (designed, implementation lands at v0.5). The matrix below is the canonical reference; the per-tool sections that follow describe each module in detail.</p>
+</section>
+<section id="tool-readiness-what-runs-today-what-ships-at-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</h2>
+<p>The AthDGC platform ships <strong>two distinct status classes</strong> for its tools, and the public page is committed to telling you which class every module is in. Confidence here matters more than completeness.</p>
+<ul>
+<li><strong>LIVE</strong> - code is in the public source repo, the install path resolves, and a clean run produces the documented output. You can clone and run it now.</li>
+<li><strong>IN SETUP</strong> - code exists in the project's internal pack (<code>athdgc-quarto/tools/</code>, Cowork outputs, or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
+<li><strong>FORTHCOMING (v0.5)</strong> - design is described, implementation lands at v0.5.</li>
+</ul>
+<p>Status as of the last redeploy:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tool</th>
-<th>What it does</th>
-<th>License</th>
-<th>Audience</th>
+<th>Module</th>
+<th>Status</th>
+<th>Where it lives now</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)</strong> (mirror + tutorials)</td>
-<td>Text-mining workbench: feature extraction, classifier training, error analysis</td>
-<td>BSD</td>
-<td>Researchers, classrooms</td>
+<td><code>athdgc-quarto/</code> (this site)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo <code>Diachronic-Linguistics-Platform/athdgc-quarto/</code></td>
 </tr>
 <tr class="even">
-<td><strong>LightSIDE-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features)</strong> (Lavidas extension)</td>
-<td>LightSIDE for <strong>syntactic</strong> features: PROIEL arcs, argument-structure frames, morphology bundles, voice/aspect/mood cross-tabs</td>
-<td>BSD + Apache-2.0</td>
-<td>Diachronic syntacticians</td>
+<td><code>glossacontactlab-quarto/</code> (Working Papers)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo <code>glossacontactlab/</code></td>
 </tr>
 <tr class="odd">
-<td><strong>AthDGC concordancer (a search tool that shows every occurrence of a word in its surrounding context)</strong></td>
-<td>NoSketch-style concordance interface for the AthDGC corpus</td>
-<td>Apache-2.0</td>
-<td>Researchers, students</td>
+<td><code>51_build_showcase_site.py</code> (showcase generator)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
 </tr>
 <tr class="even">
-<td><strong>PROIEL XML 2.0 exporter</strong></td>
-<td>Convert raw Stanza output to PROIEL XML 2.0</td>
-<td>Apache-2.0</td>
-<td>Treebank builders</td>
+<td><code>fix_corpus_data.py</code> (corpus-fix toolkit)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
 </tr>
 <tr class="odd">
-<td><strong>Diachronic Greek Stanza checkpoints (saved snapshots of a trained model)</strong></td>
-<td>Fine-tuned (further trained on new data to adapt it to a particular text type) <code>grc_proiel</code> weights for diachronic adaptation</td>
-<td>Apache-2.0</td>
-<td>NLP researchers</td>
+<td><code>46_to_proiel_xml.py</code> (Stanza → PROIEL XML 2.0)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
 </tr>
 <tr class="even">
-<td><strong>Cross-lingual alignment (matching corresponding words or sentences between texts in different languages) viewer</strong></td>
-<td>Browse the NT-aligned graph (Greek / Latin / Gothic / OCS)</td>
-<td>MIT</td>
-<td>Comparative linguists</td>
+<td><code>47_annotate_inbox.sbatch</code> (Stanza on A100)</td>
+<td><strong>LIVE</strong></td>
+<td>public repo root</td>
 </tr>
 <tr class="odd">
-<td><strong>Corpus-fix toolkit</strong></td>
-<td><code>fix_corpus_data.py</code> - TLG author + Stanza-error corrections at scale</td>
-<td>Apache-2.0</td>
-<td>Annotation curators</td>
+<td><code>tools/proiel_validate.py</code> (Gate G6 validator)</td>
+<td><strong>IN SETUP</strong></td>
+<td>drafted in <code>athdgc-quarto/tools/</code>; migrates to public <code>tools/</code> at v0.5</td>
 </tr>
 <tr class="even">
-<td><strong>Argument-structure extractor</strong></td>
-<td>Per-verb argument frame (subject / object / oblique / voice / aspect)</td>
-<td>Apache-2.0</td>
-<td>Syntacticians</td>
+<td><code>tools/style_check.py</code> (Gate G7 style check)</td>
+<td><strong>IN SETUP</strong></td>
+<td>drafted in <code>athdgc-quarto/tools/</code>; migrates to public <code>tools/</code> at v0.5</td>
 </tr>
 <tr class="odd">
-<td><strong>Showcase generator</strong></td>
-<td><code>51_build_showcase_site.py</code> - regenerate a public showcase from any JSONL (a plain-text data format that stores one record per line) corpus</td>
-<td>Apache-2.0</td>
-<td>Project sites</td>
+<td><code>tools/lightside-athdgc/</code> (syntactic-feature plugin)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>design + workflow diagram on tools.qmd; patch set lands at v0.5</td>
 </tr>
 <tr class="even">
-<td><strong>Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) template pack</strong></td>
-<td>This site - ready-made multi-output (HTML + PDF + .docx + Reveal.js (a browser-based slide framework) + Beamer (a LaTeX-based slide format used in academic talks) + .pptx) for any diachronic linguistics project</td>
-<td>MIT</td>
-<td>All academic users</td>
+<td><code>tools/athdgc_to_lightside.py</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>design described; lands at v0.5</td>
 </tr>
 <tr class="odd">
-<td><strong>Valency (the number and type of arguments a verb takes)-frame database</strong> (<em>v0.5</em>)</td>
-<td>Queryable database of per-verb argument-frame distributions across periods</td>
-<td>Apache-2.0</td>
-<td>Syntacticians, typologists</td>
+<td><code>tools/athdgc_to_lightside_syntax.py</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>design described; lands at v0.5</td>
 </tr>
 <tr class="even">
-<td><strong>Retranslation-pair browser</strong> (<em>v0.5</em>)</td>
-<td>Same passage in N periods + N IE languages, side by side with aligned PROIEL trees</td>
-<td>Apache-2.0</td>
-<td>Comparatists, translation scholars</td>
+<td><code>tools/proiel_export/</code> (Stanza → PROIEL XML)</td>
+<td><strong>IN SETUP</strong></td>
+<td>logic exists inside the build pipeline; extracted as a standalone module at v0.5</td>
 </tr>
 <tr class="odd">
-<td><strong>Retelling-chain explorer</strong> (<em>v0.5</em>)</td>
-<td>Trace an influential text's reception across periods (epitomes, paraphrases, glosses)</td>
-<td>Apache-2.0</td>
-<td>Reception scholars, philologists</td>
+<td><code>tools/arg_structure.py</code> (argument-frame extractor)</td>
+<td><strong>IN SETUP</strong></td>
+<td>logic exists inside the build pipeline; extracted at v0.5</td>
 </tr>
 <tr class="even">
-<td><strong>AthDGC PROIEL validator</strong> (<em>v0.5</em>)</td>
-<td>Schema-strict + relation-inventory-strict linter for community contributions</td>
-<td>Apache-2.0</td>
-<td>Treebank builders</td>
+<td><code>tools/build_cwb_index.sh</code> (NoSketch index)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>scripted at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/cwb-recipes/</code> (sample CQL queries)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>written at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/stanza-finetune/</code> (training scripts)</td>
+<td><strong>IN SETUP</strong></td>
+<td>training runs on ARIS; scripts copied to public repo at v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>tools/neo4j-align-viewer/</code> (alignment viewer)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>Cypher recipes ready; viewer wrapper at v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/valency_db.py</code> (valency-frame DB client)</td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>tagged v0.5 on the public page already</td>
+</tr>
+<tr class="odd">
+<td><code>tools/retranslation-browser/</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>tagged v0.5</td>
+</tr>
+<tr class="even">
+<td><code>tools/retelling-explorer/</code></td>
+<td><strong>FORTHCOMING (v0.5)</strong></td>
+<td>tagged v0.5</td>
+</tr>
+<tr class="odd">
+<td><code>athdgc-tools</code> on PyPI</td>
+<td><strong>IN SETUP</strong></td>
+<td>name reserved at <code>0.4.0.dev0</code>; full toolkit replaces the stub at v0.5</td>
+</tr>
+<tr class="even">
+<td>Hugging Face model repos <code>AthDGC/grc_*_proiel</code></td>
+<td><strong>IN SETUP</strong></td>
+<td>three repos exist with placeholder READMEs; weights upload at v0.5</td>
+</tr>
+<tr class="odd">
+<td>Zenodo concept DOI <code>10.5281/zenodo.20439182</code></td>
+<td><strong>LIVE</strong></td>
+<td>v0.4.0 source-code snapshot minted 2026-05-29</td>
+</tr>
+<tr class="even">
+<td>GitHub <code>AthDGC/Diachronic-Linguistics-Platform</code></td>
+<td><strong>LIVE</strong></td>
+<td>public, source-of-truth for code</td>
+</tr>
+<tr class="odd">
+<td>GitHub <code>AthDGC/AthDGC.github.io</code></td>
+<td><strong>LIVE</strong></td>
+<td>public, deployed showcase</td>
 </tr>
 </tbody>
 </table>
-<p>All tools live in <a href="https://github.com/AthDGC" class="uri">https://github.com/AthDGC</a>.</p>
+<p>Five tools are live today, eight are in setup (working in-house, public install path lands at v0.5), and ten are forthcoming. The v0.5 release closes every <strong>IN SETUP</strong> row into a <strong>LIVE</strong> row by migrating the code into a unified public <code>tools/</code> directory and publishing the weights and the package's real contents.</p>
+<p>What is described below is the full vision of the toolkit. Where a module is not yet on the LIVE row of the matrix above, the section text describes the design as it will ship; the prose does not claim that the module is already installable today.</p>
 </section>
 <section id="lightside-text-mining-workbench" class="level2">
 <h2 class="anchored" data-anchor-id="lightside-text-mining-workbench">LightSIDE (text-mining workbench)</h2>
