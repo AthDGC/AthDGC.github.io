@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The AthDGC platform ships <strong>two distinct status classes</strong> for its tools, and the public page is committed to telling you which class every module is in. Confidence here matters more than completeness.</p>
 <ul>
 <li><strong>LIVE</strong> - code is in the public source repo, the install path resolves, and a clean run produces the documented output. You can clone and run it now.</li>
-<li><strong>IN SETUP</strong> - code exists in the project's internal pack (<code>athdgc-quarto/tools/</code>, Cowork outputs, or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
+<li><strong>IN SETUP</strong> - code exists in the project's internal working tree (<code>athdgc-quarto/tools/</code> or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
 <li><strong>FORTHCOMING (v0.5)</strong> - design is described, implementation lands at v0.5.</li>
 </ul>
 <p>Status as of the last redeploy:</p>
@@ -836,7 +836,7 @@ LIMIT 100</code></pre>
 <p>Community PRs are welcome on every module above. Two gates run on every PR:</p>
 <ol type="1">
 <li><strong>PROIEL XML 2.0 validator</strong> - <code>tools/proiel_validate.py</code> runs as a pre-commit hook and a GitHub Action (an automated workflow that runs on GitHub's servers every time code is pushed). PRs that introduce UD-style labels (<code>nsubj</code>, <code>dobj</code>, <code>nmod</code>, <code>case</code>, etc.) fail the build.</li>
-<li><strong>Lavidasised house-style check</strong> - <code>tools/style_check.py</code> scans <code>.qmd</code> and <code>.md</code> for AI-marker vocabulary and em-dashes. PRs with <code>use</code>, <code>smoothly</code>, `<code>,</code>rare`, etc. fail the build.</li>
+<li><strong>House-style check</strong> - <code>tools/style_check.py</code> scans <code>.qmd</code> and <code>.md</code> for AI-marker vocabulary and em-dashes. PRs containing banned tokens fail the build.</li>
 </ol>
 <p>For larger changes (a new IE parallel, a new period subcorpus, a new tool module), open an issue first with a short proposal; the team will assign a reviewer.</p>
 </section>
