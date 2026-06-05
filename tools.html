@@ -549,7 +549,7 @@ LIMIT 100</code></pre>
 </section>
 <section id="corpus-fix-toolkit" class="level2">
 <h2 class="anchored" data-anchor-id="corpus-fix-toolkit">Corpus-fix toolkit</h2>
-<p><code>fix_corpus_data.py</code> (used to bulk-correct 314,048 rows across 89.9M corpus rows in v0.4) is released so other projects can adapt it for their own PROIEL-style treebanks:</p>
+<p><code>fix_corpus_data.py</code> (used for the v0.4 corpus-fix audit pass; per-error-class counts ship with the v0.5 release notes) is released so other projects can adapt it for their own PROIEL-style treebanks:</p>
 <ul>
 <li>TLG-canonical author + period override table (50+ entries)</li>
 <li>Stanza-error fixes (lemma + POS for crasis, pronouns, common mis-lemmatisations)</li>
@@ -819,7 +819,7 @@ LIMIT 100</code></pre>
 |   |-- proiel_validate.py             v0.5 schema linter
 |   |-- arg_structure.py               valency-frame extractor
 |   |-- valency_db.py                  v0.5 query client
-|   |-- fix_corpus_data.py             314,048-row audit-fix
+|   |-- fix_corpus_data.py             v0.4 corpus-fix audit pass
 |   |-- stanza-finetune/               diachronic Stanza checkpoints
 |   |-- build_cwb_index.sh             NoSketch-compatible index builder
 |   |-- cwb-recipes/                   sample CQL queries

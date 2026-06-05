@@ -245,7 +245,7 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    <p>AthDGC (“Athens-PROIEL”) is an open, end-to-end pipeline and dataset that provides the first continuously updated, dependency-parsed treebank of the entire Greek language - from Homeric and Archaic texts to Modern Greek - with cross-lingual alignment to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian via the verse-level cross-alignment of the New Testament. AthDGC follows the PROIEL XML 2.0 schema, uses the Stanford Stanza PROIEL-trained pipeline for annotation, and applies LaBSE sentence embeddings and multilingual-BERT attention for word-level alignment. As of v0.4, the corpus contains 89.9M total rows, 4.08M annotated Greek rows, and 6,861 NT-aligned Greek verses cross-aligned to four sister IE witnesses.</p>
+    <p>AthDGC (“Athens-PROIEL”) is an open, end-to-end pipeline and dataset. It is, to the best of our knowledge, the first openly licensed dependency-parsed treebank of Greek that spans eight diachronic periods - Archaic, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, and Modern - under a single PROIEL XML 2.0 schema, with verse-level cross-alignment of the New Testament to Latin (Vulgate), Gothic (Wulfila), Old Church Slavonic (Marianus), and Classical Armenian. AthDGC builds on, rather than replaces, the PROIEL Treebank Family (Haug &amp; Jøhndal 2008; Eckhoff et al.&nbsp;2018), which established the schema and the Koine-Greek anchor for the project. Annotation uses the Stanford Stanza PROIEL-trained pipeline; sentence-level alignment uses LaBSE; word-level alignment uses multilingual-BERT attention via AwesomeAlign. The v0.4 release ships curated samples and the full open-source toolkit; the full annotated corpus partitions remain under v0.5 audit on GRNET ARIS. Quantitative scale, per-witness verse counts, and per-period annotated-row counts are reported as the v0.5 release notes, after the audit pass on ARIS completes.</p>
   </div>
 </div>
 
@@ -513,93 +513,94 @@ div.csl-indent {
 <th>Family</th>
 <th>Period</th>
 <th>Stanza model</th>
+<th>Edition coverage</th>
 <th>Status</th>
-<th>NT-aligned verses (v0.4)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Greek (Koine)</td>
+<td>Greek (Koine NT)</td>
 <td>IE / Hellenic</td>
 <td>1st-2nd c. AD</td>
 <td><code>grc_proiel</code></td>
+<td>SBL GNT (complete)</td>
 <td>annotated</td>
-<td>7,956</td>
 </tr>
 <tr class="even">
 <td>Latin (Vulgate)</td>
 <td>IE / Italic</td>
 <td>4th c. AD</td>
 <td><code>la_proiel</code></td>
+<td>Clementine Vulgate NT (complete)</td>
 <td>annotated</td>
-<td>7,956</td>
 </tr>
 <tr class="odd">
 <td>Gothic (Wulfila)</td>
 <td>IE / Germanic E</td>
 <td>4th c. AD</td>
 <td><code>got_proiel</code></td>
+<td>Wulfila Project (Gospels + Pauline corpus, partial)</td>
 <td>annotated</td>
-<td>3,512</td>
 </tr>
 <tr class="even">
 <td>OCS (Marianus)</td>
 <td>IE / Slavic</td>
 <td>10th c. AD</td>
 <td><code>cu_proiel</code></td>
+<td>Codex Marianus (four Gospels)</td>
 <td>sampled</td>
-<td>6,861</td>
 </tr>
 <tr class="odd">
 <td>Classical Armenian</td>
 <td>IE / Armenian</td>
 <td>5th c. AD</td>
 <td><code>xcl_proiel</code> (in dev.)</td>
-<td>ingestion</td>
-<td>0 (v0.5)</td>
+<td>TITUS Armenian NT</td>
+<td>ingestion (v0.5)</td>
 </tr>
 <tr class="even">
 <td>Sanskrit (Brahmana, Upanisadic)</td>
 <td>IE / Indo-Iranian</td>
 <td>1000-500 BC</td>
 <td><code>sa_vedic</code> (queued)</td>
+<td>GRETIL / SARIT</td>
 <td>queued (v0.7)</td>
-<td>0</td>
 </tr>
 <tr class="odd">
 <td>Old English (Wessex Gospels)</td>
 <td>IE / Germanic W</td>
 <td>10th c. AD</td>
 <td><code>ang_proiel</code> (queued)</td>
+<td>TEAMS Wessex Gospels</td>
 <td>queued (v0.7)</td>
-<td>0</td>
 </tr>
 <tr class="even">
 <td>Avestan (Yasna, Yashts)</td>
 <td>IE / Indo-Iranian</td>
 <td>1000-500 BC</td>
 <td><code>ae_proiel</code> (queued)</td>
+<td>TITUS Yasna + Yashts</td>
 <td>queued (v0.7)</td>
-<td>0</td>
 </tr>
 <tr class="odd">
 <td>Old Persian (Behistun)</td>
 <td>IE / Indo-Iranian</td>
 <td>6th-5th c. BC</td>
 <td><code>peo_proiel</code> (queued)</td>
+<td>TITUS Behistun</td>
 <td>queued (v0.7)</td>
-<td>0</td>
 </tr>
 <tr class="even">
 <td>Ukrainian (Ostroh + 20th-c. rev.)</td>
 <td>IE / Slavic E</td>
 <td>1581 + 1962</td>
 <td><code>uk_dep</code> adapted (queued)</td>
+<td>Ostroh 1581 + Ohienko 1962</td>
 <td>queued (v0.7)</td>
-<td>0</td>
 </tr>
 </tbody>
 </table>
+<p>Verified per-witness aligned-verse counts ship in the v0.5 release notes once the ARIS audit pass closes. The v0.4 release ships the curated samples on the Samples page rather than full per-witness counts.</p>
 </section>
 <section id="retelling-and-retranslation-chains" class="level3">
 <h3 class="anchored" data-anchor-id="retelling-and-retranslation-chains">3.3 Retelling and retranslation chains</h3>

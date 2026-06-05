@@ -221,42 +221,38 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Total corpus rows</td>
-<td>89.9 M</td>
-</tr>
-<tr class="even">
-<td>Annotated Greek rows</td>
-<td>4.08 M</td>
-</tr>
-<tr class="odd">
-<td>NT-aligned Greek verses</td>
-<td>6,861</td>
+<td>Greek periods covered</td>
+<td>8 (Archaic, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern)</td>
 </tr>
 <tr class="even">
 <td>Cross-aligned IE witnesses</td>
-<td>4 (Latin, Gothic, OCS) + Classical Armenian in ingestion</td>
+<td>4 (Latin Vulgate, Gothic Wulfila, OCS Marianus, Classical Armenian in ingestion)</td>
 </tr>
 <tr class="odd">
-<td>Open-source tools shipped</td>
-<td>14 (see <a href="./tools.html">Tools</a>)</td>
+<td>Per-witness verified verse counts</td>
+<td>reported in v0.5 release notes (post-ARIS audit pass)</td>
 </tr>
 <tr class="even">
+<td>Open-source tools</td>
+<td>tiered LIVE / IN SETUP / FORTHCOMING matrix on <a href="./tools.html">Tools</a></td>
+</tr>
+<tr class="odd">
 <td>Concept DOI (a Digital Object Identifier that always points to the latest version of a deposited record)</td>
 <td><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Repository</td>
 <td><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Stanza checkpoints</td>
 <td>forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (org page + model repos in setup; ship at v0.5)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Open-access source archives</td>
 <td>Perseus, OGL/First1K, SBL GNT, Rahlfs LXX, Papyri.info, Patrologia Graeca, Bibliotheca Augustana, Anemi, Wikisource el; Wulfila Project, TITUS, GRETIL, SARIT, TEAMS, National Library of Ukraine</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Launch report</td>
 <td><a href="./data_paper.html">GlossaContactLab Working Papers, NKUA digital edition</a></td>
 </tr>
@@ -282,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>The public repository does NOT ship:</strong></p>
 <ul>
-<li>the full v0.4 annotated corpus partitions (89.9 M corpus rows / 4.08 M annotated Greek rows). These remain under active audit on the GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code> until the v0.5 release.</li>
+<li>the full v0.4 annotated corpus partitions. These remain under active audit on the GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code> until the v0.5 release. Verified scale (total rows, annotated rows per period, per-witness aligned-verse counts) ships with the v0.5 release notes.</li>
 <li>the raw JSONL (a plain-text data format that stores one record per line) partitions per period, the Qdrant vector store, or the Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph dump. These will ship as a separate Zenodo dataset record at v0.5, under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit), when the Stanza-introduced annotation errors have been corrected at scale.</li>
 </ul>
 <p>This scoping is deliberate: we will not release annotated data with known errors. The <strong>tools</strong> are released and ready for reuse on any PROIEL-style historical treebank; the <strong>corpus</strong> ships when it is correct.</p>
