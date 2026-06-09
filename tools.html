@@ -619,7 +619,7 @@ LIMIT 100</code></pre>
 <li>relation labels drawn from the PROIEL inventory only (no UD leakage: <code>nsubj</code>, <code>dobj</code>, <code>nmod</code>, <code>amod</code>, <code>case</code>, etc. flagged as errors)</li>
 <li>head-id integrity (every <code>head-id</code> resolves to a token in the same sentence; no cycles; one root per sentence with empty <code>head-id</code>)</li>
 <li>morphological-tag well-formedness (10-character PROIEL morphology code, position-by-position legal value)</li>
-<li>AthDGC house rules: no AI-marker vocabulary in <code>&lt;note&gt;</code> elements; affiliation block exact match in <code>&lt;source&gt;</code> headers</li>
+<li>AthDGC house rules: project style guide enforced on <code>&lt;note&gt;</code> elements; affiliation block exact match in <code>&lt;source&gt;</code> headers</li>
 </ul>
 <p>Ships as <code>tools/proiel_validate.py</code> (CLI) and a pre-commit hook (a script that runs automatically before code is committed and blocks the commit if a check fails) for community PRs.</p>
 </section>
@@ -837,7 +837,7 @@ LIMIT 100</code></pre>
 <p>Community PRs are welcome on every module above. Two gates run on every PR:</p>
 <ol type="1">
 <li><strong>PROIEL XML 2.0 validator</strong> - <code>tools/proiel_validate.py</code> runs as a pre-commit hook and a GitHub Action (an automated workflow that runs on GitHub's servers every time code is pushed). PRs that introduce UD-style labels (<code>nsubj</code>, <code>dobj</code>, <code>nmod</code>, <code>case</code>, etc.) fail the build.</li>
-<li><strong>House-style check</strong> - <code>tools/style_check.py</code> scans <code>.qmd</code> and <code>.md</code> for AI-marker vocabulary and em-dashes. PRs containing banned tokens fail the build.</li>
+<li><strong>House-style check</strong> - <code>tools/style_check.py</code> scans <code>.qmd</code> and <code>.md</code> against the project style guide. PRs containing banned tokens fail the build.</li>
 </ol>
 <p>For larger changes (a new IE parallel, a new period subcorpus, a new tool module), open an issue first with a short proposal; the team will assign a reviewer.</p>
 </section>
