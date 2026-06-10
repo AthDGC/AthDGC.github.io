@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Nikolaos Lavidas">
-  <meta name="dcterms.date" content="2026-06-09">
+  <meta name="dcterms.date" content="2026-06-10">
   <title>AthDGC – AthDGC · Athens-PROIEL</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -146,7 +146,7 @@ Nikolaos Lavidas
     </div>
 </div>
 
-  <p class="date">June 9, 2026</p>
+  <p class="date">June 10, 2026</p>
 </section>
 <section id="athens-digital-glossa-chronos" class="title-slide slide level1 smaller center">
 <h1>Athens Digital Glossa Chronos</h1>
@@ -163,7 +163,7 @@ Nikolaos Lavidas
 <ul>
 <li>LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-compatible feature extraction + classifier training</li>
 <li>NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context)</li>
-<li>Fine-tuned (further trained on new data to adapt it to a particular text type) Stanza (Stanford’s open-source Python pipeline that automatically tags, lemmatises, and parses sentences) checkpoints (Byzantine, Late-Byzantine, Modern adaptations)</li>
+<li>Fine-tuned (further trained on new data to adapt it to a particular text type) Stanza (Stanford’s open-source Python workflow that automatically tags, lemmatises, and parses sentences) checkpoints (Byzantine, Late-Byzantine, Modern adaptations)</li>
 <li>Argument-structure extractor</li>
 <li>Cross-lingual alignment (matching corresponding words or sentences between texts in different languages) viewer (Neo4j (a graph database that stores data as nodes and connections rather than as tables))</li>
 <li>Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) template pack for any DH project (this very deck is built with it)</li>
@@ -213,16 +213,16 @@ Nikolaos Lavidas
 </table>
 </section>
 
-<section id="pipeline" class="title-slide slide level1 smaller center">
-<h1>Pipeline</h1>
+<section id="workflow" class="title-slide slide level1 smaller center">
+<h1>Workflow</h1>
 <ol type="1">
-<li><strong>Discovery</strong> - daily harvest from archive.org, Perseus, First1K, Wikisource, Diorisis</li>
-<li><strong>Filtering</strong> - Greek-script ratio, apparatus-criticus rejection, dedup</li>
-<li><strong>Conversion</strong> - PROIEL XML 2.0</li>
-<li><strong>Annotation</strong> - Stanza <code>grc_proiel</code> + analogous models per parallel language</li>
-<li><strong>Argument-structure</strong> - subject, object, oblique, voice, aspect per verb</li>
-<li><strong>Cross-alignment</strong> - LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) + AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) (mBERT)</li>
-<li><strong>Storage</strong> - PROIEL XML + JSONL (a plain-text data format that stores one record per line) + Qdrant + Neo4j</li>
+<li><strong>Discovery</strong>, daily harvest from archive.org, Perseus, First1K, Wikisource, Diorisis</li>
+<li><strong>Filtering</strong>, Greek-script ratio, apparatus-criticus rejection, dedup</li>
+<li><strong>Conversion</strong>, PROIEL XML 2.0</li>
+<li><strong>Annotation</strong>, Stanza <code>grc_proiel</code> + analogous models per parallel language</li>
+<li><strong>Argument-structure</strong>, subject, object, oblique, voice, aspect per verb</li>
+<li><strong>Cross-alignment</strong>, LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) + AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) (mBERT)</li>
+<li><strong>Storage</strong>, PROIEL XML + JSONL (a plain-text data format that stores one record per line) + Qdrant + Neo4j</li>
 </ol>
 </section>
 

@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4f28ba486269c24c37d6df9a1cf56ebb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dda2ae949bbaa9476a5c2772d799b7ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c1cc5b815e3dbd8136042dfbc3f6c398.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#persistent-identifiers" id="toc-persistent-identifiers" class="nav-link" data-scroll-target="#persistent-identifiers">Persistent identifiers</a></li>
   <li><a href="#hugging-face-a-public-hosting-platform-for-machine-learning-models-and-datasets-mirror" id="toc-hugging-face-a-public-hosting-platform-for-machine-learning-models-and-datasets-mirror" class="nav-link" data-scroll-target="#hugging-face-a-public-hosting-platform-for-machine-learning-models-and-datasets-mirror">Hugging Face (a public hosting platform for machine-learning models and datasets) mirror</a></li>
   <li><a href="#pypi-the-python-package-index-the-central-archive-that-pip-downloads-packages-from-package" id="toc-pypi-the-python-package-index-the-central-archive-that-pip-downloads-packages-from-package" class="nav-link" data-scroll-target="#pypi-the-python-package-index-the-central-archive-that-pip-downloads-packages-from-package">PyPI (the Python Package Index, the central archive that pip downloads packages from) package</a></li>
-  <li><a href="#open-access-source-archives-third-party---we-link-we-do-not-host" id="toc-open-access-source-archives-third-party---we-link-we-do-not-host" class="nav-link" data-scroll-target="#open-access-source-archives-third-party---we-link-we-do-not-host">Open-access source archives (third-party - we link, we do not host)</a></li>
+  <li><a href="#open-access-source-archives-third-party-we-link-we-do-not-host" id="toc-open-access-source-archives-third-party-we-link-we-do-not-host" class="nav-link" data-scroll-target="#open-access-source-archives-third-party-we-link-we-do-not-host">Open-access source archives (third-party, we link, we do not host)</a></li>
   <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training</a></li>
   <li><a href="#how-to-report-a-broken-link" id="toc-how-to-report-a-broken-link" class="nav-link" data-scroll-target="#how-to-report-a-broken-link">How to report a broken link</a></li>
   <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
@@ -199,9 +199,9 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This page tracks the live state of every external resource the AthDGC public site references. It updates on every redeploy. Three traffic-light categories:</p>
 <ul>
-<li><em>live</em> (sage) - the resource resolves now and is what we describe</li>
-<li><em>in setup</em> (ochre) - the resource is being created and will resolve shortly</li>
-<li><em>forthcoming</em> (burgundy) - the resource ships at a named future release (v0.5, v0.7, v1.0)</li>
+<li><em>live</em> (sage), the resource resolves now and is what we describe</li>
+<li><em>in setup</em> (ochre), the resource is being created and will resolve shortly</li>
+<li><em>forthcoming</em> (burgundy), the resource ships at a named future release (v0.5, v0.7, v1.0)</li>
 </ul>
 <section id="tool-readiness" class="level2">
 <h2 class="anchored" data-anchor-id="tool-readiness">Tool readiness</h2>
@@ -210,9 +210,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</h2>
 <p>The AthDGC platform ships <strong>two distinct status classes</strong> for its tools, and the public page is committed to telling you which class every module is in. Confidence here matters more than completeness.</p>
 <ul>
-<li><strong>LIVE</strong> - code is in the public source repo, the install path resolves, and a clean run produces the documented output. You can clone and run it now.</li>
-<li><strong>IN SETUP</strong> - code exists in the project's internal working tree (<code>athdgc-quarto/tools/</code> or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
-<li><strong>FORTHCOMING (v0.5)</strong> - design is described, implementation lands at v0.5.</li>
+<li><strong>LIVE</strong>, code is in the public source repo, the install path resolves, and a clean run produces the documented output. You can clone and run it now.</li>
+<li><strong>IN SETUP</strong>, code exists in the project's internal working tree (<code>athdgc-quarto/tools/</code> or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
+<li><strong>FORTHCOMING (v0.5)</strong>, design is described, implementation lands at v0.5.</li>
 </ul>
 <p>Status as of the last redeploy:</p>
 <table class="caption-top table">
@@ -287,12 +287,12 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><code>tools/proiel_export/</code> (Stanza → PROIEL XML)</td>
 <td><strong>IN SETUP</strong></td>
-<td>logic exists inside the build pipeline; extracted as a standalone module at v0.5</td>
+<td>logic exists inside the build workflow; extracted as a standalone module at v0.5</td>
 </tr>
 <tr class="odd">
 <td><code>tools/arg_structure.py</code> (argument-frame extractor)</td>
 <td><strong>IN SETUP</strong></td>
-<td>logic exists inside the build pipeline; extracted at v0.5</td>
+<td>logic exists inside the build workflow; extracted at v0.5</td>
 </tr>
 <tr class="even">
 <td><code>tools/build_cwb_index.sh</code> (NoSketch index)</td>
@@ -470,7 +470,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>AthDGC/xcl_proiel</code></td>
 <td>(forthcoming on HF)</td>
 <td><em>forthcoming (v0.5)</em></td>
-<td>Classical Armenian editorial pipeline</td>
+<td>Classical Armenian editorial workflow</td>
 </tr>
 <tr class="even">
 <td><code>AthDGC/sa_vedic</code>, <code>ang_proiel</code>, <code>ae_proiel</code>, <code>peo_proiel</code>, <code>uk_dep</code></td>
@@ -508,8 +508,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="open-access-source-archives-third-party---we-link-we-do-not-host" class="level2">
-<h2 class="anchored" data-anchor-id="open-access-source-archives-third-party---we-link-we-do-not-host">Open-access source archives (third-party - we link, we do not host)</h2>
+<section id="open-access-source-archives-third-party-we-link-we-do-not-host" class="level2">
+<h2 class="anchored" data-anchor-id="open-access-source-archives-third-party-we-link-we-do-not-host">Open-access source archives (third-party, we link, we do not host)</h2>
 <p>The Greek source archives, the IE-parallel sources, and the upstream tools we depend on are listed here for completeness; their availability is not under our control. All have been verified live as of the most recent redeploy.</p>
 <table class="caption-top table">
 <thead>
@@ -596,7 +596,7 @@ ul.task-list li input[type="checkbox"] {
 <td>Ukrainian (Ostroh)</td>
 </tr>
 <tr class="even">
-<td>Stanford Stanza (Stanford's open-source Python pipeline that automatically tags, lemmatises, and parses sentences)</td>
+<td>Stanford Stanza (Stanford's open-source Python workflow that automatically tags, lemmatises, and parses sentences)</td>
 <td><a href="https://stanfordnlp.github.io/stanza/" class="uri">https://stanfordnlp.github.io/stanza/</a></td>
 <td>upstream NLP</td>
 </tr>

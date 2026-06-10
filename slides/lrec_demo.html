@@ -12,7 +12,7 @@
 
   <meta name="author" content="Nikolaos Lavidas">
   <meta name="dcterms.date" content="2026-06-30">
-  <title>AthDGC – AthDGC - system demonstration</title>
+  <title>AthDGC – AthDGC, system demonstration</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -198,7 +198,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">AthDGC - system demonstration</h1>
+  <h1 class="title">AthDGC, system demonstration</h1>
   <p class="subtitle">Open PROIEL-style treebank for the entire Greek language</p>
 
 <div class="quarto-title-authors">
@@ -216,7 +216,7 @@ Nikolaos Lavidas
 </section>
 <section id="athdgc" class="title-slide slide level1 center">
 <h1>AthDGC</h1>
-<p>Open PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo)-style dependency treebank - Homer to Modern Greek - with NT verse-level cross-alignment to Latin / Gothic / Old Church Slavonic.</p>
+<p>Open PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo)-style dependency treebank, Homer to Modern Greek - with NT verse-level cross-alignment to Latin / Gothic / Old Church Slavonic.</p>
 <div style="font-style:italic; color:#555; font-size:0.85em">
 <p>20-minute LREC-COLING system demo · Athens-PROIEL</p>
 </div>
@@ -225,16 +225,16 @@ Nikolaos Lavidas
 <section id="demo-agenda-20-min" class="title-slide slide level1 center">
 <h1>Demo agenda (20 min)</h1>
 <ol type="1">
-<li><em>3 min</em> - Overview + funding context</li>
-<li><em>6 min</em> - Live browse of the showcase: PROIEL tree + arg-structure cards</li>
-<li><em>5 min</em> - Live cross-alignment query (Neo4j (a graph database that stores data as nodes and connections rather than as tables)) across Greek/Latin/Gothic</li>
-<li><em>3 min</em> - Editor workflow: flag-for-review toolbar + corpus-side fix pipeline</li>
-<li><em>3 min</em> - Q&amp;A</li>
+<li><em>3 min</em>, Overview + funding context</li>
+<li><em>6 min</em>, Live browse of the showcase: PROIEL tree + arg-structure cards</li>
+<li><em>5 min</em>, Live cross-alignment query (Neo4j (a graph database that stores data as nodes and connections rather than as tables)) across Greek/Latin/Gothic</li>
+<li><em>3 min</em>, Editor workflow: flag-for-review toolbar + corpus-side fix workflow</li>
+<li><em>3 min</em>, Q&amp;A</li>
 </ol>
 </section>
 
-<section id="live-demo-step-1---browse" class="title-slide slide level1 center">
-<h1>Live demo step 1 - browse</h1>
+<section id="live-demo-step-1-browse" class="title-slide slide level1 center">
+<h1>Live demo step 1, browse</h1>
 <p>Open <a href="https://athdgc.github.io" class="uri">https://athdgc.github.io</a> in the browser.</p>
 <p>Select <strong>Classical</strong> period tab. Click into a Plato <code>tlg0059.tlg022</code> sample.</p>
 <p>Observe:</p>
@@ -247,8 +247,8 @@ Nikolaos Lavidas
 </ul>
 </section>
 
-<section id="live-demo-step-2---cross-alignment" class="title-slide slide level1 center">
-<h1>Live demo step 2 - cross-alignment</h1>
+<section id="live-demo-step-2-cross-alignment" class="title-slide slide level1 center">
+<h1>Live demo step 2, cross-alignment</h1>
 <p>Open the public Neo4j endpoint (https://athdgc.github.io/graph).</p>
 <p>Run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource cypher number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>MATCH (gk:Token {language:"grc", upos:"VERB"})-[:TRANSLATED_AS]-&gt;(la:Token {language:"lat"})</span>
@@ -258,8 +258,8 @@ Nikolaos Lavidas
 <p>Returns Greek aorist active verbs whose Vulgate counterpart is passive.</p>
 </section>
 
-<section id="live-demo-step-3---editor-workflow" class="title-slide slide level1 center">
-<h1>Live demo step 3 - editor workflow</h1>
+<section id="live-demo-step-3-editor-workflow" class="title-slide slide level1 center">
+<h1>Live demo step 3, editor workflow</h1>
 <p>In the showcase: click <strong>Mark for review</strong> on a problematic sample.</p>
 <p>The flag is stored in <code>localStorage</code> and persists across reloads. Export current review state via the console:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a></a><span class="fu">athdgcExportReview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -294,7 +294,7 @@ Nikolaos Lavidas
 </tr>
 <tr class="even">
 <td>Annotation</td>
-<td><code>47_annotate_inbox.sbatch</code> - Stanza (Stanford’s open-source Python pipeline that automatically tags, lemmatises, and parses sentences) on A100 GPU</td>
+<td><code>47_annotate_inbox.sbatch</code> - Stanza (Stanford’s open-source Python workflow that automatically tags, lemmatises, and parses sentences) on A100 GPU</td>
 </tr>
 <tr class="odd">
 <td>Merge</td>
