@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4f28ba486269c24c37d6df9a1cf56ebb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c7797ddebd01fc6532dffef2c3b130e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-049cfd959f3b20329bd765b077a8f6d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
-  <li><a href="#tool-readiness-what-runs-today-what-ships-at-v0.5" id="toc-tool-readiness-what-runs-today-what-ships-at-v0.5" class="nav-link" data-scroll-target="#tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</a></li>
+  <li><a href="#tool-readiness-what-runs-today-what-released-at-v0.5" id="toc-tool-readiness-what-runs-today-what-released-at-v0.5" class="nav-link" data-scroll-target="#tool-readiness-what-runs-today-what-released-at-v0.5">Tool readiness (what runs today, what released at v0.5)</a></li>
   <li><a href="#lightside-text-mining-workbench" id="toc-lightside-text-mining-workbench" class="nav-link" data-scroll-target="#lightside-text-mining-workbench">LightSIDE (text-mining workbench)</a>
   <ul class="collapse">
   <li><a href="#athdgc-lightside-workflow" id="toc-athdgc-lightside-workflow" class="nav-link" data-scroll-target="#athdgc-lightside-workflow">AthDGC + LightSIDE workflow</a></li>
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
   <li><a href="#lightside-athdgc-workflow" id="toc-lightside-athdgc-workflow" class="nav-link" data-scroll-target="#lightside-athdgc-workflow">LightSIDE-AthDGC workflow</a></li>
-  <li><a href="#what-we-ship-open-source-on-github" id="toc-what-we-ship-open-source-on-github" class="nav-link" data-scroll-target="#what-we-ship-open-source-on-github">What we ship (open source, on GitHub)</a></li>
+  <li><a href="#what-we-release-open-source-on-github" id="toc-what-we-release-open-source-on-github" class="nav-link" data-scroll-target="#what-we-release-open-source-on-github">What we release (open source, on GitHub)</a></li>
   <li><a href="#worked-example-a-sample-of-the-syntactic-feature-csv" id="toc-worked-example-a-sample-of-the-syntactic-feature-csv" class="nav-link" data-scroll-target="#worked-example-a-sample-of-the-syntactic-feature-csv">Worked example, a sample of the syntactic-feature CSV</a></li>
   <li><a href="#workflow-at-a-glance" id="toc-workflow-at-a-glance" class="nav-link" data-scroll-target="#workflow-at-a-glance">Workflow at a glance</a></li>
   </ul></li>
@@ -261,15 +261,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><strong>For all parts of this platform (site, tools, corpus, slides, launch report) please cite:</strong></p>
 <p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). National and Kapodistrian University of Athens, Athens Digital Glossa Chronos Research Network. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
-<p>The AthDGC platform ships <strong>two open deliverables in parallel</strong>: this <strong>computational toolkit for diachronic linguistics</strong> plus a PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo) XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) diachronic Greek corpus. The toolkit is designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only, no CoNLL-U, no UD-flavoured export.</p>
+<p>The AthDGC platform provides <strong>two open deliverables in parallel</strong>: this <strong>computational toolkit for diachronic linguistics</strong> plus a PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo) XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) diachronic Greek corpus. The toolkit is designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only, no CoNLL-U, no UD-flavoured export.</p>
 <p>All tools are open source (Apache-2.0 (a permissive open-source licence widely used for software) / MIT (a short permissive open-source licence) / GPL where the upstream license requires). All are documented for classroom use, from undergraduate to PhD level, so digital-humanities courses can adopt them without per-seat licensing.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
-<p>The platform ships modules in three readiness tiers, <strong>LIVE</strong> (clone and run today), <strong>IN SETUP</strong> (works internally, public install path lands at v0.5), and <strong>FORTHCOMING (v0.5)</strong> (designed, implementation lands at v0.5). The matrix below is the canonical reference; the per-tool sections that follow describe each module in detail.</p>
+<p>The platform provides modules in three readiness tiers, <strong>LIVE</strong> (clone and run today), <strong>IN SETUP</strong> (works internally, public install path lands at v0.5), and <strong>FORTHCOMING (v0.5)</strong> (designed, implementation lands at v0.5). The matrix below is the canonical reference; the per-tool sections that follow describe each module in detail.</p>
 </section>
-<section id="tool-readiness-what-runs-today-what-ships-at-v0.5" class="level2">
-<h2 class="anchored" data-anchor-id="tool-readiness-what-runs-today-what-ships-at-v0.5">Tool readiness (what runs today, what ships at v0.5)</h2>
-<p>The AthDGC platform ships <strong>two distinct status classes</strong> for its tools, and the public page is committed to telling you which class every module is in. Confidence here matters more than completeness.</p>
+<section id="tool-readiness-what-runs-today-what-released-at-v0.5" class="level2">
+<h2 class="anchored" data-anchor-id="tool-readiness-what-runs-today-what-released-at-v0.5">Tool readiness (what runs today, what released at v0.5)</h2>
+<p>The AthDGC platform provides <strong>two distinct status classes</strong> for its tools, and the public page is committed to telling you which class every module is in. Confidence here matters more than completeness.</p>
 <ul>
 <li><strong>LIVE</strong>, code is in the public source repo, the install path resolves, and a clean run produces the documented output. You can clone and run it now.</li>
 <li><strong>IN SETUP</strong>, code exists in the project's internal working tree (<code>athdgc-quarto/tools/</code> or ARIS) and is being migrated to the public source repo for the v0.5 unified <code>tools/</code> directory. The module works internally; only the public install path is not yet wired.</li>
@@ -418,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Five tools are live today, eight are in setup (working in-house, public install path lands at v0.5), and ten are forthcoming. The v0.5 release closes every <strong>IN SETUP</strong> row into a <strong>LIVE</strong> row by migrating the code into a unified public <code>tools/</code> directory and publishing the weights and the package's real contents.</p>
-<p>What is described below is the full vision of the toolkit. Where a module is not yet on the LIVE row of the matrix above, the section text describes the design as it will ship; the prose does not claim that the module is already installable today.</p>
+<p>What is described below is the full vision of the toolkit. Where a module is not yet on the LIVE row of the matrix above, the section text describes the design as it will be released; the prose does not claim that the module is already installable today.</p>
 </section>
 <section id="lightside-text-mining-workbench" class="level2">
 <h2 class="anchored" data-anchor-id="lightside-text-mining-workbench">LightSIDE (text-mining workbench)</h2>
@@ -470,8 +470,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Inspect</strong> the per-feature weights to find <em>which syntactic patterns</em> drive the classifier's decision per period boundary. Export feature-importance tables for the data paper or a follow-on linguistic-change study.</li>
 </ol>
 </section>
-<section id="what-we-ship-open-source-on-github" class="level3">
-<h3 class="anchored" data-anchor-id="what-we-ship-open-source-on-github">What we ship (open source, on GitHub)</h3>
+<section id="what-we-release-open-source-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-release-open-source-on-github">What we release (open source, on GitHub)</h3>
 <p>The LightSIDE-AthDGC fork lives at <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/tools/lightside-athdgc" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform/tree/main/tools/lightside-athdgc</a> (Apache-2.0 for the AthDGC adapters; BSD as inherited from the upstream LightSIDE licence). What's in the directory:</p>
 <ul>
 <li><code>tools/athdgc_to_lightside_syntax.py</code>, the syntactic-feature export script.</li>
@@ -488,7 +488,7 @@ Archaic         ἄειδε       ἀείδω       V         2sg.impv.act      
 Archaic         μῆνιν       μῆνις       Nb        acc.sg.f          obj:V-N+acc.sg.f         -                       -
 Classical       οἶδα        οἶδα        V         1sg.prs.act       ROOT                     pred[xcomp:clausal]     act/perf/ind
 Koine           ἐγένετο     γίγνομαι    V         3sg.aor.ind.mid   ROOT                     pred[sub:nom,xobj:nom]  mid/aor/ind</code></pre>
-<p>Load <code>features.csv</code> into LightSIDE-AthDGC, switch to the <em>Diachronic syntactic features</em> feature panel, train an SVM on the <code>period</code> column, and inspect which <code>arc_feat</code> and <code>frame_feat</code> strings are over-represented per period. The export script + sample CSV + worked tutorial all ship under <code>tools/lightside-recipes-syntax/</code> on the public repo.</p>
+<p>Load <code>features.csv</code> into LightSIDE-AthDGC, switch to the <em>Diachronic syntactic features</em> feature panel, train an SVM on the <code>period</code> column, and inspect which <code>arc_feat</code> and <code>frame_feat</code> strings are over-represented per period. The export script + sample CSV + worked tutorial all be licensed under <code>tools/lightside-recipes-syntax/</code> on the public repo.</p>
 </section>
 <section id="workflow-at-a-glance" class="level3">
 <h3 class="anchored" data-anchor-id="workflow-at-a-glance">Workflow at a glance</h3>
@@ -517,7 +517,7 @@ Koine           ἐγένετο     γίγνομαι    V         3sg.aor.ind.mi
   </g>
 </svg>
 </div>
-<p>Upstream LightSIDE remains BSD-licensed and downloadable from CMU. We do not redistribute binaries; LightSIDE-AthDGC ships as a patch set + helper scripts that the user applies to a standard LightSIDE install.</p>
+<p>Upstream LightSIDE remains BSD-licensed and downloadable from CMU. We do not redistribute binaries; LightSIDE-AthDGC is released as a patch set + helper scripts that the user applies to a standard LightSIDE install.</p>
 </section>
 </section>
 <section id="nosketch-style-concordancer-for-athdgc" class="level2">
@@ -535,11 +535,11 @@ Koine           ἐγένετο     γίγνομαι    V         3sg.aor.ind.mi
 <li>Late-Byzantine + Early-Modern Greek (<code>grc_lbem_proiel</code>)</li>
 <li>Modern Greek with classical morphological retention (<code>grc_mod_proiel</code>)</li>
 </ul>
-<p>Release status: trained on ARIS (the Greek national high-performance computing cluster, run by GRNET); Hugging Face (a public hosting platform for machine-learning models and datasets) mirror at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> under <code>athdgc/*</code> is in setup and ships at v0.5. Training scripts in <code>tools/stanza-finetune/</code>. Eval loss and per-tag F1 reported per checkpoint (a saved snapshot of a trained model) with the v0.5 release notes.</p>
+<p>Release status: trained on ARIS (the Greek national high-performance computing cluster, run by GRNET); Hugging Face (a public hosting platform for machine-learning models and datasets) mirror at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> under <code>athdgc/*</code> is in setup and released at v0.5. Training scripts in <code>tools/stanza-finetune/</code>. Eval loss and per-tag F1 reported per checkpoint (a saved snapshot of a trained model) with the v0.5 release notes.</p>
 </section>
 <section id="cross-lingual-alignment-viewer" class="level2">
 <h2 class="anchored" data-anchor-id="cross-lingual-alignment-viewer">Cross-lingual alignment viewer</h2>
-<p>The Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph (a database that records which token in language A corresponds to which token in language B) is queryable via the open-source <a href="https://neo4j.com/developer/neo4j-browser/">Neo4j Browser</a> loaded against a local copy of the alignment graph. The graph dump ships as part of the Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs) deposition; a public hosted endpoint is planned for v0.5.</p>
+<p>The Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph (a database that records which token in language A corresponds to which token in language B) is queryable via the open-source <a href="https://neo4j.com/developer/neo4j-browser/">Neo4j Browser</a> loaded against a local copy of the alignment graph. The graph dump is released as part of the Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs) deposition; a public hosted endpoint is planned for v0.5.</p>
 <p>Example Cypher, find every Greek aorist active verb whose Vulgate counterpart is passive:</p>
 <pre class="cypher"><code>MATCH (gk:Token {language:"grc", upos:"VERB"})-[:TRANSLATED_AS]-&gt;(la:Token {language:"lat"})
 WHERE gk.feats CONTAINS "Aspect=Perf"
@@ -551,7 +551,7 @@ LIMIT 100</code></pre>
 </section>
 <section id="corpus-fix-toolkit" class="level2">
 <h2 class="anchored" data-anchor-id="corpus-fix-toolkit">Corpus-fix toolkit</h2>
-<p><code>fix_corpus_data.py</code> (used for the v0.4 corpus-fix audit pass; per-error-class counts ship with the v0.5 release notes) is released so other projects can adapt it for their own PROIEL-style treebanks:</p>
+<p><code>fix_corpus_data.py</code> (used for the v0.4 corpus-fix audit pass; per-error-class counts be included with the v0.5 release notes) is released so other projects can adapt it for their own PROIEL-style treebanks:</p>
 <ul>
 <li>TLG-canonical author + period override table (50+ entries)</li>
 <li>Stanza-error fixes (lemma + POS for crasis, pronouns, common mis-lemmatisations)</li>
@@ -577,14 +577,14 @@ LIMIT 100</code></pre>
 <section id="valency-frame-database-v0.5" class="level2">
 <h2 class="anchored" data-anchor-id="valency-frame-database-v0.5">Valency-frame database (v0.5)</h2>
 <p><em>Status: ingestion in progress on ARIS; first release with v0.5.</em></p>
-<p>The valency-frame database collects every per-verb argument frame emitted by <code>extract_arg_structures()</code> across the corpus, indexes it by period + verb lemma + frame signature, and exposes it for SQL-style query. The output of the corpus-fix audit pass feeds directly into this index, so v0.5 ships with a clean version.</p>
+<p>The valency-frame database collects every per-verb argument frame emitted by <code>extract_arg_structures()</code> across the corpus, indexes it by period + verb lemma + frame signature, and exposes it for SQL-style query. The output of the corpus-fix audit pass feeds directly into this index, so v0.5 is included with a clean version.</p>
 <p>Example queries supported at v0.5:</p>
 <ul>
 <li><code>verb=αἱρέω, voice=middle, aspect=perfective</code> -&gt; frequency by period</li>
 <li><code>frame=[sub:nom, obj:acc, obl:dat]</code> -&gt; all verbs that license this frame, with diachronic trend</li>
 <li><code>verb=ἀκούω</code> -&gt; case distribution of its object (accusative vs genitive) across periods</li>
 </ul>
-<p>The database lives behind a small JSON (a plain-text data format for structured records)-RPC interface; a Python client <code>tools/valency_db.py</code> will ship alongside the v0.5 release. The full SQL dump will be deposited at Zenodo as part of the v0.5 dataset record under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit).</p>
+<p>The database lives behind a small JSON (a plain-text data format for structured records)-RPC interface; a Python client <code>tools/valency_db.py</code> will be released alongside the v0.5 release. The full SQL dump will be deposited at Zenodo as part of the v0.5 dataset record under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit).</p>
 </section>
 <section id="retranslation-pair-browser-v0.5" class="level2">
 <h2 class="anchored" data-anchor-id="retranslation-pair-browser-v0.5">Retranslation-pair browser (v0.5)</h2>
@@ -593,7 +593,7 @@ LIMIT 100</code></pre>
 <p>Concretely at v0.5 the browser supports:</p>
 <ul>
 <li><em>Iliad</em> 1.1 in Homeric Greek + a Byzantine epitome paraphrase + a Modern Greek translation (a single tri-period panel)</li>
-<li>NT John 1:1 in Koine Greek + Latin Vulgate + Gothic Wulfila + OCS Marianus (already shipped as a static example on <code>samples.qmd</code>; the v0.5 browser makes any aligned NT verse queryable in the same format)</li>
+<li>NT John 1:1 in Koine Greek + Latin Vulgate + Gothic Wulfila + OCS Marianus (already released as a static example on <code>samples.qmd</code>; the v0.5 browser makes any aligned NT verse queryable in the same format)</li>
 <li>Septuagint Psalm 1:1 in Koine + Byzantine paraphrase + Modern Greek</li>
 <li>Any verse aligned via the existing LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) + AwesomeAlign (a word-alignment procedure that uses multilingual-BERT attention to match words across translations) workflow</li>
 </ul>
@@ -614,7 +614,7 @@ LIMIT 100</code></pre>
 </section>
 <section id="athdgc-proiel-validator-v0.5" class="level2">
 <h2 class="anchored" data-anchor-id="athdgc-proiel-validator-v0.5">AthDGC PROIEL validator (v0.5)</h2>
-<p><em>Status: ships at v0.5 alongside the public corpus release.</em></p>
+<p><em>Status: released at v0.5 alongside the public corpus release.</em></p>
 <p>A schema-strict + relation-inventory-strict linter for PROIEL XML 2.0 contributions. Checks:</p>
 <ul>
 <li>XML well-formedness against the PROIEL XML 2.0 schema</li>
@@ -623,7 +623,7 @@ LIMIT 100</code></pre>
 <li>morphological-tag well-formedness (10-character PROIEL morphology code, position-by-position legal value)</li>
 <li>AthDGC house rules: project style guide enforced on <code>&lt;note&gt;</code> elements; affiliation block exact match in <code>&lt;source&gt;</code> headers</li>
 </ul>
-<p>Ships as <code>tools/proiel_validate.py</code> (CLI) and a pre-commit hook (a script that runs automatically before code is committed and blocks the commit if a check fails) for community PRs.</p>
+<p>Releases as <code>tools/proiel_validate.py</code> (CLI) and a pre-commit hook (a script that runs automatically before code is committed and blocks the commit if a check fails) for community PRs.</p>
 </section>
 <section id="showcase-generator" class="level2">
 <h2 class="anchored" data-anchor-id="showcase-generator">Showcase generator</h2>
@@ -653,7 +653,7 @@ LIMIT 100</code></pre>
 </section>
 <section id="open-source-license-matrix-repo-map" class="level2">
 <h2 class="anchored" data-anchor-id="open-source-license-matrix-repo-map">Open source: license matrix + repo map</h2>
-<p>Every AthDGC tool ships under a recognised OSI-approved licence. The corpus itself ships under <strong>CC-BY-4.0</strong> (samples shown publicly; full partitions released at v0.5). The matrix below is the canonical reference.</p>
+<p>Every AthDGC tool is licensed under a recognised OSI-approved licence. The corpus itself provides under <strong>CC-BY-4.0</strong> (samples shown publicly; full partitions released at v0.5). The matrix below is the canonical reference.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -787,7 +787,7 @@ LIMIT 100</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># core toolkit</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install athdgc-tools                    <span class="co"># Apache-2.0, Python 3.11+ (stub until v0.5)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Stanza checkpoints (weights ship at v0.5; the model repos exist now)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Stanza checkpoints (weights release at v0.5; the model repos exist now)</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import stanza; stanza.download('grc', package='athdgc_byz_proiel')"</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import stanza; stanza.download('grc', package='athdgc_lbem_proiel')"</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import stanza; stanza.download('grc', package='athdgc_mod_proiel')"</span></span>
@@ -845,7 +845,7 @@ LIMIT 100</code></pre>
 </section>
 <section id="what-is-not-open" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-not-open">What is not open</h3>
-<p>The audit-fix tooling <strong>logs</strong> (per-author error counts, per-Stanza-checkpoint diff statistics) are internal until the v0.5 release notes ship. Funding-side materials and draft grant applications stay in the private repo. Per the project's data-management policy, raw OCR scans of secondary editions that are still in copyright are <strong>not</strong> republished; only the PROIEL annotation layer on top of them.</p>
+<p>The audit-fix tooling <strong>logs</strong> (per-author error counts, per-Stanza-checkpoint diff statistics) are internal until the v0.5 release notes release. Funding-side materials and draft grant applications stay in the private repo. Per the project's data-management policy, raw OCR scans of secondary editions that are still in copyright are <strong>not</strong> republished; only the PROIEL annotation layer on top of them.</p>
 </section>
 </section>
 <section id="citation" class="level2">

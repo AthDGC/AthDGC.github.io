@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4f28ba486269c24c37d6df9a1cf56ebb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c7797ddebd01fc6532dffef2c3b130e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-049cfd959f3b20329bd765b077a8f6d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -203,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). National and Kapodistrian University of Athens, Athens Digital Glossa Chronos Research Network. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
 <section id="what-athdgc-is" class="level2">
 <h2 class="anchored" data-anchor-id="what-athdgc-is">What AthDGC is</h2>
-<p>The <strong>Athens Digital Glossa Chronos</strong> (AthDGC, also referred to as <em>Athens-PROIEL</em>) is a <strong>platform</strong>, not a single resource. It ships two open deliverables side by side:</p>
+<p>The <strong>Athens Digital Glossa Chronos</strong> (AthDGC, also referred to as <em>Athens-PROIEL</em>) is a <strong>platform</strong>, not a single resource. It provides two open deliverables side by side:</p>
 <ol type="1">
 <li><p>an open-source <strong>computational toolkit for diachronic linguistics</strong>, LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-compatible feature-extraction + classification workflows, a NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context), fine-tuned (further trained on new data to adapt it to a particular text type) Stanza (Stanford's open-source Python workflow that automatically tags, lemmatises, and parses sentences) checkpoints (saved snapshots of a trained model), a per-verb argument-structure extractor, a cross-lingual alignment (matching corresponding words or sentences between texts in different languages) viewer, a corpus-fix toolkit, a showcase generator, and the Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) pack that builds this very site. See the <a href="./tools.html">Tools</a> page.</p></li>
 <li><p>an open PROIEL-style dependency <strong>treebank</strong> spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern) with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via verse-level cross-lingual alignment of the New Testament. Classical Armenian and Sanskrit ingestion are in progress; Ukrainian, Old English, Avestan, and Old Persian are queued for v0.7. See the <a href="./samples.html">Samples</a> page for representative sentences.</p></li>
@@ -248,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>Stanza checkpoints</td>
-<td>forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (org page + model repos in setup; ship at v0.5)</td>
+<td>forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (org page + model repos in setup; release at v0.5)</td>
 </tr>
 <tr class="even">
 <td>Open-access source archives</td>
@@ -265,25 +265,25 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="release-status-v0.4">Release status (v0.4)</h2>
 <p>The platform is under continuous build. <strong>v0.4 is not yet a wide release of the corpus.</strong> The Stanford-Stanza pass introduced annotation errors in a non-trivial share of sentences (lemma mis-attribution, crasis splits, gender inheritance on indeclinables, period mis-tagging, etc.), and the team is correcting these on the ARIS side before any wide release.</p>
 <p>What this public site shows today is therefore a <strong>curated samples showcase</strong> drawn from the v0.4 partitions and rendered through the standard AthDGC PROIEL workflow. The <strong>tools</strong>, by contrast, are released and usable now: they live in the public source-code repo and on Hugging Face (a public hosting platform for machine-learning models and datasets). See the <a href="./samples.html">Samples</a> and <a href="./tools.html">Tools</a> pages.</p>
-<p>The full corpus partitions will ship at v0.5, once the audit pass is complete. The Zenodo record above is the canonical citation for the project; the version DOIs (v0.4.0, v0.5.0, ...) track the release history.</p>
+<p>The full corpus partitions will release at v0.5, once the audit pass is complete. The Zenodo record above is the canonical citation for the project; the version DOIs (v0.4.0, v0.5.0, ...) track the release history.</p>
 </section>
 <section id="what-is-in-the-public-repository-and-what-is-not" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-in-the-public-repository-and-what-is-not">What is in the public repository (and what is not)</h2>
 <p>The GitHub repository <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a> is <strong>deliberately scoped</strong>. It is not a corpus dump.</p>
-<p><strong>The public repository ships:</strong></p>
+<p><strong>The public repository provides:</strong></p>
 <ul>
 <li>the platform's source code (discovery, filtering, conversion, annotation, alignment, fix, showcase generator, Quarto template pack);</li>
 <li>the open-source toolkit (LightSIDE-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features) for syntactic features, NoSketch-style concordancer, PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual alignment viewer);</li>
-<li>the fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) trained on ARIS; Hugging Face mirror under <code>athdgc/*</code> is in setup, ships at v0.5;</li>
+<li>the fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) trained on ARIS; Hugging Face mirror under <code>athdgc/*</code> is in setup, released at v0.5;</li>
 <li>the <strong>curated showcase samples</strong> rendered on this site;</li>
 <li>the Zenodo source-code snapshot under DOI <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</li>
 </ul>
-<p><strong>The public repository does NOT ship:</strong></p>
+<p><strong>The public repository does NOT release:</strong></p>
 <ul>
-<li>the full v0.4 annotated corpus partitions. These remain under active audit on the GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code> until the v0.5 release. Verified scale (total rows, annotated rows per period, per-witness aligned-verse counts) ships with the v0.5 release notes.</li>
-<li>the raw JSONL (a plain-text data format that stores one record per line) partitions per period, the Qdrant vector store, or the Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph dump. These will ship as a separate Zenodo dataset record at v0.5, under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit), when the Stanza-introduced annotation errors have been corrected at scale.</li>
+<li>the full v0.4 annotated corpus partitions. These remain under active audit on the GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code> until the v0.5 release. Verified scale (total rows, annotated rows per period, per-witness aligned-verse counts) is included with the v0.5 release notes.</li>
+<li>the raw JSONL (a plain-text data format that stores one record per line) partitions per period, the Qdrant vector store, or the Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph dump. These will be released as a separate Zenodo dataset record at v0.5, under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit), when the Stanza-introduced annotation errors have been corrected at scale.</li>
 </ul>
-<p>This scoping is deliberate: we will not release annotated data with known errors. The <strong>tools</strong> are released and ready for reuse on any PROIEL-style historical treebank; the <strong>corpus</strong> ships when it is correct.</p>
+<p>This scoping is deliberate: we will not release annotated data with known errors. The <strong>tools</strong> are released and ready for reuse on any PROIEL-style historical treebank; the <strong>corpus</strong> is released when it is correct.</p>
 </section>
 <section id="method-in-brief" class="level2">
 <h2 class="anchored" data-anchor-id="method-in-brief">Method (in brief)</h2>
