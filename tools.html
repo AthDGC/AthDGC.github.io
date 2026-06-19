@@ -194,6 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
   <li><a href="#tool-readiness-what-runs-today-what-released-at-v0.5" id="toc-tool-readiness-what-runs-today-what-released-at-v0.5" class="nav-link" data-scroll-target="#tool-readiness-what-runs-today-what-released-at-v0.5">Tool readiness (what runs today, what released at v0.5)</a></li>
+  <li><a href="#live-annotation-interface" id="toc-live-annotation-interface" class="nav-link" data-scroll-target="#live-annotation-interface">Live annotation interface</a></li>
   <li><a href="#lightside-text-mining-workbench" id="toc-lightside-text-mining-workbench" class="nav-link" data-scroll-target="#lightside-text-mining-workbench">LightSIDE (text-mining workbench)</a>
   <ul class="collapse">
   <li><a href="#athdgc-lightside-workflow" id="toc-athdgc-lightside-workflow" class="nav-link" data-scroll-target="#athdgc-lightside-workflow">AthDGC + LightSIDE workflow</a></li>
@@ -256,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>For all parts of this platform (site, tools, corpus, slides, launch report) please cite:</strong></p>
-<p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). National and Kapodistrian University of Athens, Athens Digital Glossa Chronos Research Network. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
+<p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). Athens: National and Kapodistrian University of Athens. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
 <p>The AthDGC platform provides <strong>two open deliverables in parallel</strong>: this <strong>computational toolkit for diachronic linguistics</strong> plus a PROIEL (the dependency-treebank (a collection of sentences whose grammatical structure has been analysed and stored) standard for early Indo-European languages, developed at Oslo) XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) diachronic Greek corpus. The toolkit is designed to work on the AthDGC corpus and on any other PROIEL XML 2.0 historical treebank. AthDGC publishes PROIEL XML 2.0 only, no CoNLL-U, no UD-flavoured export.</p>
 <p>All tools are open source (Apache-2.0 (a permissive open-source licence widely used for software) / MIT (a short permissive open-source licence) / GPL where the upstream license requires). All are documented for classroom use, from undergraduate to PhD level, so digital-humanities courses can adopt them without per-seat licensing.</p>
 <section id="at-a-glance" class="level2">
@@ -414,6 +415,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Five tools are live today, eight are in setup (working in-house, public install path lands at v0.5), and ten are forthcoming. The v0.5 release closes every <strong>IN SETUP</strong> row into a <strong>LIVE</strong> row by migrating the code into a unified public <code>tools/</code> directory and publishing the weights and the package's real contents.</p>
+</section>
+<section id="live-annotation-interface" class="level2">
+<h2 class="anchored" data-anchor-id="live-annotation-interface">Live annotation interface</h2>
+<p>Beyond the tooling described on this page, the project operates a hosted PROIEL XML 2.0 annotation web platform at the National and Kapodistrian University of Athens, on which the AthDGC team performs and reviews the manual layer of PROIEL annotations on top of the Stanford Stanza pre-annotation pass.</p>
+<ul>
+<li><strong>PROIEL annotation interface</strong> (NKUA, team-access): <a href="https://dialing.enl.uoa.gr/proiel/" class="uri">https://dialing.enl.uoa.gr/proiel/</a></li>
+<li><strong>AthDGC corpus repository</strong> (closed-access GitHub, team-access during the v0.4 to v0.5 audit pass): <a href="https://github.com/AthDGC/athdgc-corpus" class="uri">https://github.com/AthDGC/athdgc-corpus</a></li>
+<li><strong>Per-language unique-identifier and metadata register</strong> (Google Sheets, one sheet per language, restricted): <a href="https://docs.google.com/spreadsheets/d/1MiXcxAedaHgdnj62q-zTQsS3Q4iGTyQU/edit?gid=997932237" class="uri">https://docs.google.com/spreadsheets/d/1MiXcxAedaHgdnj62q-zTQsS3Q4iGTyQU/edit?gid=997932237</a></li>
+</ul>
 <p>What is described below is the full vision of the toolkit. Where a module is not yet on the LIVE row of the matrix above, the section text describes the design as it will be released; the prose does not claim that the module is already installable today.</p>
 </section>
 <section id="lightside-text-mining-workbench" class="level2">

@@ -163,6 +163,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#release-status-v0.4" id="toc-release-status-v0.4" class="nav-link" data-scroll-target="#release-status-v0.4">Release status (v0.4)</a></li>
   <li><a href="#what-is-in-the-public-repository-and-what-is-not" id="toc-what-is-in-the-public-repository-and-what-is-not" class="nav-link" data-scroll-target="#what-is-in-the-public-repository-and-what-is-not">What is in the public repository (and what is not)</a></li>
   <li><a href="#method-in-brief" id="toc-method-in-brief" class="nav-link" data-scroll-target="#method-in-brief">Method (in brief)</a></li>
+  <li><a href="#project-provenance-thessaloniki-and-oslo-2012" id="toc-project-provenance-thessaloniki-and-oslo-2012" class="nav-link" data-scroll-target="#project-provenance-thessaloniki-and-oslo-2012">Project provenance, Thessaloniki and Oslo, 2012</a></li>
   <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -196,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><strong>For all parts of this platform (site, tools, corpus, slides, launch report) please cite:</strong></p>
-<p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). National and Kapodistrian University of Athens, Athens Digital Glossa Chronos Research Network. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
+<p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). Athens: National and Kapodistrian University of Athens. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
 <section id="what-athdgc-is" class="level2">
 <h2 class="anchored" data-anchor-id="what-athdgc-is">What AthDGC is</h2>
 <p>The <strong>Athens Digital Glossa Chronos</strong> (AthDGC, also referred to as <em>Athens-PROIEL</em>) is a <strong>platform</strong>, not a single resource. It provides two open deliverables side by side:</p>
@@ -239,18 +240,30 @@ ul.task-list li input[type="checkbox"] {
 <td><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></td>
 </tr>
 <tr class="even">
-<td>Repository</td>
+<td>Platform repository (public, Apache-2.0)</td>
 <td><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></td>
 </tr>
 <tr class="odd">
+<td>Corpus repository (closed, team-access during v0.4-v0.5 audit)</td>
+<td><a href="https://github.com/AthDGC/athdgc-corpus" class="uri">https://github.com/AthDGC/athdgc-corpus</a></td>
+</tr>
+<tr class="even">
+<td>Per-language unique-id + metadata register (Excel, restricted)</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1MiXcxAedaHgdnj62q-zTQsS3Q4iGTyQU/edit?gid=997932237" class="uri">https://docs.google.com/spreadsheets/d/1MiXcxAedaHgdnj62q-zTQsS3Q4iGTyQU/edit?gid=997932237</a></td>
+</tr>
+<tr class="odd">
+<td>Live PROIEL XML 2.0 annotation interface (NKUA)</td>
+<td><a href="https://dialing.enl.uoa.gr/proiel/" class="uri">https://dialing.enl.uoa.gr/proiel/</a></td>
+</tr>
+<tr class="even">
 <td>Stanza checkpoints</td>
 <td>forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (org page + model repos in setup; release at v0.5)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Open-access source archives</td>
 <td>Perseus, OGL/First1K, SBL GNT, Rahlfs LXX, Papyri.info, Patrologia Graeca, Bibliotheca Augustana, Anemi, Wikisource el; Wulfila Project, TITUS, GRETIL, SARIT, TEAMS, National Library of Ukraine</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Launch report</td>
 <td><a href="./data_paper.html">GlossaContactLab Working Papers, NKUA digital edition</a></td>
 </tr>
@@ -292,6 +305,11 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Cross-lingual alignment</strong>, LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) sentence embedding (a numeric vector that represents the meaning of a sentence) + multilingual-BERT (a neural language model trained on text from over 100 languages) attention for word-level alignment</li>
 <li><strong>Storage</strong>, PROIEL XML + JSONL partitions + Qdrant vector store + Neo4j graph</li>
 </ol>
+</section>
+<section id="project-provenance-thessaloniki-and-oslo-2012" class="level2">
+<h2 class="anchored" data-anchor-id="project-provenance-thessaloniki-and-oslo-2012">Project provenance, Thessaloniki and Oslo, 2012</h2>
+<p>The diachronic-Greek PROIEL line that AthDGC continues began in 2012 as a Thessaloniki and Oslo collaboration between <strong>Prof. Dag Trygve Truslew Haug</strong> (University of Oslo, PROIEL Project Director) and <strong>Nikolaos Lavidas</strong>, then at the University of Thessaloniki. Their first joint anchor text was <strong>George Sphrantzes</strong>, <em>Chronicon Sive Minus</em> (Chronicles, post-1453, ed. Grecu 1966), the principal historiographic account of the Fall of Constantinople and the only post-Koine, Late-Byzantine Greek text in the original PROIEL release series. The annotated edition appears in <strong>PROIEL Release 20180408</strong> under CC-BY-NC-SA 4.0, with principal investigators <strong>Dag T. T. Haug and Nikolaos Lavidas</strong>, and funding from the <strong>University of Oslo</strong> and the <strong>University of Thessaloniki</strong>. The annotation and review team comprised <strong>Þorsteinn Vilhjálmsson</strong>, <strong>Anastasia Michali</strong>, <strong>Maria Geramani</strong>, <strong>Evgenia Klidona</strong>, <strong>Athina Papadopoulou</strong>, and <strong>Dag Haug</strong>. The release is available at <a href="https://github.com/proiel/proiel-treebank" class="uri">https://github.com/proiel/proiel-treebank</a> and is browsable sentence by sentence at <a href="https://syntacticus.org" class="uri">https://syntacticus.org</a> under source identifier <code>proiel:20180408:chron</code> (for example, the sentence at <a href="https://syntacticus.org/sentence/proiel:20180408:chron:89063" class="uri">https://syntacticus.org/sentence/proiel:20180408:chron:89063</a>). The Oslo side of the collaboration is housed in the <strong>Foni</strong> research group in linguistics (Forskergruppe i lingvistikk) at the University of Oslo.</p>
+<p>The Sphrantzes Chronicle is the historical hinge between the original PROIEL programme and AthDGC: PROIEL covered Greek up to the Koine of the New Testament, with Sphrantzes as the lone post-Koine, Late-Byzantine extension; AthDGC takes that extension as a starting point and carries it through the entire diachronic span of Greek (Archaic, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern), under the same PROIEL XML 2.0 schema and the same relation inventory. The 2012 Thessaloniki and Oslo collaboration thus continues today, with the same PROIEL Project Director and the same Greek PI, now at the National and Kapodistrian University of Athens.</p>
 </section>
 <section id="funding" class="level2">
 <h2 class="anchored" data-anchor-id="funding">Funding</h2>
