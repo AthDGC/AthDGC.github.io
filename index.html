@@ -1,736 +1,744 @@
 <!DOCTYPE html>
-<html lang="el">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ψηφιακή Διαχρονία | ΚΕΔΙΒΙΜ ΕΚΠΑ</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/jpg" href="assets/logos/athdgc-favicon.jpg">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-    <meta name="description" content="Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας. Επιμορφωτικό πρόγραμμα 1829 του ΚΕΔΙΒΙΜ ΕΚΠΑ, 300 ώρες, εξ αποστάσεως, αιτήσεις έως 26 Οκτωβρίου 2026.">
-    <link rel="canonical" href="https://athdgc.github.io/kedivim-1829/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="AthDGC">
-    <meta property="og:url" content="https://athdgc.github.io/kedivim-1829/">
-    <meta property="og:title" content="Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας, ΚΕΔΙΒΙΜ ΕΚΠΑ 1829">
-    <meta property="og:description" content="300 ώρες, οκτώ μήνες, εξ αποστάσεως ασύγχρονα. Σώματα κειμένων, Python, στατιστική, OCR και TEI/XML για φιλολόγους και εκπαιδευτικούς. Αιτήσεις έως 26 Οκτωβρίου 2026.">
-    <meta property="og:image" content="https://athdgc.github.io/kedivim-1829/assets/images/social-1829-1200x630.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας, ΚΕΔΙΒΙΜ ΕΚΠΑ 1829">
-    <meta name="twitter:description" content="300 ώρες, οκτώ μήνες, εξ αποστάσεως ασύγχρονα. Αιτήσεις έως 26 Οκτωβρίου 2026.">
-    <meta name="twitter:image" content="https://athdgc.github.io/kedivim-1829/assets/images/social-1829-1200x630.jpg">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
 
-    <style>
-        :root {
-            /* --- ABSTRACT & ELEGANT PALETTE --- */
-            --deep-navy: #0a1128;   /* Very dark navy */
-            --rich-blue: #1c2541;   /* Slightly lighter navy */
-            --gold-accent: #d4af37; /* Metallic Gold */
-            --teal-highlight: #3a506b; /* Muted Teal/Grey Blue */
-            --soft-white: #f8fafc;
-            --pure-white: #ffffff;
-            --text-grey: #cbd5e1;
-            
-            /* Gradients */
-            --gradient-hero: linear-gradient(180deg, rgba(10, 17, 40, 0.5) 0%, rgba(10, 17, 40, 0.85) 100%);
-            --gradient-gold: linear-gradient(45deg, #d4af37, #f3e5ab);
-            --gradient-abstract: linear-gradient(135deg, var(--deep-navy) 0%, var(--teal-highlight) 100%);
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-        html { scroll-behavior: smooth; }
+<meta name="description" content="AthDGC (Athens Digital Glossa Chronos) is a PROIEL-style platform: open computational tools for diachronic linguistics plus an open dependency treebank of the entire Greek language, with Indo-European parallels.">
 
-        body {
-            font-family: 'Manrope', sans-serif;
-            margin: 0;
-            color: var(--text-grey);
-            line-height: 1.9;
-            background-color: var(--soft-white);
-        }
+<title>AthDGC</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
 
-        /* Language Toggle Logic */
-        body.lang-gr .show-en { display: none !important; }
-        body.lang-en .show-gr { display: none !important; }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            color: var(--deep-navy);
-            margin-top: 0;
-        }
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4f28ba486269c24c37d6df9a1cf56ebb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-049cfd959f3b20329bd765b077a8f6d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
 
-        /* --- HEADER --- */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-group { display: flex; align-items: center; gap: 2rem; }
-        .logo-group img { height: 65px; width: auto; display: block; }
-
-        .nav-right { display: flex; align-items: center; gap: 4rem; }
-
-        nav ul { display: flex; list-style: none; gap: 3rem; margin: 0; padding: 0; }
-        nav a { 
-            text-decoration: none; 
-            color: var(--deep-navy); 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--gold-accent);
-            transition: width 0.3s;
-        }
-        nav a:hover::after { width: 100%; }
-
-        .lang-switch { 
-            display: flex; 
-            border: 1px solid #cbd5e1; 
-            border-radius: 50px;
-            padding: 4px;
-        }
-        .lang-btn { 
-            background: transparent; 
-            border: none; 
-            padding: 8px 16px; 
-            cursor: pointer; 
-            font-weight: 700; 
-            font-size: 0.8rem; 
-            border-radius: 50px;
-            color: #64748b;
-            transition: 0.3s;
-        }
-        .lang-btn.active { background: var(--deep-navy); color: #fff; }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            position: relative;
-            background-image: url('assets/images/10.jpg'); 
-            background-color: var(--deep-navy); 
-            background-size: cover;
-            background-position: center;
-            padding: 16rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* Dark overlay for white text readability */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--gradient-hero);
-            z-index: 1;
-        }
-
-        .hero-content { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; }
-        
-        .hero h2 {
-            color: var(--gold-accent);
-            font-family: 'Manrope', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-
-        .hero h1 { 
-            font-size: 4.2rem; 
-            line-height: 1.2;
-            color: var(--pure-white);
-            margin-bottom: 2.5rem; 
-            font-weight: 600;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
-        }
-
-        .hero-subtitle { 
-            font-size: 1.4rem; 
-            color: #e2e8f0; 
-            margin-bottom: 5rem; 
-            font-weight: 300; 
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-deadline {
-            margin-top: 1.6rem;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            color: var(--soft-white);
-            opacity: 0.85;
-        }
-
-        .btn-cta {
-            background: transparent;
-            color: var(--pure-white);
-            padding: 1.5rem 4rem;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            border: 1px solid var(--gold-accent);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-cta:hover { 
-            background: var(--gold-accent); 
-            color: var(--deep-navy); 
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
-        }
-
-        /* --- STATS BAR --- */
-        .stats { 
-            background: var(--pure-white); 
-            padding: 6rem 0; 
-            position: relative;
-            z-index: 5;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-        .stats-grid { 
-            display: flex; 
-            justify-content: space-around; 
-            flex-wrap: wrap; 
-            gap: 2rem; 
-        }
-        .stat-item { text-align: center; }
-        .stat-item h3 { 
-            font-size: 3.5rem; 
-            margin: 0; 
-            color: var(--deep-navy); 
-            font-weight: 400;
-        }
-        .stat-item p { 
-            font-size: 0.85rem; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            color: #64748b; 
-            font-weight: 700;
-            margin-top: 1rem; 
-        }
-
-        /* --- SECTIONS --- */
-        .section { padding: 10rem 0; }
-        
-        .section-header { margin-bottom: 6rem; text-align: left; }
-        .section-header h2 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--deep-navy); }
-        .section-header .line { width: 100px; height: 3px; background: var(--gold-accent); }
-
-        /* --- ABOUT --- */
-        .about-content { 
-            display: grid; 
-            grid-template-columns: 1.2fr 0.8fr; 
-            gap: 8rem; 
-            align-items: start; 
-        }
-        
-        .about-text p { 
-            font-size: 1.2rem; 
-            margin-bottom: 2.5rem; 
-            color: #475569; 
-            text-align: justify; 
-            font-weight: 300;
-        }
-
-        .highlight-box {
-            background: var(--rich-blue);
-            color: var(--pure-white);
-            padding: 4rem;
-            position: relative;
-            margin-top: 4rem;
-            overflow: hidden;
-            border-left: 6px solid var(--gold-accent);
-        }
-        /* Abstract Circle Decoration */
-        .highlight-box::after {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 250px;
-            height: 250px;
-            border: 2px solid rgba(255,255,255,0.05);
-            border-radius: 50%;
-        }
-        .highlight-box h4 { color: var(--gold-accent); margin-bottom: 1.5rem; letter-spacing: 3px; font-size: 1rem; font-weight: 700;}
-        .highlight-box p { color: #cbd5e1; margin: 0; font-size: 1.1rem; }
-
-        .grid-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .grid-images img { 
-            width: 100%; 
-            height: 280px; 
-            object-fit: cover; 
-            filter: grayscale(100%) contrast(1.1); 
-            transition: 0.6s; 
-        }
-        .grid-images img:hover { filter: grayscale(0%); transform: scale(1.02); }
-
-        /* --- MODULES (DARK MODE) --- */
-        .bg-dark { 
-            background: var(--deep-navy); 
-            color: var(--pure-white); 
-            position: relative;
-        }
-        /* Abstract Background Shape */
-        .bg-dark::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 40%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02));
-            pointer-events: none;
-        }
-
-        .bg-dark h2 { color: var(--pure-white); }
-        
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Wider cards for more text */
-            gap: 3rem;
-        }
-
-        .module-card {
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 4rem;
-            transition: 0.5s;
-            position: relative;
-        }
-
-        .module-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: var(--gold-accent);
-            transform: translateY(-10px);
-        }
-
-        .module-number {
-            font-size: 5rem;
-            font-family: 'Playfair Display', serif;
-            color: rgba(255,255,255,0.05);
-            position: absolute;
-            top: 1rem;
-            right: 2rem;
-            font-weight: 700;
-        }
-
-        .module-card h3 { 
-            color: var(--gold-accent); 
-            font-size: 1.8rem; 
-            margin-bottom: 1rem; 
-            margin-top: 1rem;
-            letter-spacing: 1px;
-        }
-        
-        .module-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            font-size: 0.85rem;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 1rem;
-        }
-
-        .module-card p {
-            color: #e2e8f0; /* Clear white-grey for readability */
-            font-size: 1.1rem;
-            margin: 0;
-            font-weight: 300;
-            text-align: justify;
-        }
-
-        /* --- CERTIFICATION --- */
-        .cert-section { text-align: center; padding: 10rem 0; background: var(--pure-white); }
-        .cert-list {
-            display: flex;
-            justify-content: center;
-            gap: 6rem;
-            margin-top: 5rem;
-            flex-wrap: wrap;
-        }
-        .cert-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-        .abstract-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--soft-white);
-            border: 1px solid var(--deep-navy);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.4s;
-            transform: rotate(45deg); /* Diamond shape */
-        }
-        .cert-item:hover .abstract-icon { background: var(--deep-navy); }
-        
-        /* Inner circle */
-        .abstract-icon::after {
-            content: '';
-            width: 30px;
-            height: 30px;
-            background: var(--gold-accent);
-            border-radius: 50%;
-            transform: rotate(-45deg);
-        }
-
-        .cert-item span { 
-            font-weight: 600; 
-            color: var(--deep-navy); 
-            font-size: 1.3rem; 
-            letter-spacing: 1px; 
-            text-transform: uppercase;
-        }
-
-        /* --- FOOTER --- */
-        footer { 
-            background: #050914; /* Black-Navy */
-            color: var(--pure-white); 
-            padding: 8rem 0 4rem; 
-            text-align: center; 
-            border-top: 1px solid #1e293b;
-        }
-        
-        .footer-logos { 
-            display: flex; 
-            justify-content: center; 
-            gap: 5rem; 
-            margin-bottom: 5rem; 
-            align-items: center;
-        }
-        
-        .footer-logos img { 
-            height: 100px; 
-            background: var(--pure-white);
-            padding: 15px;
-            /* No border radius for cleaner look */
-        }
-
-        .footer-info h4 { 
-            color: var(--pure-white); 
-            letter-spacing: 4px; 
-            margin-bottom: 2rem; 
-            font-size: 1.3rem; 
-            font-weight: 400;
-        }
-        
-        .footer-info p { margin: 1rem 0; font-size: 1.2rem; color: #94a3b8; font-weight: 300; }
-        
-        .footer-info strong { 
-            color: var(--pure-white); 
-            font-weight: 600; 
-            border-bottom: 1px solid var(--gold-accent);
-        }
-        
-        .copyright {
-            margin-top: 6rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 3rem;
-            font-size: 0.9rem;
-            color: #475569;
-        }
-
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .about-content { grid-template-columns: 1fr; gap: 4rem; }
-            .nav-wrapper { flex-direction: column; gap: 2rem; }
-            .nav-right { flex-direction: column; gap: 1.5rem; }
-            .footer-logos { flex-direction: column; gap: 3rem; }
-            nav ul { flex-direction: column; align-items: center; gap: 1.5rem; }
-            .module-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<link rel="stylesheet" href="themes/lavidas-extras.css">
 </head>
-<body class="lang-gr">
 
-    <header>
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo-group">
-                    <a href="https://www.uoa.gr" target="_blank">
-                        <img src="assets/logos/EKPA.jpg" alt="ΕΚΠΑ">
-                    </a>
-                    <a href="https://athdgc.github.io" target="_blank">
-                        <img src="assets/logos/athdgc-favicon.jpg" alt="AthDGC">
-                    </a>
-                </div>
-                <div class="nav-right">
-                    <nav>
-                        <ul>
-                            <li><a href="#about" class="show-gr">ΠΑΡΟΥΣΙΑΣΗ</a><a href="#about" class="show-en">Presentation</a></li>
-                            <li><a href="#curriculum" class="show-gr">ΠΡΟΓΡΑΜΜΑ</a><a href="#curriculum" class="show-en">Program</a></li>
-                            <li><a href="#contact" class="show-gr">ΕΠΙΚΟΙΝΩΝΙΑ</a><a href="#contact" class="show-en">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <div class="lang-switch">
-                        <button class="lang-btn active" id="btn-gr" onclick="setLanguage('gr')">GR</button>
-                        <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<body class="nav-fixed quarto-light">
 
-    <section class="hero">
-        <div class="hero-content container">
-            <h2 class="show-gr">ΚΕΔΙΒΙΜ ΕΚΠΑ</h2>
-            <h2 class="show-en">NKUA CCE</h2>
-            
-            <h1 class="show-gr">ΨΗΦΙΑΚΗ ΔΙΑΧΡΟΝΙΑ</h1>
-            <h1 class="show-en">DIGITAL DIACHRONY</h1>
-            
-            <p class="hero-subtitle show-gr">
-                Υπολογιστικές Προσεγγίσεις στη Μελέτη της Γλωσσικής Εξέλιξης.<br>
-                Ένα πρωτοποριακό πρόγραμμα που συνδυάζει τη Γλωσσολογία με την Επιστήμη Δεδομένων.
-            </p>
-            <p class="hero-subtitle show-en">
-                Computational Approaches to the Study of Language Evolution.<br>
-                A pioneering program bridging Linguistics with Data Science.
-            </p>
-            
-            <a href="https://cce.uoa.gr/courses-detailed/ab9bf254-1eb7-47a3-b3f2-ca1bd76e00a8" target="_blank" rel="noopener" class="btn-cta">
-                <span class="show-gr">ΑΙΤΗΣΗ ΣΥΜΜΕΤΟΧΗΣ</span>
-                <span class="show-en">APPLY NOW</span>
-            </a>
-            <p class="hero-deadline">
-                <span class="show-gr">Κωδικός ΚΕΔΙΒΙΜ 1829 &middot; Αιτήσεις έως 26 Οκτωβρίου 2026 &middot; Έναρξη 30 Οκτωβρίου 2026</span>
-                <span class="show-en">KEDIVIM code 1829 &middot; Applications close 26 October 2026 &middot; Starts 30 October 2026</span>
-            </p>
-        </div>
-    </section>
-
-    <div class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item"><h3>8</h3><p class="show-gr">ΜΗΝΕΣ / MONTHS</p><p class="show-en">MONTHS / ΜΗΝΕΣ</p></div>
-                <div class="stat-item"><h3>5</h3><p class="show-gr">ΔΙΔΑΚΤΙΚΕΣ ΕΝΟΤΗΤΕΣ</p><p class="show-en">TEACHING UNITS</p></div>
-                <div class="stat-item"><h3>300</h3><p class="show-gr">ΩΡΕΣ ΔΙΔΑΣΚΑΛΙΑΣ</p><p class="show-en">TEACHING HOURS</p></div>
-                <div class="stat-item"><h3>100%</h3><p class="show-gr">ΕΞ ΑΠΟΣΤΑΣΕΩΣ</p><p class="show-en">ONLINE LEARNING</p></div>
-            </div>
-        </div>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AthDGC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Platform</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./samples.html"> 
+<span class="menu-text">Samples</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tools.html"> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./training.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./press.html"> 
+<span class="menu-text">Press</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./status.html"> 
+<span class="menu-text">Status</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/AthDGC"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://doi.org/10.5281/zenodo.20439182"> <i class="bi bi-file-text" role="img" aria-label="Zenodo deposition (DOI 10.5281/zenodo.20439182)">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-athdgc-is" id="toc-what-athdgc-is" class="nav-link active" data-scroll-target="#what-athdgc-is">What AthDGC is</a></li>
+  <li><a href="#current-state-v0.4" id="toc-current-state-v0.4" class="nav-link" data-scroll-target="#current-state-v0.4">Current state (v0.4)</a></li>
+  <li><a href="#release-status-v0.4" id="toc-release-status-v0.4" class="nav-link" data-scroll-target="#release-status-v0.4">Release status (v0.4)</a></li>
+  <li><a href="#what-is-in-the-public-repository-and-what-is-not" id="toc-what-is-in-the-public-repository-and-what-is-not" class="nav-link" data-scroll-target="#what-is-in-the-public-repository-and-what-is-not">What is in the public repository (and what is not)</a></li>
+  <li><a href="#method-in-brief" id="toc-method-in-brief" class="nav-link" data-scroll-target="#method-in-brief">Method (in brief)</a></li>
+  <li><a href="#project-provenance-thessaloniki-and-oslo-2012" id="toc-project-provenance-thessaloniki-and-oslo-2012" class="nav-link" data-scroll-target="#project-provenance-thessaloniki-and-oslo-2012">Project provenance, Thessaloniki and Oslo, 2012</a></li>
+  <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
 
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="show-gr">ΕΠΙΣΤΗΜΟΝΙΚΟ ΠΛΑΙΣΙΟ</h2>
-                <h2 class="show-en">SCIENTIFIC CONTEXT</h2>
-                <div class="line"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="show-gr">
-                        <p>Το εκπαιδευτικό πρόγραμμα «Ψηφιακή Διαχρονία» έρχεται να καλύψει ένα σημαντικό κενό στη σύγχρονη ανθρωπιστική έρευνα: τη σύνδεση της ιστορικής γλωσσολογίας με τις ψηφιακές τεχνολογίες. Σε μια εποχή όπου ο όγκος των ψηφιακών δεδομένων αυξάνεται εκθετικά, η ικανότητα ανάλυσης μεγάλων σωμάτων κειμένων (Big Data) καθίσταται απαραίτητη δεξιότητα για τον σύγχρονο ερευνητή.</p>
-                        <p>Μέσα από το πρόγραμμα, οι συμμετέχοντες θα εξοικειωθούν με τη χρήση υπολογιστικών εργαλείων για τη μελέτη της γλωσσικής αλλαγής, κατανοώντας πώς οι γλώσσες εξελίσσονται στον χρόνο μέσω ποσοτικών και ποιοτικών μεθόδων. Από την ανάλυση αρχαίων χειρογράφων έως τη χρήση στατιστικών μοντέλων, το πρόγραμμα προσφέρει μια ολοκληρωμένη επισκόπηση του πεδίου των Ψηφιακών Ανθρωπιστικών Επιστημών.</p>
-                        
-                        <div class="highlight-box">
-                            <h4>ΣΕ ΠΟΙΟΥΣ ΑΠΕΥΘΥΝΕΤΑΙ</h4>
-                            <p>Το πρόγραμμα απευθύνεται σε απόφοιτους Ανθρωπιστικών Επιστημών, φιλολόγους, γλωσσολόγους, ιστορικούς, αλλά και σε επιστήμονες πληροφορικής που επιθυμούν να εξειδικευτούν στην Επεξεργασία Φυσικής Γλώσσας (NLP) με έμφαση στα ιστορικά δεδομένα.</p>
-                        </div>
-                    </div>
-                    <div class="show-en">
-                        <p>The "Digital Diachrony" educational program aims to bridge a significant gap in modern humanities research: the connection between historical linguistics and digital technologies. In an era where the volume of digital data is increasing exponentially, the ability to analyze large text corpora (Big Data) is becoming an essential skill for the modern researcher.</p>
-                        <p>Through this program, participants will familiarize themselves with computational tools for studying language change, understanding how languages evolve over time through quantitative and qualitative methods. From analyzing ancient manuscripts to using statistical models, the program offers a comprehensive overview of the Digital Humanities field.</p>
-                        
-                        <div class="highlight-box">
-                            <h4>TARGET AUDIENCE</h4>
-                            <p>The program is designed for graduates of Humanities, philologists, linguists, historians, as well as computer scientists wishing to specialize in Natural Language Processing (NLP) with a focus on historical data.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-images">
-                    <img src="assets/images/2.jpg" alt="Data Visualization">
-                    <img src="assets/images/6.jpg" alt="Research Archives">
-                    <img src="assets/images/7.jpg" alt="Ancient Texts">
-                    <img src="assets/images/8.jpg" alt="Coding for Humanities">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="curriculum" class="section bg-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="show-gr">ΕΚΠΑΙΔΕΥΤΙΚΕΣ ΕΝΟΤΗΤΕΣ</h2>
-                <h2 class="show-en">EDUCATIONAL MODULES</h2>
-                <div class="line"></div>
-            </div>
-
-            <div class="module-grid">
-<div class="module-card">
-    <span class="module-number">01</span>
-    <div class="module-content">
-        <div class="module-meta">CORE THEORY • 60 HOURS</div>
-        <h3 class="show-gr">Θεμέλια Διαχρονικής Γλωσσολογίας</h3>
-        <h3 class="show-en">Foundations of Diachronic Linguistics</h3>
-        <p class="show-gr">Η ενότητα αυτή παρέχει το απαραίτητο θεωρητικό υπόβαθρο. Εξετάζονται οι μηχανισμοί της γλωσσικής αλλαγής (φωνητική, μορφολογική, συντακτική και λεξική αλλαγή), καθώς και η θεωρία της γραμματικοποίησης. Οι φοιτητές μελετούν την εξέλιξη των Ινδοευρωπαϊκών γλωσσών και παραδείγματα από την ιστορία της Ελληνικής, της Αγγλικής και άλλων γλωσσών, αναλύοντας πώς οι κοινωνικοί και ιστορικοί παράγοντες επηρεάζουν τη δομή της γλώσσας.</p>
-        <p class="show-en">This module provides the necessary theoretical background. It examines the mechanisms of language change (phonological, morphological, syntactic, and lexical change) and the theory of grammaticalization. Students study the evolution of Indo-European languages and examples from the history of Greek, English, and other languages, analyzing how social and historical factors influence language structure.</p>
-    </div>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AthDGC</h1>
+<p class="subtitle lead">A platform of computational tools and a diachronic Greek corpus, with Indo-European parallels</p>
 </div>
 
-                <div class="module-card">
-                    <span class="module-number">02</span>
-                    <div class="module-content">
-                        <div class="module-meta">TECHNICAL SKILLS • 60 HOURS</div>
-                        <h3 class="show-gr">Υπολογιστικές Μέθοδοι & Εργαλεία</h3>
-                        <h3 class="show-en">Computational Methods & Tools</h3>
-                        <p class="show-gr">Εισαγωγή στον προγραμματισμό με Python ειδικά σχεδιασμένη για γλωσσολόγους. Οι συμμετέχοντες μαθαίνουν να διαχειρίζονται ψηφιακά δεδομένα, να χρησιμοποιούν βιβλιοθήκες NLP (όπως NLTK και spaCy), να κάνουν εξόρυξη δεδομένων (web scraping) και να καθαρίζουν κείμενα για ανάλυση. Έμφαση δίνεται στη δημιουργία και διαχείριση γλωσσικών σωμάτων (corpora).</p>
-                        <p class="show-en">Introduction to Python programming specifically designed for linguists. Participants learn to manage digital data, use NLP libraries (such as NLTK and spaCy), perform web scraping, and clean texts for analysis. Emphasis is placed on the creation and management of language corpora.</p>
-                    </div>
-                </div>
+<div>
+  <div class="description">
+    AthDGC (Athens Digital Glossa Chronos) is a PROIEL-style platform: open computational tools for diachronic linguistics plus an open dependency treebank of the entire Greek language, with Indo-European parallels.
+  </div>
+</div>
 
-                <div class="module-card">
-                    <span class="module-number">03</span>
-                    <div class="module-content">
-                        <div class="module-meta">DATA SCIENCE • 60 HOURS</div>
-                        <h3 class="show-gr">Στατιστική Ανάλυση & Μοντελοποίηση</h3>
-                        <h3 class="show-en">Statistical Analysis & Modeling</h3>
-                        <p class="show-gr">Η ενότητα εστιάζει στην ποσοτική έρευνα. Οι φοιτητές εκπαιδεύονται στη χρήση της γλώσσας R για στατιστική ανάλυση. Καλύπτονται θέματα όπως περιγραφική στατιστική, έλεγχοι υποθέσεων, παλινδρόμηση και οπτικοποίηση δεδομένων (ggplot2). Στόχος είναι η ικανότητα εξαγωγής ασφαλών συμπερασμάτων από μεγάλα σύνολα γλωσσικών δεδομένων.</p>
-                        <p class="show-en">This module focuses on quantitative research. Students are trained in using R for statistical analysis. Topics covered include descriptive statistics, hypothesis testing, regression, and data visualization (ggplot2). The goal is to enable the extraction of reliable conclusions from large linguistic datasets.</p>
-                    </div>
-                </div>
 
-                <div class="module-card">
-                    <span class="module-number">04</span>
-                    <div class="module-content">
-                        <div class="module-meta">APPLIED RESEARCH • 60 HOURS</div>
-                        <h3 class="show-gr">Εφαρμογές σε Ιστορικές Γλώσσες</h3>
-                        <h3 class="show-en">Applications in Historical Languages</h3>
-                        <p class="show-gr">Πρακτική εφαρμογή των ψηφιακών εργαλείων σε ιστορικά κείμενα. Περιλαμβάνει την ψηφιοποίηση (OCR) παλαιών εκδόσεων, τη διαχείριση πολυτονικών κειμένων, την κωδικοποίηση κειμένων με το πρότυπο TEI/XML και τη δημιουργία ψηφιακών κριτικών εκδόσεων. Εξετάζονται επίσης ζητήματα ψηφιακής παλαιογραφίας.</p>
-                        <p class="show-en">Practical application of digital tools to historical texts. Includes digitization (OCR) of old editions, management of polytonic texts, text encoding with the TEI/XML standard, and the creation of digital critical editions. Issues of digital paleography are also examined.</p>
-                    </div>
-                </div>
+<div class="quarto-title-meta">
 
-                <div class="module-card">
-                    <span class="module-number">05</span>
-                    <div class="module-content">
-                        <div class="module-meta">FINAL PROJECT • 60 HOURS</div>
-                        <h3 class="show-gr">Ερευνητικό Εργαστήριο και Πρακτική Άσκηση</h3>
-                        <h3 class="show-en">Research Lab</h3>
-                        <p class="show-gr">Η τελική ενότητα συνθέτει όλες τις γνώσεις. Οι εκπαιδευόμενοι αναλαμβάνουν ένα πρωτότυπο ερευνητικό έργο υπό την επίβλεψη των διδασκόντων. Το έργο μπορεί να είναι η δημιουργία ενός νέου γλωσσικού πόρου (dataset), η ανάπτυξη ενός εργαλείου λογισμικού ή η συγγραφή μιας επιστημονικής εργασίας προς δημοσίευση.</p>
-                        <p class="show-en">The final module synthesizes all knowledge. Trainees undertake an original research project under the supervision of instructors. The project can be the creation of a new linguistic resource (dataset), the development of a software tool, or the writing of a scientific paper for publication.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+  
+    
+  </div>
+  
 
-    <div class="cert-section">
-        <div class="container">
-            <h3 class="show-gr">ΠΙΣΤΟΠΟΙΗΣΗ ΣΠΟΥΔΩΝ</h3>
-            <h3 class="show-en">CERTIFICATION</h3>
-            <div class="cert-list">
-                <div class="cert-item">
-                    <div class="abstract-icon"></div>
-                    <span class="show-gr">Πιστοποιητικό Εξειδικευμένης Επιμόρφωσης ΚΕΔΙΒΙΜ ΕΚΠΑ</span>
-                    <span class="show-en">NKUA Certificate of Specialized Training</span>
-                </div>
-                <div class="cert-item">
-                    <div class="abstract-icon"></div>
-                    <span class="show-gr">Επίπεδο 6 του Ευρωπαϊκού Πλαισίου Προσόντων</span>
-                    <span class="show-en">Level 6 of the European Qualifications Framework</span>
-                </div>
-                <div class="cert-item">
-                    <div class="abstract-icon"></div>
-                    <span class="show-gr">Μοριοδότηση σε διορισμούς και πίνακες αναπληρωτών</span>
-                    <span class="show-en">Credit in Greek public-education appointment procedures</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-logos">
-                <a href="https://www.uoa.gr" target="_blank">
-                    <img src="assets/logos/EKPA.jpg" alt="NKUA">
-                </a>
-                <a href="https://athdgc.github.io" target="_blank">
-                    <img src="assets/logos/athdgc-favicon.jpg" alt="AthDGC">
-                </a>
-            </div>
-            
-            <div class="footer-info">
-                <h4 class="show-gr">ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ</h4>
-                <h4 class="show-en">NATIONAL AND KAPODISTRIAN UNIVERSITY OF ATHENS</h4>
-                
-                <p class="show-gr">Τμήμα Αγγλικής Γλώσσας και Φιλολογίας</p>
-                <p class="show-en">Department of English Language and Literature</p>
-                
-                <div style="margin-top: 4rem;">
-                    <p class="show-gr" style="opacity: 0.7; font-size: 0.9rem; letter-spacing: 2px;">ΕΠΙΣΤΗΜΟΝΙΚΟΣ ΥΠΕΥΘΥΝΟΣ</p>
-                    <p class="show-en" style="opacity: 0.7; font-size: 0.9rem; letter-spacing: 2px;">ACADEMIC DIRECTOR</p>
-                    
-                    <p class="show-gr" style="font-size: 1.4rem;"><strong>Νικόλαος Λαβίδας</strong></p>
-                    <p class="show-en" style="font-size: 1.4rem;"><strong>Nikolaos Lavidas</strong></p>
-                    
-                    <p style="font-style: italic;">
-                        <span class="show-gr">Καθηγητής Διαχρονικής Γλωσσολογίας</span>
-                        <span class="show-en">Professor of Diachronic Linguistics</span>
-                    </p>
-                    <p><a href="mailto:nlavidas@enl.uoa.gr" style="color: var(--gold-accent); text-decoration: none;">nlavidas@enl.uoa.gr</a></p>
-                </div>
+</header>
 
-                <div class="copyright">
-                    &copy; 2026 AthDGC Research Network. All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <script>
-        function setLanguage(lang) {
-            document.body.className = 'lang-' + lang;
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
+<p><strong>For all parts of this platform (site, tools, corpus, slides, launch report) please cite:</strong></p>
+<p>Lavidas, Nikolaos, Kiki Nikiforidou, Dag Haug, Leonid Kulikov, Vassiliki Geka, Vassileios Symeonidis, Theodoros Michalareas, Sofia Chionidi, Anastasia Tsiropina, Eleni Plakoutsi, and Evangelos Argyropoulos. 2026. <em>AthDGC: Athens Digital Glossa Chronos</em> (A platform of computational tools and a diachronic Greek treebank, with Indo-European parallels). Athens: National and Kapodistrian University of Athens. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <code>https://doi.org/10.5281/zenodo.20439182</code></p>
+<section id="what-athdgc-is" class="level2">
+<h2 class="anchored" data-anchor-id="what-athdgc-is">What AthDGC is</h2>
+<p>The <strong>Athens Digital Glossa Chronos</strong> (AthDGC, also referred to as <em>Athens-PROIEL</em>) is a <strong>platform</strong>, not a single resource. It provides two open deliverables side by side:</p>
+<ol type="1">
+<li><p>an open-source <strong>computational toolkit for diachronic linguistics</strong>, LightSIDE (an open-source text-mining workbench developed at Carnegie Mellon)-compatible feature-extraction + classification workflows, a NoSketch-style concordancer (a search tool that shows every occurrence of a word in its surrounding context), fine-tuned (further trained on new data to adapt it to a particular text type) Stanza (Stanford's open-source Python workflow that automatically tags, lemmatises, and parses sentences) checkpoints (saved snapshots of a trained model), a per-verb argument-structure extractor, a cross-lingual alignment (matching corresponding words or sentences between texts in different languages) viewer, a corpus-fix toolkit, a showcase generator, and the Quarto (an open-source publishing system that builds websites, slides, papers, and posters from a single source) pack that builds this very site. See the <a href="./tools.html">Tools</a> page.</p></li>
+<li><p>an open PROIEL-style dependency <strong>treebank</strong> spanning Greek diachrony (Homeric, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern) with Indo-European parallels to Latin (Vulgate), Gothic (Wulfila), and Old Church Slavonic (Marianus) via verse-level cross-lingual alignment of the New Testament. Classical Armenian and Sanskrit ingestion are in progress; Ukrainian, Old English, Avestan, and Old Persian are queued for v0.7. See the <a href="./samples.html">Samples</a> page for representative sentences.</p></li>
+</ol>
+<p>The platform's research focus is <strong>retranslation</strong>, <strong>retelling</strong>, <strong>influential texts</strong>, and <strong>argument structure (the set of obligatory and optional partners a verb requires, e.g. subject, object, oblique)</strong>. The tools are usable on any PROIEL-style historical treebank, not only on the AthDGC corpus, so other research groups can adopt them without depending on us.</p>
+<p><strong>Cite this work.</strong> Lavidas, N., Nikiforidou, K., Haug, D., Kulikov, L., Geka, V., Symeonidis, V., Michalareas, T., Chionidi, S., Tsiropina, A., Plakoutsi, E., and Argyropoulos, E. (2026). <em>AthDGC: Athens Digital Glossa Chronos</em>. Zenodo (an open research-data repository hosted at CERN that mints permanent DOIs). <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</p>
+<p><strong>Train with us.</strong> The platform is taught as a KEDIVIM continuing-education course at NKUA in <strong>autumn 2026</strong>: <em>Digital Tools for the Diachronic Analysis of Language / Ψηφιακά Εργαλεία για τη Διαχρονική Ανάλυση της Γλώσσας</em>. See the <a href="./training.html">Training</a> page.</p>
+</section>
+<section id="current-state-v0.4" class="level2">
+<h2 class="anchored" data-anchor-id="current-state-v0.4">Current state (v0.4)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Greek periods covered</td>
+<td>8 (Archaic, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern)</td>
+</tr>
+<tr class="even">
+<td>Cross-aligned IE witnesses</td>
+<td>4 (Latin Vulgate, Gothic Wulfila, OCS Marianus, Classical Armenian in ingestion)</td>
+</tr>
+<tr class="odd">
+<td>Per-witness verified verse counts</td>
+<td>reported in v0.5 release notes (post-ARIS audit pass)</td>
+</tr>
+<tr class="even">
+<td>Open-source tools</td>
+<td>tiered LIVE / IN SETUP / FORTHCOMING matrix on <a href="./tools.html">Tools</a></td>
+</tr>
+<tr class="odd">
+<td>Concept DOI (a Digital Object Identifier that always points to the latest version of a deposited record)</td>
+<td><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></td>
+</tr>
+<tr class="even">
+<td>Platform repository (public, Apache-2.0)</td>
+<td><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a></td>
+</tr>
+<tr class="odd">
+<td>Corpus repository (closed, team-access during v0.4-v0.5 audit)</td>
+<td><a href="https://github.com/AthDGC/athdgc-corpus" class="uri">https://github.com/AthDGC/athdgc-corpus</a></td>
+</tr>
+<tr class="even">
+<td>Per-language unique-id + metadata register (Excel, restricted)</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1MiXcxAedaHgdnj62q-zTQsS3Q4iGTyQU/edit?gid=997932237" class="uri">https://docs.google.com/spreadsheets/d/1MiXcxAedaHgdnj62q-zTQsS3Q4iGTyQU/edit?gid=997932237</a></td>
+</tr>
+<tr class="odd">
+<td>Live PROIEL XML 2.0 annotation interface (NKUA)</td>
+<td><a href="https://dialing.enl.uoa.gr/proiel/" class="uri">https://dialing.enl.uoa.gr/proiel/</a></td>
+</tr>
+<tr class="even">
+<td>Stanza checkpoints</td>
+<td>forthcoming at <a href="https://huggingface.co/AthDGC" class="uri">https://huggingface.co/AthDGC</a> (org page + model repos in setup; release at v0.5)</td>
+</tr>
+<tr class="odd">
+<td>Open-access source archives</td>
+<td>Perseus, OGL/First1K, SBL GNT, Rahlfs LXX, Papyri.info, Patrologia Graeca, Bibliotheca Augustana, Anemi, Wikisource el; Wulfila Project, TITUS, GRETIL, SARIT, TEAMS, National Library of Ukraine</td>
+</tr>
+<tr class="even">
+<td>Launch report</td>
+<td><a href="./data_paper.html">GlossaContactLab Working Papers, NKUA digital edition</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="release-status-v0.4" class="level2">
+<h2 class="anchored" data-anchor-id="release-status-v0.4">Release status (v0.4)</h2>
+<p>The platform is under continuous build. <strong>v0.4 is not yet a wide release of the corpus.</strong> The Stanford-Stanza pass introduced annotation errors in a non-trivial share of sentences (lemma mis-attribution, crasis splits, gender inheritance on indeclinables, period mis-tagging, etc.), and the team is correcting these on the ARIS side before any wide release.</p>
+<p>What this public site shows today is therefore a <strong>curated samples showcase</strong> drawn from the v0.4 partitions and rendered through the standard AthDGC PROIEL workflow. The <strong>tools</strong>, by contrast, are released and usable now: they live in the public source-code repo and on Hugging Face (a public hosting platform for machine-learning models and datasets). See the <a href="./samples.html">Samples</a> and <a href="./tools.html">Tools</a> pages.</p>
+<p>The full corpus partitions will release at v0.5, once the audit pass is complete. The Zenodo record above is the canonical citation for the project; the version DOIs (v0.4.0, v0.5.0, ...) track the release history.</p>
+</section>
+<section id="what-is-in-the-public-repository-and-what-is-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-in-the-public-repository-and-what-is-not">What is in the public repository (and what is not)</h2>
+<p>The GitHub repository <a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform" class="uri">https://github.com/AthDGC/Diachronic-Linguistics-Platform</a> is <strong>deliberately scoped</strong>. It is not a corpus dump.</p>
+<p><strong>The public repository provides:</strong></p>
+<ul>
+<li>the platform's source code (discovery, filtering, conversion, annotation, alignment, fix, showcase generator, Quarto template pack);</li>
+<li>the open-source toolkit (LightSIDE-AthDGC (the Lavidas-extension fork of LightSIDE that operates on syntactic features rather than only text features) for syntactic features, NoSketch-style concordancer, PROIEL XML 2.0 (the file format that stores each sentence as a tree of word-by-word grammatical relations, developed at Oslo) exporter, corpus-fix toolkit, argument-structure extractor, cross-lingual alignment viewer);</li>
+<li>the fine-tuned Stanza checkpoints (<code>grc_byz_proiel</code>, <code>grc_lbem_proiel</code>, <code>grc_mod_proiel</code>) trained on ARIS; Hugging Face mirror under <code>athdgc/*</code> is in setup, released at v0.5;</li>
+<li>the <strong>curated showcase samples</strong> rendered on this site;</li>
+<li>the Zenodo source-code snapshot under DOI <a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a>.</li>
+</ul>
+<p><strong>The public repository does NOT release:</strong></p>
+<ul>
+<li>the full v0.4 annotated corpus partitions. These remain under active audit on the GRNET ARIS (the Greek national high-performance computing cluster, run by GRNET) national HPC (high-performance computing, i.e. a cluster of fast machines used for heavy computation) under allocation <code>pa260305</code> until the v0.5 release. Verified scale (total rows, annotated rows per period, per-witness aligned-verse counts) is included with the v0.5 release notes.</li>
+<li>the raw JSONL (a plain-text data format that stores one record per line) partitions per period, the Qdrant vector store, or the Neo4j (a graph database that stores data as nodes and connections rather than as tables) alignment graph dump. These will be released as a separate Zenodo dataset record at v0.5, under CC-BY-4.0 (the Creative Commons Attribution 4.0 licence, which permits reuse with credit), when the Stanza-introduced annotation errors have been corrected at scale.</li>
+</ul>
+<p>This scoping is deliberate: we will not release annotated data with known errors. The <strong>tools</strong> are released and ready for reuse on any PROIEL-style historical treebank; the <strong>corpus</strong> is released when it is correct.</p>
+</section>
+<section id="method-in-brief" class="level2">
+<h2 class="anchored" data-anchor-id="method-in-brief">Method (in brief)</h2>
+<ol type="1">
+<li><strong>Discovery</strong>, Daily harvest from archive.org, Perseus, First1K Greek, Wikisource, Diorisis, OpenGreekAndLatin</li>
+<li><strong>Filtering</strong>, Greek-script ratio + apparatus-criticus rejection + content-hash deduplication</li>
+<li><strong>Conversion</strong>, PROIEL XML 2.0 schema</li>
+<li><strong>Annotation</strong>, Stanza <code>grc_proiel</code> (and <code>la_proiel</code>, <code>cu_proiel</code>, <code>got_proiel</code> for parallels)</li>
+<li><strong>Argument structure</strong>, per-verb extraction of subject, object, oblique, voice, aspect</li>
+<li><strong>Cross-lingual alignment</strong>, LaBSE (a multilingual sentence-embedding model that maps sentences from many languages into a common vector space) sentence embedding (a numeric vector that represents the meaning of a sentence) + multilingual-BERT (a neural language model trained on text from over 100 languages) attention for word-level alignment</li>
+<li><strong>Storage</strong>, PROIEL XML + JSONL partitions + Qdrant vector store + Neo4j graph</li>
+</ol>
+</section>
+<section id="project-provenance-thessaloniki-and-oslo-2012" class="level2">
+<h2 class="anchored" data-anchor-id="project-provenance-thessaloniki-and-oslo-2012">Project provenance, Thessaloniki and Oslo, 2012</h2>
+<p>The diachronic-Greek PROIEL line that AthDGC continues began in 2012 as a Thessaloniki and Oslo collaboration between <strong>Prof. Dag Trygve Truslew Haug</strong> (University of Oslo, PROIEL Project Director) and <strong>Nikolaos Lavidas</strong>, then at the University of Thessaloniki. Their first joint anchor text was <strong>George Sphrantzes</strong>, <em>Chronicon Sive Minus</em> (Chronicles, post-1453, ed. Grecu 1966), the principal historiographic account of the Fall of Constantinople and the only post-Koine, Late-Byzantine Greek text in the original PROIEL release series. The annotated edition appears in <strong>PROIEL Release 20180408</strong> under CC-BY-NC-SA 4.0, with principal investigators <strong>Dag T. T. Haug and Nikolaos Lavidas</strong>, and funding from the <strong>University of Oslo</strong> and the <strong>University of Thessaloniki</strong>. The annotation and review team comprised <strong>Þorsteinn Vilhjálmsson</strong>, <strong>Anastasia Michali</strong>, <strong>Maria Geramani</strong>, <strong>Evgenia Klidona</strong>, <strong>Athina Papadopoulou</strong>, and <strong>Dag Haug</strong>. The release is available at <a href="https://github.com/proiel/proiel-treebank" class="uri">https://github.com/proiel/proiel-treebank</a> and is browsable sentence by sentence at <a href="https://syntacticus.org" class="uri">https://syntacticus.org</a> under source identifier <code>proiel:20180408:chron</code> (for example, the sentence at <a href="https://syntacticus.org/sentence/proiel:20180408:chron:89063" class="uri">https://syntacticus.org/sentence/proiel:20180408:chron:89063</a>). The Oslo side of the collaboration is housed in the <strong>Foni</strong> research group in linguistics (Forskergruppe i lingvistikk) at the University of Oslo.</p>
+<p>The Sphrantzes Chronicle is the historical hinge between the original PROIEL programme and AthDGC: PROIEL covered Greek up to the Koine of the New Testament, with Sphrantzes as the lone post-Koine, Late-Byzantine extension; AthDGC takes that extension as a starting point and carries it through the entire diachronic span of Greek (Archaic, Classical, Koine, Late Antique, Byzantine, Late Byzantine, Early Modern, Modern), under the same PROIEL XML 2.0 schema and the same relation inventory. The 2012 Thessaloniki and Oslo collaboration thus continues today, with the same PROIEL Project Director and the same Greek PI, now at the National and Kapodistrian University of Athens.</p>
+</section>
+<section id="funding" class="level2">
+<h2 class="anchored" data-anchor-id="funding">Funding</h2>
+<p>Funded by the <strong>Hellenic Foundation for Research and Innovation (HFRI)</strong> under the 3rd Call for HFRI Research Projects to support Post-Doctoral Researchers, <strong>Project No. 20577</strong>; with complementary support from the <strong>Greece 2.0 National Recovery and Resilience Plan</strong>.</p>
+<p>Funded project: <strong>CVL-CDSAML</strong>, <em>A Corpus-based Valency (the number and type of arguments a verb takes) Lexicon for a Contrastive and Diachronic Study of Ancient and Medieval Languages</em>.</p>
+<p>Hosted at the <strong>National and Kapodistrian University of Athens</strong>, Division of Language-Linguistics, Department of English Language and Literature, School of Philosophy.</p>
+<p>Compute supplied by <strong>GRNET ARIS</strong> (Greek national HPC), allocation <code>pa260305</code>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
-    </script>
-</body>
-</html>
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/athdgc\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Athens Digital Glossa Chronos Research Network - NKUA - CC-BY-4.0</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Funded by HFRI (Project No. 20577) - Greece 2.0 NRRP</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AthDGC/Diachronic-Linguistics-Platform/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p><a href="https://doi.org/10.5281/zenodo.20439182">10.5281/zenodo.20439182</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
